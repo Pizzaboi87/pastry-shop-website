@@ -7,6 +7,8 @@ import OurStory from './OurStory';
 import Blog from './Blog';
 import Shop from './Shop';
 import NotFound from './NotFound';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 
 export {
 	Navbar,
@@ -16,6 +18,8 @@ export {
 	Occassions,
 	OurStory,
 	Blog,
+	SignIn,
+	SignUp,
 	Shop,
 	NotFound,
 };

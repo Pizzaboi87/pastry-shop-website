@@ -8,6 +8,8 @@ import {
 	Blog,
 	Shop,
 	NotFound,
+	SignIn,
+	SignUp,
 } from './components';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
@@ -23,6 +25,8 @@ const App = () => {
 				<Route path="/occassions" element={<Occassions />} />
 				<Route path="/ourstory" element={<OurStory />} />
 				<Route path="/blog" element={<Blog />} />
+				<Route path="/login" element={<SignIn />} />
+				<Route path="/signup" element={<SignUp />} />
 				<Route path="/shop" element={<Shop />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>

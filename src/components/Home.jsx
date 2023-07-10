@@ -1,9 +1,10 @@
 import { macaron } from '../assets';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 	return (
-		<div className="w-full flex items-center justify-center gap-24 mt-48">
-			<div className="w-[30%] text-brown">
+		<div className="w-full flex items-center justify-center mt-48">
+			<div className="w-[35%] text-brown">
 				<h1 className="text-[4.5rem] font-[300]">
 					Savor
 					<br />
@@ -18,11 +19,16 @@ const Home = () => {
 					Taste the passion in bite-sized wonders, where sweet pleasures come
 					alive.
 				</p>
+				<Link to="login">
+					<button className="bg-button px-8 py-2 mt-6 rounded-[15px] text-[1.3rem] text-white shadow-sm font-[500] border-none">
+						EXPLORE NOW
+					</button>
+				</Link>
 			</div>
 			<img
 				src={macaron}
 				alt="macaron"
-				className="w-[30%] rounded-[25px] shadow-xl"
+				className="w-[40%] rounded-[25px] shadow-xl"
 			/>
 		</div>
 	);
