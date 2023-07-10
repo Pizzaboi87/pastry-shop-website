@@ -15,7 +15,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 const App = () => {
 	return (
-		<div className="flex flex-col items-center bg-primary w-full h-screen">
+		<div className="flex flex-col items-center bg-primary w-full">
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Navigate to="/home" />} />
