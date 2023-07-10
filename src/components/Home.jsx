@@ -20,7 +20,7 @@ const Home = () => {
 					alive.
 				</p>
 				<Link to="login">
-					<button className="bg-button px-8 py-2 mt-6 rounded-[15px] text-[1.3rem] text-white shadow-sm font-[500] border-none">
+					<button className="bg-button px-8 py-2 mt-6 rounded-[15px] text-[1.3rem] text-white shadow-sm font-[500] border-none hover:bg-pinkdark">
 						EXPLORE NOW
 					</button>
 				</Link>

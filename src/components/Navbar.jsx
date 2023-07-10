@@ -7,7 +7,7 @@ const Navbar = () => {
 		<nav className="w-[85%] h-[6rem] bg-white fixed top-8 rounded-[30px] flex items-center justify-around text-[20px] font-[200] shadow-sm z-10">
 			<ul className="flex justify-center gap-12">
 				{navLinksLeft.map((link) => (
-					<li key={link.title}>
+					<li key={link.title} className="hover:text-pinkdark">
 						<Link to={link.id}>{link.title}</Link>
 					</li>
 				))}
@@ -22,15 +22,18 @@ const Navbar = () => {
 			<span className="flex gap-12 items-center">
 				<ul className="flex justify-center gap-12">
 					{navLinksRight.map((link) => (
-						<li key={link.title}>
+						<li key={link.title} className="hover:text-pinkdark">
 							<Link to={link.id}>{link.title}</Link>
 						</li>
 					))}
 				</ul>
 				<span>
-					<Link to="signup">Register / </Link>
+					<Link to="signup" className="hover:text-pinkdark">
+						Register
+					</Link>{' '}
+					/{' '}
 					<Link to="login">
-						<button className="bg-button px-8 py-1 rounded-[15px] text-white shadow-sm font-[300] border-none">
+						<button className="bg-button px-8 py-1 rounded-[15px] text-white shadow-sm font-[300] border-none hover:bg-pinkdark">
 							Login
 						</button>
 					</Link>
