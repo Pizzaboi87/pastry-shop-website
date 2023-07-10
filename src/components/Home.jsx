@@ -1,4 +1,4 @@
-import { macaron, eclair } from '../assets';
+import { macaron, eclair, cream } from '../assets';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -40,7 +40,7 @@ const Home = () => {
 					className="w-[35%] rounded-[25px] shadow-xl"
 				/>
 				<div className="text-justify max-w-[40%] pl-24 text-[18px] leading-10">
-					<p>
+					<p className="mb-8">
 						Welcome to Le Ciel Sucré, where passion and quality converge in the
 						splendid world of French pastry. We believe that desserts are not
 						just simple delicacies, but works of art that offer sensory
@@ -63,7 +63,7 @@ const Home = () => {
 
 			<div className="w-full flex items-center justify-center mt-48 pb-48">
 				<div className="text-justify max-w-[40%] pr-24 text-[18px] leading-10">
-					<p>
+					<p className="mb-8">
 						At Le Ciel Sucré, every pastry, cake, and baked treat is created
 						with the purpose of bringing happiness and joy into our lives. The
 						perfect balance of unique creativity and elegance can be found in
@@ -72,7 +72,6 @@ const Home = () => {
 						patisserie while incorporating modern tastes and trends to awe our
 						visitors.
 					</p>
-
 					<p>
 						It is our pleasure to share this exceptional patisserie and our
 						delicacies with you. Delight in the sweet temptation and immerse
@@ -82,8 +81,8 @@ const Home = () => {
 					</p>
 				</div>
 				<img
-					src={macaron}
-					alt="macaron"
+					src={cream}
+					alt="cream"
 					className="w-[40%] rounded-[25px] shadow-xl"
 				/>
 			</div>
