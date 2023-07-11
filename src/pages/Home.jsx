@@ -6,11 +6,10 @@ import { homeTitle, homeSubtitle, homeText1, homeText2 } from '../constants';
 
 const Home = () => {
 	const motionPropsR = slideIn('right');
-	const motionPropsL = slideIn('left');
 
 	return (
 		<>
-			<div className="w-full flex items-center justify-center mt-56">
+			<div className="flex items-center justify-center mt-56">
 				<motion.span
 					initial={motionPropsR.initial}
 					whileInView={motionPropsR.whileInView}
