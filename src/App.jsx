@@ -1,5 +1,4 @@
 import {
-	Navbar,
 	Home,
 	Recipes,
 	Courses,
@@ -10,12 +9,13 @@ import {
 	NotFound,
 	SignIn,
 	SignUp,
-} from './components';
+} from './pages';
+import { Navbar, Footer } from './components';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 const App = () => {
 	return (
-		<div className="flex flex-col items-center bg-primary w-full">
+		<div className="flex flex-col items-center bg-primary w-full overflow-x-hidden">
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Navigate to="/home" />} />
@@ -30,6 +30,7 @@ const App = () => {
 				<Route path="/shop" element={<Shop />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
+			<Footer />
 		</div>
 	);
 };

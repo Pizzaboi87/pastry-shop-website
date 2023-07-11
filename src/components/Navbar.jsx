@@ -1,6 +1,7 @@
 import { navLinksLeft, navLinksRight } from '../constants';
 import { logo } from '../assets';
 import { Link } from 'react-router-dom';
+import { Button } from '.';
 
 const Navbar = () => {
 	return (
@@ -32,11 +33,9 @@ const Navbar = () => {
 						Register
 					</Link>{' '}
 					/{' '}
-					<Link to="login">
-						<button className="bg-button px-8 py-1 rounded-[15px] text-white shadow-sm font-[300] border-none hover:bg-pinkdark">
-							Login
-						</button>
-					</Link>
+					<Button extraClass="font-[300] py-1" whereTo="/login">
+						Login
+					</Button>
 				</span>
 			</span>
 		</nav>
