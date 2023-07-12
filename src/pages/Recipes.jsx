@@ -19,8 +19,6 @@ const Recipes = () => {
 		} else setNotFound(true);
 	};
 
-	console.log(recipes);
-
 	const showMore = () => {
 		setOffset(offset + 10);
 	};
