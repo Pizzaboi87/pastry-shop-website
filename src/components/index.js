@@ -6,6 +6,7 @@ import Image from './Image';
 import Paragraphs from './Paragraphs';
 import RecipeCard from './RecipeCard';
 import SearchForm from './SearchForm';
+import MainContent from './MainContent';
 
 export {
 	Navbar,
@@ -16,4 +17,5 @@ export {
 	Paragraphs,
 	RecipeCard,
 	SearchForm,
+	MainContent,
 };
