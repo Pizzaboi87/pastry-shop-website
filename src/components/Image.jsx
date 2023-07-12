@@ -13,7 +13,7 @@ const Image = ({ dirPic, image, imgFirst, width }) => {
 			alt={image}
 			className={`${
 				imgFirst ? 'ml-0' : 'ml-24'
-			} w-[${width}%] rounded-[25px] shadow-xl`}
+			} max-w-[${width}%] rounded-[25px] shadow-xl`}
 		/>
 	);
 };

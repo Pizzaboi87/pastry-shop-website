@@ -9,12 +9,12 @@ const Home = () => {
 
 	return (
 		<>
-			<div className="flex items-center justify-center mt-56">
+			<div className="flex items-center justify-center gap-12 mt-60">
 				<motion.span
 					initial={motionPropsR.initial}
 					whileInView={motionPropsR.whileInView}
 					viewport={motionPropsR.viewport}
-					className="w-[35%] text-brown px-8"
+					className="w-[40%] text-brown px-8"
 				>
 					{homeTitle.map((line) => (
 						<h1 className="text-[4.5rem] font-[300]" key={line}>
