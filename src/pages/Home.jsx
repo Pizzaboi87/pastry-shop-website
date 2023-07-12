@@ -32,7 +32,7 @@ const Home = () => {
 						extraClass="font-[500] py-2 mt-6 text-[1.3rem]"
 						whereTo="/login"
 					>
-						EXPLORE NOW
+						ORDER NOW
 					</Button>
 				</motion.span>
 
