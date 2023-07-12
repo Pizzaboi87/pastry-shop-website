@@ -1,11 +1,10 @@
-import {useState} from 'react';
+import { useState } from 'react';
 
-const SearchForm = ({setLoading, setNotFound, setSearchQuery}) => {
+const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
+	const allowedCharacters = /^[a-zA-Z- :]+$/;
+	const [searchText, setSearchText] = useState('');
 
-  const allowedCharacters = /^[a-zA-Z- :]+$/;
-  const [searchText, setSearchText] = useState('');
-
-  const handleChange = (e) => {
+	const handleChange = (e) => {
 		setSearchText(e.target.value);
 	};
 
@@ -14,8 +13,10 @@ const SearchForm = ({setLoading, setNotFound, setSearchQuery}) => {
 		setLoading(true);
 		setNotFound(false);
 
-		if (allowedCharacters.test(searchText)) setSearchQuery(searchText);
-		else {
+		if (allowedCharacters.test(searchText)) {
+			setOffset(0);
+			setSearchQuery(searchText);
+		} else {
 			setLoading(false);
 			setNotFound(true);
 		}

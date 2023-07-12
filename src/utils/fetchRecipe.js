@@ -1,5 +1,5 @@
-export const fetchRecipe = async (query) => {
-	const url = `https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=${query}&offset=0`;
+export const fetchRecipe = async (query, offset) => {
+	const url = `https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=${query}&offset=${offset}`;
 	const options = {
 		method: 'GET',
 		headers: {

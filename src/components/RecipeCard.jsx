@@ -17,8 +17,8 @@ const RecipeCard = ({ recipe }) => {
 			</h1>
 			<h2 className="font-bold text-[1.3rem] font-[300]">Ingredients:</h2>
 			<ul className="mb-8 text-[1.1rem] font-[300]">
-				{recipe.ingredients.split('|').map((ingredient) => (
-					<li key={ingredient}>{ingredient}</li>
+				{recipe.ingredients.split('|').map((ingredient, index) => (
+					<li key={`${ingredient}-${index}`}>{ingredient}</li>
 				))}
 			</ul>
 			<p className="text-[1.1rem] font-[400]">{recipe.instructions}</p>
