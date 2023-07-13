@@ -40,3 +40,11 @@
 		opacity: 0;
 	}
 }
+
+.shadow {
+	background: linear-gradient(
+		180deg,
+		rgba(166, 163, 163, 0.3) 30%,
+		rgba(255, 255, 255, 1) 100%
+	);
+}
