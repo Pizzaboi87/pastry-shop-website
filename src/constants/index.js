@@ -78,28 +78,28 @@ const footerLinks = [
 const courses = [
 	{
 		title: 'Baking Course 1',
-		image: '/torta.webp',
+		image: './src/assets/torta.webp',
 		alt: 'torta',
 		details:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet diam rutrum nulla dapibus, sed commodo enim tincidunt. Nullam sodales iaculis tincidunt.',
 	},
 	{
 		title: 'Baking Course 2',
-		image: '/waffle.webp',
+		image: './src/assets/waffle.webp',
 		alt: 'waffle',
 		details:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet diam rutrum nulla dapibus, sed commodo enim tincidunt. Nullam sodales iaculis tincidunt.',
 	},
 	{
 		title: 'Baking Course 3',
-		image: '/history.webp',
+		image: './src/assets/history.webp',
 		alt: 'history',
 		details:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet diam rutrum nulla dapibus, sed commodo enim tincidunt. Nullam sodales iaculis tincidunt.',
 	},
 	{
 		title: 'Baking Course 4',
-		image: '/jelly.webp',
+		image: './src/assets/jelly.webp',
 		alt: 'jelly',
 		details:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet diam rutrum nulla dapibus, sed commodo enim tincidunt. Nullam sodales iaculis tincidunt.',
