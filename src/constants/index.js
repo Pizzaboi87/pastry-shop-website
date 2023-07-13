@@ -75,6 +75,37 @@ const footerLinks = [
 	},
 ];
 
+const courses = [
+	{
+		title: 'Baking Course 1',
+		image: '/torta.webp',
+		alt: 'torta',
+		details:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet diam rutrum nulla dapibus, sed commodo enim tincidunt. Nullam sodales iaculis tincidunt.',
+	},
+	{
+		title: 'Baking Course 2',
+		image: '/waffle.webp',
+		alt: 'waffle',
+		details:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet diam rutrum nulla dapibus, sed commodo enim tincidunt. Nullam sodales iaculis tincidunt.',
+	},
+	{
+		title: 'Baking Course 3',
+		image: '/history.webp',
+		alt: 'history',
+		details:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet diam rutrum nulla dapibus, sed commodo enim tincidunt. Nullam sodales iaculis tincidunt.',
+	},
+	{
+		title: 'Baking Course 4',
+		image: '/jelly.webp',
+		alt: 'jelly',
+		details:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet diam rutrum nulla dapibus, sed commodo enim tincidunt. Nullam sodales iaculis tincidunt.',
+	},
+];
+
 export {
 	navLinksLeft,
 	navLinksRight,
@@ -83,4 +114,5 @@ export {
 	homeText1,
 	homeText2,
 	footerLinks,
+	courses,
 };
