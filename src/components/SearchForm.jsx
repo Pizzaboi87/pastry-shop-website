@@ -34,7 +34,7 @@ const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
 			<input
 				type="submit"
 				value="Search"
-				className="bg-button hover:bg-pinkdark cursor-pointer py-2 px-3 text-white font-bold rounded-[15px] shadow-md mb-24"
+				className="bg-logopink hover:bg-pinkdark cursor-pointer py-2 px-3 text-white font-bold rounded-[15px] shadow-md mb-24"
 			/>
 		</form>
 	);

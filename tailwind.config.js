@@ -17,6 +17,9 @@ module.exports = {
 				pinklight: '#f9c0b6',
 				logopink: '#e45a84',
 			},
+			screens: {
+				'3xl': '1600px',
+			},
 		},
 	},
 	plugins: [],

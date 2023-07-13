@@ -7,6 +7,7 @@ import Paragraphs from './Paragraphs';
 import RecipeCard from './RecipeCard';
 import SearchForm from './SearchForm';
 import MainContent from './MainContent';
+import Awning from './Awning';
 
 export {
 	Navbar,
@@ -18,4 +19,5 @@ export {
 	RecipeCard,
 	SearchForm,
 	MainContent,
+	Awning,
 };

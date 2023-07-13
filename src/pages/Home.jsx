@@ -9,7 +9,7 @@ const Home = () => {
 
 	return (
 		<>
-			<div className="flex items-center justify-center gap-12 mt-60">
+			<div className="flex items-center justify-center gap-12 mt-0 3xl:mt-64 mt-44">
 				<motion.span
 					initial={motionPropsR.initial}
 					whileInView={motionPropsR.whileInView}
@@ -23,7 +23,7 @@ const Home = () => {
 					))}
 
 					{homeSubtitle.map((line) => (
-						<p className="my-2" key={line[0]}>
+						<p className="my-2 text-[0.95rem]" key={line[0]}>
 							{line}
 						</p>
 					))}

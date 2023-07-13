@@ -15,7 +15,7 @@ const Navbar = () => {
 			</ul>
 
 			<img
-				className="absolute rounded-full h-full contrast-100"
+				className="absolute rounded-full h-[90%] contrast-100"
 				src={logo}
 				alt="logo"
 			/>

@@ -2,7 +2,7 @@ import { Image, Paragraphs } from '.';
 
 const TextAndImage = ({ dirPic, dirText, image, imgFirst, text, width }) => {
 	return (
-		<div className="w-[85%] flex items-center justify-center mt-56">
+		<div className="w-[85%] flex items-center justify-center mt-36 3xl:mt-56">
 			{imgFirst ? (
 				<>
 					<Image
