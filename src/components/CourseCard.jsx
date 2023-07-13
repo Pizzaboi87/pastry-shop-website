@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { slideIn } from '../utils/motion';
-import { torta } from '../assets';
+import { history } from '../assets';
 
 const CourseCard = ({ index }) => {
 	const motionPropsR = slideIn('right', index * 0.25);
@@ -13,7 +13,7 @@ const CourseCard = ({ index }) => {
 			className="max-w-[20rem] text-justify bg-pinklight p-4 rounded-[15px] shadow-xl flex flex-col items-center"
 		>
 			<h3 className="mb-4 text-text text-[1.3rem] font-[500]">Baking Course</h3>
-			<img src={torta} className="w-[300px] mb-4" />
+			<img src={history} className="w-[300px] mb-4" />
 			<p className="text-text text-justify mb-4">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet
 				diam rutrum nulla dapibus, sed commodo enim tincidunt. Nullam sodales
