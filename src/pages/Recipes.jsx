@@ -46,7 +46,7 @@ const Recipes = () => {
 					))}
 					<button
 						onClick={showMore}
-						className="px-8 py-3 bg-button hover:bg-pinkdark text-[1.3rem] text-white font-bold rounded-[15px] shadow-xl"
+						className="px-8 py-3 bg-logopink hover:bg-pinkdark text-[1.3rem] text-white font-bold rounded-[15px] shadow-xl"
 					>
 						show more
 					</button>

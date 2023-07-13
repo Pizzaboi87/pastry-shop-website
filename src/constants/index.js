@@ -45,6 +45,36 @@ const homeText2 = [
 	'It is our pleasure to share this exceptional patisserie and our delicacies with you. Delight in the sweet temptation and immerse yourself in the world of flavors and textures that only Le Ciel Sucré offers. Become a part of our traditions and beloved pastry heritage as you honor us with your visit.',
 ];
 
+const footerLinks = [
+	{
+		title: 'About',
+		links: [
+			{ title: 'How it works', url: '/' },
+			{ title: 'Featured', url: '/' },
+			{ title: 'Partnership', url: '/' },
+			{ title: 'Bussiness Relation', url: '/' },
+		],
+	},
+	{
+		title: 'Company',
+		links: [
+			{ title: 'Events', url: '/' },
+			{ title: 'Blog', url: '/' },
+			{ title: 'Podcast', url: '/' },
+			{ title: 'Invite a friend', url: '/' },
+		],
+	},
+	{
+		title: 'Socials',
+		links: [
+			{ title: 'Discord', url: '/' },
+			{ title: 'Instagram', url: '/' },
+			{ title: 'Twitter', url: '/' },
+			{ title: 'Facebook', url: '/' },
+		],
+	},
+];
+
 export {
 	navLinksLeft,
 	navLinksRight,
@@ -52,4 +82,5 @@ export {
 	homeSubtitle,
 	homeText1,
 	homeText2,
+	footerLinks,
 };

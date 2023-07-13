@@ -6,6 +6,7 @@ module.exports = {
 		extend: {
 			colors: {
 				primary: '#f5edef',
+				text: '#2f2f2f',
 				button: '#a96973',
 				brown: '#4a3a3b',
 				red: '#ce5a4f',
@@ -14,6 +15,7 @@ module.exports = {
 				yellowlight: '#eace9b',
 				pinkdark: '#df919f',
 				pinklight: '#f9c0b6',
+				logopink: '#e45a84',
 			},
 		},
 	},

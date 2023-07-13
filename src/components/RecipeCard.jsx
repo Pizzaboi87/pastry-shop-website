@@ -30,19 +30,23 @@ const RecipeCard = ({ recipe }) => {
 		>
 			<Icon
 				icon={liked ? 'mdi:heart' : 'mdi:heart-outline'}
-				className="text-[3rem] absolute right-8 top-10 cursor-pointer text-button"
+				className="text-[3rem] absolute right-8 top-10 cursor-pointer text-logopink"
 				onClick={() => setLiked(!liked)}
 			/>
-			<h1 className="font-bold mb-4 text-[1.8rem] font-[500]">
+			<h1 className="font-bold mb-4 text-[1.8rem] font-[500] text-text">
 				{recipe.title}
 			</h1>
-			<h2 className="font-bold text-[1.3rem] font-[300]">Ingredients:</h2>
-			<ul className="mb-8 text-[1.1rem] font-[300]">
+			<h2 className="font-bold text-[1.3rem] text-text font-[300]">
+				Ingredients:
+			</h2>
+			<ul className="mb-8 text-[1.1rem] font-[300] text-text">
 				{ingredients.map((ingredient, index) => (
 					<li key={`${ingredient}-${index}`}>{ingredient}</li>
 				))}
 			</ul>
-			<p className="text-[1.1rem] font-[400]">{recipe.instructions}</p>
+			<p className="text-[1.1rem] font-[400] text-text">
+				{recipe.instructions}
+			</p>
 			<div className="mt-8 flex gap-4">
 				<FacebookShareButton
 					url={'https://ciel-sucre.vercel.app'}
