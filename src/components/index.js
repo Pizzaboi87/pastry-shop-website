@@ -8,6 +8,7 @@ import RecipeCard from './RecipeCard';
 import SearchForm from './SearchForm';
 import MainContent from './MainContent';
 import Awning from './Awning';
+import CourseCard from './CourseCard';
 
 export {
 	Navbar,
@@ -20,4 +21,5 @@ export {
 	SearchForm,
 	MainContent,
 	Awning,
+	CourseCard,
 };
