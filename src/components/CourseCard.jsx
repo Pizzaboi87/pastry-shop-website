@@ -30,7 +30,7 @@ const CourseCard = ({ course, index }) => {
         <h3 className="mb-4 text-text text-[1.3rem] font-[500]">
           {course.title}
         </h3>
-        <div className="overflow-hidden w-full h-full">
+        <div className="overflow-hidden w-full h-[10rem] mb-8">
           <img
             src={image}
             alt={course.alt}
