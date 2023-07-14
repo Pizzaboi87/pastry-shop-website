@@ -14,7 +14,7 @@ module.exports = {
         yellowdark: "#efa75c",
         yellowlight: "#eace9b",
         pinkdark: "#df919f",
-        pinklight: "#f9c0b6",
+        pinklight: "#fcdfda",
         logopink: "#e45a84",
       },
       screens: {
@@ -22,9 +22,12 @@ module.exports = {
       },
       backgroundSize: {
         logo: "120%",
+        background: "150%",
       },
       backgroundImage: {
         logoimage: "url('/src/assets/logo.png')",
+        main: "url('/src/assets/background.png')",
+        jam: "url('/src/assets/jam.png')",
       },
     },
   },

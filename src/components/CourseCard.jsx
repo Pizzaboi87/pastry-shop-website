@@ -24,17 +24,19 @@ const CourseCard = ({ course, index }) => {
       initial={motionPropsR.initial}
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
-      className="w-[25%] text-justify bg-pinklight p-4 rounded-[15px] shadow-xl flex flex-col items-center justify-between"
+      className="w-[20rem] text-justify bg-pinklight p-4 rounded-[15px] shadow-xl flex flex-col items-center justify-between"
     >
       <div className="flex flex-col justify-center items-center w-full">
         <h3 className="mb-4 text-text text-[1.3rem] font-[500]">
           {course.title}
         </h3>
-        <img
-          src={image}
-          alt={course.alt}
-          className="w-[100%] h-[10rem] object-cover mb-4"
-        />
+        <div className="overflow-hidden w-full h-full">
+          <img
+            src={image}
+            alt={course.alt}
+            className="w-[100%] h-[10rem] object-cover mb-4 hover:scale-150 hover:translate-y-8 ease-in-out transition-all duration-500"
+          />
+        </div>
       </div>
       <div className="h-full flex flex-col justify-between">
         <p className="text-text text-justify mb-4">{course.details}</p>
