@@ -7,7 +7,7 @@ const Awning = () => {
       <div className="piece w-[80px] h-full bg-primary rounded-b-full shadow-xl">
         <div className="shadow w-full h-full rounded-b-full" />
       </div>
-      <div className="piece w-[80px] h-full bg-pinklight rounded-b-full shadow-xl">
+      <div className="piece w-[80px] h-full bg-pinkdark rounded-b-full shadow-xl">
         <div className="shadow w-full h-full rounded-b-full" />
       </div>
     </Fragment>
