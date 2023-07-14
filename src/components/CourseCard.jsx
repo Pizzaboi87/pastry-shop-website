@@ -1,30 +1,49 @@
-import { motion } from 'framer-motion';
-import { slideIn } from '../utils/motion';
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { slideIn } from "../utils/motion";
 
 const CourseCard = ({ course, index }) => {
-	const motionPropsR = slideIn('right', index * 0.25);
+  const motionPropsR = slideIn("right", index * 0.25);
+  const [image, setImage] = useState(null);
 
-	return (
-		<motion.div
-			initial={motionPropsR.initial}
-			whileInView={motionPropsR.whileInView}
-			viewport={motionPropsR.viewport}
-			className="max-w-[20rem] text-justify bg-pinklight p-4 rounded-[15px] shadow-xl flex flex-col items-center"
-		>
-			<h3 className="mb-4 text-text text-[1.3rem] font-[500]">
-				{course.title}
-			</h3>
-			<img
-				src={course.image}
-				alt={course.alt}
-				className="w-[100%] h-[12rem] object-cover mb-4"
-			/>
-			<p className="text-text text-justify mb-4">{course.details}</p>
-			<button className="px-3 py-2 bg-logopink hover:bg-pinkdark text-[1rem] text-white font-[400] rounded-[15px] shadow-xl">
-				Learn More
-			</button>
-		</motion.div>
-	);
+  const loadImage = async () => {
+    const { default: image } = await import(`../assets/${course.image}.webp`);
+    return image;
+  };
+
+  useEffect(() => {
+    loadImage().then(setImage);
+  }, []);
+
+  if (!image) {
+    return null;
+  }
+
+  return (
+    <motion.div
+      initial={motionPropsR.initial}
+      whileInView={motionPropsR.whileInView}
+      viewport={motionPropsR.viewport}
+      className="w-[25%] text-justify bg-pinklight p-4 rounded-[15px] shadow-xl flex flex-col items-center justify-between"
+    >
+      <div className="flex flex-col justify-center items-center w-full">
+        <h3 className="mb-4 text-text text-[1.3rem] font-[500]">
+          {course.title}
+        </h3>
+        <img
+          src={image}
+          alt={course.alt}
+          className="w-[100%] h-[10rem] object-cover mb-4"
+        />
+      </div>
+      <div className="h-full flex flex-col justify-between">
+        <p className="text-text text-justify mb-4">{course.details}</p>
+        <button className="px-3 py-2 bg-logopink hover:bg-pinkdark text-[1rem] text-white font-[400] rounded-[15px] shadow-xl">
+          Learn More
+        </button>
+      </div>
+    </motion.div>
+  );
 };
 
 export default CourseCard;
