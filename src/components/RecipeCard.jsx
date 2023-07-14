@@ -38,9 +38,24 @@ const RecipeCard = ({ recipe }) => {
       </h1>
       <h2 className="text-[1.3rem] text-text font-[300]">Ingredients:</h2>
       <ul className="mb-8 text-[1.1rem] font-[300] text-text">
-        {ingredients.map((ingredient, index) => (
-          <li key={`${ingredient}-${index}`}>{ingredient}</li>
-        ))}
+        {ingredients.map((ingredient, index) => {
+          const [checked, setChecked] = useState(false);
+
+          const toggleChecked = () => {
+            setChecked(!checked);
+          };
+
+          return (
+            <li key={`${ingredient}-${index}`} className="flex items-center">
+              <Icon
+                icon={checked ? "mdi:muffin" : "ri:checkbox-blank-line"}
+                className="text-[2rem] cursor-pointer text-logopink mr-2"
+                onClick={toggleChecked}
+              />
+              {ingredient}
+            </li>
+          );
+        })}
       </ul>
       <p className="text-[1.1rem] font-[400] text-text">
         {recipe.instructions}
