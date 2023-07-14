@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
-import { Link } from "react-router-dom";
 import { LinkButton } from "../components";
 
 const CourseCard = ({ course, index }) => {

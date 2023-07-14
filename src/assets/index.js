@@ -1,4 +1,7 @@
 import background from "./background.png";
+import course1 from "./course-1.webp";
+import course2 from "./course-2.webp";
+import course3 from "./course-3.webp";
 import cream from "./cream.webp";
 import eclair from "./eclair.webp";
 import history from "./history.webp";
@@ -11,6 +14,9 @@ import waffle from "./waffle.webp";
 
 export {
   background,
+  course1,
+  course2,
+  course3,
   cream,
   eclair,
   history,

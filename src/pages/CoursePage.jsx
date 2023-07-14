@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { courses } from "../constants";
+import { CourseForm } from "../components";
 
 const CoursePage = () => {
   const { id } = useParams();
@@ -32,7 +33,7 @@ const CoursePage = () => {
   }
 
   return (
-    <div className="mt-56 w-[85%] h-[300vh] flex flex-col items-center">
+    <div className="mt-56 w-[85%] flex flex-col items-center">
       <div className="w-[85% bg-white rounded-xl p-8 flex flex-col">
         <h1 className="text-4xl text-center text-text font-[500] mb-8">
           {course.title}
@@ -81,6 +82,7 @@ const CoursePage = () => {
               );
             }
           })}
+        <CourseForm />
       </div>
     </div>
   );

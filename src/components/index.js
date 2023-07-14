@@ -1,5 +1,6 @@
 import Awning from "./Awning";
 import CourseCard from "./CourseCard";
+import CourseForm from "./CourseForm";
 import Footer from "./Footer";
 import Image from "./Image";
 import LinkButton from "./LinkButton";
@@ -14,6 +15,7 @@ import TextAndImage from "./TextAndImage";
 export {
   Awning,
   CourseCard,
+  CourseForm,
   Footer,
   Image,
   LinkButton,
