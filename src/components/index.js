@@ -1,25 +1,27 @@
-import Navbar from './Navbar';
-import Footer from './Footer';
-import TextAndImage from './TextAndImage';
-import Button from './Button';
-import Image from './Image';
-import Paragraphs from './Paragraphs';
-import RecipeCard from './RecipeCard';
-import SearchForm from './SearchForm';
-import MainContent from './MainContent';
-import Awning from './Awning';
-import CourseCard from './CourseCard';
+import Awning from "./Awning";
+import CourseCard from "./CourseCard";
+import Footer from "./Footer";
+import Image from "./Image";
+import LinkButton from "./LinkButton";
+import MainContent from "./MainContent";
+import Navbar from "./Navbar";
+import Paragraphs from "./Paragraphs";
+import RecipeCard from "./RecipeCard";
+import ScrollToTop from "./ScrollToTop";
+import SearchForm from "./SearchForm";
+import TextAndImage from "./TextAndImage";
 
 export {
-	Navbar,
-	Footer,
-	TextAndImage,
-	Button,
-	Image,
-	Paragraphs,
-	RecipeCard,
-	SearchForm,
-	MainContent,
-	Awning,
-	CourseCard,
+  Awning,
+  CourseCard,
+  Footer,
+  Image,
+  LinkButton,
+  MainContent,
+  Navbar,
+  Paragraphs,
+  RecipeCard,
+  ScrollToTop,
+  SearchForm,
+  TextAndImage,
 };

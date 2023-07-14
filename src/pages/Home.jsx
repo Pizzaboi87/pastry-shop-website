@@ -1,7 +1,7 @@
 import { macaron, eclair, cream } from "../assets";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
-import { Button, Image, TextAndImage } from "../components";
+import { LinkButton, Image, TextAndImage } from "../components";
 import { homeTitle, homeSubtitle, homeText1, homeText2 } from "../constants";
 
 const Home = () => {
@@ -28,12 +28,12 @@ const Home = () => {
             </p>
           ))}
 
-          <Button
-            extraClass="font-[500] py-2 mt-6 text-[1.3rem]"
+          <LinkButton
+            extraClass="font-[500] px-8 py-2 mt-6 text-[1.3rem]"
             whereTo="/login"
           >
             ORDER NOW
-          </Button>
+          </LinkButton>
         </motion.span>
 
         <Image dirPic="left" image={macaron} imgFirst={true} width={40} />

@@ -74,6 +74,7 @@ const footerLinks = [
 
 const courses = [
   {
+    id: "baking",
     title: "Baking Course",
     image: "torta",
     alt: "torta",
@@ -81,6 +82,7 @@ const courses = [
       "Learn to bake authentic French tortes in our Baking Course. Elevate your baking skills and create delicious homemade cakes. Join now and master the art of French torte baking!",
   },
   {
+    id: "everyday",
     title: "Everyday Sweetness",
     image: "waffle",
     alt: "waffle",
@@ -88,6 +90,7 @@ const courses = [
       "Discover the joy of baking everyday French pastries. Join our course to learn the techniques and recipes for creating delectable treats that can be enjoyed in your daily life.",
   },
   {
+    id: "history",
     title: "History of French Pastry ",
     image: "history",
     alt: "history",
@@ -95,6 +98,7 @@ const courses = [
       "Explore the fascinating history of French pastry and learn the recipes of historic desserts in this course. Dive into the rich traditions of French patisserie and uncover the hidden stories behind iconic sweets.",
   },
   {
+    id: "jelly",
     title: "Jelly-Joker",
     image: "jelly",
     alt: "jelly",

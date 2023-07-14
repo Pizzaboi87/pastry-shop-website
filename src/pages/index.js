@@ -1,23 +1,25 @@
-import Home from './Home';
-import Recipes from './Recipes';
-import Courses from './Courses';
-import Occassions from './Occassions';
-import OurStory from './OurStory';
-import Blog from './Blog';
-import Shop from './Shop';
-import NotFound from './NotFound';
-import SignIn from './SignIn';
-import SignUp from './SignUp';
+import Blog from "./Blog";
+import CoursePage from "./CoursePage";
+import Courses from "./Courses";
+import Home from "./Home";
+import NotFound from "./NotFound";
+import Occassions from "./Occassions";
+import OurStory from "./OurStory";
+import Recipes from "./Recipes";
+import Shop from "./Shop";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 
 export {
-	Home,
-	Recipes,
-	Courses,
-	Occassions,
-	OurStory,
-	Blog,
-	SignIn,
-	SignUp,
-	Shop,
-	NotFound,
+  Blog,
+  CoursePage,
+  Courses,
+  Home,
+  NotFound,
+  Occassions,
+  OurStory,
+  Recipes,
+  Shop,
+  SignIn,
+  SignUp,
 };

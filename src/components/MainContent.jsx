@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import ScrollToTop from ".";
 import {
   Home,
   Recipes,
@@ -9,9 +12,8 @@ import {
   NotFound,
   SignIn,
   SignUp,
+  CoursePage,
 } from "../pages";
-import { useState, useEffect } from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 const MainContent = () => {
   const location = useLocation();
@@ -33,6 +35,7 @@ const MainContent = () => {
         }
       }}
     >
+      <ScrollToTop />
       <Routes location={displayLocation}>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
@@ -44,7 +47,9 @@ const MainContent = () => {
         <Route path="/login" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/courses/:id" element={<CoursePage />} />
         <Route path="*" element={<NotFound />} />
+        courses
       </Routes>
     </div>
   );

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
+import { Link } from "react-router-dom";
+import { LinkButton } from "../components";
 
 const CourseCard = ({ course, index }) => {
   const motionPropsR = slideIn("right", index * 0.25);
@@ -40,9 +42,12 @@ const CourseCard = ({ course, index }) => {
       </div>
       <div className="h-full flex flex-col justify-between">
         <p className="text-text text-justify mb-4">{course.details}</p>
-        <button className="px-3 py-2 bg-logopink hover:bg-pinkdark text-[1rem] text-white font-[400] rounded-[15px] shadow-xl">
+        <LinkButton
+          extraClass="px-3 py-2 text-[1rem] font-[400]"
+          whereTo={`/courses/` + course.id}
+        >
           Learn More
-        </button>
+        </LinkButton>
       </div>
     </motion.div>
   );
