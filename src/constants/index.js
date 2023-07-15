@@ -75,14 +75,14 @@ const footerLinks = [
 const courses = [
   {
     id: "baking",
-    title: "Baking Course",
+    title: "Cake Baking Mastery",
     image: "torta",
     imageArray: ["baking-1", "baking-2", "baking-3", "baking-4"],
     alt: "torta",
     details:
       "Learn to bake authentic French tortes in our Baking Course. Elevate your baking skills and create delicious homemade cakes. Join now and master the art of French torte baking!",
     longDetails: [
-      `Welcome to our Baking Course, where you'll embark on a journey to master the art of baking authentic French tortes. This course is designed to elevate your baking skills and help you create delicious homemade cakes that will leave everyone craving for more.\n During this immersive learning experience, you will be introduced to the secrets of French torte baking by our expert instructors. They will guide you through each step of the process, from selecting the finest ingredients to mastering the techniques that will make your tortes truly exceptional.\n What sets our Baking Course apart is the emphasis on authenticity. You will learn the traditional French recipes passed down through generations, ensuring that your creations capture the essence of French pastry. Through hands-on practice and demonstrations, you will gain a deep understanding of the techniques and principles that make French tortes so irresistible.`,
+      `Welcome to our Cake Baking Mastery Course, where you'll embark on a journey to master the art of baking authentic French tortes. This course is designed to elevate your baking skills and help you create delicious homemade cakes that will leave everyone craving for more.\n During this immersive learning experience, you will be introduced to the secrets of French torte baking by our expert instructors. They will guide you through each step of the process, from selecting the finest ingredients to mastering the techniques that will make your tortes truly exceptional.\n What sets our Cake Baking Mastery Course apart is the emphasis on authenticity. You will learn the traditional French recipes passed down through generations, ensuring that your creations capture the essence of French pastry. Through hands-on practice and demonstrations, you will gain a deep understanding of the techniques and principles that make French tortes so irresistible.`,
 
       [
         "By the end of this course, you can expect to:",
@@ -95,7 +95,7 @@ const courses = [
         "4. Create your own signature torte: Put your newfound skills to the test and unleash your creativity by designing and baking your own unique torte. With the guidance of our instructors, you will have the opportunity to experiment with flavors, textures, and decorative elements, resulting in a masterpiece that reflects your personal style.],",
       ],
 
-      "To ensure an optimal learning experience, our Baking Course provides a supportive and engaging environment. You will have access to state-of-the-art baking facilities and tools, as well as ample opportunities for hands-on practice. Our instructors will offer personalized guidance and feedback, helping you refine your techniques and overcome any challenges along the way. Enroll now in our Baking Course and unlock the secrets of French torte baking. Whether you aspire to become a professional pastry chef or simply want to impress your friends and family with delectable homemade cakes, this course is your gateway to mastering the art of French tortes. Don't miss this opportunity to elevate your baking skills and embark on a culinary adventure like no other!",
+      "To ensure an optimal learning experience, our Cake Baking Mastery Course provides a supportive and engaging environment. You will have access to state-of-the-art baking facilities and tools, as well as ample opportunities for hands-on practice. Our instructors will offer personalized guidance and feedback, helping you refine your techniques and overcome any challenges along the way. Enroll now in our Cake Baking Mastery Course and unlock the secrets of French torte baking. Whether you aspire to become a professional pastry chef or simply want to impress your friends and family with delectable homemade cakes, this course is your gateway to mastering the art of French tortes. Don't miss this opportunity to elevate your baking skills and embark on a culinary adventure like no other!",
     ],
   },
   {
