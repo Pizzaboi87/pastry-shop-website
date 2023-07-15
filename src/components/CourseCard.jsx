@@ -42,7 +42,7 @@ const CourseCard = ({ course, index }) => {
       <div className="h-full flex flex-col justify-between">
         <p className="text-text text-justify mb-4">{course.details}</p>
         <LinkButton
-          extraClass="px-3 py-2 text-[1rem] font-[400]"
+          extraClass="px-3 py-2 text-[1rem] font-[400] w-[50%] self-center"
           whereTo={`/courses/` + course.id}
         >
           Learn More

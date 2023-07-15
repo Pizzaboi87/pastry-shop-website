@@ -5,7 +5,7 @@ import { LinkButton } from ".";
 
 const Navbar = () => {
   return (
-    <nav className="w-[85%] h-[6rem] bg-white fixed top-8 rounded-[30px] flex items-center justify-around text-[20px] font-[200] shadow-sm z-10">
+    <nav className="w-[85%] h-[7rem] bg-white fixed pt-4 top-7 rounded-[30px] flex items-center justify-around text-[1.3rem] font-[300] shadow-md z-10">
       <ul className="flex justify-center gap-12">
         {navLinksLeft.map((link) => (
           <li key={link.title} className="text-text hover:text-logopink">
@@ -15,7 +15,7 @@ const Navbar = () => {
       </ul>
 
       <img
-        className="absolute rounded-full h-[90%] contrast-100"
+        className="absolute rounded-full h-[80%] contrast-100"
         src={logo}
         alt="logo"
       />

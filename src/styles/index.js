@@ -10,6 +10,8 @@ const phoneInputStyle = {
   color: "#2f2f2f",
   backgroundColor: "#fff",
   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
+  outlineStyle: "dotted",
+  outlineColor: "#e45a84",
 };
 
 export { phoneInputStyle };

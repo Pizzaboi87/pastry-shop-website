@@ -113,7 +113,7 @@ const CourseForm = () => {
             name="name"
             placeholder="Enter your name"
             onChange={handleChange}
-            className="text-text text-[1.2rem] font-[400] py-2 px-4 rounded-xl outline-none"
+            className="text-text text-[1.2rem] font-[400] py-2 px-4 rounded-xl outline-none  outline-dotted outline-logopink"
           />
         </label>
         <label className="flex flex-col text-text text-[1.2rem] font-[500] p-4">
@@ -135,7 +135,7 @@ const CourseForm = () => {
             name="email"
             placeholder="Enter your email address"
             onChange={handleChange}
-            className="text-text text-[1.2rem] font-[400] py-2 px-4 rounded-xl outline-none"
+            className="text-text text-[1.2rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-logopink"
           />
         </label>
         <label className="flex flex-col text-text text-[1.2rem] font-[500] p-4">
@@ -145,7 +145,7 @@ const CourseForm = () => {
             value={form.course}
             name="course"
             onChange={handleChange}
-            className="text-text text-[1.2rem] font-[400] py-2 px-4 rounded-xl outline-none"
+            className="text-text text-[1.2rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-logopink"
           >
             <option value="" disabled hidden>
               Choose from our courses
@@ -165,7 +165,7 @@ const CourseForm = () => {
             name="question"
             onChange={handleChange}
             rows={5}
-            className="text-text text-[1.2rem] font-[400] py-2 px-4 rounded-xl outline-none"
+            className="text-text text-[1.2rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-logopink"
           />
         </label>
         <button

@@ -52,3 +52,8 @@ body {
     rgba(255, 255, 255, 1) 100%
   );
 }
+
+.recolor {
+  filter: grayscale(100%) invert(62%) sepia(26%) saturate(7061%)
+    hue-rotate(307deg) brightness(93%) contrast(93%);
+}
