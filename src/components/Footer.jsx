@@ -5,7 +5,7 @@ import { jam } from "../assets/";
 const Footer = () => {
   return (
     <footer className="w-full flex flex-col mt-24 bg-pinklight text-text">
-      <img src={jam} alt="jam" className="bg-contain w-full h-[6.4rem]" />
+      <img src={jam} alt="jam" className="h-[10rem]" />
       <div className="flex flex-wrap justify-between items-center px-20">
         <div className="flex flex-col items-center justify-center">
           <div
