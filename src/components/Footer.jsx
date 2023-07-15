@@ -24,15 +24,15 @@ const Footer = () => {
               <p className="font-[600] text-[1.2rem] text-logopink">
                 {link.title}
               </p>
-              {link.links.map((item) => (
-                <Link
-                  key={item.title}
-                  href={item.url}
-                  className="font-[300] text-[1rem] hover:text-logopink"
-                >
-                  {item.title}
-                </Link>
-              ))}
+              <ul>
+                {link.links.map((item) => (
+                  <li key={item.title} className="font-[300] text-[1rem]">
+                    <Link to={item.url} className="hover:text-logopink">
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

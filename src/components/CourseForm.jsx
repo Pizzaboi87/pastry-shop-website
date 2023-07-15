@@ -2,12 +2,11 @@ import Swal from "sweetalert2";
 import PhoneInput from "react-phone-input-2";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import { courses } from "../constants";
 import { course1, course2, course3 } from "../assets";
 import { phoneInputStyle } from "../styles";
 import "react-phone-input-2/lib/bootstrap.css";
 
-const CourseForm = () => {
+const CourseForm = ({ courses }) => {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",

@@ -16,20 +16,22 @@ const Home = () => {
           viewport={motionPropsR.viewport}
           className="w-[40%] text-brown px-8"
         >
-          {homeTitle.map((line) => (
-            <h1 className="text-[4.5rem] font-[300]" key={line}>
-              {line}
-            </h1>
-          ))}
+          <div className="mb-6">
+            {homeTitle.map((line) => (
+              <h1 className="text-[4.5rem] font-[300]" key={line}>
+                {line}
+              </h1>
+            ))}
 
-          {homeSubtitle.map((line) => (
-            <p className="my-2 text-[0.95rem]" key={line[0]}>
-              {line}
-            </p>
-          ))}
+            {homeSubtitle.map((line) => (
+              <p className="my-2 text-[0.95rem]" key={line[0]}>
+                {line}
+              </p>
+            ))}
+          </div>
 
           <LinkButton
-            extraClass="font-[500] px-8 py-2 mt-6 text-[1.3rem]"
+            extraClass="font-[500] px-8 py-2 text-[1.3rem]"
             whereTo="/login"
           >
             ORDER NOW

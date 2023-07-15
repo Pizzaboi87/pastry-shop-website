@@ -82,7 +82,7 @@ const CoursePage = () => {
               );
             }
           })}
-        <CourseForm />
+        <CourseForm courses={courses} />
       </div>
     </div>
   );
