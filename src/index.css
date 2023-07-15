@@ -57,3 +57,9 @@ body {
   filter: grayscale(100%) invert(62%) sepia(26%) saturate(7061%)
     hue-rotate(307deg) brightness(93%) contrast(93%);
 }
+
+.box {
+  background: #fff radial-gradient(#fcdfda 0px, #fcdfda 7px, transparent 7px);
+  background-size: 1.25rem 1.25rem;
+  background-position: -0.625rem;
+}

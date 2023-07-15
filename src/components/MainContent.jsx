@@ -2,17 +2,17 @@ import { useState, useEffect } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { ScrollToTop } from ".";
 import {
-  Home,
-  Recipes,
-  Courses,
-  Occassions,
-  OurStory,
   Blog,
-  Shop,
+  CoursePage,
+  Courses,
+  Home,
   NotFound,
+  OurStory,
+  Recipes,
+  Reviews,
+  Shop,
   SignIn,
   SignUp,
-  CoursePage,
 } from "../pages";
 
 const MainContent = () => {
@@ -41,7 +41,7 @@ const MainContent = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/courses" element={<Courses />} />
-        <Route path="/occassions" element={<Occassions />} />
+        <Route path="/reviews" element={<Reviews />} />
         <Route path="/ourstory" element={<OurStory />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<SignIn />} />

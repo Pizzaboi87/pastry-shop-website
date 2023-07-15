@@ -12,8 +12,8 @@ const navLinksLeft = [
     id: "courses",
   },
   {
-    title: "Occassions",
-    id: "occassions",
+    title: "Reviews",
+    id: "reviews",
   },
 ];
 

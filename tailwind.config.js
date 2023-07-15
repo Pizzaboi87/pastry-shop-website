@@ -28,6 +28,7 @@ module.exports = {
         logoimage: "url('/src/assets/logo.png')",
         main: "url('/src/assets/background.png')",
         jam: "url('/src/assets/jam.png')",
+        stamp: "url('/src/assets/gift.webp')",
       },
     },
   },
