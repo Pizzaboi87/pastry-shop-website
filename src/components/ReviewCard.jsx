@@ -5,7 +5,7 @@ const ReviewCard = ({ review }) => {
 	const stars = review.stars;
 
 	return (
-		<div className="w-[20rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl">
+		<div className="bg-white w-[20rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing">
 			<img
 				src={review.background}
 				alt="background"

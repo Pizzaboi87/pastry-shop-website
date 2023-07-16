@@ -16,6 +16,7 @@
     "postcss": "^8.4.25",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-multi-carousel": "^2.8.4",
     "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^6.14.1",
     "react-share": "^4.4.1",

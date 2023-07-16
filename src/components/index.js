@@ -3,10 +3,12 @@ import CourseCard from "./CourseCard";
 import CourseForm from "./CourseForm";
 import Footer from "./Footer";
 import Image from "./Image";
+import ImageCarousel from "./ImageCarousel";
 import LinkButton from "./LinkButton";
 import MainContent from "./MainContent";
 import Navbar from "./Navbar";
 import Paragraphs from "./Paragraphs";
+import Postcard from "./Postcard";
 import RecipeCard from "./RecipeCard";
 import ReviewCard from "./ReviewCard";
 import ScrollToTop from "./ScrollToTop";
@@ -19,10 +21,12 @@ export {
 	CourseForm,
 	Footer,
 	Image,
+	ImageCarousel,
 	LinkButton,
 	MainContent,
 	Navbar,
 	Paragraphs,
+	Postcard,
 	RecipeCard,
 	ReviewCard,
 	ScrollToTop,
