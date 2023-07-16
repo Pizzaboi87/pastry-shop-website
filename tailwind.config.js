@@ -31,6 +31,9 @@ module.exports = {
 				jam: "url('/src/assets/jam.webp')",
 				stamp: "url('/src/assets/gift.webp')",
 			},
+			fontFamily: {
+				letter: ['"Dancing Script"', "cursive"],
+			},
 		},
 	},
 	plugins: [],
