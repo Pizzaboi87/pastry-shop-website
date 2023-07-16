@@ -190,8 +190,8 @@ const reviews = [
 		job: "businessman",
 		review: "The best desserts I've ever had! Highly recommended.",
 		stars: 5,
-		background: "src/assets/baking-1.webp",
-		profile: "src/assets/course-1.webp",
+		background: "src/assets/rewback-1.webp",
+		profile: "src/assets/rewprof-1.webp",
 	},
 	{
 		name: "Mary Jones",
@@ -199,8 +199,8 @@ const reviews = [
 		review:
 			"The cakes are so delicious, my mouth is watering! The coffee is also great.",
 		stars: 5,
-		background: "src/assets/baking-2.webp",
-		profile: "src/assets/course-2.webp",
+		background: "src/assets/rewback-2.webp",
+		profile: "src/assets/rewprof-2.webp",
 	},
 	{
 		name: "Pierre Dupont",
@@ -208,8 +208,8 @@ const reviews = [
 		review:
 			"This patisserie is a real gem! The cakes are always fresh and delicious, and the staff are very friendly.",
 		stars: 5,
-		background: "src/assets/baking-3.webp",
-		profile: "src/assets/course-3.webp",
+		background: "src/assets/rewback-3.webp",
+		profile: "src/assets/rewprof-3.webp",
 	},
 	{
 		name: "Anita Müller",
@@ -217,8 +217,8 @@ const reviews = [
 		review:
 			"This patisserie is my favorite! The cakes are so delicious, I want to go back right away!",
 		stars: 5,
-		background: "src/assets/baking-1.webp",
-		profile: "src/assets/course-1.webp",
+		background: "src/assets/rewback-4.webp",
+		profile: "src/assets/rewprof-4.webp",
 	},
 	{
 		name: "Satoshi Tanaka",
@@ -226,8 +226,8 @@ const reviews = [
 		review:
 			"This patisserie is a real treat! The cakes are so delicious, I can't decide which one to choose.",
 		stars: 4,
-		background: "src/assets/baking-2.webp",
-		profile: "src/assets/course-2.webp",
+		background: "src/assets/rewback-5.webp",
+		profile: "src/assets/rewprof-5.webp",
 	},
 ];
 
