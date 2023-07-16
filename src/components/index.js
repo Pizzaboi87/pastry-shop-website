@@ -13,6 +13,7 @@ import RecipeCard from "./RecipeCard";
 import ReviewCard from "./ReviewCard";
 import ScrollToTop from "./ScrollToTop";
 import SearchForm from "./SearchForm";
+import TeamCard from "./TeamCard";
 import TextAndImage from "./TextAndImage";
 
 export {
@@ -31,5 +32,6 @@ export {
 	ReviewCard,
 	ScrollToTop,
 	SearchForm,
+	TeamCard,
 	TextAndImage,
 };

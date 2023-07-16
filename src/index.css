@@ -45,3 +45,24 @@ body {
 		opacity: 0;
 	}
 }
+
+.card img {
+	transition: 0.5s ease-in-out;
+}
+
+.card:hover img {
+	scale: 1.5;
+	transition: 5s ease-in-out;
+}
+
+.info,
+.filter {
+	transform: translateY(100%);
+	transition: 1s ease-in-out;
+}
+
+.card:hover .info,
+.card:hover .filter {
+	transform: translateY(0);
+	transition: 1s ease-in-out;
+}
