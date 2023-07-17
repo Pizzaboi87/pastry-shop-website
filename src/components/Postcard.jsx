@@ -2,7 +2,7 @@ import { stamp } from "../assets";
 import { stampStyle } from "../styles";
 
 const Postcard = () => {
-	return (
+	return ( 
 		<div className="w-full px-12">
 			<div className="grid w-full bg-white grid-cols-2 mb-16">
 				<div className="border-r-2 border-logopink my-8 py-8 px-16">
@@ -30,7 +30,7 @@ const Postcard = () => {
 						className="w-[12.5rem] h-[10rem] relative self-end mr-8"
 						style={stampStyle}
 					>
-						<div className="absolute border-[0.3125rem] border-pinklight top-2 left-2 w-[11.5rem] h-[9rem] bg-stamp bg-cover" />
+						<div className="absolute border-[0.3125rem] border-logopink top-2 left-2 w-[11.5rem] h-[9rem] bg-stamp bg-cover" />
 						<img
 							src={stamp}
 							alt="stamp"
