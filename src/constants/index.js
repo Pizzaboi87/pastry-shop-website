@@ -330,6 +330,22 @@ const staff = [
 	},
 ];
 
+const story = [
+	"At Le Ciel Sucré, we are more than just a pastry shop. We are a small, family-owned establishment with a rich and storied history that dates back generations. Nestled in the heart of Paris, just a stone’s throw away from the iconic Eiffel Tower, our charming little bakery has been delighting locals and visitors alike with our delectable treats for over sixty years.",
+
+	"Our journey began many years ago when our grandparents, who were passionate about the art of pastry-making, opened the doors of our beloved shop. Since then, we have carried on their legacy, preserving their time-honored recipes and techniques, while infusing our own creativity and innovation.",
+
+	"At Le Ciel Sucré, we believe that every bite should be a heavenly experience. That’s why we meticulously select the finest ingredients, sourced locally and from around the world, to create our exquisite pastries. From delicate macarons to buttery croissants, each creation is crafted with love and attention to detail, ensuring a symphony of flavors that will transport you to pastry paradise.",
+
+	"But it’s not just about the pastries; it’s about the warm and welcoming atmosphere we strive to create. When you step into our shop, you become part of our extended family. Our friendly staff is always ready to assist you, whether you’re seeking recommendations or simply want to share a friendly conversation.",
+
+	"We are proud to be a part of the vibrant Parisian culinary scene, and we invite you to join us on this sweet journey. Come and indulge in the magic of Le Ciel Sucré, where tradition meets innovation, and every bite tells a story.",
+
+	"Merci beaucoup for your continued support!",
+
+	"The Le Ciel Sucré Team",
+];
+
 export {
 	navLinksLeft,
 	navLinksRight,
@@ -341,4 +357,5 @@ export {
 	courses,
 	reviews,
 	staff,
+	story,
 };

@@ -28,30 +28,35 @@ const Recipes = () => {
 	}, [searchQuery, offset]);
 
 	return (
-		<div className="mt-56 w-[85%] flex flex-col items-center">
-			<SearchForm
-				setLoading={setLoading}
-				setNotFound={setNotFound}
-				setSearchQuery={setSearchQuery}
-				setOffset={setOffset}
-			/>
-			{loading ? (
-				<h1>loading...</h1>
-			) : notFound ? (
-				<h1>not found</h1>
-			) : (
-				<>
-					{recipes.map((recipe, index) => (
-						<RecipeCard recipe={recipe} key={`${recipe.title}-${index}`} />
-					))}
-					<button
-						onClick={showMore}
-						className="bg-logopink px-8 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white py-3 text-[1.3rem] font-bold"
-					>
-						show more
-					</button>
-				</>
-			)}
+		<div className="mt-56 w-[75%] flex flex-col items-center">
+			<div className="bg-pinklight rounded-xl p-8 flex flex-col items-center">
+				<h1 className="text-brown text-[3rem] font-[400] mb-8">
+					Our Favourite Recipes
+				</h1>
+				<SearchForm
+					setLoading={setLoading}
+					setNotFound={setNotFound}
+					setSearchQuery={setSearchQuery}
+					setOffset={setOffset}
+				/>
+				{loading ? (
+					<h1>loading...</h1>
+				) : notFound ? (
+					<h1>not found</h1>
+				) : (
+					<>
+						{recipes.map((recipe, index) => (
+							<RecipeCard recipe={recipe} key={`${recipe.title}-${index}`} />
+						))}
+						<button
+							onClick={showMore}
+							className="bg-logopink px-8 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white py-3 text-[1.3rem] font-bold"
+						>
+							show more
+						</button>
+					</>
+				)}
+			</div>
 		</div>
 	);
 };
