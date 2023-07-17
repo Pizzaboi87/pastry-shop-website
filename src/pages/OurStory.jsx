@@ -1,17 +1,17 @@
 import { TeamCard } from "../components";
 import { staff, story } from "../constants";
-import { macaron } from "../assets";
+import { showcase } from "../assets";
 
 const OurStory = () => {
 	return (
 		<div className="mt-56 w-[75%] flex flex-col items-center">
-			<div className="bg-white rounded-xl p-8 flex flex-col items-center">
+			<div className="bg-white rounded-xl p-12 flex flex-col items-center">
 				<h1 className="text-brown text-[3rem] font-[400] mb-8">Our Story</h1>
-				<div>
+				<div className="mb-10">
 					<img
-						src={macaron}
-						alt="test"
-						className="w-[30rem] float-right pl-4"
+						src={showcase}
+						alt="showcase"
+						className="w-[30rem] float-right ml-6 mb-4 rounded-xl shadow-xl"
 					/>
 					{story.map((paragraph, index) => (
 						<p
@@ -21,6 +21,9 @@ const OurStory = () => {
 							{paragraph}
 						</p>
 					))}
+					<p className="text-text text-[2.5rem] font-[400] mb-4 font-letter">
+						Le Ciel Sucré Team
+					</p>
 				</div>
 				<div className="w-full flex justify-between gap-8">
 					{staff.map((member, index) => (

@@ -256,7 +256,7 @@ const staff = [
 		],
 	},
 	{
-		name: "Maria",
+		name: "Marie",
 		title: "Kitchen Manager",
 		image: "staff-2",
 		social: [
@@ -342,8 +342,6 @@ const story = [
 	"We are proud to be a part of the vibrant Parisian culinary scene, and we invite you to join us on this sweet journey. Come and indulge in the magic of Le Ciel Sucré, where tradition meets innovation, and every bite tells a story.",
 
 	"Merci beaucoup for your continued support!",
-
-	"The Le Ciel Sucré Team",
 ];
 
 export {
