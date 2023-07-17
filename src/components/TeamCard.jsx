@@ -23,8 +23,8 @@ const TeamCard = ({ staff }) => {
 			<div className="filter absolute w-full h-[30rem] bg-[#fcdfda88]"></div>
 			<div className="info absolute w-full h-[10rem] bg-[#e45a84cc] bottom-0 flex flex-col items-center justify-between">
 				<span className="flex flex-col items-center pt-8">
-					<h1 className="text-white font-[800] text-[1.2rem]">{staff.name}</h1>
-					<h2 className="text-white font-[600] text-[1rem]">{staff.title}</h2>
+					<h1 className="text-white font-[800] text-[1.4rem]">{staff.name}</h1>
+					<h2 className="text-white font-[600] text-[1.2rem]">{staff.title}</h2>
 				</span>
 				<div className="w-full flex gap-2 items-center justify-end justify-self-end py-4 pr-4">
 					{staff.social.map((social, index) => (
@@ -36,7 +36,7 @@ const TeamCard = ({ staff }) => {
 						>
 							<Icon
 								icon={social.icon}
-								className="icon text-white text-[2rem]"
+								className="icon text-white text-[1.8rem]"
 							/>
 						</a>
 					))}

@@ -238,7 +238,7 @@ const staff = [
 		image: "staff-1",
 		social: [
 			{
-				icon: "entypo-social:facebook",
+				icon: "uiw:facebook",
 				link: "https://facebook.com",
 			},
 			{
@@ -261,7 +261,7 @@ const staff = [
 		image: "staff-2",
 		social: [
 			{
-				icon: "entypo-social:facebook",
+				icon: "uiw:facebook",
 				link: "https://facebook.com",
 			},
 			{
@@ -288,7 +288,7 @@ const staff = [
 		image: "staff-3",
 		social: [
 			{
-				icon: "entypo-social:facebook",
+				icon: "uiw:facebook",
 				link: "https://facebook.com",
 			},
 			{
@@ -307,7 +307,7 @@ const staff = [
 		image: "staff-4",
 		social: [
 			{
-				icon: "entypo-social:facebook",
+				icon: "uiw:facebook",
 				link: "https://facebook.com",
 			},
 			{
