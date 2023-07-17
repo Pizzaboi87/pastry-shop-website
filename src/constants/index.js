@@ -231,6 +231,105 @@ const reviews = [
 	},
 ];
 
+const staff = [
+	{
+		name: "Jean-Michel",
+		title: "Pastry Chef",
+		image: "staff-1",
+		social: [
+			{
+				icon: "entypo-social:facebook",
+				link: "https://facebook.com",
+			},
+			{
+				icon: "brandico:instagram-filled",
+				link: "https://instagram.com",
+			},
+			{
+				icon: "uiw:linkedin",
+				link: "https://linkedin.com",
+			},
+			{
+				icon: "fa:twitter-square",
+				link: "https://twitter.com",
+			},
+		],
+	},
+	{
+		name: "Maria",
+		title: "Kitchen Manager",
+		image: "staff-2",
+		social: [
+			{
+				icon: "entypo-social:facebook",
+				link: "https://facebook.com",
+			},
+			{
+				icon: "brandico:instagram-filled",
+				link: "https://instagram.com",
+			},
+			{
+				icon: "fa:twitter-square",
+				link: "https://twitter.com",
+			},
+			{
+				icon: "uiw:linkedin",
+				link: "https://linkedin.com",
+			},
+			{
+				icon: "fa:youtube-square",
+				link: "https://youtube.com",
+			},
+		],
+	},
+	{
+		name: "Sophie",
+		title: "Owner",
+		image: "staff-3",
+		social: [
+			{
+				icon: "entypo-social:facebook",
+				link: "https://facebook.com",
+			},
+			{
+				icon: "uiw:linkedin",
+				link: "https://linkedin.com",
+			},
+			{
+				icon: "brandico:instagram-filled",
+				link: "https://instagram.com",
+			},
+		],
+	},
+	{
+		name: "Pierre",
+		title: "Confectioner",
+		image: "staff-4",
+		social: [
+			{
+				icon: "entypo-social:facebook",
+				link: "https://facebook.com",
+			},
+			{
+				icon: "fa:twitter-square",
+				link: "https://twitter.com",
+			},
+			{
+				icon: "brandico:instagram-filled",
+				link: "https://instagram.com",
+			},
+			{
+				icon: "uiw:linkedin",
+				link: "https://linkedin.com",
+			},
+			{
+				icon: "fa:youtube-square",
+				link: "https://youtube.com",
+			},
+		],
+	},
+];
+
 export {
 	navLinksLeft,
 	navLinksRight,
@@ -241,4 +340,5 @@ export {
 	footerLinks,
 	courses,
 	reviews,
+	staff,
 };

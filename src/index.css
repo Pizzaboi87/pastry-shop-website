@@ -66,3 +66,17 @@ body {
 	transform: translateY(0);
 	transition: 1s ease-in-out;
 }
+
+.social:hover .icon {
+	transform: rotateY(45deg);
+	animation: rotateAnimation 2s linear infinite;
+}
+
+@keyframes rotateAnimation {
+	from {
+		transform: rotateY(0deg);
+	}
+	to {
+		transform: rotateY(360deg);
+	}
+}
