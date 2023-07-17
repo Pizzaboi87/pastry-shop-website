@@ -6,21 +6,21 @@ const Postcard = () => {
 		<div className="w-full px-12">
 			<div className="grid w-full bg-white grid-cols-2 mb-16">
 				<div className="border-r-2 border-logopink my-8 py-8 px-16">
-					<p className="font-letter text-text text-[2.5rem] my-8">
+					<p className="font-letter text-text text-[2.2rem] my-8">
 						Dear Le Ciel Sucré,
 					</p>
-					<p className="font-letter text-text text-[2.5rem] mb-8">
+					<p className="font-letter text-text text-[2.2rem] mb-8">
 						I just wanted to let you know how much I enjoyed the cakes I ordered
 						for my birthday. My friends and family all loved them, and they
 						especially raved about the chocolate cake. Thank you for the high
 						quality products and excellent service.
 					</p>
-					<p className="font-letter text-text text-[2.5rem] mb-16">
+					<p className="font-letter text-text text-[2.2rem] mb-16">
 						Best regards,
 						<br />
 						Mary
 					</p>
-					<p className="font-letter text-text text-[2.5rem]">
+					<p className="font-letter text-text text-[2.2rem]">
 						PS: We'll be back tomorrow!
 					</p>
 				</div>
@@ -38,17 +38,17 @@ const Postcard = () => {
 						/>
 					</div>
 					<div className="w-[80%] border-b-4 border-logopink">
-						<p className="font-letter text-text text-[3rem] ml-8">
+						<p className="font-letter text-text text-[2.7rem] ml-8">
 							Le Ciel Sucré
 						</p>
 					</div>
 					<div className="w-[80%] border-b-4 border-logopink">
-						<p className="font-letter text-text text-[3rem] ml-8">
+						<p className="font-letter text-text text-[2.7rem] ml-8">
 							46 Rue Duvivier
 						</p>
 					</div>
 					<div className="w-[80%] border-b-4 border-logopink">
-						<p className="font-letter text-text text-[3rem] ml-8">
+						<p className="font-letter text-text text-[2.7rem] ml-8">
 							Paris, France
 						</p>
 					</div>
@@ -58,7 +58,7 @@ const Postcard = () => {
 								key={index}
 								className="border-4 border-logopink w-[3rem] h-[4rem] text-center"
 							>
-								<p className="font-letter text-text text-[2.5rem]">{number}</p>
+								<p className="font-letter text-text text-[2.2rem]">{number}</p>
 							</div>
 						))}
 					</div>

@@ -26,7 +26,7 @@ const RecipeCard = ({ recipe }) => {
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
       key={recipe.title}
-      className="w-[70%] h-auto mb-20 text-justify bg-white p-12 rounded-[15px] shadow-xl"
+      className="w-[70%] h-auto mb-20 text-justify bg-white p-12 rounded-xl shadow-xl"
     >
       <Icon
         icon={liked ? "mdi:heart" : "mdi:heart-outline"}

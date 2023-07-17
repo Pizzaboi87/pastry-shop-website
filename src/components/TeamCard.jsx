@@ -1,7 +1,10 @@
 import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { slideIn } from "../utils/motion";
 
-const TeamCard = ({ staff }) => {
+const TeamCard = ({ staff, index }) => {
+	const motionPropsR = slideIn("right", index * 0.25);
 	const [image, setImage] = useState(null);
 
 	const loadImage = async () => {
@@ -18,7 +21,12 @@ const TeamCard = ({ staff }) => {
 	}
 
 	return (
-		<div className="card relative w-[20rem] h-[30rem] overflow-hidden rounded-xl">
+		<motion.div
+			initial={motionPropsR.initial}
+			whileInView={motionPropsR.whileInView}
+			viewport={motionPropsR.viewport}
+			className="card relative w-[20rem] h-[30rem] overflow-hidden rounded-xl shadow-xl"
+		>
 			<img src={image} alt="member" className="h-full object-cover absolute" />
 			<div className="filter absolute w-full h-[30rem] bg-[#fcdfda88]"></div>
 			<div className="info absolute w-full h-[10rem] bg-[#e45a84cc] bottom-0 flex flex-col items-center justify-between">
@@ -42,7 +50,7 @@ const TeamCard = ({ staff }) => {
 					))}
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

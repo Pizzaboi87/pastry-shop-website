@@ -33,8 +33,8 @@ const CoursePage = () => {
 	}
 
 	return (
-		<div className="mt-56 w-[85%] flex flex-col items-center">
-			<div className="w-[85% bg-white rounded-xl p-12 flex flex-col">
+		<div className="mt-56 w-full flex flex-col items-center">
+			<div className="w-[75%] bg-white rounded-xl p-12 flex flex-col">
 				<h1 className="text-4xl text-center text-text font-[500] mb-8">
 					{course.title}
 				</h1>

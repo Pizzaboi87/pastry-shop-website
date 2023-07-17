@@ -90,7 +90,7 @@ const CourseForm = ({ courses }) => {
 	};
 
 	return (
-		<div className="w-full grid grid-cols-3 self-center mt-16 pb-16 px-24 gap-24 justify-center">
+		<div className="w-full grid grid-cols-3 self-center mt-16 pb-16 px-16 gap-8 justify-center">
 			<div className="flex flex-col gap-4 self-center">
 				<img src={course1} alt="course_1" />
 				<img src={course2} alt="course_2" />
@@ -170,7 +170,7 @@ const CourseForm = ({ courses }) => {
 				<button
 					className={`${
 						loading ? "cursor-progress" : "cursor-pointer"
-					} bg-logopink px-16 py-2 rounded-[15px] shadow-xl border-none hover:bg-pinkdark text-white text-[1rem] font-[500] mx-auto block`}
+					} bg-logopink px-16 py-2 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white text-[1rem] font-[500] mx-auto block`}
 					type="submit"
 					disabled={loading}
 				>
