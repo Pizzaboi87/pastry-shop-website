@@ -10,7 +10,7 @@ import jam from "./jam.webp";
 import jelly from "./jelly.webp";
 import logo from "./logo.png";
 import macaron from "./macaron.webp";
-import showcase from "../showcase.webp";
+import showcase from "./showcase.webp";
 import stamp from "./stamp.webp";
 import torta from "./torta.webp";
 import waffle from "./waffle.webp";
