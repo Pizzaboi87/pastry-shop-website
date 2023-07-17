@@ -1,18 +1,38 @@
-import { logo } from "../assets";
+import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 
 const ReviewCard = ({ review }) => {
 	const stars = review.stars;
 
+	const [image, setImage] = useState(null);
+	const [bgImage, setBgImage] = useState(null);
+
+	const loadImages = async () => {
+		const { default: image } = await import(`../assets/${review.profile}.webp`);
+		const { default: bgImage } = await import(
+			`../assets/${review.background}.webp`
+		);
+		setImage(image);
+		setBgImage(bgImage);
+	};
+
+	useEffect(() => {
+		loadImages();
+	}, []);
+
+	if (!image) {
+		return null;
+	}
+
 	return (
 		<div className="bg-white w-[20rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing">
 			<img
-				src={review.background}
+				src={bgImage}
 				alt="background"
 				className="w-full h-[25%] bg-cover rounded-t-xl object-cover"
 			/>
 			<img
-				src={review.profile}
+				src={image}
 				alt="profile"
 				className="bg-white rounded-full w-[10rem] h-[10rem] absolute top-[10%] object-cover border-4 border-white"
 			/>
