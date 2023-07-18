@@ -50,12 +50,12 @@ const CoursePage = () => {
 										<img
 											src={images[index]}
 											alt="course-picture"
-											className="md:w-[30rem] w-full"
+											className="3xl:w-[60rem] md:w-[30rem] w-full"
 										/>
 										<img
 											src={images[index + 2]}
 											alt="course-picture"
-											className="md:w-[30rem] w-full mb-6"
+											className="3xl:w-[60rem] md:w-[30rem] w-full mb-6"
 										/>
 									</span>
 									<ul className="list-disc pl-4 xl:mb-8 xl:w-[60rem] w-full ml-4 pr-4">

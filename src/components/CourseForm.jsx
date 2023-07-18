@@ -90,20 +90,20 @@ const CourseForm = ({ courses }) => {
 	};
 
 	return (
-		<div className="w-full grid grid-cols-3 self-center mt-16 pb-16 px-16 gap-8 justify-center">
-			<div className="flex flex-col gap-4 self-center">
+		<div className="w-full xl:grid xl:grid-cols-3 flex-col flex self-center mt-16 md:pb-16 pb-4 xl:px-16 2xl:px-0 md:gap-8 justify-between">
+			<div className="w-full flex flex-col gap-4 self-center mb-8 md:mb-0">
 				<img src={course1} alt="course_1" />
 				<img src={course2} alt="course_2" />
 				<img src={course3} alt="course_3" />
 			</div>
 			<form
-				className="col-span-2 p-8 rounded-xl shadow-xl bg-pinklight"
+				className="col-span-2 md:py-8 md:px-8 py-4 px-1 rounded-xl shadow-xl bg-pinklight"
 				onSubmit={handleSubmit}
 			>
-				<h1 className="text-4xl text-center text-text font-[500] mb-8">
+				<h1 className="md:text-4xl text-xl text-center text-text font-[500] mb-8">
 					Contact Us
 				</h1>
-				<label className="flex flex-col text-text text-[1.2rem] font-[500] p-4">
+				<label className="flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] p-4">
 					*Your name:
 					<input
 						required
@@ -112,10 +112,10 @@ const CourseForm = ({ courses }) => {
 						name="name"
 						placeholder="Enter your name"
 						onChange={handleChange}
-						className="text-text text-[1.2rem] font-[400] py-2 px-4 rounded-xl outline-none  outline-dotted outline-logopink"
+						className="text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-none  outline-dotted outline-logopink"
 					/>
 				</label>
-				<label className="flex flex-col text-text text-[1.2rem] font-[500] p-4">
+				<label className="flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] p-4">
 					*Your phone number:
 					<PhoneInput
 						required
@@ -125,7 +125,7 @@ const CourseForm = ({ courses }) => {
 						inputStyle={phoneInputStyle}
 					/>
 				</label>
-				<label className="flex flex-col text-text text-[1.2rem] font-[500] p-4">
+				<label className="flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] p-4">
 					*Your email address:
 					<input
 						required
@@ -134,17 +134,17 @@ const CourseForm = ({ courses }) => {
 						name="email"
 						placeholder="Enter your email address"
 						onChange={handleChange}
-						className="text-text text-[1.2rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-logopink"
+						className="text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-logopink"
 					/>
 				</label>
-				<label className="flex flex-col text-text text-[1.2rem] font-[500] p-4">
+				<label className="flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] p-4">
 					*Which course are you interested in:
 					<select
 						required
 						value={form.course}
 						name="course"
 						onChange={handleChange}
-						className="text-text text-[1.2rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-logopink"
+						className="text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-logopink"
 					>
 						<option value="" disabled hidden>
 							Choose from our courses
@@ -156,7 +156,7 @@ const CourseForm = ({ courses }) => {
 						))}
 					</select>
 				</label>
-				<label className="flex flex-col text-text text-[1.2rem] font-[500] p-4">
+				<label className="flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] p-4">
 					*Do you have any questions?
 					<textarea
 						required
@@ -164,7 +164,7 @@ const CourseForm = ({ courses }) => {
 						name="question"
 						onChange={handleChange}
 						rows={5}
-						className="text-text text-[1.2rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-logopink"
+						className="text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-logopink"
 					/>
 				</label>
 				<button
