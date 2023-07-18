@@ -19,6 +19,7 @@ module.exports = {
 				logopink: "#e45a84",
 			},
 			screens: {
+				xs: "370px",
 				"3xl": "1600px",
 			},
 			backgroundSize: {

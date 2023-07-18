@@ -31,8 +31,7 @@ const navLinksRight = [
 const homeTitle = ["Savor", "the art of", "French Pastries!"];
 
 const homeSubtitle = [
-	"Marvel as the sweet flavors enchant, Le Ciel Sucré, where French masters create.",
-	"Taste the passion in bite-sized wonders, where sweet pleasures come alive.",
+	"Marvel as the sweet flavors enchant, Le Ciel Sucré, where French masters create, and taste the passion in bite-sized wonders, where sweet pleasures come alive.",
 ];
 
 const homeText1 = [
