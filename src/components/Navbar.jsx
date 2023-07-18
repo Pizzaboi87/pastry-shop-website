@@ -53,7 +53,7 @@ const Navbar = () => {
 				<div
 					className={`${
 						openMenu ? "menuOn" : "menuOff"
-					} bg-pinklight absolute top-0 left-0 z-[12] flex items-center justify-center`}
+					} bg-pinklight fixed top-0 left-0 z-[12] flex items-center justify-center`}
 				>
 					<ul className="flex flex-col md:text-[5rem] text-[2.5rem] font-[500] items-center">
 						{navLinksLeft.map((link) => (

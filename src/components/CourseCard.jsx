@@ -25,22 +25,24 @@ const CourseCard = ({ course, index }) => {
 			initial={motionPropsR.initial}
 			whileInView={motionPropsR.whileInView}
 			viewport={motionPropsR.viewport}
-			className="w-[20rem] text-justify bg-pinklight p-4 rounded-xl shadow-xl flex flex-col items-center justify-between"
+			className="w-full sm:w-[20rem] xs:h-[35rem] md:h-[31rem] mx-auto mb-4 text-justify bg-pinklight p-4 rounded-xl shadow-xl flex flex-col items-center justify-between"
 		>
 			<div className="flex flex-col justify-center items-center w-full">
 				<h3 className="mb-4 text-text text-[1.3rem] font-[500]">
 					{course.title}
 				</h3>
-				<div className="overflow-hidden w-full h-[10rem] mb-8">
+				<div className="overflow-hidden w-full md:h-[10rem] h-[13rem] mb-8">
 					<img
 						src={image}
 						alt={course.alt}
-						className="w-[100%] h-[10rem] object-cover mb-4 hover:scale-150 hover:translate-y-8 ease-in-out transition-all duration-500"
+						className="w-full sm:h-[10rem] h-[13rem] object-cover mb-4 hover:scale-150 hover:translate-y-8 ease-in-out transition-all duration-500"
 					/>
 				</div>
 			</div>
 			<div className="h-full flex flex-col justify-between">
-				<p className="text-text text-justify mb-4">{course.details}</p>
+				<p className="text-text text-justify mb-4 text-[1.15rem] md:text-[1rem]">
+					{course.details}
+				</p>
 				<LinkButton
 					extraClass="px-3 py-2 text-[1rem] font-[400] w-[50%] self-center"
 					whereTo={`/courses/` + course.id}
