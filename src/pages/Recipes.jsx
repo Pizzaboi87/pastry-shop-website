@@ -28,9 +28,9 @@ const Recipes = () => {
 	}, [searchQuery, offset]);
 
 	return (
-		<div className="mt-56 w-[75%] flex flex-col items-center">
-			<div className="bg-pinklight rounded-xl p-8 flex flex-col items-center">
-				<h1 className="text-brown text-[3rem] font-[400] mb-8">
+		<div className="md:mt-56 mt-36 md:w-[85%] w-full flex flex-col items-center">
+			<div className="xl:bg-pinklight rounded-xl xl:p-8 flex flex-col items-center">
+				<h1 className="text-brown xl:text-[3rem] text-[2rem] text-center font-[400] mb-8">
 					Our Favourite Recipes
 				</h1>
 				<SearchForm

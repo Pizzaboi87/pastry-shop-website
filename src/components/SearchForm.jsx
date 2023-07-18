@@ -23,18 +23,18 @@ const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} className="flex md:flex-row flex-col justify-center items-center mb-16 gap-4">
 			<input
 				type="text"
 				placeholder="Search a recipe"
 				onChange={handleChange}
 				value={searchText}
-				className="py-2 px-4 outline-none rounded-xl mr-4 mb-16 shadow-md outline-dotted outline-logopink"
+				className="px-4 py-2 outline-none rounded-xl shadow-md outline-dotted outline-logopink"
 			/>
 			<input
 				type="submit"
 				value="Search"
-				className="bg-logopink hover:bg-pinkdark cursor-pointer py-2 px-3 text-white font-bold rounded-xl shadow-md mb-24"
+				className="px-4 py-3 bg-logopink hover:bg-pinkdark cursor-pointer text-white font-bold rounded-xl shadow-md"
 			/>
 		</form>
 	);
