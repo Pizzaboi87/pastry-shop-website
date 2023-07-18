@@ -33,9 +33,9 @@ const CoursePage = () => {
 	}
 
 	return (
-		<div className="mt-56 w-full flex flex-col items-center">
-			<div className="w-[75%] bg-white rounded-xl p-12 flex flex-col">
-				<h1 className="text-4xl text-center text-text font-[500] mb-8">
+		<div className="md:mt-56 mt-36 w-full flex flex-col items-center">
+			<div className="xl:w-[75%] w-full bg-white rounded-xl xl:p-12 md:p-8 p-4">
+				<h1 className="xl:text-[3rem] text-[2rem] text-center text-text font-[500] mb-8">
 					{course.title}
 				</h1>
 				{course.longDetails &&
@@ -44,21 +44,21 @@ const CoursePage = () => {
 							return (
 								<div
 									key={index}
-									className="flex items-center justify-center gap-16 mb-8"
+									className="flex md:flex-row flex-col items-center justify-center xl:gap-16 mb-8"
 								>
-									<span className="flex flex-col gap-16">
+									<span className="flex flex-col gap-8 xl:gap-12">
 										<img
 											src={images[index]}
 											alt="course-picture"
-											className="w-[30rem]"
+											className="md:w-[30rem] w-full"
 										/>
 										<img
 											src={images[index + 2]}
 											alt="course-picture"
-											className="w-[30rem]"
+											className="md:w-[30rem] w-full mb-6"
 										/>
 									</span>
-									<ul className="list-disc pl-6 mb-8 w-[60rem]">
+									<ul className="list-disc pl-4 xl:mb-8 xl:w-[60rem] w-full ml-4 pr-4">
 										{detail.map((item, itemIndex) => (
 											<li
 												key={itemIndex}
@@ -76,16 +76,16 @@ const CoursePage = () => {
 							return (
 								<div
 									key={index}
-									className="flex items-center justify-center gap-16"
+									className="xl:flex md:flex-row-reverse flex-col items-center justify-center text-justify mb-8"
 								>
-									<p className="text-text text-lg text-justify font-[400] mb-8">
-										{detail}
-									</p>
 									<img
 										src={images[index]}
 										alt="course-picture"
-										className="w-[30rem] mb-8"
+										className="md:w-[30rem] w-full mb-8 float-right ml-8"
 									/>
+									<p className="text-text text-lg font-[400] mb-8 inline">
+										{detail}
+									</p>
 								</div>
 							);
 						}
