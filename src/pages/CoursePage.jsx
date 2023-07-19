@@ -62,7 +62,7 @@ const CoursePage = () => {
 										{detail.map((item, itemIndex) => (
 											<li
 												key={itemIndex}
-												className={`text-text text-lg font-[400] text-justify ${
+												className={`text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] text-justify ${
 													itemIndex === 0 ? "font-[600] list-none" : ""
 												}`}
 											>
@@ -83,7 +83,7 @@ const CoursePage = () => {
 										alt="course-picture"
 										className="md:w-[30rem] w-full mb-8 float-right ml-8"
 									/>
-									<p className="text-text text-lg font-[400] mb-8 inline">
+									<p className="text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] mb-8 inline">
 										{detail}
 									</p>
 								</div>

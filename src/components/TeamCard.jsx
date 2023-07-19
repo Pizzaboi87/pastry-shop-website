@@ -25,7 +25,7 @@ const TeamCard = ({ staff, index }) => {
 			initial={motionPropsR.initial}
 			whileInView={motionPropsR.whileInView}
 			viewport={motionPropsR.viewport}
-			className="card relative w-[20rem] h-[30rem] overflow-hidden rounded-xl shadow-xl"
+			className="card relative mx-auto xl:w-[18rem] 3xl:w-[20rem] w-[20rem] h-[30rem] overflow-hidden rounded-xl shadow-xl"
 		>
 			<img src={image} alt="member" className="h-full object-cover absolute" />
 			<div className="filter absolute w-full h-[30rem] bg-[#fcdfda88]"></div>
