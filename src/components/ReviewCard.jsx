@@ -25,7 +25,7 @@ const ReviewCard = ({ review }) => {
 	}
 
 	return (
-		<div className="bg-white w-[20rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing">
+		<div className="mx-auto bg-white xs:w-[20rem] w-[16rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing">
 			<img
 				src={bgImage}
 				alt="background"

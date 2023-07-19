@@ -16,8 +16,8 @@ const phoneInputStyle = {
 
 const stampStyle = {
 	background: "#e45a84 radial-gradient(#fff 0, #fff 7px, transparent 7px)",
-	backgroundSize: "1.25rem 1.25rem",
-	backgroundPosition: "-0.625rem",
+	backgroundSize: "20px 20px",
+	backgroundPosition: "-10px",
 };
 
 const recolorStyle = {
