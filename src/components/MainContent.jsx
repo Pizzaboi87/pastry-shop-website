@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { ScrollToTop } from ".";
 import {
+  Authentication,
   Blog,
   CoursePage,
   Courses,
@@ -11,8 +12,6 @@ import {
   Recipes,
   Reviews,
   Shop,
-  SignIn,
-  SignUp,
 } from "../pages";
 
 const MainContent = () => {
@@ -44,8 +43,7 @@ const MainContent = () => {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/ourstory" element={<OurStory />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/login" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/auth" element={<Authentication />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/courses/:id" element={<CoursePage />} />
         <Route path="*" element={<NotFound />} />

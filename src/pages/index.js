@@ -1,3 +1,4 @@
+import Authentication from "./Authentication";
 import Blog from "./Blog";
 import CoursePage from "./CoursePage";
 import Courses from "./Courses";
@@ -7,10 +8,9 @@ import OurStory from "./OurStory";
 import Recipes from "./Recipes";
 import Reviews from "./Reviews";
 import Shop from "./Shop";
-import SignIn from "./SignIn";
-import SignUp from "./SignUp";
 
 export {
+  Authentication,
   Blog,
   CoursePage,
   Courses,
@@ -20,6 +20,4 @@ export {
   Recipes,
   Reviews,
   Shop,
-  SignIn,
-  SignUp,
 };
