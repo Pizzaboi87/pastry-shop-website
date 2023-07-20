@@ -30,4 +30,26 @@ const shadowStyle = {
     "linear-gradient(180deg, rgba(166, 163, 163, 0.3) 30%, rgba(255, 255, 255, 1) 100%)",
 };
 
-export { phoneInputStyle, stampStyle, recolorStyle, shadowStyle };
+const containerStyle = {
+  transition: "0.5s ease-in-out",
+};
+
+const authStyle = {
+  background: "rgba(255, 255, 255, 0.2)",
+  boxShadow: "rgba(0, 0, 0, 0.12)",
+};
+
+const formStyle = {
+  boxShadow: "0 5px 45px rgba(0,0,0,0.25",
+  transition: "0.5s ease-in-out",
+};
+
+export {
+  phoneInputStyle,
+  stampStyle,
+  recolorStyle,
+  shadowStyle,
+  authStyle,
+  formStyle,
+  containerStyle,
+};

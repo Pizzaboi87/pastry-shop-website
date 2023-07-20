@@ -1,3 +1,4 @@
+import AuthButton from "./AuthButton";
 import Awning from "./Awning";
 import CourseCard from "./CourseCard";
 import CourseForm from "./CourseForm";
@@ -17,6 +18,7 @@ import TeamCard from "./TeamCard";
 import TextAndImage from "./TextAndImage";
 
 export {
+  AuthButton,
   Awning,
   CourseCard,
   CourseForm,

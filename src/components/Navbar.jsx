@@ -34,11 +34,11 @@ const Navbar = () => {
             ))}
           </ul>
           <span>
-            <Link to="/auth" className="text-text hover:text-logopink">
+            <Link to="auth" className="text-text hover:text-logopink">
               Register
             </Link>{" "}
             /{" "}
-            <LinkButton extraClass="font-[300] px-8 py-1" whereTo="/auth">
+            <LinkButton extraClass="font-[300] px-8 py-1" whereto="/auth">
               Login
             </LinkButton>
           </span>
@@ -71,14 +71,14 @@ const Navbar = () => {
               </li>
             ))}
             <Link
-              to="/auth"
+              to="auth"
               onClick={() => setOpenMenu(!openMenu)}
               className="text-text hover:text-logopink"
             >
               Register
             </Link>
             <Link
-              whereTo="/auth"
+              whereto="/auth"
               onClick={() => setOpenMenu(!openMenu)}
               className="text-text hover:text-logopink"
             >
