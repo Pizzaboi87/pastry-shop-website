@@ -14,6 +14,8 @@ import RecipeCard from "./RecipeCard";
 import ReviewCard from "./ReviewCard";
 import ScrollToTop from "./ScrollToTop";
 import SearchForm from "./SearchForm";
+import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
 import TeamCard from "./TeamCard";
 import TextAndImage from "./TextAndImage";
 
@@ -34,6 +36,8 @@ export {
   ReviewCard,
   ScrollToTop,
   SearchForm,
+  SignInForm,
+  SignUpForm,
   TeamCard,
   TextAndImage,
 };

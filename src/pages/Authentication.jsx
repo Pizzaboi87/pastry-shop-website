@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { authStyle, containerStyle, formStyle } from "../styles";
-import { AuthButton } from "../components";
+import { AuthButton, SignInForm, SignUpForm } from "../components";
 
 const Authentication = () => {
   const [isSignIn, setIsSignIn] = useState(false);
@@ -8,7 +8,7 @@ const Authentication = () => {
   return (
     <div
       className={`${
-        isSignIn ? "bg-[#03a9f4]" : "bg-pinklight"
+        isSignIn ? "bg-yellowdark" : "bg-[#566bce]"
       } md:mt-56 mt-36 min-h-[100vh] xl:w-[90%] 3xl:w-[80%] w-full  rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative`}
       style={containerStyle}
     >
@@ -34,7 +34,9 @@ const Authentication = () => {
           isSignIn ? "left-[12.5%] rounded-l-xl" : "left-[47%] rounded-r-xl"
         } formBox absolute w-[40%] h-[75vh] bg-white z-[10] flex justify-center items-center`}
         style={formStyle}
-      ></div>
+      >
+        {isSignIn ? <SignInForm /> : <SignUpForm />}
+      </div>
     </div>
   );
 };
