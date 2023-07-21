@@ -1,11 +1,15 @@
+import { useContext } from "react";
 import { macaron, eclair, cream } from "../assets";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
-import { LinkButton, Image, TextAndImage } from "../components";
+import { Image, TextAndImage } from "../components";
+import { IsRegContext } from "../context";
 import { homeTitle, homeSubtitle, homeText1, homeText2 } from "../constants";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const motionPropsR = slideIn("right");
+  const [isReg, setIsReg] = useContext(IsRegContext);
 
   return (
     <div className="3xl:mt-64 xl:mt-56 mt-44 w-full flex flex-col items-center">
@@ -19,15 +23,12 @@ const Home = () => {
           <div className="mb-6 2xl:max-w-[95%]">
             <span className="flex xl:flex-col flex-row flex-wrap mb-2">
               {homeTitle.map((line) => (
-                <>
-                  <h1
-                    className="3xl:text-[4.5rem] 2xl:text-[3.5rem] text-[2.2rem] 2xl:font-[300] font-[600]"
-                    key={line}
-                  >
+                <span key={line}>
+                  <h1 className="3xl:text-[4.5rem] 2xl:text-[3.5rem] text-[2.2rem] 2xl:font-[300] font-[600]">
                     {line}
                   </h1>
                   <h1 className="visible xl:hidden text-[2rem]">&nbsp;</h1>
-                </>
+                </span>
               ))}
             </span>
 
@@ -36,22 +37,24 @@ const Home = () => {
             </p>
           </div>
 
-          <LinkButton
-            extraClass="font-[500] px-8 py-3 text-[1.3rem] 2xl:inline-block hidden"
-            whereTo="/auth"
+          <Link
+            to="/auth"
+            className="bg-logopink font-[500] px-8 py-3 text-[1.3rem] 2xl:inline-block hiddenbg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center"
+            onClick={() => setIsReg(false)}
           >
             ORDER NOW
-          </LinkButton>
+          </Link>
         </motion.span>
 
         <Image dirPic="left" image={macaron} imgFirst={true} width={40} />
 
-        <LinkButton
-          extraClass="font-[500] px-8 py-3 text-[2rem] md:text-[3rem] xl:hidden inline-block mt-16 mb-8 xl:mb-0"
-          whereTo="/login"
+        <Link
+          to="/auth"
+          className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center font-[500] px-8 py-3 text-[2rem] md:text-[3rem] xl:hidden inline-block mt-16 mb-8 xl:mb-0"
+          onClick={() => setIsReg(false)}
         >
           ORDER NOW
-        </LinkButton>
+        </Link>
       </div>
 
       <TextAndImage

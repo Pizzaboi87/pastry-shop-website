@@ -1,12 +1,14 @@
 import { navLinksLeft, navLinksRight } from "../constants";
 import { logo } from "../assets";
 import { Link } from "react-router-dom";
-import { LinkButton } from ".";
 import { Icon } from "@iconify/react";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { IsRegContext } from "../context";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [isReg, setIsReg] = useContext(IsRegContext);
+  console.log("isReg: ", isReg);
 
   return (
     <>
@@ -34,13 +36,21 @@ const Navbar = () => {
             ))}
           </ul>
           <span>
-            <Link to="auth" className="text-text hover:text-logopink">
+            <Link
+              to="auth"
+              className="text-text hover:text-logopink"
+              onClick={() => setIsReg(true)}
+            >
               Register
             </Link>{" "}
             /{" "}
-            <LinkButton extraClass="font-[300] px-8 py-1" whereto="/auth">
+            <Link
+              to="auth"
+              className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center font-[300] px-8 py-1"
+              onClick={() => setIsReg(false)}
+            >
               Login
-            </LinkButton>
+            </Link>
           </span>
         </span>
       </nav>
@@ -72,14 +82,20 @@ const Navbar = () => {
             ))}
             <Link
               to="auth"
-              onClick={() => setOpenMenu(!openMenu)}
+              onClick={() => {
+                setOpenMenu(!openMenu);
+                setIsReg(true);
+              }}
               className="text-text hover:text-logopink"
             >
               Register
             </Link>
             <Link
               whereto="/auth"
-              onClick={() => setOpenMenu(!openMenu)}
+              onClick={() => {
+                setOpenMenu(!openMenu);
+                setIsReg(false);
+              }}
               className="text-text hover:text-logopink"
             >
               Login

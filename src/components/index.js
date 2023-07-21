@@ -5,7 +5,6 @@ import CourseForm from "./CourseForm";
 import Footer from "./Footer";
 import Image from "./Image";
 import ImageCarousel from "./ImageCarousel";
-import LinkButton from "./LinkButton";
 import MainContent from "./MainContent";
 import Navbar from "./Navbar";
 import Paragraphs from "./Paragraphs";
@@ -27,7 +26,6 @@ export {
   Footer,
   Image,
   ImageCarousel,
-  LinkButton,
   MainContent,
   Navbar,
   Paragraphs,

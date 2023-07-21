@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { authStyle, containerStyle, formStyle } from "../styles";
 import { AuthButton, SignInForm, SignUpForm } from "../components";
+import { IsRegContext } from "../context";
 
 const Authentication = () => {
-  const [isSignIn, setIsSignIn] = useState(false);
+  const [isReg, setIsReg] = useContext(IsRegContext);
 
   return (
     <div
       className={`${
-        isSignIn ? "bg-yellowdark" : "bg-[#566bce]"
-      } md:mt-56 mt-36 min-h-[100vh] xl:w-[90%] 3xl:w-[80%] w-full  rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative`}
+        isReg ? "bg-[#566bce]" : "bg-yellowdark"
+      } mt-16 h-[102vh] xl:w-[90%] 3xl:w-[80%] w-full  rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative`}
       style={containerStyle}
     >
       <div
@@ -19,23 +20,23 @@ const Authentication = () => {
         <AuthButton
           text="Already have an account?"
           btnText="Sign In"
-          isSignIn={isSignIn}
-          setIsSignIn={setIsSignIn}
+          isReg={isReg}
+          setIsReg={setIsReg}
         />
         <AuthButton
           text="Don't have an account?"
           btnText="Sign Up"
-          isSignIn={isSignIn}
-          setIsSignIn={setIsSignIn}
+          isReg={isReg}
+          setIsReg={setIsReg}
         />
       </div>
       <div
         className={`${
-          isSignIn ? "left-[12.5%] rounded-l-xl" : "left-[47%] rounded-r-xl"
+          isReg ? "left-[47%] rounded-r-xl" : "left-[12.5%] rounded-l-xl"
         } formBox absolute w-[40%] h-[75vh] bg-white z-[10] flex justify-center items-center`}
         style={formStyle}
       >
-        {isSignIn ? <SignInForm /> : <SignUpForm />}
+        {isReg ? <SignUpForm /> : <SignInForm />}
       </div>
     </div>
   );
