@@ -5,7 +5,7 @@ import { recolorStyle } from "../styles";
 
 const Footer = () => {
   return (
-    <footer className="w-full flex flex-col mt-24 bg-pinklight text-text">
+    <footer className="w-full flex flex-col xl:mt-24 mt-8 bg-pinklight text-text">
       <img src={jam} alt="jam" className="h-[7rem]" style={recolorStyle} />
       <div className="flex flex-wrap sm:flex-row flex-col justify-between items-center sm:px-20">
         <div className="flex flex-col items-center justify-center">

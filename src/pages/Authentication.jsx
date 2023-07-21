@@ -10,11 +10,11 @@ const Authentication = () => {
     <div
       className={`${
         isReg ? "bg-[#566bce]" : "bg-yellowdark"
-      } mt-16 h-[102vh] xl:w-[90%] 3xl:w-[80%] w-full  rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative`}
+      } mt-16 lg:h-[102vh] h-[90vh] xl:w-[90%] 3xl:w-[80%] w-full rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative`}
       style={containerStyle}
     >
       <div
-        className="blueBg w-[80%] h-[70vh] flex items-center rounded-xl"
+        className="blueBg lg:w-[80%] w-[85%] lg:h-[70vh] h-[90%] lg:mt-0 mt-[15%] flex items-center justify-between lg:flex-row flex-col rounded-xl"
         style={authStyle}
       >
         <AuthButton
@@ -32,8 +32,10 @@ const Authentication = () => {
       </div>
       <div
         className={`${
-          isReg ? "left-[47%] rounded-r-xl" : "left-[12.5%] rounded-l-xl"
-        } formBox absolute w-[40%] h-[75vh] bg-white z-[10] flex justify-center items-center`}
+          isReg
+            ? "lg:left-[47%] lg:top-auto top-[27%] lg:rounded-r-xl rounded-xl"
+            : "lg:left-[12.5%] lg:top-auto top-[11%] lg:rounded-l-xl rounded-xl"
+        } formBox absolute lg:w-[40%] w-[85%] lg:h-[75vh] h-[70%] bg-white z-[10] flex justify-center items-center`}
         style={formStyle}
       >
         {isReg ? <SignUpForm /> : <SignInForm />}

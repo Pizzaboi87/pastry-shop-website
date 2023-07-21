@@ -1,9 +1,16 @@
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
 
 const SignInForm = () => {
   return (
-    <div className="flex flex-col w-full h-full items-center justify-center">
-      <h1 className="md:text-4xl text-xl text-center text-text font-[500] mb-8">
+    <motion.div
+      initial={{ opacity: 0, maxHeight: 0 }}
+      animate={{ opacity: 1, maxHeight: "75vh" }}
+      exit={{ opacity: 0, maxHeight: 0 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="flex flex-col w-full h-full items-center justify-center"
+    >
+      <h1 className="md:text-4xl text-xl text-center text-text font-[600] mb-6">
         Sign In
       </h1>
       <form className="flex flex-col items-start">
@@ -35,7 +42,7 @@ const SignInForm = () => {
         <Icon icon="devicon:google" className="mr-2" />
         Sign In with Google
       </button>
-    </div>
+    </motion.div>
   );
 };
 
