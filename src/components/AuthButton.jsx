@@ -1,7 +1,7 @@
 const AuthButton = ({ text, btnText, setIsReg, isReg }) => {
   return (
     <div className="boxclass signup relative lg:w-[50%] w-full lg:h-full h-[14vh] flex flex-col items-center justify-center">
-      <h2 className="text-white font-[500] xs:text-[1.2rem] text-[0.9rem] mb-2">
+      <h2 className="text-text font-[500] xs:text-[1.2rem] text-[0.9rem] mb-2">
         {text}
       </h2>
       <button

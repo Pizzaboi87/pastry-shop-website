@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#f5edef",
-        text: "#2f2f2f",
+        text: "#2b2730",
         button: "#a96973",
         brown: "#4a3a3b",
         red: "#ce5a4f",
@@ -26,6 +26,7 @@ module.exports = {
       backgroundSize: {
         logo: "120%",
         background: "150%",
+        mobBackground: "350%",
       },
       backgroundImage: {
         logoimage: "url('/src/assets/logo.png')",
