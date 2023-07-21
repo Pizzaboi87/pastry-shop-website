@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 import { useState, useContext } from "react";
 import { IsRegContext, UserContext } from "../context";
 import { menuOffStyle, menuOnStyle } from "../styles";
-import { auth, signOutUser } from "../utils/firebase";
+import { signOutUser } from "../utils/firebase";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -100,26 +100,49 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
-            <Link
-              to="auth"
-              onClick={() => {
-                setOpenMenu(!openMenu);
-                setIsReg(true);
-              }}
-              className="text-text hover:text-logopink"
-            >
-              Register
-            </Link>
-            <Link
-              whereto="/auth"
-              onClick={() => {
-                setOpenMenu(!openMenu);
-                setIsReg(false);
-              }}
-              className="text-text hover:text-logopink"
-            >
-              Login
-            </Link>
+            {!currentUser ? (
+              <>
+                <Link
+                  to="auth"
+                  onClick={() => {
+                    setOpenMenu(!openMenu);
+                    setIsReg(true);
+                  }}
+                  className="text-text hover:text-logopink"
+                >
+                  Register
+                </Link>
+                <Link
+                  whereto="/auth"
+                  onClick={() => {
+                    setOpenMenu(!openMenu);
+                    setIsReg(false);
+                  }}
+                  className="text-text hover:text-logopink"
+                >
+                  Login
+                </Link>
+              </>
+            ) : (
+              <>
+                <li className="text-text hover:text-logopink">
+                  <Link to="/shop" onClick={() => setOpenMenu(!openMenu)}>
+                    Shop
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    className="text-text hover:text-logopink"
+                    onClick={() => {
+                      setOpenMenu(!openMenu);
+                      signOutUser();
+                    }}
+                  >
+                    Sign Out
+                  </button>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </nav>
