@@ -33,9 +33,9 @@ const Authentication = () => {
       <div
         className={`${
           isReg
-            ? "lg:left-[47%] lg:top-auto top-[27%] lg:rounded-r-xl rounded-xl"
-            : "lg:left-[12.5%] lg:top-auto top-[11%] lg:rounded-l-xl rounded-xl"
-        } formBox absolute lg:w-[40%] w-[85%] lg:h-[75vh] h-[70%] bg-white z-[10] flex justify-center items-center`}
+            ? "lg:left-[47%] lg:top-auto xs:top-[27%] md:top-[29%] ms:top-[31%] top-[26%] lg:rounded-r-xl rounded-xl"
+            : "lg:left-[12.5%] lg:top-auto xs:top-[10%] ms:top-[14%] top-[9.75%] lg:rounded-l-xl rounded-xl"
+        } formBox absolute lg:w-[40%] w-[85%] lg:h-[75vh] md:h-[68%] ms:h-[67%] h-[70%] bg-white z-[10] flex justify-center items-center`}
         style={formStyle}
       >
         {isReg ? <SignUpForm /> : <SignInForm />}
