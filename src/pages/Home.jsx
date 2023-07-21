@@ -3,13 +3,14 @@ import { macaron, eclair, cream } from "../assets";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
 import { Image, TextAndImage } from "../components";
-import { IsRegContext } from "../context";
+import { IsRegContext, UserContext } from "../context";
 import { homeTitle, homeSubtitle, homeText1, homeText2 } from "../constants";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   const motionPropsR = slideIn("right");
   const [isReg, setIsReg] = useContext(IsRegContext);
+  const { currentUser } = useContext(UserContext);
 
   return (
     <div className="3xl:mt-64 xl:mt-56 mt-44 w-full flex flex-col items-center">
@@ -38,8 +39,8 @@ const Home = () => {
           </div>
 
           <Link
-            to="/auth"
-            className="bg-logopink font-[500] px-8 py-3 text-[1.3rem] 2xl:inline-block hidden rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center"
+            to={currentUser ? "/shop" : "/auth"}
+            className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center font-[500] px-8 py-3 text-[1.3rem] 2xl:inline-block hidden"
             onClick={() => setIsReg(false)}
           >
             ORDER NOW
@@ -49,7 +50,7 @@ const Home = () => {
         <Image dirPic="left" image={macaron} imgFirst={true} width={40} />
 
         <Link
-          to="/auth"
+          to={currentUser ? "/shop" : "/auth"}
           className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center font-[500] px-8 py-3 text-[2rem] md:text-[3rem] xl:hidden inline-block mt-16 mb-0"
           onClick={() => setIsReg(false)}
         >
