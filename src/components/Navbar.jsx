@@ -113,7 +113,7 @@ const Navbar = () => {
                   Register
                 </Link>
                 <Link
-                  whereto="/auth"
+                  to="auth"
                   onClick={() => {
                     setOpenMenu(!openMenu);
                     setIsReg(false);

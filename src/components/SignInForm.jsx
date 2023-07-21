@@ -53,6 +53,17 @@ const SignInForm = () => {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithGooglePopup();
+    } catch (error) {
+      alert("Error during sign in.");
+      console.log(error);
+    } finally {
+      navigate("/shop");
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, maxHeight: 0 }}
@@ -97,7 +108,7 @@ const SignInForm = () => {
       </button>
       <button
         className="flex items-center justify-center border-2 border-logopink shadow-xl rounded-md px-2 py-1 mt-6 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]"
-        onClick={signInWithGooglePopup}
+        onClick={handleGoogleSignIn}
       >
         <Icon icon="devicon:google" className="mr-2" />
         Sign In with Google
