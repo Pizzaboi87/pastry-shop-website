@@ -3,12 +3,14 @@ import { logo } from "../assets";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { useState, useContext } from "react";
-import { IsRegContext } from "../context";
+import { IsRegContext, UserContext } from "../context";
+import { menuOffStyle, menuOnStyle } from "../styles";
+import { auth, signOutUser } from "../utils/firebase";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [isReg, setIsReg] = useContext(IsRegContext);
-  console.log("isReg: ", isReg);
+  const { currentUser } = useContext(UserContext);
 
   return (
     <>
@@ -34,24 +36,43 @@ const Navbar = () => {
                 <Link to={link.id}>{link.title}</Link>
               </li>
             ))}
+
+            {!currentUser ? (
+              <li>
+                <span>
+                  <Link
+                    to="auth"
+                    className="text-text hover:text-logopink"
+                    onClick={() => setIsReg(true)}
+                  >
+                    Register
+                  </Link>{" "}
+                  /{" "}
+                  <Link
+                    to="auth"
+                    className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center font-[300] px-8 py-1"
+                    onClick={() => setIsReg(false)}
+                  >
+                    Login
+                  </Link>
+                </span>
+              </li>
+            ) : (
+              <>
+                <li className="text-text hover:text-logopink">
+                  <Link to="/shop">Shop</Link>
+                </li>
+                <li>
+                  <button
+                    className="text-text hover:text-logopink"
+                    onClick={signOutUser}
+                  >
+                    Sign Out
+                  </button>
+                </li>
+              </>
+            )}
           </ul>
-          <span>
-            <Link
-              to="auth"
-              className="text-text hover:text-logopink"
-              onClick={() => setIsReg(true)}
-            >
-              Register
-            </Link>{" "}
-            /{" "}
-            <Link
-              to="auth"
-              className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center font-[300] px-8 py-1"
-              onClick={() => setIsReg(false)}
-            >
-              Login
-            </Link>
-          </span>
         </span>
       </nav>
       <nav>
@@ -61,9 +82,8 @@ const Navbar = () => {
           onClick={() => setOpenMenu(!openMenu)}
         />
         <div
-          className={`${
-            openMenu ? "menuOn" : "menuOff"
-          } bg-pinklight bg-main bg-mobBackground fixed top-0 left-0 z-[12] flex items-center justify-center`}
+          className="bg-pinklight bg-main bg-mobBackground fixed top-0 left-0 z-[12] flex items-center justify-center"
+          style={openMenu ? menuOnStyle : menuOffStyle}
         >
           <ul className="flex flex-col md:text-[5rem] text-[2.5rem] font-[500] items-center">
             {navLinksLeft.map((link) => (

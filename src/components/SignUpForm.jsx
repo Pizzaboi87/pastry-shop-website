@@ -1,6 +1,60 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import {
+  createUserDocumentFromAuth,
+  createAuthUserWithEmailAndPassword,
+} from "../utils/firebase";
 
 const SignUpForm = () => {
+  const navigate = useNavigate();
+
+  const defaultForm = {
+    displayName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  };
+
+  const resetForm = () => {
+    setForm(defaultForm);
+  };
+
+  const [form, setForm] = useState(defaultForm);
+  const { displayName, email, password, confirmPassword } = form;
+
+  const handleChange = (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (password !== confirmPassword) {
+      alert("passwords do not match");
+      return;
+    }
+
+    try {
+      const { user } = await createAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+
+      await createUserDocumentFromAuth(user, { displayName });
+      console.log(displayName);
+      resetForm();
+    } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        alert("Cannot create user, email already in use");
+      } else {
+        console.log("user creation encountered an error", error);
+      }
+    } finally {
+      navigate("/shop");
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, maxHeight: 0 }}
@@ -12,21 +66,15 @@ const SignUpForm = () => {
       <h1 className="xl:text-4xl lg:text-xl md:text-4xl text-xl text-center text-text font-[600] mb-6">
         Sign Up
       </h1>
-      <form className="flex flex-col items-start">
-        <label className="flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1">
-          First Name
-        </label>
-        <input
-          type="text"
-          name="firstName"
-          className="text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none  outline-dotted outline-logopink"
-        />
+      <form className="flex flex-col items-start" onSubmit={handleSubmit}>
         <label className="flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1 mt-4">
-          Last Name
+          Username
         </label>
         <input
           type="text"
-          name="lastName"
+          name="displayName"
+          value={displayName}
+          onChange={handleChange}
           className="text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none  outline-dotted outline-logopink"
         />
         <label className="flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1 mt-4">
@@ -35,6 +83,8 @@ const SignUpForm = () => {
         <input
           type="email"
           name="email"
+          value={email}
+          onChange={handleChange}
           className="text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none  outline-dotted outline-logopink"
         />
         <label className="flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1 mt-4">
@@ -43,6 +93,18 @@ const SignUpForm = () => {
         <input
           type="password"
           name="password"
+          value={password}
+          onChange={handleChange}
+          className="text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none  outline-dotted outline-logopink"
+        />
+        <label className="flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1 mt-4">
+          Repeat Password
+        </label>
+        <input
+          type="password"
+          name="confirmPassword"
+          value={confirmPassword}
+          onChange={handleChange}
           className="text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none  outline-dotted outline-logopink"
         />
         <button

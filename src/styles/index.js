@@ -44,6 +44,20 @@ const formStyle = {
   transition: "0.5s ease-in-out",
 };
 
+const menuOffStyle = {
+  transition: "0.5s ease-in-out",
+  transform: "translateX(-100vw)",
+  width: 0,
+  height: "100vh",
+};
+
+const menuOnStyle = {
+  transition: "0.5s ease-in-out",
+  transform: "translateX(0)",
+  width: "100vw",
+  height: "100vh",
+};
+
 export {
   phoneInputStyle,
   stampStyle,
@@ -52,4 +66,6 @@ export {
   authStyle,
   formStyle,
   containerStyle,
+  menuOffStyle,
+  menuOnStyle,
 };
