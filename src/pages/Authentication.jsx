@@ -9,8 +9,8 @@ const Authentication = () => {
   return (
     <div
       className={`${
-        isReg ? "bg-[#e45a8490]" : "bg-[#6554AF90]"
-      } mt-16 lg:h-[102vh] h-[90vh] xl:w-[90%] 3xl:w-[80%] w-full rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative`}
+        isReg ? "bg-glass" : "bg-[#6554AF90]"
+      } glass shadow-xl mt-16 lg:h-[102vh] h-[90vh] xl:w-[90%] 3xl:w-[80%] w-full rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative`}
       style={containerStyle}
     >
       <div

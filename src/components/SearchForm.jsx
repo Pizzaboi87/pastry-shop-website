@@ -32,7 +32,7 @@ const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
         placeholder="Search a recipe"
         onChange={handleChange}
         value={searchText}
-        className="px-4 py-2 outline-none rounded-xl shadow-md outline-dotted outline-logopink"
+        className="px-4 py-2 outline-none rounded-xl shadow-md outline-dotted outline-text"
       />
       <input
         type="submit"

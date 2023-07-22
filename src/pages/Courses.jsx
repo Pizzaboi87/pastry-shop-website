@@ -2,20 +2,18 @@ import { CourseCard } from "../components";
 import { courses } from "../constants";
 
 const Courses = () => {
-	return (
-		<div className="md:mt-56 mt-36 w-full flex flex-col items-center">
-			<div className="md:bg-pinktransparent rounded-xl md:p-16 flex flex-col items-center">
-				<h1 className="text-brown xl:text-[3rem] text-[2rem] font-[400] mb-8">
-					Our Courses
-				</h1>
-				<div className="w-full flex md:flex-row flex-col gap-4 md:flex-wrap items-center justify-center">
-					{courses.map((course, index) => (
-						<CourseCard key={course.title} course={course} index={index} />
-					))}
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div className="md:mt-56 mt-36 xl:w-[90%] 3xl:w-[80%] w-full bg-glass glass rounded-xl flex flex-col items-center shadow-xl md:p-12 p-4">
+      <h1 className="text-text xl:text-[3rem] text-[2rem] font-[600] mb-8">
+        Our Courses
+      </h1>
+      <div className="w-full flex md:flex-row flex-col gap-4 items-center justify-center">
+        {courses.map((course, index) => (
+          <CourseCard key={course.title} course={course} index={index} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Courses;

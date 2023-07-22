@@ -97,7 +97,7 @@ const CourseForm = ({ courses }) => {
         <img src={course3} alt="course_3" />
       </div>
       <form
-        className="col-span-2 md:py-8 md:px-8 py-4 px-1 rounded-xl shadow-xl bg-pinklight"
+        className="col-span-2 md:py-8 md:px-8 py-4 px-1 rounded-xl shadow-xl bg-primary"
         onSubmit={handleSubmit}
       >
         <h1 className="md:text-4xl text-xl text-center text-text font-[500] mb-8">
@@ -112,7 +112,7 @@ const CourseForm = ({ courses }) => {
             name="name"
             placeholder="Enter your name"
             onChange={handleChange}
-            className="text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-none  outline-dotted outline-logopink"
+            className="text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-none  outline-dotted outline-text"
           />
         </label>
         <label className="flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] p-4">
@@ -134,7 +134,7 @@ const CourseForm = ({ courses }) => {
             name="email"
             placeholder="Enter your email address"
             onChange={handleChange}
-            className="text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-logopink"
+            className="text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-text"
           />
         </label>
         <label className="flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] p-4">
@@ -144,7 +144,7 @@ const CourseForm = ({ courses }) => {
             value={form.course}
             name="course"
             onChange={handleChange}
-            className="text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-logopink"
+            className="text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-text"
           >
             <option value="" disabled hidden>
               Choose from our courses
@@ -164,7 +164,7 @@ const CourseForm = ({ courses }) => {
             name="question"
             onChange={handleChange}
             rows={5}
-            className="text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-logopink"
+            className="text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-none outline-dotted outline-text"
           />
         </label>
         <button

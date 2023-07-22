@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
@@ -9,6 +10,14 @@ import {
 
 const SignInForm = () => {
   const navigate = useNavigate();
+
+  const errorSwal = (error) => {
+    Swal.fire({
+      icon: "error",
+      title: "Something went wrong!",
+      text: error,
+    });
+  };
 
   const defaultForm = {
     email: "",
@@ -38,13 +47,13 @@ const SignInForm = () => {
     } catch (error) {
       switch (error.code) {
         case "auth/wrong-password":
-          alert("Incorrect password.");
+          errorSwal("Incorrect password.");
           break;
         case "auth/user-not-found":
-          alert("User not found.");
+          errorSwal("User not found.");
           break;
         default:
-          alert("Error during sign in.");
+          errorSwal("Error during sign in.");
           console.log(error);
           break;
       }
@@ -57,7 +66,7 @@ const SignInForm = () => {
     try {
       await signInWithGooglePopup();
     } catch (error) {
-      alert("Error during sign in.");
+      errorSwal("Error during sign in.");
       console.log(error);
     } finally {
       navigate("/shop");
@@ -80,6 +89,7 @@ const SignInForm = () => {
           Email address
         </label>
         <input
+          required
           type="email"
           name="email"
           value={email}
@@ -90,6 +100,7 @@ const SignInForm = () => {
           Password
         </label>
         <input
+          required
           type="password"
           name="password"
           value={password}

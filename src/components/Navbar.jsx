@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="lg:visible invisible 2xl:w-[85%] w-full h-[7rem] bg-white fixed pt-4 top-7 rounded-2xl flex items-center justify-around text-[1rem] 2xl:text-[1.3rem] font-[300] shadow-md z-10">
+      <nav className="lg:visible invisible 2xl:w-[85%] w-full h-[7rem] bg-white fixed pt-4 top-7 rounded-2xl flex items-center justify-around text-[1rem] 2xl:text-[1.3rem] font-[400] shadow-md z-10">
         <ul className="flex justify-center 2xl:gap-12 gap-8">
           {navLinksLeft.map((link) => (
             <li key={link.title} className="text-text hover:text-logopink">
@@ -50,7 +50,7 @@ const Navbar = () => {
                   /{" "}
                   <Link
                     to="auth"
-                    className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center font-[300] px-8 py-1"
+                    className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center font-[400] px-8 py-1"
                     onClick={() => setIsReg(false)}
                   >
                     Login
@@ -85,7 +85,7 @@ const Navbar = () => {
           className="bg-pinklight bg-main bg-mobBackground fixed top-0 left-0 z-[12] flex items-center justify-center"
           style={openMenu ? menuOnStyle : menuOffStyle}
         >
-          <ul className="flex flex-col md:text-[5rem] text-[2.5rem] font-[500] items-center">
+          <ul className="flex flex-col md:text-[5rem] text-[2.5rem] font-[400] items-center">
             {navLinksLeft.map((link) => (
               <li key={link.title} className="text-text hover:text-logopink">
                 <Link to={link.id} onClick={() => setOpenMenu(!openMenu)}>

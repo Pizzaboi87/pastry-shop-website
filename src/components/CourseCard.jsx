@@ -25,7 +25,7 @@ const CourseCard = ({ course, index }) => {
       initial={motionPropsR.initial}
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
-      className="w-full sm:w-[20rem] xs:h-[35rem] md:h-[31rem] mx-auto mb-4 text-justify bg-pinklight p-4 rounded-xl shadow-xl flex flex-col items-center justify-between"
+      className="w-full sm:w-[20rem] xs:h-[35rem] md:h-[31rem] mx-auto mb-4 text-justify bg-primary p-4 rounded-xl shadow-xl flex flex-col items-center justify-between"
     >
       <div className="flex flex-col justify-center items-center w-full">
         <h3 className="mb-4 text-text text-[1.3rem] font-[500]">

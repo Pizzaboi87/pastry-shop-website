@@ -189,7 +189,7 @@ const reviews = [
     job: "businessman",
     review: "The best desserts I've ever had! Highly recommended.",
     stars: 5,
-    background: "rewback-1",
+    background: "rewbackg-1",
     profile: "rewprof-1",
   },
   {
@@ -198,7 +198,7 @@ const reviews = [
     review:
       "The cakes are so delicious, my mouth is watering! The coffee is also great.",
     stars: 5,
-    background: "rewback-2",
+    background: "rewbackg-2",
     profile: "rewprof-2",
   },
   {
@@ -207,7 +207,7 @@ const reviews = [
     review:
       "This patisserie is a real gem! The cakes are always fresh and delicious, and the staff are very friendly.",
     stars: 5,
-    background: "rewback-3",
+    background: "rewbackg-3",
     profile: "rewprof-3",
   },
   {
@@ -216,7 +216,7 @@ const reviews = [
     review:
       "This patisserie is my favorite! The cakes are so delicious, I want to go back right away!",
     stars: 5,
-    background: "rewback-4",
+    background: "rewbackg-4",
     profile: "rewprof-4",
   },
   {
@@ -225,7 +225,7 @@ const reviews = [
     review:
       "This patisserie is a real treat! The cakes are so delicious, I can't decide which one to choose.",
     stars: 4,
-    background: "rewback-5",
+    background: "rewbackg-5",
     profile: "rewprof-5",
   },
 ];

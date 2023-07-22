@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +9,22 @@ import {
 
 const SignUpForm = () => {
   const navigate = useNavigate();
+
+  const successSwal = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Your registration was successful.",
+      text: "\nPlease activate your account by clicking\non the link sent to your email address.",
+    });
+  };
+
+  const errorSwal = (error) => {
+    Swal.fire({
+      icon: "error",
+      title: "Something went wrong!",
+      text: error,
+    });
+  };
 
   const defaultForm = {
     displayName: "",
@@ -31,7 +48,7 @@ const SignUpForm = () => {
     event.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("passwords do not match");
+      errorSwal("Passwords do not match.");
       return;
     }
 
@@ -41,14 +58,16 @@ const SignUpForm = () => {
         password
       );
 
-      await createUserDocumentFromAuth(user, { displayName });
-      console.log(displayName);
+      await createUserDocumentFromAuth(user, { displayName }).then(() => {
+        successSwal();
+      });
       resetForm();
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
-        alert("Cannot create user, email already in use");
+        errorSwal("Cannot create user, email already in use.");
       } else {
-        console.log("user creation encountered an error", error);
+        errorSwal("Error during user creation.");
+        console.log(error);
       }
     } finally {
       navigate("/shop");
@@ -71,6 +90,7 @@ const SignUpForm = () => {
           Username
         </label>
         <input
+          required
           type="text"
           name="displayName"
           value={displayName}
@@ -81,6 +101,7 @@ const SignUpForm = () => {
           Email address
         </label>
         <input
+          required
           type="email"
           name="email"
           value={email}
@@ -91,6 +112,7 @@ const SignUpForm = () => {
           Password
         </label>
         <input
+          required
           type="password"
           name="password"
           value={password}
@@ -101,6 +123,7 @@ const SignUpForm = () => {
           Repeat Password
         </label>
         <input
+          required
           type="password"
           name="confirmPassword"
           value={confirmPassword}

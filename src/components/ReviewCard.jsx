@@ -25,7 +25,7 @@ const ReviewCard = ({ review }) => {
   }
 
   return (
-    <div className="mx-auto bg-white xs:w-[20rem] w-[16rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing">
+    <div className="mx-auto bg-primary xs:w-[20rem] w-[16rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing">
       <img
         src={bgImage}
         alt="background"
@@ -34,7 +34,7 @@ const ReviewCard = ({ review }) => {
       <img
         src={image}
         alt="profile"
-        className="bg-white rounded-full w-[10rem] h-[10rem] absolute top-[10%] object-cover border-4 border-white"
+        className="bg-primary rounded-full w-[10rem] h-[10rem] absolute top-[10%] object-cover border-4 border-primary"
       />
       <div className="flex flex-col items-center absolute top-[45%]">
         <h1 className="text-text text-[1.6rem] font-[600]">{review.name}</h1>
