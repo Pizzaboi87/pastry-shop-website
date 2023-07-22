@@ -60,11 +60,14 @@ const Blog = () => {
 	));
 
 	const posts = dummyPosts.map((post, index) => (
-		<div key={index} className="bg-pinklight w-full flex flex-col">
+		<div
+			key={index}
+			className="bg-primary w-full flex flex-col rounded-2xl mb-16 shadow-xl"
+		>
 			<img
 				src={post.image}
 				alt="image"
-				className="w-full h-[25rem] object-cover"
+				className="w-full h-[25rem] object-cover rounded-t-2xl"
 			/>
 			<h1 className="self-center mt-4 mb-4 text-text text-[1.3rem] font-[600]">
 				{post.title}
@@ -77,7 +80,7 @@ const Blog = () => {
 	));
 
 	return (
-		<div className="grid grid-cols-4 md:mt-56 mt-36 border-red border-2 xl:w-[90%] 3xl:w-[80%] w-full bg-white rounded-xl md:p-12 p-4 gap-x-12">
+		<div className="grid grid-cols-4 md:mt-56 mt-36 xl:w-[90%] 3xl:w-[80%] w-full bg-pinktransparent rounded-xl md:p-12 p-4 gap-x-12">
 			<h1 className="col-span-4 text-brown xl:text-[3rem] text-[2rem] font-[400] mb-8 text-center">
 				Blog
 			</h1>
@@ -86,16 +89,14 @@ const Blog = () => {
 				<ImageCarousel>{images}</ImageCarousel>
 			</div>
 
-			<div className="xl:sticky top-[20%] xl:col-span-1 col-span-4 w-full rounded-xl border-green border-2 xl:mb-0 mb-6 flex flex-col h-[20vh] bg-pinklight items-center justify-center shadow-xl p-3">
+			<div className="xl:sticky top-[20%] xl:col-span-1 col-span-4 w-full rounded-xl border-green xl:mb-0 mb-6 flex flex-col h-[20vh] bg-primary items-center justify-center shadow-xl p-3">
 				<h1 className="mb-6 text-text text-[1.5rem] font-[600]">
 					Search by category
 				</h1>
 				<ul className="flex flex-wrap gap-x-6">{categoryItems}</ul>
 			</div>
 
-			<div className="xl:col-span-3 col-span-4 border-red border-2">
-				{posts}
-			</div>
+			<div className="xl:col-span-3 col-span-4 ">{posts}</div>
 		</div>
 	);
 };

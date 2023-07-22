@@ -16,6 +16,7 @@ module.exports = {
 				yellowbg: "#ffeaad",
 				pinkdark: "#df919f",
 				pinklight: "#fcdfda",
+				pinktransparent: "#df919f50",
 				logopink: "#e45a84",
 			},
 			screens: {
