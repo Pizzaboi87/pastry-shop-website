@@ -1,6 +1,5 @@
 import { ImageCarousel } from "../components";
 import { eclair, cream, macaron, gift, waffle } from "../assets";
-import { useRef, useEffect } from "react";
 
 const Blog = () => {
 	const dummyPosts = [
@@ -45,7 +44,7 @@ const Blog = () => {
 			<img
 				src={post.image}
 				alt="image"
-				className="w-[15rem] h-[15rem] object-cover"
+				className="w-[10rem] h-[10rem] object-cover"
 			/>
 			<p>{post.title}</p>
 		</div>
@@ -70,30 +69,15 @@ const Blog = () => {
 			<h1 className="self-center mt-4 mb-4 text-text text-[1.3rem] font-[600]">
 				{post.title}
 			</h1>
-			<p className="text-text text-justify text-[1rem] mb-4">{post.post}</p>
+			<p className="text-text text-justify text-[1rem] mb-4 p-2">{post.post}</p>
 			<button className="bg-logopink rounded-xl px-4 py-2 mb-16 text-white shadow-xl self-center">
 				Read article
 			</button>
 		</div>
 	));
 
-	const ref = useRef();
-
-	useEffect(() => {
-		let scrolling = window.pageYOffset;
-
-		const moveDown = (e) => {
-			let offset = window.pageYOffset;
-			scrolling = offset;
-			ref.current.style.top = scrolling / 35 + "%";
-		};
-
-		document.addEventListener("scroll", moveDown);
-		return () => document.removeEventListener("scroll", moveDown);
-	}, []);
-
 	return (
-		<div className="grid grid-cols-4 md:mt-56 mt-36 border-red border-2 xl:w-[90%] 3xl:w-[80%] w-full h-fit bg-white rounded-xl md:p-12 p-4 gap-x-24">
+		<div className="grid grid-cols-4 md:mt-56 mt-36 border-red border-2 xl:w-[90%] 3xl:w-[80%] w-full bg-white rounded-xl md:p-12 p-4 gap-x-12">
 			<h1 className="col-span-4 text-brown xl:text-[3rem] text-[2rem] font-[400] mb-8 text-center">
 				Blog
 			</h1>
@@ -102,16 +86,15 @@ const Blog = () => {
 				<ImageCarousel>{images}</ImageCarousel>
 			</div>
 
-			<div className="col-span-3 border-red border-2">{posts}</div>
-
-			<div
-				ref={ref}
-				className="w-full rounded-xl border-green border-2 sticky top-0 flex flex-col h-[20vh] bg-pinklight items-center justify-center shadow-xl p-3"
-			>
+			<div className="xl:sticky top-[20%] xl:col-span-1 col-span-4 w-full rounded-xl border-green border-2 xl:mb-0 mb-6 flex flex-col h-[20vh] bg-pinklight items-center justify-center shadow-xl p-3">
 				<h1 className="mb-6 text-text text-[1.5rem] font-[600]">
 					Search by category
 				</h1>
 				<ul className="flex flex-wrap gap-x-6">{categoryItems}</ul>
+			</div>
+
+			<div className="xl:col-span-3 col-span-4 border-red border-2">
+				{posts}
 			</div>
 		</div>
 	);

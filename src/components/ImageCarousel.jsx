@@ -10,17 +10,17 @@ const ImageCarousel = ({ children, type }) => {
 		},
 		medium: {
 			breakpoint: { max: 1400, min: 1024 },
-			items: 3,
+			items: type === "review" ? 3 : 4,
 			slidesToSlide: 1,
 		},
 		tablet: {
 			breakpoint: { max: 1023, min: 768 },
-			items: 2,
+			items: type === "review" ? 2 : 3,
 			slidesToSlide: 1,
 		},
 		mobile: {
 			breakpoint: { max: 767, min: 0 },
-			items: 1,
+			items: type === "review" ? 1 : 2,
 			slidesToSlide: 1,
 		},
 	};
