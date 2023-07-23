@@ -23,8 +23,7 @@ const BlogPostPage = () => {
 
 			<BlogStickyCard posts={dummyPosts} />
 
-			<BlogComment />
-
+			<BlogComment id={id} />
 		</div>
 	);
 };

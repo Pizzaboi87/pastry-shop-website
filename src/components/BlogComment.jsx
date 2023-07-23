@@ -1,6 +1,20 @@
 import { useState } from "react";
+import { comments } from "../content";
 
-const BlogComment = () => {
+const BlogComment = ({ id }) => {
+	const allComment = comments
+		.filter((comment) => comment.relatedID === id)
+		.map((comment, index) => (
+			<div className="flex flex-col my-8" key={index}>
+				<span className="w-full flex justify-between">
+					<p className="tex-text font-[600]">{comment.author}</p>
+					<p>{new Date(comment.date).toUTCString().slice(0, -7)}</p>
+				</span>
+				<p className="text-text text-[1.2rem] decoration-double underline">{comment.title}</p>
+				<p>{comment.comment}</p>
+			</div>
+		));
+
 	const defaultForm = {
 		author: "",
 		title: "",
@@ -22,6 +36,7 @@ const BlogComment = () => {
 		<div className="col-span-3 mb-16">
 			<div className="w-full bg-primary rounded-2xl shadow-xl p-6 mb-16">
 				<h1 className="text-text text-[1.3rem] font-[600] mb-16">Comments</h1>
+				<ul>{allComment}</ul>
 			</div>
 			<form className="flex flex-col mt-4">
 				<textarea
