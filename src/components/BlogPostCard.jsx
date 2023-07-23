@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 const BlogPostCard = ({ post, isOwnPage }) => {
 	const article = post.post
 		.split("\n\n")
-		.map((paragraph) => (
-			<p>
-				{paragraph.split("\n").reduce((total, line) => [total, <br />, line])}
+		.map((paragraph, index) => (
+			<p key={index}>
+				{paragraph
+					.split("\n")
+					.reduce((total, line, index) => [total, <br key={index} />, line])}
 			</p>
 		));
 

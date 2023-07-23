@@ -1,7 +1,40 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+import { UserContext } from "../context";
 import { comments } from "../content";
+import { showName } from "../utils/firebase";
 
 const BlogComment = ({ id }) => {
+	const { currentUser } = useContext(UserContext);
+	const [displayName, setDisplayName] = useState("");
+
+	const defaultForm = {
+		author: displayName ? displayName : "",
+		title: "",
+		comment: "",
+	};
+
+	const [form, setForm] = useState(defaultForm);
+	const { author, title, comment } = form;
+
+	useEffect(() => {
+		const getName = async () => {
+			const userName = await showName(currentUser.uid);
+			setDisplayName(userName);
+			setForm({ ...form, author: userName });
+		};
+
+		if (!currentUser) return;
+		getName();
+	}, [currentUser]);
+
+	const resetForm = () => {
+		setForm(defaultForm);
+	};
+
+	const handleChange = (event) => {
+		setForm({ ...form, [event.target.name]: event.target.value });
+	};
+
 	const allComment = comments
 		.filter((comment) => comment.relatedID === id)
 		.map((comment, index) => (
@@ -10,27 +43,12 @@ const BlogComment = ({ id }) => {
 					<p className="tex-text font-[600]">{comment.author}</p>
 					<p>{new Date(comment.date).toUTCString().slice(0, -7)}</p>
 				</span>
-				<p className="text-text text-[1.2rem] decoration-double underline">{comment.title}</p>
+				<p className="text-text text-[1.2rem] decoration-double underline">
+					{comment.title}
+				</p>
 				<p>{comment.comment}</p>
 			</div>
 		));
-
-	const defaultForm = {
-		author: "",
-		title: "",
-		comment: "",
-	};
-
-	const resetForm = () => {
-		setForm(defaultForm);
-	};
-
-	const [form, setForm] = useState(defaultForm);
-	const { author, title, comment } = form;
-
-	const handleChange = (event) => {
-		setForm({ ...form, [event.target.name]: event.target.value });
-	};
 
 	return (
 		<div className="col-span-3 mb-16">
@@ -53,6 +71,7 @@ const BlogComment = ({ id }) => {
 						Your Name
 						<input
 							required
+							disabled={currentUser ? true : false}
 							type="text"
 							name="author"
 							value={author}
