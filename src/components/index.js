@@ -4,6 +4,7 @@ import BlogCarousel from "./BlogCarousel";
 import BlogCategoryCard from "./BlogCategoryCard";
 import BlogPostCard from "./BlogPostCard";
 import BlogProposalCard from "./BlogProposalCard";
+import BlogStickyCard from "./BlogStickyCard";
 import CourseCard from "./CourseCard";
 import CourseForm from "./CourseForm";
 import Footer from "./Footer";
@@ -29,6 +30,7 @@ export {
 	BlogCategoryCard,
 	BlogPostCard,
 	BlogProposalCard,
+	BlogStickyCard,
 	CourseCard,
 	CourseForm,
 	Footer,

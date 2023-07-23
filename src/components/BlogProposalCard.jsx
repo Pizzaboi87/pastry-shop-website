@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const BlogProposalCard = ({ post }) => {
 	const [cuttedPhrase, setCuttedPhrase] = useState();
@@ -20,17 +21,19 @@ const BlogProposalCard = ({ post }) => {
 	}, []);
 
 	return (
-		<div className="bg-primary h-fit rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer">
-			<img
-				src={post.image}
-				alt={post.title}
-				className="col-span-2 bg-logopink rounded-full w-[5rem] h-[5rem] object-cover border-2 border-white"
-			/>
-			<div className="col-span-4 flex flex-col items-center w-full">
-				<h1 className="text-text text-[1rem] font-[600]">{post.title}</h1>
-				<p>{`${cuttedPhrase} (...)`}</p>
+		<Link to={`/blog/` + post.title.toLowerCase().split(" ").join("-")}>
+			<div className="bg-primary h-fit rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer">
+				<img
+					src={post.image}
+					alt={post.title}
+					className="col-span-2 bg-logopink rounded-full w-[5rem] h-[5rem] object-cover border-2 border-white"
+				/>
+				<div className="col-span-4 flex flex-col items-center w-full">
+					<h1 className="text-text text-[1rem] font-[600]">{post.title}</h1>
+					<p>{`${cuttedPhrase} (...)`}</p>
+				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 

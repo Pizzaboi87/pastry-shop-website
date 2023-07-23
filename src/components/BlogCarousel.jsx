@@ -1,15 +1,22 @@
+import { Link } from "react-router-dom";
 import ImageCarousel from "./ImageCarousel";
 
 const BlogCarousel = ({ posts }) => {
 	const images = posts.map((post, index) => (
-		<div className="flex flex-col items-center cursor-pointer" key={index}>
+		<Link
+			to={`/blog/` + post.title.toLowerCase().split(" ").join("-")}
+			className="cursor-pointer"
+			key={index}
+		>
 			<img
 				src={post.image}
 				alt="image"
-				className="w-[13rem] h-[13rem] object-cover border-2 border-white rounded-xl shadow-xl mb-4"
+				className=" object-cover border-2 border-white rounded-xl shadow-xl mb-4"
 			/>
-			<p className="text-text font-[600] text-[1.2rem]">{post.title}</p>
-		</div>
+			<p className="text-text text-center text-[1.2rem] font-[600]">
+				{post.title}
+			</p>
+		</Link>
 	));
 
 	return <ImageCarousel>{images}</ImageCarousel>;

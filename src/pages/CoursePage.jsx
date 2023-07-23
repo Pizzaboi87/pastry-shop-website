@@ -64,7 +64,7 @@ const CoursePage = () => {
                       className={`text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] text-justify ${
                         itemIndex === 0 ? "font-[600] list-none" : ""
                       }`}
-                    >
+                    > 
                       {item}
                     </li>
                   ))}

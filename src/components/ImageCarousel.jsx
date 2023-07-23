@@ -29,7 +29,7 @@ const ImageCarousel = ({ children, type }) => {
 		<Carousel
 			responsive={responsive}
 			containerClass="w-full flex items-center"
-			itemClass="mx-auto"
+			itemClass={type === "review" ? "mx-auto" : "mx-2"}
 			autoPlay={true}
 			swipeable={true}
 			draggable={true}

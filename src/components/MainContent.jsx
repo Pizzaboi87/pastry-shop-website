@@ -4,6 +4,7 @@ import { ScrollToTop } from ".";
 import {
 	Authentication,
 	Blog,
+	BlogPostPage,
 	CoursePage,
 	Courses,
 	Home,
@@ -43,6 +44,7 @@ const MainContent = () => {
 				<Route path="/reviews" element={<Reviews />} />
 				<Route path="/ourstory" element={<OurStory />} />
 				<Route path="/blog" element={<Blog />} />
+				<Route path="/blog/:id" element={<BlogPostPage />} />
 				<Route path="/auth" element={<Authentication />} />
 				<Route path="/shop" element={<Shop />} />
 				<Route path="/courses/:id" element={<CoursePage />} />
