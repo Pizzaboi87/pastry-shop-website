@@ -1,4 +1,9 @@
-import { BlogPostCard, BlogCarousel, BlogStickyCard } from "../components";
+import {
+	BlogPostCard,
+	BlogCarousel,
+	BlogStickyCard,
+	BlogComment,
+} from "../components";
 import { useParams } from "react-router-dom";
 import { dummyPosts } from "../content";
 
@@ -18,9 +23,8 @@ const BlogPostPage = () => {
 
 			<BlogStickyCard posts={dummyPosts} />
 
-			<div className="col-span-4 xl:mb-24 mb-8">
-				<BlogCarousel posts={dummyPosts} />
-			</div>
+			<BlogComment />
+
 		</div>
 	);
 };

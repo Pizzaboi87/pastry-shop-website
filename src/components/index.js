@@ -2,6 +2,7 @@ import AuthButton from "./AuthButton";
 import Awning from "./Awning";
 import BlogCarousel from "./BlogCarousel";
 import BlogCategoryCard from "./BlogCategoryCard";
+import BlogComment from "./BlogComment";
 import BlogPostCard from "./BlogPostCard";
 import BlogProposalCard from "./BlogProposalCard";
 import BlogStickyCard from "./BlogStickyCard";
@@ -28,6 +29,7 @@ export {
 	Awning,
 	BlogCarousel,
 	BlogCategoryCard,
+	BlogComment,
 	BlogPostCard,
 	BlogProposalCard,
 	BlogStickyCard,

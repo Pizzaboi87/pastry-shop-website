@@ -5,7 +5,7 @@ const BlogProposalCard = ({ post }) => {
 	const [cuttedPhrase, setCuttedPhrase] = useState();
 
 	useEffect(() => {
-		const cardText = post.post.split(" ").reduce(
+		const cardText = post.blurb.split(" ").reduce(
 			(acc, c) => {
 				const currIndex = acc.length - 1;
 				const currLength = acc[currIndex].join(" ").length;
