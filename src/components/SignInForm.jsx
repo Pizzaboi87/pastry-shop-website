@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
-  signInWithGooglePopup,
+  signInWithGoogleRedirect,
   signInAuthUserWithEmailAndPassword,
 } from "../utils/firebase";
 
@@ -57,19 +57,15 @@ const SignInForm = () => {
           console.log(error);
           break;
       }
-    } finally {
-      navigate("/shop");
     }
   };
 
   const handleGoogleSignIn = async () => {
     try {
-      await signInWithGooglePopup();
+      await signInWithGoogleRedirect();
     } catch (error) {
       errorSwal("Error during sign in.");
       console.log(error);
-    } finally {
-      navigate("/shop");
     }
   };
 

@@ -1,6 +1,7 @@
 import Authentication from "./Authentication";
 import Blog from "./Blog";
 import BlogPostPage from "./BlogPostPage";
+import BlogTagPage from "./BlogTagPage";
 import CoursePage from "./CoursePage";
 import Courses from "./Courses";
 import Home from "./Home";
@@ -11,15 +12,16 @@ import Reviews from "./Reviews";
 import Shop from "./Shop";
 
 export {
-	Authentication,
-	Blog,
-	BlogPostPage,
-	CoursePage,
-	Courses,
-	Home,
-	NotFound,
-	OurStory,
-	Recipes,
-	Reviews,
-	Shop,
+  Authentication,
+  Blog,
+  BlogPostPage,
+  BlogTagPage,
+  CoursePage,
+  Courses,
+  Home,
+  NotFound,
+  OurStory,
+  Recipes,
+  Reviews,
+  Shop,
 };
