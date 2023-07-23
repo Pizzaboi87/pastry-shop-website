@@ -1,5 +1,8 @@
 import AuthButton from "./AuthButton";
 import Awning from "./Awning";
+import BlogCarousel from "./BlogCarousel";
+import BlogCategoryCard from "./BlogCategoryCard";
+import BlogPostCard from "./BlogPostCard";
 import CourseCard from "./CourseCard";
 import CourseForm from "./CourseForm";
 import Footer from "./Footer";
@@ -19,23 +22,26 @@ import TeamCard from "./TeamCard";
 import TextAndImage from "./TextAndImage";
 
 export {
-  AuthButton,
-  Awning,
-  CourseCard,
-  CourseForm,
-  Footer,
-  Image,
-  ImageCarousel,
-  MainContent,
-  Navbar,
-  Paragraphs,
-  Postcard,
-  RecipeCard,
-  ReviewCard,
-  ScrollToTop,
-  SearchForm,
-  SignInForm,
-  SignUpForm,
-  TeamCard,
-  TextAndImage,
+	AuthButton,
+	Awning,
+	BlogCarousel,
+	BlogCategoryCard,
+	BlogPostCard,
+	CourseCard,
+	CourseForm,
+	Footer,
+	Image,
+	ImageCarousel,
+	MainContent,
+	Navbar,
+	Paragraphs,
+	Postcard,
+	RecipeCard,
+	ReviewCard,
+	ScrollToTop,
+	SearchForm,
+	SignInForm,
+	SignUpForm,
+	TeamCard,
+	TextAndImage,
 };
