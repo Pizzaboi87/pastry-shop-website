@@ -32,9 +32,10 @@ const categories = [
 	"history",
 	"fun-facts",
 	"events",
-	"good-ideas",
-	"kitchen-news",
-	"book-review",
+	"ideas",
+	"news",
+	"books",
+	"tips & tricks",
 ];
 
 export { dummyPosts, categories };

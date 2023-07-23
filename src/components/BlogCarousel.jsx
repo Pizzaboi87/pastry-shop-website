@@ -6,7 +6,7 @@ const BlogCarousel = ({ posts }) => {
 			<img
 				src={post.image}
 				alt="image"
-				className="w-[13rem] h-[13rem] object-cover border-2 border-logopink rounded-xl shadow-xl mb-4"
+				className="w-[13rem] h-[13rem] object-cover border-2 border-white rounded-xl shadow-xl mb-4"
 			/>
 			<p className="text-text font-[600] text-[1.2rem]">{post.title}</p>
 		</div>

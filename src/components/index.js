@@ -3,6 +3,7 @@ import Awning from "./Awning";
 import BlogCarousel from "./BlogCarousel";
 import BlogCategoryCard from "./BlogCategoryCard";
 import BlogPostCard from "./BlogPostCard";
+import BlogProposalCard from "./BlogProposalCard";
 import CourseCard from "./CourseCard";
 import CourseForm from "./CourseForm";
 import Footer from "./Footer";
@@ -27,6 +28,7 @@ export {
 	BlogCarousel,
 	BlogCategoryCard,
 	BlogPostCard,
+	BlogProposalCard,
 	CourseCard,
 	CourseForm,
 	Footer,
