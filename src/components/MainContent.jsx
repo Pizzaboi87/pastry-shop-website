@@ -16,6 +16,7 @@ import {
 	Reviews,
 	Shop,
 } from "../pages";
+import { Main, One, Other } from "../pages/admin-pages";
 
 const MainContent = () => {
 	const location = useLocation();
@@ -40,7 +41,11 @@ const MainContent = () => {
 			<ScrollToTop />
 			<Routes location={displayLocation}>
 				<Route path="/" element={<Navigate to="/home" />} />
-				<Route path="/admin" element={<Admin />} />
+				<Route path="admin" element={<Admin />}>
+					<Route path="" element={<Main />} />
+					<Route path="one" element={<One />} />
+					<Route path="other" element={<Other />} />
+				</Route>
 				<Route path="/home" element={<Home />} />
 				<Route path="/recipes" element={<Recipes />} />
 				<Route path="/courses" element={<Courses />} />
@@ -53,7 +58,6 @@ const MainContent = () => {
 				<Route path="/shop" element={<Shop />} />
 				<Route path="/courses/:id" element={<CoursePage />} />
 				<Route path="*" element={<NotFound />} />
-				courses
 			</Routes>
 		</div>
 	);
