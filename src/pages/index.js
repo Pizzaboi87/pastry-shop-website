@@ -1,3 +1,4 @@
+import Admin from "./Admin";
 import Authentication from "./Authentication";
 import Blog from "./Blog";
 import BlogPostPage from "./BlogPostPage";
@@ -12,16 +13,17 @@ import Reviews from "./Reviews";
 import Shop from "./Shop";
 
 export {
-  Authentication,
-  Blog,
-  BlogPostPage,
-  BlogTagPage,
-  CoursePage,
-  Courses,
-  Home,
-  NotFound,
-  OurStory,
-  Recipes,
-  Reviews,
-  Shop,
+	Admin,
+	Authentication,
+	Blog,
+	BlogPostPage,
+	BlogTagPage,
+	CoursePage,
+	Courses,
+	Home,
+	NotFound,
+	OurStory,
+	Recipes,
+	Reviews,
+	Shop,
 };
