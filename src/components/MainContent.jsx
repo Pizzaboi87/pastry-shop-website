@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { ScrollToTop } from ".";
 import {
   Admin,
   Authentication,
@@ -25,7 +23,6 @@ const MainContent = () => {
   return (
     <div className="flex flex-col items-center w-full">
       <AnimatePresence mode="wait">
-        <ScrollToTop />
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="admin" element={<Admin />}>

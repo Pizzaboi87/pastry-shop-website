@@ -1,3 +1,4 @@
+import ScrollToTop from "./ScrollToTop";
 import { motion } from "framer-motion";
 
 const TransitionParent = ({ children, isHome, isFlex }) => {
@@ -16,6 +17,7 @@ const TransitionParent = ({ children, isHome, isFlex }) => {
       exit={{ y: 100, opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+      <ScrollToTop />
       {children}
     </motion.div>
   );

@@ -1,3 +1,4 @@
+import AdminPanel from "./AdminPanel";
 import AuthButton from "./AuthButton";
 import Awning from "./Awning";
 import BlogCarousel from "./BlogCarousel";
@@ -13,6 +14,7 @@ import Image from "./Image";
 import ImageCarousel from "./ImageCarousel";
 import MainContent from "./MainContent";
 import Navbar from "./Navbar";
+import NoPermission from "./NoPermission";
 import Paragraphs from "./Paragraphs";
 import Postcard from "./Postcard";
 import RecipeCard from "./RecipeCard";
@@ -26,6 +28,7 @@ import TextAndImage from "./TextAndImage";
 import TransitionParent from "./TransitionParent";
 
 export {
+  AdminPanel,
   AuthButton,
   Awning,
   BlogCarousel,
@@ -41,6 +44,7 @@ export {
   ImageCarousel,
   MainContent,
   Navbar,
+  NoPermission,
   Paragraphs,
   Postcard,
   RecipeCard,
