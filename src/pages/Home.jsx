@@ -2,7 +2,7 @@ import { Fragment, useContext } from "react";
 import { macaron, eclair, cream } from "../assets";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
-import { Image, TextAndImage } from "../components";
+import { Image, TextAndImage, TransitionParent } from "../components";
 import { IsRegContext, UserContext } from "../context";
 import { homeTitle, homeSubtitle, homeText1, homeText2 } from "../constants";
 import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ const Home = () => {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <div className="3xl:mt-64 xl:mt-56 mt-44 w-full flex flex-col items-center overflow-hidden">
+    <TransitionParent isHome isFlex>
       <div className="xl:w-[75%] w-full flex xl:flex-row flex-col items-center justify-center">
         <motion.span
           initial={motionPropsR.initial}
@@ -76,7 +76,7 @@ const Home = () => {
         width={40}
         flexDir="flex-col"
       />
-    </div>
+    </TransitionParent>
   );
 };
 

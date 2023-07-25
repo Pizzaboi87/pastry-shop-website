@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { courses } from "../constants";
-import { CourseForm } from "../components";
+import { CourseForm, TransitionParent } from "../components";
 
 const CoursePage = () => {
   const { id } = useParams();
@@ -33,7 +33,7 @@ const CoursePage = () => {
   }
 
   return (
-    <div className="md:mt-56 mt-36 xl:w-[90%] 3xl:w-[80%] w-full bg-glass glass rounded-xl flex flex-col items-center shadow-xl md:p-12 p-4">
+    <TransitionParent isFlex>
       <h1 className="xl:text-[3rem] text-[2rem] text-center text-text font-[600] mb-8">
         {course.title}
       </h1>
@@ -64,7 +64,7 @@ const CoursePage = () => {
                       className={`text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] text-justify ${
                         itemIndex === 0 ? "font-[600] list-none" : ""
                       }`}
-                    > 
+                    >
                       {item}
                     </li>
                   ))}
@@ -90,7 +90,7 @@ const CoursePage = () => {
           }
         })}
       <CourseForm courses={courses} />
-    </div>
+    </TransitionParent>
   );
 };
 

@@ -1,5 +1,7 @@
+import { TransitionParent } from "../components";
+
 const Shop = () => {
-  return <div className="mt-56">Shop</div>;
+  return <TransitionParent isFlex>Shop</TransitionParent>;
 };
 
 export default Shop;

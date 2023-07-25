@@ -1,5 +1,7 @@
+import { TransitionParent } from "../components";
+
 const NotFound = () => {
-  return <div className="mt-56">NotFound</div>;
+  return <TransitionParent isFlex>NotFound</TransitionParent>;
 };
 
 export default NotFound;

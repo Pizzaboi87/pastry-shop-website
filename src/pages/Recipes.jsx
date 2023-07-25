@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchRecipe } from "../utils/fetchRecipe";
-import { RecipeCard, SearchForm } from "../components";
+import { RecipeCard, SearchForm, TransitionParent } from "../components";
+import { motion } from "framer-motion";
 
 const Recipes = () => {
   const [offset, setOffset] = useState(0);
@@ -28,36 +29,34 @@ const Recipes = () => {
   }, [searchQuery, offset]);
 
   return (
-    <div className="md:mt-56 mt-36 xl:w-[90%] 3xl:w-[80%] w-full flex flex-col items-center">
-      <div className="bg-glass glass shadow-xl rounded-xl xl:p-8 flex flex-col items-center md:p-12 p-4">
-        <h1 className="text-brown xl:text-[3rem] text-[2rem] text-center font-[600] mb-8">
-          Our Favourite Recipes
-        </h1>
-        <SearchForm
-          setLoading={setLoading}
-          setNotFound={setNotFound}
-          setSearchQuery={setSearchQuery}
-          setOffset={setOffset}
-        />
-        {loading ? (
-          <h1>loading...</h1>
-        ) : notFound ? (
-          <h1>not found</h1>
-        ) : (
-          <>
-            {recipes.map((recipe, index) => (
-              <RecipeCard recipe={recipe} key={`${recipe.title}-${index}`} />
-            ))}
-            <button
-              onClick={showMore}
-              className="bg-logopink px-8 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white py-3 text-[1.3rem] font-bold"
-            >
-              show more
-            </button>
-          </>
-        )}
-      </div>
-    </div>
+    <TransitionParent isFlex>
+      <h1 className="text-brown xl:text-[3rem] text-[2rem] text-center font-[600] mb-8">
+        Our Favourite Recipes
+      </h1>
+      <SearchForm
+        setLoading={setLoading}
+        setNotFound={setNotFound}
+        setSearchQuery={setSearchQuery}
+        setOffset={setOffset}
+      />
+      {loading ? (
+        <h1>loading...</h1>
+      ) : notFound ? (
+        <h1>not found</h1>
+      ) : (
+        <>
+          {recipes.map((recipe, index) => (
+            <RecipeCard recipe={recipe} key={`${recipe.title}-${index}`} />
+          ))}
+          <button
+            onClick={showMore}
+            className="bg-logopink px-8 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white py-3 text-[1.3rem] font-bold"
+          >
+            show more
+          </button>
+        </>
+      )}
+    </TransitionParent>
   );
 };
 

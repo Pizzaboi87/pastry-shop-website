@@ -1,9 +1,14 @@
-import { BlogCarousel, BlogPostCard, BlogStickyCard } from "../components";
+import {
+  BlogCarousel,
+  BlogPostCard,
+  BlogStickyCard,
+  TransitionParent,
+} from "../components";
 import { dummyPosts } from "../content";
 
 const Blog = () => {
   return (
-    <div className="glass grid grid-cols-6 md:mt-56 mt-36 xl:w-[90%] 3xl:w-[80%] w-full bg-glass rounded-xl md:p-12 p-4 gap-x-12 shadow-2xl">
+    <TransitionParent isFlex={false}>
       <h1 className="col-span-6 text-brown xl:text-[3rem] text-[2rem] font-[600] mb-8 text-center">
         Our Blog
       </h1>
@@ -19,7 +24,7 @@ const Blog = () => {
           <BlogPostCard key={post.id} post={post} isOwnPage={false} />
         ))}
       </div>
-    </div>
+    </TransitionParent>
   );
 };
 
