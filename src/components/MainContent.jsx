@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import {
   Admin,
   Authentication,
@@ -14,8 +15,15 @@ import {
   Reviews,
   Shop,
 } from "../pages";
-import { Main, One, Other } from "../pages/admin-pages";
-import { AnimatePresence } from "framer-motion";
+import {
+  BlogAll,
+  BlogComments,
+  BlogNew,
+  ShopAll,
+  ShopNew,
+  ShopOrders,
+  UsersAll,
+} from "../pages/admin-pages";
 
 const MainContent = () => {
   const location = useLocation();
@@ -25,11 +33,17 @@ const MainContent = () => {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Navigate to="/home" />} />
+
           <Route path="admin" element={<Admin />}>
-            <Route path="" element={<Main />} />
-            <Route path="one" element={<One />} />
-            <Route path="other" element={<Other />} />
+            <Route path="" element={<UsersAll />} />
+            <Route path="blog/all" element={<BlogAll />} />
+            <Route path="blog/new-article" element={<BlogNew />} />
+            <Route path="blog/comments" element={<BlogComments />} />
+            <Route path="shop/products" element={<ShopAll />} />
+            <Route path="shop/new-product" element={<ShopNew />} />
+            <Route path="shop/orders" element={<ShopOrders />} />
           </Route>
+
           <Route path="/home" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/courses" element={<Courses />} />

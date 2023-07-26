@@ -15,7 +15,7 @@ const Admin = () => {
 
   return (
     <>
-      {adminUID ? (
+      {currentUser && adminUID ? (
         <AdminPanel>
           <Outlet />
         </AdminPanel>
