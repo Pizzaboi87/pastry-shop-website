@@ -9,7 +9,7 @@ import {
 
 const Reviews = () => {
   return (
-    <TransitionParent isFlex>
+    <TransitionParent isFlex isRew>
       <h1 className="xl:text-[3rem] text-[2rem] text-center text-text font-[600] mb-8">
         Our Customers Wrote
       </h1>

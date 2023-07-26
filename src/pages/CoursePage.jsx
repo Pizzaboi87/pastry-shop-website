@@ -80,7 +80,7 @@ const CoursePage = () => {
                 <img
                   src={images[index]}
                   alt="course-picture"
-                  className="md:w-[30rem] w-full mb-8 float-right ml-8"
+                  className="xl:w-[30rem] md:w-[20rem] w-full mb-8 md:float-right md:ml-8"
                 />
                 <p className="text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] mb-8 inline">
                   {detail}
