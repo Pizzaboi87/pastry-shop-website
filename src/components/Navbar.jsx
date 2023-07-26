@@ -95,7 +95,9 @@ const Navbar = () => {
       >
         <ul
           className={`${
-            openMyAccount ? "opacity-1 delay-300" : "opacity-0"
+            openMyAccount
+              ? "visible opacity-1 delay-300"
+              : "invisible opacity-0"
           } flex flex-col p-5 transition-all ease-in-out`}
         >
           {myAccount.map((item) => (
@@ -112,7 +114,7 @@ const Navbar = () => {
             <button
               onClick={() => {
                 signOutUser();
-                () => setOpenMyAccount(false);
+                setOpenMyAccount(false);
               }}
             >
               Sign Out

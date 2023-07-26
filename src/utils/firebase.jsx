@@ -15,7 +15,14 @@ import {
   uploadBytes,
   getDownloadURL,
 } from "firebase/storage";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  getDocs,
+  collection,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCSsqJaZjP8kHuHpXb4kLIeOjnBdi8BI3s",
@@ -100,4 +107,10 @@ export const showName = async (uid) => {
     console.error("Error during the fetch of user's name: ", error);
     throw error;
   }
+};
+
+export const getAllUser = async () => {
+  const querySnapshot = await getDocs(collection(db, "users"));
+  const userList = querySnapshot.docs.map((doc) => doc.data());
+  return userList;
 };

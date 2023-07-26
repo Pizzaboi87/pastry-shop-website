@@ -3,16 +3,19 @@ import { adminMenu } from "../constants";
 
 const AdminMenu = () => {
   const menuItems = adminMenu.map((item) => (
-    <>
+    <span key={item.title}>
       <li className="text-text text-[1.2rem] font-[600]">{item.title}</li>
       <ul className="pl-2 pb-4">
         {item.links.map((link) => (
-          <li className="text-text text-[1rem] font-[500] hover:text-logopink">
+          <li
+            key={link.title}
+            className="text-text text-[1rem] font-[500] hover:text-logopink"
+          >
             <Link to={link.url}>{link.title}</Link>
           </li>
         ))}
       </ul>
-    </>
+    </span>
   ));
 
   return (
