@@ -28,6 +28,25 @@ const navLinksRight = [
   },
 ];
 
+const myAccount = [
+  {
+    title: "My Account",
+    id: "myaccount",
+  },
+  {
+    title: "Previous Orders",
+    id: "myorders",
+  },
+  {
+    title: "My Cart",
+    id: "mycart",
+  },
+  {
+    title: "Settings",
+    id: "settings",
+  },
+];
+
 const homeTitle = ["Savor", "the art of", "French Pastries!"];
 
 const homeSubtitle = [
@@ -374,6 +393,7 @@ export {
   homeText1,
   homeText2,
   homeTitle,
+  myAccount,
   navLinksLeft,
   navLinksRight,
   reviews,
