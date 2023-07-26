@@ -1,6 +1,10 @@
 import { useParams } from "react-router-dom";
-import { dummyPosts } from "../content";
-import { BlogPostCard, BlogStickyCard, TransitionParent } from "../components";
+import { dummyPosts } from "../../content";
+import {
+  BlogPostCard,
+  BlogStickyCard,
+  TransitionParent,
+} from "../../components";
 
 const BlogTagPage = () => {
   const { tag } = useParams();

@@ -14,7 +14,7 @@ import {
   Recipes,
   Reviews,
   Shop,
-} from "../pages";
+} from "../pages/main-pages";
 import {
   BlogAll,
   BlogComments,
@@ -24,6 +24,13 @@ import {
   ShopOrders,
   UsersAll,
 } from "../pages/admin-pages";
+import {
+  Favourites,
+  MyAccount,
+  MyCart,
+  PreviousOrders,
+  Settings,
+} from "../pages/user-pages";
 
 const MainContent = () => {
   const location = useLocation();
@@ -43,6 +50,12 @@ const MainContent = () => {
             <Route path="shop/new-product" element={<ShopNew />} />
             <Route path="shop/orders" element={<ShopOrders />} />
           </Route>
+
+          <Route path="/myfavourites" element={<Favourites />} />
+          <Route path="/myaccount" element={<MyAccount />} />
+          <Route path="/mycart" element={<MyCart />} />
+          <Route path="/myorders" element={<PreviousOrders />} />
+          <Route path="/mysettings" element={<Settings />} />
 
           <Route path="/home" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />

@@ -1,11 +1,10 @@
-import { reviews } from "../constants";
-import { motion } from "framer-motion";
+import { reviews } from "../../constants";
 import {
   ReviewCard,
   ImageCarousel,
   Postcard,
   TransitionParent,
-} from "../components";
+} from "../../components";
 
 const Reviews = () => {
   return (

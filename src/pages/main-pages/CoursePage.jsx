@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { courses } from "../constants";
-import { CourseForm, TransitionParent } from "../components";
+import { courses } from "../../constants";
+import { CourseForm, TransitionParent } from "../../components";
 
 const CoursePage = () => {
   const { id } = useParams();

@@ -42,8 +42,12 @@ const myAccount = [
     id: "mycart",
   },
   {
+    title: "Favourites",
+    id: "myfavourites",
+  },
+  {
     title: "Settings",
-    id: "settings",
+    id: "mysettings",
   },
 ];
 

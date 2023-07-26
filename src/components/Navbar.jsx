@@ -20,7 +20,9 @@ const Navbar = () => {
         <ul className="flex justify-center items-center 2xl:gap-12 gap-8">
           {navLinksLeft.map((link) => (
             <li key={link.title} className="text-text hover:text-logopink">
-              <Link to={link.id}>{link.title}</Link>
+              <Link to={link.id} onClick={() => setOpenMyAccount(false)}>
+                {link.title}
+              </Link>
             </li>
           ))}
 
@@ -34,7 +36,9 @@ const Navbar = () => {
 
           {navLinksRight.map((link) => (
             <li key={link.title} className="text-text hover:text-logopink">
-              <Link to={link.id}>{link.title}</Link>
+              <Link to={link.id} onClick={() => setOpenMyAccount(false)}>
+                {link.title}
+              </Link>
             </li>
           ))}
 
@@ -44,7 +48,10 @@ const Navbar = () => {
                 <Link
                   to="auth"
                   className="text-text hover:text-logopink"
-                  onClick={() => setIsReg(true)}
+                  onClick={() => {
+                    setIsReg(true);
+                    () => setOpenMyAccount(false);
+                  }}
                 >
                   Register
                 </Link>{" "}
@@ -52,7 +59,10 @@ const Navbar = () => {
                 <Link
                   to="auth"
                   className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center font-[400] px-8 py-1"
-                  onClick={() => setIsReg(false)}
+                  onClick={() => {
+                    setIsReg(false);
+                    () => setOpenMyAccount(false);
+                  }}
                 >
                   Login
                 </Link>
@@ -61,14 +71,16 @@ const Navbar = () => {
           ) : (
             <>
               <li className="text-text hover:text-logopink">
-                <Link to="/shop">Shop</Link>
+                <Link to="/shop" onClick={() => setOpenMyAccount(false)}>
+                  Shop
+                </Link>
               </li>
               <li>
                 <button
                   className="text-text hover:text-logopink"
                   onClick={() => setOpenMyAccount(!openMyAccount)}
                 >
-                  My Account
+                  Profile
                 </button>
               </li>
             </>
@@ -78,7 +90,7 @@ const Navbar = () => {
 
       <div
         className={`${
-          openMyAccount ? "h-[11rem]" : "h-0"
+          openMyAccount ? "h-[13rem]" : "h-0"
         } lg:visible invisible fixed 2xl:right-[8rem] right-4 top-[8rem] bg-white w-[13rem] rounded-b-xl shadow-xl z-[9]  transition-all duration-500 ease-in-out`}
       >
         <ul
@@ -91,14 +103,16 @@ const Navbar = () => {
               key={item.title}
               className="text-text text-[1.2rem] hover:text-logopink"
             >
-              <Link to={item.id}>{item.title}</Link>
+              <Link to={item.id} onClick={() => setOpenMyAccount(false)}>
+                {item.title}
+              </Link>
             </li>
           ))}
           <li className="text-text text-[1.2rem] hover:text-logopink">
             <button
               onClick={() => {
                 signOutUser();
-                setOpenMyAccount(false);
+                () => setOpenMyAccount(false);
               }}
             >
               Sign Out
