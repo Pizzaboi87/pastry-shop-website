@@ -2,6 +2,7 @@ import profImage from "../../assets/rewprof-1.webp";
 import { Fragment, useEffect, useState } from "react";
 import { getAllUser } from "../../utils/firebase";
 import { Icon } from "@iconify/react";
+import { Loading } from "../../components";
 import { usersAllHeaders } from "../../constants";
 
 const UsersAll = () => {
@@ -10,6 +11,8 @@ const UsersAll = () => {
   useEffect(() => {
     getAllUser().then((users) => setAllUser(users));
   }, []);
+
+  if (allUser.length === 0) return <Loading />;
 
   return (
     <div className="w-full h-full flex flex-col items-center">
