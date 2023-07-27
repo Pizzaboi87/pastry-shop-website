@@ -45,6 +45,7 @@ googleProvider.setCustomParameters({
 export const auth = getAuth();
 export const db = getFirestore();
 export const storage = getStorage();
+const database = getDatabase();
 
 export const createUserDocumentFromAuth = async (
   userAuth,
@@ -113,4 +114,26 @@ export const getAllUser = async () => {
   const querySnapshot = await getDocs(collection(db, "users"));
   const userList = querySnapshot.docs.map((doc) => doc.data());
   return userList;
+};
+
+export const getAllPost = async () => {
+  const blogPostsRef = ref(database, "blogPosts/");
+  return new Promise((resolve, reject) => {
+    onValue(
+      blogPostsRef,
+      (snapshot) => {
+        const blogPosts = snapshot.val();
+        resolve(blogPosts);
+      },
+      (error) => {
+        reject(error);
+      }
+    );
+  });
+};
+
+export const getStoredImage = async (image) => {
+  const imageRef = refStorage(storage, image);
+  const downloadURL = await getDownloadURL(imageRef);
+  return downloadURL;
 };
