@@ -389,6 +389,37 @@ const adminMenu = [
   },
 ];
 
+const usersAllHeaders = {
+  title: "All Registered User",
+  headers: [
+    {
+      title: "Image",
+      id: "image",
+      style: "bg-yellowlight col-span-1",
+    },
+    {
+      title: "Name",
+      id: "name",
+      style: "bg-yellowdark col-span-2",
+    },
+    {
+      title: "Email",
+      id: "email",
+      style: "bg-yellowlight col-span-2",
+    },
+    {
+      title: "Sign-up Date",
+      id: "date",
+      style: "bg-yellowdark col-span-2",
+    },
+    {
+      title: "Actions",
+      id: "actions",
+      style: "bg-yellowlight col-span-1",
+    },
+  ],
+};
+
 export {
   adminMenu,
   courses,
@@ -403,4 +434,5 @@ export {
   reviews,
   staff,
   story,
+  usersAllHeaders,
 };
