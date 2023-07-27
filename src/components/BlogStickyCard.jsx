@@ -16,7 +16,7 @@ const BlogStickyCard = ({ posts }) => {
       <BlogCategoryCard categories={categories} />
       <div className="flex xl:flex-col mb-6 gap-x-4 xl:gap-y-4 xl:mt-4">
         {postProposals.map((post) => (
-          <BlogProposalCard key={post.id} post={post} />
+          <BlogProposalCard key={post.postid} post={post} />
         ))}
       </div>
     </div>

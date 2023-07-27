@@ -1,5 +1,6 @@
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { dummyPosts } from "../../content";
+import { BlogContext } from "../../context";
 import {
   BlogPostCard,
   BlogStickyCard,
@@ -8,7 +9,8 @@ import {
 
 const BlogTagPage = () => {
   const { tag } = useParams();
-  const posts = dummyPosts.filter((post) => post.tags.includes(tag));
+  const [allBlogPost, setAllBlogPost] = useContext(BlogContext);
+  const posts = allBlogPost.filter((post) => post.tags.includes(tag));
 
   return (
     <TransitionParent isFlex={false}>
@@ -20,7 +22,7 @@ const BlogTagPage = () => {
           <BlogPostCard key={post.id} post={post} isOwnPage={false} />
         ))}
       </div>
-      <BlogStickyCard posts={dummyPosts} />
+      <BlogStickyCard posts={allBlogPost} />
     </TransitionParent>
   );
 };

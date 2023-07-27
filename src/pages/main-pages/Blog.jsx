@@ -6,7 +6,6 @@ import {
   BlogStickyCard,
   TransitionParent,
 } from "../../components";
-import { dummyPosts } from "../../content";
 
 const Blog = () => {
   const [allBlogPost, setAllBlogPost] = useContext(BlogContext);
@@ -21,11 +20,11 @@ const Blog = () => {
         <BlogCarousel posts={allBlogPost} />
       </div>
 
-      <BlogStickyCard posts={dummyPosts} />
+      <BlogStickyCard posts={allBlogPost} />
 
       <div className="xl:col-span-4 col-span-6 ">
         {allBlogPost.map((post) => (
-          <BlogPostCard key={post.id} post={post} isOwnPage={false} />
+          <BlogPostCard key={post.postid} post={post} isOwnPage={false} />
         ))}
       </div>
     </TransitionParent>

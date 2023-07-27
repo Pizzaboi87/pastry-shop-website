@@ -9,6 +9,7 @@ import gift from "./gift.webp";
 import history from "./history.webp";
 import jam from "./jam.webp";
 import jelly from "./jelly.webp";
+import loading from "./loading.gif";
 import logo from "./logo.png";
 import macaron from "./macaron.webp";
 import showcase from "./showcase.webp";
@@ -29,6 +30,7 @@ export {
   history,
   jam,
   jelly,
+  loading,
   logo,
   macaron,
   showcase,

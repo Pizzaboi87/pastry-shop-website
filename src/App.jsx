@@ -1,9 +1,5 @@
 import { Navbar, Footer, MainContent, Awning } from "./components";
-import {
-  BlogContextProvider,
-  IsRegContextProvider,
-  UserContextProvider,
-} from "./context";
+import { IsRegContextProvider, UserContextProvider } from "./context";
 
 const App = () => {
   return (
@@ -12,9 +8,7 @@ const App = () => {
         <IsRegContextProvider>
           <Awning />
           <Navbar />
-          <BlogContextProvider>
-            <MainContent />
-          </BlogContextProvider>
+          <MainContent />
           <Footer />
         </IsRegContextProvider>
       </UserContextProvider>

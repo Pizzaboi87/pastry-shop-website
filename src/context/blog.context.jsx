@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { getAllPost, getStoredImage } from "../utils/firebase";
+import { Loading } from "../components";
 
 export const BlogContext = createContext();
 
@@ -24,6 +25,8 @@ export const BlogContextProvider = ({ children }) => {
 
     fetchData();
   }, []);
+
+  if (allBlogPost.length === 0) return <Loading />;
 
   const value = [allBlogPost, setAllBlogPost];
 

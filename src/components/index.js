@@ -13,6 +13,7 @@ import CourseForm from "./CourseForm";
 import Footer from "./Footer";
 import Image from "./Image";
 import ImageCarousel from "./ImageCarousel";
+import Loading from "./Loading";
 import MainContent from "./MainContent";
 import Navbar from "./Navbar";
 import NoPermission from "./NoPermission";
@@ -44,6 +45,7 @@ export {
   Footer,
   Image,
   ImageCarousel,
+  Loading,
   MainContent,
   Navbar,
   NoPermission,

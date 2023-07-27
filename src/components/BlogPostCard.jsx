@@ -1,14 +1,6 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getStoredImage } from "../utils/firebase";
 
 const BlogPostCard = ({ post, isOwnPage }) => {
-  const [imageURL, setImageURL] = useState("");
-
-  useEffect(() => {
-    getStoredImage(post.image).then((url) => setImageURL(url));
-  }, []);
-
   const article = post.post
     .split("\n\n")
     .map((paragraph, index) => (
@@ -22,7 +14,7 @@ const BlogPostCard = ({ post, isOwnPage }) => {
   return (
     <div className="bg-primary w-full rounded-2xl mb-16 shadow-xl">
       <img
-        src={imageURL}
+        src={post.image}
         alt="image"
         className="w-full h-[25rem] object-cover rounded-t-2xl"
       />
