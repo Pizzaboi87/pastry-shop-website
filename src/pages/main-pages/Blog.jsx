@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { BlogContext } from "../../context";
+import BlogWrapper from "../../utils/blogwrapper.hoc";
 import {
   BlogCarousel,
   BlogPostCard,
@@ -31,4 +32,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogWrapper(Blog);

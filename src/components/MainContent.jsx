@@ -31,7 +31,6 @@ import {
   PreviousOrders,
   Settings,
 } from "../pages/user-pages";
-import { BlogContextProvider } from "../context";
 
 const MainContent = () => {
   const location = useLocation();
@@ -63,30 +62,9 @@ const MainContent = () => {
           <Route path="/courses" element={<Courses />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/ourstory" element={<OurStory />} />
-          <Route
-            path="/blog"
-            element={
-              <BlogContextProvider>
-                <Blog />
-              </BlogContextProvider>
-            }
-          />
-          <Route
-            path="/blog/category/:tag"
-            element={
-              <BlogContextProvider>
-                <BlogTagPage />
-              </BlogContextProvider>
-            }
-          />
-          <Route
-            path="/blog/post/:id"
-            element={
-              <BlogContextProvider>
-                <BlogPostPage />
-              </BlogContextProvider>
-            }
-          />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/category/:tag" element={<BlogTagPage />} />
+          <Route path="/blog/post/:id" element={<BlogPostPage />} />
           <Route path="/auth" element={<Authentication />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/courses/:id" element={<CoursePage />} />

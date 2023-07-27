@@ -7,6 +7,7 @@ import {
   BlogComment,
   TransitionParent,
 } from "../../components";
+import BlogWrapper from "../../utils/blogwrapper.hoc";
 
 const BlogPostPage = () => {
   const { id } = useParams();
@@ -30,4 +31,4 @@ const BlogPostPage = () => {
   );
 };
 
-export default BlogPostPage;
+export default BlogWrapper(BlogPostPage);

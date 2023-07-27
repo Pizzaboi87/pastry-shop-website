@@ -6,6 +6,7 @@ import {
   BlogStickyCard,
   TransitionParent,
 } from "../../components";
+import BlogWrapper from "../../utils/blogwrapper.hoc";
 
 const BlogTagPage = () => {
   const { tag } = useParams();
@@ -27,4 +28,4 @@ const BlogTagPage = () => {
   );
 };
 
-export default BlogTagPage;
+export default BlogWrapper(BlogTagPage);
