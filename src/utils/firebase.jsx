@@ -147,8 +147,10 @@ export const storePostData = async (post) => {
   const blogPostsRef = ref(database, "blogPosts");
   const snapshot = await get(blogPostsRef);
   let existingIndex = -1;
+  let numPosts = 0;
 
   snapshot.forEach((childSnapshot) => {
+    numPosts++;
     const postSnapshot = childSnapshot.val();
     if (postSnapshot.postid === post.postid) {
       existingIndex = childSnapshot.key;
@@ -161,8 +163,8 @@ export const storePostData = async (post) => {
       await set(ref(database, `blogPosts/${existingIndex}`), post);
     }
   } else {
-    const newIndex = push(blogPostsRef).key;
-    await set(ref(database, `blogPosts/${newIndex}`), post);
+    const newIndex = numPosts;
+    await set(ref(database, `blogPosts/${newIndex}/`), post);
   }
 };
 
