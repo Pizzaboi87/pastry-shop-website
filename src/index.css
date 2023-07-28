@@ -6,89 +6,89 @@
 @tailwind utilities;
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
 }
 
 body {
-  background: #f5edef;
+	background: #f5edef;
 }
 
 .fadeInPage {
-  animation: 0.5s fadeIn forwards;
+	animation: 0.5s fadeIn forwards;
 }
 
 .fadeOutPage {
-  animation: 0.5s fadeOut forwards;
+	animation: 0.5s fadeOut forwards;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translate(-20px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
+	from {
+		opacity: 0;
+		transform: translate(-20px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
 }
 
 @keyframes fadeOut {
-  from {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-  to {
-    transform: translate(-20px, 0);
-    opacity: 0;
-  }
+	from {
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
+	to {
+		transform: translate(-20px, 0);
+		opacity: 0;
+	}
 }
 
 .card img {
-  transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
 }
 
 .card:hover img {
-  scale: 1.5;
-  transition: 5s ease-in-out;
+	scale: 1.5;
+	transition: 5s ease-in-out;
 }
 
 .info,
 .filter {
-  transform: translateY(100%);
-  transition: 1s ease-in-out;
+	transform: translateY(100%);
+	transition: 1s ease-in-out;
 }
 
 .card:hover .info,
 .card:hover .filter {
-  transform: translateY(0);
-  transition: 1s ease-in-out;
+	transform: translateY(0);
+	transition: 1s ease-in-out;
 }
 
 .social:hover .icon {
-  transform: rotateY(45deg);
-  animation: rotateAnimation 2s linear infinite;
+	transform: rotateY(45deg);
+	animation: rotateAnimation 2s linear infinite;
 }
 
 @keyframes rotateAnimation {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
+	from {
+		transform: rotateY(0deg);
+	}
+	to {
+		transform: rotateY(360deg);
+	}
 }
 
 .glass {
-  transform-style: preserve-3d;
-  border: 1px solid rgba(169, 105, 115, 0.5);
-  border-top: 1px solid rgba(169, 105, 115, 0.75);
-  border-left: 2px solid rgba(169, 105, 115, 0.75);
+	transform-style: preserve-3d;
+	border: 1px solid rgba(169, 105, 115, 0.5);
+	border-top: 1px solid rgba(169, 105, 115, 0.75);
+	border-left: 2px solid rgba(169, 105, 115, 0.75);
 }
 
 .error {
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
-    1px 1px 0 #fff;
+	text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+		1px 1px 0 #fff;
 }

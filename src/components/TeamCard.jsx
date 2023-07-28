@@ -38,7 +38,7 @@ const TeamCard = ({ staff, index }) => {
           {staff.social.map((social, index) => (
             <a
               key={index}
-              href={social.link}
+              href={social.link} 
               target="_blank"
               className="social w-[2.5rem] h-[2.5rem] flex items-center justify-center"
             >
