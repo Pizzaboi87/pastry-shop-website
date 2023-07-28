@@ -1,5 +1,6 @@
 import { memo, useState } from "react";
 import { blogNewForm } from "../styles";
+import { uploadBlogPost } from "../utils/firebase";
 
 const BlogForm = ({ dbPost }) => {
 	const getBackImage = (url) => {
@@ -16,23 +17,31 @@ const BlogForm = ({ dbPost }) => {
 		post: dbPost ? dbPost.post : "",
 		date: dbPost ? dbPost.date : "",
 		postid: dbPost ? dbPost.postid : "",
-		imageURL: dbPost ? getBackImage(dbPost.image) : "",
+		image: dbPost ? getBackImage(dbPost.image) : "",
 		tags: dbPost ? dbPost.tags.slice(",").join(", ") : [],
-		photo: {},
+		imageFile: {},
 	};
 
 	const [blogForm, setBlogForm] = useState(defaultForm);
-	const { author, title, blurb, post, date, imageURL, postid, tags, photo } =
+	const { author, title, blurb, post, date, image, postid, tags, imageFile } =
 		blogForm;
 
 	const handleChange = (event) => {
 		const { name, value, files } = event.target;
+		let uploadFile = {};
 
-		if (name === "imageURL") {
+		if (files) {
+			uploadFile = new File(
+				[files[0]],
+				postid + "." + files[0].name.split(".").pop()
+			);
+		}
+
+		if (name === "image") {
 			setBlogForm({
 				...blogForm,
-				photo: files[0],
-				imageURL: "/blog/" + postid + "." + files[0].name.split(".").pop(),
+				imageFile: uploadFile,
+				image: "/blog/" + postid + "." + files[0].name.split(".").pop(),
 			});
 		} else if (name === "title") {
 			setBlogForm({
@@ -45,8 +54,18 @@ const BlogForm = ({ dbPost }) => {
 		}
 	};
 
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		console.log(blogForm);
+
+		uploadBlogPost(blogForm);
+	};
+
 	return (
-		<form className="w-full grid grid-cols-4 gap-x-24 gap-y-8">
+		<form
+			onSubmit={handleSubmit}
+			className="w-full grid grid-cols-4 gap-x-24 gap-y-8"
+		>
 			<div className="col-span-2 flex flex-col justify-between">
 				<label className={blogNewForm.label}>
 					Post Date
@@ -87,7 +106,7 @@ const BlogForm = ({ dbPost }) => {
 					<input
 						type="file"
 						required
-						name="imageURL"
+						name="image"
 						accept="image/*"
 						onChange={handleChange}
 						className={blogNewForm.input}
