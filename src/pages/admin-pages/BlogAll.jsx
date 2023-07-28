@@ -2,6 +2,7 @@ import BlogWrapper from "../../utils/blogwrapper.hoc";
 import { useContext } from "react";
 import { BlogContext } from "../../context";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 
 const BlogAll = () => {
 	const [allBlogPost] = useContext(BlogContext);
@@ -30,10 +31,12 @@ const BlogAll = () => {
 									icon="fluent:delete-16-regular"
 									className="text-white text-[3rem] hover:text-yellowdark cursor-pointer"
 								/>
-								<Icon
-									icon="vaadin:edit"
+								<Link
+									to={post.postid}
 									className="text-white text-[2.2rem] hover:text-yellowdark cursor-pointer mt-[0.2rem]"
-								/>
+								>
+									<Icon icon="vaadin:edit" />
+								</Link>
 							</div>
 							<div className="absolute bottom-0 w-full 3xl:h-[3rem] h-[2rem] bg-yellowdark"></div>
 						</div>
