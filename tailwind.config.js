@@ -17,7 +17,8 @@ module.exports = {
 				pinkdark: "#df919f",
 				pinklight: "#fcdfda",
 				glass: "#ec9ec0cc",
-				purpleglass: "#6554AF90",
+				purpleglass: "#6554af90",
+				purple: "#6554af",
 				logopink: "#e45a84",
 			},
 			screens: {

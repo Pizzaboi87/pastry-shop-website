@@ -9,7 +9,7 @@ const BlogAll = () => {
 	return (
 		<div className="w-full h-full flex flex-col items-center">
 			<h1 className="text-text text-[1.5rem] font-[600] mb-8">
-				All Blog Post Admin Page
+				All Available Blog Posts
 			</h1>
 
 			<div className="flex w-full h-full flex-wrap gap-4 p-4">
