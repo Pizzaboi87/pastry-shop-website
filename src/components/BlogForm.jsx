@@ -2,6 +2,13 @@ import { memo, useState } from "react";
 import { blogNewForm } from "../styles";
 
 const BlogForm = ({ dbPost }) => {
+	const getBackImage = (url) => {
+		const start = url.indexOf("%2F") + 3;
+		const end = url.indexOf("?alt");
+		const extracted = "/blog/" + url.substring(start, end);
+		return extracted;
+	};
+
 	const defaultForm = {
 		author: dbPost ? dbPost.author : "",
 		title: dbPost ? dbPost.title : "",
@@ -9,18 +16,24 @@ const BlogForm = ({ dbPost }) => {
 		post: dbPost ? dbPost.post : "",
 		date: dbPost ? dbPost.date : "",
 		postid: dbPost ? dbPost.postid : "",
+		imageURL: dbPost ? getBackImage(dbPost.image) : "",
 		tags: dbPost ? dbPost.tags.slice(",").join(", ") : [],
-		image: {},
+		photo: {},
 	};
 
 	const [blogForm, setBlogForm] = useState(defaultForm);
-	const { author, title, blurb, post, date, image, postid, tags } = blogForm;
+	const { author, title, blurb, post, date, imageURL, postid, tags, photo } =
+		blogForm;
 
 	const handleChange = (event) => {
 		const { name, value, files } = event.target;
 
-		if (name === "image") {
-			setBlogForm({ ...blogForm, image: files[0] });
+		if (name === "imageURL") {
+			setBlogForm({
+				...blogForm,
+				photo: files[0],
+				imageURL: "/blog/" + postid + "." + files[0].name.split(".").pop(),
+			});
 		} else if (name === "title") {
 			setBlogForm({
 				...blogForm,
@@ -38,7 +51,7 @@ const BlogForm = ({ dbPost }) => {
 				<label className={blogNewForm.label}>
 					Post Date
 					<input
-						type="text"
+						type="date"
 						required
 						name="date"
 						value={date}
@@ -74,7 +87,7 @@ const BlogForm = ({ dbPost }) => {
 					<input
 						type="file"
 						required
-						name="image"
+						name="imageURL"
 						accept="image/*"
 						onChange={handleChange}
 						className={blogNewForm.input}
