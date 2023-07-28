@@ -11,6 +11,8 @@ const phoneInputStyle = {
 	backgroundColor: "#fff",
 	boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
 	outlineStyle: "dotted",
+	outlineOffset: "2px",
+	outlineWidth: "2px",
 	outlineColor: "#2b2730",
 };
 
@@ -69,6 +71,64 @@ const blogNewForm = {
 		"col-start-4 py-2 bg-purple hover:bg-yellowdark hover:text-text rounded-xl shadow-xl border-none text-white font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
+const usersAll = {
+	text: "text-text text-[1rem] font-[500] pl-2 py-2",
+};
+
+const awningStyle = {
+	wrapper: "piece w-[80px] h-full rounded-b-full shadow-xl",
+	shadow: "w-full h-full rounded-b-full",
+};
+
+const blogCommentStyle = {
+	input:
+		"w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-3 rounded-xl outline-none outline-dotted outline-logopink",
+	textarea:
+		"bg-white rounded-2xl shadow-xl p-6 w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] outline-none outline-dotted outline-logopink mb-4",
+	label:
+		"w-[30%] flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
+	button:
+		"bg-logopink px-16 py-2 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white font-[500] block xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+};
+
+const courseFormStyle = {
+	input:
+		"text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-2 outline-offset-2 outline-dotted outline-text",
+	label: "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] p-4",
+	button:
+		"bg-logopink px-16 py-2 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white text-[1rem] font-[500] mx-auto block",
+};
+
+const postcardStyle = {
+	stampImage:
+		"absolute lg:border-[0.3125rem] md:border-[0.2rem] border-[0.15rem] border-logopink lg:top-2 md:top-[0.75rem] top-[0.5rem] lg:left-2 left-[0.5rem] lg:w-[11.5rem] md:w-[6.5rem] w-[5.25rem] lg:h-[9rem] h-[4rem] bg-stamp bg-cover",
+	message:
+		"font-letter text-text xl:text-[2.2rem] sm:text-[1.3rem] text-[1rem]",
+	addressWrapper: "sm:w-[70%] ms:w-[45%] w-[60%] border-b-4 border-logopink",
+	address:
+		"font-letter text-text xl:text-[2.7rem] sm:text-[1.8rem] text-[1.4rem] ml-8",
+};
+
+const signInFormStyle = {
+	input:
+		"text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none  outline-dotted outline-logopink",
+	label:
+		"flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
+	button:
+		"bg-logopink px-16 py-2 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white font-[500] mx-auto block mt-8 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+	forgotButton:
+		"flex items-center justify-center border-2 border-logopink shadow-xl rounded-md px-2 py-1 mt-6 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+};
+
+const signUpFormStyle = {
+	input:
+		"text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none  outline-dotted outline-logopink",
+	label:
+		"flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1 mt-4",
+	button:
+		"bg-logopink px-16 py-2 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white font-[500] mx-auto block xs:mt-8 mt-4 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+};
+
 export {
 	phoneInputStyle,
 	stampStyle,
@@ -81,4 +141,11 @@ export {
 	menuOnStyle,
 	glassStyle,
 	blogNewForm,
+	usersAll,
+	awningStyle,
+	blogCommentStyle,
+	courseFormStyle,
+	postcardStyle,
+	signInFormStyle,
+	signUpFormStyle,
 };
