@@ -3,7 +3,7 @@ import { Fragment, useEffect, useState } from "react";
 import { getAllUser } from "../../utils/firebase";
 import { Icon } from "@iconify/react";
 import { Loading } from "../../components";
-import { usersAllHeaders } from "../../constants";
+import { otherText, usersAllHeaders } from "../../constants";
 import { usersAllStyle } from "../../styles";
 
 const UsersAll = () => {
@@ -18,11 +18,11 @@ const UsersAll = () => {
 	return (
 		<div className="w-full h-full flex flex-col items-center">
 			<h1 className="text-text text-[1.5rem] font-[600] mb-8">
-				{usersAllHeaders.title}
+				{otherText.usersAllTitle}
 			</h1>
 
 			<ul className="grid grid-cols-8 w-full px-8 items-center">
-				{usersAllHeaders.headers.map((header) => (
+				{usersAllHeaders.map((header) => (
 					<li
 						key={header.id}
 						className={`${header.style} text-text text-[1.2rem] font-[600] pl-2`}

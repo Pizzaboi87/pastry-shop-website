@@ -19,7 +19,7 @@ import {
 	BlogAll,
 	BlogComments,
 	BlogNew,
-	BlogPostEditPage,
+	BlogPostEdit,
 	ShopAll,
 	ShopNew,
 	ShopOrders,
@@ -45,7 +45,7 @@ const MainContent = () => {
 					<Route path="admin" element={<Admin />}>
 						<Route path="" element={<UsersAll />} />
 						<Route path="blog/all" element={<BlogAll />} />
-						<Route path="blog/all/:id" element={<BlogPostEditPage />} />
+						<Route path="blog/all/:id" element={<BlogPostEdit />} />
 						<Route path="blog/new-article" element={<BlogNew />} />
 						<Route path="blog/comments" element={<BlogComments />} />
 						<Route path="shop/products" element={<ShopAll />} />

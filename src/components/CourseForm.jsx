@@ -5,6 +5,7 @@ import { useState } from "react";
 import { course1, course2, course3 } from "../assets";
 import { courseFormStyle, phoneInputStyle } from "../styles";
 import "react-phone-input-2/lib/bootstrap.css";
+import { otherText } from "../constants";
 
 const CourseForm = ({ courses }) => {
 	const [loading, setLoading] = useState(false);
@@ -19,15 +20,15 @@ const CourseForm = ({ courses }) => {
 	const successSwal = () => {
 		Swal.fire({
 			icon: "success",
-			title: "Success!",
-			text: `Thank you for your interest in our ${form.course} course. We will contact you soon!`,
+			title: otherText.courseForm.swal.successTitle,
+			text: `${otherText.courseForm.swal.successTextStart} ${form.course} ${otherText.courseForm.swal.successTextEnd}`,
 		});
 	};
 
 	const errorSwal = (error) => {
 		Swal.fire({
 			icon: "error",
-			title: "Something went wrong!",
+			title: otherText.courseForm.swal.errorTitle,
 			text: error,
 		});
 	};
@@ -37,12 +38,12 @@ const CourseForm = ({ courses }) => {
 		const questionRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
 
 		if (!nameRegex.test(form.name)) {
-			errorSwal("Please enter a valid name.");
+			errorSwal(otherText.courseForm.swal.errorName);
 			return;
 		}
 
 		if (!questionRegex.test(form.question)) {
-			errorSwal("Please enter a valid message.");
+			errorSwal(otherText.courseForm.swal.errorMessage);
 			return;
 		} else return true;
 	};
@@ -83,7 +84,7 @@ const CourseForm = ({ courses }) => {
 				setForm({ name: "", phone: "", email: "", course: "", question: "" });
 			} catch (error) {
 				console.log(error.text);
-				errorSwal("Your message hasn't been sent, please try again later.");
+				errorSwal(otherText.courseForm.swal.errorNotSent);
 				setLoading(false);
 			}
 		}
@@ -101,22 +102,22 @@ const CourseForm = ({ courses }) => {
 				onSubmit={handleSubmit}
 			>
 				<h1 className="md:text-4xl text-xl text-center text-text font-[500] mb-8">
-					Contact Us
+					{otherText.courseForm.title}
 				</h1>
 				<label className={courseFormStyle.label}>
-					*Your name:
+					{otherText.courseForm.name}
 					<input
 						required
 						type="text"
 						value={form.name}
 						name="name"
-						placeholder="Enter your name"
+						placeholder={otherText.courseForm.namePlaceholder}
 						onChange={handleChange}
 						className={courseFormStyle.input}
 					/>
 				</label>
 				<label className={courseFormStyle.label}>
-					*Your phone number:
+					{otherText.courseForm.phone}
 					<PhoneInput
 						required
 						country={"hu"}
@@ -126,19 +127,19 @@ const CourseForm = ({ courses }) => {
 					/>
 				</label>
 				<label className={courseFormStyle.label}>
-					*Your email address:
+					{otherText.courseForm.email}
 					<input
 						required
 						type="email"
 						value={form.email}
 						name="email"
-						placeholder="Enter your email address"
+						placeholder={otherText.courseForm.emailPlaceholder}
 						onChange={handleChange}
 						className={courseFormStyle.input}
 					/>
 				</label>
 				<label className={courseFormStyle.label}>
-					*Which course are you interested in:
+					{otherText.courseForm.course}
 					<select
 						required
 						value={form.course}
@@ -147,7 +148,7 @@ const CourseForm = ({ courses }) => {
 						className={courseFormStyle.input}
 					>
 						<option value="" disabled hidden>
-							Choose from our courses
+							{otherText.courseForm.optionsTitle}
 						</option>
 						{courses.map((course) => (
 							<option key={course.id} value={course.title}>
@@ -157,7 +158,7 @@ const CourseForm = ({ courses }) => {
 					</select>
 				</label>
 				<label className={courseFormStyle.label}>
-					*Do you have any questions?
+					{otherText.courseForm.question}
 					<textarea
 						required
 						value={form.question}
@@ -174,7 +175,7 @@ const CourseForm = ({ courses }) => {
 					type="submit"
 					disabled={loading}
 				>
-					{loading ? "Sending..." : "Send"}
+					{loading ? otherText.courseForm.sending : otherText.courseForm.send}
 				</button>
 			</form>
 		</div>

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { authStyle, containerStyle, formStyle } from "../../styles";
 import { AuthButton, SignInForm, SignUpForm } from "../../components";
 import { IsRegContext, UserContext } from "../../context";
+import { otherText } from "../../constants";
 
 const Authentication = () => {
 	const [isReg, setIsReg] = useContext(IsRegContext);
@@ -25,14 +26,14 @@ const Authentication = () => {
 				style={authStyle}
 			>
 				<AuthButton
-					text="Already have an account?"
-					btnText="Sign In"
+					text={otherText.authentication.signIn}
+					btnText={otherText.authentication.signInBtn}
 					isReg={isReg}
 					setIsReg={setIsReg}
 				/>
 				<AuthButton
-					text="Don't have an account?"
-					btnText="Sign Up"
+					text={otherText.authentication.signUp}
+					btnText={otherText.authentication.signUpBtn}
 					isReg={isReg}
 					setIsReg={setIsReg}
 				/>

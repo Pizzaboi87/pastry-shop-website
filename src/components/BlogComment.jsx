@@ -3,6 +3,7 @@ import { UserContext } from "../context";
 import { comments } from "../content";
 import { showName } from "../utils/firebase";
 import { blogCommentStyle } from "../styles";
+import { otherText } from "../constants";
 
 const BlogComment = ({ id }) => {
 	const { currentUser } = useContext(UserContext);
@@ -54,7 +55,9 @@ const BlogComment = ({ id }) => {
 	return (
 		<div className="col-span-4 mb-16">
 			<div className="w-full bg-primary rounded-2xl shadow-xl p-6 mb-16">
-				<h1 className="text-text text-[1.3rem] font-[600] mb-16">Comments</h1>
+				<h1 className="text-text text-[1.3rem] font-[600] mb-16">
+					{otherText.blogCommentTitle}
+				</h1>
 				<ul>{allComment}</ul>
 			</div>
 			<form className="flex flex-col mt-4">
@@ -69,7 +72,7 @@ const BlogComment = ({ id }) => {
 				/>
 				<span className="flex w-full justify-evenly items-end">
 					<label className={blogCommentStyle.label}>
-						Your Name
+						{otherText.blogCommentForm.name}
 						<input
 							required
 							disabled={currentUser ? true : false}
@@ -81,7 +84,7 @@ const BlogComment = ({ id }) => {
 						/>
 					</label>
 					<label className={blogCommentStyle.label}>
-						Title of your comment
+						{otherText.blogCommentForm.title}
 						<input
 							required
 							type="text"
@@ -93,7 +96,7 @@ const BlogComment = ({ id }) => {
 					</label>
 
 					<button type="submit" className={blogCommentStyle.button}>
-						Submit
+						{otherText.blogCommentForm.button}
 					</button>
 				</span>
 			</form>

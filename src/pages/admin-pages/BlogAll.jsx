@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { BlogContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import { otherText } from "../../constants";
 
 const BlogAll = () => {
 	const [allBlogPost] = useContext(BlogContext);
@@ -10,7 +11,7 @@ const BlogAll = () => {
 	return (
 		<div className="w-full h-full flex flex-col items-center">
 			<h1 className="text-text text-[1.5rem] font-[600] mb-8">
-				All Available Blog Posts
+				{otherText.blogAllTitle}
 			</h1>
 
 			<div className="flex w-full h-full flex-wrap gap-4 p-4">

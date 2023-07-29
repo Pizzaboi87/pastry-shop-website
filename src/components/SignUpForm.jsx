@@ -2,11 +2,12 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { signUpFormStyle } from "../styles";
+import { otherText } from "../constants";
 import {
 	createUserDocumentFromAuth,
 	createAuthUserWithEmailAndPassword,
 } from "../utils/firebase";
-import { signUpFormStyle } from "../styles";
 
 const SignUpForm = () => {
 	const navigate = useNavigate();
@@ -14,15 +15,15 @@ const SignUpForm = () => {
 	const successSwal = () => {
 		Swal.fire({
 			icon: "success",
-			title: "Your registration was successful.",
-			text: "\nPlease activate your account by clicking\non the link sent to your email address.",
+			title: otherText.signUpForm.swal.successTitle,
+			text: otherText.signUpForm.swal.successText,
 		});
 	};
 
 	const errorSwal = (error) => {
 		Swal.fire({
 			icon: "error",
-			title: "Something went wrong!",
+			title: otherText.signUpForm.swal.errorTitle,
 			text: error,
 		});
 	};
@@ -49,7 +50,7 @@ const SignUpForm = () => {
 		event.preventDefault();
 
 		if (password !== confirmPassword) {
-			errorSwal("Passwords do not match.");
+			errorSwal(otherText.signUpForm.swal.errorPassword);
 			return;
 		}
 
@@ -65,9 +66,9 @@ const SignUpForm = () => {
 			resetForm();
 		} catch (error) {
 			if (error.code === "auth/email-already-in-use") {
-				errorSwal("Cannot create user, email already in use.");
+				errorSwal(otherText.signUpForm.swal.errorInUse);
 			} else {
-				errorSwal("Error during user creation.");
+				errorSwal(otherText.signUpForm.swal.errorOther);
 				console.log(error);
 			}
 		} finally {
@@ -84,10 +85,12 @@ const SignUpForm = () => {
 			className="flex flex-col w-full h-full items-center justify-center"
 		>
 			<h1 className="xl:text-4xl lg:text-xl md:text-4xl text-xl text-center text-text font-[600] mb-6">
-				Sign Up
+				{otherText.signUpForm.title}
 			</h1>
 			<form className="flex flex-col items-start" onSubmit={handleSubmit}>
-				<label className={signUpFormStyle.label}>Username</label>
+				<label className={signUpFormStyle.label}>
+					{otherText.signUpForm.userName}
+				</label>
 				<input
 					required
 					type="text"
@@ -96,7 +99,9 @@ const SignUpForm = () => {
 					onChange={handleChange}
 					className={signUpFormStyle.input}
 				/>
-				<label className={signUpFormStyle.label}>Email address</label>
+				<label className={signUpFormStyle.label}>
+					{otherText.signUpForm.email}
+				</label>
 				<input
 					required
 					type="email"
@@ -105,7 +110,9 @@ const SignUpForm = () => {
 					onChange={handleChange}
 					className={signUpFormStyle.input}
 				/>
-				<label className={signUpFormStyle.label}>Password</label>
+				<label className={signUpFormStyle.label}>
+					{otherText.signUpForm.password}
+				</label>
 				<input
 					required
 					type="password"
@@ -114,7 +121,9 @@ const SignUpForm = () => {
 					onChange={handleChange}
 					className={signUpFormStyle.input}
 				/>
-				<label className={signUpFormStyle.label}>Repeat Password</label>
+				<label className={signUpFormStyle.label}>
+					{otherText.signUpForm.confirmPassword}
+				</label>
 				<input
 					required
 					type="password"
@@ -124,7 +133,7 @@ const SignUpForm = () => {
 					className={signUpFormStyle.input}
 				/>
 				<button type="submit" className={signUpFormStyle.button}>
-					Sign Up
+					{otherText.signUpForm.button}
 				</button>
 			</form>
 		</motion.div>

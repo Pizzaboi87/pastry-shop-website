@@ -1,7 +1,7 @@
 import BlogAll from "./BlogAll";
 import BlogComments from "./BlogComments";
 import BlogNew from "./BlogNew";
-import BlogPostEditPage from "./BlogPostEditPage";
+import BlogPostEdit from "./BlogPostEdit";
 import ShopAll from "./ShopAll";
 import ShopNew from "./ShopNew";
 import ShopOrders from "./ShopOrders";
@@ -11,7 +11,7 @@ export {
 	BlogAll,
 	BlogComments,
 	BlogNew,
-	BlogPostEditPage,
+	BlogPostEdit,
 	ShopAll,
 	ShopNew,
 	ShopOrders,

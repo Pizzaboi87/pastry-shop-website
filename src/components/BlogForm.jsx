@@ -1,6 +1,7 @@
 import { memo, useState } from "react";
 import { blogNewFormStyle } from "../styles";
 import { uploadBlogPost } from "../utils/firebase";
+import { otherText } from "../constants";
 
 const BlogForm = ({ dbPost }) => {
 	const getBackImage = (url) => {
@@ -68,7 +69,7 @@ const BlogForm = ({ dbPost }) => {
 		>
 			<div className="col-span-2 flex flex-col justify-between">
 				<label className={blogNewFormStyle.label}>
-					Post Date
+					{otherText.blogForm.date}
 					<input
 						type="date"
 						required
@@ -80,7 +81,7 @@ const BlogForm = ({ dbPost }) => {
 				</label>
 
 				<label className={blogNewFormStyle.label}>
-					Post Title
+					{otherText.blogForm.title}
 					<input
 						type="text"
 						required
@@ -91,7 +92,7 @@ const BlogForm = ({ dbPost }) => {
 					/>
 				</label>
 				<label className={blogNewFormStyle.label}>
-					Author Name
+					{otherText.blogForm.author}
 					<input
 						type="text"
 						required
@@ -102,7 +103,7 @@ const BlogForm = ({ dbPost }) => {
 					/>
 				</label>
 				<label className={blogNewFormStyle.label}>
-					{dbPost ? "New Post Image" : "Post Background Image"}
+					{dbPost ? otherText.blogForm.newImage : otherText.blogForm.postImage}
 					<input
 						type="file"
 						required
@@ -113,7 +114,7 @@ const BlogForm = ({ dbPost }) => {
 					/>
 				</label>
 				<label className={blogNewFormStyle.label}>
-					Post Blurb Text
+					{otherText.blogForm.blurb}
 					<textarea
 						rows={5}
 						required
@@ -126,7 +127,7 @@ const BlogForm = ({ dbPost }) => {
 			</div>
 			<div className="col-span-2 flex flex-col justify-between gap-y-4">
 				<label className={blogNewFormStyle.label}>
-					Full Post Text
+					{otherText.blogForm.post}
 					<textarea
 						rows={15}
 						required
@@ -137,7 +138,7 @@ const BlogForm = ({ dbPost }) => {
 					/>
 				</label>
 				<label className={blogNewFormStyle.label}>
-					Hashtags
+					{otherText.blogForm.tags}
 					<input
 						type="text"
 						required
@@ -149,7 +150,7 @@ const BlogForm = ({ dbPost }) => {
 				</label>
 			</div>
 			<button type="submit" className={blogNewFormStyle.button}>
-				Save
+				{otherText.blogForm.button}
 			</button>
 		</form>
 	);

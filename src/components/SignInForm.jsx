@@ -3,11 +3,12 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { signInFormStyle } from "../styles";
+import { otherText } from "../constants";
 import {
 	signInWithGoogleRedirect,
 	signInAuthUserWithEmailAndPassword,
 } from "../utils/firebase";
-import { signInFormStyle } from "../styles";
 
 const SignInForm = () => {
 	const navigate = useNavigate();
@@ -15,7 +16,7 @@ const SignInForm = () => {
 	const errorSwal = (error) => {
 		Swal.fire({
 			icon: "error",
-			title: "Something went wrong!",
+			title: otherText.signInForm.swal.errorTitle,
 			text: error,
 		});
 	};
@@ -48,13 +49,13 @@ const SignInForm = () => {
 		} catch (error) {
 			switch (error.code) {
 				case "auth/wrong-password":
-					errorSwal("Incorrect password.");
+					errorSwal(otherText.signInForm.swal.errorPassword);
 					break;
 				case "auth/user-not-found":
-					errorSwal("User not found.");
+					errorSwal(otherText.signInForm.swal.errorUser);
 					break;
 				default:
-					errorSwal("Error during sign in.");
+					errorSwal(otherText.signInForm.swal.errorOther);
 					console.log(error);
 					break;
 			}
@@ -65,7 +66,7 @@ const SignInForm = () => {
 		try {
 			await signInWithGoogleRedirect();
 		} catch (error) {
-			errorSwal("Error during sign in.");
+			errorSwal(otherText.signInForm.swal.errorOther);
 			console.log(error);
 		}
 	};
@@ -79,10 +80,12 @@ const SignInForm = () => {
 			className="flex flex-col w-full h-full items-center justify-center"
 		>
 			<h1 className="xl:text-4xl lg:text-xl md:text-4xl text-xl text-center text-text font-[600] mb-6">
-				Sign In
+				{otherText.signInForm.title}
 			</h1>
 			<form className="flex flex-col items-start" onSubmit={handleSubmit}>
-				<label className={signInFormStyle.label}>Email address</label>
+				<label className={signInFormStyle.label}>
+					{otherText.signInForm.email}
+				</label>
 				<input
 					required
 					type="email"
@@ -91,7 +94,9 @@ const SignInForm = () => {
 					onChange={handleChange}
 					className={signInFormStyle.input}
 				/>
-				<label className={`${signInFormStyle.label} mt-4`}>Password</label>
+				<label className={`${signInFormStyle.label} mt-4`}>
+					{otherText.signInForm.password}
+				</label>
 				<input
 					required
 					type="password"
@@ -101,18 +106,18 @@ const SignInForm = () => {
 					className={signInFormStyle.input}
 				/>
 				<button type="submit" className={signInFormStyle.button}>
-					Sign In
+					{otherText.signInForm.button}
 				</button>
 			</form>
 			<button className="mt-2 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]">
-				Forgot your password?
+				{otherText.signInForm.forgot}
 			</button>
 			<button
 				className={signInFormStyle.forgotButton}
 				onClick={handleGoogleSignIn}
 			>
 				<Icon icon="devicon:google" className="mr-2" />
-				Sign In with Google
+				{otherText.signInForm.google}
 			</button>
 		</motion.div>
 	);

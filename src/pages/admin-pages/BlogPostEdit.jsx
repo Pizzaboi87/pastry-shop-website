@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { BlogContext } from "../../context";
 import { useParams } from "react-router-dom";
 import { BlogForm } from "../../components";
+import { otherText } from "../../constants";
 
 const BlogPostEditPage = () => {
 	const { id } = useParams();
@@ -11,7 +12,9 @@ const BlogPostEditPage = () => {
 
 	return (
 		<div className="w-full h-full flex flex-col items-center px-8">
-			<h1 className="text-text text-[1.5rem] font-[600] mb-8">Edit Article</h1>
+			<h1 className="text-text text-[1.5rem] font-[600] mb-8">
+				{otherText.blogPostEditTitle}
+			</h1>
 			<BlogForm dbPost={post} />
 		</div>
 	);

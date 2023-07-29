@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 import { logo } from "../assets";
 import { Icon } from "@iconify/react";
 import { menuOffStyle, menuOnStyle } from "../styles";
-import { myAccount, navLinksLeft, navLinksRight } from "../constants";
+import {
+	myAccount,
+	navLinksLeft,
+	navLinksRight,
+	otherText,
+} from "../constants";
 
 const Navbar = () => {
 	const [openMenu, setOpenMenu] = useState(false);
@@ -53,7 +58,7 @@ const Navbar = () => {
 										() => setOpenMyAccount(false);
 									}}
 								>
-									Register
+									{otherText.navbar.reg}
 								</Link>{" "}
 								/{" "}
 								<Link
@@ -64,7 +69,7 @@ const Navbar = () => {
 										() => setOpenMyAccount(false);
 									}}
 								>
-									Login
+									{otherText.navbar.login}
 								</Link>
 							</span>
 						</li>
@@ -72,7 +77,7 @@ const Navbar = () => {
 						<>
 							<li className="text-text hover:text-logopink">
 								<Link to="/shop" onClick={() => setOpenMyAccount(false)}>
-									Shop
+									{otherText.navbar.shop}
 								</Link>
 							</li>
 							<li>
@@ -80,7 +85,7 @@ const Navbar = () => {
 									className="text-text hover:text-logopink"
 									onClick={() => setOpenMyAccount(!openMyAccount)}
 								>
-									Profile
+									{otherText.navbar.profile}
 								</button>
 							</li>
 						</>
@@ -118,7 +123,7 @@ const Navbar = () => {
 								setOpenMyAccount(false);
 							}}
 						>
-							Sign Out
+							{otherText.navbar.signOut}
 						</button>
 					</li>
 				</ul>
@@ -160,7 +165,7 @@ const Navbar = () => {
 									}}
 									className="text-text hover:text-logopink"
 								>
-									Register
+									{otherText.navbar.reg}
 								</Link>
 								<Link
 									to="auth"
@@ -170,14 +175,14 @@ const Navbar = () => {
 									}}
 									className="text-text hover:text-logopink"
 								>
-									Login
+									{otherText.navbar.login}
 								</Link>
 							</>
 						) : (
 							<>
 								<li className="text-text hover:text-logopink">
 									<Link to="/shop" onClick={() => setOpenMenu(!openMenu)}>
-										Shop
+										{otherText.navbar.shop}
 									</Link>
 								</li>
 								<li>
@@ -188,7 +193,7 @@ const Navbar = () => {
 											signOutUser();
 										}}
 									>
-										Sign Out
+										{otherText.navbar.signOut}
 									</button>
 								</li>
 							</>

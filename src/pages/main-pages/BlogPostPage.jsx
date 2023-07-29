@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { BlogContext } from "../../context";
+import BlogWrapper from "../../utils/blogwrapper.hoc";
 import {
 	BlogPostCard,
 	BlogStickyCard,
 	BlogComment,
 	TransitionParent,
 } from "../../components";
-import BlogWrapper from "../../utils/blogwrapper.hoc";
 
 const BlogPostPage = () => {
 	const { id } = useParams();
