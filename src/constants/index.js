@@ -474,7 +474,16 @@ const otherText = {
 	blogCommentForm: {
 		name: "Your Name",
 		title: "Title of your comment",
+		commentPlaceholder: "What do you think about it?",
 		button: "Submit",
+		swal: {
+			errorTitle: "Something went wrong!",
+			successTitle: "Your comment has been recorded!",
+			successMessage: "Now it will be reviewed by our administrator.",
+			errorName: "Please enter a valid name.",
+			errorCommentTitle: "Please enter a valid title.",
+			errorComment: "Please enter a valid comment.",
+		},
 	},
 	blogForm: {
 		date: "Post Date",

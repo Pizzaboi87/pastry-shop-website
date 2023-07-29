@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { courses } from "../../constants";
+import { course1, course2, course3 } from "../../assets";
 import { CourseForm, TransitionParent } from "../../components";
 
 const CoursePage = () => {
@@ -89,7 +90,14 @@ const CoursePage = () => {
 						);
 					}
 				})}
-			<CourseForm courses={courses} />
+			<div className="w-full xl:grid xl:grid-cols-3 flex-col flex self-center mt-16 md:pb-16 pb-4 xl:px-16 2xl:px-0 md:gap-8 justify-between">
+				<div className="w-full flex flex-col gap-4 self-center mb-8 md:mb-0">
+					<img src={course1} alt="course_1" />
+					<img src={course2} alt="course_2" />
+					<img src={course3} alt="course_3" />
+				</div>
+				<CourseForm courses={courses} />
+			</div>
 		</TransitionParent>
 	);
 };
