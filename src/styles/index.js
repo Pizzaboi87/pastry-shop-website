@@ -62,7 +62,7 @@ const menuOnStyle = {
 
 const glassStyle = `bg-[rgba(255, 255, 255, 0.2)] rounded-2xl boxShadow-[0 4px 30px rgba(0, 0, 0, 0.1)] backdrop-blur-sm border-1 border-solid border-[rgba(255, 255, 255, 0.3)]`;
 
-const blogNewForm = {
+const blogNewFormStyle = {
 	label:
 		"flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] gap-y-2",
 	input:
@@ -71,7 +71,7 @@ const blogNewForm = {
 		"col-start-4 py-2 bg-purple hover:bg-yellowdark hover:text-text rounded-xl shadow-xl border-none text-white font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
-const usersAll = {
+const usersAllStyle = {
 	text: "text-text text-[1rem] font-[500] pl-2 py-2",
 };
 
@@ -140,8 +140,8 @@ export {
 	menuOffStyle,
 	menuOnStyle,
 	glassStyle,
-	blogNewForm,
-	usersAll,
+	blogNewFormStyle,
+	usersAllStyle,
 	awningStyle,
 	blogCommentStyle,
 	courseFormStyle,

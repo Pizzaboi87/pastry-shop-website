@@ -5,14 +5,30 @@ import { AdminPanel, Loading, NoPermission } from "../../components";
 
 const Admin = () => {
 	const { currentUser } = useContext(UserContext);
-	const [adminUID, setAdminUID] = useState(false);
+	const [adminUID, setAdminUID] = useState(null);
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		if (currentUser && currentUser.uid === import.meta.env.VITE_ADMIN_UID)
-			setAdminUID(true);
+		setLoading(true);
+		if (currentUser && currentUser.uid === import.meta.env.VITE_ADMIN_UID) {
+			setTimeout(() => {
+				setAdminUID(true);
+				setLoading(false);
+			}, 500);
+		} else {
+			setTimeout(() => {
+				setAdminUID(false);
+				setLoading(false);
+			}, 500);
+		}
 	}, [currentUser]);
 
-	if (!adminUID) return <Loading />;
+	if (loading)
+		return (
+			<AdminPanel>
+				<Loading />
+			</AdminPanel>
+		);
 
 	return (
 		<>

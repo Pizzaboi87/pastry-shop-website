@@ -4,7 +4,7 @@ import { getAllUser } from "../../utils/firebase";
 import { Icon } from "@iconify/react";
 import { Loading } from "../../components";
 import { usersAllHeaders } from "../../constants";
-import { usersAll } from "../../styles";
+import { usersAllStyle } from "../../styles";
 
 const UsersAll = () => {
 	const [allUser, setAllUser] = useState([]);
@@ -33,18 +33,18 @@ const UsersAll = () => {
 
 				{allUser.map((user) => (
 					<Fragment key={user.uid}>
-						<li className={`${usersAll.text} col-span-1`}>
+						<li className={`${usersAllStyle.text} col-span-1`}>
 							<img
 								src={profImage}
 								alt="profile"
 								className="w-8 h-8 mx-auto rounded-full"
 							/>
 						</li>
-						<li className={`${usersAll.text} col-span-2`}>
+						<li className={`${usersAllStyle.text} col-span-2`}>
 							{user.displayName}
 						</li>
-						<li className={`${usersAll.text} col-span-2`}>{user.email}</li>
-						<li className={`${usersAll.text} col-span-2`}>
+						<li className={`${usersAllStyle.text} col-span-2`}>{user.email}</li>
+						<li className={`${usersAllStyle.text} col-span-2`}>
 							{new Date(user.createdAt.seconds * 1000)
 								.toUTCString()
 								.slice(0, -7)}
