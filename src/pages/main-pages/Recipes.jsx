@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { fetchRecipe } from "../../utils/fetchRecipe";
-import { RecipeCard, SearchForm, TransitionParent } from "../../components";
+import {
+	Loading,
+	RecipeCard,
+	SearchForm,
+	TransitionParent,
+} from "../../components";
 import { otherText } from "../../constants";
 
 const Recipes = () => {
@@ -40,7 +45,9 @@ const Recipes = () => {
 				setOffset={setOffset}
 			/>
 			{loading ? (
-				<h1>{otherText.loading}</h1>
+				<div className="mt-[-5rem]">
+					<Loading />
+				</div>
 			) : notFound ? (
 				<h1>{otherText.recipes.notFound}</h1>
 			) : (

@@ -5,6 +5,7 @@ import Awning from "./Awning";
 import BlogCarousel from "./BlogCarousel";
 import BlogCategoryCard from "./BlogCategoryCard";
 import BlogComment from "./BlogComment";
+import BlogCommentForm from "./BlogCommentForm";
 import BlogForm from "./BlogForm";
 import BlogPostCard from "./BlogPostCard";
 import BlogProposalCard from "./BlogProposalCard";
@@ -38,6 +39,7 @@ export {
 	BlogCarousel,
 	BlogCategoryCard,
 	BlogComment,
+	BlogCommentForm,
 	BlogForm,
 	BlogPostCard,
 	BlogProposalCard,
