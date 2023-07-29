@@ -145,38 +145,60 @@ export const storeImage = async (imageFile, imagePath) => {
 
 export const storePostData = async (post) => {
   const blogPostsRef = ref(database, "blogPosts");
+
+  try {
+    const snapshot = await get(blogPostsRef);
+    const postData = snapshot.val();
+
+    if (postData && postData[post.postid]) {
+      const existingPost = postData[post.postid];
+
+      if (JSON.stringify(existingPost) !== JSON.stringify(post)) {
+        await set(ref(database, `blogPosts/${post.postid}`), post);
+      }
+    } else {
+      await set(ref(database, `blogPosts/${post.postid}`), post);
+    }
+  } catch (error) {
+    console.error("An error occurred while storing post data.", error);
+  }
+};
+
+export const uploadBlogPost = async (form) => {
+  if (!form.imageFile.name) {
+    try {
+      await storePostData(form);
+      console.log("Blog post uploaded successfully!");
+    } catch (error) {
+      console.error("Error uploading blog post:", error);
+    }
+  } else {
+    try {
+      await storeImage(
+        form.imageFile,
+        `blog/${form.postid}.${form.imageFile.name.split(".").pop()}`
+      );
+      await storePostData(form);
+      console.log("Blog post image uploaded successfully!");
+    } catch (error) {
+      console.error("Error uploading blog post image:", error);
+    }
+  }
+};
+
+export const deletePost = async (postid) => {
+  const blogPostsRef = ref(database, "blogPosts");
   const snapshot = await get(blogPostsRef);
   let existingIndex = -1;
-  let numPosts = 0;
 
   snapshot.forEach((childSnapshot) => {
-    numPosts++;
     const postSnapshot = childSnapshot.val();
-    if (postSnapshot.postid === post.postid) {
+    if (postSnapshot.postid === postid) {
       existingIndex = childSnapshot.key;
     }
   });
 
   if (existingIndex !== -1) {
-    const existingBlogForm = snapshot.child(existingIndex).val();
-    if (JSON.stringify(existingBlogForm) !== JSON.stringify(post)) {
-      await set(ref(database, `blogPosts/${existingIndex}`), post);
-    }
-  } else {
-    const newIndex = numPosts;
-    await set(ref(database, `blogPosts/${newIndex}/`), post);
-  }
-};
-
-export const uploadBlogPost = async (form) => {
-  try {
-    await storeImage(
-      form.imageFile,
-      `blog/${form.postid}.${form.imageFile.name.split(".").pop()}`
-    );
-    await storePostData(form);
-    console.log("Blog post image uploaded successfully!");
-  } catch (error) {
-    console.error("Error uploading blog post image:", error);
+    await set(ref(database, `blogPosts/${existingIndex}`), null);
   }
 };

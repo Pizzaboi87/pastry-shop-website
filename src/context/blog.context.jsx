@@ -1,34 +1,37 @@
 import { createContext, useState, useEffect } from "react";
-import { getAllPost, getStoredImage } from "../utils/firebase";
+import { getStoredImage, getAllPost } from "../utils/firebase"; // Importáljuk az adatlekérő függvényt is
 import { Loading } from "../components";
 
 export const BlogContext = createContext();
 
 export const BlogContextProvider = ({ children }) => {
-	const [allBlogPost, setAllBlogPost] = useState([]);
+  const [allBlogPost, setAllBlogPost] = useState([]);
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const data = await getAllPost();
-				const processedData = await Promise.all(
-					data.map(async (element) => {
-						const imageUrl = await getStoredImage(element.image);
-						return { ...element, image: imageUrl };
-					})
-				);
-				setAllBlogPost(processedData);
-			} catch (error) {
-				console.error("An error happened during data fetching.", error);
-			}
-		};
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const firebaseData = await getAllPost();
 
-		fetchData();
-	}, []);
+        const processedData = await Promise.all(
+          Object.keys(firebaseData).map(async (postid) => {
+            const element = firebaseData[postid];
+            const imageUrl = await getStoredImage(element.image);
+            return { ...element, postid, image: imageUrl };
+          })
+        );
 
-	if (allBlogPost.length === 0) return <Loading />;
+        setAllBlogPost(processedData);
+      } catch (error) {
+        console.error("An error happened during data fetching.", error);
+      }
+    };
 
-	const value = [allBlogPost, setAllBlogPost];
+    fetchData();
+  }, []);
 
-	return <BlogContext.Provider value={value}>{children}</BlogContext.Provider>;
+  if (allBlogPost.length === 0) return <Loading />;
+
+  const value = [allBlogPost, setAllBlogPost];
+
+  return <BlogContext.Provider value={value}>{children}</BlogContext.Provider>;
 };
