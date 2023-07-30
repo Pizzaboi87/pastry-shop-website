@@ -14,6 +14,7 @@ const BlogForm = ({ dbPost }) => {
   };
 
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const defaultForm = {
     author: dbPost ? dbPost.author : "",
@@ -65,16 +66,20 @@ const BlogForm = ({ dbPost }) => {
   //------------------------------------------------------NOT READY: Validate missing.------------------------------------------------------
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsLoading(true);
     try {
       uploadBlogPost(blogForm).then(() => {
+        setIsLoading(false);
         Swal.fire({
           title: otherText.blogForm.swal.successTitle,
           text: otherText.blogForm.swal.successMessage,
           icon: "success",
         });
+
         navigate("/admin/blog/all");
       });
     } catch (error) {
+      setIsLoading(false);
       Swal.fire({
         title: otherText.blogForm.swal.errorTitle,
         text: otherText.blogForm.swal.errorMessage,
@@ -171,8 +176,16 @@ const BlogForm = ({ dbPost }) => {
         </label>
       </div>
 
-      <button type="submit" className={blogNewFormStyle.button}>
-        {otherText.blogForm.button}
+      <button
+        type="submit"
+        disabled={isLoading ? true : false}
+        className={`${blogNewFormStyle.button} ${
+          isLoading ? "cursor-progress" : "cursor-pointer"
+        } `}
+      >
+        {isLoading
+          ? otherText.blogForm.savingButton
+          : otherText.blogForm.button}
       </button>
     </form>
   );
