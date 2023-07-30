@@ -1,16 +1,18 @@
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { otherText } from "../constants";
 
 const BlogPostCard = ({ post, isOwnPage }) => {
-	const article = post.post
-		.split("\n\n")
-		.map((paragraph, index) => (
-			<p key={index}>
-				{paragraph
-					.split("\n")
-					.reduce((total, line, index) => [total, <br key={index} />, line])}
-			</p>
-		));
+	const article = post.post.split("		").map((paragraph, index) => (
+		<p key={index}>
+			{paragraph.split("\n").map((line, index) => (
+				<Fragment key={index}>
+					{line}
+					<br />
+				</Fragment>
+			))}
+		</p>
+	));
 
 	return (
 		<div className="bg-primary w-full rounded-2xl mb-16 shadow-xl">
