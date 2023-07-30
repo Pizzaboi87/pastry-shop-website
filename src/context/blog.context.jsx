@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { getStoredImage, getAllPost } from "../utils/firebase"; // Importáljuk az adatlekérő függvényt is
+import { getStoredImage, getAllPost } from "../utils/firebase";
 import { Loading } from "../components";
 
 export const BlogContext = createContext();
