@@ -156,9 +156,8 @@ export const getStoredImage = async (image) => {
     return downloadURL;
   } catch (error) {
     console.error("An error occurred while downloading photo URL.", error);
-    //TEMPORARY
     const downloadURL =
-      "https://images.squarespace-cdn.com/content/v1/54151d7ee4b0a43a90459ae2/1578519415477-BUX12C39FS5TYJXEPQ5E/your-guide-to-macarons.jpg";
+      "https://firebasestorage.googleapis.com/v0/b/le-ciel-sucre.appspot.com/o/blog%2Fmacarons.webp?alt=media&token=9cef76b3-69ba-45b4-89ca-3853533414eb";
     return downloadURL;
   }
 };
@@ -166,6 +165,27 @@ export const getStoredImage = async (image) => {
 export const storeImage = async (imageFile, imagePath) => {
   const storageRef = refStorage(storage, imagePath);
   return uploadBytes(storageRef, imageFile);
+};
+
+export const storeComment = async (comment) => {
+  const commentsRef = ref(database, "comments");
+
+  try {
+    const snapshot = await get(commentsRef);
+    const commentData = snapshot.val();
+
+    if (commentData && commentData[comment.id]) {
+      const existingComment = commentData[comment.id];
+
+      if (JSON.stringify(existingComment) !== JSON.stringify(comment)) {
+        await set(ref(database, `comments/${comment.id}`), comment);
+      }
+    } else {
+      await set(ref(database, `comments/${comment.id}`), comment);
+    }
+  } catch (error) {
+    console.error("An error occurred while storing comment data.", error);
+  }
 };
 
 export const storePostData = async (post) => {

@@ -20,7 +20,11 @@ const BlogTagPage = () => {
       </h1>
       <div className="xl:col-span-4 col-span-6 ">
         {posts.map((post) => (
-          <BlogPostCard key={post.id} post={post} isOwnPage={false} />
+          <BlogPostCard
+            key={`blogPostCard-{post.id}`}
+            post={post}
+            isOwnPage={false}
+          />
         ))}
       </div>
       <BlogStickyCard posts={allBlogPost} />

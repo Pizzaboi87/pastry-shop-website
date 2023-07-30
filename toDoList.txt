@@ -1,15 +1,6 @@
-Each child in a list should have a unique "key" prop:
-  -UsersAll
-  -BlogTagPage
-
 Write the function for a specific item:
   -RecipeCard - like/favourite
-  -BlogCommentForm - handleSubmit
   -BlogCommentPage - delete function
 
 Possible:
   -BlogPostEdit delete icon
-
-Temporary solution for missing photo:
-  -utils/firebase/getStoredImage
-

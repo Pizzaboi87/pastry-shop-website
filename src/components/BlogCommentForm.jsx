@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { otherText } from "../constants";
 import { useState, useEffect, useContext } from "react";
 import { blogCommentStyle } from "../styles";
-import { showName } from "../utils/firebase";
+import { showName, storeComment } from "../utils/firebase";
 import { v4 as uuidv4 } from "uuid";
 import { UserContext } from "../context";
 
@@ -21,28 +21,6 @@ const BlogCommentForm = ({ postID }) => {
     isPublished: false,
   };
 
-  const [form, setForm] = useState(defaultForm);
-  const { author, email, title, comment } = form;
-
-  useEffect(() => {
-    const getName = async () => {
-      const userName = await showName(currentUser.uid);
-      setDisplayName(userName);
-      setForm({ ...form, author: userName });
-    };
-
-    if (!currentUser) return;
-    getName();
-  }, [currentUser]);
-
-  const successSwal = () => {
-    Swal.fire({
-      icon: "success",
-      title: otherText.blogCommentForm.swal.successTitle,
-      text: otherText.blogCommentForm.swal.successMessage,
-    });
-  };
-
   const errorSwal = (error) => {
     Swal.fire({
       icon: "error",
@@ -51,8 +29,23 @@ const BlogCommentForm = ({ postID }) => {
     });
   };
 
+  const [commentForm, setCommentForm] = useState(defaultForm);
+  const { author, email, title, comment } = commentForm;
+
+  useEffect(() => {
+    const getName = async () => {
+      const userName = await showName(currentUser.uid);
+      setDisplayName(userName);
+      setCommentForm({ ...commentForm, author: userName });
+    };
+
+    if (!currentUser) return;
+    getName();
+  }, [currentUser]);
+
   const valueCheck = (title, comment) => {
-    const commentRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
+    const commentRegex =
+      /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\n\s]+$/;
 
     switch (true) {
       case !commentRegex.test(title):
@@ -68,17 +61,25 @@ const BlogCommentForm = ({ postID }) => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setForm({ ...form, [name]: value });
+    setCommentForm({ ...commentForm, [name]: value });
   };
 
-  //------------------------------------------------------NOT READY: Send comment function missing.------------------------------------------------------
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!valueCheck(title, comment)) return;
     else {
-      console.log("BlogCommentForm: ", form);
-      successSwal();
-      setForm(defaultForm);
+      try {
+        storeComment(commentForm).then(() => {
+          Swal.fire({
+            icon: "success",
+            title: otherText.blogCommentForm.swal.successTitle,
+            text: otherText.blogCommentForm.swal.successMessage,
+          });
+          setCommentForm(defaultForm);
+        });
+      } catch (error) {
+        errorSwal(error);
+      }
     }
   };
 
