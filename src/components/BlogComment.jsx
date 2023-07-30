@@ -1,8 +1,11 @@
+import BlogCommentForm from "./BlogCommentForm";
 import { comments } from "../content";
 import { otherText } from "../constants";
-import BlogCommentForm from "./BlogCommentForm";
+import { useContext } from "react";
+import { UserContext } from "../context";
 
 const BlogComment = ({ id }) => {
+	const { currentUser } = useContext(UserContext);
 	const allComment = comments
 		.filter((comment) => comment.relatedID === id)
 		.map((comment, index) => (
@@ -22,11 +25,19 @@ const BlogComment = ({ id }) => {
 		<div className="col-span-4 mb-16">
 			<div className="w-full bg-primary rounded-2xl shadow-xl p-6 mb-16">
 				<h1 className="text-text text-[1.3rem] font-[600] mb-16">
-					{otherText.blogCommentTitle}
+					{otherText.blogComment.title}
 				</h1>
 				<ul>{allComment}</ul>
 			</div>
-			<BlogCommentForm />
+			{currentUser ? (
+				<BlogCommentForm />
+			) : (
+				<div className="w-full text-center">
+					<h1 className="text-text text-[1.2rem] font-[600]">
+						{otherText.blogComment.login}
+					</h1>
+				</div>
+			)}
 		</div>
 	);
 };

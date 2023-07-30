@@ -421,7 +421,6 @@ const otherText = {
 	adminPanelTitle: "Admin Panel",
 	usersAllTitle: "All Registered User",
 	blogCategoryCardTitle: "Popular tags",
-	blogCommentTitle: "Comments",
 	blogCommentsTitle: "All Blog Comments",
 	blogNewTitle: "Add New Article",
 	blogPostEditTitle: "Edit Article",
@@ -433,6 +432,10 @@ const otherText = {
 	blogPostCardButton: "Read article",
 	courseCardButton: "Learn More",
 	loading: "loading...",
+	blogComment: {
+		title: "Comments",
+		login: "Please log in to write a comment!",
+	},
 	notFound: {
 		message: "The page you are looking for does not exist.",
 		error: "ERROR",

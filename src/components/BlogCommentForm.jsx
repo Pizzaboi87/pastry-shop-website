@@ -1,21 +1,22 @@
 import Swal from "sweetalert2";
 import { otherText } from "../constants";
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { blogCommentStyle } from "../styles";
-import { UserContext } from "../context";
 import { showName } from "../utils/firebase";
+import { UserContext } from "../context";
 
 const BlogCommentForm = () => {
+	const { currentUser } = useContext(UserContext);
 	const [displayName, setDisplayName] = useState("");
 	const defaultForm = {
-		author: displayName ? displayName : "",
+		author: displayName,
+		email: currentUser.email,
 		title: "",
 		comment: "",
 	};
 
 	const [form, setForm] = useState(defaultForm);
-	const { currentUser } = useContext(UserContext);
-	const { author, title, comment } = form;
+	const { author, email, title, comment } = form;
 
 	useEffect(() => {
 		const getName = async () => {
@@ -70,13 +71,16 @@ const BlogCommentForm = () => {
 
 	//------------------------------------------------------NOT READY: Send comment function missing.------------------------------------------------------
 	const handleSubmit = (event) => {
-		event.prefentDefault();
-		valueCheck(author, title, comment);
-		console.log("BlogCommentForm: ", form);
+		event.preventDefault();
+		if (!valueCheck(author, title, comment)) return;
+		else {
+			console.log("BlogCommentForm: ", form);
+			successSwal();
+		}
 	};
 
 	return (
-		<form className="flex flex-col mt-4">
+		<form onSubmit={handleSubmit} className="flex flex-col mt-4">
 			<textarea
 				required
 				name="comment"
