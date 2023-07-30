@@ -10,3 +10,6 @@ Write the function for a specific item:
 Possible:
   -BlogPostEdit delete icon
 
+Temporary solution for missing photo:
+  -utils/firebase/getStoredImage
+

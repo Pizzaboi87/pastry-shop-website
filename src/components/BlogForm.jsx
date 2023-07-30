@@ -23,7 +23,7 @@ const BlogForm = ({ dbPost }) => {
 		date: dbPost ? dbPost.date : "",
 		postid: dbPost ? dbPost.postid : "",
 		image: dbPost ? getBackImage(dbPost.image) : "",
-		tags: dbPost ? dbPost.tags.slice(",").join(", ") : [],
+		tags: dbPost ? dbPost.tags : [],
 		imageFile: {},
 	};
 
