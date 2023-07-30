@@ -129,6 +129,11 @@ const signUpFormStyle = {
 		"bg-logopink px-16 py-2 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white font-[500] mx-auto block xs:mt-8 mt-4 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
+const adminPageStyle = {
+	wrapper: "w-full h-full flex flex-col items-center",
+	title: "text-text text-[1.5rem] font-[600] mb-8",
+};
+
 export {
 	phoneInputStyle,
 	stampStyle,
@@ -148,4 +153,5 @@ export {
 	postcardStyle,
 	signInFormStyle,
 	signUpFormStyle,
+	adminPageStyle,
 };

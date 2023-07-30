@@ -39,15 +39,16 @@ const CourseForm = ({ courses }) => {
 		const nameRegex = /^[A-Za-z-/ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
 		const questionRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
 
-		if (!nameRegex.test(name)) {
-			errorSwal(otherText.courseForm.swal.errorName);
-			return;
+		switch (true) {
+			case !nameRegex.test(name):
+				errorSwal(otherText.courseForm.swal.errorName);
+				return;
+			case !questionRegex.test(question):
+				errorSwal(otherText.courseForm.swal.errorMessage);
+				return;
+			default:
+				return true;
 		}
-
-		if (!questionRegex.test(question)) {
-			errorSwal(otherText.courseForm.swal.errorMessage);
-			return;
-		} else return true;
 	};
 
 	const handleChange = (event) => {

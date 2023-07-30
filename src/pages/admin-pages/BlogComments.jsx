@@ -1,11 +1,10 @@
 import { otherText } from "../../constants";
+import { adminPageStyle } from "../../styles";
 
 const BlogComments = () => {
 	return (
-		<div className="w-full h-full flex flex-col items-center">
-			<h1 className="text-text text-[1.5rem] font-[600] mb-8">
-				{otherText.blogCommentsTitle}
-			</h1>
+		<div className={adminPageStyle.wrapper}>
+			<h1 className={adminPageStyle.title}>{otherText.blogCommentsTitle}</h1>
 		</div>
 	);
 };

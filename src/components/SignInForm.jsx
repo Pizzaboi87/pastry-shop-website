@@ -33,31 +33,50 @@ const SignInForm = () => {
 	const [form, setForm] = useState(defaultForm);
 	const { email, password } = form;
 
+	const valueCheck = (email, password) => {
+		const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+		const passwordRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
+
+		switch (true) {
+			case !emailRegex.test(email):
+				errorSwal(otherText.signInForm.swal.errorEmail);
+				return;
+			case !passwordRegex.test(password):
+				errorSwal(otherText.signInForm.swal.errorPassword);
+				return;
+			default:
+				return true;
+		}
+	};
+
 	const handleChange = (event) => {
-		setForm({ ...form, [event.target.name]: event.target.value });
+		const { name, value } = event.target;
+		setForm({ ...form, [name]: value });
 	};
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-
-		try {
-			const { user } = await signInAuthUserWithEmailAndPassword(
-				email,
-				password
-			);
-			resetForm();
-		} catch (error) {
-			switch (error.code) {
-				case "auth/wrong-password":
-					errorSwal(otherText.signInForm.swal.errorPassword);
-					break;
-				case "auth/user-not-found":
-					errorSwal(otherText.signInForm.swal.errorUser);
-					break;
-				default:
-					errorSwal(otherText.signInForm.swal.errorOther);
-					console.log(error);
-					break;
+		if (!valueCheck(email, password)) return;
+		else {
+			try {
+				const { user } = await signInAuthUserWithEmailAndPassword(
+					email,
+					password
+				);
+				resetForm();
+			} catch (error) {
+				switch (error.code) {
+					case "auth/wrong-password":
+						errorSwal(otherText.signInForm.swal.errorPassword);
+						break;
+					case "auth/user-not-found":
+						errorSwal(otherText.signInForm.swal.errorUser);
+						break;
+					default:
+						errorSwal(otherText.signInForm.swal.errorOther);
+						console.log(error);
+						break;
+				}
 			}
 		}
 	};
@@ -82,36 +101,41 @@ const SignInForm = () => {
 			<h1 className="xl:text-4xl lg:text-xl md:text-4xl text-xl text-center text-text font-[600] mb-6">
 				{otherText.signInForm.title}
 			</h1>
+
 			<form className="flex flex-col items-start" onSubmit={handleSubmit}>
 				<label className={signInFormStyle.label}>
 					{otherText.signInForm.email}
+					<input
+						required
+						type="email"
+						name="email"
+						value={email}
+						onChange={handleChange}
+						className={signInFormStyle.input}
+					/>
 				</label>
-				<input
-					required
-					type="email"
-					name="email"
-					value={email}
-					onChange={handleChange}
-					className={signInFormStyle.input}
-				/>
+
 				<label className={`${signInFormStyle.label} mt-4`}>
 					{otherText.signInForm.password}
+					<input
+						required
+						type="password"
+						name="password"
+						value={password}
+						onChange={handleChange}
+						className={signInFormStyle.input}
+					/>
 				</label>
-				<input
-					required
-					type="password"
-					name="password"
-					value={password}
-					onChange={handleChange}
-					className={signInFormStyle.input}
-				/>
+
 				<button type="submit" className={signInFormStyle.button}>
 					{otherText.signInForm.button}
 				</button>
 			</form>
+
 			<button className="mt-2 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]">
 				{otherText.signInForm.forgot}
 			</button>
+
 			<button
 				className={signInFormStyle.forgotButton}
 				onClick={handleGoogleSignIn}

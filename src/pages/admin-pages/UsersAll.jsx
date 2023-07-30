@@ -4,7 +4,7 @@ import { getAllUser } from "../../utils/firebase";
 import { Icon } from "@iconify/react";
 import { Loading } from "../../components";
 import { otherText, usersAllHeaders } from "../../constants";
-import { usersAllStyle } from "../../styles";
+import { adminPageStyle, usersAllStyle } from "../../styles";
 
 const UsersAll = () => {
 	const [allUser, setAllUser] = useState([]);
@@ -16,10 +16,8 @@ const UsersAll = () => {
 	if (allUser.length === 0) return <Loading />;
 
 	return (
-		<div className="w-full h-full flex flex-col items-center">
-			<h1 className="text-text text-[1.5rem] font-[600] mb-8">
-				{otherText.usersAllTitle}
-			</h1>
+		<div className={adminPageStyle.wrapper}>
+			<h1 className={adminPageStyle.title}>{otherText.usersAllTitle}</h1>
 
 			<ul className="grid grid-cols-8 w-full px-8 items-center">
 				{usersAllHeaders.map((header) => (

@@ -4,6 +4,7 @@ import { BlogContext } from "../../context";
 import { useParams } from "react-router-dom";
 import { BlogForm } from "../../components";
 import { otherText } from "../../constants";
+import { adminPageStyle } from "../../styles";
 
 const BlogPostEditPage = () => {
 	const { id } = useParams();
@@ -11,10 +12,8 @@ const BlogPostEditPage = () => {
 	const post = allBlogPost.filter((post) => post.postid === id)[0];
 
 	return (
-		<div className="w-full h-full flex flex-col items-center px-8">
-			<h1 className="text-text text-[1.5rem] font-[600] mb-8">
-				{otherText.blogPostEditTitle}
-			</h1>
+		<div className={adminPageStyle.wrapper}>
+			<h1 className={adminPageStyle.title}>{otherText.blogPostEditTitle}</h1>
 			<BlogForm dbPost={post} />
 		</div>
 	);

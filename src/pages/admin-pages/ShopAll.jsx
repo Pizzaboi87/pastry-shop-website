@@ -1,9 +1,10 @@
 import { otherText } from "../../constants";
+import { adminPageStyle } from "../../styles";
 
 const ShopAll = () => {
 	return (
-		<div className="w-full h-full flex items-center justify-center">
-			<h1>{otherText.shopAllTitle}</h1>
+		<div className={adminPageStyle.wrapper}>
+			<h1 className={adminPageStyle.title}>{otherText.shopAllTitle}</h1>
 		</div>
 	);
 };

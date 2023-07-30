@@ -42,37 +42,62 @@ const SignUpForm = () => {
 	const [form, setForm] = useState(defaultForm);
 	const { displayName, email, password, confirmPassword } = form;
 
+	const valueCheck = (displayName, email, password, confirmPassword) => {
+		const nameRegex = /^[A-Za-z0-9-/ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
+		const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+		const passwordRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]{8,}$/;
+
+		switch (true) {
+			case !nameRegex.test(displayName):
+				errorSwal(otherText.signUpForm.swal.errorName);
+				return;
+			case password !== confirmPassword:
+				errorSwal(otherText.signUpForm.swal.errorPasswordMatch);
+				return;
+			case !emailRegex.test(email):
+				errorSwal(otherText.signUpForm.swal.errorEmail);
+				return;
+			case !passwordRegex.test(password):
+				errorSwal(otherText.signUpForm.swal.errorPassword);
+				return;
+			case !passwordRegex.test(password):
+				errorSwal(otherText.signUpForm.swal.errorPassword);
+				return;
+			default:
+				return true;
+		}
+	};
+
 	const handleChange = (event) => {
-		setForm({ ...form, [event.target.name]: event.target.value });
+		const { name, value } = event.target;
+		setForm({ ...form, [name]: value });
 	};
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
-		if (password !== confirmPassword) {
-			errorSwal(otherText.signUpForm.swal.errorPassword);
-			return;
-		}
+		if (!valueCheck(displayName, email, password, confirmPassword)) return;
+		else {
+			try {
+				const { user } = await createAuthUserWithEmailAndPassword(
+					email,
+					password
+				);
 
-		try {
-			const { user } = await createAuthUserWithEmailAndPassword(
-				email,
-				password
-			);
-
-			await createUserDocumentFromAuth(user, { displayName }).then(() => {
-				successSwal();
-			});
-			resetForm();
-		} catch (error) {
-			if (error.code === "auth/email-already-in-use") {
-				errorSwal(otherText.signUpForm.swal.errorInUse);
-			} else {
-				errorSwal(otherText.signUpForm.swal.errorOther);
-				console.log(error);
+				await createUserDocumentFromAuth(user, { displayName }).then(() => {
+					successSwal();
+				});
+				resetForm();
+			} catch (error) {
+				if (error.code === "auth/email-already-in-use") {
+					errorSwal(otherText.signUpForm.swal.errorInUse);
+				} else {
+					errorSwal(otherText.signUpForm.swal.errorOther);
+					console.log(error);
+				}
+			} finally {
+				navigate("/shop");
 			}
-		} finally {
-			navigate("/shop");
 		}
 	};
 
@@ -90,48 +115,52 @@ const SignUpForm = () => {
 			<form className="flex flex-col items-start" onSubmit={handleSubmit}>
 				<label className={signUpFormStyle.label}>
 					{otherText.signUpForm.userName}
+					<input
+						required
+						type="text"
+						name="displayName"
+						value={displayName}
+						onChange={handleChange}
+						className={signUpFormStyle.input}
+					/>
 				</label>
-				<input
-					required
-					type="text"
-					name="displayName"
-					value={displayName}
-					onChange={handleChange}
-					className={signUpFormStyle.input}
-				/>
+
 				<label className={signUpFormStyle.label}>
 					{otherText.signUpForm.email}
+					<input
+						required
+						type="email"
+						name="email"
+						value={email}
+						onChange={handleChange}
+						className={signUpFormStyle.input}
+					/>
 				</label>
-				<input
-					required
-					type="email"
-					name="email"
-					value={email}
-					onChange={handleChange}
-					className={signUpFormStyle.input}
-				/>
+
 				<label className={signUpFormStyle.label}>
 					{otherText.signUpForm.password}
+					<input
+						required
+						type="password"
+						name="password"
+						value={password}
+						onChange={handleChange}
+						className={signUpFormStyle.input}
+					/>
 				</label>
-				<input
-					required
-					type="password"
-					name="password"
-					value={password}
-					onChange={handleChange}
-					className={signUpFormStyle.input}
-				/>
+
 				<label className={signUpFormStyle.label}>
 					{otherText.signUpForm.confirmPassword}
+					<input
+						required
+						type="password"
+						name="confirmPassword"
+						value={confirmPassword}
+						onChange={handleChange}
+						className={signUpFormStyle.input}
+					/>
 				</label>
-				<input
-					required
-					type="password"
-					name="confirmPassword"
-					value={confirmPassword}
-					onChange={handleChange}
-					className={signUpFormStyle.input}
-				/>
+
 				<button type="submit" className={signUpFormStyle.button}>
 					{otherText.signUpForm.button}
 				</button>

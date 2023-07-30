@@ -5,12 +5,12 @@ const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
 	const allowedCharacters = /^[a-zA-Z- :]+$/;
 	const [searchText, setSearchText] = useState("");
 
-	const handleChange = (e) => {
-		setSearchText(e.target.value);
+	const handleChange = (event) => {
+		setSearchText(event.target.value);
 	};
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
+	const handleSubmit = (event) => {
+		event.preventDefault();
 		setLoading(true);
 		setNotFound(false);
 
@@ -20,6 +20,7 @@ const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
 		} else {
 			setLoading(false);
 			setNotFound(true);
+			return;
 		}
 	};
 

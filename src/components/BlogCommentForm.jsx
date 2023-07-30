@@ -48,20 +48,19 @@ const BlogCommentForm = () => {
 		const nameRegex = /^[A-Za-z-/ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
 		const commentRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
 
-		if (!nameRegex.test(author)) {
-			errorSwal(otherText.blogCommentForm.swal.errorName);
-			return;
+		switch (true) {
+			case !nameRegex.test(author):
+				errorSwal(otherText.blogCommentForm.swal.errorName);
+				return;
+			case !commentRegex.test(title):
+				errorSwal(otherText.blogCommentForm.swal.errorCommentTitle);
+				return;
+			case !commentRegex.test(comment):
+				errorSwal(otherText.blogCommentForm.swal.errorComment);
+				return;
+			default:
+				return true;
 		}
-
-		if (!commentRegex.test(title)) {
-			errorSwal(otherText.blogCommentForm.swal.errorCommentTitle);
-			return;
-		}
-
-		if (!commentRegex.test(comment)) {
-			errorSwal(otherText.blogCommentForm.swal.errorComment);
-			return;
-		} else return true;
 	};
 
 	const handleChange = (event) => {
@@ -69,10 +68,11 @@ const BlogCommentForm = () => {
 		setForm({ ...form, [name]: value });
 	};
 
+	//------------------------------------------------------NOT READY: Send comment function missing.------------------------------------------------------
 	const handleSubmit = (event) => {
 		event.prefentDefault();
 		valueCheck(author, title, comment);
-		//NOT READY
+		console.log("BlogCommentForm: ", form);
 	};
 
 	return (
