@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
+import { otherText } from "../constants";
 import {
 	FacebookShareButton,
 	FacebookIcon,
@@ -10,7 +11,6 @@ import {
 	EmailShareButton,
 	EmailIcon,
 } from "react-share";
-import { otherText } from "../constants";
 
 const RecipeCard = ({ recipe }) => {
 	const motionPropsR = slideIn("right");
@@ -21,6 +21,7 @@ const RecipeCard = ({ recipe }) => {
 		(ingredient) => "\n" + ingredient
 	)}\n\n${recipe.instructions}\n\n`;
 
+	//-----------------------------------------------------NOT READY: Like/favourite function missing.-----------------------------------------------------
 	return (
 		<motion.div
 			initial={motionPropsR.initial}

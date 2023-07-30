@@ -1,0 +1,8 @@
+Each child in a list should have a unique "key" prop:
+  -UsersAll
+  -BlogTagPage
+
+Write the function for a specific item:
+  -RecipeCard - like/favourite
+  -BlogCommentForm - handleSubmit
+

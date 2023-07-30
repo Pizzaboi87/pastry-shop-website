@@ -443,7 +443,8 @@ const otherText = {
 	},
 	recipes: {
 		title: "Our Favourite Recipes",
-		notFound: "not found",
+		notFound: "no result",
+		noMore: "end of list",
 		show: "show more",
 	},
 	authentication: {
