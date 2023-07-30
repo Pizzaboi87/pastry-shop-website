@@ -10,7 +10,7 @@ module.exports = {
 				button: "#a96973",
 				brown: "#4a3a3b",
 				red: "#ce5a4f",
-				green: "#9ab7ad",
+				green: "#49be25",
 				yellowdark: "#efa75c",
 				yellowlight: "#eace9b",
 				yellowbg: "#ffeaad",

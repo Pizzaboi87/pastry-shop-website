@@ -603,6 +603,34 @@ const usersAllHeaders = [
 	},
 ];
 
+const commentsHeaders = [
+	{
+		title: "Image",
+		id: "image",
+		style: "bg-yellowlight col-span-1",
+	},
+	{
+		title: "Name",
+		id: "name",
+		style: "bg-yellowdark col-span-2",
+	},
+	{
+		title: "Comment Title",
+		id: "title",
+		style: "bg-yellowlight col-span-2",
+	},
+	{
+		title: "Comment Date",
+		id: "date",
+		style: "bg-yellowdark col-span-2",
+	},
+	{
+		title: "Actions",
+		id: "actions",
+		style: "bg-yellowlight col-span-1",
+	},
+];
+
 export {
 	adminMenu,
 	courses,
@@ -620,4 +648,5 @@ export {
 	staff,
 	story,
 	usersAllHeaders,
+	commentsHeaders,
 };

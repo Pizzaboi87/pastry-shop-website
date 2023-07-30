@@ -4,7 +4,8 @@ import { getAllUser } from "../../utils/firebase";
 import { Icon } from "@iconify/react";
 import { Loading } from "../../components";
 import { otherText, usersAllHeaders } from "../../constants";
-import { adminPageStyle, usersAllStyle } from "../../styles";
+import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
+import { Tooltip } from "react-tooltip";
 
 const UsersAll = () => {
 	const [allUser, setAllUser] = useState([]);
@@ -31,35 +32,45 @@ const UsersAll = () => {
 
 				{allUser.map((user) => (
 					<Fragment key={user.uid}>
-						<li className={`${usersAllStyle.text} col-span-1`}>
+						<li className={`${tableStyle} col-span-1`}>
 							<img
 								src={profImage}
 								alt="profile"
 								className="w-8 h-8 mx-auto rounded-full"
 							/>
 						</li>
-						<li className={`${usersAllStyle.text} col-span-2`}>
-							{user.displayName}
-						</li>
-						<li className={`${usersAllStyle.text} col-span-2`}>{user.email}</li>
-						<li className={`${usersAllStyle.text} col-span-2`}>
+						<li className={`${tableStyle} col-span-2`}>{user.displayName}</li>
+						<li className={`${tableStyle} col-span-2`}>{user.email}</li>
+						<li className={`${tableStyle} col-span-2`}>
 							{new Date(user.createdAt.seconds * 1000)
 								.toUTCString()
 								.slice(0, -7)}
 						</li>
 						<li className="flex gap-6 justify-center items-center py-2 col-span-1">
 							<Icon
-								icon="fluent:delete-16-regular"
-								className="text-text text-[2rem] hover:text-logopink cursor-pointer"
+								icon="bi:trash3-fill"
+								className="delete text-text text-[2rem] hover:text-logopink cursor-pointer"
 							/>
 							<Icon
-								icon="vaadin:edit"
-								className="text-text text-[1.5rem] hover:text-logopink cursor-pointer mt-[0.1rem]"
+								icon="raphael:edit"
+								className="edit text-text text-[2rem] hover:text-logopink cursor-pointer"
 							/>
 						</li>
 					</Fragment>
 				))}
 			</ul>
+			<Tooltip
+				anchorSelect=".delete"
+				content="Delete comment."
+				style={tooltipStyle}
+				place="top"
+			/>
+			<Tooltip
+				anchorSelect=".edit"
+				content="Edit comment."
+				style={tooltipStyle}
+				place="top"
+			/>
 		</div>
 	);
 };

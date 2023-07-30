@@ -30,7 +30,7 @@ const BlogComment = ({ id }) => {
 				<ul>{allComment}</ul>
 			</div>
 			{currentUser ? (
-				<BlogCommentForm />
+				<BlogCommentForm postID={id} />
 			) : (
 				<div className="w-full text-center">
 					<h1 className="text-text text-[1.2rem] font-[600]">

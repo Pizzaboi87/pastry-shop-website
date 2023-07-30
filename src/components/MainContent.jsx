@@ -17,6 +17,7 @@ import {
 } from "../pages/main-pages";
 import {
 	BlogAll,
+	BlogCommentPage,
 	BlogComments,
 	BlogNew,
 	BlogPostEdit,
@@ -48,6 +49,10 @@ const MainContent = () => {
 						<Route path="blog/all/:id" element={<BlogPostEdit />} />
 						<Route path="blog/new-article" element={<BlogNew />} />
 						<Route path="blog/comments" element={<BlogComments />} />
+						<Route
+							path="blog/comments/:commentID"
+							element={<BlogCommentPage />}
+						/>
 						<Route path="shop/products" element={<ShopAll />} />
 						<Route path="shop/new-product" element={<ShopNew />} />
 						<Route path="shop/orders" element={<ShopOrders />} />

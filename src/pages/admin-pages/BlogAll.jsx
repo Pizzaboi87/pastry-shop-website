@@ -41,9 +41,10 @@ const BlogAll = () => {
 
 	return (
 		<div className={adminPageStyle.wrapper}>
+			
 			<h1 className={adminPageStyle.title}>{otherText.blogAll.title}</h1>
 
-			<div className="flex w-full h-full flex-wrap gap-4 p-4">
+			<div className="flex w-full h-full flex-wrap gap-y-8 gap-x-4 justify-evenly">
 				{allBlogPost.map((post) => (
 					<div
 						key={post.postid}
@@ -58,15 +59,15 @@ const BlogAll = () => {
 						<div className="filter absolute w-full h-full bg-purpleglass">
 							<div className="w-full 3xl:h-[12rem] h-[8rem] flex items-center justify-center gap-4">
 								<Icon
-									icon="fluent:delete-16-regular"
+									icon="bi:trash3-fill"
 									className="text-white text-[3rem] hover:text-yellowdark cursor-pointer"
 									onClick={() => confirmDelete(post.postid)}
 								/>
 								<Link
 									to={post.postid}
-									className="text-white text-[2.2rem] hover:text-yellowdark cursor-pointer mt-[0.2rem]"
+									className="text-white text-[3rem] hover:text-yellowdark cursor-pointer"
 								>
-									<Icon icon="vaadin:edit" />
+									<Icon icon="raphael:edit" />
 								</Link>
 							</div>
 							<div className="absolute bottom-0 w-full 3xl:h-[3rem] h-[2rem] bg-yellowdark"></div>

@@ -86,7 +86,7 @@ const BlogForm = ({ dbPost }) => {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="w-full grid grid-cols-4 gap-x-24 gap-y-8"
+			className="w-full grid grid-cols-4 gap-x-16 gap-y-8"
 		>
 			<div className="col-span-2 flex flex-col justify-between">
 				<label className={blogNewFormStyle.label}>

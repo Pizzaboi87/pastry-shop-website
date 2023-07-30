@@ -3,9 +3,10 @@ import { otherText } from "../constants";
 import { useState, useEffect, useContext } from "react";
 import { blogCommentStyle } from "../styles";
 import { showName } from "../utils/firebase";
+import { v4 as uuidv4 } from "uuid";
 import { UserContext } from "../context";
 
-const BlogCommentForm = () => {
+const BlogCommentForm = ({ postID }) => {
 	const { currentUser } = useContext(UserContext);
 	const [displayName, setDisplayName] = useState("");
 	const defaultForm = {
@@ -13,6 +14,9 @@ const BlogCommentForm = () => {
 		email: currentUser.email,
 		title: "",
 		comment: "",
+		relatedID: postID,
+		date: Date.now(),
+		id: uuidv4(),
 	};
 
 	const [form, setForm] = useState(defaultForm);
@@ -45,14 +49,10 @@ const BlogCommentForm = () => {
 		});
 	};
 
-	const valueCheck = (author, title, comment) => {
-		const nameRegex = /^[A-Za-z-/ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
+	const valueCheck = (title, comment) => {
 		const commentRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐüÜűŰ\s]+$/;
 
 		switch (true) {
-			case !nameRegex.test(author):
-				errorSwal(otherText.blogCommentForm.swal.errorName);
-				return;
 			case !commentRegex.test(title):
 				errorSwal(otherText.blogCommentForm.swal.errorCommentTitle);
 				return;
@@ -72,7 +72,7 @@ const BlogCommentForm = () => {
 	//------------------------------------------------------NOT READY: Send comment function missing.------------------------------------------------------
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		if (!valueCheck(author, title, comment)) return;
+		if (!valueCheck(title, comment)) return;
 		else {
 			console.log("BlogCommentForm: ", form);
 			successSwal();
