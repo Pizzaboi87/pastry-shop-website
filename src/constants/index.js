@@ -573,6 +573,21 @@ const otherText = {
 			errorNotSent: "Your message hasn't been sent, please try again later.",
 		},
 	},
+	blogCommentPage: {
+		title: "Comment Page",
+		id: "Comment ID",
+		date: "Creation Date",
+		author: "Author Name",
+		email: "Author Email",
+		commentTitle: "Comment Title",
+		commentText: "Comment Text",
+		relatedID: "Related-Post",
+		swal: {
+			question: "Do you want to delete the comment?",
+			confirm: "Delete",
+			cancel: "Cancel",
+		},
+	},
 };
 
 const usersAllHeaders = [

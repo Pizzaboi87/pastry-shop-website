@@ -169,6 +169,7 @@ const BlogForm = ({ dbPost }) => {
 					/>
 				</label>
 			</div>
+
 			<button type="submit" className={blogNewFormStyle.button}>
 				{otherText.blogForm.button}
 			</button>

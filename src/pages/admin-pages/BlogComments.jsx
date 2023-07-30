@@ -1,11 +1,11 @@
 import profImage from "../../assets/rewprof-1.webp";
-import { otherText, commentsHeaders } from "../../constants";
-import { Icon } from "@iconify/react";
-import { comments } from "../../content";
-import { Tooltip } from "react-tooltip";
-import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { Tooltip } from "react-tooltip";
+import { Icon } from "@iconify/react";
+import { comments } from "../../content";
+import { otherText, commentsHeaders } from "../../constants";
+import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
 
 const BlogComments = () => {
 	return (
@@ -40,25 +40,22 @@ const BlogComments = () => {
 						<li className="flex gap-4 justify-center items-center py-2 col-span-1">
 							<Icon
 								icon="bi:trash3-fill"
-								className="delete text-text text-[2rem] hover:text-logopink cursor-pointer"
+								className="delete text-text outline-none text-[2rem] hover:text-logopink cursor-pointer"
 							/>
 							<Link
 								to={`/admin/blog/comments/${comment.id}`}
-								className="edit text-text text-[2rem] hover:text-logopink cursor-pointer"
+								className="edit text-text outline-none text-[2rem] hover:text-logopink cursor-pointer"
 							>
 								<Icon icon="raphael:edit" />
 							</Link>
-							{comment.isPublished ? (
-								<Icon
-									icon="mdi:publish"
-									className="published outline-none text-green text-[2rem] cursor-pointer"
-								/>
-							) : (
-								<Icon
-									icon="mdi:publish-off"
-									className="hided outline-none text-red text-[2rem] cursor-pointer"
-								/>
-							)}
+							<Icon
+								icon={comment.isPublished ? "mdi:publish" : "mdi:publish-off"}
+								className={`${
+									comment.isPublished
+										? "published text-green"
+										: "hided text-red"
+								} outline-none text-[2.5rem] mt-[0.1rem] cursor-pointer`}
+							/>
 						</li>
 					</Fragment>
 				))}
