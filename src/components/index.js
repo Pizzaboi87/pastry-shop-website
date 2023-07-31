@@ -1,3 +1,4 @@
+import AdminLogin from "./AdminLogin";
 import AdminMenu from "./AdminMenu";
 import AdminPanel from "./AdminPanel";
 import AuthButton from "./AuthButton";
@@ -32,6 +33,7 @@ import TextAndImage from "./TextAndImage";
 import TransitionParent from "./TransitionParent";
 
 export {
+	AdminLogin,
 	AdminMenu,
 	AdminPanel,
 	AuthButton,
