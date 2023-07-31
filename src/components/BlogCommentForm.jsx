@@ -45,7 +45,7 @@ const BlogCommentForm = ({ postID }) => {
 
   const valueCheck = (title, comment) => {
     const commentRegex =
-      /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\n\s]+$/;
+      /(?:[\u{1F000}-\u{1FFFF}]|\p{Emoji_Presentation}|\p{Emoji}\ufe0f|[A-Za-z0-9,.\-;:?!()%"@$/€áÁéÉíÍóÓöÖőŐúÚüÜűŰ\n\s])/u;
 
     switch (true) {
       case !commentRegex.test(title):

@@ -64,7 +64,7 @@ const BlogPostCard = ({ post, isOwnPage }) => {
         </ul>
 
         <Link
-          to={`/blog/post/` + post.title.toLowerCase().split(" ").join("-")}
+          to={`/blog/post/` + post.postid}
           className={isOwnPage ? "hidden" : "block"}
         >
           <button className="bg-logopink rounded-xl px-4 py-2 text-white font-[600] shadow-xl self-center">

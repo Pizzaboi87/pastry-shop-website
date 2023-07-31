@@ -39,6 +39,14 @@ const BlogAll = () => {
     });
   };
 
+  function truncate(inputString, length = 20) {
+    if (inputString.length <= length) {
+      return inputString;
+    } else {
+      return inputString.slice(0, length) + "...";
+    }
+  }
+
   return (
     <div className={adminPageStyle.wrapper}>
       <h1 className={adminPageStyle.title}>{otherText.blogAll.title}</h1>
@@ -73,7 +81,7 @@ const BlogAll = () => {
             </div>
             <div className="absolute bottom-0 w-full 3xl:h-[3rem] h-[2rem] flex items-center justify-center">
               <h1 className="text-text text-[1.2rem] font-[500]">
-                {post.title}
+                {truncate(post.title)}
               </h1>
             </div>
           </div>
