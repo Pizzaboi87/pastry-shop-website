@@ -47,16 +47,16 @@ const BlogAll = () => {
         {allBlogPost.map((post) => (
           <div
             key={post.postid}
-            className="card relative overflow-hidden 3xl:w-[15rem] w-[11.5rem] 3xl:h-[15rem] h-[10rem] flex flex-col items-center cursor-pointer rounded-xl shadow-xl"
+            className="card relative bg-primary overflow-hidden 3xl:w-[15rem] w-[17rem] 3xl:h-[15rem] h-[12rem] flex flex-col items-center cursor-pointer rounded-xl shadow-xl"
           >
             <img
               src={post.image}
               alt="blog"
-              className="absolute w-full 3xl:h-[12rem] h-[8rem] object-cover"
+              className="absolute w-full 3xl:h-[12rem] h-[10rem] object-cover"
             />
 
             <div className="filter absolute w-full h-full bg-purpleglass">
-              <div className="w-full 3xl:h-[12rem] h-[8rem] flex items-center justify-center gap-4">
+              <div className="w-full 3xl:h-[12rem] h-[10rem] flex items-center justify-center gap-4">
                 <Icon
                   icon="bi:trash3-fill"
                   className="text-white text-[3rem] hover:text-yellowdark cursor-pointer"

@@ -6,46 +6,46 @@ import { UserContext, CommentsContext } from "../context";
 import { useParams } from "react-router-dom";
 
 const BlogComment = () => {
-	const { id } = useParams();
-	const { currentUser } = useContext(UserContext);
-	const { allComments } = useContext(CommentsContext);
+  const { id } = useParams();
+  const { currentUser } = useContext(UserContext);
+  const { allComments } = useContext(CommentsContext);
 
-	const allRelevantComment = allComments.filter(
-		(comment) => comment.relatedID === id && comment.isPublished
-	);
+  const allRelevantComment = allComments.filter(
+    (comment) => comment.relatedID === id && comment.isPublished
+  );
 
-	return (
-		<div className="col-span-4 mb-16">
-			<div className="w-full bg-primary rounded-2xl shadow-xl p-6 mb-16">
-				<h1 className="text-text text-[1.3rem] font-[600] mb-16">
-					{otherText.blogComment.title}
-				</h1>
-				<ul>
-					{allRelevantComment.map((comment, index) => (
-						<div className="flex flex-col my-8" key={index}>
-							<span className="w-full flex justify-between">
-								<p className="tex-text font-[600]">{comment.author}</p>
-								<p>{new Date(comment.date).toUTCString().slice(0, -7)}</p>
-							</span>
-							<p className="text-text text-[1.2rem] decoration-double underline">
-								{comment.title}
-							</p>
-							<p>{comment.comment}</p>
-						</div>
-					))}
-				</ul>
-			</div>
-			{currentUser ? (
-				<BlogCommentForm postID={id} />
-			) : (
-				<div className="w-full text-center">
-					<h1 className="text-text text-[1.2rem] font-[600]">
-						{otherText.blogComment.login}
-					</h1>
-				</div>
-			)}
-		</div>
-	);
+  return (
+    <div className="col-span-4 mb-16">
+      <div className="w-full bg-primary rounded-2xl shadow-xl p-6 mb-16">
+        <h1 className="text-text text-[1.3rem] font-[600] mb-16">
+          {otherText.blogComment.title}
+        </h1>
+        <ul>
+          {allRelevantComment.map((comment, index) => (
+            <div className="flex flex-col my-8" key={index}>
+              <span className="w-full flex justify-between">
+                <p className="tex-text font-[600]">{comment.author}</p>
+                <p>{new Date(comment.date).toUTCString().slice(0, -7)}</p>
+              </span>
+              <p className="text-text text-[1.2rem] decoration-double underline">
+                {comment.title}
+              </p>
+              <p>{comment.comment}</p>
+            </div>
+          ))}
+        </ul>
+      </div>
+      {currentUser ? (
+        <BlogCommentForm postID={id} />
+      ) : (
+        <div className="w-full text-center">
+          <h1 className="text-text text-[1.2rem] font-[600]">
+            {otherText.blogComment.login}
+          </h1>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default CommentsWrapper(BlogComment);

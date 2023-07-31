@@ -1,28 +1,68 @@
 import CommentsWrapper from "../../utils/commentswrapper.hoc";
 import Swal from "sweetalert2";
 import { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { CommentsContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { otherText } from "../../constants";
+import { changeCommentStatus, deleteComment } from "../../utils/firebase";
 import { adminPageStyle, blogNewFormStyle } from "../../styles";
 
 const BlogCommentPage = () => {
   const { commentID } = useParams();
-  const { allComments } = useContext(CommentsContext);
+  const navigate = useNavigate();
+  const { allComments, setAllComments } = useContext(CommentsContext);
   const actualComment = allComments.filter(
     (comment) => comment.id === commentID
   )[0];
 
+  const changePublish = (comment) => {
+    changeCommentStatus(comment.id, !comment.isPublished).then(() => {
+      const newComments = allComments.map((com) =>
+        com.id === comment.id ? { ...com, isPublished: !com.isPublished } : com
+      );
+      setAllComments(newComments);
+    });
+  };
+
+  const confirmDelete = (id) => {
+    Swal.fire({
+      title: otherText.blogCommentPage.swal.question,
+      showDenyButton: true,
+      confirmButtonText: otherText.blogCommentPage.swal.confirm,
+      denyButtonText: otherText.blogCommentPage.swal.cancel,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteComment(id)
+          .then(() => {
+            setCommentForm(defaultForm);
+          })
+          .then(() => {
+            navigate("/admin/blog/comments");
+          })
+          .catch((error) => {
+            Swal.fire({
+              title: otherText.blogAll.swal.error,
+              text: otherText.blogAll.swal.errorMsg,
+              icon: "error",
+            });
+            console.error("Error deleting comment:", error);
+          });
+      } else if (result.isDenied) {
+        return;
+      }
+    });
+  };
+
   const defaultForm = {
-    author: actualComment.author,
-    email: actualComment.email,
-    comment: actualComment.comment,
-    date: new Date(actualComment.date).toUTCString(),
-    id: actualComment.id,
-    isPublished: actualComment.isPublished,
-    relatedID: actualComment.relatedID,
-    title: actualComment.title,
+    author: actualComment ? actualComment.author : "",
+    email: actualComment ? actualComment.email : "",
+    comment: actualComment ? actualComment.comment : "",
+    date: actualComment ? new Date(actualComment.date).toUTCString() : "",
+    id: actualComment ? actualComment.id : "",
+    isPublished: actualComment ? actualComment.isPublished : "",
+    relatedID: actualComment ? actualComment.relatedID : "",
+    title: actualComment ? actualComment.title : "",
   };
 
   const [commentForm, setCommentForm] = useState(defaultForm);
@@ -33,16 +73,6 @@ const BlogCommentPage = () => {
 
   const handleSubmit = () => {};
 
-  const deleteComment = (id) => {
-    //Delete comment function need.
-    Swal.fire({
-      title: otherText.blogCommentPage.swal.question,
-      showDenyButton: true,
-      confirmButtonText: otherText.blogCommentPage.swal.confirm,
-      denyButtonText: otherText.blogCommentPage.swal.cancel,
-    });
-  };
-
   return (
     <div className={`${adminPageStyle.wrapper} relative`}>
       <h1 className={adminPageStyle.title}>
@@ -52,14 +82,15 @@ const BlogCommentPage = () => {
       <Icon
         icon="bi:trash3-fill"
         className="delete text-text text-[3rem] hover:text-logopink cursor-pointer absolute top-[1rem] left-[1rem]"
-        onClick={() => deleteComment(id)}
+        onClick={() => confirmDelete(actualComment.id)}
       />
 
       <Icon
-        icon={isPublished ? "mdi:publish" : "mdi:publish-off"}
+        icon={actualComment.isPublished ? "mdi:publish" : "mdi:publish-off"}
         className={`${
-          isPublished ? "text-green" : "text-red"
+          actualComment.isPublished ? "text-green" : "text-red"
         } outline-none text-[4rem] cursor-pointer absolute top-[1rem] right-[1rem]`}
+        onClick={() => changePublish(actualComment)}
       />
 
       <form className="w-full grid grid-cols-4 gap-y-8 gap-x-16">
