@@ -20,7 +20,9 @@ export const BlogContextProvider = ({ children }) => {
           })
         );
 
-        setAllBlogPost(processedData);
+        setAllBlogPost(
+          processedData.sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
+        );
       } catch (error) {
         console.error("An error happened during data fetching.", error);
       }

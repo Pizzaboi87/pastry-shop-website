@@ -12,7 +12,7 @@ export const CommentsContextProvider = ({ children }) => {
       try {
         const firebaseData = await getAllComments();
         const commentsArray = Object.values(firebaseData);
-        setAllComments(commentsArray);
+        setAllComments(commentsArray.sort((a, b) => b.date - a.date));
       } catch (error) {
         console.error("An error happened during data fetching.", error);
       }

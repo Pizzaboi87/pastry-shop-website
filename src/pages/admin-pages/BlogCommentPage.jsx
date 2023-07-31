@@ -58,7 +58,11 @@ const BlogCommentPage = () => {
     author: actualComment ? actualComment.author : "",
     email: actualComment ? actualComment.email : "",
     comment: actualComment ? actualComment.comment : "",
-    date: actualComment ? new Date(actualComment.date).toUTCString() : "",
+    date: actualComment
+      ? new Date(actualComment.date)
+          .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
+          .slice(0, -3)
+      : "",
     id: actualComment ? actualComment.id : "",
     isPublished: actualComment ? actualComment.isPublished : "",
     relatedID: actualComment ? actualComment.relatedID : "",

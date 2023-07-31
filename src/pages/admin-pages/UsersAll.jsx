@@ -56,8 +56,8 @@ const UsersAll = () => {
               className={`${tableStyle} col-span-2`}
             >
               {new Date(user.createdAt.seconds * 1000)
-                .toUTCString()
-                .slice(0, -7)}
+                .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
+                .slice(0, -3)}
             </li>
             <li
               key={`actions-${user.uid}`}

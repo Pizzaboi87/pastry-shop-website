@@ -76,7 +76,9 @@ const BlogComments = () => {
             <li className={`${tableStyle} col-span-2`}>{comment.author}</li>
             <li className={`${tableStyle} col-span-2`}>{comment.title}</li>
             <li className={`${tableStyle} col-span-2`}>
-              {new Date(comment.date).toUTCString().slice(0, -7)}
+              {new Date(comment.date)
+                .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
+                .slice(0, -3)}
             </li>
 
             <li className="flex gap-4 justify-center items-center py-2 col-span-1">

@@ -25,7 +25,11 @@ const BlogComment = () => {
             <div className="flex flex-col my-8" key={index}>
               <span className="w-full flex justify-between">
                 <p className="tex-text font-[600]">{comment.author}</p>
-                <p>{new Date(comment.date).toUTCString().slice(0, -7)}</p>
+                <p>
+                  {new Date(comment.date)
+                    .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
+                    .slice(0, -3)}
+                </p>
               </span>
               <p className="text-text text-[1.2rem] decoration-double underline">
                 {comment.title}
