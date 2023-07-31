@@ -432,6 +432,7 @@ const otherText = {
   blogPostCardButton: "Read article",
   courseCardButton: "Learn More",
   loading: "loading...",
+  adminSignOut: "Admin Sign Out",
   blogComment: {
     title: "Comments",
     login: "Please log in to write a comment!",
@@ -535,6 +536,14 @@ const otherText = {
       errorEmail: "Please provde a valid email address.",
       errorInUse: "Cannot create user, email already in use.",
       errorOther: "Error during user creation.",
+    },
+  },
+  adminLogin: {
+    swal: {
+      errorTitle: "Something went wrong!",
+      errorUser: "Please write a valid UserName.",
+      errorPassword: "Password format is not correct.",
+      errorWrongCredentials: "UserName or password is not correct.",
     },
   },
   signInForm: {

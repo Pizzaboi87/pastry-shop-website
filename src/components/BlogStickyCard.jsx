@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { categories } from "../content";
 import BlogCategoryCard from "./BlogCategoryCard";
 import BlogProposalCard from "./BlogProposalCard";
+import { useEffect, useState } from "react";
+import { categories } from "../content";
 
 const BlogStickyCard = ({ posts }) => {
   const [postProposals, setPostProposals] = useState([]);

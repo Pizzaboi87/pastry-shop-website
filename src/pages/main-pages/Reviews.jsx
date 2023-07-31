@@ -1,27 +1,27 @@
 import { otherText, reviews } from "../../constants";
 import {
-	ReviewCard,
-	ImageCarousel,
-	Postcard,
-	TransitionParent,
+  ReviewCard,
+  ImageCarousel,
+  Postcard,
+  TransitionParent,
 } from "../../components";
 
 const Reviews = () => {
-	return (
-		<TransitionParent isFlex isRew>
-			<h1 className="xl:text-[3rem] text-[2rem] text-center text-text font-[600] mb-8">
-				{otherText.reviewsTitle}
-			</h1>
+  return (
+    <TransitionParent isFlex isRew>
+      <h1 className="xl:text-[3rem] text-[2rem] text-center text-text font-[600] mb-8">
+        {otherText.reviewsTitle}
+      </h1>
 
-			<Postcard />
+      <Postcard />
 
-			<ImageCarousel type="review">
-				{reviews.map((review) => (
-					<ReviewCard key={review.name} review={review} />
-				))}
-			</ImageCarousel>
-		</TransitionParent>
-	);
+      <ImageCarousel type="review">
+        {reviews.map((review) => (
+          <ReviewCard key={review.name} review={review} />
+        ))}
+      </ImageCarousel>
+    </TransitionParent>
+  );
 };
 
 export default Reviews;

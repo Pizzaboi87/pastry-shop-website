@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
-import TransitionParent from "./TransitionParent";
-import { blogNewFormStyle } from "../styles";
 import Swal from "sweetalert2";
-import { otherText } from "../constants";
+import TransitionParent from "./TransitionParent";
+import { useContext, useState } from "react";
 import { AdminContext } from "../context";
+import { otherText } from "../constants";
+import { adminLoginStyle } from "../styles";
 
 const AdminLogin = () => {
-  const [isAdmin, setIsAdmin] = useContext(AdminContext);
+  const { setIsAdmin } = useContext(AdminContext);
 
   const defaultForm = {
     user: "",
@@ -19,7 +19,7 @@ const AdminLogin = () => {
   const errorSwal = (error) => {
     Swal.fire({
       icon: "error",
-      title: otherText.signInForm.swal.errorTitle,
+      title: otherText.adminLogin.swal.errorTitle,
       text: error,
     });
   };
@@ -31,10 +31,10 @@ const AdminLogin = () => {
 
     switch (true) {
       case !nameRegex.test(user):
-        errorSwal(otherText.signInForm.swal.errorEmail);
+        errorSwal(otherText.adminLogin.swal.errorUser);
         return;
       case !passwordRegex.test(password):
-        errorSwal(otherText.signInForm.swal.errorPassword);
+        errorSwal(otherText.adminLogin.swal.errorPassword);
         return;
       default:
         return true;
@@ -53,7 +53,7 @@ const AdminLogin = () => {
       user !== import.meta.env.VITE_ADMIN_NAME ||
       password !== import.meta.env.VITE_ADMIN_PASSWORD
     ) {
-      errorSwal("UserName or password is not correct.");
+      errorSwal(otherText.adminLogin.swal.errorWrongCredentials);
     } else {
       setIsAdmin(true);
     }
@@ -69,7 +69,7 @@ const AdminLogin = () => {
           Admin Login
         </h1>
         <span className="col-span-3 col-start-2 flex flex-col gap-y-4">
-          <label className={blogNewFormStyle.label}>
+          <label className={adminLoginStyle.label}>
             UserName
             <input
               required
@@ -77,11 +77,11 @@ const AdminLogin = () => {
               name="user"
               value={user}
               onChange={handleChange}
-              className={blogNewFormStyle.input}
+              className={adminLoginStyle.input}
             />
           </label>
 
-          <label className={blogNewFormStyle.label}>
+          <label className={adminLoginStyle.label}>
             Password
             <input
               required
@@ -89,12 +89,12 @@ const AdminLogin = () => {
               name="password"
               value={password}
               onChange={handleChange}
-              className={blogNewFormStyle.input}
+              className={adminLoginStyle.input}
             />
           </label>
         </span>
 
-        <button className={`${blogNewFormStyle.button} col-span-1 col-start-3`}>
+        <button className={`${adminLoginStyle.button} col-span-1 col-start-3`}>
           Login
         </button>
       </form>

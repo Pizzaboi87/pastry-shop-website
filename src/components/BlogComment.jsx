@@ -1,9 +1,9 @@
 import CommentsWrapper from "../utils/commentswrapper.hoc";
 import BlogCommentForm from "./BlogCommentForm";
-import { otherText } from "../constants";
 import { useContext } from "react";
-import { UserContext, CommentsContext } from "../context";
 import { useParams } from "react-router-dom";
+import { UserContext, CommentsContext } from "../context";
+import { otherText } from "../constants";
 
 const BlogComment = () => {
   const { id } = useParams();

@@ -9,13 +9,13 @@ import ShopOrders from "./ShopOrders";
 import UsersAll from "./UsersAll";
 
 export {
-	BlogAll,
-	BlogCommentPage,
-	BlogComments,
-	BlogNew,
-	BlogPostEdit,
-	ShopAll,
-	ShopNew,
-	ShopOrders,
-	UsersAll,
+  BlogAll,
+  BlogCommentPage,
+  BlogComments,
+  BlogNew,
+  BlogPostEdit,
+  ShopAll,
+  ShopNew,
+  ShopOrders,
+  UsersAll,
 };

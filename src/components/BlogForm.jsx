@@ -1,9 +1,9 @@
 import Swal from "sweetalert2";
-import { memo, useState } from "react";
-import { blogNewFormStyle } from "../styles";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { uploadBlogPost } from "../utils/firebase";
 import { otherText } from "../constants";
-import { useNavigate } from "react-router-dom";
+import { blogNewFormStyle } from "../styles";
 
 const BlogForm = ({ dbPost }) => {
   const getBackImage = (url) => {
@@ -191,4 +191,4 @@ const BlogForm = ({ dbPost }) => {
   );
 };
 
-export default memo(BlogForm);
+export default BlogForm;

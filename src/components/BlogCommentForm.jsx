@@ -1,10 +1,10 @@
 import Swal from "sweetalert2";
-import { otherText } from "../constants";
 import { useState, useEffect, useContext } from "react";
-import { blogCommentStyle } from "../styles";
+import { UserContext } from "../context";
+import { otherText } from "../constants";
 import { showName, storeComment } from "../utils/firebase";
 import { v4 as uuidv4 } from "uuid";
-import { UserContext } from "../context";
+import { blogCommentStyle } from "../styles";
 
 const BlogCommentForm = ({ postID }) => {
   const { currentUser } = useContext(UserContext);
