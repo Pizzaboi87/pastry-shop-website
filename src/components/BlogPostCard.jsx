@@ -1,25 +1,36 @@
 import { Link } from "react-router-dom";
 import { otherText } from "../constants";
+import { Fragment } from "react";
 
 const BlogPostCard = ({ post, isOwnPage }) => {
   const article = post.post.split("		").map((paragraph, index) => (
     <p key={index}>
       {paragraph.split("\n").map((line, index) => (
-        <>
+        <Fragment key={index}>
           {line}
           <br />
-        </>
+        </Fragment>
       ))}
     </p>
   ));
 
   return (
     <div className="bg-primary w-full rounded-2xl mb-16 shadow-xl">
-      <img
-        src={post.image}
-        alt="image"
-        className="w-full h-[25rem] object-cover rounded-t-2xl"
-      />
+      {isOwnPage ? (
+        <img
+          src={post.image}
+          alt="image"
+          className="w-full h-[25rem] object-cover rounded-t-2xl"
+        />
+      ) : (
+        <Link to={`/blog/post/` + post.postid}>
+          <img
+            src={post.image}
+            alt="image"
+            className="w-full h-[25rem] object-cover rounded-t-2xl"
+          />
+        </Link>
+      )}
 
       <div className="p-8 flex flex-col items-center justify-center">
         {!isOwnPage && (

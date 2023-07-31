@@ -1,5 +1,5 @@
 import profImage from "../../assets/rewprof-1.webp";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { getAllUser } from "../../utils/firebase";
 import { Icon } from "@iconify/react";
 import { Loading } from "../../components";
@@ -30,39 +30,23 @@ const UsersAll = () => {
           </li>
         ))}
 
-        {allUser.map((user) => (
-          <>
-            <li key={`img-${user.uid}`} className={`${tableStyle} col-span-1`}>
+        {allUser.map((user, index) => (
+          <Fragment key={`${index}-${user.email}`}>
+            <li className={`${tableStyle} col-span-1`}>
               <img
                 src={profImage}
                 alt="profile"
                 className="w-8 h-8 mx-auto rounded-full"
               />
             </li>
-            <li
-              key={`displayName-${user.uid}`}
-              className={`${tableStyle} col-span-2`}
-            >
-              {user.displayName}
-            </li>
-            <li
-              key={`email-${user.uid}`}
-              className={`${tableStyle} col-span-2`}
-            >
-              {user.email}
-            </li>
-            <li
-              key={`createdAt-${user.uid}`}
-              className={`${tableStyle} col-span-2`}
-            >
+            <li className={`${tableStyle} col-span-2`}>{user.displayName}</li>
+            <li className={`${tableStyle} col-span-2`}>{user.email}</li>
+            <li className={`${tableStyle} col-span-2`}>
               {new Date(user.createdAt.seconds * 1000)
                 .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
                 .slice(0, -3)}
             </li>
-            <li
-              key={`actions-${user.uid}`}
-              className="flex gap-6 justify-center items-center py-2 col-span-1"
-            >
+            <li className="flex gap-6 justify-center items-center py-2 col-span-1">
               <Icon
                 icon="bi:trash3-fill"
                 className="delete text-text text-[2rem] hover:text-logopink cursor-pointer"
@@ -72,7 +56,7 @@ const UsersAll = () => {
                 className="edit text-text text-[2rem] hover:text-logopink cursor-pointer"
               />
             </li>
-          </>
+          </Fragment>
         ))}
       </ul>
       <Tooltip

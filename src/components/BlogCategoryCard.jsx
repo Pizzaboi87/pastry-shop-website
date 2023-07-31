@@ -1,7 +1,35 @@
 import { Link } from "react-router-dom";
 import { otherText } from "../constants";
+import { useContext, useEffect, useState } from "react";
+import { BlogContext } from "../context";
+import BlogWrapper from "../utils/blogwrapper.hoc";
 
-const BlogCategoryCard = ({ categories }) => {
+const BlogCategoryCard = () => {
+  const [allBlogPost] = useContext(BlogContext);
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    if (!allBlogPost) return;
+
+    const tagCounts = {};
+    allBlogPost.forEach((obj) => {
+      const { tags } = obj;
+
+      tags.forEach((tag) => {
+        if (tagCounts[tag]) {
+          tagCounts[tag]++;
+        } else {
+          tagCounts[tag] = 1;
+        }
+      });
+    });
+
+    const sortedTags = Object.keys(tagCounts).sort(
+      (a, b) => tagCounts[b] - tagCounts[a]
+    );
+    setCategories(sortedTags);
+  }, [allBlogPost]);
+
   const categoryItems = categories.map((category, index) => (
     <li key={index}>
       <Link to={`/blog/category/${category}`}>
@@ -24,4 +52,4 @@ const BlogCategoryCard = ({ categories }) => {
   );
 };
 
-export default BlogCategoryCard;
+export default BlogWrapper(BlogCategoryCard);

@@ -1,3 +1,4 @@
+import BlogWrapper from "../../utils/blogwrapper.hoc";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { BlogContext } from "../../context";
@@ -6,7 +7,6 @@ import {
   BlogStickyCard,
   TransitionParent,
 } from "../../components";
-import BlogWrapper from "../../utils/blogwrapper.hoc";
 
 const BlogTagPage = () => {
   const { tag } = useParams();
@@ -19,9 +19,9 @@ const BlogTagPage = () => {
         #{tag}
       </h1>
       <div className="xl:col-span-4 col-span-6 ">
-        {posts.map((post) => (
+        {posts.map((post, index) => (
           <BlogPostCard
-            key={`blogPostCard-{post.id}`}
+            key={`blogPostCard-{post.id}-${index}`}
             post={post}
             isOwnPage={false}
           />

@@ -65,7 +65,7 @@ const BlogComments = () => {
         ))}
 
         {allComments.map((comment) => (
-          <Fragment>
+          <Fragment key={comment.id}>
             <li className={`${tableStyle} col-span-1`}>
               <img
                 src={profImage}
