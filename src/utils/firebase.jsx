@@ -14,6 +14,7 @@ import {
   ref as refStorage,
   uploadBytes,
   getDownloadURL,
+  deleteObject as storageDeleteObject,
 } from "firebase/storage";
 import {
   getFirestore,
@@ -245,6 +246,18 @@ export const deletePost = async (postid) => {
 
   if (existingIndex !== -1) {
     await set(ref(database, `blogPosts/${existingIndex}`), null);
+
+    const imageRef = refStorage(
+      storage,
+      `blog/${postid}.${snapshot.val()[existingIndex].image.split(".").pop()}`
+    );
+
+    try {
+      await storageDeleteObject(imageRef);
+    }
+    catch (error) {
+      console.error("An error occurred while deleting image.", error);
+    }
   }
 };
 
