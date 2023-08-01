@@ -112,7 +112,7 @@ export const getUserData = async (uid) => {
 };
 
 export const getUserImage = async (uid) => {
-  const imageRef = refStorage(storage, `users/${uid}/profile.jpg`);
+  const imageRef = refStorage(storage, `profileImage/${uid}/profile.jpg`);
 
   try {
     const downloadURL = await getDownloadURL(imageRef);
@@ -129,6 +129,17 @@ export const getAllUser = async () => {
   const querySnapshot = await getDocs(collection(db, "users"));
   const userList = querySnapshot.docs.map((doc) => doc.data());
   return userList;
+};
+
+export const updateUserData = async (uid, data) => {
+  const userDocRef = doc(db, "users", uid);
+
+  try {
+    await setDoc(userDocRef, data, { merge: true });
+  } catch (error) {
+    console.error("Error during the update of user's data: ", error);
+    throw error;
+  }
 };
 
 export const getAllPost = async () => {

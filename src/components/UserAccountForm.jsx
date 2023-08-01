@@ -1,11 +1,13 @@
+import Swal from "sweetalert2";
 import PhoneInput from "react-phone-input-2";
 import { userPageStyle, userPhoneInputStyle } from "../styles";
 import { useState } from "react";
+import { updateUserData } from "../utils/firebase";
 
-const UserAccountForm = ({ userData }) => {
+const UserAccountForm = ({ userData, currentUser }) => {
   const defaultForm = {
-    name: userData.name ? userData.name : "",
-    userName: userData.displayName ? userData.displayName : "",
+    fullName: userData.name ? userData.name : "",
+    displayName: userData.displayName ? userData.displayName : "",
     email: userData.email ? userData.email : "",
     phone: userData.phone ? userData.phone : "",
     country: userData.country ? userData.country : "",
@@ -15,17 +17,45 @@ const UserAccountForm = ({ userData }) => {
   };
 
   const [userAccountForm, setUserAccountForm] = useState(defaultForm);
-  const { name, userName, email, phone, country, city, address, zipCode } =
-    userAccountForm;
+  const {
+    fullName,
+    displayName,
+    email,
+    phone,
+    country,
+    city,
+    address,
+    zipCode,
+  } = userAccountForm;
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setUserAccountForm({ ...userAccountForm, [name]: value });
   };
 
+  const handlePhoneChange = (value) => {
+    setUserAccountForm({ ...userAccountForm, phone: value });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(userAccountForm);
+    try {
+      updateUserData(currentUser.uid, userAccountForm).then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Your data has been updated!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+    } catch (error) {
+      console.error("Error during the update of user's data: ", error);
+      Swal.fire({
+        icon: "error",
+        title: "Something went wrong!",
+        text: "Sorry, we couldn't update your data!",
+      });
+    }
   };
 
   return (
@@ -37,8 +67,9 @@ const UserAccountForm = ({ userData }) => {
         Name
         <input
           type="text"
-          placeholder="Your name."
-          value={name}
+          placeholder="Your name"
+          name="fullName"
+          value={fullName}
           onChange={handleChange}
           className={userPageStyle.input}
         />
@@ -48,8 +79,9 @@ const UserAccountForm = ({ userData }) => {
         My UserName
         <input
           type="text"
-          placeholder="Your username."
-          value={userName}
+          placeholder="Your username"
+          name="displayName"
+          value={displayName}
           onChange={handleChange}
           className={userPageStyle.input}
         />
@@ -59,10 +91,12 @@ const UserAccountForm = ({ userData }) => {
         My Email Address
         <input
           type="text"
-          placeholder="Your email address."
+          disabled
+          placeholder="Your email address"
+          name="email"
           value={email}
           onChange={handleChange}
-          className={userPageStyle.input}
+          className={`${userPageStyle.input} disabled:bg-[#f0f0f0] cursor-not-allowed`}
         />
       </label>
 
@@ -72,9 +106,7 @@ const UserAccountForm = ({ userData }) => {
           required
           country={"hu"}
           value={phone}
-          onChange={(phone) =>
-            setUserAccountForm({ ...userAccountForm, phone })
-          }
+          onChange={handlePhoneChange}
           inputStyle={userPhoneInputStyle}
         />
       </label>
@@ -83,7 +115,8 @@ const UserAccountForm = ({ userData }) => {
         My Country
         <input
           type="phone"
-          placeholder="Your country."
+          placeholder="Your country"
+          name="country"
           value={country}
           onChange={handleChange}
           className={userPageStyle.input}
@@ -94,7 +127,8 @@ const UserAccountForm = ({ userData }) => {
         My City
         <input
           type="text"
-          placeholder="Your city."
+          placeholder="Your city"
+          name="city"
           value={city}
           onChange={handleChange}
           className={userPageStyle.input}
@@ -105,7 +139,8 @@ const UserAccountForm = ({ userData }) => {
         My Address
         <input
           type="phone"
-          placeholder="Your address."
+          placeholder="Your address"
+          name="address"
           value={address}
           onChange={handleChange}
           className={userPageStyle.input}
@@ -116,7 +151,8 @@ const UserAccountForm = ({ userData }) => {
         My ZIP Code
         <input
           type="text"
-          placeholder="Your ZIP code."
+          placeholder="Your ZIP code"
+          name="zipCode"
           value={zipCode}
           onChange={handleChange}
           className={userPageStyle.input}

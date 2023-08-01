@@ -1,4 +1,3 @@
-import prfileImage from "../../assets/rewprof-1.webp";
 import { useContext } from "react";
 import { Loading, TransitionParent, UserAccountForm } from "../../components";
 import { otherText } from "../../constants";
@@ -6,7 +5,7 @@ import { UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 
 const MyAccount = () => {
-  const { userData, userImage } = useContext(UserContext);
+  const { userData, userImage, currentUser } = useContext(UserContext);
 
   if (!userData) return <Loading />;
 
@@ -24,7 +23,7 @@ const MyAccount = () => {
           <div className="changeimage w-full h-full bg-[#ffffffbb] rounded-full flex items-center justify-center">
             <Icon
               icon="ri:image-edit-fill"
-              className="text-[3rem] text-brown"
+              className="text-[3rem] text-brown cursor-pointer"
             />
           </div>
         </div>
@@ -34,7 +33,7 @@ const MyAccount = () => {
       </div>
 
       <div className="col-span-5 bg-white rounded-2xl shadow-inner shadow-black">
-        <UserAccountForm userData={userData} />
+        <UserAccountForm userData={userData} currentUser={currentUser} />
       </div>
     </TransitionParent>
   );
