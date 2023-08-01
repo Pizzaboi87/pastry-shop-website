@@ -1,15 +1,45 @@
 import PhoneInput from "react-phone-input-2";
 import { userPageStyle, userPhoneInputStyle } from "../styles";
+import { useState } from "react";
 
 const UserAccountForm = ({ userData }) => {
+  const defaultForm = {
+    name: userData.name ? userData.name : "",
+    userName: userData.displayName ? userData.displayName : "",
+    email: userData.email ? userData.email : "",
+    phone: userData.phone ? userData.phone : "",
+    country: userData.country ? userData.country : "",
+    city: userData.city ? userData.city : "",
+    address: userData.address ? userData.address : "",
+    zipCode: userData.zipCode ? userData.zipCode : "",
+  };
+
+  const [userAccountForm, setUserAccountForm] = useState(defaultForm);
+  const { name, userName, email, phone, country, city, address, zipCode } =
+    userAccountForm;
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUserAccountForm({ ...userAccountForm, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(userAccountForm);
+  };
+
   return (
-    <form className="grid grid-cols-7 px-16 py-6 gap-y-2">
+    <form
+      onSubmit={handleSubmit}
+      className="grid grid-cols-7 px-16 py-6 gap-y-2"
+    >
       <label className={`${userPageStyle.label} col-span-3 col-start-1`}>
-        My Name
+        Name
         <input
           type="text"
-          placeholder="Name"
-          value="Peter Weiser"
+          placeholder="Your name."
+          value={name}
+          onChange={handleChange}
           className={userPageStyle.input}
         />
       </label>
@@ -18,8 +48,9 @@ const UserAccountForm = ({ userData }) => {
         My UserName
         <input
           type="text"
-          placeholder="Name"
-          value={userData.displayName}
+          placeholder="Your username."
+          value={userName}
+          onChange={handleChange}
           className={userPageStyle.input}
         />
       </label>
@@ -28,8 +59,9 @@ const UserAccountForm = ({ userData }) => {
         My Email Address
         <input
           type="text"
-          placeholder="Name"
-          value={userData.email}
+          placeholder="Your email address."
+          value={email}
+          onChange={handleChange}
           className={userPageStyle.input}
         />
       </label>
@@ -39,7 +71,10 @@ const UserAccountForm = ({ userData }) => {
         <PhoneInput
           required
           country={"hu"}
-          value="+36201234567"
+          value={phone}
+          onChange={(phone) =>
+            setUserAccountForm({ ...userAccountForm, phone })
+          }
           inputStyle={userPhoneInputStyle}
         />
       </label>
@@ -48,8 +83,9 @@ const UserAccountForm = ({ userData }) => {
         My Country
         <input
           type="phone"
-          placeholder="Name"
-          value="Greece"
+          placeholder="Your country."
+          value={country}
+          onChange={handleChange}
           className={userPageStyle.input}
         />
       </label>
@@ -58,8 +94,9 @@ const UserAccountForm = ({ userData }) => {
         My City
         <input
           type="text"
-          placeholder="Name"
-          value="Greece"
+          placeholder="Your city."
+          value={city}
+          onChange={handleChange}
           className={userPageStyle.input}
         />
       </label>
@@ -68,8 +105,9 @@ const UserAccountForm = ({ userData }) => {
         My Address
         <input
           type="phone"
-          placeholder="Name"
-          value="Elpidos street 4."
+          placeholder="Your address."
+          value={address}
+          onChange={handleChange}
           className={userPageStyle.input}
         />
       </label>
@@ -78,8 +116,9 @@ const UserAccountForm = ({ userData }) => {
         My ZIP Code
         <input
           type="text"
-          placeholder="Name"
-          value="17673"
+          placeholder="Your ZIP code."
+          value={zipCode}
+          onChange={handleChange}
           className={userPageStyle.input}
         />
       </label>
