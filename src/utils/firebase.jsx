@@ -94,23 +94,6 @@ export const signOutUser = async () => await signOut(auth);
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
 
-export const showName = async (uid) => {
-  try {
-    const userDocRef = doc(db, "users", uid);
-    const userSnapShot = await getDoc(userDocRef);
-
-    if (userSnapShot.exists()) {
-      const userName = userSnapShot.data().displayName;
-      return userName;
-    } else {
-      throw new Error("User not found!");
-    }
-  } catch (error) {
-    console.error("Error during the fetch of user's name: ", error);
-    throw error;
-  }
-};
-
 export const getUserData = async (uid) => {
   try {
     const userDocRef = doc(db, "users", uid);
@@ -125,6 +108,20 @@ export const getUserData = async (uid) => {
   } catch (error) {
     console.error("Error during the fetch of user's data: ", error);
     throw error;
+  }
+};
+
+export const getUserImage = async (uid) => {
+  const imageRef = refStorage(storage, `users/${uid}/profile.jpg`);
+
+  try {
+    const downloadURL = await getDownloadURL(imageRef);
+    return downloadURL;
+  } catch (error) {
+    console.error("An error occurred while downloading photo URL.", error);
+    const downloadURL =
+      "https://firebasestorage.googleapis.com/v0/b/le-ciel-sucre.appspot.com/o/profileImage%2Fprofile.jpg?alt=media&token=454794ef-3c66-46df-a077-6830f9779284";
+    return downloadURL;
   }
 };
 

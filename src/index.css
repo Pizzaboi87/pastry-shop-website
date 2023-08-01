@@ -92,3 +92,15 @@ body {
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
     1px 1px 0 #fff;
 }
+
+.changeimage {
+  opacity: 0;
+  transform: translateY(0100%);
+  transition: 0.5s ease-in-out;
+}
+
+.profilecontainer:hover .changeimage {
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  transform: translateY(0);
+}

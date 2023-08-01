@@ -1,18 +1,17 @@
 import Swal from "sweetalert2";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { UserContext } from "../context";
 import { otherText } from "../constants";
-import { showName, storeComment } from "../utils/firebase";
+import { storeComment } from "../utils/firebase";
 import { v4 as uuidv4 } from "uuid";
 import { blogCommentStyle } from "../styles";
 
 const BlogCommentForm = ({ postID }) => {
-  const { currentUser } = useContext(UserContext);
-  const [displayName, setDisplayName] = useState("");
+  const { userData } = useContext(UserContext);
 
   const defaultForm = {
-    author: displayName,
-    email: currentUser.email,
+    author: userData.displayName,
+    email: userData.email,
     title: "",
     comment: "",
     relatedID: postID,
@@ -31,17 +30,6 @@ const BlogCommentForm = ({ postID }) => {
 
   const [commentForm, setCommentForm] = useState(defaultForm);
   const { author, email, title, comment } = commentForm;
-
-  useEffect(() => {
-    const getName = async () => {
-      const userName = await showName(currentUser.uid);
-      setDisplayName(userName);
-      setCommentForm({ ...commentForm, author: userName });
-    };
-
-    if (!currentUser) return;
-    getName();
-  }, [currentUser]);
 
   const valueCheck = (title, comment) => {
     const commentRegex =
@@ -100,7 +88,7 @@ const BlogCommentForm = ({ postID }) => {
           {otherText.blogCommentForm.name}
           <input
             required
-            disabled={currentUser ? true : false}
+            disabled
             type="text"
             name="author"
             value={author}

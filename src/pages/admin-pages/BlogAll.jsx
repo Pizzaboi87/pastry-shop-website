@@ -39,13 +39,13 @@ const BlogAll = () => {
     });
   };
 
-  function truncate(inputString, length = 20) {
+  const truncate = (inputString, length = 20) => {
     if (inputString.length <= length) {
       return inputString;
     } else {
       return inputString.slice(0, length) + "...";
     }
-  }
+  };
 
   return (
     <div className={adminPageStyle.wrapper}>

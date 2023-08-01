@@ -3,6 +3,7 @@ import {
   onAuthStateChangedListener,
   createUserDocumentFromAuth,
   getUserData,
+  getUserImage,
 } from "../utils/firebase";
 
 export const UserContext = createContext({
@@ -13,7 +14,8 @@ export const UserContext = createContext({
 export const UserContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [userData, setUserData] = useState(null);
-  const value = { currentUser, setCurrentUser, userData };
+  const [userImage, setUserImage] = useState(null);
+  const value = { currentUser, setCurrentUser, userData, userImage };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
@@ -29,9 +31,11 @@ export const UserContextProvider = ({ children }) => {
   useEffect(() => {
     if (!currentUser) return;
     const fetchUserData = async () => {
-      const userData = await getUserData(currentUser.uid);
+      const userDatafromDB = await getUserData(currentUser.uid);
+      const userImagefromDB = await getUserImage(currentUser.uid);
 
-      setUserData(userData);
+      setUserData(userDatafromDB);
+      setUserImage(userImagefromDB);
     };
 
     fetchUserData(currentUser.uid);

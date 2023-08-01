@@ -2,23 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const BlogProposalCard = ({ post }) => {
-  const [cuttedPhrase, setCuttedPhrase] = useState();
-
-  useEffect(() => {
-    const cardText = post.blurb.split(" ").reduce(
-      (acc, c) => {
-        const currIndex = acc.length - 1;
-        const currLength = acc[currIndex].join(" ").length;
-        if (currLength + c.length > 50) acc.push([c]);
-        else acc[currIndex].push(c);
-
-        return acc;
-      },
-      [[]]
-    );
-
-    setCuttedPhrase(cardText.map((parts) => parts.join(" "))[0]);
-  }, []);
+  const truncate = (inputString, length) => {
+    if (inputString.length <= length) {
+      return inputString;
+    } else {
+      return inputString.slice(0, length) + "...";
+    }
+  };
 
   return (
     <Link to={`/blog/post/` + post.title.toLowerCase().split(" ").join("-")}>
@@ -29,8 +19,10 @@ const BlogProposalCard = ({ post }) => {
           className="col-span-2 bg-logopink rounded-full w-[5rem] h-[5rem] object-cover border-2 border-white"
         />
         <div className="col-span-4 flex flex-col items-center w-full">
-          <h1 className="text-text text-[1rem] font-[600]">{post.title}</h1>
-          <p>{`${cuttedPhrase} (...)`}</p>
+          <h1 className="text-text text-[1rem] font-[600] self-start">
+            {truncate(post.title, 25)}
+          </h1>
+          <p>{truncate(post.blurb, 55)}</p>
         </div>
       </div>
     </Link>
