@@ -14,7 +14,7 @@ const AdminPanel = ({ children }) => {
 
       <AdminMenu />
 
-      <div className="col-span-5 bg-white rounded-xl  shadow-inner shadow-black p-4">
+      <div className="col-span-5 bg-white rounded-xl shadow-inner shadow-black p-4">
         {children}
       </div>
 

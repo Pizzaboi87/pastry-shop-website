@@ -31,6 +31,7 @@ import SignUpForm from "./SignUpForm";
 import TeamCard from "./TeamCard";
 import TextAndImage from "./TextAndImage";
 import TransitionParent from "./TransitionParent";
+import UserAccountForm from "./UserAccountForm";
 
 export {
   AdminLogin,
@@ -66,4 +67,5 @@ export {
   TeamCard,
   TextAndImage,
   TransitionParent,
+  UserAccountForm,
 };

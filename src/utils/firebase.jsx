@@ -111,6 +111,23 @@ export const showName = async (uid) => {
   }
 };
 
+export const getUserData = async (uid) => {
+  try {
+    const userDocRef = doc(db, "users", uid);
+    const userSnapShot = await getDoc(userDocRef);
+
+    if (userSnapShot.exists()) {
+      const userData = userSnapShot.data();
+      return userData;
+    } else {
+      throw new Error("User not found!");
+    }
+  } catch (error) {
+    console.error("Error during the fetch of user's data: ", error);
+    throw error;
+  }
+};
+
 export const getAllUser = async () => {
   const querySnapshot = await getDocs(collection(db, "users"));
   const userList = querySnapshot.docs.map((doc) => doc.data());
@@ -254,8 +271,7 @@ export const deletePost = async (postid) => {
 
     try {
       await storageDeleteObject(imageRef);
-    }
-    catch (error) {
+    } catch (error) {
       console.error("An error occurred while deleting image.", error);
     }
   }

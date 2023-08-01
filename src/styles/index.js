@@ -16,6 +16,24 @@ const phoneInputStyle = {
   outlineColor: "#2b2730",
 };
 
+const userPhoneInputStyle = {
+  width: "100%",
+  height: "2.3rem",
+  fontSize: "1rem",
+  fontWeight: "400",
+  borderRadius: "10px",
+  outline: "none",
+  border: "none",
+  padding: "0.5rem 4rem",
+  marginTop: "0.5rem",
+  color: "#2f2f2f",
+  backgroundColor: "#fff",
+  outlineStyle: "dotted",
+  outlineOffset: "2px",
+  outlineWidth: "2px",
+  outlineColor: "#e45a84",
+};
+
 const stampStyle = {
   background: "#e45a84 radial-gradient(#fff 0, #fff 7px, transparent 7px)",
   backgroundSize: "20px 20px",
@@ -109,7 +127,7 @@ const postcardStyle = {
 
 const signInFormStyle = {
   input:
-    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none  outline-dotted outline-logopink",
+    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted outline-logopink",
   label:
     "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
   button:
@@ -120,7 +138,7 @@ const signInFormStyle = {
 
 const signUpFormStyle = {
   input:
-    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none  outline-dotted outline-logopink",
+    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted outline-logopink",
   label:
     "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1 mt-4",
   button:
@@ -139,6 +157,14 @@ const adminLoginStyle = {
     "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted outline-purple",
   button:
     "col-start-4 py-2 bg-purple hover:bg-yellowdark hover:text-text rounded-xl shadow-xl border-none text-white font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+};
+
+const userPageStyle = {
+  input:
+    "text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted outline-logopink",
+  label: "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] py-4",
+  button:
+    "bg-logopink py-1 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white text-[1.2rem] font-[500] col-span-1 col-start-7",
 };
 
 const tooltipStyle = {
@@ -169,4 +195,6 @@ export {
   adminPageStyle,
   tooltipStyle,
   adminLoginStyle,
+  userPageStyle,
+  userPhoneInputStyle,
 };

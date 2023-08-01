@@ -413,7 +413,7 @@ const otherText = {
   coursesTitle: "Our Courses",
   shopTitle: "Our Shop",
   favouritesTitle: "Favourites User Page",
-  myAccountTitle: "My Account User Page",
+  myAccountTitle: "My Account Details",
   myCartTitle: "My Cart User Page",
   previousOrdersTitle: "Previous Orders User Page",
   settingsTitle: "Settings User Page",
