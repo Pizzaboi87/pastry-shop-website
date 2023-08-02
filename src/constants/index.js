@@ -416,7 +416,7 @@ const otherText = {
   myAccountTitle: "My Account Details",
   myCartTitle: "My Cart User Page",
   previousOrdersTitle: "Previous Orders User Page",
-  settingsTitle: "Settings User Page",
+  settingsTitle: "My Settings",
   adminMenuTitle: "Main Menu",
   adminPanelTitle: "Admin Panel",
   usersAllTitle: "All Registered User",

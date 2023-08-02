@@ -6,12 +6,11 @@ import {
   Loading,
   TransitionParent,
   UserAccountForm,
-  UserAccountImage,
+  UserPanel,
 } from "../../components";
 
 const MyAccount = () => {
-  const { userData, setUserData, userImage, setUserImage, currentUser } =
-    useContext(UserContext);
+  const { userData, setUserData, currentUser } = useContext(UserContext);
 
   if (!userData) return <Loading />;
 
@@ -19,18 +18,13 @@ const MyAccount = () => {
     <TransitionParent isFlex={false}>
       <h1 className={userPageStyle.title}>{otherText.myAccountTitle}</h1>
 
-      <UserAccountImage
-        userData={userData}
-        userImage={userImage}
-        setUserImage={setUserImage}
-        currentUser={currentUser}
-      />
-
-      <UserAccountForm
-        userData={userData}
-        setUserData={setUserData}
-        currentUser={currentUser}
-      />
+      <UserPanel>
+        <UserAccountForm
+          userData={userData}
+          setUserData={setUserData}
+          currentUser={currentUser}
+        />
+      </UserPanel>
     </TransitionParent>
   );
 };

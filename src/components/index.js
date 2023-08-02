@@ -33,6 +33,7 @@ import TextAndImage from "./TextAndImage";
 import TransitionParent from "./TransitionParent";
 import UserAccountImage from "./UserAccountImage";
 import UserAccountForm from "./UserAccountForm";
+import UserPanel from "./UserPanel";
 
 export {
   AdminLogin,
@@ -70,4 +71,5 @@ export {
   TransitionParent,
   UserAccountImage,
   UserAccountForm,
+  UserPanel,
 };
