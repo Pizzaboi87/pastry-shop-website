@@ -1,6 +1,8 @@
 import { Navbar, Footer, MainContent, Awning } from "./components";
 import {
   AdminContextProvider,
+  BlogContextProvider,
+  CommentsContextProvider,
   IsRegContextProvider,
   UserContextProvider,
 } from "./context";
@@ -13,7 +15,11 @@ const App = () => {
           <IsRegContextProvider>
             <Awning />
             <Navbar />
-            <MainContent />
+            <BlogContextProvider>
+              <CommentsContextProvider>
+                <MainContent />
+              </CommentsContextProvider>
+            </BlogContextProvider>
             <Footer />
           </IsRegContextProvider>
         </UserContextProvider>

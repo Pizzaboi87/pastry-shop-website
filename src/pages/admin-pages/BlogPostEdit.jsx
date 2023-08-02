@@ -1,4 +1,3 @@
-import BlogWrapper from "../../utils/blogwrapper.hoc";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { BlogContext } from "../../context";
@@ -61,4 +60,4 @@ const BlogPostEditPage = () => {
   );
 };
 
-export default BlogWrapper(BlogPostEditPage);
+export default BlogPostEditPage;

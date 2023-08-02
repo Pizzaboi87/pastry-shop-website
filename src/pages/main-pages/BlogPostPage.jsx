@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { BlogContext } from "../../context";
-import BlogWrapper from "../../utils/blogwrapper.hoc";
 import {
   BlogPostCard,
   BlogStickyCard,
@@ -31,4 +30,4 @@ const BlogPostPage = () => {
   );
 };
 
-export default BlogWrapper(BlogPostPage);
+export default BlogPostPage;

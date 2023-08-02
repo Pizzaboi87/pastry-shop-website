@@ -46,7 +46,7 @@ const SignUpForm = () => {
     const nameRegex = /^[A-Za-z0-9-/ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
     const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
     const passwordRegex =
-      /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőúÚŐüÜűŰ\s]{8,}$/;
+      /^[A-Za-z0-9,.\-_;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőúÚŐüÜűŰ\s]{8,}$/;
 
     switch (true) {
       case !nameRegex.test(displayName):

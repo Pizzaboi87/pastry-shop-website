@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { otherText } from "../constants";
 import { useContext, useEffect, useState } from "react";
 import { BlogContext } from "../context";
-import BlogWrapper from "../utils/blogwrapper.hoc";
 
 const BlogCategoryCard = () => {
   const [allBlogPost] = useContext(BlogContext);
@@ -52,4 +51,4 @@ const BlogCategoryCard = () => {
   );
 };
 
-export default BlogWrapper(BlogCategoryCard);
+export default BlogCategoryCard;

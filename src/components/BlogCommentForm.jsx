@@ -10,7 +10,7 @@ const BlogCommentForm = ({ postID }) => {
   const { userData } = useContext(UserContext);
 
   const defaultForm = {
-    author: userData.displayName,
+    author: userData.displayName ? userData.displayName : "",
     email: userData.email,
     title: "",
     comment: "",
@@ -88,7 +88,7 @@ const BlogCommentForm = ({ postID }) => {
           {otherText.blogCommentForm.name}
           <input
             required
-            disabled
+            disabled={userData.displayName ? true : false}
             type="text"
             name="author"
             value={author}

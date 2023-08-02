@@ -1,4 +1,3 @@
-import CommentsWrapper from "../../utils/commentswrapper.hoc";
 import Swal from "sweetalert2";
 import profImage from "../../assets/rewprof-1.webp";
 import { Fragment, useContext } from "react";
@@ -134,4 +133,4 @@ const BlogComments = () => {
   );
 };
 
-export default CommentsWrapper(BlogComments);
+export default BlogComments;

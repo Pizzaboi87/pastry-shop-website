@@ -1,5 +1,4 @@
 import Swal from "sweetalert2";
-import BlogWrapper from "../../utils/blogwrapper.hoc";
 import { useContext } from "react";
 import { BlogContext } from "../../context";
 import { Icon } from "@iconify/react";
@@ -91,4 +90,4 @@ const BlogAll = () => {
   );
 };
 
-export default BlogWrapper(BlogAll);
+export default BlogAll;

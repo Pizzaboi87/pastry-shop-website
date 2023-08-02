@@ -1,4 +1,3 @@
-import CommentsWrapper from "../../utils/commentswrapper.hoc";
 import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -181,4 +180,4 @@ const BlogCommentPage = () => {
   );
 };
 
-export default CommentsWrapper(BlogCommentPage);
+export default BlogCommentPage;

@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { BlogContext } from "../../context";
-import BlogWrapper from "../../utils/blogwrapper.hoc";
 import { otherText } from "../../constants";
 import {
   BlogCarousel,
@@ -33,4 +32,4 @@ const Blog = () => {
   );
 };
 
-export default BlogWrapper(Blog);
+export default Blog;

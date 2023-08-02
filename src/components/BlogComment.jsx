@@ -1,4 +1,3 @@
-import CommentsWrapper from "../utils/commentswrapper.hoc";
 import BlogCommentForm from "./BlogCommentForm";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
@@ -52,4 +51,4 @@ const BlogComment = () => {
   );
 };
 
-export default CommentsWrapper(BlogComment);
+export default BlogComment;

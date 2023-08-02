@@ -31,6 +31,7 @@ import SignUpForm from "./SignUpForm";
 import TeamCard from "./TeamCard";
 import TextAndImage from "./TextAndImage";
 import TransitionParent from "./TransitionParent";
+import UserAccountImage from "./UserAccountImage";
 import UserAccountForm from "./UserAccountForm";
 
 export {
@@ -67,5 +68,6 @@ export {
   TeamCard,
   TextAndImage,
   TransitionParent,
+  UserAccountImage,
   UserAccountForm,
 };

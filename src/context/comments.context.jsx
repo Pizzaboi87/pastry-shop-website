@@ -22,6 +22,7 @@ export const CommentsContextProvider = ({ children }) => {
   }, []);
 
   if (allComments.length === 0) return <Loading />;
+
   const value = { allComments, setAllComments };
 
   return (

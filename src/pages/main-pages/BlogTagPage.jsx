@@ -1,4 +1,3 @@
-import BlogWrapper from "../../utils/blogwrapper.hoc";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { BlogContext } from "../../context";
@@ -32,4 +31,4 @@ const BlogTagPage = () => {
   );
 };
 
-export default BlogWrapper(BlogTagPage);
+export default BlogTagPage;

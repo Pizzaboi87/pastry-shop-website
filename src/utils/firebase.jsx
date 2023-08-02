@@ -111,10 +111,25 @@ export const getUserData = async (uid) => {
   }
 };
 
-export const getUserImage = async (uid) => {
-  const imageRef = refStorage(storage, `profileImage/${uid}/profile.jpg`);
+export const uploadUserImage = async (uid, imageFile) => {
+  const storageRef = refStorage(
+    storage,
+    `profileImage/${uid}/profile.${imageFile.name.split(".").pop()}`
+  );
+  return uploadBytes(storageRef, imageFile);
+};
 
+export const getUserImage = async (uid) => {
   try {
+    const fileExtensionRef = doc(db, `users/${uid}/`);
+    const snapshot = await getDoc(fileExtensionRef);
+    const fileExtension = snapshot.data().photoExtension;
+
+    const imageRef = refStorage(
+      storage,
+      `profileImage/${uid}/profile.${fileExtension}`
+    );
+
     const downloadURL = await getDownloadURL(imageRef);
     return downloadURL;
   } catch (error) {
