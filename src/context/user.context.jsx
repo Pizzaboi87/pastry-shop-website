@@ -5,6 +5,7 @@ import {
   getUserData,
   getUserImage,
   auth,
+  getStoredImage,
 } from "../utils/firebase";
 
 export const UserContext = createContext({
@@ -39,10 +40,15 @@ export const UserContextProvider = ({ children }) => {
     if (!currentUser || !currentUser.uid) return;
     const fetchUserData = async () => {
       const userDatafromDB = await getUserData(currentUser.uid);
-      const userImagefromDB = await getUserImage(currentUser.uid);
-
       setUserData(userDatafromDB);
-      setUserImage(userImagefromDB);
+
+      if (userDatafromDB.photoExtension) {
+        const userImagefromDB = await getUserImage(currentUser.uid);
+        setUserImage(userImagefromDB);
+      } else {
+        const defaultImage = await getStoredImage("blog/profile.jpg");
+        setUserImage(defaultImage);
+      }
     };
 
     fetchUserData(currentUser.uid);

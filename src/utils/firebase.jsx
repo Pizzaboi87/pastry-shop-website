@@ -110,19 +110,26 @@ export const getUserData = async (uid) => {
 };
 
 export const uploadUserImage = async (uid, imageFile) => {
-  const storageRef = refStorage(
-    storage,
-    `profileImage/${uid}/profile.${imageFile.name.split(".").pop()}`
-  );
-  return uploadBytes(storageRef, imageFile);
+  updateUserData(uid, {
+    photoExtension: imageFile.name
+      .split(".")
+      .pop()
+      .then(() => {
+        const storageRef = refStorage(
+          storage,
+          `profileImage/${uid}/profile.${imageFile.name.split(".").pop()}`
+        );
+        return uploadBytes(storageRef, imageFile);
+      }),
+  });
 };
 
 export const getUserImage = async (uid) => {
-  try {
-    const fileExtensionRef = doc(db, `users/${uid}/`);
-    const snapshot = await getDoc(fileExtensionRef);
-    const fileExtension = snapshot.data().photoExtension;
+  const fileExtensionRef = doc(db, `users/${uid}/`);
+  const snapshot = await getDoc(fileExtensionRef);
+  const fileExtension = snapshot.data().photoExtension;
 
+  try {
     const imageRef = refStorage(
       storage,
       `profileImage/${uid}/profile.${fileExtension}`
@@ -132,9 +139,6 @@ export const getUserImage = async (uid) => {
     return downloadURL;
   } catch (error) {
     console.error("An error occurred while downloading photo URL.", error);
-    const defaultImageRef = refStorage(storage, "blog/profile.jpg");
-    const downloadURL = await getDownloadURL(defaultImageRef);
-    return downloadURL;
   }
 };
 

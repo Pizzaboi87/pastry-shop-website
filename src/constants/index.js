@@ -622,6 +622,11 @@ const otherText = {
       errorZip: "Please add a valid ZIP code.",
     },
   },
+  userAccountImage: {
+    swal: {
+      successMessage: "Image updated successfully!",
+    },
+  },
 };
 
 const usersAllHeaders = [

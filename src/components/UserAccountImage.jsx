@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import { useRef } from "react";
 import { updateUserData, uploadUserImage } from "../utils/firebase";
 import { Icon } from "@iconify/react";
+import { otherText } from "../constants";
 
 const UserAccountImage = ({ userData, userImage, currentUser }) => {
   const fileInputRef = useRef(null);
@@ -12,20 +13,14 @@ const UserAccountImage = ({ userData, userImage, currentUser }) => {
 
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
-    updateUserData(currentUser.uid, {
-      photoExtension: file.name.split(".").pop(),
-    }).then(() => {
-      uploadUserImage(currentUser.uid, file).then(() => {
-        Swal.fire({
-          icon: "success",
-          title: "Image updated successfully!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+    uploadUserImage(currentUser.uid, file).then(() => {
+      Swal.fire({
+        icon: "success",
+        title: otherText.userAccountImage.swal.successMessage,
+        showConfirmButton: false,
+        timer: 1500,
       });
     });
-
-    console.log(file);
   };
 
   return (
