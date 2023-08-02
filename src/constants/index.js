@@ -598,6 +598,30 @@ const otherText = {
       cancel: "Cancel",
     },
   },
+  userAccountForm: {
+    fullName: "Full Name",
+    displayName: "Username",
+    email: "Email Address",
+    phone: "Phone Number",
+    country: "Country",
+    city: "City",
+    address: "Address",
+    zip: "ZIP Code",
+    button: "Save",
+    savingButton: "Saving...",
+    swal: {
+      successTitle: "Success!",
+      successMessage: "Your account has been updated.",
+      errorTitle: "Something went wrong!",
+      errorNotUpdated: "Sorry, we couldn't update your data!",
+      errorName: "Please add a valid name.",
+      errorDisplayName: "Please add a valid username.",
+      errorCountry: "Please add a valid country.",
+      errorCity: "Please add a valid city.",
+      errorAddress: "Please add a valid address.",
+      errorZip: "Please add a valid ZIP code.",
+    },
+  },
 };
 
 const usersAllHeaders = [

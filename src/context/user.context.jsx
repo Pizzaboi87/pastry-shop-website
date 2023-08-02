@@ -15,7 +15,13 @@ export const UserContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [userData, setUserData] = useState(null);
   const [userImage, setUserImage] = useState(null);
-  const value = { currentUser, setCurrentUser, userData, userImage };
+  const value = {
+    currentUser,
+    setCurrentUser,
+    userData,
+    setUserData,
+    userImage,
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {

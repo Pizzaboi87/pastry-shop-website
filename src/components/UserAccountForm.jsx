@@ -3,8 +3,9 @@ import PhoneInput from "react-phone-input-2";
 import { userPageStyle, userPhoneInputStyle } from "../styles";
 import { useState } from "react";
 import { updateUserData } from "../utils/firebase";
+import { otherText } from "../constants";
 
-const UserAccountForm = ({ userData, currentUser }) => {
+const UserAccountForm = ({ userData, setUserData, currentUser }) => {
   const defaultForm = {
     fullName: userData.name ? userData.name : "",
     displayName: userData.displayName ? userData.displayName : "",
@@ -17,6 +18,7 @@ const UserAccountForm = ({ userData, currentUser }) => {
   };
 
   const [userAccountForm, setUserAccountForm] = useState(defaultForm);
+  const [isLoading, setIsLoading] = useState(false);
   const {
     fullName,
     displayName,
@@ -27,6 +29,49 @@ const UserAccountForm = ({ userData, currentUser }) => {
     address,
     zipCode,
   } = userAccountForm;
+
+  const errorSwal = (error) => {
+    Swal.fire({
+      icon: "error",
+      title: otherText.userAccountForm.swal.errorTitle,
+      text: error,
+    });
+  };
+
+  const valueCheck = (
+    fullName,
+    displayName,
+    country,
+    city,
+    address,
+    zipCode
+  ) => {
+    const normalRegex = /^[A-Za-z-.()\//ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
+    const withNumberRegex = /^[A-Za-z0-9-.()\//ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
+
+    switch (true) {
+      case fullName && !normalRegex.test(fullName):
+        errorSwal(otherText.userAccountForm.swal.errorName);
+        return;
+      case displayName && !withNumberRegex.test(displayName):
+        errorSwal(otherText.userAccountForm.swal.errorDisplayName);
+        return;
+      case country && !normalRegex.test(country):
+        errorSwal(otherText.userAccountForm.swal.errorCountry);
+        return;
+      case city && !normalRegex.test(city):
+        errorSwal(otherText.userAccountForm.swal.errorCity);
+        return;
+      case address && !withNumberRegex.test(address):
+        errorSwal(otherText.userAccountForm.swal.errorAddress);
+        return;
+      case zipCode && !withNumberRegex.test(zipCode):
+        errorSwal(otherText.userAccountForm.swal.errorZip);
+        return;
+      default:
+        return true;
+    }
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -39,22 +84,30 @@ const UserAccountForm = ({ userData, currentUser }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    try {
-      updateUserData(currentUser.uid, userAccountForm).then(() => {
-        Swal.fire({
-          icon: "success",
-          title: "Your data has been updated!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      });
-    } catch (error) {
-      console.error("Error during the update of user's data: ", error);
-      Swal.fire({
-        icon: "error",
-        title: "Something went wrong!",
-        text: "Sorry, we couldn't update your data!",
-      });
+    setIsLoading(true);
+
+    if (!valueCheck(fullName, displayName, country, city, address, zipCode)) {
+      return;
+    } else {
+      try {
+        updateUserData(currentUser.uid, userAccountForm)
+          .then(() => {
+            Swal.fire({
+              icon: "success",
+              title: otherText.userAccountForm.swal.successMessage,
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          })
+          .then(() => {
+            setIsLoading(false);
+            setUserData({ ...userData, ...userAccountForm });
+          });
+      } catch (error) {
+        setIsLoading(false);
+        console.error("Error during the update of user's data: ", error);
+        errorSwal(otherText.userAccountForm.swal.errorNotUpdated);
+      }
     }
   };
 
@@ -64,7 +117,7 @@ const UserAccountForm = ({ userData, currentUser }) => {
       className="grid grid-cols-7 px-16 py-6 gap-y-2"
     >
       <label className={`${userPageStyle.label} col-span-3 col-start-1`}>
-        Name
+        {otherText.userAccountForm.fullName}
         <input
           type="text"
           placeholder="Your name"
@@ -76,7 +129,7 @@ const UserAccountForm = ({ userData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-5`}>
-        My UserName
+        {otherText.userAccountForm.displayName}
         <input
           type="text"
           placeholder="Your username"
@@ -88,7 +141,7 @@ const UserAccountForm = ({ userData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-1`}>
-        My Email Address
+        {otherText.userAccountForm.email}
         <input
           type="text"
           disabled
@@ -101,7 +154,7 @@ const UserAccountForm = ({ userData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-5`}>
-        My Phone Number
+        {otherText.userAccountForm.phone}
         <PhoneInput
           required
           country={"hu"}
@@ -112,9 +165,9 @@ const UserAccountForm = ({ userData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-1`}>
-        My Country
+        {otherText.userAccountForm.country}
         <input
-          type="phone"
+          type="text"
           placeholder="Your country"
           name="country"
           value={country}
@@ -124,7 +177,7 @@ const UserAccountForm = ({ userData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-5`}>
-        My City
+        {otherText.userAccountForm.city}
         <input
           type="text"
           placeholder="Your city"
@@ -136,9 +189,9 @@ const UserAccountForm = ({ userData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-1`}>
-        My Address
+        {otherText.userAccountForm.address}
         <input
-          type="phone"
+          type="text"
           placeholder="Your address"
           name="address"
           value={address}
@@ -148,7 +201,7 @@ const UserAccountForm = ({ userData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-5`}>
-        My ZIP Code
+        {otherText.userAccountForm.zip}
         <input
           type="text"
           placeholder="Your ZIP code"
@@ -158,7 +211,16 @@ const UserAccountForm = ({ userData, currentUser }) => {
           className={userPageStyle.input}
         />
       </label>
-      <button className={userPageStyle.button}>Save</button>
+      <button
+        className={`${userPageStyle.button} ${
+          isLoading ? "cursor-progress" : "cursor-pointer"
+        } `}
+        disabled={isLoading ? true : false}
+      >
+        {isLoading
+          ? otherText.userAccountForm.savingButton
+          : otherText.userAccountForm.button}
+      </button>
     </form>
   );
 };

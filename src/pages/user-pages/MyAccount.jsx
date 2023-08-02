@@ -5,7 +5,8 @@ import { UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 
 const MyAccount = () => {
-  const { userData, userImage, currentUser } = useContext(UserContext);
+  const { userData, setUserData, userImage, currentUser } =
+    useContext(UserContext);
 
   if (!userData) return <Loading />;
 
@@ -33,7 +34,11 @@ const MyAccount = () => {
       </div>
 
       <div className="col-span-5 bg-white rounded-2xl shadow-inner shadow-black">
-        <UserAccountForm userData={userData} currentUser={currentUser} />
+        <UserAccountForm
+          userData={userData}
+          setUserData={setUserData}
+          currentUser={currentUser}
+        />
       </div>
     </TransitionParent>
   );
