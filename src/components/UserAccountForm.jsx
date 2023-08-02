@@ -7,7 +7,7 @@ import { otherText } from "../constants";
 
 const UserAccountForm = ({ userData, setUserData, currentUser }) => {
   const defaultForm = {
-    fullName: userData.name ? userData.name : "",
+    fullName: userData.fullName ? userData.fullName : "",
     displayName: userData.displayName ? userData.displayName : "",
     email: userData.email ? userData.email : "",
     phone: userData.phone ? userData.phone : "",
