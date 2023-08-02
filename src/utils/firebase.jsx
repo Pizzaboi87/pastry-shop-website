@@ -110,18 +110,19 @@ export const getUserData = async (uid) => {
 };
 
 export const uploadUserImage = async (uid, imageFile) => {
-  updateUserData(uid, {
-    photoExtension: imageFile.name
-      .split(".")
-      .pop()
-      .then(() => {
-        const storageRef = refStorage(
-          storage,
-          `profileImage/${uid}/profile.${imageFile.name.split(".").pop()}`
-        );
-        return uploadBytes(storageRef, imageFile);
-      }),
-  });
+  try {
+    const fileExtension = imageFile.name.split(".").pop();
+    const userData = { photoExtension: fileExtension };
+    await updateUserData(uid, userData);
+
+    const storageRef = refStorage(
+      storage,
+      `profileImage/${uid}/profile.${fileExtension}`
+    );
+    await uploadBytes(storageRef, imageFile);
+  } catch (error) {
+    console.error("An error occured during image uploading:", error);
+  }
 };
 
 export const getUserImage = async (uid) => {

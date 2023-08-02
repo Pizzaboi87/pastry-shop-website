@@ -625,6 +625,7 @@ const otherText = {
   userAccountImage: {
     swal: {
       successMessage: "Image updated successfully!",
+      errorMessage: "Sorry, we couldn't update your image!",
     },
   },
 };

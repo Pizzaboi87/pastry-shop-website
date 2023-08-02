@@ -1,10 +1,15 @@
 import Swal from "sweetalert2";
 import { useRef } from "react";
-import { updateUserData, uploadUserImage } from "../utils/firebase";
+import { getUserImage, uploadUserImage } from "../utils/firebase";
 import { Icon } from "@iconify/react";
 import { otherText } from "../constants";
 
-const UserAccountImage = ({ userData, userImage, currentUser }) => {
+const UserAccountImage = ({
+  userData,
+  userImage,
+  setUserImage,
+  currentUser,
+}) => {
   const fileInputRef = useRef(null);
 
   const handleChangeImage = (event) => {
@@ -13,14 +18,25 @@ const UserAccountImage = ({ userData, userImage, currentUser }) => {
 
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
-    uploadUserImage(currentUser.uid, file).then(() => {
-      Swal.fire({
-        icon: "success",
-        title: otherText.userAccountImage.swal.successMessage,
-        showConfirmButton: false,
-        timer: 1500,
+    uploadUserImage(currentUser.uid, file)
+      .then(() => {
+        getUserImage(currentUser.uid).then((url) => setUserImage(url));
+        Swal.fire({
+          icon: "success",
+          title: otherText.userAccountImage.swal.successMessage,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        console.error("An error occured during the image upload:", error);
+        Swal.fire({
+          icon: "error",
+          title: otherText.userAccountImage.swal.errorMessage,
+          showConfirmButton: false,
+          timer: 1500,
+        });
       });
-    });
   };
 
   return (

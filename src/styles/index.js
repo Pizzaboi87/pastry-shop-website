@@ -165,6 +165,8 @@ const userPageStyle = {
   label: "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] py-4",
   button:
     "bg-logopink py-1 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white text-[1.2rem] font-[500] col-span-1 col-start-7",
+  title:
+    "col-span-6 text-brown xl:text-[3rem] text-[2rem] font-[600] mb-8 text-center",
 };
 
 const tooltipStyle = {

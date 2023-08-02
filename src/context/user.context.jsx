@@ -23,6 +23,7 @@ export const UserContextProvider = ({ children }) => {
     userData,
     setUserData,
     userImage,
+    setUserImage,
   };
 
   useEffect(() => {
