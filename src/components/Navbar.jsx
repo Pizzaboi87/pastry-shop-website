@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { IsRegContext, UserContext } from "../context";
 import { signOutUser } from "../utils/firebase";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logo } from "../assets";
 import { Icon } from "@iconify/react";
 import { menuOffStyle, menuOnStyle } from "../styles";
@@ -17,6 +17,7 @@ const Navbar = () => {
   const [openMyAccount, setOpenMyAccount] = useState(false);
   const [isReg, setIsReg] = useContext(IsRegContext);
   const { currentUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -121,6 +122,7 @@ const Navbar = () => {
               onClick={() => {
                 signOutUser();
                 setOpenMyAccount(false);
+                navigate("/");
               }}
             >
               {otherText.navbar.signOut}

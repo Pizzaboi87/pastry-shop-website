@@ -102,8 +102,6 @@ export const getUserData = async (uid) => {
     if (userSnapShot.exists()) {
       const userData = userSnapShot.data();
       return userData;
-    } else {
-      throw new Error("User not found!");
     }
   } catch (error) {
     console.error("Error during the fetch of user's data: ", error);
@@ -134,8 +132,8 @@ export const getUserImage = async (uid) => {
     return downloadURL;
   } catch (error) {
     console.error("An error occurred while downloading photo URL.", error);
-    const downloadURL =
-      "https://firebasestorage.googleapis.com/v0/b/le-ciel-sucre.appspot.com/o/profileImage%2Fprofile.jpg?alt=media&token=454794ef-3c66-46df-a077-6830f9779284";
+    const defaultImageRef = refStorage(storage, "blog/profile.jpg");
+    const downloadURL = await getDownloadURL(defaultImageRef);
     return downloadURL;
   }
 };

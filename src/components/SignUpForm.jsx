@@ -7,6 +7,7 @@ import { otherText } from "../constants";
 import {
   createUserDocumentFromAuth,
   createAuthUserWithEmailAndPassword,
+  auth,
 } from "../utils/firebase";
 
 const SignUpForm = () => {
@@ -89,6 +90,7 @@ const SignUpForm = () => {
           successSwal();
         });
         resetForm();
+        auth.signOut();
       } catch (error) {
         if (error.code === "auth/email-already-in-use") {
           errorSwal(otherText.signUpForm.swal.errorInUse);
@@ -97,7 +99,7 @@ const SignUpForm = () => {
           console.log(error);
         }
       } finally {
-        navigate("/shop");
+        navigate("/");
       }
     }
   };

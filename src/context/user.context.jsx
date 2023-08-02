@@ -4,6 +4,7 @@ import {
   createUserDocumentFromAuth,
   getUserData,
   getUserImage,
+  auth,
 } from "../utils/firebase";
 
 export const UserContext = createContext({
@@ -35,7 +36,7 @@ export const UserContextProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    if (!currentUser) return;
+    if (!currentUser || !currentUser.uid) return;
     const fetchUserData = async () => {
       const userDatafromDB = await getUserData(currentUser.uid);
       const userImagefromDB = await getUserImage(currentUser.uid);
@@ -45,7 +46,7 @@ export const UserContextProvider = ({ children }) => {
     };
 
     fetchUserData(currentUser.uid);
-  }, [currentUser]);
+  }, [currentUser, auth]);
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
