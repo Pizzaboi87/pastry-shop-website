@@ -167,6 +167,8 @@ const userPageStyle = {
     "bg-logopink py-1 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white text-[1.2rem] font-[500] col-span-1 col-start-7",
   passwordButton:
     "bg-logopink py-2 rounded-2xl shadow-xl border-none hover:bg-pinkdark text-white text-[1.2rem] font-[500] col-start-6",
+  deleteButton:
+    "bg-logopink py-2 rounded-2xl shadow-xl border-none hover:bg-pinkdark text-white text-[1.2rem] font-[500] self-end px-8",
 
   title:
     "col-span-6 text-brown xl:text-[3rem] text-[2rem] font-[600] mb-8 text-center",
