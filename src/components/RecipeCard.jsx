@@ -25,7 +25,7 @@ const RecipeCard = ({ recipe }) => {
   //-----------------------------------------------------NOT READY: Like/favourite function missing.-----------------------------------------------------
   return (
     <Theme_Motion_Div
-      $color="primary"
+      $bg="primary"
       initial={motionPropsR.initial}
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}

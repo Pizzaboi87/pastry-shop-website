@@ -1,4 +1,5 @@
 import { otherText, reviews } from "../../constants";
+import { Theme_H1, titleStyle } from "../../styles";
 import {
   ReviewCard,
   ImageCarousel,
@@ -9,9 +10,9 @@ import {
 const Reviews = () => {
   return (
     <TransitionParent isFlex isRew>
-      <h1 className="xl:text-[3rem] text-[2rem] text-center text-text font-[600] mb-8">
+      <Theme_H1 $textcolor="title" className={titleStyle}>
         {otherText.reviewsTitle}
-      </h1>
+      </Theme_H1>
 
       <Postcard />
 

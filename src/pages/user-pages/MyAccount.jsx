@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { otherText } from "../../constants";
 import { UserContext } from "../../context";
-import { userPageStyle } from "../../styles";
+import { Theme_H1, userPageStyle } from "../../styles";
 import {
   Loading,
   TransitionParent,
@@ -16,7 +16,9 @@ const MyAccount = () => {
 
   return (
     <TransitionParent isFlex={false}>
-      <h1 className={userPageStyle.title}>{otherText.myAccountTitle}</h1>
+      <Theme_H1 $textcolor="title" className={userPageStyle.title}>
+        {otherText.myAccountTitle}
+      </Theme_H1>
 
       <UserPanel>
         <UserAccountForm

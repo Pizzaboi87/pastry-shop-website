@@ -97,7 +97,7 @@ const CourseForm = ({ courses }) => {
 
   return (
     <Theme_Form
-      $color="primary"
+      $bg="primary"
       className="col-span-2 md:py-8 md:px-8 py-4 px-1 rounded-xl shadow-xl"
       onSubmit={handleSubmit}
     >
@@ -171,7 +171,7 @@ const CourseForm = ({ courses }) => {
       <Theme_Button
         $bg="logo"
         $hover="dark"
-        $text="textlight"
+        $textcolor="textlight"
         className={`${loading ? "cursor-progress" : "cursor-pointer"} ${
           courseFormStyle.button
         }`}

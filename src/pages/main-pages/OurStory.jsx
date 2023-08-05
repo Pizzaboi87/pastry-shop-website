@@ -1,13 +1,14 @@
 import { TeamCard, TransitionParent } from "../../components";
 import { otherText, staff, story } from "../../constants";
 import { showcase } from "../../assets";
+import { Theme_H1, titleStyle } from "../../styles";
 
 const OurStory = () => {
   return (
     <TransitionParent isFlex>
-      <h1 className="xl:text-[3rem] text-[2rem] text-center text-text font-[600] mb-8">
+      <Theme_H1 $textcolor="title" className={titleStyle}>
         {otherText.ourStory.title}
-      </h1>
+      </Theme_H1>
       <div className="mb-10">
         <img
           src={showcase}

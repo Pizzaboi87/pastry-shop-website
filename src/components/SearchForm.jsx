@@ -41,7 +41,7 @@ const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
         type="submit"
         $bg="logo"
         $hover="dark"
-        $text="textlight"
+        $textcolor="textlight"
         className="px-4 py-3 cursor-pointer font-bold rounded-xl shadow-md"
       >
         {otherText.searchForm.button}

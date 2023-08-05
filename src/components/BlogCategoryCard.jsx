@@ -42,7 +42,7 @@ const BlogCategoryCard = () => {
 
   return (
     <Theme_Div
-      $color="primary"
+      $bg="primary"
       className="rounded-xl xl:mb-0 mb-6 flex flex-col h-fit items-center justify-center shadow-xl px-3 py-3"
     >
       <h1 className="mb-3 text-text text-[1.5rem] font-[600]">

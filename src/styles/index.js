@@ -1,11 +1,15 @@
 import {
   Theme_Div,
   Theme_Motion_Div,
+  Theme_Motion_Span,
   Theme_H1,
   Theme_Form,
   Theme_Img,
   Theme_Button,
   Theme_Link,
+  Theme_Icon,
+  Theme_Footer,
+  Theme_Nav,
 } from "./styled-elements";
 
 const phoneInputStyle = {
@@ -180,8 +184,7 @@ const userPageStyle = {
   deleteButton:
     "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] self-end px-8",
 
-  title:
-    "col-span-6 text-brown xl:text-[3rem] text-[2rem] font-[600] mb-8 text-center",
+  title: "col-span-6 xl:text-[3rem] text-[2rem] font-[600] mb-8 text-center",
 };
 
 const tooltipStyle = {
@@ -189,6 +192,9 @@ const tooltipStyle = {
   color: "#fff",
   fontWeight: 600,
 };
+
+const titleStyle =
+  "xl:text-[3rem] text-[2rem] text-center text-text font-[600] mb-8";
 
 export {
   phoneInputStyle,
@@ -214,11 +220,16 @@ export {
   adminLoginStyle,
   userPageStyle,
   userPhoneInputStyle,
+  titleStyle,
   Theme_Div,
   Theme_Motion_Div,
+  Theme_Motion_Span,
   Theme_Img,
   Theme_Form,
   Theme_H1,
   Theme_Button,
   Theme_Link,
+  Theme_Icon,
+  Theme_Footer,
+  Theme_Nav,
 };

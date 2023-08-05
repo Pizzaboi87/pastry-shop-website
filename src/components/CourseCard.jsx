@@ -22,7 +22,7 @@ const CourseCard = ({ course, index }) => {
 
   return (
     <Theme_Motion_Div
-      $color="primary"
+      $bg="primary"
       initial={motionPropsR.initial}
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
@@ -47,7 +47,7 @@ const CourseCard = ({ course, index }) => {
         <Theme_Link
           $bg="logo"
           $hover="dark"
-          $text="textlight"
+          $textcolor="textlight"
           className="rounded-xl shadow-sm border-none text-center px-3 py-2 text-[1rem] font-[400] w-[50%] self-center"
           to={`/courses/` + course.id}
         >

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../context";
 import { footerLinks, otherText } from "../constants/";
 import { jam } from "../assets/";
-import { recolorStyle } from "../styles";
+import { Theme_Div, Theme_Footer, recolorStyle } from "../styles";
 
 const Footer = () => {
   const { currentUser } = useContext(UserContext);
@@ -16,7 +16,10 @@ const Footer = () => {
   }, [currentUser]);
 
   return (
-    <footer className="w-full flex flex-col xl:mt-24 mt-8 bg-pinklight text-text">
+    <Theme_Footer
+      $bg="light"
+      className="w-full flex flex-col xl:mt-24 mt-8 text-text"
+    >
       <img src={jam} alt="jam" className="h-[7rem]" style={recolorStyle} />
       <div className="flex flex-wrap sm:flex-row flex-col justify-between items-center sm:px-20">
         <div className="flex flex-col items-center justify-center">
@@ -53,14 +56,17 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-end flex-wrap sm:px-16 px-6 py-2 border-t-2 border-dotted border-red">
+      <Theme_Div
+        $border="logo"
+        className="flex justify-end flex-wrap sm:px-16 px-6 py-2 border-t-2 border-dotted"
+      >
         <span className="flex gap-4 font-[300] text-[1rem]">
           <Link to="/">{otherText.footer.privacy}</Link>
           <Link to="/">{otherText.footer.terms}</Link>
           {adminUID && <Link to="/admin">{otherText.footer.admin}</Link>}
         </span>
-      </div>
-    </footer>
+      </Theme_Div>
+    </Theme_Footer>
   );
 };
 

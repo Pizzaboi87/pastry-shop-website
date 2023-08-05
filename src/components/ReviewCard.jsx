@@ -27,7 +27,7 @@ const ReviewCard = ({ review }) => {
 
   return (
     <Theme_Div
-      $color="primary"
+      $bg="primary"
       className="mx-auto xs:w-[20rem] w-[16rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing"
     >
       <img

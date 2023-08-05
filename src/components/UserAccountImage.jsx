@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { getUserImage, uploadUserImage } from "../utils/firebase";
 import { Icon } from "@iconify/react";
 import { otherText } from "../constants";
+import { Theme_Icon } from "../styles";
 
 const UserAccountImage = ({
   userData,
@@ -46,9 +47,10 @@ const UserAccountImage = ({
         style={{ backgroundImage: `url(${userImage})` }}
       >
         <div className="changeimage w-full h-full bg-[#ffffffbb] rounded-full flex items-center justify-center">
-          <Icon
+          <Theme_Icon
+            $iconcolor="title"
             icon="ri:image-edit-fill"
-            className="text-[3rem] text-brown cursor-pointer"
+            className="text-[3rem] cursor-pointer"
             onClick={handleChangeImage}
           />
           <input

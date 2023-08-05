@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { fetchRecipe } from "../../utils/fetchRecipe";
 import { otherText } from "../../constants";
+import { Theme_Button, Theme_H1, titleStyle } from "../../styles";
 import {
   Loading,
   RecipeCard,
   SearchForm,
   TransitionParent,
 } from "../../components";
-import { Theme_Button } from "../../styles";
 
 const Recipes = () => {
   const [offset, setOffset] = useState(0);
@@ -48,9 +48,9 @@ const Recipes = () => {
 
   return (
     <TransitionParent isFlex>
-      <h1 className="text-brown xl:text-[3rem] text-[2rem] text-center font-[600] mb-8">
+      <Theme_H1 $textcolor="title" className={titleStyle}>
         {otherText.recipes.title}
-      </h1>
+      </Theme_H1>
       <SearchForm
         setLoading={setLoading}
         setNotFound={setNotFound}
@@ -78,7 +78,7 @@ const Recipes = () => {
             <Theme_Button
               $bg="logo"
               $hover="dark"
-              $text="textlight"
+              $textcolor="textlight"
               onClick={showMore}
               className="px-8 rounded-xl shadow-xl border-none py-3 text-[1.3rem] font-bold"
             >

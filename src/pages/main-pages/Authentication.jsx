@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { authStyle, containerStyle, formStyle } from "../../styles";
+import { Theme_Div, authStyle, containerStyle, formStyle } from "../../styles";
 import { AuthButton, SignInForm, SignUpForm } from "../../components";
 import { IsRegContext, UserContext } from "../../context";
 import { otherText } from "../../constants";
@@ -15,10 +15,9 @@ const Authentication = () => {
   }, [currentUser]);
 
   return (
-    <div
-      className={`${
-        isReg ? "bg-glass" : "bg-purpleglass"
-      } glass shadow-xl md:-mt-40 -mt-20 lg:h-[102vh] h-[90vh] xl:w-[90%] 3xl:w-[80%] w-full rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative`}
+    <Theme_Div
+      $bg={isReg ? "glasslight" : "glassdark"}
+      className="glass shadow-xl md:-mt-40 -mt-20 lg:h-[102vh] h-[90vh] xl:w-[90%] 3xl:w-[80%] w-full rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative"
       style={containerStyle}
     >
       <div
@@ -48,7 +47,7 @@ const Authentication = () => {
       >
         {isReg ? <SignUpForm /> : <SignInForm />}
       </div>
-    </div>
+    </Theme_Div>
   );
 };
 

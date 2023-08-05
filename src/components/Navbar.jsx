@@ -4,7 +4,14 @@ import { signOutUser } from "../utils/firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { logo } from "../assets";
 import { Icon } from "@iconify/react";
-import { Theme_Link, menuOffStyle, menuOnStyle } from "../styles";
+import {
+  Theme_Div,
+  Theme_Icon,
+  Theme_Link,
+  Theme_Nav,
+  menuOffStyle,
+  menuOnStyle,
+} from "../styles";
 import {
   myAccount,
   navLinksLeft,
@@ -22,7 +29,10 @@ const Navbar = () => {
   return (
     <>
       {/* -----------Desktop Nav----------- */}
-      <nav className="lg:visible invisible 2xl:w-[85%] w-full h-[7rem] bg-white fixed pt-4 top-7 rounded-2xl flex items-center justify-around text-[1rem] 2xl:text-[1.3rem] font-[400] shadow-md z-10">
+      <Theme_Nav
+        $bg="secondary"
+        className="lg:visible invisible 2xl:w-[85%] w-full h-[7rem] fixed pt-4 top-7 rounded-2xl flex items-center justify-around text-[1rem] 2xl:text-[1.3rem] font-[400] shadow-md z-10"
+      >
         <ul className="flex justify-center items-center 2xl:gap-12 gap-8">
           {navLinksLeft.map((link) => (
             <li key={link.title} className="text-text hover:text-logopink">
@@ -66,7 +76,7 @@ const Navbar = () => {
                   to="auth"
                   $bg="logo"
                   $hover="dark"
-                  $text="textlight"
+                  $textcolor="textlight"
                   className="rounded-xl shadow-sm border-none text-center font-[400] px-8 py-1"
                   onClick={() => {
                     setIsReg(false);
@@ -95,7 +105,7 @@ const Navbar = () => {
             </>
           )}
         </ul>
-      </nav>
+      </Theme_Nav>
 
       {/* -----------Desktop Profile Submenu----------- */}
       <div
@@ -136,13 +146,15 @@ const Navbar = () => {
 
       {/* -----------Mobile Nav----------- */}
       <nav>
-        <Icon
+        <Theme_Icon
+          $iconcolor="title"
           icon="ooui:menu"
-          className="lg:invisible visible fixed z-[13] left-8 md:top-24 top-20 md:text-[4rem] text-[3rem] text-brown"
+          className="lg:invisible visible fixed z-[13] left-8 md:top-24 top-20 md:text-[4rem] text-[3rem]"
           onClick={() => setOpenMenu(!openMenu)}
         />
-        <div
-          className="bg-pinklight bg-main bg-mobBackground fixed top-0 left-0 z-[12] flex items-center justify-center"
+        <Theme_Div
+          $bg="light"
+          className="bg-main bg-mobBackground fixed top-0 left-0 z-[12] flex items-center justify-center"
           style={openMenu ? menuOnStyle : menuOffStyle}
         >
           <ul className="flex flex-col md:text-[5rem] text-[2.5rem] font-[400] items-center">
@@ -204,7 +216,7 @@ const Navbar = () => {
               </>
             )}
           </ul>
-        </div>
+        </Theme_Div>
       </nav>
     </>
   );

@@ -8,6 +8,7 @@ export const colors = {
   },
   pink: {
     primary: "#ebe0d0",
+    secondary: "#fefefe",
     text: "#2b2730",
     textlight: "#ffffff",
     title: "#4a3a3b",
@@ -19,17 +20,19 @@ export const colors = {
   },
   blue: {
     primary: "#d0dbeb",
+    secondary: "#ecfbfd",
     text: "#2b2730",
     textlight: "#ffffff",
     title: "#4a3a3b",
     dark: "#919fdf",
-    light: "#fcdfda",
-    glasslight: "#ec9ec0cc",
-    glassdark: "#6554af90",
+    light: "#daf7fc",
+    glasslight: "#9ec0eccc",
+    glassdark: "#b2a9d790",
     logo: "#5a84e4",
   },
   green: {
     primary: "#dbebd0",
+    secondary: "#ecfbfd",
     text: "#2b2730",
     textlight: "#ffffff",
     title: "#4a3a3b",
@@ -41,6 +44,7 @@ export const colors = {
   },
   brown: {
     primary: "#dbc2a9",
+    secondary: "#ecfbfd",
     text: "#2b2730",
     textlight: "#ffffff",
     title: "#4a3a3b",

@@ -5,12 +5,12 @@ import { Theme_Div, Theme_H1, userPageStyle } from "../../styles";
 const MyCart = () => {
   return (
     <TransitionParent isFlex={false}>
-      <Theme_H1 className={userPageStyle.title}>
+      <Theme_H1 $textcolor="title" className={userPageStyle.title}>
         {otherText.myCartTitle}
       </Theme_H1>
 
       <UserPanel>
-        <Theme_Div $color="primary" className="w-full h-[30rem]">
+        <Theme_Div $bg="primary" className="w-full h-[30rem]">
           My Cart
         </Theme_Div>
       </UserPanel>

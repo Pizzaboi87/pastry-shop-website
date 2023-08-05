@@ -16,7 +16,7 @@ const BlogPostCard = ({ post, isOwnPage }) => {
   ));
 
   return (
-    <Theme_Div $color="primary" className="w-full rounded-2xl mb-16 shadow-xl">
+    <Theme_Div $bg="primary" className="w-full rounded-2xl mb-16 shadow-xl">
       {isOwnPage ? (
         <img
           src={post.image}

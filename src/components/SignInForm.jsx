@@ -132,7 +132,7 @@ const SignInForm = () => {
           type="submit"
           $bg="logo"
           $hover="dark"
-          $text="textlight"
+          $textcolor="textlight"
           className={signInFormStyle.button}
         >
           {otherText.signInForm.button}

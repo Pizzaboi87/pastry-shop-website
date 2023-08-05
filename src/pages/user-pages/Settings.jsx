@@ -1,11 +1,13 @@
 import { TransitionParent, UserPanel } from "../../components";
 import { otherText } from "../../constants";
-import { Theme_Button, userPageStyle } from "../../styles";
+import { Theme_Button, Theme_H1, userPageStyle } from "../../styles";
 
 const Settings = () => {
   return (
     <TransitionParent isFlex={false}>
-      <h1 className={userPageStyle.title}>{otherText.settingsTitle}</h1>
+      <Theme_H1 $textcolor="title" className={userPageStyle.title}>
+        {otherText.settingsTitle}
+      </Theme_H1>
 
       <UserPanel>
         <h2 className="text-text text-[1.4rem] font-[600]">Password reset</h2>
@@ -28,7 +30,7 @@ const Settings = () => {
           <Theme_Button
             $bg="logo"
             $hover="dark"
-            $text="textlight"
+            $textcolor="textlight"
             className={userPageStyle.passwordButton}
           >
             Change
@@ -77,7 +79,7 @@ const Settings = () => {
           <Theme_Button
             $bg="logo"
             $hover="dark"
-            $text="textlight"
+            $textcolor="textlight"
             className={userPageStyle.passwordButton}
           >
             Update
@@ -98,7 +100,7 @@ const Settings = () => {
           <Theme_Button
             $bg="logo"
             $hover="dark"
-            $text="textlight"
+            $textcolor="textlight"
             className={userPageStyle.deleteButton}
           >
             Delete

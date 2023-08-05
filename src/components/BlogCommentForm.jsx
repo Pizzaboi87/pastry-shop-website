@@ -113,7 +113,7 @@ const BlogCommentForm = ({ postID }) => {
           type="submit"
           $bg="logo"
           $hover="dark"
-          $text="textlight"
+          $textcolor="textlight"
           className={blogCommentStyle.button}
         >
           {otherText.blogCommentForm.button}

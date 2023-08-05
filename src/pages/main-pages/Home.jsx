@@ -1,9 +1,9 @@
 import { Fragment, useContext } from "react";
 import { macaron, eclair, cream } from "../../assets";
-import { motion } from "framer-motion";
 import { slideIn } from "../../utils/motion";
 import { Image, TextAndImage, TransitionParent } from "../../components";
 import { IsRegContext, UserContext } from "../../context";
+import { Theme_Link, Theme_Motion_Span } from "../../styles";
 import {
   homeTitle,
   homeSubtitle,
@@ -11,8 +11,6 @@ import {
   homeText2,
   otherText,
 } from "../../constants";
-import { Link } from "react-router-dom";
-import { Theme_Link } from "../../styles";
 
 const Home = () => {
   const motionPropsR = slideIn("right");
@@ -22,11 +20,12 @@ const Home = () => {
   return (
     <TransitionParent isHome isFlex>
       <div className="xl:w-[75%] w-full flex xl:flex-row flex-col items-center justify-center">
-        <motion.span
+        <Theme_Motion_Span
+          $textcolor="title"
           initial={motionPropsR.initial}
           whileInView={motionPropsR.whileInView}
           viewport={motionPropsR.viewport}
-          className="text-brown px-8 2xl:px-0"
+          className="px-8 2xl:px-0"
         >
           <div className="lg:mb-6 2xl:max-w-[95%]">
             <span className="flex xl:flex-col flex-row flex-wrap lg:mb-2">
@@ -49,13 +48,13 @@ const Home = () => {
             to={currentUser ? "/shop" : "/auth"}
             $bg="logo"
             $hover="dark"
-            $text="textlight"
+            $textcolor="textlight"
             className="rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[1.3rem] 2xl:inline-block hidden"
             onClick={() => setIsReg(false)}
           >
             {otherText.homeButton}
           </Theme_Link>
-        </motion.span>
+        </Theme_Motion_Span>
 
         <Image dirPic="left" image={macaron} imgFirst={true} width={40} />
 
@@ -63,7 +62,7 @@ const Home = () => {
           to={currentUser ? "/shop" : "/auth"}
           $bg="logo"
           $hover="dark"
-          $text="textlight"
+          $textcolor="textlight"
           className="rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[2rem] md:text-[3rem] xl:hidden inline-block mt-16 mb-0"
           onClick={() => setIsReg(false)}
         >

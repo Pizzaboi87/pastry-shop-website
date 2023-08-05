@@ -214,7 +214,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       <Theme_Button
         $bg="logo"
         $hover="dark"
-        $text="textlight"
+        $textcolor="textlight"
         className={`${userPageStyle.button} ${
           isLoading ? "cursor-progress" : "cursor-pointer"
         } `}

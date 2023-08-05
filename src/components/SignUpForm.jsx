@@ -167,7 +167,7 @@ const SignUpForm = () => {
         <Theme_Button
           $bg="logo"
           $hover="dark"
-          $text="textlight"
+          $textcolor="textlight"
           type="submit"
           className={signUpFormStyle.button}
         >

@@ -38,9 +38,6 @@ module.exports = {
       fontFamily: {
         letter: ['"Dancing Script"', "cursive"],
       },
-      dropShadow: {
-        textShadow: ["0 0 5px black", "5px 5px 5px white"],
-      },
     },
   },
   plugins: [],

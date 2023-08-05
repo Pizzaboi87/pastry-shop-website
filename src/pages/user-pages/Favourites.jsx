@@ -1,11 +1,13 @@
 import { TransitionParent, UserPanel } from "../../components";
 import { otherText } from "../../constants";
-import { userPageStyle } from "../../styles";
+import { Theme_H1, userPageStyle } from "../../styles";
 
 const Favourites = () => {
   return (
     <TransitionParent isFlex={false}>
-      <h1 className={userPageStyle.title}>{otherText.favouritesTitle}</h1>
+      <Theme_H1 $textcolor="title" className={userPageStyle.title}>
+        {otherText.favouritesTitle}
+      </Theme_H1>
 
       <UserPanel>
         <div className="h-[30rem] w-full bg-yellowdark"></div>

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { courses } from "../../constants";
 import { course1, course2, course3 } from "../../assets";
 import { CourseForm, TransitionParent } from "../../components";
+import { Theme_H1, titleStyle } from "../../styles";
 
 const CoursePage = () => {
   const { id } = useParams();
@@ -35,9 +36,9 @@ const CoursePage = () => {
 
   return (
     <TransitionParent isFlex>
-      <h1 className="xl:text-[3rem] text-[2rem] text-center text-text font-[600] mb-8">
+      <Theme_H1 $textcolor="title" className={titleStyle}>
         {course.title}
-      </h1>
+      </Theme_H1>
       {course.longDetails &&
         course.longDetails.map((detail, index) => {
           if (Array.isArray(detail)) {

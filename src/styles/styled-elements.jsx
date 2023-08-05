@@ -4,6 +4,7 @@ import { ThemeContext } from "../context";
 import { colors } from "./colors";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 export const Theme_H1 = styled.h1`
   color: ${(props) => {
@@ -11,13 +12,13 @@ export const Theme_H1 = styled.h1`
 
     switch (theme) {
       case "blue":
-        return "blue";
+        return colors.blue[props.$textcolor];
       case "green":
-        return "green";
+        return colors.green[props.$textcolor];
       case "brown":
-        return "brown";
+        return colors.brown[props.$textcolor];
       default:
-        return colors.pink.title;
+        return colors.pink[props.$textcolor];
     }
   }};
 `;
@@ -28,13 +29,27 @@ export const Theme_Div = styled.div`
 
     switch (theme) {
       case "blue":
-        return colors.blue[props.$color];
+        return colors.blue[props.$bg];
       case "green":
-        return colors.green[props.$color];
+        return colors.green[props.$bg];
       case "brown":
-        return colors.brown[props.$color];
+        return colors.brown[props.$bg];
       default:
-        return colors.pink[props.$color];
+        return colors.pink[props.$bg];
+    }
+  }};
+  border-color: ${(props) => {
+    const { theme } = useContext(ThemeContext);
+
+    switch (theme) {
+      case "blue":
+        return colors.blue[props.$border];
+      case "green":
+        return colors.green[props.$border];
+      case "brown":
+        return colors.brown[props.$border];
+      default:
+        return colors.pink[props.$border];
     }
   }};
 `;
@@ -45,13 +60,30 @@ export const Theme_Motion_Div = styled(motion.div)`
 
     switch (theme) {
       case "blue":
-        return colors.blue[props.$color];
+        return colors.blue[props.$bg];
       case "green":
-        return colors.green[props.$color];
+        return colors.green[props.$bg];
       case "brown":
-        return colors.brown[props.$color];
+        return colors.brown[props.$bg];
       default:
-        return colors.pink[props.$color];
+        return colors.pink[props.$bg];
+    }
+  }};
+`;
+
+export const Theme_Motion_Span = styled(motion.span)`
+  color: ${(props) => {
+    const { theme } = useContext(ThemeContext);
+
+    switch (theme) {
+      case "blue":
+        return colors.blue[props.$textcolor];
+      case "green":
+        return colors.green[props.$textcolor];
+      case "brown":
+        return colors.brown[props.$textcolor];
+      default:
+        return colors.pink[props.$textcolor];
     }
   }};
 `;
@@ -62,13 +94,13 @@ export const Theme_Form = styled.form`
 
     switch (theme) {
       case "blue":
-        return colors.blue[props.$color];
+        return colors.blue[props.$bg];
       case "green":
-        return colors.green[props.$color];
+        return colors.green[props.$bg];
       case "brown":
-        return colors.brown[props.$color];
+        return colors.brown[props.$bg];
       default:
-        return colors.pink[props.$color];
+        return colors.pink[props.$bg];
     }
   }};
 `;
@@ -121,13 +153,13 @@ export const Theme_Button = styled.button`
     const { theme } = useContext(ThemeContext);
     switch (theme) {
       case "blue":
-        return colors.blue[props.$text];
+        return colors.blue[props.$textcolor];
       case "green":
-        return colors.green[props.$text];
+        return colors.green[props.$textcolor];
       case "brown":
-        return colors.brown[props.$text];
+        return colors.brown[props.$textcolor];
       default:
-        return colors.pink[props.$text];
+        return colors.pink[props.$textcolor];
     }
   }};
   border-color: ${(props) => {
@@ -178,13 +210,13 @@ export const Theme_Link = styled(Link)`
     const { theme } = useContext(ThemeContext);
     switch (theme) {
       case "blue":
-        return colors.blue[props.$text];
+        return colors.blue[props.$textcolor];
       case "green":
-        return colors.green[props.$text];
+        return colors.green[props.$textcolor];
       case "brown":
-        return colors.brown[props.$text];
+        return colors.brown[props.$textcolor];
       default:
-        return colors.pink[props.$text];
+        return colors.pink[props.$textcolor];
     }
   }};
   &:hover {
@@ -202,4 +234,52 @@ export const Theme_Link = styled(Link)`
       }
     }};
   }
+`;
+
+export const Theme_Icon = styled(Icon)`
+  color: ${(props) => {
+    const { theme } = useContext(ThemeContext);
+    switch (theme) {
+      case "blue":
+        return colors.blue[props.$iconcolor];
+      case "green":
+        return colors.green[props.$iconcolor];
+      case "brown":
+        return colors.brown[props.$iconcolor];
+      default:
+        return colors.pink[props.$iconcolor];
+    }
+  }};
+`;
+
+export const Theme_Footer = styled.footer`
+  background: ${(props) => {
+    const { theme } = useContext(ThemeContext);
+    switch (theme) {
+      case "blue":
+        return colors.blue[props.$bg];
+      case "green":
+        return colors.green[props.$bg];
+      case "brown":
+        return colors.brown[props.$bg];
+      default:
+        return colors.pink[props.$bg];
+    }
+  }};
+`;
+
+export const Theme_Nav = styled.nav`
+  background: ${(props) => {
+    const { theme } = useContext(ThemeContext);
+    switch (theme) {
+      case "blue":
+        return colors.blue[props.$bg];
+      case "green":
+        return colors.green[props.$bg];
+      case "brown":
+        return colors.brown[props.$bg];
+      default:
+        return colors.pink[props.$bg];
+    }
+  }};
 `;
