@@ -1,3 +1,5 @@
+import { Theme_Div, Theme_H1 } from "./styled-elements";
+
 const phoneInputStyle = {
   width: "100%",
   height: "3rem",
@@ -204,4 +206,6 @@ export {
   adminLoginStyle,
   userPageStyle,
   userPhoneInputStyle,
+  Theme_Div,
+  Theme_H1,
 };

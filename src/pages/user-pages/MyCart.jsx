@@ -1,14 +1,16 @@
 import { TransitionParent, UserPanel } from "../../components";
 import { otherText } from "../../constants";
-import { userPageStyle } from "../../styles";
+import { Theme_Div, Theme_H1, userPageStyle } from "../../styles";
 
 const MyCart = () => {
   return (
     <TransitionParent isFlex={false}>
-      <h1 className={userPageStyle.title}>{otherText.myCartTitle}</h1>
+      <Theme_H1 className={userPageStyle.title}>
+        {otherText.myCartTitle}
+      </Theme_H1>
 
       <UserPanel>
-        <div className="w-full h-[30rem] bg-red"></div>
+        <Theme_Div className="w-full h-[30rem]">My Cart</Theme_Div>
       </UserPanel>
     </TransitionParent>
   );
