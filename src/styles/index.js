@@ -3,6 +3,7 @@ import {
   Theme_Motion_Div,
   Theme_Motion_Span,
   Theme_H1,
+  Theme_P,
   Theme_Form,
   Theme_Img,
   Theme_Button,
@@ -10,6 +11,7 @@ import {
   Theme_Icon,
   Theme_Footer,
   Theme_Nav,
+  Theme_Li,
 } from "./styled-elements";
 
 const phoneInputStyle = {
@@ -227,9 +229,11 @@ export {
   Theme_Img,
   Theme_Form,
   Theme_H1,
+  Theme_P,
   Theme_Button,
   Theme_Link,
   Theme_Icon,
   Theme_Footer,
   Theme_Nav,
+  Theme_Li,
 };

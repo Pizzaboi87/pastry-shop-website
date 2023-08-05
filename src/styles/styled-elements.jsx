@@ -23,6 +23,56 @@ export const Theme_H1 = styled.h1`
   }};
 `;
 
+export const Theme_P = styled.p`
+  color: ${(props) => {
+    const { theme } = useContext(ThemeContext);
+
+    switch (theme) {
+      case "blue":
+        return colors.blue[props.$textcolor];
+      case "green":
+        return colors.green[props.$textcolor];
+      case "brown":
+        return colors.brown[props.$textcolor];
+      default:
+        return colors.pink[props.$textcolor];
+    }
+  }};
+`;
+
+export const Theme_Li = styled.li`
+  color: ${(props) => {
+    const { theme } = useContext(ThemeContext);
+
+    switch (theme) {
+      case "blue":
+        return colors.blue[props.$textcolor];
+      case "green":
+        return colors.green[props.$textcolor];
+      case "brown":
+        return colors.brown[props.$textcolor];
+      default:
+        return colors.pink[props.$textcolor];
+    }
+  }};
+  &:hover {
+    color: ${(props) => {
+      const { theme } = useContext(ThemeContext);
+
+      switch (theme) {
+        case "blue":
+          return colors.blue[props.$hovertext];
+        case "green":
+          return colors.green[props.$hovertext];
+        case "brown":
+          return colors.brown[props.$hovertext];
+        default:
+          return colors.pink[props.$hovertext];
+      }
+    }};
+  }
+`;
+
 export const Theme_Div = styled.div`
   background: ${(props) => {
     const { theme } = useContext(ThemeContext);
@@ -120,7 +170,7 @@ export const Theme_Img = styled.img`
     }
   }};
 
-  border: ${(props) => {
+  border-color: ${(props) => {
     const { theme } = useContext(ThemeContext);
     switch (theme) {
       case "blue":
@@ -189,6 +239,19 @@ export const Theme_Button = styled.button`
           return colors.pink[props.$hover];
       }
     }};
+    color: ${(props) => {
+      const { theme } = useContext(ThemeContext);
+      switch (theme) {
+        case "blue":
+          return colors.blue[props.$hovertext];
+        case "green":
+          return colors.green[props.$hovertext];
+        case "brown":
+          return colors.brown[props.$hovertext];
+        default:
+          return colors.pink[props.$hovertext];
+      }
+    }};
   }
 `;
 
@@ -220,7 +283,7 @@ export const Theme_Link = styled(Link)`
     }
   }};
   &:hover {
-    background: ${(props) => {
+    color: ${(props) => {
       const { theme } = useContext(ThemeContext);
       switch (theme) {
         case "blue":
@@ -233,7 +296,6 @@ export const Theme_Link = styled(Link)`
           return colors.pink[props.$hover];
       }
     }};
-  }
 `;
 
 export const Theme_Icon = styled(Icon)`

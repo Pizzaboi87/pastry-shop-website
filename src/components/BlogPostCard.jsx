@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { otherText } from "../constants";
 import { Fragment } from "react";
-import { Theme_Div } from "../styles";
+import { Theme_Button, Theme_Div, Theme_Link } from "../styles";
 
 const BlogPostCard = ({ post, isOwnPage }) => {
   const article = post.post.split("		").map((paragraph, index) => (
@@ -65,12 +65,9 @@ const BlogPostCard = ({ post, isOwnPage }) => {
           {isOwnPage &&
             post.tags.map((tag, index) => (
               <li key={index} className="text-[1.2rem]">
-                <Link
-                  to={`/blog/category/${tag}`}
-                  className="hover:text-logopink"
-                >
+                <Theme_Link $hover="logo" to={`/blog/category/${tag}`}>
                   #{tag}
-                </Link>
+                </Theme_Link>
               </li>
             ))}
         </ul>
@@ -79,9 +76,13 @@ const BlogPostCard = ({ post, isOwnPage }) => {
           to={`/blog/post/` + post.postid}
           className={isOwnPage ? "hidden" : "block"}
         >
-          <button className="bg-logopink rounded-xl px-4 py-2 text-white font-[600] shadow-xl self-center">
+          <Theme_Button
+            $bg="logo"
+            $textcolor="textlight"
+            className="rounded-xl px-4 py-2 font-[600] shadow-xl self-center"
+          >
             {otherText.blogPostCardButton}
-          </button>
+          </Theme_Button>
         </Link>
       </div>
     </Theme_Div>

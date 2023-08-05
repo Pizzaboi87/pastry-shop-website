@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { otherText } from "../constants";
 import { useContext, useEffect, useState } from "react";
 import { BlogContext } from "../context";
-import { Theme_Div } from "../styles";
+import { Theme_Button, Theme_Div } from "../styles";
 
 const BlogCategoryCard = () => {
   const [allBlogPost] = useContext(BlogContext);
@@ -33,9 +33,13 @@ const BlogCategoryCard = () => {
   const categoryItems = categories.map((category, index) => (
     <li key={index}>
       <Link to={`/blog/category/${category}`}>
-        <button className="bg-logopink text-white rounded-xl py-1 px-2 shadow-sm font-[700] text-[1rem] cursor-pointer">
+        <Theme_Button
+          $bg="logo"
+          $textcolor="textlight"
+          className="rounded-xl py-1 px-2 shadow-sm font-[700] text-[1rem] cursor-pointer"
+        >
           {category}
-        </button>
+        </Theme_Button>
       </Link>
     </li>
   ));

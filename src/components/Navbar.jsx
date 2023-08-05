@@ -5,8 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { logo } from "../assets";
 import { Icon } from "@iconify/react";
 import {
+  Theme_Button,
   Theme_Div,
   Theme_Icon,
+  Theme_Li,
   Theme_Link,
   Theme_Nav,
   menuOffStyle,
@@ -35,11 +37,11 @@ const Navbar = () => {
       >
         <ul className="flex justify-center items-center 2xl:gap-12 gap-8">
           {navLinksLeft.map((link) => (
-            <li key={link.title} className="text-text hover:text-logopink">
+            <Theme_Li key={link.title} $hovertext="logo" className="text-text">
               <Link to={link.id} onClick={() => setOpenMyAccount(false)}>
                 {link.title}
               </Link>
-            </li>
+            </Theme_Li>
           ))}
 
           <li>
@@ -51,26 +53,27 @@ const Navbar = () => {
           </li>
 
           {navLinksRight.map((link) => (
-            <li key={link.title} className="text-text hover:text-logopink">
+            <Theme_Li key={link.title} $hovertext="logo" className="text-text">
               <Link to={link.id} onClick={() => setOpenMyAccount(false)}>
                 {link.title}
               </Link>
-            </li>
+            </Theme_Li>
           ))}
 
           {!currentUser ? (
             <li>
               <span>
-                <Link
+                <Theme_Link
                   to="auth"
-                  className="text-text hover:text-logopink"
+                  $hover="logo"
+                  className="text-text"
                   onClick={() => {
                     setIsReg(true);
                     () => setOpenMyAccount(false);
                   }}
                 >
                   {otherText.navbar.reg}
-                </Link>{" "}
+                </Theme_Link>{" "}
                 /{" "}
                 <Theme_Link
                   to="auth"
@@ -89,18 +92,19 @@ const Navbar = () => {
             </li>
           ) : (
             <>
-              <li className="text-text hover:text-logopink">
+              <Theme_Li $hovertext="logo" className="text-text">
                 <Link to="/shop" onClick={() => setOpenMyAccount(false)}>
                   {otherText.navbar.shop}
                 </Link>
-              </li>
+              </Theme_Li>
               <li>
-                <button
-                  className="text-text hover:text-logopink"
+                <Theme_Button
+                  $hovertext="logo"
+                  className="text-text"
                   onClick={() => setOpenMyAccount(!openMyAccount)}
                 >
                   {otherText.navbar.profile}
-                </button>
+                </Theme_Button>
               </li>
             </>
           )}
@@ -121,16 +125,17 @@ const Navbar = () => {
           } flex flex-col p-5 transition-all ease-in-out`}
         >
           {myAccount.map((item) => (
-            <li
+            <Theme_Li
               key={item.title}
-              className="text-text text-[1.2rem] hover:text-logopink"
+              $hovertext="logo"
+              className="text-text text-[1.2rem]"
             >
               <Link to={item.id} onClick={() => setOpenMyAccount(false)}>
                 {item.title}
               </Link>
-            </li>
+            </Theme_Li>
           ))}
-          <li className="text-text text-[1.2rem] hover:text-logopink">
+          <Theme_Li $hovertext="logo" className="text-text text-[1.2rem]">
             <button
               onClick={() => {
                 signOutUser();
@@ -140,7 +145,7 @@ const Navbar = () => {
             >
               {otherText.navbar.signOut}
             </button>
-          </li>
+          </Theme_Li>
         </ul>
       </div>
 
@@ -159,59 +164,70 @@ const Navbar = () => {
         >
           <ul className="flex flex-col md:text-[5rem] text-[2.5rem] font-[400] items-center">
             {navLinksLeft.map((link) => (
-              <li key={link.title} className="text-text hover:text-logopink">
+              <Theme_Li
+                key={link.title}
+                $hovertext="logo"
+                className="text-text"
+              >
                 <Link to={link.id} onClick={() => setOpenMenu(!openMenu)}>
                   {link.title}
                 </Link>
-              </li>
+              </Theme_Li>
             ))}
             {navLinksRight.map((link) => (
-              <li key={link.title} className="text-text hover:text-logopink">
+              <Theme_Li
+                key={link.title}
+                $hovertext="logo"
+                className="text-text"
+              >
                 <Link to={link.id} onClick={() => setOpenMenu(!openMenu)}>
                   {link.title}
                 </Link>
-              </li>
+              </Theme_Li>
             ))}
             {!currentUser ? (
               <>
-                <Link
+                <Theme_Link
                   to="auth"
+                  $hover="logo"
                   onClick={() => {
                     setOpenMenu(!openMenu);
                     setIsReg(true);
                   }}
-                  className="text-text hover:text-logopink"
+                  className="text-text"
                 >
                   {otherText.navbar.reg}
-                </Link>
-                <Link
+                </Theme_Link>
+                <Theme_Link
                   to="auth"
+                  $hover="logo"
                   onClick={() => {
                     setOpenMenu(!openMenu);
                     setIsReg(false);
                   }}
-                  className="text-text hover:text-logopink"
+                  className="text-text"
                 >
                   {otherText.navbar.login}
-                </Link>
+                </Theme_Link>
               </>
             ) : (
               <>
-                <li className="text-text hover:text-logopink">
+                <Theme_Li $hovertext="logo" className="text-text">
                   <Link to="/shop" onClick={() => setOpenMenu(!openMenu)}>
                     {otherText.navbar.shop}
                   </Link>
-                </li>
+                </Theme_Li>
                 <li>
-                  <button
-                    className="text-text hover:text-logopink"
+                  <Theme_Button
+                    $hovertext="logo"
+                    className="text-text"
                     onClick={() => {
                       setOpenMenu(!openMenu);
                       signOutUser();
                     }}
                   >
                     {otherText.navbar.signOut}
-                  </button>
+                  </Theme_Button>
                 </li>
               </>
             )}

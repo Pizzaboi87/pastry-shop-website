@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Theme_Div } from "../styles";
+import { Theme_Div, Theme_Img } from "../styles";
 
 const BlogProposalCard = ({ post }) => {
   const truncate = (inputString, length) => {
@@ -16,10 +16,12 @@ const BlogProposalCard = ({ post }) => {
         $bg="primary"
         className="h-fit rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer"
       >
-        <img
+        <Theme_Img
+          $bg="logo"
+          $border="textlight"
           src={post.image}
           alt={post.title}
-          className="col-span-2 bg-logopink rounded-full w-[5rem] h-[5rem] object-cover border-2 border-white"
+          className="col-span-2 rounded-full w-[5rem] h-[5rem] object-cover border-2"
         />
         <div className="col-span-4 flex flex-col items-center w-full">
           <h1 className="text-text text-[1rem] font-[600] self-start">
