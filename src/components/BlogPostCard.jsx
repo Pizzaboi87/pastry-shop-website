@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { otherText } from "../constants";
 import { Fragment } from "react";
+import { Theme_Div } from "../styles";
 
 const BlogPostCard = ({ post, isOwnPage }) => {
   const article = post.post.split("		").map((paragraph, index) => (
@@ -15,7 +16,7 @@ const BlogPostCard = ({ post, isOwnPage }) => {
   ));
 
   return (
-    <div className="bg-primary w-full rounded-2xl mb-16 shadow-xl">
+    <Theme_Div $color="primary" className="w-full rounded-2xl mb-16 shadow-xl">
       {isOwnPage ? (
         <img
           src={post.image}
@@ -83,7 +84,7 @@ const BlogPostCard = ({ post, isOwnPage }) => {
           </button>
         </Link>
       </div>
-    </div>
+    </Theme_Div>
   );
 };
 

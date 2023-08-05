@@ -3,6 +3,7 @@ import { slideIn } from "../utils/motion";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { otherText } from "../constants";
+import { Theme_Motion_Div } from "../styles";
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -23,12 +24,13 @@ const RecipeCard = ({ recipe }) => {
 
   //-----------------------------------------------------NOT READY: Like/favourite function missing.-----------------------------------------------------
   return (
-    <motion.div
+    <Theme_Motion_Div
+      $color="primary"
       initial={motionPropsR.initial}
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
       key={recipe.title}
-      className="2xl:w-[80%] w-full h-auto mb-20 text-justify bg-primary p-12 rounded-xl shadow-xl"
+      className="2xl:w-[80%] w-full h-auto mb-20 text-justify p-12 rounded-xl shadow-xl"
     >
       <Icon
         icon={liked ? "mdi:heart" : "mdi:heart-outline"}
@@ -94,7 +96,7 @@ const RecipeCard = ({ recipe }) => {
           <EmailIcon size={36} />
         </EmailShareButton>
       </div>
-    </motion.div>
+    </Theme_Motion_Div>
   );
 };
 

@@ -4,7 +4,7 @@ import { signOutUser } from "../utils/firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { logo } from "../assets";
 import { Icon } from "@iconify/react";
-import { menuOffStyle, menuOnStyle } from "../styles";
+import { Theme_Link, menuOffStyle, menuOnStyle } from "../styles";
 import {
   myAccount,
   navLinksLeft,
@@ -62,16 +62,19 @@ const Navbar = () => {
                   {otherText.navbar.reg}
                 </Link>{" "}
                 /{" "}
-                <Link
+                <Theme_Link
                   to="auth"
-                  className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center font-[400] px-8 py-1"
+                  $bg="logo"
+                  $hover="dark"
+                  $text="textlight"
+                  className="rounded-xl shadow-sm border-none text-center font-[400] px-8 py-1"
                   onClick={() => {
                     setIsReg(false);
                     () => setOpenMyAccount(false);
                   }}
                 >
                   {otherText.navbar.login}
-                </Link>
+                </Theme_Link>
               </span>
             </li>
           ) : (

@@ -1,4 +1,12 @@
-import { Theme_Div, Theme_H1 } from "./styled-elements";
+import {
+  Theme_Div,
+  Theme_Motion_Div,
+  Theme_H1,
+  Theme_Form,
+  Theme_Img,
+  Theme_Button,
+  Theme_Link,
+} from "./styled-elements";
 
 const phoneInputStyle = {
   width: "100%",
@@ -106,7 +114,7 @@ const blogCommentStyle = {
   label:
     "w-[30%] flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
   button:
-    "bg-logopink px-16 py-2 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white font-[500] block xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+    "px-16 py-2 rounded-xl shadow-xl border-none font-[500] block xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
 const courseFormStyle = {
@@ -114,7 +122,7 @@ const courseFormStyle = {
     "text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-2 outline-offset-2 outline-dotted outline-text",
   label: "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] p-4",
   button:
-    "bg-logopink px-16 py-2 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white text-[1rem] font-[500] mx-auto block",
+    "px-16 py-2 rounded-xl shadow-xl border-none text-[1rem] font-[500] mx-auto block",
 };
 
 const postcardStyle = {
@@ -133,9 +141,9 @@ const signInFormStyle = {
   label:
     "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
   button:
-    "bg-logopink px-16 py-2 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white font-[500] mx-auto block mt-8 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+    "px-16 py-2 rounded-xl shadow-xl border-none font-[500] mx-auto block mt-8 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
   forgotButton:
-    "flex items-center justify-center border-2 border-logopink shadow-xl rounded-md px-2 py-1 mt-6 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+    "flex items-center justify-center border-2 shadow-xl rounded-md px-2 py-1 mt-6 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
 const signUpFormStyle = {
@@ -144,7 +152,7 @@ const signUpFormStyle = {
   label:
     "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1 mt-4",
   button:
-    "bg-logopink px-16 py-2 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white font-[500] mx-auto block xs:mt-8 mt-4 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+    "px-16 py-2 rounded-xl shadow-xl border-none font-[500] mx-auto block xs:mt-8 mt-4 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
 const adminPageStyle = {
@@ -166,11 +174,11 @@ const userPageStyle = {
     "text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted outline-logopink",
   label: "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] py-4",
   button:
-    "bg-logopink py-1 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white text-[1.2rem] font-[500] col-span-1 col-start-7",
+    "py-1 rounded-xl shadow-xl border-none text-[1.2rem] font-[500] col-span-1 col-start-7",
   passwordButton:
-    "bg-logopink py-2 rounded-2xl shadow-xl border-none hover:bg-pinkdark text-white text-[1.2rem] font-[500] col-start-6",
+    "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] col-start-6",
   deleteButton:
-    "bg-logopink py-2 rounded-2xl shadow-xl border-none hover:bg-pinkdark text-white text-[1.2rem] font-[500] self-end px-8",
+    "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] self-end px-8",
 
   title:
     "col-span-6 text-brown xl:text-[3rem] text-[2rem] font-[600] mb-8 text-center",
@@ -207,5 +215,10 @@ export {
   userPageStyle,
   userPhoneInputStyle,
   Theme_Div,
+  Theme_Motion_Div,
+  Theme_Img,
+  Theme_Form,
   Theme_H1,
+  Theme_Button,
+  Theme_Link,
 };

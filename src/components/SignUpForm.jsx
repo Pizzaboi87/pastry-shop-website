@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { signUpFormStyle } from "../styles";
+import { Theme_Button, signUpFormStyle } from "../styles";
 import { otherText } from "../constants";
 import {
   createUserDocumentFromAuth,
@@ -164,9 +164,15 @@ const SignUpForm = () => {
           />
         </label>
 
-        <button type="submit" className={signUpFormStyle.button}>
+        <Theme_Button
+          $bg="logo"
+          $hover="dark"
+          $text="textlight"
+          type="submit"
+          className={signUpFormStyle.button}
+        >
           {otherText.signUpForm.button}
-        </button>
+        </Theme_Button>
       </form>
     </motion.div>
   );

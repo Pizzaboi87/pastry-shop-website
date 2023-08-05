@@ -4,7 +4,7 @@ import { UserContext } from "../context";
 import { otherText } from "../constants";
 import { storeComment } from "../utils/firebase";
 import { v4 as uuidv4 } from "uuid";
-import { blogCommentStyle } from "../styles";
+import { Theme_Button, blogCommentStyle } from "../styles";
 
 const BlogCommentForm = ({ postID }) => {
   const { userData } = useContext(UserContext);
@@ -109,9 +109,15 @@ const BlogCommentForm = ({ postID }) => {
           />
         </label>
 
-        <button type="submit" className={blogCommentStyle.button}>
+        <Theme_Button
+          type="submit"
+          $bg="logo"
+          $hover="dark"
+          $text="textlight"
+          className={blogCommentStyle.button}
+        >
           {otherText.blogCommentForm.button}
-        </button>
+        </Theme_Button>
       </span>
     </form>
   );

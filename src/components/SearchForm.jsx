@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { otherText } from "../constants";
+import { Theme_Button } from "../styles";
 
 const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
   const allowedCharacters = /^[a-zA-Z- :]+$/;
@@ -36,12 +37,15 @@ const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
         value={searchText}
         className="px-4 py-2 rounded-xl shadow-md outline-dotted outline-2 outline-offset-2 outline-text"
       />
-      <button
+      <Theme_Button
         type="submit"
-        className="px-4 py-3 bg-logopink hover:bg-pinkdark cursor-pointer text-white font-bold rounded-xl shadow-md"
+        $bg="logo"
+        $hover="dark"
+        $text="textlight"
+        className="px-4 py-3 cursor-pointer font-bold rounded-xl shadow-md"
       >
         {otherText.searchForm.button}
-      </button>
+      </Theme_Button>
     </form>
   );
 };

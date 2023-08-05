@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext, CommentsContext } from "../context";
 import { otherText } from "../constants";
+import { Theme_Div } from "../styles";
 
 const BlogComment = () => {
   const { id } = useParams();
@@ -15,7 +16,10 @@ const BlogComment = () => {
 
   return (
     <div className="col-span-4 mb-16">
-      <div className="w-full bg-primary rounded-2xl shadow-xl p-6 mb-16">
+      <Theme_Div
+        $color="primary"
+        className="w-full rounded-2xl shadow-xl p-6 mb-16"
+      >
         <h1 className="text-text text-[1.3rem] font-[600] mb-16">
           {otherText.blogComment.title}
         </h1>
@@ -37,7 +41,7 @@ const BlogComment = () => {
             </div>
           ))}
         </ul>
-      </div>
+      </Theme_Div>
       {currentUser ? (
         <BlogCommentForm postID={id} />
       ) : (

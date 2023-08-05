@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
+import { Theme_Div, Theme_Img } from "../styles";
 
 const ReviewCard = ({ review }) => {
   const stars = review.stars;
@@ -25,16 +26,21 @@ const ReviewCard = ({ review }) => {
   }
 
   return (
-    <div className="mx-auto bg-primary xs:w-[20rem] w-[16rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing">
+    <Theme_Div
+      $color="primary"
+      className="mx-auto xs:w-[20rem] w-[16rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing"
+    >
       <img
         src={bgImage}
         alt="background"
         className="w-full h-[25%] bg-cover rounded-t-xl object-cover"
       />
-      <img
+      <Theme_Img
+        $bg="primary"
+        $border="primary"
         src={image}
         alt="profile"
-        className="bg-primary rounded-full w-[10rem] h-[10rem] absolute top-[10%] object-cover border-4 border-primary"
+        className="rounded-full w-[10rem] h-[10rem] absolute top-[10%] object-cover border-4"
       />
       <div className="flex flex-col items-center absolute top-[45%]">
         <h1 className="text-text text-[1.6rem] font-[600]">{review.name}</h1>
@@ -61,7 +67,7 @@ const ReviewCard = ({ review }) => {
           />
         ))}
       </span>
-    </div>
+    </Theme_Div>
   );
 };
 

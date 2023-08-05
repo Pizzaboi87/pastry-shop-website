@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { signInFormStyle } from "../styles";
+import { Theme_Button, signInFormStyle } from "../styles";
 import { otherText } from "../constants";
 import {
   signInWithGoogleRedirect,
@@ -128,22 +128,29 @@ const SignInForm = () => {
           />
         </label>
 
-        <button type="submit" className={signInFormStyle.button}>
+        <Theme_Button
+          type="submit"
+          $bg="logo"
+          $hover="dark"
+          $text="textlight"
+          className={signInFormStyle.button}
+        >
           {otherText.signInForm.button}
-        </button>
+        </Theme_Button>
       </form>
 
       <button className="mt-2 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]">
         {otherText.signInForm.forgot}
       </button>
 
-      <button
+      <Theme_Button
+        $border="logo"
         className={signInFormStyle.forgotButton}
         onClick={handleGoogleSignIn}
       >
         <Icon icon="devicon:google" className="mr-2" />
         {otherText.signInForm.google}
-      </button>
+      </Theme_Button>
     </motion.div>
   );
 };

@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import PhoneInput from "react-phone-input-2";
-import { userPageStyle, userPhoneInputStyle } from "../styles";
+import { Theme_Button, userPageStyle, userPhoneInputStyle } from "../styles";
 import { useState } from "react";
 import { updateUserData } from "../utils/firebase";
 import { otherText } from "../constants";
@@ -211,7 +211,10 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           className={userPageStyle.input}
         />
       </label>
-      <button
+      <Theme_Button
+        $bg="logo"
+        $hover="dark"
+        $text="textlight"
         className={`${userPageStyle.button} ${
           isLoading ? "cursor-progress" : "cursor-pointer"
         } `}
@@ -220,7 +223,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         {isLoading
           ? otherText.userAccountForm.savingButton
           : otherText.userAccountForm.button}
-      </button>
+      </Theme_Button>
     </form>
   );
 };

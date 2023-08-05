@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
 import { otherText } from "../constants";
+import { Theme_Link, Theme_Motion_Div } from "../styles";
 
 const CourseCard = ({ course, index }) => {
   const motionPropsR = slideIn("right", index * 0.25);
@@ -22,11 +21,12 @@ const CourseCard = ({ course, index }) => {
   }
 
   return (
-    <motion.div
+    <Theme_Motion_Div
+      $color="primary"
       initial={motionPropsR.initial}
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
-      className="w-full sm:w-[20rem] xs:h-[35rem] md:h-[31rem] mx-auto mb-4 text-justify bg-primary p-4 rounded-xl shadow-xl flex flex-col items-center justify-between"
+      className="w-full sm:w-[20rem] xs:h-[35rem] md:h-[31rem] mx-auto mb-4 text-justify p-4 rounded-xl shadow-xl flex flex-col items-center justify-between"
     >
       <div className="flex flex-col justify-center items-center w-full">
         <h3 className="mb-4 text-text text-[1.3rem] font-[500]">
@@ -44,14 +44,17 @@ const CourseCard = ({ course, index }) => {
         <p className="text-text text-justify mb-4 text-[1.15rem] md:text-[1rem]">
           {course.details}
         </p>
-        <Link
-          className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center px-3 py-2 text-[1rem] font-[400] w-[50%] self-center"
+        <Theme_Link
+          $bg="logo"
+          $hover="dark"
+          $text="textlight"
+          className="rounded-xl shadow-sm border-none text-center px-3 py-2 text-[1rem] font-[400] w-[50%] self-center"
           to={`/courses/` + course.id}
         >
           {otherText.courseCardButton}
-        </Link>
+        </Theme_Link>
       </div>
-    </motion.div>
+    </Theme_Motion_Div>
   );
 };
 

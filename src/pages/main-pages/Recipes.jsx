@@ -7,6 +7,7 @@ import {
   SearchForm,
   TransitionParent,
 } from "../../components";
+import { Theme_Button } from "../../styles";
 
 const Recipes = () => {
   const [offset, setOffset] = useState(0);
@@ -74,12 +75,15 @@ const Recipes = () => {
               {otherText.recipes.noMore}
             </h1>
           ) : (
-            <button
+            <Theme_Button
+              $bg="logo"
+              $hover="dark"
+              $text="textlight"
               onClick={showMore}
-              className="bg-logopink px-8 rounded-xl shadow-xl border-none hover:bg-pinkdark text-white py-3 text-[1.3rem] font-bold"
+              className="px-8 rounded-xl shadow-xl border-none py-3 text-[1.3rem] font-bold"
             >
               {otherText.recipes.show}
-            </button>
+            </Theme_Button>
           )}
         </>
       )}

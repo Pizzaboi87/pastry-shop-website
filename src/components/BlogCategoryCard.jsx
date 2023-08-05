@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { otherText } from "../constants";
 import { useContext, useEffect, useState } from "react";
 import { BlogContext } from "../context";
+import { Theme_Div } from "../styles";
 
 const BlogCategoryCard = () => {
   const [allBlogPost] = useContext(BlogContext);
@@ -40,14 +41,17 @@ const BlogCategoryCard = () => {
   ));
 
   return (
-    <div className="rounded-xl xl:mb-0 mb-6 flex flex-col h-fit bg-primary items-center justify-center shadow-xl px-3 py-3">
+    <Theme_Div
+      $color="primary"
+      className="rounded-xl xl:mb-0 mb-6 flex flex-col h-fit items-center justify-center shadow-xl px-3 py-3"
+    >
       <h1 className="mb-3 text-text text-[1.5rem] font-[600]">
         {otherText.blogCategoryCardTitle}
       </h1>
       <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
         {categoryItems}
       </ul>
-    </div>
+    </Theme_Div>
   );
 };
 

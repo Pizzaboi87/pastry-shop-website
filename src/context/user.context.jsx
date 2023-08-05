@@ -7,6 +7,7 @@ import {
   auth,
   getStoredImage,
 } from "../utils/firebase";
+import { Loading } from "../components";
 
 export const UserContext = createContext({
   currentUser: null,

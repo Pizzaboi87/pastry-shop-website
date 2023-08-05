@@ -1,6 +1,6 @@
 import { TransitionParent, UserPanel } from "../../components";
 import { otherText } from "../../constants";
-import { userPageStyle } from "../../styles";
+import { Theme_Button, userPageStyle } from "../../styles";
 
 const Settings = () => {
   return (
@@ -25,7 +25,14 @@ const Settings = () => {
             <input type="password" className={userPageStyle.input} />
           </label>
 
-          <button className={userPageStyle.passwordButton}>Change</button>
+          <Theme_Button
+            $bg="logo"
+            $hover="dark"
+            $text="textlight"
+            className={userPageStyle.passwordButton}
+          >
+            Change
+          </Theme_Button>
         </form>
 
         <hr className="my-8 border-dotted border-t-2 border-logopink" />
@@ -67,7 +74,14 @@ const Settings = () => {
             <p>Subscribe to our newsletter</p>
           </span>
 
-          <button className={userPageStyle.passwordButton}>Update</button>
+          <Theme_Button
+            $bg="logo"
+            $hover="dark"
+            $text="textlight"
+            className={userPageStyle.passwordButton}
+          >
+            Update
+          </Theme_Button>
         </form>
 
         <hr className="my-8 border-dotted border-t-2 border-logopink" />
@@ -81,7 +95,14 @@ const Settings = () => {
             <input type="password" className={userPageStyle.input} />
           </label>
 
-          <button className={userPageStyle.deleteButton}>Delete</button>
+          <Theme_Button
+            $bg="logo"
+            $hover="dark"
+            $text="textlight"
+            className={userPageStyle.deleteButton}
+          >
+            Delete
+          </Theme_Button>
         </form>
       </UserPanel>
     </TransitionParent>

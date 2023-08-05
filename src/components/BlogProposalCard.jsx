@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Theme_Div } from "../styles";
 
 const BlogProposalCard = ({ post }) => {
   const truncate = (inputString, length) => {
@@ -12,7 +12,10 @@ const BlogProposalCard = ({ post }) => {
 
   return (
     <Link to={`/blog/post/` + post.title.toLowerCase().split(" ").join("-")}>
-      <div className="bg-primary h-fit rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer">
+      <Theme_Div
+        $color="primary"
+        className="h-fit rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer"
+      >
         <img
           src={post.image}
           alt={post.title}
@@ -24,7 +27,7 @@ const BlogProposalCard = ({ post }) => {
           </h1>
           <p>{truncate(post.blurb, 55)}</p>
         </div>
-      </div>
+      </Theme_Div>
     </Link>
   );
 };

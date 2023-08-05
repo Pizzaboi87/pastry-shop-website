@@ -12,6 +12,7 @@ import {
   otherText,
 } from "../../constants";
 import { Link } from "react-router-dom";
+import { Theme_Link } from "../../styles";
 
 const Home = () => {
   const motionPropsR = slideIn("right");
@@ -44,24 +45,30 @@ const Home = () => {
             </p>
           </div>
 
-          <Link
+          <Theme_Link
             to={currentUser ? "/shop" : "/auth"}
-            className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center font-[500] px-8 py-3 text-[1.3rem] 2xl:inline-block hidden"
+            $bg="logo"
+            $hover="dark"
+            $text="textlight"
+            className="rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[1.3rem] 2xl:inline-block hidden"
             onClick={() => setIsReg(false)}
           >
             {otherText.homeButton}
-          </Link>
+          </Theme_Link>
         </motion.span>
 
         <Image dirPic="left" image={macaron} imgFirst={true} width={40} />
 
-        <Link
+        <Theme_Link
           to={currentUser ? "/shop" : "/auth"}
-          className="bg-logopink rounded-xl shadow-sm border-none hover:bg-pinkdark text-white text-center font-[500] px-8 py-3 text-[2rem] md:text-[3rem] xl:hidden inline-block mt-16 mb-0"
+          $bg="logo"
+          $hover="dark"
+          $text="textlight"
+          className="rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[2rem] md:text-[3rem] xl:hidden inline-block mt-16 mb-0"
           onClick={() => setIsReg(false)}
         >
           {otherText.homeButton}
-        </Link>
+        </Theme_Link>
       </div>
 
       <TextAndImage

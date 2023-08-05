@@ -3,7 +3,12 @@ import PhoneInput from "react-phone-input-2";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { otherText } from "../constants";
-import { courseFormStyle, phoneInputStyle } from "../styles";
+import {
+  Theme_Button,
+  Theme_Form,
+  courseFormStyle,
+  phoneInputStyle,
+} from "../styles";
 import "react-phone-input-2/lib/bootstrap.css";
 
 const CourseForm = ({ courses }) => {
@@ -91,8 +96,9 @@ const CourseForm = ({ courses }) => {
   };
 
   return (
-    <form
-      className="col-span-2 md:py-8 md:px-8 py-4 px-1 rounded-xl shadow-xl bg-primary"
+    <Theme_Form
+      $color="primary"
+      className="col-span-2 md:py-8 md:px-8 py-4 px-1 rounded-xl shadow-xl"
       onSubmit={handleSubmit}
     >
       <h1 className="md:text-4xl text-xl text-center text-text font-[500] mb-8">
@@ -162,7 +168,10 @@ const CourseForm = ({ courses }) => {
           className={courseFormStyle.input}
         />
       </label>
-      <button
+      <Theme_Button
+        $bg="logo"
+        $hover="dark"
+        $text="textlight"
         className={`${loading ? "cursor-progress" : "cursor-pointer"} ${
           courseFormStyle.button
         }`}
@@ -170,8 +179,8 @@ const CourseForm = ({ courses }) => {
         disabled={loading}
       >
         {loading ? otherText.courseForm.sending : otherText.courseForm.send}
-      </button>
-    </form>
+      </Theme_Button>
+    </Theme_Form>
   );
 };
 

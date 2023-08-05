@@ -1,10 +1,13 @@
 import UserAccountImage from "./UserAccountImage";
+import Loading from "./Loading";
 import { useContext } from "react";
 import { UserContext } from "../context";
 
 const UserPanel = ({ children }) => {
   const { userData, userImage, setUserImage, currentUser } =
     useContext(UserContext);
+
+  if (!userData || !userImage) return <Loading />;
 
   return (
     <>
