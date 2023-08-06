@@ -4,7 +4,12 @@ import { UserContext } from "../context";
 import { otherText } from "../constants";
 import { storeComment } from "../utils/firebase";
 import { v4 as uuidv4 } from "uuid";
-import { Theme_Button, blogCommentStyle } from "../styles";
+import {
+  Theme_Button,
+  Theme_Input,
+  Theme_Textarea,
+  blogCommentStyle,
+} from "../styles";
 
 const BlogCommentForm = ({ postID }) => {
   const { userData } = useContext(UserContext);
@@ -73,38 +78,41 @@ const BlogCommentForm = ({ postID }) => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col mt-4">
-      <textarea
+      <Theme_Textarea
         required
         name="comment"
         value={comment}
         onChange={handleChange}
         placeholder={otherText.blogCommentForm.commentPlaceholder}
         rows={5}
+        $outline="logo"
         className={blogCommentStyle.textarea}
       />
 
       <span className="flex w-full justify-evenly items-end">
         <label className={blogCommentStyle.label}>
           {otherText.blogCommentForm.name}
-          <input
+          <Theme_Input
             required
             disabled={userData.displayName ? true : false}
             type="text"
             name="author"
             value={author}
             onChange={handleChange}
+            $outline="logo"
             className={blogCommentStyle.input}
           />
         </label>
 
         <label className={blogCommentStyle.label}>
           {otherText.blogCommentForm.title}
-          <input
+          <Theme_Input
             required
             type="text"
             name="title"
             value={title}
             onChange={handleChange}
+            $outline="logo"
             className={blogCommentStyle.input}
           />
         </label>

@@ -12,6 +12,12 @@ import {
   Theme_Footer,
   Theme_Nav,
   Theme_Li,
+  Theme_Hr,
+  Theme_Input,
+  Theme_Textarea,
+  Theme_Stamp,
+  Theme_Select,
+  Theme_PhoneInput,
 } from "./styled-elements";
 
 const phoneInputStyle = {
@@ -34,26 +40,16 @@ const phoneInputStyle = {
 
 const userPhoneInputStyle = {
   width: "100%",
-  height: "2.3rem",
+  height: "100%",
+  padding: "0 0 0 4rem",
+  margin: "0.6rem 0 0 0",
   fontSize: "1rem",
   fontWeight: "400",
-  borderRadius: "10px",
   outline: "none",
   border: "none",
-  padding: "0.5rem 4rem",
-  marginTop: "0.5rem",
   color: "#2f2f2f",
-  backgroundColor: "#fff",
-  outlineStyle: "dotted",
-  outlineOffset: "2px",
-  outlineWidth: "2px",
-  outlineColor: "#e45a84",
-};
-
-const stampStyle = {
-  background: "#e45a84 radial-gradient(#fff 0, #fff 7px, transparent 7px)",
-  backgroundSize: "20px 20px",
-  backgroundPosition: "-10px",
+  display: "flex",
+  alignItems: "center",
 };
 
 const recolorStyle = {
@@ -114,9 +110,9 @@ const awningStyle = {
 
 const blogCommentStyle = {
   input:
-    "w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-3 rounded-xl outline-none outline-dotted outline-logopink",
+    "w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-3 rounded-xl outline-none outline-dotted",
   textarea:
-    "bg-white rounded-2xl shadow-xl p-6 w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] outline-none outline-dotted outline-logopink mb-4",
+    "bg-white rounded-2xl shadow-xl p-6 w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] outline-none outline-dotted mb-4",
   label:
     "w-[30%] flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
   button:
@@ -133,17 +129,17 @@ const courseFormStyle = {
 
 const postcardStyle = {
   stampImage:
-    "absolute lg:border-[0.3125rem] md:border-[0.2rem] border-[0.15rem] border-logopink lg:top-2 md:top-[0.75rem] top-[0.5rem] lg:left-2 left-[0.5rem] lg:w-[11.5rem] md:w-[6.5rem] w-[5.25rem] lg:h-[9rem] h-[4rem] bg-stamp bg-cover",
+    "absolute lg:border-[0.3125rem] md:border-[0.2rem] border-[0.15rem] lg:top-2 md:top-[0.75rem] top-[0.5rem] lg:left-2 left-[0.5rem] lg:w-[11.5rem] md:w-[6.5rem] w-[5.25rem] lg:h-[9rem] h-[4rem] bg-stamp bg-cover",
   message:
     "font-letter text-text xl:text-[2.2rem] sm:text-[1.3rem] text-[1rem]",
-  addressWrapper: "sm:w-[70%] ms:w-[45%] w-[60%] border-b-4 border-logopink",
+  addressWrapper: "sm:w-[70%] ms:w-[45%] w-[60%] border-b-4",
   address:
     "font-letter text-text xl:text-[2.7rem] sm:text-[1.8rem] text-[1.4rem] ml-8",
 };
 
 const signInFormStyle = {
   input:
-    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted outline-logopink",
+    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted",
   label:
     "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
   button:
@@ -154,7 +150,7 @@ const signInFormStyle = {
 
 const signUpFormStyle = {
   input:
-    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted outline-logopink",
+    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted",
   label:
     "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1 mt-4",
   button:
@@ -177,7 +173,7 @@ const adminLoginStyle = {
 
 const userPageStyle = {
   input:
-    "text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted outline-logopink",
+    "text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted",
   label: "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] py-4",
   button:
     "py-1 rounded-xl shadow-xl border-none text-[1.2rem] font-[500] col-span-1 col-start-7",
@@ -200,7 +196,6 @@ const titleStyle =
 
 export {
   phoneInputStyle,
-  stampStyle,
   recolorStyle,
   shadowStyle,
   authStyle,
@@ -236,4 +231,10 @@ export {
   Theme_Footer,
   Theme_Nav,
   Theme_Li,
+  Theme_Hr,
+  Theme_Input,
+  Theme_Textarea,
+  Theme_Stamp,
+  Theme_Select,
+  Theme_PhoneInput,
 };

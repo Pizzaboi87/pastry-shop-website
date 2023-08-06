@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Theme_Button, signUpFormStyle } from "../styles";
+import { Theme_Button, Theme_Input, signUpFormStyle } from "../styles";
 import { otherText } from "../constants";
 import {
   createUserDocumentFromAuth,
@@ -118,11 +118,12 @@ const SignUpForm = () => {
       <form className="flex flex-col items-start" onSubmit={handleSubmit}>
         <label className={signUpFormStyle.label}>
           {otherText.signUpForm.userName}
-          <input
+          <Theme_Input
             required
             type="text"
             name="displayName"
             value={displayName}
+            $outline="logo"
             onChange={handleChange}
             className={signUpFormStyle.input}
           />
@@ -130,11 +131,12 @@ const SignUpForm = () => {
 
         <label className={signUpFormStyle.label}>
           {otherText.signUpForm.email}
-          <input
+          <Theme_Input
             required
             type="email"
             name="email"
             value={email}
+            $outline="logo"
             onChange={handleChange}
             className={signUpFormStyle.input}
           />
@@ -142,11 +144,12 @@ const SignUpForm = () => {
 
         <label className={signUpFormStyle.label}>
           {otherText.signUpForm.password}
-          <input
+          <Theme_Input
             required
             type="password"
             name="password"
             value={password}
+            $outline="logo"
             onChange={handleChange}
             className={signUpFormStyle.input}
           />
@@ -154,11 +157,12 @@ const SignUpForm = () => {
 
         <label className={signUpFormStyle.label}>
           {otherText.signUpForm.confirmPassword}
-          <input
+          <Theme_Input
             required
             type="password"
             name="confirmPassword"
             value={confirmPassword}
+            $outline="logo"
             onChange={handleChange}
             className={signUpFormStyle.input}
           />

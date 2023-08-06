@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Theme_Button, signInFormStyle } from "../styles";
+import { Theme_Button, Theme_Input, signInFormStyle } from "../styles";
 import { otherText } from "../constants";
 import {
   signInWithGoogleRedirect,
@@ -106,11 +106,12 @@ const SignInForm = () => {
       <form className="flex flex-col items-start" onSubmit={handleSubmit}>
         <label className={signInFormStyle.label}>
           {otherText.signInForm.email}
-          <input
+          <Theme_Input
             required
             type="email"
             name="email"
             value={email}
+            $outline="logo"
             onChange={handleChange}
             className={signInFormStyle.input}
           />
@@ -118,11 +119,12 @@ const SignInForm = () => {
 
         <label className={`${signInFormStyle.label} mt-4`}>
           {otherText.signInForm.password}
-          <input
+          <Theme_Input
             required
             type="password"
             name="password"
             value={password}
+            $outline="logo"
             onChange={handleChange}
             className={signInFormStyle.input}
           />
