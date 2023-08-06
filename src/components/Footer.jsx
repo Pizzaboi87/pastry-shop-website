@@ -1,19 +1,37 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "../context";
+import { ThemeContext, UserContext } from "../context";
 import { footerLinks, otherText } from "../constants/";
-import { jam } from "../assets/";
-import {
-  Theme_Div,
-  Theme_Footer,
-  Theme_Link,
-  Theme_P,
-  recolorStyle,
-} from "../styles";
+import { Theme_Div, Theme_Footer, Theme_Link, Theme_P } from "../styles";
 
 const Footer = () => {
   const { currentUser } = useContext(UserContext);
+  const { theme } = useContext(ThemeContext);
+  const [jamPic, setJamPic] = useState(null);
   const [adminUID, setAdminUID] = useState(false);
+
+  useEffect(() => {
+    const importPic = async () => {
+      let picModule;
+      switch (theme) {
+        case "blue":
+          picModule = await import("../assets/jam-blue.webp");
+          break;
+        case "green":
+          picModule = await import("../assets/jam-green.webp");
+          break;
+        case "brown":
+          picModule = await import("../assets/jam-brown.webp");
+          break;
+        default:
+          picModule = await import("../assets/jam-pink.webp");
+          break;
+      }
+      setJamPic(picModule.default);
+    };
+
+    importPic();
+  }, [theme]);
 
   useEffect(() => {
     if (currentUser && currentUser.uid === import.meta.env.VITE_ADMIN_UID)
@@ -26,7 +44,7 @@ const Footer = () => {
       $bgcolor="light"
       className="w-full flex flex-col xl:mt-24 mt-8 text-text"
     >
-      <img src={jam} alt="jam" className="h-[7rem]" style={recolorStyle} />
+      <img src={jamPic} alt="jam" className="h-[7rem]" />
       <div className="flex flex-wrap sm:flex-row flex-col justify-between items-center sm:px-20">
         <div className="flex flex-col items-center justify-center">
           <div

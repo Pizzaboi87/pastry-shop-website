@@ -7,8 +7,10 @@ import eclair from "./eclair.webp";
 import error404 from "./error404.gif";
 import gift from "./gift.webp";
 import history from "./history.webp";
-import jam from "./jam.webp";
-import jelly from "./jelly.webp";
+import jamblue from "./jam-blue.webp";
+import jambrown from "./jam-brown.webp";
+import jamgreen from "./jam-green.webp";
+import jampink from "./jam-pink.webp";
 import loading from "./loading.gif";
 import logo from "./logo.png";
 import macaron from "./macaron.webp";
@@ -28,8 +30,10 @@ export {
   error404,
   gift,
   history,
-  jam,
-  jelly,
+  jamblue,
+  jambrown,
+  jamgreen,
+  jampink,
   loading,
   logo,
   macaron,

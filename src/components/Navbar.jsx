@@ -121,10 +121,11 @@ const Navbar = () => {
       </Theme_Nav>
 
       {/* -----------Desktop Profile Submenu----------- */}
-      <div
+      <Theme_Div
+        $bgcolor="secondary"
         className={`${
           openMyAccount ? "h-[13rem]" : "h-0"
-        } lg:visible invisible fixed 3xl:right-[12rem] 2xl:right-[8rem] right-4 top-[8rem] bg-white w-[13rem] rounded-b-xl shadow-xl z-[9]  transition-all duration-500 ease-in-out`}
+        } lg:visible invisible fixed 3xl:right-[12rem] 2xl:right-[8rem] right-4 top-[8rem] w-[13rem] rounded-b-xl shadow-xl z-[9]  transition-all duration-500 ease-in-out`}
       >
         <ul
           className={`${
@@ -156,7 +157,7 @@ const Navbar = () => {
             </button>
           </Theme_Li>
         </ul>
-      </div>
+      </Theme_Div>
 
       {/* -----------Mobile Nav----------- */}
       <nav>

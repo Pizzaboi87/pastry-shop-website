@@ -12,10 +12,6 @@
   font-family: "Montserrat", sans-serif;
 }
 
-body {
-  background: #f5edef;
-}
-
 .fadeInPage {
   animation: 0.5s fadeIn forwards;
 }

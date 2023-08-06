@@ -65,7 +65,7 @@ const Home = () => {
             $bgcolor="logo"
             $hoverbgcolor="dark"
             $textcolor="textlight"
-            className="rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[1.3rem] 2xl:inline-block hidden"
+            className="rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[2rem] md:text-[3rem] xl:hidden inline-block mt-16 mb-0"
             onClick={() => setIsReg(false)}
           >
             {otherText.homeButton}

@@ -2,6 +2,7 @@ import UserAccountImage from "./UserAccountImage";
 import Loading from "./Loading";
 import { useContext } from "react";
 import { UserContext } from "../context";
+import { Theme_Div } from "../styles";
 
 const UserPanel = ({ children }) => {
   const { userData, userImage, setUserImage, currentUser } =
@@ -18,9 +19,12 @@ const UserPanel = ({ children }) => {
         currentUser={currentUser}
       />
 
-      <div className="col-span-5 bg-white rounded-2xl shadow-inner shadow-black p-12">
+      <Theme_Div
+        $bgcolor="background"
+        className="col-span-5 rounded-2xl shadow-inner shadow-black p-12"
+      >
         {children}
-      </div>
+      </Theme_Div>
     </>
   );
 };

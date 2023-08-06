@@ -50,6 +50,7 @@ const userPhoneInputStyle = {
   color: "#2f2f2f",
   display: "flex",
   alignItems: "center",
+  backgroundColor: "white",
 };
 
 const recolorStyle = {
