@@ -27,7 +27,7 @@ const ReviewCard = ({ review }) => {
 
   return (
     <Theme_Div
-      $bg="primary"
+      $bgcolor="primary"
       className="mx-auto xs:w-[20rem] w-[16rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing"
     >
       <img
@@ -36,8 +36,8 @@ const ReviewCard = ({ review }) => {
         className="w-full h-[25%] bg-cover rounded-t-xl object-cover"
       />
       <Theme_Img
-        $bg="primary"
-        $border="primary"
+        $bgcolor="primary"
+        $bordercolor="primary"
         src={image}
         alt="profile"
         className="rounded-full w-[10rem] h-[10rem] absolute top-[10%] object-cover border-4"

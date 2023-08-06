@@ -129,7 +129,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           placeholder="Your name"
           name="fullName"
           value={fullName}
-          $outline="logo"
+          $outlinecolor="logo"
           onChange={handleChange}
           className={userPageStyle.input}
         />
@@ -142,7 +142,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           placeholder="Your username"
           name="displayName"
           value={displayName}
-          $outline="logo"
+          $outlinecolor="logo"
           onChange={handleChange}
           className={userPageStyle.input}
         />
@@ -155,7 +155,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           disabled
           placeholder="Your email address"
           name="email"
-          $outline="logo"
+          $outlinecolor="logo"
           value={email}
           onChange={handleChange}
           className={`${userPageStyle.input} disabled:bg-[#f0f0f0] cursor-not-allowed`}
@@ -164,7 +164,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
 
       <label className={`${userPageStyle.label} col-span-3 col-start-5`}>
         {otherText.userAccountForm.phone}
-        <Theme_PhoneInput $outline="logo">
+        <Theme_PhoneInput $outlinecolor="logo">
           <PhoneInput
             required
             country={"hu"}
@@ -181,7 +181,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           placeholder="Your country"
           name="country"
           value={country}
-          $outline="logo"
+          $outlinecolor="logo"
           onChange={handleChange}
           className={userPageStyle.input}
         />
@@ -194,7 +194,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           placeholder="Your city"
           name="city"
           value={city}
-          $outline="logo"
+          $outlinecolor="logo"
           onChange={handleChange}
           className={userPageStyle.input}
         />
@@ -207,7 +207,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           placeholder="Your address"
           name="address"
           value={address}
-          $outline="logo"
+          $outlinecolor="logo"
           onChange={handleChange}
           className={userPageStyle.input}
         />
@@ -220,14 +220,14 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           placeholder="Your ZIP code"
           name="zipCode"
           value={zipCode}
-          $outline="logo"
+          $outlinecolor="logo"
           onChange={handleChange}
           className={userPageStyle.input}
         />
       </label>
       <Theme_Button
-        $bg="logo"
-        $hover="dark"
+        $bgcolor="logo"
+        $hoverbgcolor="dark"
         $textcolor="textlight"
         className={`${userPageStyle.button} ${
           isLoading ? "cursor-progress" : "cursor-pointer"

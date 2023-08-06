@@ -136,7 +136,7 @@ const SignUpForm = () => {
             type="email"
             name="email"
             value={email}
-            $outline="logo"
+            $outlinecolor="logo"
             onChange={handleChange}
             className={signUpFormStyle.input}
           />
@@ -149,7 +149,7 @@ const SignUpForm = () => {
             type="password"
             name="password"
             value={password}
-            $outline="logo"
+            $outlinecolor="logo"
             onChange={handleChange}
             className={signUpFormStyle.input}
           />
@@ -162,14 +162,14 @@ const SignUpForm = () => {
             type="password"
             name="confirmPassword"
             value={confirmPassword}
-            $outline="logo"
+            $outlinecolor="logo"
             onChange={handleChange}
             className={signUpFormStyle.input}
           />
         </label>
 
         <Theme_Button
-          $bg="logo"
+          $bgcolor="logo"
           $hover="dark"
           $textcolor="textlight"
           type="submit"

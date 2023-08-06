@@ -10,7 +10,7 @@ const MyCart = () => {
       </Theme_H1>
 
       <UserPanel>
-        <Theme_Div $bg="primary" className="w-full h-[30rem]">
+        <Theme_Div $bgcolor="primary" className="w-full h-[30rem]">
           My Cart
         </Theme_Div>
       </UserPanel>

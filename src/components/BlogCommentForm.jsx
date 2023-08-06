@@ -85,7 +85,7 @@ const BlogCommentForm = ({ postID }) => {
         onChange={handleChange}
         placeholder={otherText.blogCommentForm.commentPlaceholder}
         rows={5}
-        $outline="logo"
+        $outlinecolor="logo"
         className={blogCommentStyle.textarea}
       />
 
@@ -99,7 +99,7 @@ const BlogCommentForm = ({ postID }) => {
             name="author"
             value={author}
             onChange={handleChange}
-            $outline="logo"
+            $outlinecolor="logo"
             className={blogCommentStyle.input}
           />
         </label>
@@ -112,15 +112,15 @@ const BlogCommentForm = ({ postID }) => {
             name="title"
             value={title}
             onChange={handleChange}
-            $outline="logo"
+            $outlinecolor="logo"
             className={blogCommentStyle.input}
           />
         </label>
 
         <Theme_Button
           type="submit"
-          $bg="logo"
-          $hover="dark"
+          $bgcolor="logo"
+          $hoverbgcolor="dark"
           $textcolor="textlight"
           className={blogCommentStyle.button}
         >

@@ -17,7 +17,7 @@ const BlogComment = () => {
   return (
     <div className="col-span-4 mb-16">
       <Theme_Div
-        $bg="primary"
+        $bgcolor="primary"
         className="w-full rounded-2xl shadow-xl p-6 mb-16"
       >
         <h1 className="text-text text-[1.3rem] font-[600] mb-16">

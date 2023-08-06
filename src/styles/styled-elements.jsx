@@ -5,410 +5,193 @@ import { colors } from "./colors";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import PhoneInput from "react-phone-input-2";
+
+const getTextColor = (props) => {
+  const { theme } = useContext(ThemeContext);
+
+  switch (theme) {
+    case "blue":
+      return colors.blue[props.$textcolor];
+    case "green":
+      return colors.green[props.$textcolor];
+    case "brown":
+      return colors.brown[props.$textcolor];
+    default:
+      return colors.pink[props.$textcolor];
+  }
+};
+
+const getBackgroundColor = (props) => {
+  const { theme } = useContext(ThemeContext);
+
+  switch (theme) {
+    case "blue":
+      return colors.blue[props.$bgcolor];
+    case "green":
+      return colors.green[props.$bgcolor];
+    case "brown":
+      return colors.brown[props.$bgcolor];
+    default:
+      return colors.pink[props.$bgcolor];
+  }
+};
+
+const getBorderColor = (props) => {
+  const { theme } = useContext(ThemeContext);
+
+  switch (theme) {
+    case "blue":
+      return colors.blue[props.$bordercolor];
+    case "green":
+      return colors.green[props.$bordercolor];
+    case "brown":
+      return colors.brown[props.$bordercolor];
+    default:
+      return colors.pink[props.$bordercolor];
+  }
+};
+
+const getHoverTextColor = (props) => {
+  const { theme } = useContext(ThemeContext);
+
+  switch (theme) {
+    case "blue":
+      return colors.blue[props.$hovertextcolor];
+    case "green":
+      return colors.green[props.$hovertextcolor];
+    case "brown":
+      return colors.brown[props.$hovertextcolor];
+    default:
+      return colors.pink[props.$hovertextcolor];
+  }
+};
+
+const getHoverBackgroundColor = (props) => {
+  const { theme } = useContext(ThemeContext);
+
+  switch (theme) {
+    case "blue":
+      return colors.blue[props.$hoverbgcolor];
+    case "green":
+      return colors.green[props.$hoverbgcolor];
+    case "brown":
+      return colors.brown[props.$hoverbgcolor];
+    default:
+      return colors.pink[props.$hoverbgcolor];
+  }
+};
+
+const getIconColor = (props) => {
+  const { theme } = useContext(ThemeContext);
+
+  switch (theme) {
+    case "blue":
+      return colors.blue[props.$iconcolor];
+    case "green":
+      return colors.green[props.$iconcolor];
+    case "brown":
+      return colors.brown[props.$iconcolor];
+    default:
+      return colors.pink[props.$iconcolor];
+  }
+};
+
+const getOutlineColor = (props) => {
+  const { theme } = useContext(ThemeContext);
+
+  switch (theme) {
+    case "blue":
+      return colors.blue[props.$outlinecolor];
+    case "green":
+      return colors.green[props.$outlinecolor];
+    case "brown":
+      return colors.brown[props.$outlinecolor];
+    default:
+      return colors.pink[props.$outlinecolor];
+  }
+};
 
 export const Theme_H1 = styled.h1`
-  color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$textcolor];
-      case "green":
-        return colors.green[props.$textcolor];
-      case "brown":
-        return colors.brown[props.$textcolor];
-      default:
-        return colors.pink[props.$textcolor];
-    }
-  }};
+  color: ${getTextColor};
 `;
 
 export const Theme_P = styled.p`
-  color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$textcolor];
-      case "green":
-        return colors.green[props.$textcolor];
-      case "brown":
-        return colors.brown[props.$textcolor];
-      default:
-        return colors.pink[props.$textcolor];
-    }
-  }};
+  color: ${getTextColor};
 `;
 
 export const Theme_Li = styled.li`
-  color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$textcolor];
-      case "green":
-        return colors.green[props.$textcolor];
-      case "brown":
-        return colors.brown[props.$textcolor];
-      default:
-        return colors.pink[props.$textcolor];
-    }
-  }};
+  color: ${getTextColor};
   &:hover {
-    color: ${(props) => {
-      const { theme } = useContext(ThemeContext);
-
-      switch (theme) {
-        case "blue":
-          return colors.blue[props.$hovertext];
-        case "green":
-          return colors.green[props.$hovertext];
-        case "brown":
-          return colors.brown[props.$hovertext];
-        default:
-          return colors.pink[props.$hovertext];
-      }
-    }};
+    color: ${getHoverTextColor};
   }
 `;
 
 export const Theme_Div = styled.div`
-  background-color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$bg];
-      case "green":
-        return colors.green[props.$bg];
-      case "brown":
-        return colors.brown[props.$bg];
-      default:
-        return colors.pink[props.$bg];
-    }
-  }};
-  border-color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$border];
-      case "green":
-        return colors.green[props.$border];
-      case "brown":
-        return colors.brown[props.$border];
-      default:
-        return colors.pink[props.$border];
-    }
-  }};
+  background-color: ${getBackgroundColor};
+  border-color: ${getBorderColor};
 `;
 
 export const Theme_Motion_Div = styled(motion.div)`
-  background: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$bg];
-      case "green":
-        return colors.green[props.$bg];
-      case "brown":
-        return colors.brown[props.$bg];
-      default:
-        return colors.pink[props.$bg];
-    }
-  }};
+  background-color: ${getBackgroundColor};
 `;
 
 export const Theme_Motion_Span = styled(motion.span)`
-  color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$textcolor];
-      case "green":
-        return colors.green[props.$textcolor];
-      case "brown":
-        return colors.brown[props.$textcolor];
-      default:
-        return colors.pink[props.$textcolor];
-    }
-  }};
+  color: ${getTextColor};
 `;
 
 export const Theme_Form = styled.form`
-  background: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$bg];
-      case "green":
-        return colors.green[props.$bg];
-      case "brown":
-        return colors.brown[props.$bg];
-      default:
-        return colors.pink[props.$bg];
-    }
-  }};
+  background-color: ${getBackgroundColor};
 `;
 
 export const Theme_Img = styled.img`
-  background: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$bg];
-      case "green":
-        return colors.green[props.$bg];
-      case "brown":
-        return colors.brown[props.$bg];
-      default:
-        return colors.pink[props.$bg];
-    }
-  }};
-
-  border-color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$border];
-      case "green":
-        return colors.green[props.$border];
-      case "brown":
-        return colors.brown[props.$border];
-      default:
-        return colors.pink[props.$border];
-    }
-  }};
+  background-color: ${getBackgroundColor};
+  border-color: ${getBorderColor};
 `;
 
 export const Theme_Button = styled.button`
-  background: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$bg];
-      case "green":
-        return colors.green[props.$bg];
-      case "brown":
-        return colors.brown[props.$bg];
-      default:
-        return colors.pink[props.$bg];
-    }
-  }};
-  color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$textcolor];
-      case "green":
-        return colors.green[props.$textcolor];
-      case "brown":
-        return colors.brown[props.$textcolor];
-      default:
-        return colors.pink[props.$textcolor];
-    }
-  }};
-  border-color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$border];
-      case "green":
-        return colors.green[props.$border];
-      case "brown":
-        return colors.brown[props.$border];
-      default:
-        return colors.pink[props.$border];
-    }
-  }};
+  background-color: ${getBackgroundColor};
+  color: ${getTextColor};
+  border-color: ${getBorderColor};
   &:hover {
-    background: ${(props) => {
-      const { theme } = useContext(ThemeContext);
-      switch (theme) {
-        case "blue":
-          return colors.blue[props.$hover];
-        case "green":
-          return colors.green[props.$hover];
-        case "brown":
-          return colors.brown[props.$hover];
-        default:
-          return colors.pink[props.$hover];
-      }
-    }};
-    color: ${(props) => {
-      const { theme } = useContext(ThemeContext);
-      switch (theme) {
-        case "blue":
-          return colors.blue[props.$hovertext];
-        case "green":
-          return colors.green[props.$hovertext];
-        case "brown":
-          return colors.brown[props.$hovertext];
-        default:
-          return colors.pink[props.$hovertext];
-      }
-    }};
+    background-color: ${getHoverBackgroundColor};
+    color: ${getHoverTextColor};
   }
 `;
 
 export const Theme_Link = styled(Link)`
-  background: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$bg];
-      case "green":
-        return colors.green[props.$bg];
-      case "brown":
-        return colors.brown[props.$bg];
-      default:
-        return colors.pink[props.$bg];
-    }
-  }};
-  color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$textcolor];
-      case "green":
-        return colors.green[props.$textcolor];
-      case "brown":
-        return colors.brown[props.$textcolor];
-      default:
-        return colors.pink[props.$textcolor];
-    }
-  }};
+  color: ${getTextColor};
+  background-color: ${getBackgroundColor};
   &:hover {
-    color: ${(props) => {
-      const { theme } = useContext(ThemeContext);
-      switch (theme) {
-        case "blue":
-          return colors.blue[props.$hover];
-        case "green":
-          return colors.green[props.$hover];
-        case "brown":
-          return colors.brown[props.$hover];
-        default:
-          return colors.pink[props.$hover];
-      }
-    }};
+    color: ${getHoverTextColor};
+  }
 `;
 
 export const Theme_Icon = styled(Icon)`
-  color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$iconcolor];
-      case "green":
-        return colors.green[props.$iconcolor];
-      case "brown":
-        return colors.brown[props.$iconcolor];
-      default:
-        return colors.pink[props.$iconcolor];
-    }
-  }};
+  color: ${getIconColor};
 `;
 
 export const Theme_Footer = styled.footer`
-  background: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$bg];
-      case "green":
-        return colors.green[props.$bg];
-      case "brown":
-        return colors.brown[props.$bg];
-      default:
-        return colors.pink[props.$bg];
-    }
-  }};
+  background-color: ${getBackgroundColor};
 `;
 
 export const Theme_Nav = styled.nav`
-  background: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$bg];
-      case "green":
-        return colors.green[props.$bg];
-      case "brown":
-        return colors.brown[props.$bg];
-      default:
-        return colors.pink[props.$bg];
-    }
-  }};
+  background-color: ${getBackgroundColor};
 `;
 
 export const Theme_Hr = styled.hr`
-  border-color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$border];
-      case "green":
-        return colors.green[props.$border];
-      case "brown":
-        return colors.brown[props.$border];
-      default:
-        return colors.pink[props.$border];
-    }
-  }};
+  border-color: ${getBorderColor};
 `;
 
 export const Theme_Input = styled.input`
-  outline-color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$outline];
-      case "green":
-        return colors.green[props.$outline];
-      case "brown":
-        return colors.brown[props.$outline];
-      default:
-        return colors.pink[props.$outline];
-    }
-  }};
+  outline-color: ${getOutlineColor};
 `;
 
 export const Theme_Select = styled.select`
-  outline-color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$outline];
-      case "green":
-        return colors.green[props.$outline];
-      case "brown":
-        return colors.brown[props.$outline];
-      default:
-        return colors.pink[props.$outline];
-    }
-  }};
+  outline-color: ${getOutlineColor};
 `;
 
 export const Theme_Textarea = styled.textarea`
-  outline-color: ${(props) => {
-    const { theme } = useContext(ThemeContext);
-    switch (theme) {
-      case "blue":
-        return colors.blue[props.$outline];
-      case "green":
-        return colors.green[props.$outline];
-      case "brown":
-        return colors.brown[props.$outline];
-      default:
-        return colors.pink[props.$outline];
-    }
-  }};
+  outline-color: ${getOutlineColor};
 `;
 
 export const Theme_Stamp = styled.div`
@@ -417,16 +200,16 @@ export const Theme_Stamp = styled.div`
     let bgColor = "";
     switch (theme) {
       case "blue":
-        bgColor = colors.blue[props.$bg];
+        bgColor = colors.blue[props.$bgcolor];
         break;
       case "green":
-        bgColor = colors.green[props.$bg];
+        bgColor = colors.green[props.$bgcolor];
         break;
       case "brown":
-        bgColor = colors.brown[props.$bg];
+        bgColor = colors.brown[props.$bgcolor];
         break;
       default:
-        bgColor = colors.pink[props.$bg];
+        bgColor = colors.pink[props.$bgcolor];
         break;
     }
 
@@ -444,16 +227,16 @@ export const Theme_PhoneInput = styled.div`
     let outlineColor = "";
     switch (theme) {
       case "blue":
-        outlineColor = colors.blue[props.$outline];
+        outlineColor = colors.blue[props.$outlinecolor];
         break;
       case "green":
-        outlineColor = colors.green[props.$outline];
+        outlineColor = colors.green[props.$outlinecolor];
         break;
       case "brown":
-        outlineColor = colors.brown[props.$outline];
+        outlineColor = colors.brown[props.$outlinecolor];
         break;
       default:
-        outlineColor = colors.pink[props.$outline];
+        outlineColor = colors.pink[props.$outlinecolor];
         break;
     }
 

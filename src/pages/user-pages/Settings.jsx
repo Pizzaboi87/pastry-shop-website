@@ -22,7 +22,7 @@ const Settings = () => {
           <label className={`${userPageStyle.label} col-span-2 `}>
             Current Password
             <Theme_Input
-              $outline="logo"
+              $outlinecolor="logo"
               type="password"
               className={userPageStyle.input}
             />
@@ -31,7 +31,7 @@ const Settings = () => {
           <label className={`${userPageStyle.label} col-span-2 `}>
             New Password
             <Theme_Input
-              $outline="logo"
+              $outlinecolor="logo"
               type="password"
               className={userPageStyle.input}
             />
@@ -40,15 +40,15 @@ const Settings = () => {
           <label className={`${userPageStyle.label} col-span-2 `}>
             Confirm Password
             <Theme_Input
-              $outline="logo"
+              $outlinecolor="logo"
               type="password"
               className={userPageStyle.input}
             />
           </label>
 
           <Theme_Button
-            $bg="logo"
-            $hover="dark"
+            $bgcolor="logo"
+            $hoverbgcolor="dark"
             $textcolor="textlight"
             className={userPageStyle.passwordButton}
           >
@@ -56,13 +56,16 @@ const Settings = () => {
           </Theme_Button>
         </form>
 
-        <Theme_Hr $border="logo" className="my-8 border-dotted border-t-2" />
+        <Theme_Hr
+          $bordercolor="logo"
+          className="my-8 border-dotted border-t-2"
+        />
 
         <h2 className="text-text text-[1.4rem] font-[600]">Other Settings</h2>
         <form className="grid grid-cols-6 gap-x-8">
           <label className={`${userPageStyle.label} col-span-2 `}>
             Language
-            <Theme_Select $outline="logo" className={userPageStyle.input}>
+            <Theme_Select $outlinecolor="logo" className={userPageStyle.input}>
               <option value="en">English</option>
               <option value="fr">French</option>
               <option value="de">Spanish</option>
@@ -72,7 +75,7 @@ const Settings = () => {
 
           <label className={`${userPageStyle.label} col-span-2 `}>
             Currency
-            <Theme_Select $outline="logo" className={userPageStyle.input}>
+            <Theme_Select $outlinecolor="logo" className={userPageStyle.input}>
               <option value="usd">EUR</option>
               <option value="eur">USD</option>
               <option value="gbp">GBP</option>
@@ -82,7 +85,7 @@ const Settings = () => {
 
           <label className={`${userPageStyle.label} col-span-2 `}>
             Color Theme
-            <Theme_Select $outline="logo" className={userPageStyle.input}>
+            <Theme_Select $outlinecolor="logo" className={userPageStyle.input}>
               <option value="pink">Pink Delights Emporium</option>
               <option value="blue">Sky Blue Sweets</option>
               <option value="green">Minty Green Enchantment</option>
@@ -92,7 +95,7 @@ const Settings = () => {
 
           <span className="flex flex-row items-center gap-x-4 mb-2 col-span-5">
             <Theme_Input
-              $outline="logo"
+              $outlinecolor="logo"
               type="checkbox"
               className="w-[1rem] h-[1rem]"
             />
@@ -100,8 +103,8 @@ const Settings = () => {
           </span>
 
           <Theme_Button
-            $bg="logo"
-            $hover="dark"
+            $bgcolor="logo"
+            $hoverbgcolor="dark"
             $textcolor="textlight"
             className={userPageStyle.passwordButton}
           >
@@ -109,7 +112,10 @@ const Settings = () => {
           </Theme_Button>
         </form>
 
-        <Theme_Hr $border="logo" className="my-8 border-dotted border-t-2" />
+        <Theme_Hr
+          $bordercolor="logo"
+          className="my-8 border-dotted border-t-2"
+        />
 
         <h2 className="text-text text-[1.4rem] font-[600] mt-8">
           Delete Account
@@ -118,15 +124,15 @@ const Settings = () => {
           <label className={`${userPageStyle.label} col-span-2 `}>
             Password
             <Theme_Input
-              $outline="logo"
+              $outlinecolor="logo"
               type="password"
               className={userPageStyle.input}
             />
           </label>
 
           <Theme_Button
-            $bg="logo"
-            $hover="dark"
+            $bgcolor="logo"
+            $hoverbgcolor="dark"
             $textcolor="textlight"
             className={userPageStyle.deleteButton}
           >

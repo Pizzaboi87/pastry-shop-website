@@ -16,7 +16,7 @@ const Authentication = () => {
 
   return (
     <Theme_Div
-      $bg={isReg ? "glasslight" : "glassdark"}
+      $bgcolor={isReg ? "glasslight" : "glassdark"}
       className="glass shadow-xl md:-mt-40 -mt-20 lg:h-[102vh] h-[90vh] xl:w-[90%] 3xl:w-[80%] w-full rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative"
       style={containerStyle}
     >

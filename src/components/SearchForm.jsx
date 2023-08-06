@@ -39,8 +39,8 @@ const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
       />
       <Theme_Button
         type="submit"
-        $bg="logo"
-        $hover="dark"
+        $bgcolor="logo"
+        $hoverbgcolor="dark"
         $textcolor="textlight"
         className="px-4 py-3 cursor-pointer font-bold rounded-xl shadow-md"
       >

@@ -13,12 +13,12 @@ const BlogProposalCard = ({ post }) => {
   return (
     <Link to={`/blog/post/` + post.title.toLowerCase().split(" ").join("-")}>
       <Theme_Div
-        $bg="primary"
+        $bgcolor="primary"
         className="h-fit rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer"
       >
         <Theme_Img
-          $bg="logo"
-          $border="textlight"
+          $bgcolor="logo"
+          $bordercolor="textlight"
           src={post.image}
           alt={post.title}
           className="col-span-2 rounded-full w-[5rem] h-[5rem] object-cover border-2"

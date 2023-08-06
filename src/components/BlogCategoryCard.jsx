@@ -34,7 +34,7 @@ const BlogCategoryCard = () => {
     <li key={index}>
       <Link to={`/blog/category/${category}`}>
         <Theme_Button
-          $bg="logo"
+          $bgcolor="logo"
           $textcolor="textlight"
           className="rounded-xl py-1 px-2 shadow-sm font-[700] text-[1rem] cursor-pointer"
         >
@@ -46,7 +46,7 @@ const BlogCategoryCard = () => {
 
   return (
     <Theme_Div
-      $bg="primary"
+      $bgcolor="primary"
       className="rounded-xl xl:mb-0 mb-6 flex flex-col h-fit items-center justify-center shadow-xl px-3 py-3"
     >
       <h1 className="mb-3 text-text text-[1.5rem] font-[600]">

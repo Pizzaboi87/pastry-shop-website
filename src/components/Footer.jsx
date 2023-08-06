@@ -23,7 +23,7 @@ const Footer = () => {
 
   return (
     <Theme_Footer
-      $bg="light"
+      $bgcolor="light"
       className="w-full flex flex-col xl:mt-24 mt-8 text-text"
     >
       <img src={jam} alt="jam" className="h-[7rem]" style={recolorStyle} />
@@ -55,7 +55,7 @@ const Footer = () => {
                     key={item.title}
                     className="font-[300] sm:text-[1rem] text-[1.2rem]"
                   >
-                    <Theme_Link to={item.url} $hover="logo">
+                    <Theme_Link to={item.url} $hovertextcolor="logo">
                       {item.title}
                     </Theme_Link>
                   </li>
@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
       </div>
       <Theme_Div
-        $border="logo"
+        $bordercolor="logo"
         className="flex justify-end flex-wrap sm:px-16 px-6 py-2 border-t-2 border-dotted"
       >
         <span className="flex gap-4 font-[300] text-[1rem]">

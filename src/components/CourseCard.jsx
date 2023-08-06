@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { slideIn } from "../utils/motion";
 import { otherText } from "../constants";
-import { Theme_Link, Theme_Motion_Div } from "../styles";
+import { Theme_Button, Theme_Motion_Div } from "../styles";
+import { Link } from "react-router-dom";
 
 const CourseCard = ({ course, index }) => {
   const motionPropsR = slideIn("right", index * 0.25);
@@ -22,7 +23,7 @@ const CourseCard = ({ course, index }) => {
 
   return (
     <Theme_Motion_Div
-      $bg="primary"
+      $bgcolor="primary"
       initial={motionPropsR.initial}
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
@@ -44,15 +45,19 @@ const CourseCard = ({ course, index }) => {
         <p className="text-text text-justify mb-4 text-[1.15rem] md:text-[1rem]">
           {course.details}
         </p>
-        <Theme_Link
-          $bg="logo"
-          $hover="dark"
-          $textcolor="textlight"
-          className="rounded-xl shadow-sm border-none text-center px-3 py-2 text-[1rem] font-[400] w-[50%] self-center"
+        <Link
           to={`/courses/` + course.id}
+          className="flex w-full justify-center"
         >
-          {otherText.courseCardButton}
-        </Theme_Link>
+          <Theme_Button
+            $bgcolor="logo"
+            $hoverbgcolor="dark"
+            $textcolor="textlight"
+            className="rounded-xl shadow-sm border-none text-center px-3 py-2 text-[1rem] font-[400] w-[50%]"
+          >
+            {otherText.courseCardButton}
+          </Theme_Button>
+        </Link>
       </div>
     </Theme_Motion_Div>
   );

@@ -111,7 +111,7 @@ const SignInForm = () => {
             type="email"
             name="email"
             value={email}
-            $outline="logo"
+            $outlinecolor="logo"
             onChange={handleChange}
             className={signInFormStyle.input}
           />
@@ -124,7 +124,7 @@ const SignInForm = () => {
             type="password"
             name="password"
             value={password}
-            $outline="logo"
+            $outlinecolor="logo"
             onChange={handleChange}
             className={signInFormStyle.input}
           />
@@ -132,8 +132,8 @@ const SignInForm = () => {
 
         <Theme_Button
           type="submit"
-          $bg="logo"
-          $hover="dark"
+          $bgcolor="logo"
+          $hoverbgcolor="dark"
           $textcolor="textlight"
           className={signInFormStyle.button}
         >
@@ -146,7 +146,7 @@ const SignInForm = () => {
       </button>
 
       <Theme_Button
-        $border="logo"
+        $bordercolor="logo"
         className={signInFormStyle.forgotButton}
         onClick={handleGoogleSignIn}
       >

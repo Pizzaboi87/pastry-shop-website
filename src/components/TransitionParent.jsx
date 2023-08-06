@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const TransitionParent = ({ children, isHome, isFlex, isRew }) => {
   return (
     <Theme_Motion_Div
-      $bg={isHome ? "transparent" : "glasslight"}
+      $bgcolor={isHome ? "transparent" : "glasslight"}
       className={`
         ${
           isHome

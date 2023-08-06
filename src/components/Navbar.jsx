@@ -32,12 +32,16 @@ const Navbar = () => {
     <>
       {/* -----------Desktop Nav----------- */}
       <Theme_Nav
-        $bg="secondary"
+        $bgcolor="secondary"
         className="lg:visible invisible 2xl:w-[85%] w-full h-[7rem] fixed pt-4 top-7 rounded-2xl flex items-center justify-around text-[1rem] 2xl:text-[1.3rem] font-[400] shadow-md z-10"
       >
         <ul className="flex justify-center items-center 2xl:gap-12 gap-8">
           {navLinksLeft.map((link) => (
-            <Theme_Li key={link.title} $hovertext="logo" className="text-text">
+            <Theme_Li
+              key={link.title}
+              $hovertextcolor="logo"
+              className="text-text"
+            >
               <Link to={link.id} onClick={() => setOpenMyAccount(false)}>
                 {link.title}
               </Link>
@@ -53,7 +57,11 @@ const Navbar = () => {
           </li>
 
           {navLinksRight.map((link) => (
-            <Theme_Li key={link.title} $hovertext="logo" className="text-text">
+            <Theme_Li
+              key={link.title}
+              $hovertextcolor="logo"
+              className="text-text"
+            >
               <Link to={link.id} onClick={() => setOpenMyAccount(false)}>
                 {link.title}
               </Link>
@@ -65,7 +73,7 @@ const Navbar = () => {
               <span>
                 <Theme_Link
                   to="auth"
-                  $hover="logo"
+                  $hovertextcolor="logo"
                   className="text-text"
                   onClick={() => {
                     setIsReg(true);
@@ -75,31 +83,32 @@ const Navbar = () => {
                   {otherText.navbar.reg}
                 </Theme_Link>{" "}
                 /{" "}
-                <Theme_Link
-                  to="auth"
-                  $bg="logo"
-                  $hover="dark"
-                  $textcolor="textlight"
-                  className="rounded-xl shadow-sm border-none text-center font-[400] px-8 py-1"
-                  onClick={() => {
-                    setIsReg(false);
-                    () => setOpenMyAccount(false);
-                  }}
-                >
-                  {otherText.navbar.login}
-                </Theme_Link>
+                <Link to="auth">
+                  <Theme_Button
+                    $bgcolor="logo"
+                    $hoverbgcolor="dark"
+                    $textcolor="textlight"
+                    className="rounded-xl shadow-sm border-none text-center font-[400] px-8 py-1"
+                    onClick={() => {
+                      setIsReg(false);
+                      () => setOpenMyAccount(false);
+                    }}
+                  >
+                    {otherText.navbar.login}
+                  </Theme_Button>
+                </Link>
               </span>
             </li>
           ) : (
             <>
-              <Theme_Li $hovertext="logo" className="text-text">
+              <Theme_Li $hovertextcolor="logo" className="text-text">
                 <Link to="/shop" onClick={() => setOpenMyAccount(false)}>
                   {otherText.navbar.shop}
                 </Link>
               </Theme_Li>
               <li>
                 <Theme_Button
-                  $hovertext="logo"
+                  $hovertextcolor="logo"
                   className="text-text"
                   onClick={() => setOpenMyAccount(!openMyAccount)}
                 >
@@ -127,7 +136,7 @@ const Navbar = () => {
           {myAccount.map((item) => (
             <Theme_Li
               key={item.title}
-              $hovertext="logo"
+              $hovertextcolor="logo"
               className="text-text text-[1.2rem]"
             >
               <Link to={item.id} onClick={() => setOpenMyAccount(false)}>
@@ -135,7 +144,7 @@ const Navbar = () => {
               </Link>
             </Theme_Li>
           ))}
-          <Theme_Li $hovertext="logo" className="text-text text-[1.2rem]">
+          <Theme_Li $hovertextcolor="logo" className="text-text text-[1.2rem]">
             <button
               onClick={() => {
                 signOutUser();
@@ -158,7 +167,7 @@ const Navbar = () => {
           onClick={() => setOpenMenu(!openMenu)}
         />
         <Theme_Div
-          $bg="light"
+          $bgcolor="light"
           className="bg-main bg-mobBackground fixed top-0 left-0 z-[12] flex items-center justify-center"
           style={openMenu ? menuOnStyle : menuOffStyle}
         >
@@ -166,7 +175,7 @@ const Navbar = () => {
             {navLinksLeft.map((link) => (
               <Theme_Li
                 key={link.title}
-                $hovertext="logo"
+                $hovertextcolor="logo"
                 className="text-text"
               >
                 <Link to={link.id} onClick={() => setOpenMenu(!openMenu)}>
@@ -177,7 +186,7 @@ const Navbar = () => {
             {navLinksRight.map((link) => (
               <Theme_Li
                 key={link.title}
-                $hovertext="logo"
+                $hovertextcolor="logo"
                 className="text-text"
               >
                 <Link to={link.id} onClick={() => setOpenMenu(!openMenu)}>
@@ -189,7 +198,7 @@ const Navbar = () => {
               <>
                 <Theme_Link
                   to="auth"
-                  $hover="logo"
+                  $hovertextcolor="logo"
                   onClick={() => {
                     setOpenMenu(!openMenu);
                     setIsReg(true);
@@ -198,28 +207,29 @@ const Navbar = () => {
                 >
                   {otherText.navbar.reg}
                 </Theme_Link>
-                <Theme_Link
-                  to="auth"
-                  $hover="logo"
-                  onClick={() => {
-                    setOpenMenu(!openMenu);
-                    setIsReg(false);
-                  }}
-                  className="text-text"
-                >
-                  {otherText.navbar.login}
-                </Theme_Link>
+                <Link to="auth">
+                  <Theme_Button
+                    $hoverbgcolor="logo"
+                    onClick={() => {
+                      setOpenMenu(!openMenu);
+                      setIsReg(false);
+                    }}
+                    className="text-text"
+                  >
+                    {otherText.navbar.login}
+                  </Theme_Button>
+                </Link>
               </>
             ) : (
               <>
-                <Theme_Li $hovertext="logo" className="text-text">
+                <Theme_Li $hovertextcolor="logo" className="text-text">
                   <Link to="/shop" onClick={() => setOpenMenu(!openMenu)}>
                     {otherText.navbar.shop}
                   </Link>
                 </Theme_Li>
                 <li>
                   <Theme_Button
-                    $hovertext="logo"
+                    $hovertextcolor="logo"
                     className="text-text"
                     onClick={() => {
                       setOpenMenu(!openMenu);

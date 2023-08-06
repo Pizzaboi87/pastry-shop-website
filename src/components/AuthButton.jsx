@@ -7,8 +7,8 @@ const AuthButton = ({ text, btnText, setIsReg, isReg }) => {
         {text}
       </h2>
       <Theme_Button
-        $bg="logo"
-        $hover="dark"
+        $bgcolor="logo"
+        $hoverbgcolor="dark"
         $textcolor="textlight"
         className="rounded-xl shadow-sm border-none font-[400] text-center px-3 xs:py-2 py-1"
         onClick={() => setIsReg(!isReg)}
