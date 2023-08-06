@@ -3,7 +3,7 @@ import { macaron, eclair, cream } from "../../assets";
 import { slideIn } from "../../utils/motion";
 import { Image, TextAndImage, TransitionParent } from "../../components";
 import { IsRegContext, UserContext } from "../../context";
-import { Theme_Button, Theme_Link, Theme_Motion_Span } from "../../styles";
+import { Theme_Button, Theme_Motion_Span } from "../../styles";
 import {
   homeTitle,
   homeSubtitle,

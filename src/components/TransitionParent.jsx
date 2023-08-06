@@ -1,5 +1,5 @@
-import { Theme_Motion_Div } from "../styles";
 import ScrollToTop from "./ScrollToTop";
+import { Theme_Motion_Div } from "../styles";
 import { motion } from "framer-motion";
 
 const TransitionParent = ({ children, isHome, isFlex, isRew }) => {
