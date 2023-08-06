@@ -53,7 +53,7 @@ const Footer = () => {
             height={18}
             className="bg-logo bg-logoimage w-[6rem] h-[6rem] bg-white bg-center rounded-full"
           />
-          <p className="font-[300] text-[1rem]">
+          <p className="font-[400] text-[1rem]">
             {otherText.footer.copyRightStart}&copy; <br />{" "}
             {otherText.footer.copyRightEnd}
           </p>
@@ -71,7 +71,7 @@ const Footer = () => {
                 {link.links.map((item) => (
                   <li
                     key={item.title}
-                    className="font-[300] sm:text-[1rem] text-[1.2rem]"
+                    className="font-[400] sm:text-[1rem] text-[1.2rem]"
                   >
                     <Theme_Link to={item.url} $hovertextcolor="logo">
                       {item.title}
@@ -85,12 +85,21 @@ const Footer = () => {
       </div>
       <Theme_Div
         $bordercolor="logo"
+        $bgcolor="light"
         className="flex justify-end flex-wrap sm:px-16 px-6 py-2 border-t-2 border-dotted"
       >
-        <span className="flex gap-4 font-[300] text-[1rem]">
-          <Link to="/">{otherText.footer.privacy}</Link>
-          <Link to="/">{otherText.footer.terms}</Link>
-          {adminUID && <Link to="/admin">{otherText.footer.admin}</Link>}
+        <span className="flex gap-4 font-[400] text-[1rem]">
+          <Theme_Link to="/" $hovertextcolor="logo">
+            {otherText.footer.privacy}
+          </Theme_Link>
+          <Theme_Link to="/" $hovertextcolor="logo">
+            {otherText.footer.terms}
+          </Theme_Link>
+          {adminUID && (
+            <Theme_Link to="/admin" $hovertextcolor="logo">
+              {otherText.footer.admin}
+            </Theme_Link>
+          )}
         </span>
       </Theme_Div>
     </Theme_Footer>

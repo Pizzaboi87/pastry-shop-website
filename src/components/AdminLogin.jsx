@@ -3,7 +3,12 @@ import TransitionParent from "./TransitionParent";
 import { useContext, useState } from "react";
 import { AdminContext } from "../context";
 import { otherText } from "../constants";
-import { adminLoginStyle } from "../styles";
+import {
+  Theme_Button,
+  Theme_Form,
+  Theme_Input,
+  adminLoginStyle,
+} from "../styles";
 
 const AdminLogin = () => {
   const { setIsAdmin } = useContext(AdminContext);
@@ -61,9 +66,10 @@ const AdminLogin = () => {
 
   return (
     <TransitionParent isFlex>
-      <form
+      <Theme_Form
+        $bgcolor="primary"
         onSubmit={handleSubmit}
-        className="grid grid-cols-5 w-[40rem] bg-primary rounded-xl shadow-xl items-center p-4 gap-8"
+        className="grid grid-cols-5 w-[40rem] rounded-xl shadow-xl items-center p-4 gap-8"
       >
         <h1 className="col-span-3 col-start-2 text-center text-text text-[2rem] font-[600]">
           Admin Login
@@ -71,7 +77,8 @@ const AdminLogin = () => {
         <span className="col-span-3 col-start-2 flex flex-col gap-y-4">
           <label className={adminLoginStyle.label}>
             UserName
-            <input
+            <Theme_Input
+              $outlinecolor="logo"
               required
               type="text"
               name="user"
@@ -83,7 +90,8 @@ const AdminLogin = () => {
 
           <label className={adminLoginStyle.label}>
             Password
-            <input
+            <Theme_Input
+              $outlinecolor="logo"
               required
               type="password"
               name="password"
@@ -94,10 +102,15 @@ const AdminLogin = () => {
           </label>
         </span>
 
-        <button className={`${adminLoginStyle.button} col-span-1 col-start-3`}>
+        <Theme_Button
+          $bgcolor="logo"
+          $textcolor="textlight"
+          $hoverbgcolor="dark"
+          className={`${adminLoginStyle.button} col-span-1 col-start-3`}
+        >
           Login
-        </button>
-      </form>
+        </Theme_Button>
+      </Theme_Form>
     </TransitionParent>
   );
 };

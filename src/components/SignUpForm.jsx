@@ -123,7 +123,7 @@ const SignUpForm = () => {
             type="text"
             name="displayName"
             value={displayName}
-            $outline="logo"
+            $outlinecolor="logo"
             onChange={handleChange}
             className={signUpFormStyle.input}
           />

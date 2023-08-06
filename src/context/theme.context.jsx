@@ -4,7 +4,7 @@ import { colors } from "../styles/colors";
 export const ThemeContext = createContext();
 
 export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState("blue");
+  const [theme, setTheme] = useState("brown");
   const value = { theme, setTheme };
 
   useEffect(() => {
