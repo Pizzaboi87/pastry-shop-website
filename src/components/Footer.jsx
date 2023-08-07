@@ -5,14 +5,14 @@ import { Theme_Div, Theme_Footer, Theme_Link, Theme_P } from "../styles";
 const Footer = () => {
   const { currentUser } = useContext(UserContext);
   const { text } = useContext(LanguageContext);
-  const { theme } = useContext(ThemeContext);
+  const { userTheme } = useContext(ThemeContext);
   const [jamPic, setJamPic] = useState(null);
   const [adminUID, setAdminUID] = useState(false);
 
   useEffect(() => {
     const importPic = async () => {
       let picModule;
-      switch (theme) {
+      switch (userTheme) {
         case "blue":
           picModule = await import("../assets/jam-blue.webp");
           break;
@@ -30,7 +30,7 @@ const Footer = () => {
     };
 
     importPic();
-  }, [theme]);
+  }, [userTheme]);
 
   useEffect(() => {
     if (currentUser && currentUser.uid === import.meta.env.VITE_ADMIN_UID)

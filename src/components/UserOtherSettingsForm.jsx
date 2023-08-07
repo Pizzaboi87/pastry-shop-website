@@ -63,10 +63,10 @@ const UserOtherSettingsForm = () => {
           $outlinecolor="logo"
           className={userPageStyle.input}
         >
-          <option value="usd">{text.userOtherSettings.currency.option1}</option>
-          <option value="eur">{text.userOtherSettings.currency.option2}</option>
+          <option value="eur">{text.userOtherSettings.currency.option1}</option>
+          <option value="usd">{text.userOtherSettings.currency.option2}</option>
           <option value="gbp">{text.userOtherSettings.currency.option3}</option>
-          <option value="cad">{text.userOtherSettings.currency.option4}</option>
+          <option value="huf">{text.userOtherSettings.currency.option4}</option>
         </Theme_Select>
       </label>
 

@@ -4,7 +4,7 @@ import { Loading } from "../components";
 export const CurrencyContext = createContext();
 
 export const CurrencyContextProvider = ({ children }) => {
-  const [userCurrency, setUserCurrency] = useState("EUR");
+  const [userCurrency, setUserCurrency] = useState("eur");
   const [currency, setCurrency] = useState({
     symbol: "",
     name: "",
@@ -14,7 +14,7 @@ export const CurrencyContextProvider = ({ children }) => {
 
   useEffect(() => {
     switch (userCurrency) {
-      case "USD":
+      case "usd":
         setCurrency((prevCurrency) => ({
           ...prevCurrency,
           symbol: "$",
@@ -22,7 +22,7 @@ export const CurrencyContextProvider = ({ children }) => {
           value: 1.1,
         }));
         break;
-      case "GBP":
+      case "gbp":
         setCurrency((prevCurrency) => ({
           ...prevCurrency,
           symbol: "£",
@@ -30,7 +30,7 @@ export const CurrencyContextProvider = ({ children }) => {
           value: 0.9,
         }));
         break;
-      case "HUF":
+      case "huf":
         setCurrency((prevCurrency) => ({
           ...prevCurrency,
           symbol: "Ft",
