@@ -52,7 +52,7 @@ const Footer = () => {
             height={18}
             className="bg-logo bg-logoimage w-[6rem] h-[6rem] bg-white bg-center rounded-full"
           />
-          <p className="font-[400] text-[1rem]">
+          <p className="font-[400] text-[1rem] text-center">
             {text.footer.copyRightStart}&copy; <br /> {text.footer.copyRightEnd}
           </p>
         </div>
@@ -87,14 +87,18 @@ const Footer = () => {
         className="flex justify-end flex-wrap sm:px-16 px-6 py-2 border-t-2 border-dotted"
       >
         <span className="flex gap-4 font-[400] text-[1rem]">
-          <Theme_Link to="/" $hovertextcolor="logo">
+          <Theme_Link to="/" $hovertextcolor="logo" className="text-center">
             {text.footer.privacy}
           </Theme_Link>
-          <Theme_Link to="/" $hovertextcolor="logo">
+          <Theme_Link to="/" $hovertextcolor="logo" className="text-center">
             {text.footer.terms}
           </Theme_Link>
           {adminUID && (
-            <Theme_Link to="/admin" $hovertextcolor="logo">
+            <Theme_Link
+              to="/admin"
+              $hovertextcolor="logo"
+              className="text-center"
+            >
               {text.footer.admin}
             </Theme_Link>
           )}

@@ -19,6 +19,9 @@ import ImageCarousel from "./ImageCarousel";
 import Loading from "./Loading";
 import MainContent from "./MainContent";
 import Navbar from "./Navbar";
+import NavDesktop from "./NavDesktop";
+import NavMobile from "./NavMobile";
+import NavUser from "./NavUser";
 import NoPermission from "./NoPermission";
 import Paragraphs from "./Paragraphs";
 import Postcard from "./Postcard";
@@ -60,6 +63,9 @@ export {
   Loading,
   MainContent,
   Navbar,
+  NavDesktop,
+  NavMobile,
+  NavUser,
   NoPermission,
   Paragraphs,
   Postcard,

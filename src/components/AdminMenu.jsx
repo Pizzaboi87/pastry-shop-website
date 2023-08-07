@@ -7,11 +7,13 @@ const AdminMenu = () => {
       <li className="text-text text-[1.2rem] font-[600]">{item.title}</li>
       <ul className="pl-2 pb-4">
         {item.links.map((link) => (
-          <li
-            key={link.title}
-            className="text-text text-[1rem] font-[500] hover:text-logopink"
-          >
-            <Link to={link.url}>{link.title}</Link>
+          <li key={link.title}>
+            <Link
+              to={link.url}
+              className="text-text text-[1rem] font-[500] hover:text-logopink"
+            >
+              {link.title}
+            </Link>
           </li>
         ))}
       </ul>
@@ -19,7 +21,7 @@ const AdminMenu = () => {
   ));
 
   return (
-    <div className="col-span-1 flex flex-col bg-white rounded-xl items-center h-fit sticky top-[10rem] shadow-inner shadow-black">
+    <div className="p-2 col-span-1 flex flex-col bg-white rounded-xl items-center h-fit sticky top-[10rem] shadow-inner shadow-black">
       <ul>
         <li className="text-text text-[1.4rem] font-[700] mb-4">
           {text.adminMenuTitle}
