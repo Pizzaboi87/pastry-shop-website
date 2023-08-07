@@ -2,15 +2,15 @@ import Swal from "sweetalert2";
 import profImage from "../../assets/rewprof-1.webp";
 import { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
-import { CommentsContext } from "../../context";
+import { CommentsContext, LanguageContext } from "../../context";
 import { Tooltip } from "react-tooltip";
 import { Icon } from "@iconify/react";
 import { changeCommentStatus, deleteComment } from "../../utils/firebase";
-import { text } from "../../constants";
 import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
 
 const BlogComments = () => {
   const { allComments, setAllComments } = useContext(CommentsContext);
+  const { text } = useContext(LanguageContext);
 
   const changePublish = (comment) => {
     changeCommentStatus(comment.id, !comment.isPublished).then(() => {

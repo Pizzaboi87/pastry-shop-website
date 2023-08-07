@@ -4,6 +4,8 @@ import { BlogContext, BlogContextProvider } from "./blog.context";
 import { AdminContext, AdminContextProvider } from "./admin.context";
 import { CommentsContext, CommentsContextProvider } from "./comments.context";
 import { ThemeContext, ThemeContextProvider } from "./theme.context";
+import { LanguageContext, LanguageContextProvider } from "./language.context";
+import { CurrencyContext, CurrencyContextProvider } from "./currency.context";
 
 export {
   IsRegContext,
@@ -18,4 +20,8 @@ export {
   AdminContextProvider,
   ThemeContext,
   ThemeContextProvider,
+  LanguageContext,
+  LanguageContextProvider,
+  CurrencyContext,
+  CurrencyContextProvider,
 };

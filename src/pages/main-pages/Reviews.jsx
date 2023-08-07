@@ -1,5 +1,6 @@
-import { text } from "../../constants";
+import { useContext } from "react";
 import { Theme_H1, titleStyle } from "../../styles";
+import { LanguageContext } from "../../context";
 import {
   ReviewCard,
   ImageCarousel,
@@ -8,6 +9,8 @@ import {
 } from "../../components";
 
 const Reviews = () => {
+  const { text } = useContext(LanguageContext);
+
   return (
     <TransitionParent isFlex isRew>
       <Theme_H1 $textcolor="title" className={titleStyle}>

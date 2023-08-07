@@ -1,16 +1,17 @@
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { LanguageContext } from "../context";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Theme_Button, Theme_Input, signInFormStyle } from "../styles";
-import { text } from "../constants";
 import {
   signInWithGoogleRedirect,
   signInAuthUserWithEmailAndPassword,
 } from "../utils/firebase";
 
 const SignInForm = () => {
+  const { text } = useContext(LanguageContext);
   const navigate = useNavigate();
 
   const errorSwal = (error) => {

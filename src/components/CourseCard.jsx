@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { slideIn } from "../utils/motion";
-import { text } from "../constants";
+import { LanguageContext } from "../context";
 import { Theme_Button, Theme_Motion_Div } from "../styles";
 import { Link } from "react-router-dom";
 
 const CourseCard = ({ course, index }) => {
+  const { text } = useContext(LanguageContext);
+
   const motionPropsR = slideIn("right", index * 0.25);
   const [image, setImage] = useState(null);
 

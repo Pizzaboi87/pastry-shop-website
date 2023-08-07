@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
+import { Theme_Div } from "../styles";
 
 const TeamCard = ({ staff, index }) => {
   const motionPropsR = slideIn("right", index * 0.25);
@@ -29,7 +30,10 @@ const TeamCard = ({ staff, index }) => {
     >
       <img src={image} alt="member" className="h-full object-cover absolute" />
       <div className="filter absolute w-full h-[30rem] bg-[#fcdfda88]"></div>
-      <div className="info absolute w-full h-[10rem] bg-[#e45a84cc] bottom-0 flex flex-col items-center justify-between">
+      <Theme_Div
+        $bgcolor="glasscard"
+        className="info absolute w-full h-[10rem] bottom-0 flex flex-col items-center justify-between"
+      >
         <span className="flex flex-col items-center pt-8">
           <h1 className="text-white font-[800] text-[1.4rem]">{staff.name}</h1>
           <h2 className="text-white font-[600] text-[1.2rem]">{staff.title}</h2>
@@ -49,7 +53,7 @@ const TeamCard = ({ staff, index }) => {
             </a>
           ))}
         </div>
-      </div>
+      </Theme_Div>
     </motion.div>
   );
 };

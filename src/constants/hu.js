@@ -1,4 +1,4 @@
-const text = {
+const hu_text = {
   navLinksLeft: [
     {
       title: "Kezdőlap",
@@ -671,6 +671,46 @@ const text = {
       errorMessage: "Sajnáljuk, nem sikerült frissíteni a képedet!",
     },
   },
+  userPasswordForm: {
+    current: "Jelenlegi jelszó",
+    new: "Új jelszó",
+    confirm: "Új jelszó megerősítése",
+    button: "Módosítás",
+  },
+  userOtherSettings: {
+    language: {
+      title: "Nyelv",
+      option1: "Angol",
+      option2: "Francia",
+      option3: "Spanyol",
+      option4: "Magyar",
+    },
+    currency: {
+      title: "Pénznem",
+      option1: "EUR",
+      option2: "USD",
+      option3: "GBP",
+      option4: "HUF",
+    },
+    theme: {
+      title: "Szín Téma",
+      option1: "Rózsaszín Álmok",
+      option2: "Égkék Édességek",
+      option3: "Mentazöld Varázslat",
+      option4: "Csokoládé Királyság",
+    },
+    newsletter: "Feliratkozás hírlevelünkre",
+    button: "Frissítés",
+  },
+  userDelete: {
+    password: "Jelszó",
+    button: "Fiók Törlése",
+  },
+  settings: {
+    reset: "Jelszóváltoztatás",
+    other: "Egyéb Beállítások",
+    delete: "Fiók Törlése",
+  },
 };
 
-export { text };
+export default hu_text;

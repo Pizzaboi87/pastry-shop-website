@@ -2,13 +2,13 @@ import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Theme_Div, authStyle, containerStyle, formStyle } from "../../styles";
 import { AuthButton, SignInForm, SignUpForm } from "../../components";
-import { IsRegContext, UserContext } from "../../context";
-import { text } from "../../constants";
+import { IsRegContext, UserContext, LanguageContext } from "../../context";
 
 const Authentication = () => {
   const [isReg, setIsReg] = useContext(IsRegContext);
-  const navigate = useNavigate();
   const { currentUser } = useContext(UserContext);
+  const { text } = useContext(LanguageContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (currentUser) navigate("/shop");

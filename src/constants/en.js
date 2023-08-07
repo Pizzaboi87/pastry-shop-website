@@ -1,4 +1,4 @@
-const text = {
+const en_text = {
   navLinksLeft: [
     {
       title: "Home",
@@ -668,6 +668,46 @@ const text = {
       errorMessage: "Sorry, we couldn't update your image!",
     },
   },
+  userPasswordForm: {
+    current: "Current Password",
+    new: "New Password",
+    confirm: "Confirm New Password",
+    button: "Change",
+  },
+  userOtherSettings: {
+    language: {
+      title: "Language",
+      option1: "English",
+      option2: "French",
+      option3: "Spanish",
+      option4: "Hungarian",
+    },
+    currency: {
+      title: "Currency",
+      option1: "EUR",
+      option2: "USD",
+      option3: "GBP",
+      option4: "HUF",
+    },
+    theme: {
+      title: "Color Theme",
+      option1: "Pink Delights Emporium",
+      option2: "Sky Blue Sweets",
+      option3: "Minty Green Enchantment",
+      option4: "Chocolate Kingdom",
+    },
+    newsletter: "Subscribe to our newsletter",
+    button: "Update",
+  },
+  userDelete: {
+    password: "Password",
+    button: "Delete Account",
+  },
+  settings: {
+    reset: "Password Reset",
+    other: "Other Settings",
+    delete: "Delete Account",
+  },
 };
 
-export { text };
+export default en_text;

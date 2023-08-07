@@ -1,10 +1,12 @@
+import { useContext } from "react";
 import { Theme_Div, Theme_Li } from "../styles";
-import { text } from "../constants";
 import { signOutUser } from "../utils/firebase";
 import { Link, useNavigate } from "react-router-dom";
+import { LanguageContext } from "../context";
 
-const NavUser = ({ openMyAccount }) => {
+const NavUser = ({ openMyAccount, setOpenMyAccount }) => {
   const navigate = useNavigate();
+  const { text } = useContext(LanguageContext);
 
   return (
     <Theme_Div

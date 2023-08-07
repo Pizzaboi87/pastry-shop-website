@@ -1,8 +1,11 @@
+import { useContext } from "react";
+import { LanguageContext } from "../../context";
 import { TransitionParent, UserPanel } from "../../components";
-import { text } from "../../constants";
 import { Theme_Div, Theme_H1, userPageStyle } from "../../styles";
 
 const MyCart = () => {
+  const { text } = useContext(LanguageContext);
+
   return (
     <TransitionParent isFlex={false}>
       <Theme_H1 $textcolor="title" className={userPageStyle.title}>

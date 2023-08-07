@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
-import { text } from "../constants";
-import { signOutUser } from "../utils/firebase";
 import { useContext, useState } from "react";
-import { IsRegContext, UserContext } from "../context";
+import { Link } from "react-router-dom";
+import { signOutUser } from "../utils/firebase";
+import { IsRegContext, UserContext, LanguageContext } from "../context";
 import {
   Theme_Button,
   Theme_Div,
@@ -17,6 +16,7 @@ const NavMobile = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [setIsReg] = useContext(IsRegContext);
   const { currentUser } = useContext(UserContext);
+  const { text } = useContext(LanguageContext);
 
   return (
     <nav>

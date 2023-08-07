@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { fetchRecipe } from "../../utils/fetchRecipe";
-import { text } from "../../constants";
+import { LanguageContext } from "../../context";
 import { Theme_Button, Theme_H1, titleStyle } from "../../styles";
 import {
   Loading,
@@ -10,6 +10,7 @@ import {
 } from "../../components";
 
 const Recipes = () => {
+  const { text } = useContext(LanguageContext);
   const [offset, setOffset] = useState(0);
   const [recipes, setRecipes] = useState([]);
   const [notFound, setNotFound] = useState(false);

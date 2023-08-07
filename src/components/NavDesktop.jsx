@@ -2,12 +2,12 @@ import NavUser from "./NavUser";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { logo } from "../assets";
-import { text } from "../constants";
-import { UserContext } from "../context";
+import { UserContext, LanguageContext } from "../context";
 import { Theme_Button, Theme_Li, Theme_Link, Theme_Nav } from "../styles";
 
 const NavDesktop = () => {
   const { currentUser } = useContext(UserContext);
+  const { text } = useContext(LanguageContext);
   const [openMyAccount, setOpenMyAccount] = useState(false);
 
   return (
@@ -98,7 +98,10 @@ const NavDesktop = () => {
           </>
         )}
       </ul>
-      <NavUser openMyAccount={openMyAccount} />
+      <NavUser
+        openMyAccount={openMyAccount}
+        setOpenMyAccount={setOpenMyAccount}
+      />
     </Theme_Nav>
   );
 };

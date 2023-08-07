@@ -1,24 +1,26 @@
 import { useState, useContext } from "react";
+import { ThemeContext, LanguageContext, CurrencyContext } from "../context";
 import {
   Theme_Button,
   Theme_Input,
   Theme_Select,
   userPageStyle,
 } from "../styles";
-import { ThemeContext } from "../context";
 
 const UserOtherSettingsForm = () => {
-  const { setTheme } = useContext(ThemeContext);
+  const { userTheme, setUserTheme } = useContext(ThemeContext);
+  const { userCurrency, setUserCurrency } = useContext(CurrencyContext);
+  const { userLanguage, setUserLanguage, text } = useContext(LanguageContext);
 
   const defaultForm = {
-    language: "en",
-    currency: "eur",
-    colorTheme: "pink",
+    selectedLang: userLanguage,
+    selectedCurr: userCurrency,
+    selectedTheme: userTheme,
     newsletter: false,
   };
 
   const [form, setForm] = useState(defaultForm);
-  const { language, currency, colorTheme, newsletter } = form;
+  const { selectedLang, selectedCurr, selectedTheme, newsletter } = form;
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -28,61 +30,63 @@ const UserOtherSettingsForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setTheme(colorTheme);
+    setUserTheme(selectedTheme);
+    setUserLanguage(selectedLang);
+    setUserCurrency(selectedCurr);
     console.log(form);
   };
 
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-6 gap-x-8">
       <label className={`${userPageStyle.label} col-span-2 `}>
-        Language
+        {text.userOtherSettings.language.title}
         <Theme_Select
-          value={language}
-          name="language"
+          value={selectedLang}
+          name="selectedLang"
           onChange={handleChange}
           $outlinecolor="logo"
           className={userPageStyle.input}
         >
-          <option value="en">English</option>
-          <option value="fr">French</option>
-          <option value="de">Spanish</option>
-          <option value="es">Hungarian</option>
+          <option value="eng">{text.userOtherSettings.language.option1}</option>
+          <option value="fra">{text.userOtherSettings.language.option2}</option>
+          <option value="esp">{text.userOtherSettings.language.option3}</option>
+          <option value="hun">{text.userOtherSettings.language.option4}</option>
         </Theme_Select>
       </label>
 
-      <label className={`${userPageStyle.label} col-span-2 `}>
-        Currency
+      <label className={`${userPageStyle.label} col-span-1 `}>
+        {text.userOtherSettings.currency.title}
         <Theme_Select
-          value={currency}
-          name="currency"
+          value={selectedCurr}
+          name="selectedCurr"
           onChange={handleChange}
           $outlinecolor="logo"
           className={userPageStyle.input}
         >
-          <option value="usd">EUR</option>
-          <option value="eur">USD</option>
-          <option value="gbp">GBP</option>
-          <option value="cad">HUF</option>
+          <option value="usd">{text.userOtherSettings.currency.option1}</option>
+          <option value="eur">{text.userOtherSettings.currency.option2}</option>
+          <option value="gbp">{text.userOtherSettings.currency.option3}</option>
+          <option value="cad">{text.userOtherSettings.currency.option4}</option>
         </Theme_Select>
       </label>
 
-      <label className={`${userPageStyle.label} col-span-2 `}>
-        Color Theme
+      <label className={`${userPageStyle.label} col-span-3 `}>
+        {text.userOtherSettings.theme.title}
         <Theme_Select
-          value={colorTheme}
-          name="colorTheme"
+          value={selectedTheme}
+          name="selectedTheme"
           onChange={handleChange}
           $outlinecolor="logo"
           className={userPageStyle.input}
         >
-          <option value="pink">Pink Delights Emporium</option>
-          <option value="blue">Sky Blue Sweets</option>
-          <option value="green">Minty Green Enchantment</option>
-          <option value="brown">Chocolate Kingdom</option>
+          <option value="pink">{text.userOtherSettings.theme.option1}</option>
+          <option value="blue">{text.userOtherSettings.theme.option2}</option>
+          <option value="green">{text.userOtherSettings.theme.option3}</option>
+          <option value="brown">{text.userOtherSettings.theme.option4}</option>
         </Theme_Select>
       </label>
 
-      <span className="flex flex-row items-center gap-x-4 mb-2 col-span-5">
+      <span className="flex flex-row items-center gap-x-4 mb-2 col-span-4">
         <Theme_Input
           value={newsletter}
           name="newsletter"
@@ -91,7 +95,7 @@ const UserOtherSettingsForm = () => {
           type="checkbox"
           className="w-[1rem] h-[1rem]"
         />
-        <p>Subscribe to our newsletter</p>
+        <p>{text.userOtherSettings.newsletter}</p>
       </span>
 
       <Theme_Button
@@ -100,7 +104,7 @@ const UserOtherSettingsForm = () => {
         $textcolor="textlight"
         className={userPageStyle.passwordButton}
       >
-        Update
+        {text.userOtherSettings.button}
       </Theme_Button>
     </form>
   );

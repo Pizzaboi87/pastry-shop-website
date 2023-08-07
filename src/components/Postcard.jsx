@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { stamp } from "../assets";
-import { text } from "../constants";
 import { Theme_Div, Theme_Stamp, postcardStyle } from "../styles";
+import { LanguageContext } from "../context";
 
 const Postcard = () => {
+  const { text } = useContext(LanguageContext);
+
   return (
     <div className="hidden xs:flex sm:w-[90%] ms:w-[75%] bg-white sm:flex-row flex-col xs:mb-24">
       <Theme_Div

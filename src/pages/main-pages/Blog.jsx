@@ -1,6 +1,5 @@
 import { useContext } from "react";
-import { BlogContext } from "../../context";
-import { text } from "../../constants";
+import { BlogContext, LanguageContext } from "../../context";
 import { Theme_H1, titleStyle } from "../../styles";
 import {
   BlogCarousel,
@@ -11,6 +10,7 @@ import {
 
 const Blog = () => {
   const [allBlogPost] = useContext(BlogContext);
+  const { text } = useContext(LanguageContext);
 
   return (
     <TransitionParent isFlex={false}>

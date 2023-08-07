@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
 const getTextColor = (props) => {
-  const { theme } = useContext(ThemeContext);
+  const { userTheme } = useContext(ThemeContext);
 
-  switch (theme) {
+  switch (userTheme) {
     case "blue":
       return colors.blue[props.$textcolor];
     case "green":
@@ -22,9 +22,9 @@ const getTextColor = (props) => {
 };
 
 const getBackgroundColor = (props) => {
-  const { theme } = useContext(ThemeContext);
+  const { userTheme } = useContext(ThemeContext);
 
-  switch (theme) {
+  switch (userTheme) {
     case "blue":
       return colors.blue[props.$bgcolor];
     case "green":
@@ -37,9 +37,9 @@ const getBackgroundColor = (props) => {
 };
 
 const getBorderColor = (props) => {
-  const { theme } = useContext(ThemeContext);
+  const { userTheme } = useContext(ThemeContext);
 
-  switch (theme) {
+  switch (userTheme) {
     case "blue":
       return colors.blue[props.$bordercolor];
     case "green":
@@ -52,9 +52,9 @@ const getBorderColor = (props) => {
 };
 
 const getHoverTextColor = (props) => {
-  const { theme } = useContext(ThemeContext);
+  const { userTheme } = useContext(ThemeContext);
 
-  switch (theme) {
+  switch (userTheme) {
     case "blue":
       return colors.blue[props.$hovertextcolor];
     case "green":
@@ -67,9 +67,9 @@ const getHoverTextColor = (props) => {
 };
 
 const getHoverBackgroundColor = (props) => {
-  const { theme } = useContext(ThemeContext);
+  const { userTheme } = useContext(ThemeContext);
 
-  switch (theme) {
+  switch (userTheme) {
     case "blue":
       return colors.blue[props.$hoverbgcolor];
     case "green":
@@ -82,9 +82,9 @@ const getHoverBackgroundColor = (props) => {
 };
 
 const getIconColor = (props) => {
-  const { theme } = useContext(ThemeContext);
+  const { userTheme } = useContext(ThemeContext);
 
-  switch (theme) {
+  switch (userTheme) {
     case "blue":
       return colors.blue[props.$iconcolor];
     case "green":
@@ -97,9 +97,9 @@ const getIconColor = (props) => {
 };
 
 const getOutlineColor = (props) => {
-  const { theme } = useContext(ThemeContext);
+  const { userTheme } = useContext(ThemeContext);
 
-  switch (theme) {
+  switch (userTheme) {
     case "blue":
       return colors.blue[props.$outlinecolor];
     case "green":
@@ -196,9 +196,9 @@ export const Theme_Textarea = styled.textarea`
 
 export const Theme_Stamp = styled.div`
   ${(props) => {
-    const { theme } = useContext(ThemeContext);
+    const { userTheme } = useContext(ThemeContext);
     let bgColor = "";
-    switch (theme) {
+    switch (userTheme) {
       case "blue":
         bgColor = colors.blue[props.$bgcolor];
         break;
@@ -223,9 +223,9 @@ export const Theme_Stamp = styled.div`
 
 export const Theme_PhoneInput = styled.div`
   ${(props) => {
-    const { theme } = useContext(ThemeContext);
+    const { userTheme } = useContext(ThemeContext);
     let outlineColor = "";
-    switch (theme) {
+    switch (userTheme) {
       case "blue":
         outlineColor = colors.blue[props.$outlinecolor];
         break;

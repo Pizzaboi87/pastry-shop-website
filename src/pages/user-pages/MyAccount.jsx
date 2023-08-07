@@ -1,6 +1,5 @@
 import { useContext } from "react";
-import { text } from "../../constants";
-import { UserContext } from "../../context";
+import { UserContext, LanguageContext } from "../../context";
 import { Theme_H1, userPageStyle } from "../../styles";
 import {
   Loading,
@@ -10,6 +9,7 @@ import {
 } from "../../components";
 
 const MyAccount = () => {
+  const { text } = useContext(LanguageContext);
   const { userData, setUserData, currentUser } = useContext(UserContext);
 
   if (!userData) return <Loading />;

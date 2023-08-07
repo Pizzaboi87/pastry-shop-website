@@ -4,12 +4,12 @@ import { colors } from "../styles/colors";
 export const ThemeContext = createContext();
 
 export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState("blue");
-  const value = { theme, setTheme };
+  const [userTheme, setUserTheme] = useState("blue");
+  const value = { userTheme, setUserTheme };
 
   useEffect(() => {
     const body = document.getElementsByTagName("body")[0];
-    switch (theme) {
+    switch (userTheme) {
       case "blue":
         body.style.backgroundColor = colors.blue.background;
         break;
@@ -23,7 +23,7 @@ export const ThemeContextProvider = ({ children }) => {
         body.style.backgroundColor = colors.pink.background;
         break;
     }
-  }, [theme]);
+  }, [userTheme]);
 
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

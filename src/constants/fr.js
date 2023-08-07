@@ -1,4 +1,4 @@
-const text = {
+const fr_text = {
   navLinksLeft: [
     {
       title: "Accueil",
@@ -679,6 +679,46 @@ const text = {
       errorMessage: "Désolé, nous n'avons pas pu mettre à jour votre image!",
     },
   },
+  userPasswordForm: {
+    current: "Mot de passe actuel",
+    new: "Nouveau mot de passe",
+    confirm: "Confirmer le mot de passe",
+    button: "Changer",
+  },
+  userOtherSettings: {
+    language: {
+      title: "Langue",
+      option1: "Anglais",
+      option2: "Français",
+      option3: "Espagnol",
+      option4: "Hongrois",
+    },
+    currency: {
+      title: "Devise",
+      option1: "EUR",
+      option2: "USD",
+      option3: "GBP",
+      option4: "HUF",
+    },
+    theme: {
+      title: "Thème de Couleur",
+      option1: "Emporium des Délices Roses",
+      option2: "Douceurs Célestes Bleues",
+      option3: "Enchantement Menthe Verte",
+      option4: "Royaume du Chocolat",
+    },
+    newsletter: "S'abonner à notre newsletter",
+    button: "Mettre à jour",
+  },
+  userDelete: {
+    password: "Mot de Passe",
+    button: "Supprimer le Compte",
+  },
+  settings: {
+    reset: "Réinitialisation du Mot de Passe",
+    other: "Autres Paramètres",
+    delete: "Supprimer le Compte",
+  },
 };
 
-export { text };
+export default fr_text;

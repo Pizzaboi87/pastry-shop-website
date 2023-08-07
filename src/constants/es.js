@@ -1,4 +1,4 @@
-const text = {
+const es_text = {
   navLinksLeft: [
     {
       title: "Inicio",
@@ -672,6 +672,46 @@ const text = {
       errorMessage: "Lo sentimos, no pudimos actualizar tu imagen.",
     },
   },
+  userPasswordForm: {
+    current: "Contraseña Actual",
+    new: "Nueva Contraseña",
+    confirm: "Confirmar Nueva Contraseña",
+    button: "Cambiar",
+  },
+  userOtherSettings: {
+    language: {
+      title: "Idioma",
+      option1: "Inglés",
+      option2: "Francés",
+      option3: "Español",
+      option4: "Húngaro",
+    },
+    currency: {
+      title: "Moneda",
+      option1: "EUR",
+      option2: "USD",
+      option3: "GBP",
+      option4: "HUF",
+    },
+    theme: {
+      title: "Tema de Color",
+      option1: "Emporio de Delicias Rosadas",
+      option2: "Dulces Celestes Cielo",
+      option3: "Encanto de Menta Verde",
+      option4: "Reino del Chocolate",
+    },
+    newsletter: "Suscribirse a nuestro boletín",
+    button: "Actualizar",
+  },
+  userDelete: {
+    password: "Contraseña",
+    button: "Eliminar Cuenta",
+  },
+  settings: {
+    reset: "Restablecimiento de Contraseña",
+    other: "Otras Configuraciones",
+    delete: "Eliminar Cuenta",
+  },
 };
 
-export { text };
+export default es_text;

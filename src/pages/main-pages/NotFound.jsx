@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import { TransitionParent } from "../../components";
+import { LanguageContext } from "../../context";
 import { error404 } from "../../assets";
-import { text } from "../../constants";
 import { Theme_H1, titleStyle } from "../../styles";
 
 const NotFound = () => {
+  const { text } = useContext(LanguageContext);
+
   return (
     <TransitionParent isFlex>
       <Theme_H1 $textcolor="title" className={titleStyle}>

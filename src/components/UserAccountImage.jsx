@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
-import { useRef } from "react";
+import { useRef, useContext } from "react";
+import { LanguageContext } from "../context";
 import { getUserImage, uploadUserImage } from "../utils/firebase";
-import { text } from "../constants";
 import { Theme_Icon } from "../styles";
 
 const UserAccountImage = ({
@@ -10,6 +10,7 @@ const UserAccountImage = ({
   setUserImage,
   currentUser,
 }) => {
+  const { text } = useContext(LanguageContext);
   const fileInputRef = useRef(null);
 
   const handleChangeImage = (event) => {

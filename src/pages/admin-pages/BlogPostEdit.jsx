@@ -1,9 +1,8 @@
 import Swal from "sweetalert2";
 import { useContext } from "react";
-import { BlogContext } from "../../context";
+import { BlogContext, LanguageContext } from "../../context";
 import { useNavigate, useParams } from "react-router-dom";
 import { BlogForm } from "../../components";
-import { text } from "../../constants";
 import { adminPageStyle } from "../../styles";
 import { deletePost } from "../../utils/firebase";
 import { Icon } from "@iconify/react";
@@ -11,6 +10,7 @@ import { Icon } from "@iconify/react";
 const BlogPostEditPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
+  const { text } = useContext(LanguageContext);
   const [allBlogPost, setAllBlogPost] = useContext(BlogContext);
   const post = allBlogPost.filter((post) => post.postid === id)[0];
 

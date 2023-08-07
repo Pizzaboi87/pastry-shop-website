@@ -179,7 +179,7 @@ const userPageStyle = {
   button:
     "py-1 rounded-xl shadow-xl border-none text-[1.2rem] font-[500] col-span-1 col-start-7",
   passwordButton:
-    "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] col-start-6",
+    "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] col-start-5 col-span-2",
   deleteButton:
     "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] self-end px-8",
 

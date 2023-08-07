@@ -1,7 +1,6 @@
 import Swal from "sweetalert2";
 import { useState, useContext } from "react";
-import { UserContext } from "../context";
-import { text } from "../constants";
+import { UserContext, LanguageContext } from "../context";
 import { storeComment } from "../utils/firebase";
 import { v4 as uuidv4 } from "uuid";
 import {
@@ -13,6 +12,7 @@ import {
 
 const BlogCommentForm = ({ postID }) => {
   const { userData } = useContext(UserContext);
+  const { text } = useContext(LanguageContext);
 
   const defaultForm = {
     author: userData.displayName ? userData.displayName : "",

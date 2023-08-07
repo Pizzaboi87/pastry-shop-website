@@ -1,10 +1,14 @@
+import { useContext } from "react";
+import { LanguageContext } from "../context";
 import { Theme_Button, Theme_Input, userPageStyle } from "../styles";
 
 const UserDeleteAccountForm = () => {
+  const { text } = useContext(LanguageContext);
+
   return (
     <form className="w-[50%] flex flex-col">
       <label className={`${userPageStyle.label} col-span-2 `}>
-        Password
+        {text.userDelete.password}
         <Theme_Input
           $outlinecolor="logo"
           type="password"
@@ -18,7 +22,7 @@ const UserDeleteAccountForm = () => {
         $textcolor="textlight"
         className={userPageStyle.deleteButton}
       >
-        Delete
+        {text.userDelete.button}
       </Theme_Button>
     </form>
   );
