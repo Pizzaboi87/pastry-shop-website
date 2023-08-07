@@ -1,4 +1,4 @@
-import { otherText } from "../../constants";
+import { text } from "../../constants";
 import { Theme_H1, Theme_Hr, userPageStyle } from "../../styles";
 import {
   TransitionParent,
@@ -12,7 +12,7 @@ const Settings = () => {
   return (
     <TransitionParent isFlex={false}>
       <Theme_H1 $textcolor="title" className={userPageStyle.title}>
-        {otherText.settingsTitle}
+        {text.settingsTitle}
       </Theme_H1>
 
       <UserPanel>

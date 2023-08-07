@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Theme_Button, Theme_Input, signUpFormStyle } from "../styles";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import {
   createUserDocumentFromAuth,
   createAuthUserWithEmailAndPassword,
@@ -16,15 +16,15 @@ const SignUpForm = () => {
   const successSwal = () => {
     Swal.fire({
       icon: "success",
-      title: otherText.signUpForm.swal.successTitle,
-      text: otherText.signUpForm.swal.successText,
+      title: text.signUpForm.swal.successTitle,
+      text: text.signUpForm.swal.successText,
     });
   };
 
   const errorSwal = (error) => {
     Swal.fire({
       icon: "error",
-      title: otherText.signUpForm.swal.errorTitle,
+      title: text.signUpForm.swal.errorTitle,
       text: error,
     });
   };
@@ -51,19 +51,19 @@ const SignUpForm = () => {
 
     switch (true) {
       case !nameRegex.test(displayName):
-        errorSwal(otherText.signUpForm.swal.errorName);
+        errorSwal(text.signUpForm.swal.errorName);
         return;
       case password !== confirmPassword:
-        errorSwal(otherText.signUpForm.swal.errorPasswordMatch);
+        errorSwal(text.signUpForm.swal.errorPasswordMatch);
         return;
       case !emailRegex.test(email):
-        errorSwal(otherText.signUpForm.swal.errorEmail);
+        errorSwal(text.signUpForm.swal.errorEmail);
         return;
       case !passwordRegex.test(password):
-        errorSwal(otherText.signUpForm.swal.errorPassword);
+        errorSwal(text.signUpForm.swal.errorPassword);
         return;
       case !passwordRegex.test(password):
-        errorSwal(otherText.signUpForm.swal.errorPassword);
+        errorSwal(text.signUpForm.swal.errorPassword);
         return;
       default:
         return true;
@@ -93,9 +93,9 @@ const SignUpForm = () => {
         auth.signOut();
       } catch (error) {
         if (error.code === "auth/email-already-in-use") {
-          errorSwal(otherText.signUpForm.swal.errorInUse);
+          errorSwal(text.signUpForm.swal.errorInUse);
         } else {
-          errorSwal(otherText.signUpForm.swal.errorOther);
+          errorSwal(text.signUpForm.swal.errorOther);
           console.log(error);
         }
       } finally {
@@ -113,11 +113,11 @@ const SignUpForm = () => {
       className="flex flex-col w-full h-full items-center justify-center"
     >
       <h1 className="xl:text-4xl lg:text-xl md:text-4xl text-xl text-center text-text font-[600] mb-6">
-        {otherText.signUpForm.title}
+        {text.signUpForm.title}
       </h1>
       <form className="flex flex-col items-start" onSubmit={handleSubmit}>
         <label className={signUpFormStyle.label}>
-          {otherText.signUpForm.userName}
+          {text.signUpForm.userName}
           <Theme_Input
             required
             type="text"
@@ -130,7 +130,7 @@ const SignUpForm = () => {
         </label>
 
         <label className={signUpFormStyle.label}>
-          {otherText.signUpForm.email}
+          {text.signUpForm.email}
           <Theme_Input
             required
             type="email"
@@ -143,7 +143,7 @@ const SignUpForm = () => {
         </label>
 
         <label className={signUpFormStyle.label}>
-          {otherText.signUpForm.password}
+          {text.signUpForm.password}
           <Theme_Input
             required
             type="password"
@@ -156,7 +156,7 @@ const SignUpForm = () => {
         </label>
 
         <label className={signUpFormStyle.label}>
-          {otherText.signUpForm.confirmPassword}
+          {text.signUpForm.confirmPassword}
           <Theme_Input
             required
             type="password"
@@ -175,7 +175,7 @@ const SignUpForm = () => {
           type="submit"
           className={signUpFormStyle.button}
         >
-          {otherText.signUpForm.button}
+          {text.signUpForm.button}
         </Theme_Button>
       </form>
     </motion.div>

@@ -1,4 +1,4 @@
-import { otherText, reviews } from "../../constants";
+import { text } from "../../constants";
 import { Theme_H1, titleStyle } from "../../styles";
 import {
   ReviewCard,
@@ -11,13 +11,13 @@ const Reviews = () => {
   return (
     <TransitionParent isFlex isRew>
       <Theme_H1 $textcolor="title" className={titleStyle}>
-        {otherText.reviewsTitle}
+        {text.reviewsTitle}
       </Theme_H1>
 
       <Postcard />
 
       <ImageCarousel type="review">
-        {reviews.map((review) => (
+        {text.reviews.map((review) => (
           <ReviewCard key={review.name} review={review} />
         ))}
       </ImageCarousel>

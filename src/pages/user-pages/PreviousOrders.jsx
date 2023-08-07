@@ -1,12 +1,12 @@
 import { TransitionParent, UserPanel } from "../../components";
-import { otherText } from "../../constants";
+import { text } from "../../constants";
 import { Theme_H1, userPageStyle } from "../../styles";
 
 const PreviousOrders = () => {
   return (
     <TransitionParent isFlex={false}>
       <Theme_H1 $textcolor="title" className={userPageStyle.title}>
-        {otherText.previousOrdersTitle}
+        {text.previousOrdersTitle}
       </Theme_H1>
 
       <UserPanel>

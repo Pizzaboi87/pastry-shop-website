@@ -3,7 +3,6 @@ import { IsRegContext, UserContext } from "../context";
 import { signOutUser } from "../utils/firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { logo } from "../assets";
-import { Icon } from "@iconify/react";
 import {
   Theme_Button,
   Theme_Div,
@@ -14,12 +13,7 @@ import {
   menuOffStyle,
   menuOnStyle,
 } from "../styles";
-import {
-  myAccount,
-  navLinksLeft,
-  navLinksRight,
-  otherText,
-} from "../constants";
+import { text } from "../constants";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -36,7 +30,7 @@ const Navbar = () => {
         className="lg:visible invisible 2xl:w-[85%] w-full h-[7rem] fixed pt-4 top-7 rounded-2xl flex items-center justify-around text-[1rem] 2xl:text-[1.3rem] font-[400] shadow-md z-10"
       >
         <ul className="flex justify-center items-center 2xl:gap-12 gap-8">
-          {navLinksLeft.map((link) => (
+          {text.navLinksLeft.map((link) => (
             <Theme_Li
               key={link.title}
               $hovertextcolor="logo"
@@ -56,7 +50,7 @@ const Navbar = () => {
             />
           </li>
 
-          {navLinksRight.map((link) => (
+          {text.navLinksRight.map((link) => (
             <Theme_Li
               key={link.title}
               $hovertextcolor="logo"
@@ -80,7 +74,7 @@ const Navbar = () => {
                     () => setOpenMyAccount(false);
                   }}
                 >
-                  {otherText.navbar.reg}
+                  {text.navbar.reg}
                 </Theme_Link>{" "}
                 /{" "}
                 <Link to="auth">
@@ -94,7 +88,7 @@ const Navbar = () => {
                       () => setOpenMyAccount(false);
                     }}
                   >
-                    {otherText.navbar.login}
+                    {text.navbar.login}
                   </Theme_Button>
                 </Link>
               </span>
@@ -103,7 +97,7 @@ const Navbar = () => {
             <>
               <Theme_Li $hovertextcolor="logo" className="text-text">
                 <Link to="/shop" onClick={() => setOpenMyAccount(false)}>
-                  {otherText.navbar.shop}
+                  {text.navbar.shop}
                 </Link>
               </Theme_Li>
               <li>
@@ -112,7 +106,7 @@ const Navbar = () => {
                   className="text-text"
                   onClick={() => setOpenMyAccount(!openMyAccount)}
                 >
-                  {otherText.navbar.profile}
+                  {text.navbar.profile}
                 </Theme_Button>
               </li>
             </>
@@ -134,7 +128,7 @@ const Navbar = () => {
               : "invisible opacity-0"
           } flex flex-col p-5 transition-all ease-in-out`}
         >
-          {myAccount.map((item) => (
+          {text.userAccount.map((item) => (
             <Theme_Li
               key={item.title}
               $hovertextcolor="logo"
@@ -153,7 +147,7 @@ const Navbar = () => {
                 navigate("/");
               }}
             >
-              {otherText.navbar.signOut}
+              {text.navbar.signOut}
             </button>
           </Theme_Li>
         </ul>
@@ -173,7 +167,7 @@ const Navbar = () => {
           style={openMenu ? menuOnStyle : menuOffStyle}
         >
           <ul className="flex flex-col md:text-[5rem] text-[2.5rem] font-[400] items-center">
-            {navLinksLeft.map((link) => (
+            {text.navLinksLeft.map((link) => (
               <Theme_Li
                 key={link.title}
                 $hovertextcolor="logo"
@@ -184,7 +178,7 @@ const Navbar = () => {
                 </Link>
               </Theme_Li>
             ))}
-            {navLinksRight.map((link) => (
+            {text.navLinksRight.map((link) => (
               <Theme_Li
                 key={link.title}
                 $hovertextcolor="logo"
@@ -206,7 +200,7 @@ const Navbar = () => {
                   }}
                   className="text-text"
                 >
-                  {otherText.navbar.reg}
+                  {text.navbar.reg}
                 </Theme_Link>
                 <Link to="auth">
                   <Theme_Button
@@ -217,7 +211,7 @@ const Navbar = () => {
                     }}
                     className="text-text"
                   >
-                    {otherText.navbar.login}
+                    {text.navbar.login}
                   </Theme_Button>
                 </Link>
               </>
@@ -225,7 +219,7 @@ const Navbar = () => {
               <>
                 <Theme_Li $hovertextcolor="logo" className="text-text">
                   <Link to="/shop" onClick={() => setOpenMenu(!openMenu)}>
-                    {otherText.navbar.shop}
+                    {text.navbar.shop}
                   </Link>
                 </Theme_Li>
                 <li>
@@ -237,7 +231,7 @@ const Navbar = () => {
                       signOutUser();
                     }}
                   >
-                    {otherText.navbar.signOut}
+                    {text.navbar.signOut}
                   </Theme_Button>
                 </li>
               </>

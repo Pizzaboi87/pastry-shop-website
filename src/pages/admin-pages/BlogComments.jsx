@@ -6,7 +6,7 @@ import { CommentsContext } from "../../context";
 import { Tooltip } from "react-tooltip";
 import { Icon } from "@iconify/react";
 import { changeCommentStatus, deleteComment } from "../../utils/firebase";
-import { otherText, commentsHeaders } from "../../constants";
+import { text } from "../../constants";
 import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
 
 const BlogComments = () => {
@@ -23,10 +23,10 @@ const BlogComments = () => {
 
   const confirmDelete = (id) => {
     Swal.fire({
-      title: otherText.blogCommentPage.swal.question,
+      title: text.blogCommentPage.swal.question,
       showDenyButton: true,
-      confirmButtonText: otherText.blogCommentPage.swal.confirm,
-      denyButtonText: otherText.blogCommentPage.swal.cancel,
+      confirmButtonText: text.blogCommentPage.swal.confirm,
+      denyButtonText: text.blogCommentPage.swal.cancel,
     }).then((result) => {
       if (result.isConfirmed) {
         deleteComment(id)
@@ -37,8 +37,8 @@ const BlogComments = () => {
           })
           .catch((error) => {
             Swal.fire({
-              title: otherText.blogAll.swal.error,
-              text: otherText.blogAll.swal.errorMsg,
+              title: text.blogAll.swal.error,
+              text: text.blogAll.swal.errorMsg,
               icon: "error",
             });
             console.error("Error deleting comment:", error);
@@ -51,10 +51,10 @@ const BlogComments = () => {
 
   return (
     <div className={adminPageStyle.wrapper}>
-      <h1 className={adminPageStyle.title}>{otherText.blogCommentsTitle}</h1>
+      <h1 className={adminPageStyle.title}>{text.blogCommentsTitle}</h1>
 
       <ul className="grid grid-cols-8 w-full px-8 items-center">
-        {commentsHeaders.map((header) => (
+        {text.commentsHeaders.map((header) => (
           <li
             key={header.id}
             className={`${header.style} text-text text-[1.2rem] font-[600] pl-2`}

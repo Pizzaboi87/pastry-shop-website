@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Theme_Button, Theme_Input, signInFormStyle } from "../styles";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import {
   signInWithGoogleRedirect,
   signInAuthUserWithEmailAndPassword,
@@ -16,7 +16,7 @@ const SignInForm = () => {
   const errorSwal = (error) => {
     Swal.fire({
       icon: "error",
-      title: otherText.signInForm.swal.errorTitle,
+      title: text.signInForm.swal.errorTitle,
       text: error,
     });
   };
@@ -40,10 +40,10 @@ const SignInForm = () => {
 
     switch (true) {
       case !emailRegex.test(email):
-        errorSwal(otherText.signInForm.swal.errorEmail);
+        errorSwal(text.signInForm.swal.errorEmail);
         return;
       case !passwordRegex.test(password):
-        errorSwal(otherText.signInForm.swal.errorPassword);
+        errorSwal(text.signInForm.swal.errorPassword);
         return;
       default:
         return true;
@@ -68,13 +68,13 @@ const SignInForm = () => {
       } catch (error) {
         switch (error.code) {
           case "auth/wrong-password":
-            errorSwal(otherText.signInForm.swal.errorPassword);
+            errorSwal(text.signInForm.swal.errorPassword);
             break;
           case "auth/user-not-found":
-            errorSwal(otherText.signInForm.swal.errorUser);
+            errorSwal(text.signInForm.swal.errorUser);
             break;
           default:
-            errorSwal(otherText.signInForm.swal.errorOther);
+            errorSwal(text.signInForm.swal.errorOther);
             console.log(error);
             break;
         }
@@ -86,7 +86,7 @@ const SignInForm = () => {
     try {
       await signInWithGoogleRedirect();
     } catch (error) {
-      errorSwal(otherText.signInForm.swal.errorOther);
+      errorSwal(text.signInForm.swal.errorOther);
       console.log(error);
     }
   };
@@ -100,12 +100,12 @@ const SignInForm = () => {
       className="flex flex-col w-full h-full items-center justify-center"
     >
       <h1 className="xl:text-4xl lg:text-xl md:text-4xl text-xl text-center text-text font-[600] mb-6">
-        {otherText.signInForm.title}
+        {text.signInForm.title}
       </h1>
 
       <form className="flex flex-col items-start" onSubmit={handleSubmit}>
         <label className={signInFormStyle.label}>
-          {otherText.signInForm.email}
+          {text.signInForm.email}
           <Theme_Input
             required
             type="email"
@@ -118,7 +118,7 @@ const SignInForm = () => {
         </label>
 
         <label className={`${signInFormStyle.label} mt-4`}>
-          {otherText.signInForm.password}
+          {text.signInForm.password}
           <Theme_Input
             required
             type="password"
@@ -137,12 +137,12 @@ const SignInForm = () => {
           $textcolor="textlight"
           className={signInFormStyle.button}
         >
-          {otherText.signInForm.button}
+          {text.signInForm.button}
         </Theme_Button>
       </form>
 
       <button className="mt-2 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]">
-        {otherText.signInForm.forgot}
+        {text.signInForm.forgot}
       </button>
 
       <Theme_Button
@@ -151,7 +151,7 @@ const SignInForm = () => {
         onClick={handleGoogleSignIn}
       >
         <Icon icon="devicon:google" className="mr-2" />
-        {otherText.signInForm.google}
+        {text.signInForm.google}
       </Theme_Button>
     </motion.div>
   );

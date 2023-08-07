@@ -1,12 +1,12 @@
 import { TransitionParent, UserPanel } from "../../components";
-import { otherText } from "../../constants";
+import { text } from "../../constants";
 import { Theme_Div, Theme_H1, userPageStyle } from "../../styles";
 
 const MyCart = () => {
   return (
     <TransitionParent isFlex={false}>
       <Theme_H1 $textcolor="title" className={userPageStyle.title}>
-        {otherText.myCartTitle}
+        {text.myCartTitle}
       </Theme_H1>
 
       <UserPanel>

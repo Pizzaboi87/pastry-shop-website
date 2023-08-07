@@ -1,5 +1,5 @@
 import { stamp } from "../assets";
-import { postCard } from "../constants";
+import { text } from "../constants";
 import { Theme_Div, Theme_Stamp, postcardStyle } from "../styles";
 
 const Postcard = () => {
@@ -10,17 +10,17 @@ const Postcard = () => {
         className="sm:w-[50%] sm:p-8 p-2 pb-10 sm:my-4 sm:mx-0 mx-4 sm:border-r-2 border-r-0 sm:border-b-0 border-b-2"
       >
         <p className={`${postcardStyle.message} lg:my-8 sm:my-4 my-2`}>
-          {postCard.message.addresse}
+          {text.postCard.message.addresse}
         </p>
         <p className={`${postcardStyle.message} lg:mb-8 sm:mb-8 my-2`}>
-          {postCard.message.message}
+          {text.postCard.message.message}
         </p>
         <p className={`${postcardStyle.message} lg:mb-16 sm:mb-8 mb-4`}>
-          {postCard.message.senderStart}
+          {text.postCard.message.senderStart}
           <br />
-          {postCard.message.senderEnd}
+          {text.postCard.message.senderEnd}
         </p>
-        <p className={postcardStyle.message}>{postCard.message.ps}</p>
+        <p className={postcardStyle.message}>{text.postCard.message.ps}</p>
       </Theme_Div>
 
       <div className="sm:w-[50%] sm:rotate-0 rotate-90 flex flex-col items-center sm:pb-24 pb-2 sm:pt-8 pt-0">
@@ -40,22 +40,28 @@ const Postcard = () => {
             $bordercolor="logo"
             className={postcardStyle.addressWrapper}
           >
-            <p className={postcardStyle.address}>{postCard.address.name}</p>
+            <p className={postcardStyle.address}>
+              {text.postCard.address.name}
+            </p>
           </Theme_Div>
           <Theme_Div
             $bordercolor="logo"
             className={postcardStyle.addressWrapper}
           >
-            <p className={postcardStyle.address}>{postCard.address.street}</p>
+            <p className={postcardStyle.address}>
+              {text.postCard.address.street}
+            </p>
           </Theme_Div>
           <Theme_Div
             $bordercolor="logo"
             className={postcardStyle.addressWrapper}
           >
-            <p className={postcardStyle.address}>{postCard.address.city}</p>
+            <p className={postcardStyle.address}>
+              {text.postCard.address.city}
+            </p>
           </Theme_Div>
           <div className="sm:w-[70%] ms:w-[45%] w-[60%] flex gap-4">
-            {postCard.address.zip.map((number, index) => (
+            {text.postCard.address.zip.map((number, index) => (
               <Theme_Div
                 key={index}
                 $bordercolor="logo"

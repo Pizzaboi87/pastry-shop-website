@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { BlogContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
-import { otherText } from "../../constants";
+import { text } from "../../constants";
 import { deletePost } from "../../utils/firebase";
 import { adminPageStyle } from "../../styles";
 
@@ -12,10 +12,10 @@ const BlogAll = () => {
 
   const confirmDelete = (postid) => {
     Swal.fire({
-      title: otherText.blogAll.swal.question,
+      title: text.blogAll.swal.question,
       showDenyButton: true,
-      confirmButtonText: otherText.blogAll.swal.confirm,
-      denyButtonText: otherText.blogAll.swal.cancel,
+      confirmButtonText: text.blogAll.swal.confirm,
+      denyButtonText: text.blogAll.swal.cancel,
     }).then((result) => {
       if (result.isConfirmed) {
         deletePost(postid)
@@ -26,8 +26,8 @@ const BlogAll = () => {
           })
           .catch((error) => {
             Swal.fire({
-              title: otherText.blogAll.swal.error,
-              text: otherText.blogAll.swal.errorMsg,
+              title: text.blogAll.swal.error,
+              text: text.blogAll.swal.errorMsg,
               icon: "error",
             });
             console.error("Error deleting post:", error);
@@ -48,7 +48,7 @@ const BlogAll = () => {
 
   return (
     <div className={adminPageStyle.wrapper}>
-      <h1 className={adminPageStyle.title}>{otherText.blogAll.title}</h1>
+      <h1 className={adminPageStyle.title}>{text.blogAll.title}</h1>
 
       <div className="flex w-full h-full flex-wrap gap-y-8 gap-x-4 justify-evenly">
         {allBlogPost.map((post) => (

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { BlogContext } from "../../context";
 import { useNavigate, useParams } from "react-router-dom";
 import { BlogForm } from "../../components";
-import { otherText } from "../../constants";
+import { text } from "../../constants";
 import { adminPageStyle } from "../../styles";
 import { deletePost } from "../../utils/firebase";
 import { Icon } from "@iconify/react";
@@ -16,10 +16,10 @@ const BlogPostEditPage = () => {
 
   const confirmDelete = (postid) => {
     Swal.fire({
-      title: otherText.blogAll.swal.question,
+      title: text.blogAll.swal.question,
       showDenyButton: true,
-      confirmButtonText: otherText.blogAll.swal.confirm,
-      denyButtonText: otherText.blogAll.swal.cancel,
+      confirmButtonText: text.blogAll.swal.confirm,
+      denyButtonText: text.blogAll.swal.cancel,
     }).then((result) => {
       if (result.isConfirmed) {
         deletePost(postid)
@@ -33,8 +33,8 @@ const BlogPostEditPage = () => {
           })
           .catch((error) => {
             Swal.fire({
-              title: otherText.blogAll.swal.error,
-              text: otherText.blogAll.swal.errorMsg,
+              title: text.blogAll.swal.error,
+              text: text.blogAll.swal.errorMsg,
               icon: "error",
             });
             console.error("Error deleting post:", error);
@@ -47,7 +47,7 @@ const BlogPostEditPage = () => {
 
   return (
     <div className={`${adminPageStyle.wrapper} relative`}>
-      <h1 className={adminPageStyle.title}>{otherText.blogPostEditTitle}</h1>
+      <h1 className={adminPageStyle.title}>{text.blogPostEditTitle}</h1>
 
       <Icon
         icon="bi:trash3-fill"

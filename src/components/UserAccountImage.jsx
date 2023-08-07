@@ -1,8 +1,7 @@
 import Swal from "sweetalert2";
 import { useRef } from "react";
 import { getUserImage, uploadUserImage } from "../utils/firebase";
-import { Icon } from "@iconify/react";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import { Theme_Icon } from "../styles";
 
 const UserAccountImage = ({
@@ -24,7 +23,7 @@ const UserAccountImage = ({
         getUserImage(currentUser.uid).then((url) => setUserImage(url));
         Swal.fire({
           icon: "success",
-          title: otherText.userAccountImage.swal.successMessage,
+          title: text.userAccountImage.swal.successMessage,
           showConfirmButton: false,
           timer: 1500,
         });
@@ -33,7 +32,7 @@ const UserAccountImage = ({
         console.error("An error occured during the image upload:", error);
         Swal.fire({
           icon: "error",
-          title: otherText.userAccountImage.swal.errorMessage,
+          title: text.userAccountImage.swal.errorMessage,
           showConfirmButton: false,
           timer: 1500,
         });

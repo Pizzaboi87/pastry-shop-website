@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { BlogContext } from "../../context";
-import { otherText } from "../../constants";
+import { text } from "../../constants";
 import { Theme_H1, titleStyle } from "../../styles";
 import {
   BlogCarousel,
@@ -15,7 +15,7 @@ const Blog = () => {
   return (
     <TransitionParent isFlex={false}>
       <Theme_H1 $textcolor="title" className={`${titleStyle} col-span-6`}>
-        {otherText.blogTitle}
+        {text.blogTitle}
       </Theme_H1>
 
       <div className="col-span-6 xl:mb-24 mb-8 -mx-12">

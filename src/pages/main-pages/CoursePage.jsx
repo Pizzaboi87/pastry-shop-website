@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { courses } from "../../constants";
+import { text } from "../../constants";
 import { course1, course2, course3 } from "../../assets";
 import { CourseForm, TransitionParent } from "../../components";
 import { Theme_H1, titleStyle } from "../../styles";
 
 const CoursePage = () => {
   const { id } = useParams();
-  let course = courses.filter((course) => course.id === id)[0];
+  let course = text.courses.filter((course) => course.id === id)[0];
 
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [images, setImages] = useState([]);
@@ -97,7 +97,7 @@ const CoursePage = () => {
           <img src={course2} alt="course_2" />
           <img src={course3} alt="course_3" />
         </div>
-        <CourseForm courses={courses} />
+        <CourseForm courses={text.courses} />
       </div>
     </TransitionParent>
   );

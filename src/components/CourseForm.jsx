@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import PhoneInput from "react-phone-input-2";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import {
   Theme_Button,
   Theme_Form,
@@ -27,15 +27,15 @@ const CourseForm = ({ courses }) => {
   const successSwal = () => {
     Swal.fire({
       icon: "success",
-      title: otherText.courseForm.swal.successTitle,
-      text: `${otherText.courseForm.swal.successTextStart} ${form.course} ${otherText.courseForm.swal.successTextEnd}`,
+      title: text.courseForm.swal.successTitle,
+      text: `${text.courseForm.swal.successTextStart} ${form.course} ${text.courseForm.swal.successTextEnd}`,
     });
   };
 
   const errorSwal = (error) => {
     Swal.fire({
       icon: "error",
-      title: otherText.courseForm.swal.errorTitle,
+      title: text.courseForm.swal.errorTitle,
       text: error,
     });
   };
@@ -47,10 +47,10 @@ const CourseForm = ({ courses }) => {
 
     switch (true) {
       case !nameRegex.test(name):
-        errorSwal(otherText.courseForm.swal.errorName);
+        errorSwal(text.courseForm.swal.errorName);
         return;
       case !questionRegex.test(question):
-        errorSwal(otherText.courseForm.swal.errorMessage);
+        errorSwal(text.courseForm.swal.errorMessage);
         return;
       default:
         return true;
@@ -89,7 +89,7 @@ const CourseForm = ({ courses }) => {
         setForm(defaultForm);
       } catch (error) {
         console.log(error.text);
-        errorSwal(otherText.courseForm.swal.errorNotSent);
+        errorSwal(text.courseForm.swal.errorNotSent);
         setLoading(false);
       }
     }
@@ -102,22 +102,22 @@ const CourseForm = ({ courses }) => {
       onSubmit={handleSubmit}
     >
       <h1 className="md:text-4xl text-xl text-center text-text font-[500] mb-8">
-        {otherText.courseForm.title}
+        {text.courseForm.title}
       </h1>
       <label className={courseFormStyle.label}>
-        {otherText.courseForm.name}
+        {text.courseForm.name}
         <input
           required
           type="text"
           value={name}
           name="name"
-          placeholder={otherText.courseForm.namePlaceholder}
+          placeholder={text.courseForm.namePlaceholder}
           onChange={handleChange}
           className={courseFormStyle.input}
         />
       </label>
       <label className={courseFormStyle.label}>
-        {otherText.courseForm.phone}
+        {text.courseForm.phone}
         <PhoneInput
           required
           country={"hu"}
@@ -127,19 +127,19 @@ const CourseForm = ({ courses }) => {
         />
       </label>
       <label className={courseFormStyle.label}>
-        {otherText.courseForm.email}
+        {text.courseForm.email}
         <input
           required
           type="email"
           value={email}
           name="email"
-          placeholder={otherText.courseForm.emailPlaceholder}
+          placeholder={text.courseForm.emailPlaceholder}
           onChange={handleChange}
           className={courseFormStyle.input}
         />
       </label>
       <label className={courseFormStyle.label}>
-        {otherText.courseForm.course}
+        {text.courseForm.course}
         <select
           required
           value={course}
@@ -148,7 +148,7 @@ const CourseForm = ({ courses }) => {
           className={courseFormStyle.input}
         >
           <option value="" disabled hidden>
-            {otherText.courseForm.optionsTitle}
+            {text.courseForm.optionsTitle}
           </option>
           {courses.map((course) => (
             <option key={course.id} value={course.title}>
@@ -158,7 +158,7 @@ const CourseForm = ({ courses }) => {
         </select>
       </label>
       <label className={courseFormStyle.label}>
-        {otherText.courseForm.question}
+        {text.courseForm.question}
         <textarea
           required
           value={question}
@@ -178,7 +178,7 @@ const CourseForm = ({ courses }) => {
         type="submit"
         disabled={loading}
       >
-        {loading ? otherText.courseForm.sending : otherText.courseForm.send}
+        {loading ? text.courseForm.sending : text.courseForm.send}
       </Theme_Button>
     </Theme_Form>
   );

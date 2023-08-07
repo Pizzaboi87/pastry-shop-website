@@ -2,7 +2,7 @@ import BlogCommentForm from "./BlogCommentForm";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext, CommentsContext } from "../context";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import { Theme_Div } from "../styles";
 
 const BlogComment = () => {
@@ -21,7 +21,7 @@ const BlogComment = () => {
         className="w-full rounded-2xl shadow-xl p-6 mb-16"
       >
         <h1 className="text-text text-[1.3rem] font-[600] mb-16">
-          {otherText.blogComment.title}
+          {text.blogComment.title}
         </h1>
         <ul>
           {allRelevantComment.map((comment, index) => (
@@ -47,7 +47,7 @@ const BlogComment = () => {
       ) : (
         <div className="w-full text-center">
           <h1 className="text-text text-[1.2rem] font-[600]">
-            {otherText.blogComment.login}
+            {text.blogComment.login}
           </h1>
         </div>
       )}

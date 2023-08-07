@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import { Theme_Icon, Theme_Motion_Div } from "../styles";
 import {
   FacebookShareButton,
@@ -42,7 +42,7 @@ const RecipeCard = ({ recipe }) => {
         {recipe.title}
       </h1>
       <h2 className="text-[1.3rem] text-text font-[400]">
-        {otherText.recipeCardTitle}
+        {text.recipeCardTitle}
       </h2>
       <ul className="mb-8 font-[300] text-text text-[1rem]">
         {ingredients.map((ingredient, index) => {

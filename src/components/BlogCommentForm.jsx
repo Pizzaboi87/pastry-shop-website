@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { UserContext } from "../context";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import { storeComment } from "../utils/firebase";
 import { v4 as uuidv4 } from "uuid";
 import {
@@ -28,7 +28,7 @@ const BlogCommentForm = ({ postID }) => {
   const errorSwal = (error) => {
     Swal.fire({
       icon: "error",
-      title: otherText.blogCommentForm.swal.errorTitle,
+      title: text.blogCommentForm.swal.errorTitle,
       text: error,
     });
   };
@@ -42,10 +42,10 @@ const BlogCommentForm = ({ postID }) => {
 
     switch (true) {
       case !commentRegex.test(title):
-        errorSwal(otherText.blogCommentForm.swal.errorCommentTitle);
+        errorSwal(text.blogCommentForm.swal.errorCommentTitle);
         return;
       case !commentRegex.test(comment):
-        errorSwal(otherText.blogCommentForm.swal.errorComment);
+        errorSwal(text.blogCommentForm.swal.errorComment);
         return;
       default:
         return true;
@@ -65,8 +65,8 @@ const BlogCommentForm = ({ postID }) => {
         storeComment(commentForm).then(() => {
           Swal.fire({
             icon: "success",
-            title: otherText.blogCommentForm.swal.successTitle,
-            text: otherText.blogCommentForm.swal.successMessage,
+            title: text.blogCommentForm.swal.successTitle,
+            text: text.blogCommentForm.swal.successMessage,
           });
           setCommentForm(defaultForm);
         });
@@ -83,7 +83,7 @@ const BlogCommentForm = ({ postID }) => {
         name="comment"
         value={comment}
         onChange={handleChange}
-        placeholder={otherText.blogCommentForm.commentPlaceholder}
+        placeholder={text.blogCommentForm.commentPlaceholder}
         rows={5}
         $outlinecolor="logo"
         className={blogCommentStyle.textarea}
@@ -91,7 +91,7 @@ const BlogCommentForm = ({ postID }) => {
 
       <span className="flex w-full justify-evenly items-end">
         <label className={blogCommentStyle.label}>
-          {otherText.blogCommentForm.name}
+          {text.blogCommentForm.name}
           <Theme_Input
             required
             disabled={userData.displayName ? true : false}
@@ -105,7 +105,7 @@ const BlogCommentForm = ({ postID }) => {
         </label>
 
         <label className={blogCommentStyle.label}>
-          {otherText.blogCommentForm.title}
+          {text.blogCommentForm.title}
           <Theme_Input
             required
             type="text"
@@ -124,7 +124,7 @@ const BlogCommentForm = ({ postID }) => {
           $textcolor="textlight"
           className={blogCommentStyle.button}
         >
-          {otherText.blogCommentForm.button}
+          {text.blogCommentForm.button}
         </Theme_Button>
       </span>
     </form>

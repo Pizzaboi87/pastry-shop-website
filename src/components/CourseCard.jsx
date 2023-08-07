@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { slideIn } from "../utils/motion";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import { Theme_Button, Theme_Motion_Div } from "../styles";
 import { Link } from "react-router-dom";
 
@@ -55,7 +55,7 @@ const CourseCard = ({ course, index }) => {
             $textcolor="textlight"
             className="rounded-xl shadow-sm border-none text-center px-3 py-2 text-[1rem] font-[400] w-[50%]"
           >
-            {otherText.courseCardButton}
+            {text.courseCardButton}
           </Theme_Button>
         </Link>
       </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchRecipe } from "../../utils/fetchRecipe";
-import { otherText } from "../../constants";
+import { text } from "../../constants";
 import { Theme_Button, Theme_H1, titleStyle } from "../../styles";
 import {
   Loading,
@@ -49,7 +49,7 @@ const Recipes = () => {
   return (
     <TransitionParent isFlex>
       <Theme_H1 $textcolor="title" className={titleStyle}>
-        {otherText.recipes.title}
+        {text.recipes.title}
       </Theme_H1>
       <SearchForm
         setLoading={setLoading}
@@ -63,7 +63,7 @@ const Recipes = () => {
         </div>
       ) : notFound ? (
         <h1 className="text-text py-3 text-[1.3rem]">
-          {otherText.recipes.notFound}
+          {text.recipes.notFound}
         </h1>
       ) : (
         <>
@@ -72,7 +72,7 @@ const Recipes = () => {
           ))}
           {noMore ? (
             <h1 className="text-text py-3 text-[1.3rem]">
-              {otherText.recipes.noMore}
+              {text.recipes.noMore}
             </h1>
           ) : (
             <Theme_Button
@@ -82,7 +82,7 @@ const Recipes = () => {
               onClick={showMore}
               className="px-8 rounded-xl shadow-xl border-none py-3 text-[1.3rem] font-bold"
             >
-              {otherText.recipes.show}
+              {text.recipes.show}
             </Theme_Button>
           )}
         </>

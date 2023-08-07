@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CommentsContext } from "../../context";
 import { Icon } from "@iconify/react";
-import { otherText } from "../../constants";
+import { text } from "../../constants";
 import { changeCommentStatus, deleteComment } from "../../utils/firebase";
 import { adminPageStyle, blogNewFormStyle } from "../../styles";
 
@@ -26,10 +26,10 @@ const BlogCommentPage = () => {
 
   const confirmDelete = (id) => {
     Swal.fire({
-      title: otherText.blogCommentPage.swal.question,
+      title: text.blogCommentPage.swal.question,
       showDenyButton: true,
-      confirmButtonText: otherText.blogCommentPage.swal.confirm,
-      denyButtonText: otherText.blogCommentPage.swal.cancel,
+      confirmButtonText: text.blogCommentPage.swal.confirm,
+      denyButtonText: text.blogCommentPage.swal.cancel,
     }).then((result) => {
       if (result.isConfirmed) {
         deleteComment(id)
@@ -41,8 +41,8 @@ const BlogCommentPage = () => {
           })
           .catch((error) => {
             Swal.fire({
-              title: otherText.blogAll.swal.error,
-              text: otherText.blogAll.swal.errorMsg,
+              title: text.blogAll.swal.error,
+              text: text.blogAll.swal.errorMsg,
               icon: "error",
             });
             console.error("Error deleting comment:", error);
@@ -78,9 +78,7 @@ const BlogCommentPage = () => {
 
   return (
     <div className={`${adminPageStyle.wrapper} relative`}>
-      <h1 className={adminPageStyle.title}>
-        {otherText.blogCommentPage.title}
-      </h1>
+      <h1 className={adminPageStyle.title}>{text.blogCommentPage.title}</h1>
 
       <Icon
         icon="bi:trash3-fill"
@@ -98,7 +96,7 @@ const BlogCommentPage = () => {
 
       <form className="w-full grid grid-cols-4 gap-y-8 gap-x-16">
         <label className={`${blogNewFormStyle.label} col-span-2`}>
-          {otherText.blogCommentPage.id}
+          {text.blogCommentPage.id}
           <input
             disabled
             type="text"
@@ -109,7 +107,7 @@ const BlogCommentPage = () => {
         </label>
 
         <label className={`${blogNewFormStyle.label} col-span-2`}>
-          {otherText.blogCommentPage.date}
+          {text.blogCommentPage.date}
           <input
             disabled
             type="text"
@@ -120,7 +118,7 @@ const BlogCommentPage = () => {
         </label>
 
         <label className={`${blogNewFormStyle.label} col-span-2`}>
-          {otherText.blogCommentPage.author}
+          {text.blogCommentPage.author}
           <input
             disabled
             type="text"
@@ -131,7 +129,7 @@ const BlogCommentPage = () => {
         </label>
 
         <label className={`${blogNewFormStyle.label} col-span-2`}>
-          {otherText.blogCommentPage.email}
+          {text.blogCommentPage.email}
           <input
             disabled
             type="text"
@@ -143,7 +141,7 @@ const BlogCommentPage = () => {
 
         <span className="col-span-2 flex flex-col gap-8">
           <label className={blogNewFormStyle.label}>
-            {otherText.blogCommentPage.commentTitle}
+            {text.blogCommentPage.commentTitle}
             <input
               disabled
               type="text"
@@ -154,7 +152,7 @@ const BlogCommentPage = () => {
           </label>
 
           <label className={blogNewFormStyle.label}>
-            {otherText.blogCommentPage.relatedID}
+            {text.blogCommentPage.relatedID}
             <input
               disabled
               type="text"
@@ -166,7 +164,7 @@ const BlogCommentPage = () => {
         </span>
 
         <label className={`${blogNewFormStyle.label} col-span-2`}>
-          {otherText.blogCommentPage.commentText}
+          {text.blogCommentPage.commentText}
           <textarea
             disabled
             rows={5}

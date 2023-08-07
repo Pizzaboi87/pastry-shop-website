@@ -1,7 +1,7 @@
 import AdminMenu from "./AdminMenu";
 import { useContext } from "react";
 import { AdminContext } from "../context";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import { Theme_H1, titleStyle } from "../styles";
 
 const AdminPanel = ({ children }) => {
@@ -10,7 +10,7 @@ const AdminPanel = ({ children }) => {
   return (
     <div className="glass grid grid-cols-6 xl:w-[90%] w-full bg-purpleglass rounded-xl md:p-12 p-4 gap-x-8 shadow-2xl">
       <Theme_H1 $textcolor="title" className={`${titleStyle} col-span-6`}>
-        {otherText.adminPanelTitle}
+        {text.adminPanelTitle}
       </Theme_H1>
 
       <AdminMenu />
@@ -23,7 +23,7 @@ const AdminPanel = ({ children }) => {
         onClick={() => setIsAdmin(false)}
         className="col-start-6 bg-purple text-white text-[1.2rem] hover:bg-yellowdark hover:text-text font-[500] rounded-xl mt-4 py-2"
       >
-        {otherText.adminSignOut}
+        {text.adminSignOut}
       </button>
     </div>
   );

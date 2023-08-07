@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import TransitionParent from "./TransitionParent";
 import { useContext, useState } from "react";
 import { AdminContext } from "../context";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import {
   Theme_Button,
   Theme_Form,
@@ -24,7 +24,7 @@ const AdminLogin = () => {
   const errorSwal = (error) => {
     Swal.fire({
       icon: "error",
-      title: otherText.adminLogin.swal.errorTitle,
+      title: text.adminLogin.swal.errorTitle,
       text: error,
     });
   };
@@ -36,10 +36,10 @@ const AdminLogin = () => {
 
     switch (true) {
       case !nameRegex.test(user):
-        errorSwal(otherText.adminLogin.swal.errorUser);
+        errorSwal(text.adminLogin.swal.errorUser);
         return;
       case !passwordRegex.test(password):
-        errorSwal(otherText.adminLogin.swal.errorPassword);
+        errorSwal(text.adminLogin.swal.errorPassword);
         return;
       default:
         return true;
@@ -58,7 +58,7 @@ const AdminLogin = () => {
       user !== import.meta.env.VITE_ADMIN_NAME ||
       password !== import.meta.env.VITE_ADMIN_PASSWORD
     ) {
-      errorSwal(otherText.adminLogin.swal.errorWrongCredentials);
+      errorSwal(text.adminLogin.swal.errorWrongCredentials);
     } else {
       setIsAdmin(true);
     }

@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import PhoneInput from "react-phone-input-2";
 import { useState } from "react";
 import { updateUserData } from "../utils/firebase";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import {
   Theme_Button,
   Theme_Input,
@@ -39,7 +39,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
   const errorSwal = (error) => {
     Swal.fire({
       icon: "error",
-      title: otherText.userAccountForm.swal.errorTitle,
+      title: text.userAccountForm.swal.errorTitle,
       text: error,
     });
   };
@@ -57,22 +57,22 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
 
     switch (true) {
       case fullName && !normalRegex.test(fullName):
-        errorSwal(otherText.userAccountForm.swal.errorName);
+        errorSwal(text.userAccountForm.swal.errorName);
         return;
       case displayName && !withNumberRegex.test(displayName):
-        errorSwal(otherText.userAccountForm.swal.errorDisplayName);
+        errorSwal(text.userAccountForm.swal.errorDisplayName);
         return;
       case country && !normalRegex.test(country):
-        errorSwal(otherText.userAccountForm.swal.errorCountry);
+        errorSwal(text.userAccountForm.swal.errorCountry);
         return;
       case city && !normalRegex.test(city):
-        errorSwal(otherText.userAccountForm.swal.errorCity);
+        errorSwal(text.userAccountForm.swal.errorCity);
         return;
       case address && !withNumberRegex.test(address):
-        errorSwal(otherText.userAccountForm.swal.errorAddress);
+        errorSwal(text.userAccountForm.swal.errorAddress);
         return;
       case zipCode && !withNumberRegex.test(zipCode):
-        errorSwal(otherText.userAccountForm.swal.errorZip);
+        errorSwal(text.userAccountForm.swal.errorZip);
         return;
       default:
         return true;
@@ -100,7 +100,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           .then(() => {
             Swal.fire({
               icon: "success",
-              title: otherText.userAccountForm.swal.successMessage,
+              title: text.userAccountForm.swal.successMessage,
               showConfirmButton: false,
               timer: 1500,
             });
@@ -112,7 +112,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       } catch (error) {
         setIsLoading(false);
         console.error("Error during the update of user's data: ", error);
-        errorSwal(otherText.userAccountForm.swal.errorNotUpdated);
+        errorSwal(text.userAccountForm.swal.errorNotUpdated);
       }
     }
   };
@@ -123,7 +123,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       className="grid grid-cols-7 px-16 py-6 gap-y-2"
     >
       <label className={`${userPageStyle.label} col-span-3 col-start-1`}>
-        {otherText.userAccountForm.fullName}
+        {text.userAccountForm.fullName}
         <Theme_Input
           type="text"
           placeholder="Your name"
@@ -136,7 +136,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-5`}>
-        {otherText.userAccountForm.displayName}
+        {text.userAccountForm.displayName}
         <Theme_Input
           type="text"
           placeholder="Your username"
@@ -149,7 +149,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-1`}>
-        {otherText.userAccountForm.email}
+        {text.userAccountForm.email}
         <Theme_Input
           type="text"
           disabled
@@ -163,7 +163,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-5`}>
-        {otherText.userAccountForm.phone}
+        {text.userAccountForm.phone}
         <Theme_PhoneInput $outlinecolor="logo">
           <PhoneInput
             required
@@ -175,7 +175,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         </Theme_PhoneInput>
       </label>
       <label className={`${userPageStyle.label} col-span-3 col-start-1`}>
-        {otherText.userAccountForm.country}
+        {text.userAccountForm.country}
         <Theme_Input
           type="text"
           placeholder="Your country"
@@ -188,7 +188,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-5`}>
-        {otherText.userAccountForm.city}
+        {text.userAccountForm.city}
         <Theme_Input
           type="text"
           placeholder="Your city"
@@ -201,7 +201,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-1`}>
-        {otherText.userAccountForm.address}
+        {text.userAccountForm.address}
         <Theme_Input
           type="text"
           placeholder="Your address"
@@ -214,7 +214,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       </label>
 
       <label className={`${userPageStyle.label} col-span-3 col-start-5`}>
-        {otherText.userAccountForm.zip}
+        {text.userAccountForm.zip}
         <Theme_Input
           type="text"
           placeholder="Your ZIP code"
@@ -235,8 +235,8 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         disabled={isLoading ? true : false}
       >
         {isLoading
-          ? otherText.userAccountForm.savingButton
-          : otherText.userAccountForm.button}
+          ? text.userAccountForm.savingButton
+          : text.userAccountForm.button}
       </Theme_Button>
     </form>
   );

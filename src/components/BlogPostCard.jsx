@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import { Fragment } from "react";
 import { Theme_Button, Theme_Div, Theme_Link } from "../styles";
 
@@ -84,7 +84,7 @@ const BlogPostCard = ({ post, isOwnPage }) => {
             $textcolor="textlight"
             className="rounded-xl px-4 py-2 font-[600] shadow-xl self-center"
           >
-            {otherText.blogPostCardButton}
+            {text.blogPostCardButton}
           </Theme_Button>
         </Link>
       </div>

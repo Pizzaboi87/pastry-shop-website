@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { uploadBlogPost } from "../utils/firebase";
-import { otherText } from "../constants";
+import { text } from "../constants";
 import { blogNewFormStyle } from "../styles";
 
 const BlogForm = ({ dbPost }) => {
@@ -71,8 +71,8 @@ const BlogForm = ({ dbPost }) => {
       uploadBlogPost(blogForm).then(() => {
         setIsLoading(false);
         Swal.fire({
-          title: otherText.blogForm.swal.successTitle,
-          text: otherText.blogForm.swal.successMessage,
+          title: text.blogForm.swal.successTitle,
+          text: text.blogForm.swal.successMessage,
           icon: "success",
         });
 
@@ -81,8 +81,8 @@ const BlogForm = ({ dbPost }) => {
     } catch (error) {
       setIsLoading(false);
       Swal.fire({
-        title: otherText.blogForm.swal.errorTitle,
-        text: otherText.blogForm.swal.errorMessage,
+        title: text.blogForm.swal.errorTitle,
+        text: text.blogForm.swal.errorMessage,
         icon: "error",
       });
     }
@@ -95,7 +95,7 @@ const BlogForm = ({ dbPost }) => {
     >
       <div className="col-span-2 flex flex-col justify-between">
         <label className={blogNewFormStyle.label}>
-          {otherText.blogForm.date}
+          {text.blogForm.date}
           <input
             type="date"
             required
@@ -107,7 +107,7 @@ const BlogForm = ({ dbPost }) => {
         </label>
 
         <label className={blogNewFormStyle.label}>
-          {otherText.blogForm.title}
+          {text.blogForm.title}
           <input
             type="text"
             required
@@ -118,7 +118,7 @@ const BlogForm = ({ dbPost }) => {
           />
         </label>
         <label className={blogNewFormStyle.label}>
-          {otherText.blogForm.author}
+          {text.blogForm.author}
           <input
             type="text"
             required
@@ -129,7 +129,7 @@ const BlogForm = ({ dbPost }) => {
           />
         </label>
         <label className={blogNewFormStyle.label}>
-          {dbPost ? otherText.blogForm.newImage : otherText.blogForm.postImage}
+          {dbPost ? text.blogForm.newImage : text.blogForm.postImage}
           <input
             required={dbPost ? false : true}
             type="file"
@@ -140,7 +140,7 @@ const BlogForm = ({ dbPost }) => {
           />
         </label>
         <label className={blogNewFormStyle.label}>
-          {otherText.blogForm.blurb}
+          {text.blogForm.blurb}
           <textarea
             rows={5}
             required
@@ -153,7 +153,7 @@ const BlogForm = ({ dbPost }) => {
       </div>
       <div className="col-span-2 flex flex-col justify-between gap-y-4">
         <label className={blogNewFormStyle.label}>
-          {otherText.blogForm.post}
+          {text.blogForm.post}
           <textarea
             rows={15}
             required
@@ -164,7 +164,7 @@ const BlogForm = ({ dbPost }) => {
           />
         </label>
         <label className={blogNewFormStyle.label}>
-          {otherText.blogForm.tags}
+          {text.blogForm.tags}
           <input
             type="text"
             required
@@ -183,9 +183,7 @@ const BlogForm = ({ dbPost }) => {
           isLoading ? "cursor-progress" : "cursor-pointer"
         } `}
       >
-        {isLoading
-          ? otherText.blogForm.savingButton
-          : otherText.blogForm.button}
+        {isLoading ? text.blogForm.savingButton : text.blogForm.button}
       </button>
     </form>
   );

@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
 import { ThemeContext, UserContext } from "../context";
-import { footerLinks, otherText } from "../constants/";
+import { text } from "../constants/";
 import { Theme_Div, Theme_Footer, Theme_Link, Theme_P } from "../styles";
 
 const Footer = () => {
@@ -54,12 +53,11 @@ const Footer = () => {
             className="bg-logo bg-logoimage w-[6rem] h-[6rem] bg-white bg-center rounded-full"
           />
           <p className="font-[400] text-[1rem]">
-            {otherText.footer.copyRightStart}&copy; <br />{" "}
-            {otherText.footer.copyRightEnd}
+            {text.footer.copyRightStart}&copy; <br /> {text.footer.copyRightEnd}
           </p>
         </div>
         <div className="flex sm:flex-row flex-col sm:pl-0 pl-8 sm:pt-0 pt-8 sm:w-[50%] w-full justify-between">
-          {footerLinks.map((link) => (
+          {text.footerLinks.map((link) => (
             <div key={link.title} className="flex flex-col leading-8 pb-8">
               <Theme_P
                 $textcolor="logo"
@@ -90,14 +88,14 @@ const Footer = () => {
       >
         <span className="flex gap-4 font-[400] text-[1rem]">
           <Theme_Link to="/" $hovertextcolor="logo">
-            {otherText.footer.privacy}
+            {text.footer.privacy}
           </Theme_Link>
           <Theme_Link to="/" $hovertextcolor="logo">
-            {otherText.footer.terms}
+            {text.footer.terms}
           </Theme_Link>
           {adminUID && (
             <Theme_Link to="/admin" $hovertextcolor="logo">
-              {otherText.footer.admin}
+              {text.footer.admin}
             </Theme_Link>
           )}
         </span>

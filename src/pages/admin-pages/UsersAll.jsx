@@ -3,7 +3,7 @@ import { Fragment, useEffect, useState } from "react";
 import { getAllUser } from "../../utils/firebase";
 import { Icon } from "@iconify/react";
 import { Loading } from "../../components";
-import { otherText, usersAllHeaders } from "../../constants";
+import { text } from "../../constants";
 import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
 import { Tooltip } from "react-tooltip";
 
@@ -18,10 +18,10 @@ const UsersAll = () => {
 
   return (
     <div className={adminPageStyle.wrapper}>
-      <h1 className={adminPageStyle.title}>{otherText.usersAllTitle}</h1>
+      <h1 className={adminPageStyle.title}>{text.usersAllTitle}</h1>
 
       <ul className="grid grid-cols-8 w-full px-8 items-center">
-        {usersAllHeaders.map((header) => (
+        {text.usersAllHeaders.map((header) => (
           <li
             key={header.id}
             className={`${header.style} text-text text-[1.2rem] font-[600] pl-2`}
