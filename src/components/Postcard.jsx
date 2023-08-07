@@ -10,6 +10,7 @@ const Postcard = () => {
     <div className="hidden xs:flex sm:w-[90%] ms:w-[75%] bg-white sm:flex-row flex-col xs:mb-24">
       <Theme_Div
         $bordercolor="logo"
+        $bgcolor="transparent"
         className="sm:w-[50%] sm:p-8 p-2 pb-10 sm:my-4 sm:mx-0 mx-4 sm:border-r-2 border-r-0 sm:border-b-0 border-b-2"
       >
         <p className={`${postcardStyle.message} lg:my-8 sm:my-4 my-2`}>
@@ -31,7 +32,11 @@ const Postcard = () => {
           $bgcolor="logo"
           className="lg:w-[12.5rem] md:w-[7.5rem] w-[6.25rem] xl:h-[10rem] lg:h-[11.3rem] md:h-[5.5rem] h-[5rem] relative lg:self-end lg:mr-8 lg:ml-0 ml-36"
         >
-          <Theme_Div $bordercolor="logo" className={postcardStyle.stampImage} />
+          <Theme_Div
+            $bordercolor="logo"
+            $bgcolor="transparent"
+            className={postcardStyle.stampImage}
+          />
           <img
             src={stamp}
             alt="stamp"
@@ -41,6 +46,7 @@ const Postcard = () => {
         <div className="h-[75%] w-full flex flex-col items-center justify-center gap-6">
           <Theme_Div
             $bordercolor="logo"
+            $bgcolor="transparent"
             className={postcardStyle.addressWrapper}
           >
             <p className={postcardStyle.address}>
@@ -49,6 +55,7 @@ const Postcard = () => {
           </Theme_Div>
           <Theme_Div
             $bordercolor="logo"
+            $bgcolor="transparent"
             className={postcardStyle.addressWrapper}
           >
             <p className={postcardStyle.address}>
@@ -57,6 +64,7 @@ const Postcard = () => {
           </Theme_Div>
           <Theme_Div
             $bordercolor="logo"
+            $bgcolor="transparent"
             className={postcardStyle.addressWrapper}
           >
             <p className={postcardStyle.address}>
@@ -68,6 +76,7 @@ const Postcard = () => {
               <Theme_Div
                 key={index}
                 $bordercolor="logo"
+                $bgcolor="transparent"
                 className="border-4 lg:w-[3rem] sm:[2.2rem] w-[2rem] md:h-[4rem] sm:h-[3rem] h-[2.5rem] text-center"
               >
                 <p className="font-letter text-text lg:text-[2.2rem] sm:text-[1.8rem] text-[1.5rem]">

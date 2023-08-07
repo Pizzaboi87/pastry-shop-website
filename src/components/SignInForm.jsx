@@ -148,6 +148,7 @@ const SignInForm = () => {
 
       <Theme_Button
         $bordercolor="logo"
+        $bgcolor="transparent"
         className={signInFormStyle.forgotButton}
         onClick={handleGoogleSignIn}
       >

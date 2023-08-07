@@ -19,6 +19,7 @@ export const colors = {
     glasscard: "#e45a84cc",
     logo: "#e45a84",
     background: "#f9dee6",
+    transparent: "#ffffff00",
   },
   blue: {
     primary: "#d0dbeb",
@@ -33,6 +34,7 @@ export const colors = {
     glasscard: "#5a84e4cc",
     logo: "#5a84e4",
     background: "#dae1f0",
+    transparent: "#ffffff00",
   },
   green: {
     primary: "#dbebd0",
@@ -47,6 +49,7 @@ export const colors = {
     glasscard: "#69b648cc",
     logo: "#69b648",
     background: "#e1f0da",
+    transparent: "#ffffff00",
   },
   brown: {
     primary: "#e0cbb5",
@@ -61,5 +64,6 @@ export const colors = {
     glasscard: "#723910cc",
     logo: "#723910",
     background: "#e7ddd6",
+    transparent: "#ffffff00",
   },
 };
