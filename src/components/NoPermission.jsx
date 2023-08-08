@@ -1,11 +1,11 @@
 import TransitionParent from "./TransitionParent";
 import { useContext } from "react";
 import { stop } from "../assets";
-import { LanguageContext } from "../context";
+import { UserContext } from "../context";
 import { Theme_H1, titleStyle } from "../styles";
 
 const NoPermission = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   return (
     <TransitionParent isFlex>

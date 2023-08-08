@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
 import { Icon } from "@iconify/react";
-import { LanguageContext } from "../context";
+import { UserContext } from "../context";
 import { Theme_Icon, Theme_Motion_Div } from "../styles";
 import {
   FacebookShareButton,
@@ -14,7 +14,7 @@ import {
 } from "react-share";
 
 const RecipeCard = ({ recipe }) => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
   const motionPropsR = slideIn("right");
   const [liked, setLiked] = useState(false);
 

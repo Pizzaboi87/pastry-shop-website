@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import { useState, useContext } from "react";
-import { LanguageContext } from "../context";
+import { UserContext } from "../context";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ import {
 } from "../utils/firebase";
 
 const SignInForm = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
   const navigate = useNavigate();
 
   const errorSwal = (error) => {

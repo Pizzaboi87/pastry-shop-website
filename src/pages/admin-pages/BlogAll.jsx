@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import { useContext } from "react";
-import { BlogContext, LanguageContext } from "../../context";
+import { BlogContext, UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import { deletePost } from "../../utils/firebase";
@@ -8,7 +8,7 @@ import { adminPageStyle } from "../../styles";
 
 const BlogAll = () => {
   const [allBlogPost, setAllBlogPost] = useContext(BlogContext);
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   const confirmDelete = (postid) => {
     Swal.fire({

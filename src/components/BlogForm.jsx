@@ -2,11 +2,11 @@ import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { uploadBlogPost } from "../utils/firebase";
-import { LanguageContext } from "../context";
+import { UserContext } from "../context";
 import { blogNewFormStyle } from "../styles";
 
 const BlogForm = ({ dbPost }) => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   const getBackImage = (url) => {
     const start = url.indexOf("%2F") + 3;

@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 import TransitionParent from "./TransitionParent";
 import { useContext, useState } from "react";
-import { AdminContext, LanguageContext } from "../context";
+import { AdminContext, UserContext } from "../context";
 import {
   Theme_Button,
   Theme_Form,
@@ -11,7 +11,7 @@ import {
 
 const AdminLogin = () => {
   const { setIsAdmin } = useContext(AdminContext);
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   const defaultForm = {
     user: "",

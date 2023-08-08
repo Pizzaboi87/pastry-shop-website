@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { LanguageContext } from "../context";
+import { UserContext } from "../context";
 
 const AdminMenu = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   const menuItems = text.adminMenu.map((item) => (
     <span key={item.title}>

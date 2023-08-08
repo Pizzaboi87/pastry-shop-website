@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { BlogForm } from "../../components";
 import { adminPageStyle } from "../../styles";
-import { LanguageContext } from "../../context";
+import { UserContext } from "../../context";
 
 const BlogNew = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   return (
     <div className={adminPageStyle.wrapper}>

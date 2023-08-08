@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { LanguageContext } from "../../context";
+import { UserContext } from "../../context";
 import { TransitionParent } from "../../components";
 import { Theme_H1, titleStyle } from "../../styles";
 
 const Shop = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   return (
     <TransitionParent isFlex>

@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CommentsContext, LanguageContext } from "../../context";
+import { CommentsContext, UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { changeCommentStatus, deleteComment } from "../../utils/firebase";
 import { adminPageStyle, blogNewFormStyle } from "../../styles";
@@ -9,7 +9,7 @@ import { adminPageStyle, blogNewFormStyle } from "../../styles";
 const BlogCommentPage = () => {
   const { commentID } = useParams();
   const navigate = useNavigate();
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
   const { allComments, setAllComments } = useContext(CommentsContext);
   const actualComment = allComments.filter(
     (comment) => comment.id === commentID

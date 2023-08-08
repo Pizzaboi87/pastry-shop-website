@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import { useState, useContext } from "react";
-import { LanguageContext } from "../context";
+import { UserContext } from "../context";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Theme_Button, Theme_Input, signUpFormStyle } from "../styles";
@@ -11,7 +11,7 @@ import {
 } from "../utils/firebase";
 
 const SignUpForm = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
   const navigate = useNavigate();
 
   const successSwal = () => {

@@ -1,12 +1,7 @@
 import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { updateUserData } from "../utils/firebase";
-import {
-  ThemeContext,
-  LanguageContext,
-  CurrencyContext,
-  UserContext,
-} from "../context";
+import { UserContext } from "../context";
 import {
   Theme_Button,
   Theme_Input,
@@ -15,10 +10,18 @@ import {
 } from "../styles";
 
 const UserOtherSettingsForm = () => {
-  const { userTheme, setUserTheme } = useContext(ThemeContext);
-  const { userCurrency, setUserCurrency } = useContext(CurrencyContext);
-  const { userData, setUserData, currentUser } = useContext(UserContext);
-  const { userLanguage, setUserLanguage, text } = useContext(LanguageContext);
+  const {
+    userData,
+    setUserData,
+    currentUser,
+    userTheme,
+    setUserTheme,
+    userCurrency,
+    setUserCurrency,
+    userLanguage,
+    setUserLanguage,
+    text,
+  } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false);
 
   const defaultForm = {

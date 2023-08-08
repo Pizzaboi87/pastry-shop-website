@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { LanguageContext } from "../context";
+import { UserContext } from "../context";
 import { Theme_Button, Theme_Input, userPageStyle } from "../styles";
 
 const UserDeleteAccountForm = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   return (
     <form className="w-[50%] flex flex-col">

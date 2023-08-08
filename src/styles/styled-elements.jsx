@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components";
 import { useContext } from "react";
-import { ThemeContext } from "../context";
+import { UserContext } from "../context";
 import { colors } from "./colors";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
 const getTextColor = (props) => {
-  const { userTheme } = useContext(ThemeContext);
+  const { userTheme } = useContext(UserContext);
 
   switch (userTheme) {
     case "blue":
@@ -22,7 +22,7 @@ const getTextColor = (props) => {
 };
 
 const getBackgroundColor = (props) => {
-  const { userTheme } = useContext(ThemeContext);
+  const { userTheme } = useContext(UserContext);
 
   switch (userTheme) {
     case "blue":
@@ -37,7 +37,7 @@ const getBackgroundColor = (props) => {
 };
 
 const getBorderColor = (props) => {
-  const { userTheme } = useContext(ThemeContext);
+  const { userTheme } = useContext(UserContext);
 
   switch (userTheme) {
     case "blue":
@@ -52,7 +52,7 @@ const getBorderColor = (props) => {
 };
 
 const getHoverTextColor = (props) => {
-  const { userTheme } = useContext(ThemeContext);
+  const { userTheme } = useContext(UserContext);
 
   switch (userTheme) {
     case "blue":
@@ -67,7 +67,7 @@ const getHoverTextColor = (props) => {
 };
 
 const getHoverBackgroundColor = (props) => {
-  const { userTheme } = useContext(ThemeContext);
+  const { userTheme } = useContext(UserContext);
 
   switch (userTheme) {
     case "blue":
@@ -82,7 +82,7 @@ const getHoverBackgroundColor = (props) => {
 };
 
 const getIconColor = (props) => {
-  const { userTheme } = useContext(ThemeContext);
+  const { userTheme } = useContext(UserContext);
 
   switch (userTheme) {
     case "blue":
@@ -97,7 +97,7 @@ const getIconColor = (props) => {
 };
 
 const getOutlineColor = (props) => {
-  const { userTheme } = useContext(ThemeContext);
+  const { userTheme } = useContext(UserContext);
 
   switch (userTheme) {
     case "blue":
@@ -196,7 +196,7 @@ export const Theme_Textarea = styled.textarea`
 
 export const Theme_Stamp = styled.div`
   ${(props) => {
-    const { userTheme } = useContext(ThemeContext);
+    const { userTheme } = useContext(UserContext);
     let bgColor = "";
     switch (userTheme) {
       case "blue":
@@ -223,7 +223,7 @@ export const Theme_Stamp = styled.div`
 
 export const Theme_PhoneInput = styled.div`
   ${(props) => {
-    const { userTheme } = useContext(ThemeContext);
+    const { userTheme } = useContext(UserContext);
     let outlineColor = "";
     switch (userTheme) {
       case "blue":

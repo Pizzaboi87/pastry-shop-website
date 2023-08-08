@@ -1,11 +1,9 @@
 import { useState, useEffect, useContext } from "react";
-import { ThemeContext, UserContext, LanguageContext } from "../context";
+import { UserContext } from "../context";
 import { Theme_Div, Theme_Footer, Theme_Link, Theme_P } from "../styles";
 
 const Footer = () => {
-  const { currentUser } = useContext(UserContext);
-  const { text } = useContext(LanguageContext);
-  const { userTheme } = useContext(ThemeContext);
+  const { currentUser, text, userTheme } = useContext(UserContext);
   const [jamPic, setJamPic] = useState(null);
   const [adminUID, setAdminUID] = useState(false);
 

@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { TeamCard, TransitionParent } from "../../components";
 import { showcase } from "../../assets";
-import { LanguageContext } from "../../context";
+import { UserContext } from "../../context";
 import { Theme_H1, titleStyle } from "../../styles";
 
 const OurStory = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   return (
     <TransitionParent isFlex>

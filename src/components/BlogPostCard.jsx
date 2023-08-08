@@ -1,10 +1,10 @@
 import { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
-import { LanguageContext } from "../context";
+import { UserContext } from "../context";
 import { Theme_Button, Theme_Div, Theme_Link } from "../styles";
 
 const BlogPostCard = ({ post, isOwnPage }) => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   const article = post.post.split("		").map((paragraph, index) => (
     <p key={index}>

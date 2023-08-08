@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import { LanguageContext, CurrencyContext } from "../../context";
+import { UserContext } from "../../context";
 import { TransitionParent, UserPanel } from "../../components";
 import { Theme_Div, Theme_H1, userPageStyle } from "../../styles";
 
 const MyCart = () => {
-  const { text } = useContext(LanguageContext);
-  const { currency } = useContext(CurrencyContext);
+  const { text, currency } = useContext(UserContext);
 
   const amount = 15;
 

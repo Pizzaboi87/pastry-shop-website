@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { BlogContext, LanguageContext } from "../context";
+import { BlogContext, UserContext } from "../context";
 import { Theme_Button, Theme_Div } from "../styles";
 
 const BlogCategoryCard = () => {
   const [allBlogPost] = useContext(BlogContext);
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import profImage from "../../assets/rewprof-1.webp";
 import { Fragment, useEffect, useState, useContext } from "react";
 import { getAllUser } from "../../utils/firebase";
-import { LanguageContext } from "../../context";
+import { UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { Loading } from "../../components";
 import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
@@ -9,7 +9,7 @@ import { Tooltip } from "react-tooltip";
 
 const UsersAll = () => {
   const [allUser, setAllUser] = useState([]);
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   useEffect(() => {
     getAllUser().then((users) => setAllUser(users));

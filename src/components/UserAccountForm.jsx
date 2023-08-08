@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import PhoneInput from "react-phone-input-2";
 import { useState, useContext } from "react";
 import { updateUserData } from "../utils/firebase";
-import { LanguageContext } from "../context";
+import { UserContext } from "../context";
 import {
   Theme_Button,
   Theme_Input,
@@ -12,7 +12,7 @@ import {
 } from "../styles";
 
 const UserAccountForm = ({ userData, setUserData, currentUser }) => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   const defaultForm = {
     fullName: userData.fullName ? userData.fullName : "",

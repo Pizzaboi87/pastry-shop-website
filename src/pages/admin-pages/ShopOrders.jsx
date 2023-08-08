@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { LanguageContext } from "../../context";
+import { UserContext } from "../../context";
 import { adminPageStyle } from "../../styles";
 
 const ShopOrders = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   return (
     <div className={adminPageStyle.wrapper}>

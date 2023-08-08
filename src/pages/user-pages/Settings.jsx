@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { LanguageContext } from "../../context";
+import { UserContext } from "../../context";
 import { Theme_H1, Theme_Hr, userPageStyle } from "../../styles";
 import {
   TransitionParent,
@@ -10,7 +10,7 @@ import {
 } from "../../components";
 
 const Settings = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   return (
     <TransitionParent isFlex={false}>

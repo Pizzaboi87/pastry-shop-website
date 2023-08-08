@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
-import { LanguageContext } from "../context";
+import { UserContext } from "../context";
 import { Theme_Button } from "../styles";
 
 const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
   const allowedCharacters = /^[a-zA-Z- :]+$/;
   const [searchText, setSearchText] = useState("");
 

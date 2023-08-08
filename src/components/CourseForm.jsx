@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import PhoneInput from "react-phone-input-2";
 import emailjs from "@emailjs/browser";
 import { useState, useContext } from "react";
-import { LanguageContext } from "../context";
+import { UserContext } from "../context";
 import {
   Theme_Button,
   Theme_Form,
@@ -12,7 +12,7 @@ import {
 import "react-phone-input-2/lib/bootstrap.css";
 
 const CourseForm = ({ courses }) => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   const defaultForm = {
     name: "",

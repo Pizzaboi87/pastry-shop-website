@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { LanguageContext } from "../../context";
+import { UserContext } from "../../context";
 import { CourseCard, TransitionParent } from "../../components";
 import { Theme_H1, titleStyle } from "../../styles";
 
 const Courses = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   return (
     <TransitionParent isFlex>

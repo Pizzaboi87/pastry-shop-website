@@ -1,14 +1,13 @@
 import BlogCommentForm from "./BlogCommentForm";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { UserContext, CommentsContext, LanguageContext } from "../context";
+import { UserContext, CommentsContext } from "../context";
 import { Theme_Div } from "../styles";
 
 const BlogComment = () => {
   const { id } = useParams();
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, text } = useContext(UserContext);
   const { allComments } = useContext(CommentsContext);
-  const { text } = useContext(LanguageContext);
 
   const allRelevantComment = allComments.filter(
     (comment) => comment.relatedID === id && comment.isPublished

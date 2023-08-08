@@ -1,12 +1,12 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { LanguageContext } from "../../context";
+import { UserContext } from "../../context";
 import { course1, course2, course3 } from "../../assets";
 import { CourseForm, TransitionParent } from "../../components";
 import { Theme_H1, titleStyle } from "../../styles";
 
 const CoursePage = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   const { id } = useParams();
   let course = text.courses.filter((course) => course.id === id)[0];

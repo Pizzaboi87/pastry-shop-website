@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { TransitionParent } from "../../components";
-import { LanguageContext } from "../../context";
+import { UserContext } from "../../context";
 import { error404 } from "../../assets";
 import { Theme_H1, titleStyle } from "../../styles";
 
 const NotFound = () => {
-  const { text } = useContext(LanguageContext);
+  const { text } = useContext(UserContext);
 
   return (
     <TransitionParent isFlex>

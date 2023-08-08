@@ -2,15 +2,14 @@ import { Fragment, useContext } from "react";
 import { macaron, eclair, cream } from "../../assets";
 import { slideIn } from "../../utils/motion";
 import { Image, TextAndImage, TransitionParent } from "../../components";
-import { IsRegContext, UserContext, LanguageContext } from "../../context";
+import { IsRegContext, UserContext } from "../../context";
 import { Theme_Button, Theme_Motion_Span } from "../../styles";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   const motionPropsR = slideIn("right");
   const [isReg, setIsReg] = useContext(IsRegContext);
-  const { currentUser } = useContext(UserContext);
-  const { text } = useContext(LanguageContext);
+  const { currentUser, text } = useContext(UserContext);
 
   return (
     <TransitionParent isHome isFlex>
