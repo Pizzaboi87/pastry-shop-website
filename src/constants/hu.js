@@ -671,12 +671,6 @@ const hu_text = {
       errorMessage: "Sajnáljuk, nem sikerült frissíteni a képedet!",
     },
   },
-  userPasswordForm: {
-    current: "Jelenlegi jelszó",
-    new: "Új jelszó",
-    confirm: "Új jelszó megerősítése",
-    button: "Módosítás",
-  },
   userOtherSettings: {
     language: {
       title: "Nyelv",
@@ -703,14 +697,43 @@ const hu_text = {
     button: "Frissítés",
     loading: "Frissítés folyamatban...",
   },
-  userDelete: {
-    password: "Jelszó",
-    button: "Fiók Törlése",
-  },
   settings: {
     reset: "Jelszóváltoztatás",
     other: "Egyéb Beállítások",
     delete: "Fiók Törlése",
+  },
+  userDelete: {
+    password: "Jelszó",
+    button: "Fiók törlése",
+    loading: "Törlés folyamatban...",
+    swal: {
+      title: "Figyelem!",
+      text: "Biztosan törölni szeretnéd a fiókodat?",
+      confirmButton: "Törlés",
+      cancelButton: "Mégse",
+      successTitle: "Siker!",
+      successText: "A fiókodat töröltük!",
+      errorTitle: "Valami hiba történt!",
+      errorText: "A fiókodat nem sikerült törölni!",
+      errorPassword: "Kérjük, add meg a jelszavad.",
+      errorAuth: "A jelszavad nem helyes.",
+      errorTooMany: "Túl sok próbálkozás, kérlek próbáld újra később.",
+    },
+  },
+  userPasswordForm: {
+    current: "Jelenlegi jelszó",
+    new: "Új jelszó",
+    confirm: "Új jelszó megerősítése",
+    button: "Frissítés",
+    loading: "Frissítés folyamatban...",
+    swal: {
+      successTitle: "Siker!",
+      successText: "A jelszavad sikeresen megváltozott.",
+      errorTitle: "Valami hiba történt!",
+      errorPassword: "Kérjük, adj meg érvényes jelszót.",
+      errorMatch: "Az új jelszavak nem egyeznek.",
+      errorAuth: "A jelenlegi jelszavad nem helyes.",
+    },
   },
 };
 

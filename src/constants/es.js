@@ -672,12 +672,6 @@ const es_text = {
       errorMessage: "Lo sentimos, no pudimos actualizar tu imagen.",
     },
   },
-  userPasswordForm: {
-    current: "Contraseña Actual",
-    new: "Nueva Contraseña",
-    confirm: "Confirmar Nueva Contraseña",
-    button: "Cambiar",
-  },
   userOtherSettings: {
     language: {
       title: "Idioma",
@@ -704,14 +698,44 @@ const es_text = {
     button: "Actualizar",
     loading: "Actualizando...",
   },
-  userDelete: {
-    password: "Contraseña",
-    button: "Eliminar Cuenta",
-  },
   settings: {
     reset: "Restablecimiento de Contraseña",
     other: "Otras Configuraciones",
     delete: "Eliminar Cuenta",
+  },
+  userDelete: {
+    password: "Contraseña",
+    button: "Eliminar cuenta",
+    loading: "Eliminando...",
+    swal: {
+      title: "¡Atención!",
+      text: "¿Estás seguro de que deseas eliminar tu cuenta?",
+      confirmButton: "Eliminar",
+      cancelButton: "Cancelar",
+      successTitle: "¡Éxito!",
+      successText: "¡Tu cuenta ha sido eliminada!",
+      errorTitle: "¡Algo salió mal!",
+      errorText: "¡Tu cuenta no ha sido eliminada!",
+      errorPassword: "Por favor, proporciona tu contraseña.",
+      errorAuth: "Tu contraseña no es correcta.",
+      errorTooMany:
+        "Demasiados intentos, por favor inténtalo de nuevo más tarde.",
+    },
+  },
+  userPasswordForm: {
+    current: "Contraseña actual",
+    new: "Nueva contraseña",
+    confirm: "Confirmar nueva contraseña",
+    button: "Actualizar",
+    loading: "Actualizando...",
+    swal: {
+      successTitle: "¡Éxito!",
+      successText: "Tu contraseña ha sido cambiada.",
+      errorTitle: "¡Algo salió mal!",
+      errorPassword: "Por favor, proporciona una contraseña válida.",
+      errorMatch: "Las nuevas contraseñas no coinciden.",
+      errorAuth: "Tu contraseña actual no es correcta.",
+    },
   },
 };
 

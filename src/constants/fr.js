@@ -679,12 +679,6 @@ const fr_text = {
       errorMessage: "Désolé, nous n'avons pas pu mettre à jour votre image!",
     },
   },
-  userPasswordForm: {
-    current: "Mot de passe actuel",
-    new: "Nouveau mot de passe",
-    confirm: "Confirmer le mot de passe",
-    button: "Changer",
-  },
   userOtherSettings: {
     language: {
       title: "Langue",
@@ -711,14 +705,43 @@ const fr_text = {
     button: "Mettre à jour",
     loading: "Mise à jour en cours...",
   },
-  userDelete: {
-    password: "Mot de Passe",
-    button: "Supprimer le Compte",
-  },
   settings: {
     reset: "Réinitialisation du Mot de Passe",
     other: "Autres Paramètres",
     delete: "Supprimer le Compte",
+  },
+  userDelete: {
+    password: "Mot de passe",
+    button: "Supprimer le compte",
+    loading: "Suppression en cours...",
+    swal: {
+      title: "Attention !",
+      text: "Êtes-vous sûr de vouloir supprimer votre compte ?",
+      confirmButton: "Supprimer",
+      cancelButton: "Annuler",
+      successTitle: "Succès !",
+      successText: "Votre compte a été supprimé !",
+      errorTitle: "Quelque chose s'est mal passé !",
+      errorText: "Votre compte n'a pas été supprimé !",
+      errorPassword: "Veuillez fournir votre mot de passe.",
+      errorAuth: "Votre mot de passe n'est pas correct.",
+      errorTooMany: "Trop de tentatives, veuillez réessayer plus tard.",
+    },
+  },
+  userPasswordForm: {
+    current: "Mot de passe actuel",
+    new: "Nouveau mot de passe",
+    confirm: "Confirmer le nouveau mot de passe",
+    button: "Mettre à jour",
+    loading: "Mise à jour en cours...",
+    swal: {
+      successTitle: "Succès !",
+      successText: "Votre mot de passe a été modifié.",
+      errorTitle: "Quelque chose s'est mal passé !",
+      errorPassword: "Veuillez fournir un mot de passe valide.",
+      errorMatch: "Les nouveaux mots de passe ne correspondent pas.",
+      errorAuth: "Votre mot de passe actuel n'est pas correct.",
+    },
   },
 };
 

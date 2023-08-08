@@ -10,6 +10,7 @@ import {
   onAuthStateChanged,
   reauthenticateWithCredential,
   EmailAuthProvider,
+  updatePassword,
 } from "firebase/auth";
 import { getDatabase, ref, set, get, push, onValue } from "firebase/database";
 import {
@@ -186,6 +187,20 @@ export const reauthenticateUser = async (currentUser, password) => {
     return credential;
   } catch (error) {
     console.error("Error during the reauthentication of user: ", error);
+    throw error;
+  }
+};
+
+export const updateUserPassword = async (
+  currentUser,
+  password,
+  newPassword
+) => {
+  try {
+    await reauthenticateUser(currentUser, password);
+    await updatePassword(currentUser, newPassword);
+  } catch (error) {
+    console.error("Error during the update of user's password: ", error);
     throw error;
   }
 };

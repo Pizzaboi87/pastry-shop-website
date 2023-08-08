@@ -668,12 +668,6 @@ const en_text = {
       errorMessage: "Sorry, we couldn't update your image!",
     },
   },
-  userPasswordForm: {
-    current: "Current Password",
-    new: "New Password",
-    confirm: "Confirm New Password",
-    button: "Change",
-  },
   userOtherSettings: {
     language: {
       title: "Language",
@@ -708,6 +702,7 @@ const en_text = {
   userDelete: {
     password: "Password",
     button: "Delete Account",
+    loading: "Deleting...",
     swal: {
       title: "Attention!",
       text: "Are you sure you want to delete your account?",
@@ -720,6 +715,22 @@ const en_text = {
       errorPassword: "Please provide your password.",
       errorAuth: "Your password is not correct.",
       errorTooMany: "Too many attempts, please try again later.",
+    },
+  },
+
+  userPasswordForm: {
+    current: "Current Password",
+    new: "New Password",
+    confirm: "Confirm New Password",
+    button: "Update",
+    loading: "Updating...",
+    swal: {
+      successTitle: "Success!",
+      successText: "Your password has been changed.",
+      errorTitle: "Something went wrong!",
+      errorPassword: "Please provide a valid password.",
+      errorMatch: "New passwords do not match.",
+      errorAuth: "Your current password is not correct.",
     },
   },
 };
