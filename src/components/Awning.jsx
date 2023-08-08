@@ -1,8 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Theme_Div, awningStyle, shadowStyle } from "../styles";
 
 const Awning = () => {
-  const n = Math.ceil(window.innerWidth / 160);
+  const [n, setN] = useState(0);
+
+  useEffect(() => {
+    setN(Math.ceil(window.innerWidth / 160));
+  }, [window.innerWidth]);
+
   const awnings = [...Array(n)].map((_, i) => (
     <Fragment key={i}>
       <Theme_Div

@@ -21,6 +21,8 @@ const UserOtherSettingsForm = () => {
     userLanguage,
     setUserLanguage,
     text,
+    userNewsLetter,
+    setUserNewsLetter,
   } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -28,7 +30,7 @@ const UserOtherSettingsForm = () => {
     selectedLang: userLanguage,
     selectedCurr: userCurrency,
     selectedTheme: userTheme,
-    newsletter: false,
+    newsletter: userNewsLetter,
   };
 
   const [form, setForm] = useState(defaultForm);
@@ -47,6 +49,7 @@ const UserOtherSettingsForm = () => {
       setUserTheme(selectedTheme);
       setUserLanguage(selectedLang);
       setUserCurrency(selectedCurr);
+      setUserNewsLetter(newsletter);
       updateUserData(currentUser.uid, form)
         .then(() => {
           Swal.fire({
@@ -119,7 +122,7 @@ const UserOtherSettingsForm = () => {
 
       <span className="flex flex-row items-center gap-x-4 mb-2 col-span-4">
         <Theme_Input
-          value={newsletter}
+          checked={newsletter}
           name="newsletter"
           onChange={handleChange}
           $outlinecolor="logo"

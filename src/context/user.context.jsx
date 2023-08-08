@@ -21,6 +21,7 @@ export const UserContextProvider = ({ children }) => {
   const [userLanguage, setUserLanguage] = useState(null);
   const [text, setText] = useState(null);
   const [userTheme, setUserTheme] = useState(null);
+  const [userNewsLetter, setUserNewsLetter] = useState(false);
   const [userCurrency, setUserCurrency] = useState(null);
   const [currency, setCurrency] = useState({
     symbol: "",
@@ -75,6 +76,9 @@ export const UserContextProvider = ({ children }) => {
 
     const defaultUserTheme = userData ? userData.selectedTheme : "pink";
     setUserTheme(defaultUserTheme);
+
+    const defaultUserNewsLetter = userData ? userData.newsletter : false;
+    setUserNewsLetter(defaultUserNewsLetter);
   }, [userData, currentUser, auth]);
 
   useEffect(() => {
@@ -160,6 +164,8 @@ export const UserContextProvider = ({ children }) => {
     text,
     userTheme,
     setUserTheme,
+    userNewsLetter,
+    setUserNewsLetter,
   };
 
   if (!isDataLoaded) return <Loading />;
