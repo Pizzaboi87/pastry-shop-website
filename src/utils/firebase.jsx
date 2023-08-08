@@ -150,7 +150,18 @@ export const getUserImage = async (uid) => {
 
 export const getAllUser = async () => {
   const querySnapshot = await getDocs(collection(db, "users"));
-  const userList = querySnapshot.docs.map((doc) => doc.data());
+  const userList = [];
+
+  for (const doc of querySnapshot.docs) {
+    const userData = doc.data();
+    if (!userData.photoExtension) {
+      const imgsrc = await getStoredImage("blog/profile.jpg");
+      userList.push({ ...userData, imgsrc });
+    } else {
+      const imgsrc = await getUserImage(doc.id);
+      userList.push({ ...userData, imgsrc });
+    }
+  }
   return userList;
 };
 

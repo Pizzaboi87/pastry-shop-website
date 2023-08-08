@@ -1,16 +1,44 @@
 import Swal from "sweetalert2";
-import profImage from "../../assets/rewprof-1.webp";
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CommentsContext, UserContext } from "../../context";
 import { Tooltip } from "react-tooltip";
 import { Icon } from "@iconify/react";
-import { changeCommentStatus, deleteComment } from "../../utils/firebase";
+import {
+  changeCommentStatus,
+  deleteComment,
+  getAllUser,
+  getStoredImage,
+} from "../../utils/firebase";
 import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
+import { Loading } from "../../components";
 
 const BlogComments = () => {
   const { allComments, setAllComments } = useContext(CommentsContext);
   const { text } = useContext(UserContext);
+  const [commentsWithUsers, setCommentsWithUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchCommentUsers = async () => {
+      const users = await getAllUser();
+      const defaultImg = await getStoredImage("blog/profile.jpg");
+
+      const updatedComments = allComments.map((comment) => {
+        const user = users.find((user) => user.email === comment.email);
+        if (user) {
+          return { ...comment, imgsrc: user.imgsrc };
+        } else {
+          return { ...comment, imgsrc: defaultImg };
+        }
+      });
+
+      setCommentsWithUsers(updatedComments);
+    };
+
+    fetchCommentUsers();
+  }, [allComments]);
+
+  if (!commentsWithUsers.length) return <Loading />;
 
   const changePublish = (comment) => {
     changeCommentStatus(comment.id, !comment.isPublished).then(() => {
@@ -63,13 +91,13 @@ const BlogComments = () => {
           </li>
         ))}
 
-        {allComments.map((comment) => (
+        {commentsWithUsers.map((comment) => (
           <Fragment key={comment.id}>
             <li className={`${tableStyle} col-span-1`}>
               <img
-                src={profImage}
+                src={comment.imgsrc}
                 alt="profile"
-                className="w-8 h-8 mx-auto rounded-full"
+                className="w-10 h-10 mx-auto rounded-full object-cover"
               />
             </li>
             <li className={`${tableStyle} col-span-2`}>{comment.author}</li>

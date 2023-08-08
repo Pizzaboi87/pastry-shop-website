@@ -407,7 +407,7 @@ const en_text = {
     {
       title: "Email",
       id: "email",
-      style: "bg-yellowlight col-span-2",
+      style: "bg-yellowlight col-span-3",
     },
     {
       title: "Sign-up Date",

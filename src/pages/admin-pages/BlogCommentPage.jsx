@@ -82,7 +82,7 @@ const BlogCommentPage = () => {
 
       <Icon
         icon="bi:trash3-fill"
-        className="delete text-text text-[3rem] hover:text-logopink cursor-pointer absolute top-[1rem] left-[1rem]"
+        className="delete outline-none text-text text-[3rem] hover:text-logopink cursor-pointer absolute top-[1rem] left-[1rem]"
         onClick={() => confirmDelete(actualComment.id)}
       />
 

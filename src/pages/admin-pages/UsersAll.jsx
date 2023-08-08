@@ -21,7 +21,7 @@ const UsersAll = () => {
     <div className={adminPageStyle.wrapper}>
       <h1 className={adminPageStyle.title}>{text.usersAllTitle}</h1>
 
-      <ul className="grid grid-cols-8 w-full px-8 items-center">
+      <ul className="grid grid-cols-9 w-full px-8 items-center">
         {text.usersAllHeaders.map((header) => (
           <li
             key={header.id}
@@ -35,13 +35,13 @@ const UsersAll = () => {
           <Fragment key={`${index}-${user.email}`}>
             <li className={`${tableStyle} col-span-1`}>
               <img
-                src={profImage}
+                src={user.imgsrc}
                 alt="profile"
-                className="w-8 h-8 mx-auto rounded-full"
+                className="w-10 h-10 mx-auto rounded-full object-cover"
               />
             </li>
             <li className={`${tableStyle} col-span-2`}>{user.displayName}</li>
-            <li className={`${tableStyle} col-span-2`}>{user.email}</li>
+            <li className={`${tableStyle} col-span-3`}>{user.email}</li>
             <li className={`${tableStyle} col-span-2`}>
               {new Date(user.createdAt.seconds * 1000)
                 .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
@@ -50,11 +50,11 @@ const UsersAll = () => {
             <li className="flex gap-6 justify-center items-center py-2 col-span-1">
               <Icon
                 icon="bi:trash3-fill"
-                className="delete text-text text-[2rem] hover:text-logopink cursor-pointer"
+                className="delete outline-none text-text text-[2rem] hover:text-logopink cursor-pointer"
               />
               <Icon
                 icon="raphael:edit"
-                className="edit text-text text-[2rem] hover:text-logopink cursor-pointer"
+                className="edit outline-none text-text text-[2rem] hover:text-logopink cursor-pointer"
               />
             </li>
           </Fragment>
@@ -62,13 +62,13 @@ const UsersAll = () => {
       </ul>
       <Tooltip
         anchorSelect=".delete"
-        content="Delete comment."
+        content="Delete user."
         style={tooltipStyle}
         place="top"
       />
       <Tooltip
         anchorSelect=".edit"
-        content="Edit comment."
+        content="Edit user."
         style={tooltipStyle}
         place="top"
       />
