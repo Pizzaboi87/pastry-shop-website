@@ -701,6 +701,7 @@ const hu_text = {
     },
     newsletter: "Feliratkozás hírlevelünkre",
     button: "Frissítés",
+    loading: "Frissítés folyamatban...",
   },
   userDelete: {
     password: "Jelszó",

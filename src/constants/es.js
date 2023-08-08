@@ -702,6 +702,7 @@ const es_text = {
     },
     newsletter: "Suscribirse a nuestro boletín",
     button: "Actualizar",
+    loading: "Actualizando...",
   },
   userDelete: {
     password: "Contraseña",

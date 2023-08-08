@@ -1,5 +1,12 @@
+import Swal from "sweetalert2";
 import { useState, useContext } from "react";
-import { ThemeContext, LanguageContext, CurrencyContext } from "../context";
+import { updateUserData } from "../utils/firebase";
+import {
+  ThemeContext,
+  LanguageContext,
+  CurrencyContext,
+  UserContext,
+} from "../context";
 import {
   Theme_Button,
   Theme_Input,
@@ -10,7 +17,9 @@ import {
 const UserOtherSettingsForm = () => {
   const { userTheme, setUserTheme } = useContext(ThemeContext);
   const { userCurrency, setUserCurrency } = useContext(CurrencyContext);
+  const { userData, setUserData, currentUser } = useContext(UserContext);
   const { userLanguage, setUserLanguage, text } = useContext(LanguageContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   const defaultForm = {
     selectedLang: userLanguage,
@@ -30,10 +39,29 @@ const UserOtherSettingsForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setUserTheme(selectedTheme);
-    setUserLanguage(selectedLang);
-    setUserCurrency(selectedCurr);
-    console.log(form);
+    setIsLoading(true);
+    try {
+      setUserTheme(selectedTheme);
+      setUserLanguage(selectedLang);
+      setUserCurrency(selectedCurr);
+      updateUserData(currentUser.uid, form)
+        .then(() => {
+          Swal.fire({
+            icon: "success",
+            title: text.userAccountForm.swal.successMessage,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        })
+        .then(() => {
+          setIsLoading(false);
+          setUserData({ ...userData, ...form });
+        });
+    } catch (error) {
+      setIsLoading(false);
+      console.error("Error during the update of user's data: ", error);
+      errorSwal(text.userAccountForm.swal.errorNotUpdated);
+    }
   };
 
   return (
@@ -104,9 +132,15 @@ const UserOtherSettingsForm = () => {
         $bordercolor="transparent"
         $hoverbgcolor="dark"
         $hovertextcolor="textlight"
-        className={userPageStyle.passwordButton}
+        type="submit"
+        disabled={isLoading ? true : false}
+        className={`${userPageStyle.passwordButton} ${
+          isLoading ? "cursor-progress" : "cursor-pointer"
+        } `}
       >
-        {text.userOtherSettings.button}
+        {isLoading
+          ? text.userOtherSettings.loading
+          : text.userOtherSettings.button}
       </Theme_Button>
     </form>
   );

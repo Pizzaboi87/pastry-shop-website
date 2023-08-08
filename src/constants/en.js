@@ -698,6 +698,7 @@ const en_text = {
     },
     newsletter: "Subscribe to our newsletter",
     button: "Update",
+    loading: "Updating...",
   },
   userDelete: {
     password: "Password",

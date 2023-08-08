@@ -709,6 +709,7 @@ const fr_text = {
     },
     newsletter: "S'abonner à notre newsletter",
     button: "Mettre à jour",
+    loading: "Mise à jour en cours...",
   },
   userDelete: {
     password: "Mot de Passe",
