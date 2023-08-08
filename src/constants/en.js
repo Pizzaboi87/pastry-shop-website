@@ -700,14 +700,27 @@ const en_text = {
     button: "Update",
     loading: "Updating...",
   },
-  userDelete: {
-    password: "Password",
-    button: "Delete Account",
-  },
   settings: {
     reset: "Password Reset",
     other: "Other Settings",
     delete: "Delete Account",
+  },
+  userDelete: {
+    password: "Password",
+    button: "Delete Account",
+    swal: {
+      title: "Attention!",
+      text: "Are you sure you want to delete your account?",
+      confirmButton: "Delete",
+      cancelButton: "Cancel",
+      successTitle: "Success!",
+      successText: "Your account has been deleted!",
+      errorTitle: "Something went wrong!",
+      errorText: "Your account has not been deleted!",
+      errorPassword: "Please provide your password.",
+      errorAuth: "Your password is not correct.",
+      errorTooMany: "Too many attempts, please try again later.",
+    },
   },
 };
 

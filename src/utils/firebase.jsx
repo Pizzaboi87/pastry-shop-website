@@ -6,7 +6,10 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
+  deleteUser,
   onAuthStateChanged,
+  reauthenticateWithCredential,
+  EmailAuthProvider,
 } from "firebase/auth";
 import { getDatabase, ref, set, get, push, onValue } from "firebase/database";
 import {
@@ -23,6 +26,7 @@ import {
   setDoc,
   getDocs,
   collection,
+  deleteDoc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -156,6 +160,32 @@ export const updateUserData = async (uid, data) => {
     await setDoc(userDocRef, data, { merge: true });
   } catch (error) {
     console.error("Error during the update of user's data: ", error);
+    throw error;
+  }
+};
+
+export const deleteCurrentUser = async (currentUser) => {
+  const userDocRef = doc(db, "users", currentUser.uid);
+
+  try {
+    await deleteDoc(userDocRef);
+    await deleteUser(currentUser);
+  } catch (error) {
+    console.error("Error during the delete of user's data: ", error);
+    throw error;
+  }
+};
+
+export const reauthenticateUser = async (currentUser, password) => {
+  try {
+    const credential = EmailAuthProvider.credential(
+      currentUser.email,
+      password
+    );
+    await reauthenticateWithCredential(currentUser, credential);
+    return credential;
+  } catch (error) {
+    console.error("Error during the reauthentication of user: ", error);
     throw error;
   }
 };

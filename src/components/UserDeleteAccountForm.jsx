@@ -1,17 +1,102 @@
-import { useContext } from "react";
+import Swal from "sweetalert2";
+import { useContext, useState } from "react";
 import { UserContext } from "../context";
 import { Theme_Button, Theme_Input, userPageStyle } from "../styles";
+import { deleteCurrentUser, reauthenticateUser } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
 
 const UserDeleteAccountForm = () => {
-  const { text } = useContext(UserContext);
+  const { text, currentUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const defaultForm = {
+    password: "",
+  };
+
+  const [form, setForm] = useState(defaultForm);
+  const { password } = form;
+
+  const errorSwal = (error) => {
+    Swal.fire({
+      title: text.userDelete.swal.errorTitle,
+      text: error,
+      icon: "error",
+    });
+  };
+
+  const valueCheck = (password) => {
+    const passwordRegex =
+      /^[A-Za-z0-9,.\-_;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
+
+    switch (true) {
+      case !passwordRegex.test(password):
+        errorSwal(text.userDelete.swal.errorPassword);
+        return;
+      default:
+        return true;
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!valueCheck(password)) return;
+
+    try {
+      const result = await Swal.fire({
+        title: text.userDelete.swal.title,
+        text: text.userDelete.swal.text,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: text.userDelete.swal.confirmButton,
+        cancelButtonText: text.userDelete.swal.cancelButton,
+      });
+
+      if (result.isConfirmed) {
+        await reauthenticateUser(currentUser, password);
+
+        try {
+          await deleteCurrentUser(currentUser);
+          navigate("/");
+          Swal.fire({
+            title: text.userDelete.swal.successTitle,
+            text: text.userDelete.swal.successText,
+            icon: "success",
+          });
+        } catch (error) {
+          console.log("elkapható error: ", error);
+          errorSwal(text.userDelete.swal.errorText);
+        }
+      }
+    } catch (error) {
+      console.log(error);
+      errorSwal(
+        error.code === "auth/wrong-password"
+          ? text.userDelete.swal.errorAuth
+          : error.code === auth / too - many - requests
+          ? text.userDelete.swal.errorTooMany
+          : text.userDelete.swal.errorText
+      );
+    }
+  };
 
   return (
-    <form className="w-[50%] flex flex-col">
+    <form onSubmit={handleSubmit} className="w-[50%] flex flex-col">
       <label className={`${userPageStyle.label} col-span-2 `}>
         {text.userDelete.password}
         <Theme_Input
           $outlinecolor="logo"
           type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
           className={userPageStyle.input}
         />
       </label>
@@ -22,6 +107,7 @@ const UserDeleteAccountForm = () => {
         $bordercolor="transparent"
         $hoverbgcolor="dark"
         $hovertextcolor="textlight"
+        type="submit"
         className={userPageStyle.deleteButton}
       >
         {text.userDelete.button}
