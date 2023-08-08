@@ -71,7 +71,12 @@ const Footer = () => {
                     key={item.title}
                     className="font-[400] sm:text-[1rem] text-[1.2rem]"
                   >
-                    <Theme_Link to={item.url} $hovertextcolor="logo">
+                    <Theme_Link
+                      to={item.url}
+                      $textcolor="text"
+                      $bgcolor="transparent"
+                      $hovertextcolor="logo"
+                    >
                       {item.title}
                     </Theme_Link>
                   </li>
@@ -82,20 +87,34 @@ const Footer = () => {
         </div>
       </div>
       <Theme_Div
-        $bordercolor="logo"
         $bgcolor="light"
+        $bordercolor="logo"
         className="flex justify-end flex-wrap sm:px-16 px-6 py-2 border-t-2 border-dotted"
       >
         <span className="flex gap-4 font-[400] text-[1rem]">
-          <Theme_Link to="/" $hovertextcolor="logo" className="text-center">
+          <Theme_Link
+            to="/"
+            $textcolor="text"
+            $bgcolor="transparent"
+            $hovertextcolor="logo"
+            className="text-center"
+          >
             {text.footer.privacy}
           </Theme_Link>
-          <Theme_Link to="/" $hovertextcolor="logo" className="text-center">
+          <Theme_Link
+            to="/"
+            $textcolor="text"
+            $bgcolor="transparent"
+            $hovertextcolor="logo"
+            className="text-center"
+          >
             {text.footer.terms}
           </Theme_Link>
           {adminUID && (
             <Theme_Link
               to="/admin"
+              $textcolor="text"
+              $bgcolor="transparent"
               $hovertextcolor="logo"
               className="text-center"
             >

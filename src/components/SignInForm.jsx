@@ -134,8 +134,10 @@ const SignInForm = () => {
         <Theme_Button
           type="submit"
           $bgcolor="logo"
-          $hoverbgcolor="dark"
           $textcolor="textlight"
+          $bordercolor="transparent"
+          $hoverbgcolor="dark"
+          $hovertextcolor="textlight"
           className={signInFormStyle.button}
         >
           {text.signInForm.button}
@@ -147,8 +149,11 @@ const SignInForm = () => {
       </button>
 
       <Theme_Button
-        $bordercolor="logo"
         $bgcolor="transparent"
+        $textcolor="text"
+        $bordercolor="logo"
+        $hoverbgcolor="transparent"
+        $hovertextcolor="text"
         className={signInFormStyle.forgotButton}
         onClick={handleGoogleSignIn}
       >

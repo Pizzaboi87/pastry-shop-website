@@ -14,6 +14,7 @@ const BlogProposalCard = ({ post }) => {
     <Link to={`/blog/post/` + post.title.toLowerCase().split(" ").join("-")}>
       <Theme_Div
         $bgcolor="primary"
+        $bordercolor="transparent"
         className="h-fit rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer"
       >
         <Theme_Img

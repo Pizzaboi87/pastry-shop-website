@@ -36,6 +36,9 @@ const BlogCategoryCard = () => {
         <Theme_Button
           $bgcolor="logo"
           $textcolor="textlight"
+          $bordercolor="transparent"
+          $hoverbgcolor="dark"
+          $hovertextcolor="textlight"
           className="rounded-xl py-1 px-2 shadow-sm font-[700] text-[1rem] cursor-pointer"
         >
           {category}
@@ -47,6 +50,7 @@ const BlogCategoryCard = () => {
   return (
     <Theme_Div
       $bgcolor="primary"
+      $bordercolor="transparent"
       className="rounded-xl xl:mb-0 mb-6 flex flex-col h-fit items-center justify-center shadow-xl px-3 py-3"
     >
       <h1 className="mb-3 text-text text-[1.5rem] font-[600]">

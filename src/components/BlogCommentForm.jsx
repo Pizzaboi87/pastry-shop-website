@@ -120,8 +120,10 @@ const BlogCommentForm = ({ postID }) => {
         <Theme_Button
           type="submit"
           $bgcolor="logo"
-          $hoverbgcolor="dark"
           $textcolor="textlight"
+          $bordercolor="transparent"
+          $hoverbgcolor="dark"
+          $hovertextcolor="textlight"
           className={blogCommentStyle.button}
         >
           {text.blogCommentForm.button}

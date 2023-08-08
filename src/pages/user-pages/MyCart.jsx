@@ -16,7 +16,11 @@ const MyCart = () => {
       </Theme_H1>
 
       <UserPanel>
-        <Theme_Div $bgcolor="primary" className="w-full h-[30rem]">
+        <Theme_Div
+          $bgcolor="primary"
+          $bordercolor="transparent"
+          className="w-full h-[30rem]"
+        >
           <h1 className="text-[3rem]">{`Test amount: ${
             currency.value * amount
           }${currency.symbol}`}</h1>

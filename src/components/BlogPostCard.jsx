@@ -20,6 +20,7 @@ const BlogPostCard = ({ post, isOwnPage }) => {
   return (
     <Theme_Div
       $bgcolor="primary"
+      $bordercolor="transparent"
       className="w-full rounded-2xl mb-16 shadow-xl"
     >
       {isOwnPage ? (
@@ -70,7 +71,12 @@ const BlogPostCard = ({ post, isOwnPage }) => {
           {isOwnPage &&
             post.tags.map((tag, index) => (
               <li key={index} className="text-[1.2rem]">
-                <Theme_Link $hovertextcolor="logo" to={`/blog/category/${tag}`}>
+                <Theme_Link
+                  $textcolor="text"
+                  $bgcolor="transparent"
+                  $hovertextcolor="logo"
+                  to={`/blog/category/${tag}`}
+                >
                   #{tag}
                 </Theme_Link>
               </li>
@@ -84,6 +90,9 @@ const BlogPostCard = ({ post, isOwnPage }) => {
           <Theme_Button
             $bgcolor="logo"
             $textcolor="textlight"
+            $bordercolor="transparent"
+            $hoverbgcolor="dark"
+            $hovertextcolor="textlight"
             className="rounded-xl px-4 py-2 font-[600] shadow-xl self-center"
           >
             {text.blogPostCardButton}

@@ -53,8 +53,10 @@ const CourseCard = ({ course, index }) => {
         >
           <Theme_Button
             $bgcolor="logo"
-            $hoverbgcolor="dark"
             $textcolor="textlight"
+            $bordercolor="transparent"
+            $hoverbgcolor="dark"
+            $hovertextcolor="textlight"
             className="rounded-xl shadow-sm border-none text-center px-3 py-2 text-[1rem] font-[400] w-[50%]"
           >
             {text.courseCardButton}

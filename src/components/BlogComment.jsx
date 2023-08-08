@@ -18,6 +18,7 @@ const BlogComment = () => {
     <div className="col-span-4 mb-16">
       <Theme_Div
         $bgcolor="primary"
+        $bordercolor="transparent"
         className="w-full rounded-2xl shadow-xl p-6 mb-16"
       >
         <h1 className="text-text text-[1.3rem] font-[600] mb-16">

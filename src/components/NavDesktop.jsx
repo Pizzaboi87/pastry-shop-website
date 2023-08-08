@@ -18,11 +18,7 @@ const NavDesktop = () => {
     >
       <ul className="flex justify-center items-center 2xl:gap-12 gap-8">
         {text.navLinksLeft.map((link) => (
-          <Theme_Li
-            key={link.title}
-            $hovertextcolor="logo"
-            className="text-text"
-          >
+          <Theme_Li key={link.title} $textcolor="text" $hovertextcolor="logo">
             <Link to={link.id} onClick={() => setOpenMyAccount(false)}>
               {link.title}
             </Link>
@@ -38,11 +34,7 @@ const NavDesktop = () => {
         </li>
 
         {text.navLinksRight.map((link) => (
-          <Theme_Li
-            key={link.title}
-            $hovertextcolor="logo"
-            className="text-text"
-          >
+          <Theme_Li key={link.title} $textcolor="text" $hovertextcolor="logo">
             <Link to={link.id} onClick={() => setOpenMyAccount(false)}>
               {link.title}
             </Link>
@@ -54,8 +46,9 @@ const NavDesktop = () => {
             <span>
               <Theme_Link
                 to="auth"
+                $textcolor="text"
+                $bgcolor="transparent"
                 $hovertextcolor="logo"
-                className="text-text"
                 onClick={() => {
                   setIsReg(true);
                   () => setOpenMyAccount(false);
@@ -67,8 +60,10 @@ const NavDesktop = () => {
               <Link to="auth">
                 <Theme_Button
                   $bgcolor="logo"
-                  $hoverbgcolor="dark"
                   $textcolor="textlight"
+                  $bordercolor="transparent"
+                  $hoverbgcolor="dark"
+                  $hovertextcolor="textlight"
                   className="rounded-xl shadow-sm border-none text-center font-[400] px-8 py-1"
                   onClick={() => {
                     setIsReg(false);
@@ -82,15 +77,18 @@ const NavDesktop = () => {
           </li>
         ) : (
           <>
-            <Theme_Li $hovertextcolor="logo" className="text-text">
+            <Theme_Li $textcolor="text" $hovertextcolor="logo">
               <Link to="/shop" onClick={() => setOpenMyAccount(false)}>
                 {text.navbar.shop}
               </Link>
             </Theme_Li>
             <li>
               <Theme_Button
+                $bgcolor="transparent"
+                $textcolor="text"
+                $bordercolor="transparent"
+                $hoverbgcolor="transparent"
                 $hovertextcolor="logo"
-                className="text-text"
                 onClick={() => setOpenMyAccount(!openMyAccount)}
               >
                 {text.navbar.profile}

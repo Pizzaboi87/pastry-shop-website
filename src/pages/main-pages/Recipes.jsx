@@ -78,8 +78,10 @@ const Recipes = () => {
           ) : (
             <Theme_Button
               $bgcolor="logo"
-              $hoverbgcolor="dark"
               $textcolor="textlight"
+              $bordercolor="transparent"
+              $hoverbgcolor="dark"
+              $hovertextcolor="textlight"
               onClick={showMore}
               className="px-8 rounded-xl shadow-xl border-none py-3 text-[1.3rem] font-bold"
             >

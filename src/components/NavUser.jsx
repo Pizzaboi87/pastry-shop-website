@@ -11,6 +11,7 @@ const NavUser = ({ openMyAccount, setOpenMyAccount }) => {
   return (
     <Theme_Div
       $bgcolor="secondary"
+      $bordercolor="transparent"
       className={`${
         openMyAccount ? "h-[15rem]" : "h-0"
       } lg:visible invisible flex flex-col items-center justify-center fixed 3xl:right-[12rem] 2xl:right-[8rem] right-4 top-[8rem] w-[15rem] rounded-b-xl shadow-xl z-[9] transition-all duration-500 ease-in-out`}
@@ -23,15 +24,20 @@ const NavUser = ({ openMyAccount, setOpenMyAccount }) => {
         {text.userAccount.map((item) => (
           <Theme_Li
             key={item.title}
+            $textcolor="text"
             $hovertextcolor="logo"
-            className="text-text text-[1.2rem]"
+            className="text-[1.2rem]"
           >
             <Link to={item.id} onClick={() => setOpenMyAccount(false)}>
               {item.title}
             </Link>
           </Theme_Li>
         ))}
-        <Theme_Li $hovertextcolor="logo" className="text-text text-[1.2rem]">
+        <Theme_Li
+          $textcolor="text"
+          $hovertextcolor="logo"
+          className="text-[1.2rem]"
+        >
           <button
             onClick={() => {
               signOutUser();

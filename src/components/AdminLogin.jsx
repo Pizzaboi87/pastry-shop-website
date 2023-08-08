@@ -105,7 +105,9 @@ const AdminLogin = () => {
         <Theme_Button
           $bgcolor="logo"
           $textcolor="textlight"
+          $bordercolor="transparent"
           $hoverbgcolor="dark"
+          $hovertextcolor="textlight"
           className={`${adminLoginStyle.button} col-span-1 col-start-3`}
         >
           Login

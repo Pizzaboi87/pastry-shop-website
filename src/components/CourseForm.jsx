@@ -172,8 +172,10 @@ const CourseForm = ({ courses }) => {
       </label>
       <Theme_Button
         $bgcolor="logo"
-        $hoverbgcolor="dark"
         $textcolor="textlight"
+        $bordercolor="transparent"
+        $hoverbgcolor="dark"
+        $hovertextcolor="textlight"
         className={`${loading ? "cursor-progress" : "cursor-pointer"} ${
           courseFormStyle.button
         }`}

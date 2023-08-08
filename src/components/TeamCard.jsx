@@ -32,6 +32,7 @@ const TeamCard = ({ staff, index }) => {
       <div className="filter absolute w-full h-[30rem] bg-[#fcdfda88]"></div>
       <Theme_Div
         $bgcolor="glasscard"
+        $bordercolor="transparent"
         className="info absolute w-full h-[10rem] bottom-0 flex flex-col items-center justify-between"
       >
         <span className="flex flex-col items-center pt-8">

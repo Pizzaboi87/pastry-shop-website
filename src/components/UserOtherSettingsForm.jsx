@@ -100,8 +100,10 @@ const UserOtherSettingsForm = () => {
 
       <Theme_Button
         $bgcolor="logo"
-        $hoverbgcolor="dark"
         $textcolor="textlight"
+        $bordercolor="transparent"
+        $hoverbgcolor="dark"
+        $hovertextcolor="textlight"
         className={userPageStyle.passwordButton}
       >
         {text.userOtherSettings.button}

@@ -28,27 +28,20 @@ const NavMobile = () => {
       />
       <Theme_Div
         $bgcolor="light"
+        $bordercolor="transparent"
         className="bg-main bg-mobBackground fixed top-0 left-0 z-[12] flex items-center justify-center"
         style={openMenu ? menuOnStyle : menuOffStyle}
       >
         <ul className="flex flex-col md:text-[5rem] text-[2.5rem] font-[400] items-center">
           {text.navLinksLeft.map((link) => (
-            <Theme_Li
-              key={link.title}
-              $hovertextcolor="logo"
-              className="text-text"
-            >
+            <Theme_Li key={link.title} $textcolor="text" $hovertextcolor="logo">
               <Link to={link.id} onClick={() => setOpenMenu(!openMenu)}>
                 {link.title}
               </Link>
             </Theme_Li>
           ))}
           {text.navLinksRight.map((link) => (
-            <Theme_Li
-              key={link.title}
-              $hovertextcolor="logo"
-              className="text-text"
-            >
+            <Theme_Li key={link.title} $textcolor="text" $hovertextcolor="logo">
               <Link to={link.id} onClick={() => setOpenMenu(!openMenu)}>
                 {link.title}
               </Link>
@@ -58,23 +51,27 @@ const NavMobile = () => {
             <>
               <Theme_Link
                 to="auth"
+                $textcolor="text"
+                $bgcolor="transparent"
                 $hovertextcolor="logo"
                 onClick={() => {
                   setOpenMenu(!openMenu);
                   setIsReg(true);
                 }}
-                className="text-text"
               >
                 {text.navbar.reg}
               </Theme_Link>
               <Link to="auth">
                 <Theme_Button
+                  $bgcolor="transparent"
+                  $textcolor="text"
+                  $bordercolor="transparent"
                   $hoverbgcolor="logo"
+                  $hovertextcolor="text"
                   onClick={() => {
                     setOpenMenu(!openMenu);
                     setIsReg(false);
                   }}
-                  className="text-text"
                 >
                   {text.navbar.login}
                 </Theme_Button>
@@ -82,15 +79,18 @@ const NavMobile = () => {
             </>
           ) : (
             <>
-              <Theme_Li $hovertextcolor="logo" className="text-text">
+              <Theme_Li $textcolor="text" $hovertextcolor="logo">
                 <Link to="/shop" onClick={() => setOpenMenu(!openMenu)}>
                   {text.navbar.shop}
                 </Link>
               </Theme_Li>
               <li>
                 <Theme_Button
+                  $bgcolor="transparent"
+                  $textcolor="text"
+                  $bordercolor="transparent"
+                  $hoverbgcolor="transparent"
                   $hovertextcolor="logo"
-                  className="text-text"
                   onClick={() => {
                     setOpenMenu(!openMenu);
                     signOutUser();

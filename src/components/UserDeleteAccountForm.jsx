@@ -18,8 +18,10 @@ const UserDeleteAccountForm = () => {
 
       <Theme_Button
         $bgcolor="logo"
-        $hoverbgcolor="dark"
         $textcolor="textlight"
+        $bordercolor="transparent"
+        $hoverbgcolor="dark"
+        $hovertextcolor="textlight"
         className={userPageStyle.deleteButton}
       >
         {text.userDelete.button}
