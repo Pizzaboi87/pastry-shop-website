@@ -717,7 +717,6 @@ const en_text = {
       errorTooMany: "Too many attempts, please try again later.",
     },
   },
-
   userPasswordForm: {
     current: "Current Password",
     new: "New Password",
@@ -731,6 +730,7 @@ const en_text = {
       errorPassword: "Please provide a valid password.",
       errorMatch: "New passwords do not match.",
       errorAuth: "Your current password is not correct.",
+      errorTooMany: "Too many attempts, please try again later.",
     },
   },
 };

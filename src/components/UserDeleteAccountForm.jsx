@@ -91,7 +91,7 @@ const UserDeleteAccountForm = () => {
         errorSwal(
           error.code === "auth/wrong-password"
             ? text.userDelete.swal.errorAuth
-            : error.code === auth / too - many - requests
+            : error.code === "auth/too-many-requests"
             ? text.userDelete.swal.errorTooMany
             : text.userDelete.swal.errorText
         );

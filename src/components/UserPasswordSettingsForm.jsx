@@ -76,6 +76,8 @@ const UserPasswordSettingsForm = () => {
         errorSwal(
           error.code === "auth/wrong-password"
             ? text.userPasswordForm.swal.errorAuth
+            : error.code === "auth/too-many-requests"
+            ? text.userPasswordForm.swal.errorTooMany
             : text.userPasswordForm.swal.errorText
         );
       }

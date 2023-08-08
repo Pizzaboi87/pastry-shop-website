@@ -735,6 +735,8 @@ const es_text = {
       errorPassword: "Por favor, proporciona una contraseña válida.",
       errorMatch: "Las nuevas contraseñas no coinciden.",
       errorAuth: "Tu contraseña actual no es correcta.",
+      errorTooMany:
+        "Demasiados intentos, por favor inténtalo de nuevo más tarde.",
     },
   },
 };

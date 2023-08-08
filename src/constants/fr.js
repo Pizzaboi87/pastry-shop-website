@@ -741,6 +741,7 @@ const fr_text = {
       errorPassword: "Veuillez fournir un mot de passe valide.",
       errorMatch: "Les nouveaux mots de passe ne correspondent pas.",
       errorAuth: "Votre mot de passe actuel n'est pas correct.",
+      errorTooMany: "Trop de tentatives, veuillez réessayer plus tard.",
     },
   },
 };

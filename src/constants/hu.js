@@ -733,6 +733,7 @@ const hu_text = {
       errorPassword: "Kérjük, adj meg érvényes jelszót.",
       errorMatch: "Az új jelszavak nem egyeznek.",
       errorAuth: "A jelenlegi jelszavad nem helyes.",
+      errorTooMany: "Túl sok próbálkozás, kérlek próbáld újra később.",
     },
   },
 };
