@@ -159,7 +159,7 @@ const signUpFormStyle = {
 };
 
 const adminPageStyle = {
-  wrapper: "w-full h-full flex flex-col items-center p-8",
+  wrapper: "w-full h-full flex flex-col items-center p-4",
   title: "text-text text-[1.5rem] font-[600] mb-8",
 };
 

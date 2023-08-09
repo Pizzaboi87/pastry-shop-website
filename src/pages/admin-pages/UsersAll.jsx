@@ -22,11 +22,11 @@ const UsersAll = () => {
     <div className={adminPageStyle.wrapper}>
       <h1 className={adminPageStyle.title}>{text.usersAllTitle}</h1>
 
-      <ul className="grid grid-cols-9 w-full px-8 items-center">
+      <ul className="grid grid-cols-10 w-full items-center">
         {text.usersAllHeaders.map((header) => (
           <li
             key={header.id}
-            className={`${header.style} text-text text-[1.2rem] font-[600] pl-2`}
+            className={`${header.style} text-text text-[1.1rem] font-[600] pl-2`}
           >
             {header.title}
           </li>
@@ -42,14 +42,21 @@ const UsersAll = () => {
                 onClick={() => navigate(`/admin/users/${user.id}`)}
               />
             </li>
-            <li className={`${tableStyle} col-span-2`}>{user.displayName}</li>
+            <li className={`${tableStyle} col-span-2`}>
+              <Link
+                to={`/admin/users/${user.id}`}
+                className="text-text text-[1rem] hover:text-logopink cursor-pointer"
+              >
+                {user.displayName}
+              </Link>
+            </li>
             <li className={`${tableStyle} col-span-3`}>{user.email}</li>
             <li className={`${tableStyle} col-span-2`}>
               {new Date(user.createdAt.seconds * 1000)
                 .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
                 .slice(0, -3)}
             </li>
-            <li className="flex gap-4 justify-center items-center py-2 col-span-1">
+            <li className="flex gap-4 justify-center items-center py-2 col-span-2">
               <Icon
                 icon="bi:trash3-fill"
                 className="delete outline-none text-text text-[2rem] hover:text-logopink cursor-pointer"

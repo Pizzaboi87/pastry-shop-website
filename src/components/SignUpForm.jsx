@@ -57,6 +57,7 @@ const SignUpForm = () => {
     selectedCurr,
     selectedLang,
     selectedTheme,
+    id,
   } = form;
 
   const valueCheck = (displayName, email, password, confirmPassword) => {
@@ -108,6 +109,7 @@ const SignUpForm = () => {
           selectedCurr,
           selectedLang,
           selectedTheme,
+          id,
         }).then(() => {
           successSwal();
         });

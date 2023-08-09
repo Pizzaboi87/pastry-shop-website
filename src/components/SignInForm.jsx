@@ -4,10 +4,12 @@ import { UserContext } from "../context";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import { Theme_Button, Theme_Input, signInFormStyle } from "../styles";
 import {
   signInWithGoogleRedirect,
   signInAuthUserWithEmailAndPassword,
+  updateUserData,
 } from "../utils/firebase";
 
 const SignInForm = () => {

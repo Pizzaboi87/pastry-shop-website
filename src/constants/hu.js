@@ -406,17 +406,17 @@ const hu_text = {
     {
       title: "E-mail",
       id: "email",
-      style: "bg-yellowlight col-span-2",
+      style: "bg-yellowlight col-span-3",
     },
     {
-      title: "Regisztráció Dátuma",
+      title: "Regisztráció",
       id: "date",
       style: "bg-yellowdark col-span-2",
     },
     {
       title: "Műveletek",
       id: "actions",
-      style: "bg-yellowlight col-span-1",
+      style: "bg-yellowlight col-span-2",
     },
   ],
   commentsHeaders: [

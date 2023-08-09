@@ -417,7 +417,7 @@ const en_text = {
     {
       title: "Actions",
       id: "actions",
-      style: "bg-yellowlight col-span-1",
+      style: "bg-yellowlight col-span-2",
     },
   ],
   commentsHeaders: [

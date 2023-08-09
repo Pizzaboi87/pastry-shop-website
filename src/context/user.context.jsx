@@ -29,90 +29,59 @@ export const UserContextProvider = ({ children }) => {
     value: 1,
   });
 
-  //----------------------------------FETCHING USER DATA----------------------------------//
   useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener((user) => {
+    const unsubscribe = onAuthStateChangedListener(async (user) => {
       if (user) {
-        createUserDocumentFromAuth(user);
+        await createUserDocumentFromAuth(user);
+        const userDatafromDB = await getUserData(user.uid);
+        setUserData(userDatafromDB);
+
+        if (userDatafromDB.photoExtension?.length > 0) {
+          const userImagefromDB = await getUserImage(user.uid);
+          setUserImage(userImagefromDB);
+        } else {
+          const defaultImage = await getStoredImage("blog/profile.jpg");
+          setUserImage(defaultImage);
+        }
       }
       setCurrentUser(user);
+      setIsDataLoaded(true);
     });
 
     return unsubscribe;
   }, []);
 
   useEffect(() => {
-    if (!currentUser || !currentUser.uid) {
-      setUserData(null);
-      setIsDataLoaded(true);
-      return;
-    }
-
-    const fetchUserData = async () => {
-      const userDatafromDB = await getUserData(currentUser.uid);
-      setUserData(userDatafromDB);
-
-      if (userDatafromDB.photoExtension) {
-        const userImagefromDB = await getUserImage(currentUser.uid);
-        setUserImage(userImagefromDB);
-      } else {
-        const defaultImage = await getStoredImage("blog/profile.jpg");
-        setUserImage(defaultImage);
-      }
-
-      setIsDataLoaded(true);
-    };
-
-    fetchUserData(currentUser.uid);
-  }, [currentUser, auth]);
-
-  //----------------------------------SETTING USER DATA----------------------------------//
-  useEffect(() => {
-    const defaultUserCurrency = userData ? userData.selectedCurr : "eur";
+    if (!userData) return;
+    const defaultUserCurrency = userData.selectedCurr || "eur";
     setUserCurrency(defaultUserCurrency);
 
-    const defaultUserLanguage = userData ? userData.selectedLang : "eng";
+    const defaultUserLanguage = userData.selectedLang || "eng";
     setUserLanguage(defaultUserLanguage);
 
-    const defaultUserTheme = userData ? userData.selectedTheme : "pink";
+    const defaultUserTheme = userData.selectedTheme || "pink";
     setUserTheme(defaultUserTheme);
 
-    const defaultUserNewsLetter = userData ? userData.newsletter : false;
+    const defaultUserNewsLetter = userData.newsletter || false;
     setUserNewsLetter(defaultUserNewsLetter);
-  }, [userData, currentUser, auth]);
+  }, [userData]);
 
   useEffect(() => {
-    switch (userCurrency) {
-      case "usd":
-        setCurrency({
-          symbol: "$",
-          name: "US Dollar",
-          value: 1.1,
-        });
+    switch (userTheme) {
+      case "blue":
+        document.body.style.backgroundColor = colors.blue.background;
         break;
-      case "gbp":
-        setCurrency({
-          symbol: "£",
-          name: "British Pound",
-          value: 0.9,
-        });
+      case "green":
+        document.body.style.backgroundColor = colors.green.background;
         break;
-      case "huf":
-        setCurrency({
-          symbol: "Ft",
-          name: "Hungarian Forint",
-          value: 360,
-        });
+      case "brown":
+        document.body.style.backgroundColor = colors.brown.background;
         break;
       default:
-        setCurrency({
-          symbol: "€",
-          name: "Euro",
-          value: 1,
-        });
+        document.body.style.backgroundColor = colors.pink.background;
         break;
     }
-  }, [userCurrency, currentUser]);
+  }, [userTheme]);
 
   useEffect(() => {
     switch (userLanguage) {
@@ -129,25 +98,7 @@ export const UserContextProvider = ({ children }) => {
         setText(en_text);
         break;
     }
-  }, [userLanguage, currentUser]);
-
-  useEffect(() => {
-    const body = document.getElementsByTagName("body")[0];
-    switch (userTheme) {
-      case "blue":
-        body.style.backgroundColor = colors.blue.background;
-        break;
-      case "green":
-        body.style.backgroundColor = colors.green.background;
-        break;
-      case "brown":
-        body.style.backgroundColor = colors.brown.background;
-        break;
-      default:
-        body.style.backgroundColor = colors.pink.background;
-        break;
-    }
-  }, [userTheme, currentUser]);
+  }, [userLanguage]);
 
   const userContextValue = {
     currentUser,

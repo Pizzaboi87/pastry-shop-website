@@ -86,7 +86,7 @@ const BlogComments = () => {
         {text.commentsHeaders.map((header) => (
           <li
             key={header.id}
-            className={`${header.style} text-text text-[1.2rem] font-[600] pl-2`}
+            className={`${header.style} text-text text-[1.1rem] font-[600] pl-2`}
           >
             {header.title}
           </li>
@@ -108,7 +108,14 @@ const BlogComments = () => {
                   onClick={toDetailsPage}
                 />
               </li>
-              <li className={`${tableStyle} col-span-2`}>{comment.author}</li>
+              <li className="col-span-2">
+                <p
+                  className={`${tableStyle} cursor-pointer hover:text-logopink inline`}
+                  onClick={toDetailsPage}
+                >
+                  {comment.author}
+                </p>
+              </li>
               <li className={`${tableStyle} col-span-2`}>{comment.title}</li>
               <li className={`${tableStyle} col-span-2`}>
                 {new Date(comment.date)

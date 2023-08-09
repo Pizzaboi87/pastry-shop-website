@@ -414,7 +414,7 @@ const fr_text = {
     {
       title: "E-mail",
       id: "email",
-      style: "bg-yellowlight col-span-2",
+      style: "bg-yellowlight col-span-3",
     },
     {
       title: "Date d'inscription",
@@ -424,7 +424,7 @@ const fr_text = {
     {
       title: "Actions",
       id: "actions",
-      style: "bg-yellowlight col-span-1",
+      style: "bg-yellowlight col-span-2",
     },
   ],
   commentsHeaders: [

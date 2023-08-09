@@ -407,7 +407,7 @@ const es_text = {
     {
       title: "Email",
       id: "email",
-      style: "bg-yellowlight col-span-2",
+      style: "bg-yellowlight col-span-3",
     },
     {
       title: "Fecha de registro",
@@ -417,7 +417,7 @@ const es_text = {
     {
       title: "Acciones",
       id: "actions",
-      style: "bg-yellowlight col-span-1",
+      style: "bg-yellowlight col-span-2",
     },
   ],
   commentsHeaders: [
