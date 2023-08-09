@@ -359,7 +359,7 @@ const fr_text = {
   adminMenu: [
     {
       title: "Utilisateurs",
-      links: [{ title: "Tous les utilisateurs", url: "/admin/" }],
+      links: [{ title: "Tous les utilisateurs", url: "/admin/users/all" }],
     },
     {
       title: "Blog",

@@ -1,4 +1,3 @@
-import profImage from "../../assets/rewprof-1.webp";
 import { Fragment, useEffect, useState, useContext } from "react";
 import { getAllUser } from "../../utils/firebase";
 import { UserContext } from "../../context";
@@ -6,10 +5,12 @@ import { Icon } from "@iconify/react";
 import { Loading } from "../../components";
 import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
 import { Tooltip } from "react-tooltip";
+import { Link, useNavigate } from "react-router-dom";
 
 const UsersAll = () => {
   const [allUser, setAllUser] = useState([]);
   const { text } = useContext(UserContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getAllUser().then((users) => setAllUser(users));
@@ -37,7 +38,8 @@ const UsersAll = () => {
               <img
                 src={user.imgsrc}
                 alt="profile"
-                className="w-10 h-10 mx-auto rounded-full object-cover"
+                className="w-12 h-12 mx-auto object-cover rounded-full cursor-pointer"
+                onClick={() => navigate(`/admin/users/${user.id}`)}
               />
             </li>
             <li className={`${tableStyle} col-span-2`}>{user.displayName}</li>
@@ -47,15 +49,17 @@ const UsersAll = () => {
                 .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
                 .slice(0, -3)}
             </li>
-            <li className="flex gap-6 justify-center items-center py-2 col-span-1">
+            <li className="flex gap-4 justify-center items-center py-2 col-span-1">
               <Icon
                 icon="bi:trash3-fill"
                 className="delete outline-none text-text text-[2rem] hover:text-logopink cursor-pointer"
               />
-              <Icon
-                icon="raphael:edit"
+              <Link
+                to={`/admin/users/${user.id}`}
                 className="edit outline-none text-text text-[2rem] hover:text-logopink cursor-pointer"
-              />
+              >
+                <Icon icon="raphael:edit" />
+              </Link>
             </li>
           </Fragment>
         ))}
@@ -68,7 +72,7 @@ const UsersAll = () => {
       />
       <Tooltip
         anchorSelect=".edit"
-        content="Edit user."
+        content="View user."
         style={tooltipStyle}
         place="top"
       />

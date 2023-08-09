@@ -1,21 +1,22 @@
 import Swal from "sweetalert2";
 import { Fragment, useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CommentsContext, UserContext } from "../../context";
 import { Tooltip } from "react-tooltip";
 import { Icon } from "@iconify/react";
+import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
+import { Loading } from "../../components";
 import {
   changeCommentStatus,
   deleteComment,
   getAllUser,
   getStoredImage,
 } from "../../utils/firebase";
-import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
-import { Loading } from "../../components";
 
 const BlogComments = () => {
   const { allComments, setAllComments } = useContext(CommentsContext);
   const { text } = useContext(UserContext);
+  const navigate = useNavigate();
   const [commentsWithUsers, setCommentsWithUsers] = useState([]);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ const BlogComments = () => {
       const updatedComments = allComments.map((comment) => {
         const user = users.find((user) => user.email === comment.email);
         if (user) {
-          return { ...comment, imgsrc: user.imgsrc };
+          return { ...comment, imgsrc: user.imgsrc, userID: user.id };
         } else {
           return { ...comment, imgsrc: defaultImg };
         }
@@ -91,47 +92,55 @@ const BlogComments = () => {
           </li>
         ))}
 
-        {commentsWithUsers.map((comment) => (
-          <Fragment key={comment.id}>
-            <li className={`${tableStyle} col-span-1`}>
-              <img
-                src={comment.imgsrc}
-                alt="profile"
-                className="w-10 h-10 mx-auto rounded-full object-cover"
-              />
-            </li>
-            <li className={`${tableStyle} col-span-2`}>{comment.author}</li>
-            <li className={`${tableStyle} col-span-2`}>{comment.title}</li>
-            <li className={`${tableStyle} col-span-2`}>
-              {new Date(comment.date)
-                .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
-                .slice(0, -3)}
-            </li>
+        {commentsWithUsers.map((comment) => {
+          const toDetailsPage = () => {
+            if (comment.userID) navigate(`/admin/users/${comment.userID}`);
+            else navigate(`/admin/users/deleted-user`);
+          };
 
-            <li className="flex gap-4 justify-center items-center py-2 col-span-1">
-              <Icon
-                icon="bi:trash3-fill"
-                className="delete text-text outline-none text-[2rem] hover:text-logopink cursor-pointer"
-                onClick={() => confirmDelete(comment.id)}
-              />
-              <Link
-                to={`/admin/blog/comments/${comment.id}`}
-                className="edit text-text outline-none text-[1.5rem] hover:text-logopink cursor-pointer"
-              >
-                <Icon icon="raphael:edit" />
-              </Link>
-              <Icon
-                icon={comment.isPublished ? "mdi:publish" : "mdi:publish-off"}
-                className={`${
-                  comment.isPublished
-                    ? "published text-green"
-                    : "hided text-red"
-                } outline-none text-[2.5rem] mt-[0.1rem] cursor-pointer`}
-                onClick={() => changePublish(comment)}
-              />
-            </li>
-          </Fragment>
-        ))}
+          return (
+            <Fragment key={comment.id}>
+              <li className={`${tableStyle} col-span-1`}>
+                <img
+                  src={comment.imgsrc}
+                  alt="profile"
+                  className="w-12 h-12 mx-auto rounded-full object-cover cursor-pointer"
+                  onClick={toDetailsPage}
+                />
+              </li>
+              <li className={`${tableStyle} col-span-2`}>{comment.author}</li>
+              <li className={`${tableStyle} col-span-2`}>{comment.title}</li>
+              <li className={`${tableStyle} col-span-2`}>
+                {new Date(comment.date)
+                  .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
+                  .slice(0, -3)}
+              </li>
+
+              <li className="flex gap-4 justify-center items-center py-2 col-span-1">
+                <Icon
+                  icon="bi:trash3-fill"
+                  className="delete text-text outline-none text-[2rem] hover:text-logopink cursor-pointer"
+                  onClick={() => confirmDelete(comment.id)}
+                />
+                <Link
+                  to={`/admin/blog/comments/${comment.id}`}
+                  className="edit text-text outline-none text-[1.5rem] hover:text-logopink cursor-pointer"
+                >
+                  <Icon icon="raphael:edit" />
+                </Link>
+                <Icon
+                  icon={comment.isPublished ? "mdi:publish" : "mdi:publish-off"}
+                  className={`${
+                    comment.isPublished
+                      ? "published text-green"
+                      : "hided text-red"
+                  } outline-none text-[2.5rem] mt-[0.1rem] cursor-pointer`}
+                  onClick={() => changePublish(comment)}
+                />
+              </li>
+            </Fragment>
+          );
+        })}
       </ul>
       <Tooltip
         anchorSelect=".published"
@@ -153,7 +162,7 @@ const BlogComments = () => {
       />
       <Tooltip
         anchorSelect=".edit"
-        content="Edit comment."
+        content="View comment."
         style={tooltipStyle}
         place="top"
       />

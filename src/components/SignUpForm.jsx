@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { UserContext } from "../context";
 import { motion } from "framer-motion";
+import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 import { Theme_Button, Theme_Input, signUpFormStyle } from "../styles";
 import {
@@ -39,6 +40,7 @@ const SignUpForm = () => {
     selectedCurr: "eur",
     selectedLang: "eng",
     selectedTheme: "pink",
+    id: uuidv4(),
   };
 
   const resetForm = () => {

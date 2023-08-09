@@ -21,9 +21,11 @@ import {
   BlogComments,
   BlogNew,
   BlogPostEdit,
+  DeletedUser,
   ShopAll,
   ShopNew,
   ShopOrders,
+  UserDetailsPage,
   UsersAll,
 } from "../pages/admin-pages";
 import {
@@ -45,6 +47,9 @@ const MainContent = () => {
 
           <Route path="admin" element={<Admin />}>
             <Route path="" element={<UsersAll />} />
+            <Route path="users/all" element={<UsersAll />} />
+            <Route path="users/deleted-user" element={<DeletedUser />} />
+            <Route path="users/:id" element={<UserDetailsPage />} />
             <Route path="blog/all" element={<BlogAll />} />
             <Route path="blog/all/:id" element={<BlogPostEdit />} />
             <Route path="blog/new-article" element={<BlogNew />} />

@@ -358,7 +358,7 @@ const es_text = {
   adminMenu: [
     {
       title: "Usuarios",
-      links: [{ title: "Todos los usuarios", url: "/admin/" }],
+      links: [{ title: "Todos los usuarios", url: "/admin/users/all" }],
     },
     {
       title: "Blog",

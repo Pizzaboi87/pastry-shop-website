@@ -357,7 +357,7 @@ const hu_text = {
   adminMenu: [
     {
       title: "Felhasználók",
-      links: [{ title: "Minden felhasználó", url: "/admin/" }],
+      links: [{ title: "Minden felhasználó", url: "/admin/users/all" }],
     },
     {
       title: "Blog",
