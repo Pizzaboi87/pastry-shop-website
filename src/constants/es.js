@@ -49,7 +49,7 @@ const es_text = {
       id: "mysettings",
     },
   ],
-  homeTitle: ["Saborea", "el arte de los", "Pasteles Franceses"],
+  homeTitle: ["¡Disfruta la magia", "de los sabores!"],
   homeSubtitle: [
     "Maravíllate mientras los dulces sabores cautivan en Le Ciel Sucré, donde los maestros franceses crean y prueba la pasión en maravillas del tamaño de un bocado, donde los placeres dulces cobran vida.",
   ],

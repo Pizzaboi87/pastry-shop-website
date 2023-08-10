@@ -49,7 +49,7 @@ const hu_text = {
       id: "mysettings",
     },
   ],
-  homeTitle: ["Kóstolj bele", "a francia cukrászat", "csodáiba még ma!"],
+  homeTitle: ["Élvezd az", "ízek varázsát!"],
   homeSubtitle: [
     "Ámulj el, ahogy az édes ízek elbűvölnek, itt a Le Ciel Sucré-ban, miközben francia mesterek alkotnak, és érezd meg a szenvedélyt e falatnyi csodákban, ahol az édes örömök életre kelnek.",
   ],
@@ -380,7 +380,7 @@ const hu_text = {
     message: {
       addresse: "Kedves Le Ciel Sucré!",
       message:
-        "Csak azt szerettem volna elmondani, mennyire élveztem a tortákat, amiket a születésnapomra rendeltem. A barátaim és a családom mind nagyon szerették őket, és különösen a csokoládétortát dicsérték. Köszönöm a magas minőségű termékeket és kiváló szolgáltatást.",
+        "Csak szerettem volna elmondani, mennyire imádtam a tortákat, amiket a születésnapomra rendeltem. A barátaim és a családom mind nagyon szerették őket, és különösen a csokoládétortát dicsérték. Köszönöm a magas minőségű termékeket és kiváló szolgáltatást.",
       senderStart: "Minden jót kívánva,",
       senderEnd: "Mary",
       ps: "PS: Holnap visszatérünk!",

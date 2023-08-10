@@ -119,7 +119,12 @@ export const UserContextProvider = ({ children }) => {
     setUserNewsLetter,
   };
 
-  if (!isDataLoaded) return <Loading />;
+  if (!isDataLoaded)
+    return (
+      <div className="w-full h-[100vh]">
+        <Loading />
+      </div>
+    );
 
   return (
     <UserContext.Provider value={userContextValue}>

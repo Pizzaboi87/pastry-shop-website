@@ -25,7 +25,7 @@ const Home = () => {
             <span className="flex xl:flex-col flex-row flex-wrap lg:mb-2">
               {text.homeTitle.map((line) => (
                 <Fragment key={line}>
-                  <h1 className="3xl:text-[4.5rem] 2xl:text-[3.5rem] text-[2.1rem] 2xl:font-[400] font-[600]">
+                  <h1 className="3xl:text-[4.5rem] 2xl:text-[3.5rem] text-[1.9rem] 2xl:font-[400] font-[600]">
                     {line}
                   </h1>
                   <h1 className="visible xl:hidden text-[2rem]">&nbsp;</h1>

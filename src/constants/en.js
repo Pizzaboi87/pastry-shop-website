@@ -49,7 +49,7 @@ const en_text = {
       id: "mysettings",
     },
   ],
-  homeTitle: ["Savor", "the art of", "French Pastries!"],
+  homeTitle: ["Savor the art of", "French Pastries!"],
   homeSubtitle: [
     "Marvel as the sweet flavors enchant, Le Ciel Sucré, where French masters create, and taste the passion in bite-sized wonders, where sweet pleasures come alive.",
   ],

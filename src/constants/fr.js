@@ -49,7 +49,7 @@ const fr_text = {
       id: "mysettings",
     },
   ],
-  homeTitle: ["Dégustez l'art des", "pâtisseries françaises!"],
+  homeTitle: ["Appréciez", "l'art des saveurs!"],
   homeSubtitle: [
     "Laissez-vous émerveiller par les saveurs sucrées envoûtantes de Le Ciel Sucré, où les maîtres français créent et goûtez la passion dans des merveilles de bouchées, où les plaisirs sucrés prennent vie.",
   ],
@@ -731,7 +731,7 @@ const fr_text = {
   userPasswordForm: {
     current: "Mot de passe actuel",
     new: "Nouveau mot de passe",
-    confirm: "Confirmer le nouveau mot de passe",
+    confirm: "Confirmer le mot de passe",
     button: "Mettre à jour",
     loading: "Mise à jour en cours...",
     swal: {
