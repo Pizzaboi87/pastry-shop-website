@@ -3,7 +3,7 @@ import { UserContext } from "../../context";
 import { adminPageStyle } from "../../styles";
 import { useParams } from "react-router-dom";
 import { getAllUser } from "../../utils/firebase";
-import { Loading } from "../../components";
+import { Loading, UserAccountForm } from "../../components";
 
 const UserDetailsPage = () => {
   const { text } = useContext(UserContext);
@@ -30,6 +30,12 @@ const UserDetailsPage = () => {
       <h1 className={adminPageStyle.title}>{`${
         selectedUser.displayName ? selectedUser.displayName : "User"
       }'s Personal page`}</h1>
+
+      <UserAccountForm
+        userData={selectedUser}
+        setUserData={setSelectedUser}
+        currentUser={selectedUser}
+      />
     </div>
   );
 };

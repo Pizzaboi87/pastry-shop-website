@@ -67,6 +67,7 @@ export const createUserDocumentFromAuth = async (
     const { displayName, email } = userAuth;
     const createdAt = new Date();
     const id = uuidv4();
+    const uid = userAuth.uid;
     const selectedLang = "eng";
     const selectedTheme = "pink";
     const selectedCurr = "eur";
@@ -79,6 +80,7 @@ export const createUserDocumentFromAuth = async (
         email,
         createdAt,
         id,
+        uid,
         selectedLang,
         selectedTheme,
         selectedCurr,

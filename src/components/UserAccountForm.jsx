@@ -122,7 +122,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="grid grid-cols-7 px-16 py-6 gap-y-2"
+      className="w-full grid grid-cols-7 px-16 py-6 gap-y-2"
     >
       <label className={`${userPageStyle.label} col-span-3 col-start-1`}>
         {text.userAccountForm.fullName}
