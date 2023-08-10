@@ -21,7 +21,7 @@ export const UserContextProvider = ({ children }) => {
   const [userLanguage, setUserLanguage] = useState(null);
   const [text, setText] = useState(null);
   const [userTheme, setUserTheme] = useState(null);
-  const [userNewsLetter, setUserNewsLetter] = useState(false);
+  const [userNewsLetter, setUserNewsLetter] = useState(null);
   const [userCurrency, setUserCurrency] = useState(null);
   const [currency, setCurrency] = useState({
     symbol: "",
@@ -29,59 +29,90 @@ export const UserContextProvider = ({ children }) => {
     value: 1,
   });
 
+  //----------------------------------FETCHING USER DATA----------------------------------//
   useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener(async (user) => {
+    const unsubscribe = onAuthStateChangedListener((user) => {
       if (user) {
-        await createUserDocumentFromAuth(user);
-        const userDatafromDB = await getUserData(user.uid);
-        setUserData(userDatafromDB);
-
-        if (userDatafromDB.photoExtension?.length > 0) {
-          const userImagefromDB = await getUserImage(user.uid);
-          setUserImage(userImagefromDB);
-        } else {
-          const defaultImage = await getStoredImage("blog/profile.jpg");
-          setUserImage(defaultImage);
-        }
+        createUserDocumentFromAuth(user);
       }
       setCurrentUser(user);
-      setIsDataLoaded(true);
     });
 
     return unsubscribe;
   }, []);
 
   useEffect(() => {
-    if (!userData) return;
-    const defaultUserCurrency = userData.selectedCurr || "eur";
+    if (!currentUser || !currentUser.uid) {
+      setUserData(null);
+      setIsDataLoaded(true);
+      return;
+    }
+
+    const fetchUserData = async () => {
+      const userDatafromDB = await getUserData(currentUser.uid);
+      setUserData(userDatafromDB);
+
+      if (userDatafromDB.photoExtension?.length) {
+        const userImagefromDB = await getUserImage(currentUser.uid);
+        setUserImage(userImagefromDB);
+      } else {
+        const defaultImage = await getStoredImage("blog/profile.jpg");
+        setUserImage(defaultImage);
+      }
+
+      setIsDataLoaded(true);
+    };
+
+    fetchUserData(currentUser.uid);
+  }, [currentUser, auth]);
+
+  //----------------------------------SETTING USER DATA----------------------------------//
+  useEffect(() => {
+    const defaultUserCurrency = userData ? userData.selectedCurr : "eur";
     setUserCurrency(defaultUserCurrency);
 
-    const defaultUserLanguage = userData.selectedLang || "eng";
+    const defaultUserLanguage = userData ? userData.selectedLang : "eng";
     setUserLanguage(defaultUserLanguage);
 
-    const defaultUserTheme = userData.selectedTheme || "pink";
+    const defaultUserTheme = userData ? userData.selectedTheme : "pink";
     setUserTheme(defaultUserTheme);
 
-    const defaultUserNewsLetter = userData.newsletter || false;
+    const defaultUserNewsLetter = userData ? userData.newsletter : false;
     setUserNewsLetter(defaultUserNewsLetter);
-  }, [userData]);
+  }, [userData, currentUser, auth]);
 
   useEffect(() => {
-    switch (userTheme) {
-      case "blue":
-        document.body.style.backgroundColor = colors.blue.background;
+    switch (userCurrency) {
+      case "usd":
+        setCurrency({
+          symbol: "$",
+          name: "US Dollar",
+          value: 1.1,
+        });
         break;
-      case "green":
-        document.body.style.backgroundColor = colors.green.background;
+      case "gbp":
+        setCurrency({
+          symbol: "£",
+          name: "British Pound",
+          value: 0.9,
+        });
         break;
-      case "brown":
-        document.body.style.backgroundColor = colors.brown.background;
+      case "huf":
+        setCurrency({
+          symbol: "Ft",
+          name: "Hungarian Forint",
+          value: 360,
+        });
         break;
       default:
-        document.body.style.backgroundColor = colors.pink.background;
+        setCurrency({
+          symbol: "€",
+          name: "Euro",
+          value: 1,
+        });
         break;
     }
-  }, [userTheme]);
+  }, [userCurrency, currentUser]);
 
   useEffect(() => {
     switch (userLanguage) {
@@ -98,7 +129,25 @@ export const UserContextProvider = ({ children }) => {
         setText(en_text);
         break;
     }
-  }, [userLanguage]);
+  }, [userLanguage, currentUser]);
+
+  useEffect(() => {
+    const body = document.getElementsByTagName("body")[0];
+    switch (userTheme) {
+      case "blue":
+        body.style.backgroundColor = colors.blue.background;
+        break;
+      case "green":
+        body.style.backgroundColor = colors.green.background;
+        break;
+      case "brown":
+        body.style.backgroundColor = colors.brown.background;
+        break;
+      default:
+        body.style.backgroundColor = colors.pink.background;
+        break;
+    }
+  }, [userTheme, currentUser]);
 
   const userContextValue = {
     currentUser,

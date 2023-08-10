@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { v4 as uuidv4 } from "uuid";
 import {
   getAuth,
   signInWithRedirect,
@@ -65,12 +66,24 @@ export const createUserDocumentFromAuth = async (
   if (!userSnapShot.exists()) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
+    const id = uuidv4();
+    const selectedLang = "eng";
+    const selectedTheme = "pink";
+    const selectedCurr = "eur";
+    const newsletter = false;
+    const photoExtension = "";
 
     try {
       await setDoc(userDocRef, {
         displayName,
         email,
         createdAt,
+        id,
+        selectedLang,
+        selectedTheme,
+        selectedCurr,
+        newsletter,
+        photoExtension,
         ...additionalInformation,
       });
     } catch (error) {

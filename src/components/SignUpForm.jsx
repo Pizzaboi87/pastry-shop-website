@@ -36,11 +36,6 @@ const SignUpForm = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    newsletter: false,
-    selectedCurr: "eur",
-    selectedLang: "eng",
-    selectedTheme: "pink",
-    id: uuidv4(),
   };
 
   const resetForm = () => {
@@ -48,17 +43,7 @@ const SignUpForm = () => {
   };
 
   const [form, setForm] = useState(defaultForm);
-  const {
-    displayName,
-    email,
-    password,
-    confirmPassword,
-    newsletter,
-    selectedCurr,
-    selectedLang,
-    selectedTheme,
-    id,
-  } = form;
+  const { displayName, email, password, confirmPassword } = form;
 
   const valueCheck = (displayName, email, password, confirmPassword) => {
     const nameRegex = /^[A-Za-z0-9-/ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
@@ -103,14 +88,7 @@ const SignUpForm = () => {
           password
         );
 
-        await createUserDocumentFromAuth(user, {
-          displayName,
-          newsletter,
-          selectedCurr,
-          selectedLang,
-          selectedTheme,
-          id,
-        }).then(() => {
+        await createUserDocumentFromAuth(user, { displayName }).then(() => {
           successSwal();
         });
         resetForm();
