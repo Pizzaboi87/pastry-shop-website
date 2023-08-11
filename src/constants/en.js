@@ -651,9 +651,9 @@ const en_text = {
     savingButton: "Saving...",
     swal: {
       successTitle: "Success!",
-      successMessage: "Your account has been updated.",
+      successMessage: "The account has been updated.",
       errorTitle: "Something went wrong!",
-      errorNotUpdated: "Sorry, we couldn't update your data!",
+      errorNotUpdated: "Sorry, we couldn't update the account!",
       errorName: "Please add a valid name.",
       errorDisplayName: "Please add a valid username.",
       errorCountry: "Please add a valid country.",

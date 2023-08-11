@@ -655,9 +655,9 @@ const es_text = {
     savingButton: "Guardando...",
     swal: {
       successTitle: "¡Éxito!",
-      successMessage: "Tu cuenta ha sido actualizada.",
+      successMessage: "La cuenta ha sido actualizada.",
       errorTitle: "¡Algo salió mal!",
-      errorNotUpdated: "Lo sentimos, no pudimos actualizar tus datos.",
+      errorNotUpdated: "Lo sentimos, no pudimos actualizar los datos.",
       errorName: "Por favor, ingresa un nombre válido.",
       errorDisplayName: "Por favor, ingresa un nombre de usuario válido.",
       errorCountry: "Por favor, ingresa un país válido.",

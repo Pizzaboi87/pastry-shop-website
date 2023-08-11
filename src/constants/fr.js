@@ -662,9 +662,9 @@ const fr_text = {
     savingButton: "Enregistrement en cours...",
     swal: {
       successTitle: "Succès!",
-      successMessage: "Votre compte a été mis à jour.",
+      successMessage: "Le compte a été mis à jour.",
       errorTitle: "Quelque chose s'est mal passé!",
-      errorNotUpdated: "Désolé, nous n'avons pas pu mettre à jour vos données!",
+      errorNotUpdated: "Désolé, nous n'avons pas pu mettre à jour les données!",
       errorName: "Veuillez ajouter un nom valide.",
       errorDisplayName: "Veuillez ajouter un nom d'utilisateur valide.",
       errorCountry: "Veuillez ajouter un pays valide.",

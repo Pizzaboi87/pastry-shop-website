@@ -654,9 +654,9 @@ const hu_text = {
     savingButton: "Mentés folyamatban...",
     swal: {
       successTitle: "Siker!",
-      successMessage: "A fiókod frissítésre került.",
+      successMessage: "A fiók frissítésre került.",
       errorTitle: "Valami hiba történt!",
-      errorNotUpdated: "Sajnáljuk, nem sikerült frissíteni az adataidat!",
+      errorNotUpdated: "Sajnáljuk, nem sikerült frissíteni az adatokat!",
       errorName: "Kérjük, adj meg érvényes nevet.",
       errorDisplayName: "Kérjük, adj meg érvényes felhasználónevet.",
       errorCountry: "Kérjük, adj meg érvényes országot.",
