@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import { Fragment, useEffect, useState, useContext } from "react";
 import { getAllUser } from "../../utils/firebase";
 import { UserContext } from "../../context";
@@ -6,17 +7,35 @@ import { Loading } from "../../components";
 import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
 import { Tooltip } from "react-tooltip";
 import { Link, useNavigate } from "react-router-dom";
+import { deleteUser } from "../../utils/deleteUser";
 
 const UsersAll = () => {
   const [allUser, setAllUser] = useState([]);
-  const { text } = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(false);
+  const { text, currentUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   useEffect(() => {
     getAllUser().then((users) => setAllUser(users));
   }, []);
 
-  if (allUser.length === 0) return <Loading />;
+  if (allUser.length === 0 || isLoading) return <Loading />;
+
+  const confirmDelete = (user) => {
+    Swal.fire({
+      title: text.userDetailsPage.swal.question,
+      showDenyButton: true,
+      confirmButtonText: text.userDetailsPage.swal.confirm,
+      denyButtonText: text.userDetailsPage.swal.cancel,
+    }).then((result) => {
+      setIsLoading(true);
+      if (result.isConfirmed) {
+        deleteUser(user, setIsLoading, currentUser, text, navigate);
+      } else if (result.isDenied) {
+        return;
+      }
+    });
+  };
 
   return (
     <div className={adminPageStyle.wrapper}>
@@ -60,6 +79,7 @@ const UsersAll = () => {
               <Icon
                 icon="bi:trash3-fill"
                 className="delete outline-none text-text text-[2rem] hover:text-logopink cursor-pointer"
+                onClick={() => confirmDelete(user)}
               />
               <Link
                 to={`/admin/users/${user.id}`}

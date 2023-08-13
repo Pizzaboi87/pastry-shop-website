@@ -3,9 +3,10 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context";
 import { adminPageStyle } from "../../styles";
 import { useNavigate, useParams } from "react-router-dom";
-import { deleteUserFromDatabase, getAllUser } from "../../utils/firebase";
+import { getAllUser } from "../../utils/firebase";
 import { Loading, UserAccountForm } from "../../components";
 import { Icon } from "@iconify/react";
+import { deleteUser } from "../../utils/deleteUser";
 
 const UserDetailsPage = () => {
   const { text, currentUser } = useContext(UserContext);
@@ -26,46 +27,6 @@ const UserDetailsPage = () => {
     fetchUsers();
   }, [id]);
 
-  const deleteUser = async (user) => {
-    try {
-      const idToken = await currentUser.getIdToken();
-
-      const response = await fetch("/api/delete-user", {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${idToken}`,
-          "user-id": user.uid,
-        },
-      });
-
-      if (response.ok) {
-        await deleteUserFromDatabase(user).then(() => {
-          setIsLoading(false);
-          Swal.fire({
-            title: text.userDetailsPage.swal.successTitle,
-            text: text.userDetailsPage.swal.successText,
-            icon: "success",
-          });
-          navigate("/admin/users/all");
-        });
-      } else {
-        setIsLoading(false);
-        Swal.fire({
-          title: text.userDetailsPage.swal.errorTitle,
-          text: text.userDetailsPage.swal.errorDelete,
-          icon: "error",
-        });
-      }
-    } catch (error) {
-      setIsLoading(false);
-      Swal.fire({
-        title: text.userDetailsPage.swal.errorTitle,
-        text: error.message,
-        icon: "error",
-      });
-    }
-  };
-
   const confirmDelete = (user) => {
     Swal.fire({
       title: text.userDetailsPage.swal.question,
@@ -75,7 +36,7 @@ const UserDetailsPage = () => {
     }).then((result) => {
       setIsLoading(true);
       if (result.isConfirmed) {
-        deleteUser(user);
+        deleteUser(user, setIsLoading, currentUser, text, navigate);
       } else if (result.isDenied) {
         return;
       }
