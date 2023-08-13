@@ -9,6 +9,7 @@ import {
   createUserDocumentFromAuth,
   createAuthUserWithEmailAndPassword,
   auth,
+  signOutUser,
 } from "../utils/firebase";
 
 const SignUpForm = () => {
@@ -92,7 +93,6 @@ const SignUpForm = () => {
           successSwal();
         });
         resetForm();
-        auth.signOut();
       } catch (error) {
         if (error.code === "auth/email-already-in-use") {
           errorSwal(text.signUpForm.swal.errorInUse);

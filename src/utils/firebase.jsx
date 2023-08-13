@@ -204,6 +204,17 @@ export const deleteCurrentUser = async (currentUser) => {
   }
 };
 
+export const deleteUserFromDatabase = async (currentUser) => {
+  const docRef = doc(db, "users", currentUser.uid);
+
+  try {
+    await deleteDoc(docRef);
+  } catch (error) {
+    console.error("Error during the delete of user's data: ", error);
+    throw error;
+  }
+};
+
 export const reauthenticateUser = async (currentUser, password) => {
   try {
     const credential = EmailAuthProvider.credential(

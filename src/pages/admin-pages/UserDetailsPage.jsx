@@ -1,17 +1,18 @@
+import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context";
 import { adminPageStyle } from "../../styles";
-import { useParams } from "react-router-dom";
-import { deleteCurrentUser, getAllUser } from "../../utils/firebase";
+import { useNavigate, useParams } from "react-router-dom";
+import { deleteUserFromDatabase, getAllUser } from "../../utils/firebase";
 import { Loading, UserAccountForm } from "../../components";
 import { Icon } from "@iconify/react";
-import Swal from "sweetalert2";
 
 const UserDetailsPage = () => {
-  const { text } = useContext(UserContext);
+  const { text, currentUser } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedUser, setSelectedUser] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsLoading(true);
@@ -25,30 +26,56 @@ const UserDetailsPage = () => {
     fetchUsers();
   }, [id]);
 
-  const deletelUser = async (user) => {
-    await deleteCurrentUser(user)
-      .then(() => {
-        navigate("/admin/users/all");
-      })
-      .catch((error) => {
+  const deleteUser = async (user) => {
+    try {
+      const idToken = await currentUser.getIdToken();
+
+      const response = await fetch("/api/delete-user", {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${idToken}`,
+          "user-id": user.uid,
+        },
+      });
+
+      if (response.ok) {
+        await deleteUserFromDatabase(user).then(() => {
+          setIsLoading(false);
+          Swal.fire({
+            title: text.userDetailsPage.swal.successTitle,
+            text: text.userDetailsPage.swal.successText,
+            icon: "success",
+          });
+          navigate("/admin/users/all");
+        });
+      } else {
+        setIsLoading(false);
         Swal.fire({
-          title: text.blogAll.swal.error,
-          text: text.blogAll.swal.errorMsg,
+          title: text.userDetailsPage.swal.errorTitle,
+          text: text.userDetailsPage.swal.errorDelete,
           icon: "error",
         });
-        console.error("Error deleting user:", error);
+      }
+    } catch (error) {
+      setIsLoading(false);
+      Swal.fire({
+        title: text.userDetailsPage.swal.errorTitle,
+        text: error.message,
+        icon: "error",
       });
+    }
   };
 
   const confirmDelete = (user) => {
     Swal.fire({
-      title: text.blogCommentPage.swal.question,
+      title: text.userDetailsPage.swal.question,
       showDenyButton: true,
-      confirmButtonText: text.blogCommentPage.swal.confirm,
-      denyButtonText: text.blogCommentPage.swal.cancel,
+      confirmButtonText: text.userDetailsPage.swal.confirm,
+      denyButtonText: text.userDetailsPage.swal.cancel,
     }).then((result) => {
+      setIsLoading(true);
       if (result.isConfirmed) {
-        deletelUser(user);
+        deleteUser(user);
       } else if (result.isDenied) {
         return;
       }

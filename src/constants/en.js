@@ -733,6 +733,17 @@ const en_text = {
       errorTooMany: "Too many attempts, please try again later.",
     },
   },
+  userDetailsPage: {
+    swal: {
+      successTitle: "Success!",
+      successText: "The user has been deleted.",
+      errorTitle: "Something went wrong!",
+      errorDelete: "The user has not been deleted.",
+      question: "Do you want to delete the user?",
+      confirm: "Delete",
+      cancel: "Cancel",
+    },
+  },
 };
 
 export default en_text;

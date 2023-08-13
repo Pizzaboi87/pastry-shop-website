@@ -744,6 +744,17 @@ const fr_text = {
       errorTooMany: "Trop de tentatives, veuillez réessayer plus tard.",
     },
   },
+  userDetailsPage: {
+    swal: {
+      successTitle: "Succès !",
+      successText: "L'utilisateur a été supprimé.",
+      errorTitle: "Quelque chose s'est mal passé !",
+      errorDelete: "L'utilisateur n'a pas été supprimé.",
+      question: "Voulez-vous supprimer l'utilisateur ?",
+      confirm: "Supprimer",
+      cancel: "Annuler",
+    },
+  },
 };
 
 export default fr_text;

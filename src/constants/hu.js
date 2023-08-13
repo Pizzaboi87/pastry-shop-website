@@ -736,6 +736,17 @@ const hu_text = {
       errorTooMany: "Túl sok próbálkozás, kérlek próbáld újra később.",
     },
   },
+  userDetailsPage: {
+    swal: {
+      successTitle: "Siker!",
+      successText: "A felhasználót töröltük.",
+      errorTitle: "Valami hiba történt!",
+      errorDelete: "A felhasználót nem sikerült törölni.",
+      question: "Biztosan törölni szeretnéd a felhasználót?",
+      confirm: "Törlés",
+      cancel: "Mégse",
+    },
+  },
 };
 
 export default hu_text;

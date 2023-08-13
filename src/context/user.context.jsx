@@ -9,7 +9,6 @@ import {
   getUserImage,
   getStoredImage,
 } from "../utils/firebase";
-import { getIdToken } from "firebase/auth";
 
 export const UserContext = createContext();
 
@@ -52,30 +51,6 @@ export const UserContextProvider = ({ children }) => {
 
     return unsubscribe;
   }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (currentUser) {
-        try {
-          const idToken = await currentUser.getIdToken();
-
-          const response = await fetch("/api/admin", {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${idToken}`,
-            },
-          });
-
-          const data = await response.json();
-          console.log(data.message);
-        } catch (error) {
-          console.error("Error fetching data:", error);
-        }
-      }
-    };
-
-    fetchData();
-  }, [currentUser]);
 
   useEffect(() => {
     const defaultUserCurrency = userData ? userData.selectedCurr : "eur";

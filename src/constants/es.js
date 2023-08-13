@@ -739,6 +739,17 @@ const es_text = {
         "Demasiados intentos, por favor inténtalo de nuevo más tarde.",
     },
   },
+  userDetailsPage: {
+    swal: {
+      successTitle: "¡Éxito!",
+      successText: "El usuario ha sido eliminado.",
+      errorTitle: "¡Algo salió mal!",
+      errorDelete: "El usuario no ha sido eliminado.",
+      question: "¿Desea eliminar al usuario?",
+      confirm: "Eliminar",
+      cancel: "Cancelar",
+    },
+  },
 };
 
 export default es_text;
