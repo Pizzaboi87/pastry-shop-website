@@ -6,12 +6,24 @@ export const BlogContext = createContext();
 
 export const BlogContextProvider = ({ children }) => {
   const [allBlogPost, setAllBlogPost] = useState([]);
+  const [firebaseData, setFirebaseData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const firebaseData = await getAllPost();
+        const data = await getAllPost();
+        setFirebaseData(data);
+      } catch (error) {
+        console.error("An error happened during data fetching.", error);
+      }
+    };
 
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
         const processedData = await Promise.all(
           Object.keys(firebaseData).map(async (postid) => {
             const element = firebaseData[postid];
@@ -29,11 +41,12 @@ export const BlogContextProvider = ({ children }) => {
     };
 
     fetchData();
-  }, []);
+  }, [firebaseData]);
 
+  console.log(allBlogPost);
   if (allBlogPost.length === 0) return <Loading />;
 
-  const value = [allBlogPost, setAllBlogPost];
+  const value = { allBlogPost, setAllBlogPost, firebaseData, setFirebaseData };
 
   return <BlogContext.Provider value={value}>{children}</BlogContext.Provider>;
 };

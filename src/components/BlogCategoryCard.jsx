@@ -4,7 +4,7 @@ import { BlogContext, UserContext } from "../context";
 import { Theme_Button, Theme_Div } from "../styles";
 
 const BlogCategoryCard = () => {
-  const [allBlogPost] = useContext(BlogContext);
+  const { allBlogPost } = useContext(BlogContext);
   const { text } = useContext(UserContext);
   const [categories, setCategories] = useState([]);
 

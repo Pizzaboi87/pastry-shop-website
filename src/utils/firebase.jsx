@@ -174,7 +174,7 @@ export const updateUserData = async (uid, data) => {
   }
 };
 
-export const deleteCurrentUser = async (currentUser) => {
+export const deleteMyself = async (currentUser) => {
   const userDocRef = doc(db, "users", currentUser.uid);
 
   try {
@@ -297,7 +297,7 @@ export const storeComment = async (comment) => {
   }
 };
 
-export const storePostData = async (post) => {
+const storePostData = async (post) => {
   const blogPostsRef = ref(database, "blogPosts");
 
   try {
@@ -318,10 +318,10 @@ export const storePostData = async (post) => {
   }
 };
 
-export const uploadBlogPost = async (form) => {
-  if (!form.imageFile.name) {
+export const uploadBlogPost = async (post) => {
+  if (!post.imageFile.name) {
     try {
-      await storePostData(form);
+      await storePostData(post);
       console.log("Blog post uploaded successfully!");
     } catch (error) {
       console.error("Error uploading blog post:", error);
@@ -329,11 +329,11 @@ export const uploadBlogPost = async (form) => {
   } else {
     try {
       await storeImage(
-        form.imageFile,
-        `blog/${form.postid}.${form.imageFile.name.split(".").pop()}`
+        post.imageFile,
+        `blog/${post.postid}.${post.imageFile.name.split(".").pop()}`
       );
-      await storePostData(form);
-      console.log("Blog post image uploaded successfully!");
+      await storePostData(post);
+      console.log("Blog post uploaded successfully!");
     } catch (error) {
       console.error("Error uploading blog post image:", error);
     }

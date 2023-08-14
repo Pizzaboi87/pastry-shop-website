@@ -9,7 +9,7 @@ import {
 } from "../../components";
 
 const Blog = () => {
-  const [allBlogPost] = useContext(BlogContext);
+  const { allBlogPost } = useContext(BlogContext);
   const { text } = useContext(UserContext);
 
   return (

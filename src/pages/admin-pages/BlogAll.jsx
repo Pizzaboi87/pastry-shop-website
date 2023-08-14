@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BlogContext, UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
@@ -7,8 +7,13 @@ import { deletePost } from "../../utils/firebase";
 import { adminPageStyle } from "../../styles";
 
 const BlogAll = () => {
-  const [allBlogPost, setAllBlogPost] = useContext(BlogContext);
+  const { allBlogPost, setAllBlogPost } = useContext(BlogContext);
+  const [posts, setPosts] = useState([]);
   const { text } = useContext(UserContext);
+
+  useEffect(() => {
+    setPosts(allBlogPost);
+  }, [allBlogPost]);
 
   const confirmDelete = (postid) => {
     Swal.fire({
@@ -51,7 +56,7 @@ const BlogAll = () => {
       <h1 className={adminPageStyle.title}>{text.blogAll.title}</h1>
 
       <div className="flex w-full h-full flex-wrap gap-y-8 gap-x-4 justify-evenly">
-        {allBlogPost.map((post) => (
+        {posts.map((post) => (
           <div
             key={post.postid}
             className="card relative bg-primary overflow-hidden 3xl:w-[15rem] w-[17rem] 3xl:h-[15rem] h-[12rem] flex flex-col items-center cursor-pointer rounded-xl shadow-xl"

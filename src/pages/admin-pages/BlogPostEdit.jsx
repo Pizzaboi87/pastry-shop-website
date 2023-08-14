@@ -11,7 +11,7 @@ const BlogPostEditPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { text } = useContext(UserContext);
-  const [allBlogPost, setAllBlogPost] = useContext(BlogContext);
+  const { allBlogPost, setAllBlogPost } = useContext(BlogContext);
   const post = allBlogPost.filter((post) => post.postid === id)[0];
 
   const confirmDelete = (postid) => {

@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import { UserContext } from "../context";
 import { Theme_Button, Theme_Input, userPageStyle } from "../styles";
-import { deleteCurrentUser, reauthenticateUser } from "../utils/firebase";
+import { deleteMyself, reauthenticateUser } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 
 const UserDeleteAccountForm = () => {
@@ -67,7 +67,7 @@ const UserDeleteAccountForm = () => {
           await reauthenticateUser(currentUser, password);
 
           try {
-            await deleteCurrentUser(currentUser);
+            await deleteMyself(currentUser);
             navigate("/");
             Swal.fire({
               title: text.userDelete.swal.successTitle,

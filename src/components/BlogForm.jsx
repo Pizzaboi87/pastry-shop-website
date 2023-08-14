@@ -1,12 +1,14 @@
 import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { uploadBlogPost } from "../utils/firebase";
-import { UserContext } from "../context";
+import { BlogContext, UserContext } from "../context";
 import { blogNewFormStyle } from "../styles";
+import { uploadPost } from "../utils/firebase-admin";
+import { getAllPost } from "../utils/firebase";
 
 const BlogForm = ({ dbPost }) => {
-  const { text } = useContext(UserContext);
+  const { text, currentUser } = useContext(UserContext);
+  const { setFirebaseData } = useContext(BlogContext);
 
   const getBackImage = (url) => {
     const start = url.indexOf("%2F") + 3;
@@ -33,6 +35,15 @@ const BlogForm = ({ dbPost }) => {
   const [blogForm, setBlogForm] = useState(defaultForm);
   const { author, title, blurb, post, date, image, postid, tags, imageFile } =
     blogForm;
+
+  const updateData = async () => {
+    try {
+      const data = await getAllPost();
+      setFirebaseData(data);
+    } catch (error) {
+      console.error("An error happened during data fetching.", error);
+    }
+  };
 
   const handleChange = (event) => {
     const { name, value, files } = event.target;
@@ -66,20 +77,19 @@ const BlogForm = ({ dbPost }) => {
   };
 
   //------------------------------------------------------NOT READY: Validate missing.------------------------------------------------------
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
     try {
-      uploadBlogPost(blogForm).then(() => {
-        setIsLoading(false);
-        Swal.fire({
-          title: text.blogForm.swal.successTitle,
-          text: text.blogForm.swal.successMessage,
-          icon: "success",
-        });
-
-        navigate("/admin/blog/all");
+      await uploadPost(currentUser, blogForm);
+      updateData();
+      setIsLoading(false);
+      Swal.fire({
+        title: text.blogForm.swal.successTitle,
+        text: text.blogForm.swal.successMessage,
+        icon: "success",
       });
+      navigate("/admin/blog/all");
     } catch (error) {
       setIsLoading(false);
       Swal.fire({

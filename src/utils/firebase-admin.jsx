@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { deleteUserFromDatabase } from "./firebase";
+import { deleteUserFromDatabase, uploadBlogPost } from "./firebase";
 
 export const deleteUser = async (
   user,
@@ -61,6 +61,25 @@ export const getAllUser = async (currentUser) => {
     const data = await response.json();
 
     return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const uploadPost = async (currentUser, blogForm) => {
+  try {
+    const idToken = await currentUser.getIdToken();
+
+    const response = await fetch("/api/store-post", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${idToken}`,
+      },
+    });
+
+    if (response.ok) {
+      await uploadBlogPost(blogForm);
+    }
   } catch (error) {
     console.log(error);
   }

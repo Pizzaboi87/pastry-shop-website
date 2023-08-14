@@ -10,7 +10,7 @@ import {
 
 const BlogTagPage = () => {
   const { tag } = useParams();
-  const [allBlogPost] = useContext(BlogContext);
+  const { allBlogPost } = useContext(BlogContext);
   const posts = allBlogPost.filter((post) => post.tags.includes(tag));
 
   return (

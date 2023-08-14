@@ -11,7 +11,7 @@ import {
 
 const BlogPostPage = () => {
   const { id } = useParams();
-  const [allBlogPost] = useContext(BlogContext);
+  const { allBlogPost } = useContext(BlogContext);
   const post = allBlogPost.filter((post) => post.postid === id)[0];
 
   return (
