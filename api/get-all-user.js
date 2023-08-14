@@ -1,15 +1,14 @@
-// api/admin/delete-user/[userId].js
 import admin from "firebase-admin";
 
-const serviceAccount = JSON.parse(
-  import.meta.env.VITE_FIREBASE_SERVICE_ACCOUNT
-);
+const serviceAccount = JSON.parse(process.env.VITE_FIREBASE_SERVICE_ACCOUNT);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL:
     "https://le-ciel-sucre-default-rtdb.europe-west1.firebasedatabase.app",
 });
+
+const db = admin.firestore();
 
 export default async (req, res) => {
   const authHeader = req.headers.authorization;
@@ -27,10 +26,13 @@ export default async (req, res) => {
       return res.status(403).json({ message: "Permission denied." });
     }
 
-    const userIdToDelete = req.headers["user-id"];
-    await admin.auth().deleteUser(userIdToDelete);
+    const userSnapshot = await db.collection("users").get();
+    const users = userSnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
 
-    res.status(200).json({ message: "User deleted successfully." });
+    res.status(200).json({ users });
   } catch (error) {
     console.error("Error verifying ID token:", error);
     res.status(401).json({ message: "Unauthorized" });

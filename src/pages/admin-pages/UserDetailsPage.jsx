@@ -3,29 +3,30 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context";
 import { adminPageStyle } from "../../styles";
 import { useNavigate, useParams } from "react-router-dom";
-import { getAllUser } from "../../utils/firebase";
 import { Loading, UserAccountForm } from "../../components";
 import { Icon } from "@iconify/react";
-import { deleteUser } from "../../utils/deleteUser";
+import { deleteUser, getAllUser } from "../../utils/firebase-admin";
+import { useQuery } from "react-query";
 
 const UserDetailsPage = () => {
   const { text, currentUser } = useContext(UserContext);
-  const [isLoading, setIsLoading] = useState(false);
   const [selectedUser, setSelectedUser] = useState({});
   const { id } = useParams();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setIsLoading(true);
-    const fetchUsers = async () => {
-      await getAllUser().then((users) =>
-        setSelectedUser(users.filter((user) => user.id === id)[0])
-      );
-      setIsLoading(false);
-    };
+  const allUserQuery = async () => {
+    const users = await getAllUser(currentUser);
+    return users;
+  };
 
-    fetchUsers();
-  }, [id]);
+  const { data: users, isLoading } = useQuery(
+    `userDetails-${id}`,
+    allUserQuery
+  );
+
+  useEffect(() => {
+    if (users) setSelectedUser(users.users.filter((user) => user.id === id)[0]);
+  }, [id, users]);
 
   const confirmDelete = (user) => {
     Swal.fire({

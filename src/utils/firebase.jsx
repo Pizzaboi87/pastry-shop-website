@@ -32,27 +32,26 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCSsqJaZjP8kHuHpXb4kLIeOjnBdi8BI3s",
-  authDomain: "le-ciel-sucre.firebaseapp.com",
-  databaseURL:
-    "https://le-ciel-sucre-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "le-ciel-sucre",
-  storageBucket: "le-ciel-sucre.appspot.com",
-  messagingSenderId: "913143865836",
-  appId: "1:913143865836:web:13b1ed7ad0d412473460c9",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
+export const auth = getAuth();
+export const db = getFirestore();
+export const storage = getStorage();
+export const database = getDatabase();
+
 const googleProvider = new GoogleAuthProvider();
 
 googleProvider.setCustomParameters({
   prompt: "select_account",
 });
-
-export const auth = getAuth();
-export const db = getFirestore();
-export const storage = getStorage();
-const database = getDatabase();
 
 export const createUserDocumentFromAuth = async (
   userAuth,
@@ -162,23 +161,6 @@ export const getUserImage = async (uid) => {
   } catch (error) {
     console.error("An error occurred while downloading photo URL.", error);
   }
-};
-
-export const getAllUser = async () => {
-  const querySnapshot = await getDocs(collection(db, "users"));
-  const userList = [];
-
-  for (const doc of querySnapshot.docs) {
-    const userData = doc.data();
-    if (!userData.photoExtension) {
-      const imgsrc = await getStoredImage("blog/profile.jpg");
-      userList.push({ ...userData, imgsrc });
-    } else {
-      const imgsrc = await getUserImage(doc.id);
-      userList.push({ ...userData, imgsrc });
-    }
-  }
-  return userList;
 };
 
 export const updateUserData = async (uid, data) => {

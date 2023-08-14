@@ -46,3 +46,22 @@ export const deleteUser = async (
     });
   }
 };
+
+export const getAllUser = async (currentUser) => {
+  try {
+    const idToken = await currentUser.getIdToken();
+
+    const response = await fetch("/api/get-all-user", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${idToken}`,
+      },
+    });
+
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -9,35 +9,48 @@ import { Loading } from "../../components";
 import {
   changeCommentStatus,
   deleteComment,
-  getAllUser,
   getStoredImage,
+  getUserImage,
 } from "../../utils/firebase";
+import { getAllUser } from "../../utils/firebase-admin";
+import { useQuery } from "react-query";
 
 const BlogComments = () => {
   const { allComments, setAllComments } = useContext(CommentsContext);
-  const { text } = useContext(UserContext);
+  const { text, currentUser } = useContext(UserContext);
   const navigate = useNavigate();
   const [commentsWithUsers, setCommentsWithUsers] = useState([]);
 
+  const allUserQuery = async () => {
+    const users = await getAllUser(currentUser);
+    return users;
+  };
+
+  const { data: users, isLoading } = useQuery("userComments", allUserQuery);
+
   useEffect(() => {
     const fetchCommentUsers = async () => {
-      const users = await getAllUser();
       const defaultImg = await getStoredImage("blog/profile.jpg");
 
-      const updatedComments = allComments.map((comment) => {
-        const user = users.find((user) => user.email === comment.email);
-        if (user) {
-          return { ...comment, imgsrc: user.imgsrc, userID: user.id };
-        } else {
-          return { ...comment, imgsrc: defaultImg };
-        }
-      });
+      const updatedComments = await Promise.all(
+        allComments.map(async (comment) => {
+          const user = users.users.find((user) => user.email === comment.email);
+          if (user) {
+            return {
+              ...comment,
+              imgsrc: await getUserImage(user.uid),
+              userID: user.id,
+            };
+          } else {
+            return { ...comment, imgsrc: defaultImg };
+          }
+        })
+      );
 
       setCommentsWithUsers(updatedComments);
     };
-
-    fetchCommentUsers();
-  }, [allComments]);
+    if (users) fetchCommentUsers();
+  }, [allComments, users]);
 
   if (!commentsWithUsers.length) return <Loading />;
 

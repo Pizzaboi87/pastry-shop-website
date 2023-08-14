@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 import PhoneInput from "react-phone-input-2";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { updateUserData } from "../utils/firebase";
 import { UserContext } from "../context";
 import {
@@ -37,6 +37,10 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
     address,
     zipCode,
   } = userAccountForm;
+
+  useEffect(() => {
+    if (userData) setUserAccountForm(defaultForm);
+  }, [userData]);
 
   const errorSwal = (error) => {
     Swal.fire({

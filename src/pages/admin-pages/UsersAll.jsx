@@ -1,23 +1,52 @@
 import Swal from "sweetalert2";
 import { Fragment, useEffect, useState, useContext } from "react";
-import { getAllUser } from "../../utils/firebase";
 import { UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { Loading } from "../../components";
 import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
 import { Tooltip } from "react-tooltip";
 import { Link, useNavigate } from "react-router-dom";
-import { deleteUser } from "../../utils/deleteUser";
+import { deleteUser, getAllUser } from "../../utils/firebase-admin";
+import { getStoredImage, getUserImage } from "../../utils/firebase";
+import { useQuery } from "react-query";
 
 const UsersAll = () => {
   const [allUser, setAllUser] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const { text, currentUser } = useContext(UserContext);
   const navigate = useNavigate();
 
+  const allUserQuery = async () => {
+    const users = await getAllUser(currentUser);
+    return users;
+  };
+
+  const { data: users, isLoading } = useQuery("users", allUserQuery);
+
   useEffect(() => {
-    getAllUser().then((users) => setAllUser(users));
-  }, []);
+    const fetchUsers = async () => {
+      if (users)
+        try {
+          const updatedUsers = await Promise.all(
+            users.users.map(async (user) => {
+              let imgsrc;
+              if (user.photoExtension) {
+                imgsrc = await getUserImage(user.uid);
+              } else {
+                imgsrc = await getStoredImage("blog/profile.jpg");
+              }
+
+              return { ...user, imgsrc };
+            })
+          );
+
+          setAllUser(updatedUsers);
+        } catch (error) {
+          console.error(error);
+        }
+    };
+
+    fetchUsers();
+  }, [users]);
 
   if (allUser.length === 0 || isLoading) return <Loading />;
 
@@ -71,7 +100,7 @@ const UsersAll = () => {
             </li>
             <li className={`${tableStyle} col-span-3`}>{user.email}</li>
             <li className={`${tableStyle} col-span-2`}>
-              {new Date(user.createdAt.seconds * 1000)
+              {new Date(user.createdAt._seconds * 1000)
                 .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
                 .slice(0, -3)}
             </li>
