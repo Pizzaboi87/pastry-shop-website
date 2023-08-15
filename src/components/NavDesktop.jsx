@@ -2,12 +2,11 @@ import NavUser from "./NavUser";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { logo } from "../assets";
-import { UserContext, IsRegContext } from "../context";
+import { UserContext } from "../context";
 import { Theme_Button, Theme_Li, Theme_Link, Theme_Nav } from "../styles";
 
 const NavDesktop = () => {
-  const { currentUser, text } = useContext(UserContext);
-  const [isReg, setIsReg] = useContext(IsRegContext);
+  const { currentUser, text, isReg, setIsReg } = useContext(UserContext);
   const [openMyAccount, setOpenMyAccount] = useState(false);
 
   return (

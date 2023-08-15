@@ -4,7 +4,6 @@ import {
   AdminContextProvider,
   BlogContextProvider,
   CommentsContextProvider,
-  IsRegContextProvider,
   UserContextProvider,
 } from "./context";
 
@@ -16,16 +15,14 @@ const App = () => {
       <QueryClientProvider client={queryClient}>
         <AdminContextProvider>
           <UserContextProvider>
-            <IsRegContextProvider>
-              <Awning />
-              <Navbar />
-              <BlogContextProvider>
-                <CommentsContextProvider>
-                  <MainContent />
-                </CommentsContextProvider>
-              </BlogContextProvider>
-              <Footer />
-            </IsRegContextProvider>
+            <Awning />
+            <Navbar />
+            <BlogContextProvider>
+              <CommentsContextProvider>
+                <MainContent />
+              </CommentsContextProvider>
+            </BlogContextProvider>
+            <Footer />
           </UserContextProvider>
         </AdminContextProvider>
       </QueryClientProvider>

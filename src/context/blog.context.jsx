@@ -43,7 +43,6 @@ export const BlogContextProvider = ({ children }) => {
     fetchData();
   }, [firebaseData]);
 
-  console.log(allBlogPost);
   if (allBlogPost.length === 0) return <Loading />;
 
   const value = { allBlogPost, setAllBlogPost, firebaseData, setFirebaseData };

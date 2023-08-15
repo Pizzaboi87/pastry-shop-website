@@ -16,6 +16,7 @@ export const UserContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [userData, setUserData] = useState(null);
   const [userImage, setUserImage] = useState(null);
+  const [isReg, setIsReg] = useState(false);
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [userLanguage, setUserLanguage] = useState(null);
   const [text, setText] = useState(null);
@@ -117,6 +118,8 @@ export const UserContextProvider = ({ children }) => {
     setUserTheme,
     userNewsLetter,
     setUserNewsLetter,
+    isReg,
+    setIsReg,
   };
 
   if (!isDataLoaded)
