@@ -5,13 +5,13 @@ import { AdminLogin, AdminPanel, NoPermission } from "../../components";
 
 const Admin = () => {
   const { currentUser, isAdmin, setIsAdmin } = useContext(UserContext);
-  const [adminUID, setAdminUID] = useState(null);
+  const [adminVerified, setAdminVerified] = useState(null);
 
   useEffect(() => {
     if (currentUser && currentUser.uid === import.meta.env.VITE_ADMIN_UID) {
-      setAdminUID(true);
+      setAdminVerified(true);
     } else {
-      setAdminUID(false);
+      setAdminVerified(false);
     }
   }, [currentUser]);
 
@@ -21,7 +21,7 @@ const Admin = () => {
         <AdminPanel>
           <Outlet />
         </AdminPanel>
-      ) : currentUser && adminUID ? (
+      ) : currentUser && adminVerified ? (
         <AdminLogin setIsAdmin={setIsAdmin} />
       ) : (
         <NoPermission />

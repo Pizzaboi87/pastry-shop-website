@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 import { Fragment, useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { CommentsContext, UserContext } from "../../context";
+import { BlogContext, UserContext } from "../../context";
 import { Tooltip } from "react-tooltip";
 import { Icon } from "@iconify/react";
 import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
@@ -16,7 +16,7 @@ import { getAllUser } from "../../utils/firebase-admin";
 import { useQuery } from "react-query";
 
 const BlogComments = () => {
-  const { allComments, setAllComments } = useContext(CommentsContext);
+  const { allComments, setAllComments } = useContext(BlogContext);
   const { text, currentUser } = useContext(UserContext);
   const navigate = useNavigate();
   const [commentsWithUsers, setCommentsWithUsers] = useState([]);

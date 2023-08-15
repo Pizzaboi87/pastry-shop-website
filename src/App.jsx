@@ -1,10 +1,6 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Navbar, Footer, MainContent, Awning } from "./components";
-import {
-  BlogContextProvider,
-  CommentsContextProvider,
-  UserContextProvider,
-} from "./context";
+import { BlogContextProvider, UserContextProvider } from "./context";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -16,9 +12,7 @@ const App = () => {
           <Awning />
           <Navbar />
           <BlogContextProvider>
-            <CommentsContextProvider>
-              <MainContent />
-            </CommentsContextProvider>
+            <MainContent />
           </BlogContextProvider>
           <Footer />
         </UserContextProvider>
