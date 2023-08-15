@@ -1,11 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import { AdminContext, UserContext } from "../../context";
+import { UserContext } from "../../context";
 import { AdminLogin, AdminPanel, NoPermission } from "../../components";
 
 const Admin = () => {
-  const { currentUser } = useContext(UserContext);
-  const { isAdmin, setIsAdmin } = useContext(AdminContext);
+  const { currentUser, isAdmin, setIsAdmin } = useContext(UserContext);
   const [adminUID, setAdminUID] = useState(null);
 
   useEffect(() => {

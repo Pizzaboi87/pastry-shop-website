@@ -1,11 +1,10 @@
 import AdminMenu from "./AdminMenu";
 import { useContext } from "react";
-import { AdminContext, UserContext } from "../context";
+import { UserContext } from "../context";
 import { Theme_H1, titleStyle } from "../styles";
 
 const AdminPanel = ({ children }) => {
-  const { setIsAdmin } = useContext(AdminContext);
-  const { text } = useContext(UserContext);
+  const { text, setIsAdmin } = useContext(UserContext);
 
   return (
     <div className="glass grid grid-cols-6 xl:w-[90%] w-full bg-purpleglass rounded-xl md:p-12 p-4 gap-x-8 shadow-2xl">
