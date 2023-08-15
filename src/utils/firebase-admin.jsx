@@ -47,13 +47,7 @@ export const deleteBlogPost = async (
   }
 };
 
-export const deleteUser = async (
-  user,
-  setIsDeleting,
-  currentUser,
-  text,
-  navigate
-) => {
+export const deleteUser = async (user, currentUser, text, navigate) => {
   try {
     const idToken = await currentUser.getIdToken();
 
@@ -67,7 +61,6 @@ export const deleteUser = async (
 
     if (response.ok) {
       await deleteUserFromDatabase(user).then(() => {
-        setIsDeleting(false);
         Swal.fire({
           title: text.userDetailsPage.swal.successTitle,
           text: text.userDetailsPage.swal.successText,
@@ -76,7 +69,6 @@ export const deleteUser = async (
         navigate("/admin/users/all");
       });
     } else {
-      setIsDeleting(false);
       Swal.fire({
         title: text.userDetailsPage.swal.errorTitle,
         text: text.userDetailsPage.swal.errorDelete,
@@ -84,7 +76,6 @@ export const deleteUser = async (
       });
     }
   } catch (error) {
-    setIsDeleting(false);
     Swal.fire({
       title: text.userDetailsPage.swal.errorTitle,
       text: error.message,

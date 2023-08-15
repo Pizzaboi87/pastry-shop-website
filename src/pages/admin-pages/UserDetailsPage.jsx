@@ -38,7 +38,8 @@ const UserDetailsPage = () => {
     }).then(async (result) => {
       setIsDeleting(true);
       if (result.isConfirmed) {
-        await deleteUser(user, setIsDeleting, currentUser, text, navigate);
+        await deleteUser(user, currentUser, text, navigate);
+        setIsDeleting(false);
       } else if (result.isDenied) {
         return;
       }

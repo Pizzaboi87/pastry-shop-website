@@ -17,11 +17,12 @@ const UsersAll = () => {
   const navigate = useNavigate();
 
   const allUserQuery = async () => {
+    setAllUser([]);
     const users = await getAllUser(currentUser);
     return users;
   };
 
-  const { data: users, isLoading } = useQuery("users", allUserQuery);
+  const { data: users, isLoading, refetch } = useQuery("users", allUserQuery);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -30,7 +31,7 @@ const UsersAll = () => {
           const updatedUsers = await Promise.all(
             users.users.map(async (user) => {
               let imgsrc;
-              if (user.photoExtension) {
+              if (user && user?.photoExtension) {
                 imgsrc = await getUserImage(user.uid);
               } else {
                 imgsrc = await getStoredImage("blog/profile.jpg");
@@ -60,7 +61,9 @@ const UsersAll = () => {
     }).then(async (result) => {
       setIsDeleting(true);
       if (result.isConfirmed) {
-        await deleteUser(user, setIsDeleting, currentUser, text, navigate);
+        await deleteUser(user, currentUser, text, navigate);
+        await refetch();
+        setIsDeleting(false);
       } else if (result.isDenied) {
         return;
       }
