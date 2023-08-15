@@ -521,6 +521,8 @@ const es_text = {
       question: "¿Deseas eliminar el artículo?",
       confirm: "Eliminar",
       cancel: "Cancelar",
+      successTitle: "¡Éxito!",
+      successText: "El artículo ha sido eliminado.",
       error: "¡Algo salió mal!",
       errorMsg: "El artículo no ha sido eliminado.",
     },

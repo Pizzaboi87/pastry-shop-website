@@ -3,13 +3,15 @@ import { useContext, useEffect, useState } from "react";
 import { BlogContext, UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
-import { deletePost } from "../../utils/firebase";
 import { adminPageStyle } from "../../styles";
+import { deleteBlogPost } from "../../utils/firebase-admin";
+import { Loading } from "../../components";
 
 const BlogAll = () => {
   const { allBlogPost, setAllBlogPost } = useContext(BlogContext);
+  const { text, currentUser } = useContext(UserContext);
   const [posts, setPosts] = useState([]);
-  const { text } = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setPosts(allBlogPost);
@@ -21,27 +23,18 @@ const BlogAll = () => {
       showDenyButton: true,
       confirmButtonText: text.blogAll.swal.confirm,
       denyButtonText: text.blogAll.swal.cancel,
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
-        deletePost(postid)
-          .then(() => {
-            setAllBlogPost((prevPosts) =>
-              prevPosts.filter((post) => post.postid !== postid)
-            );
-          })
-          .catch((error) => {
-            Swal.fire({
-              title: text.blogAll.swal.error,
-              text: text.blogAll.swal.errorMsg,
-              icon: "error",
-            });
-            console.error("Error deleting post:", error);
-          });
+        setIsLoading(true);
+        await deleteBlogPost(postid, setAllBlogPost, currentUser, text);
+        setIsLoading(false);
       } else if (result.isDenied) {
         return;
       }
     });
   };
+
+  if (isLoading) return <Loading />;
 
   const truncate = (inputString, length = 20) => {
     if (inputString.length <= length) {

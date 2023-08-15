@@ -529,6 +529,8 @@ const fr_text = {
       question: "Voulez-vous supprimer l'article?",
       confirm: "Supprimer",
       cancel: "Annuler",
+      successTitle: "Succès!",
+      successText: "L'article a été supprimé avec succès!",
       error: "Quelque chose s'est mal passé!",
       errorMsg: "L'article n'a pas été supprimé.",
     },

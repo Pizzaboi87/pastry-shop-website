@@ -1,18 +1,20 @@
 import Swal from "sweetalert2";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { BlogContext, UserContext } from "../../context";
 import { useNavigate, useParams } from "react-router-dom";
-import { BlogForm } from "../../components";
+import { BlogForm, Loading } from "../../components";
 import { adminPageStyle } from "../../styles";
-import { deletePost } from "../../utils/firebase";
 import { Icon } from "@iconify/react";
+import { deleteBlogPost } from "../../utils/firebase-admin";
 
 const BlogPostEditPage = () => {
-  const navigate = useNavigate();
-  const { id } = useParams();
-  const { text } = useContext(UserContext);
   const { allBlogPost, setAllBlogPost } = useContext(BlogContext);
+  const { text, currentUser } = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(false);
+  const { id } = useParams();
+
   const post = allBlogPost.filter((post) => post.postid === id)[0];
+  const navigate = useNavigate();
 
   const confirmDelete = (postid) => {
     Swal.fire({
@@ -20,30 +22,24 @@ const BlogPostEditPage = () => {
       showDenyButton: true,
       confirmButtonText: text.blogAll.swal.confirm,
       denyButtonText: text.blogAll.swal.cancel,
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
-        deletePost(postid)
-          .then(() => {
-            setAllBlogPost((prevPosts) =>
-              prevPosts.filter((post) => post.postid !== postid)
-            );
-          })
-          .then(() => {
-            navigate("/admin/blog/all");
-          })
-          .catch((error) => {
-            Swal.fire({
-              title: text.blogAll.swal.error,
-              text: text.blogAll.swal.errorMsg,
-              icon: "error",
-            });
-            console.error("Error deleting post:", error);
-          });
+        setIsLoading(true);
+        await deleteBlogPost(
+          postid,
+          setAllBlogPost,
+          currentUser,
+          text,
+          navigate
+        );
+        setIsLoading(false);
       } else if (result.isDenied) {
         return;
       }
     });
   };
+
+  if (isLoading) return <Loading />;
 
   return (
     <div className={`${adminPageStyle.wrapper} relative`}>

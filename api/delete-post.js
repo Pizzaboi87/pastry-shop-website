@@ -9,7 +9,7 @@ admin.initializeApp({
     "https://le-ciel-sucre-default-rtdb.europe-west1.firebasedatabase.app",
 });
 
-const db = admin.firestore();
+const db = admin.database();
 const storage = admin.storage();
 
 export default async (req, res) => {
@@ -28,27 +28,28 @@ export default async (req, res) => {
       return res.status(403).json({ message: "Permission denied." });
     }
 
-    const userUIDToDelete = req.headers["user-id"];
+    const postIdToDelete = req.headers["post-id"];
+    const postRef = db.ref(`blogPosts/${postIdToDelete}`);
 
     try {
-      const userDoc = await db.collection("users").doc(userUIDToDelete).get();
-      const userData = userDoc.data();
+      const postSnapshot = await postRef.once("value");
+      const postData = postSnapshot.val();
 
-      if (!userData) {
-        return res.status(404).json({ message: "User not found." });
+      if (!postData) {
+        return res.status(404).json({ message: "Post not found." });
       }
 
       const bucket = storage.bucket();
       const file = bucket.file(
-        `profileImage/${userUIDToDelete}/profile.${userData.photoExtension}`
+        `blog/${postIdToDelete}.${postData.image.split(".").pop()}`
       );
 
       await file.delete();
-      await admin.auth().deleteUser(userUIDToDelete);
+      await postRef.remove();
 
-      res.status(200).json({ message: "User deleted successfully." });
+      res.status(200).json({ message: "Post deleted successfully." });
     } catch (error) {
-      console.error("Error deleting user and profile image:", error);
+      console.error("Error deleting post and image:", error);
       res.status(500).json({ message: "An error occurred." });
     }
   } catch (error) {

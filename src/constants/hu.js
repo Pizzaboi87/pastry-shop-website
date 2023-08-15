@@ -520,6 +520,8 @@ const hu_text = {
       question: "Szeretnéd törölni a bejegyzést?",
       confirm: "Törlés",
       cancel: "Mégse",
+      successTitle: "Siker!",
+      successText: "A bejegyzés törölve lett.",
       error: "Valami hiba történt!",
       errorMsg: "A bejegyzés nem lett törölve.",
     },

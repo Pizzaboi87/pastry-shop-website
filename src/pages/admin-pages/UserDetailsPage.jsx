@@ -11,6 +11,7 @@ import { useQuery } from "react-query";
 const UserDetailsPage = () => {
   const { text, currentUser } = useContext(UserContext);
   const [selectedUser, setSelectedUser] = useState({});
+  const [isDeleting, setIsDeleting] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -34,17 +35,17 @@ const UserDetailsPage = () => {
       showDenyButton: true,
       confirmButtonText: text.userDetailsPage.swal.confirm,
       denyButtonText: text.userDetailsPage.swal.cancel,
-    }).then((result) => {
-      setIsLoading(true);
+    }).then(async (result) => {
+      setIsDeleting(true);
       if (result.isConfirmed) {
-        deleteUser(user, setIsLoading, currentUser, text, navigate);
+        await deleteUser(user, setIsDeleting, currentUser, text, navigate);
       } else if (result.isDenied) {
         return;
       }
     });
   };
 
-  if (isLoading) return <Loading />;
+  if (isLoading || isDeleting) return <Loading />;
 
   return (
     <div className={`${adminPageStyle.wrapper} relative`}>

@@ -322,7 +322,6 @@ export const uploadBlogPost = async (post) => {
   if (!post.imageFile.name) {
     try {
       await storePostData(post);
-      console.log("Blog post uploaded successfully!");
     } catch (error) {
       console.error("Error uploading blog post:", error);
     }
@@ -333,7 +332,6 @@ export const uploadBlogPost = async (post) => {
         `blog/${post.postid}.${post.imageFile.name.split(".").pop()}`
       );
       await storePostData(post);
-      console.log("Blog post uploaded successfully!");
     } catch (error) {
       console.error("Error uploading blog post image:", error);
     }

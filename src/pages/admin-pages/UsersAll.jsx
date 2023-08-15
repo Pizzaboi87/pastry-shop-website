@@ -12,6 +12,7 @@ import { useQuery } from "react-query";
 
 const UsersAll = () => {
   const [allUser, setAllUser] = useState([]);
+  const [isDeleting, setIsDeleting] = useState(false);
   const { text, currentUser } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -48,7 +49,7 @@ const UsersAll = () => {
     fetchUsers();
   }, [users]);
 
-  if (allUser.length === 0 || isLoading) return <Loading />;
+  if (allUser.length === 0 || isLoading || isDeleting) return <Loading />;
 
   const confirmDelete = (user) => {
     Swal.fire({
@@ -56,10 +57,10 @@ const UsersAll = () => {
       showDenyButton: true,
       confirmButtonText: text.userDetailsPage.swal.confirm,
       denyButtonText: text.userDetailsPage.swal.cancel,
-    }).then((result) => {
-      setIsLoading(true);
+    }).then(async (result) => {
+      setIsDeleting(true);
       if (result.isConfirmed) {
-        deleteUser(user, setIsLoading, currentUser, text, navigate);
+        await deleteUser(user, setIsDeleting, currentUser, text, navigate);
       } else if (result.isDenied) {
         return;
       }

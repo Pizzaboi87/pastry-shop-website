@@ -521,6 +521,8 @@ const en_text = {
       question: "Do you want to delete the post?",
       confirm: "Delete",
       cancel: "Cancel",
+      successTitle: "Success!",
+      successText: "The post has been deleted.",
       error: "Something went wrong!",
       errorMsg: "The post has not been deleted.",
     },

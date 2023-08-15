@@ -1,9 +1,55 @@
 import Swal from "sweetalert2";
-import { deleteUserFromDatabase, uploadBlogPost } from "./firebase";
+import { deleteUserFromDatabase, uploadBlogPost, deletePost } from "./firebase";
+
+export const deleteBlogPost = async (
+  postid,
+  setAllBlogPost,
+  currentUser,
+  text,
+  navigate
+) => {
+  try {
+    const idToken = await currentUser.getIdToken();
+
+    const response = await fetch("/api/delete-post", {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${idToken}`,
+        "post-id": postid,
+      },
+    });
+
+    if (response.ok) {
+      await deletePost(postid)
+        .then(() => {
+          setAllBlogPost((prevPosts) =>
+            prevPosts.filter((post) => post.postid !== postid)
+          );
+        })
+        .then(() => {
+          Swal.fire({
+            title: text.blogAll.swal.successTitle,
+            text: text.blogAll.swal.successText,
+            icon: "success",
+          });
+        })
+        .then(() => {
+          navigate && navigate("/admin/blog/all");
+        });
+    }
+  } catch (error) {
+    Swal.fire({
+      title: text.blogAll.swal.error,
+      text: text.blogAll.swal.errorMsg,
+      icon: "error",
+    });
+    console.error("Error deleting post:", error);
+  }
+};
 
 export const deleteUser = async (
   user,
-  setIsLoading,
+  setIsDeleting,
   currentUser,
   text,
   navigate
@@ -21,7 +67,7 @@ export const deleteUser = async (
 
     if (response.ok) {
       await deleteUserFromDatabase(user).then(() => {
-        setIsLoading(false);
+        setIsDeleting(false);
         Swal.fire({
           title: text.userDetailsPage.swal.successTitle,
           text: text.userDetailsPage.swal.successText,
@@ -30,7 +76,7 @@ export const deleteUser = async (
         navigate("/admin/users/all");
       });
     } else {
-      setIsLoading(false);
+      setIsDeleting(false);
       Swal.fire({
         title: text.userDetailsPage.swal.errorTitle,
         text: text.userDetailsPage.swal.errorDelete,
@@ -38,7 +84,7 @@ export const deleteUser = async (
       });
     }
   } catch (error) {
-    setIsLoading(false);
+    setIsDeleting(false);
     Swal.fire({
       title: text.userDetailsPage.swal.errorTitle,
       text: error.message,
