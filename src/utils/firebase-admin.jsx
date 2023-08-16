@@ -1,50 +1,72 @@
 import Swal from "sweetalert2";
-import { uploadBlogPost, deletePost } from "./firebase";
+import { uploadBlogPost, getAllPost } from "./firebase";
+
+const updateData = async (setFirebaseData) => {
+  try {
+    const data = await getAllPost();
+    setFirebaseData(data);
+  } catch (error) {
+    console.error("An error happened during data fetching.", error);
+  }
+};
 
 export const deleteBlogPost = async (
   postid,
-  setAllBlogPost,
+  setFirebaseData,
+  setIsLoading,
+  setResult,
   currentUser,
-  text,
-  navigate
+  text
 ) => {
-  try {
-    const idToken = await currentUser.getIdToken();
+  Swal.fire({
+    title: text.blogAll.swal.question,
+    showDenyButton: true,
+    confirmButtonText: text.blogAll.swal.confirm,
+    denyButtonText: text.blogAll.swal.cancel,
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+      setIsLoading(true);
+      try {
+        const idToken = await currentUser.getIdToken();
 
-    const response = await fetch("/api/delete-post", {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${idToken}`,
-        "post-id": postid,
-      },
-    });
+        const response = await fetch("/api/delete-post", {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${idToken}`,
+            "post-id": postid,
+          },
+        });
 
-    if (response.ok) {
-      await deletePost(postid)
-        .then(() => {
-          setAllBlogPost((prevPosts) =>
-            prevPosts.filter((post) => post.postid !== postid)
-          );
-        })
-        .then(() => {
+        if (response.ok) {
           Swal.fire({
             title: text.blogAll.swal.successTitle,
             text: text.blogAll.swal.successText,
             icon: "success",
           });
-        })
-        .then(() => {
-          navigate && navigate("/admin/blog/all");
+          await updateData(setFirebaseData);
+          setIsLoading(false);
+          setResult(true);
+        } else {
+          setIsLoading(false);
+          Swal.fire({
+            title: text.blogAll.swal.error,
+            text: text.blogAll.swal.errorMsg,
+            icon: "error",
+          });
+        }
+      } catch (error) {
+        setIsLoading(false);
+        Swal.fire({
+          title: text.blogAll.swal.error,
+          text: text.blogAll.swal.errorMsg,
+          icon: "error",
         });
+        console.error("Error deleting post:", error);
+      }
+    } else if (result.isDenied) {
+      return;
     }
-  } catch (error) {
-    Swal.fire({
-      title: text.blogAll.swal.error,
-      text: text.blogAll.swal.errorMsg,
-      icon: "error",
-    });
-    console.error("Error deleting post:", error);
-  }
+  });
 };
 
 export const deleteUser = async (
@@ -52,7 +74,8 @@ export const deleteUser = async (
   currentUser,
   text,
   refetch,
-  setIsDeleting
+  setIsDeleting,
+  setResult
 ) => {
   Swal.fire({
     title: text.userDetailsPage.swal.question,
@@ -83,7 +106,7 @@ export const deleteUser = async (
           });
           await refetch();
           setIsDeleting(false);
-          return response.result;
+          setResult(true);
         } else {
           setIsDeleting(false);
           Swal.fire({
@@ -99,6 +122,7 @@ export const deleteUser = async (
           text: error.message,
           icon: "error",
         });
+        console.error("Error deleting user:", error);
       }
     } else if (result.isDenied) {
       return;

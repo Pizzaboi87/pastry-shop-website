@@ -9,39 +9,34 @@ import { useQuery } from "react-query";
 
 const UserDetailsPage = () => {
   const { text, currentUser } = useContext(UserContext);
-  const [selectedUser, setSelectedUser] = useState({});
+  const [selectedUser, setSelectedUser] = useState(null);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [result, setResult] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
 
   const allUserQuery = async () => {
     const users = await getAllUser(currentUser);
-    return users;
+    setSelectedUser(users.users.filter((user) => user.id === id)[0]);
   };
 
   const { data: users, isLoading, refetch } = useQuery("users", allUserQuery);
 
   useEffect(() => {
-    if (users) {
-      const thisUser = users.users.filter((user) => user.id === id)[0];
-      if (thisUser) {
-        setSelectedUser(thisUser);
-      } else {
-        setSelectedUser({ user: "not found" });
-        navigate("/admin/users/all");
-      }
+    if (result) {
+      navigate("/admin/users/all");
     }
-  }, [id, users]);
+  }, [selectedUser, result]);
 
   const confirmDelete = async (user) => {
-    const result = await deleteUser(
+    await deleteUser(
       user,
       currentUser,
       text,
       refetch,
-      setIsDeleting
+      setIsDeleting,
+      setResult
     );
-    if (result && !isDeleting && !isLoading) navigate("/admin/users/all");
   };
 
   if (isLoading || isDeleting || !selectedUser) return <Loading />;

@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";
 import { BlogContext, UserContext } from "../../context";
 import { Icon } from "@iconify/react";
@@ -8,7 +7,7 @@ import { deleteBlogPost } from "../../utils/firebase-admin";
 import { Loading } from "../../components";
 
 const BlogAll = () => {
-  const { allBlogPost, setAllBlogPost } = useContext(BlogContext);
+  const { allBlogPost, setFirebaseData } = useContext(BlogContext);
   const { text, currentUser } = useContext(UserContext);
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -17,21 +16,14 @@ const BlogAll = () => {
     setPosts(allBlogPost);
   }, [allBlogPost]);
 
-  const confirmDelete = (postid) => {
-    Swal.fire({
-      title: text.blogAll.swal.question,
-      showDenyButton: true,
-      confirmButtonText: text.blogAll.swal.confirm,
-      denyButtonText: text.blogAll.swal.cancel,
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        setIsLoading(true);
-        await deleteBlogPost(postid, setAllBlogPost, currentUser, text);
-        setIsLoading(false);
-      } else if (result.isDenied) {
-        return;
-      }
-    });
+  const confirmDelete = async (postid) => {
+    await deleteBlogPost(
+      postid,
+      setFirebaseData,
+      setIsLoading,
+      currentUser,
+      text
+    );
   };
 
   if (isLoading) return <Loading />;
