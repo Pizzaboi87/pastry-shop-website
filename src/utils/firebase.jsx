@@ -13,21 +13,18 @@ import {
   EmailAuthProvider,
   updatePassword,
 } from "firebase/auth";
-import { getDatabase, ref, set, get, push, onValue } from "firebase/database";
+import { getDatabase, ref, set, get, onValue } from "firebase/database";
 import {
   getStorage,
   ref as refStorage,
   uploadBytes,
   getDownloadURL,
-  deleteObject as storageDeleteObject,
 } from "firebase/storage";
 import {
   getFirestore,
   doc,
   getDoc,
   setDoc,
-  getDocs,
-  collection,
   deleteDoc,
 } from "firebase/firestore";
 
@@ -186,17 +183,6 @@ export const deleteMyself = async (currentUser) => {
   }
 };
 
-export const deleteUserFromDatabase = async (currentUser) => {
-  const docRef = doc(db, "users", currentUser.uid);
-
-  try {
-    await deleteDoc(docRef);
-  } catch (error) {
-    console.error("Error during the delete of user's data: ", error);
-    throw error;
-  }
-};
-
 export const reauthenticateUser = async (currentUser, password) => {
   try {
     const credential = EmailAuthProvider.credential(
@@ -334,34 +320,6 @@ export const uploadBlogPost = async (post) => {
       await storePostData(post);
     } catch (error) {
       console.error("Error uploading blog post image:", error);
-    }
-  }
-};
-
-export const deletePost = async (postid) => {
-  const blogPostsRef = ref(database, "blogPosts");
-  const snapshot = await get(blogPostsRef);
-  let existingIndex = -1;
-
-  snapshot.forEach((childSnapshot) => {
-    const postSnapshot = childSnapshot.val();
-    if (postSnapshot.postid === postid) {
-      existingIndex = childSnapshot.key;
-    }
-  });
-
-  if (existingIndex !== -1) {
-    await set(ref(database, `blogPosts/${existingIndex}`), null);
-
-    const imageRef = refStorage(
-      storage,
-      `blog/${postid}.${snapshot.val()[existingIndex].image.split(".").pop()}`
-    );
-
-    try {
-      await storageDeleteObject(imageRef);
-    } catch (error) {
-      console.error("An error occurred while deleting image.", error);
     }
   }
 };
