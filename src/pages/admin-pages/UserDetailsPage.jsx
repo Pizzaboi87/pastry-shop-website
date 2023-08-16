@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context";
 import { adminPageStyle } from "../../styles";
@@ -20,33 +19,32 @@ const UserDetailsPage = () => {
     return users;
   };
 
-  const { data: users, isLoading } = useQuery(
-    `userDetails-${id}`,
-    allUserQuery
-  );
+  const { data: users, isLoading, refetch } = useQuery("users", allUserQuery);
 
   useEffect(() => {
-    if (users) setSelectedUser(users.users.filter((user) => user.id === id)[0]);
+    if (users) {
+      const thisUser = users.users.filter((user) => user.id === id)[0];
+      if (thisUser) {
+        setSelectedUser(thisUser);
+      } else {
+        setSelectedUser({ user: "not found" });
+        navigate("/admin/users/all");
+      }
+    }
   }, [id, users]);
 
-  const confirmDelete = (user) => {
-    Swal.fire({
-      title: text.userDetailsPage.swal.question,
-      showDenyButton: true,
-      confirmButtonText: text.userDetailsPage.swal.confirm,
-      denyButtonText: text.userDetailsPage.swal.cancel,
-    }).then(async (result) => {
-      setIsDeleting(true);
-      if (result.isConfirmed) {
-        await deleteUser(user, currentUser, text, navigate);
-        setIsDeleting(false);
-      } else if (result.isDenied) {
-        return;
-      }
-    });
+  const confirmDelete = async (user) => {
+    const result = await deleteUser(
+      user,
+      currentUser,
+      text,
+      refetch,
+      setIsDeleting
+    );
+    if (result && !isDeleting && !isLoading) navigate("/admin/users/all");
   };
 
-  if (isLoading || isDeleting) return <Loading />;
+  if (isLoading || isDeleting || !selectedUser) return <Loading />;
 
   return (
     <div className={`${adminPageStyle.wrapper} relative`}>

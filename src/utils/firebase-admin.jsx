@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { deleteUserFromDatabase, uploadBlogPost, deletePost } from "./firebase";
+import { uploadBlogPost, deletePost } from "./firebase";
 
 export const deleteBlogPost = async (
   postid,
@@ -47,41 +47,63 @@ export const deleteBlogPost = async (
   }
 };
 
-export const deleteUser = async (user, currentUser, text, navigate) => {
-  try {
-    const idToken = await currentUser.getIdToken();
+export const deleteUser = async (
+  user,
+  currentUser,
+  text,
+  refetch,
+  setIsDeleting
+) => {
+  Swal.fire({
+    title: text.userDetailsPage.swal.question,
+    showDenyButton: true,
+    confirmButtonText: text.userDetailsPage.swal.confirm,
+    denyButtonText: text.userDetailsPage.swal.cancel,
+  }).then(async (result) => {
+    setIsDeleting(true);
 
-    const response = await fetch("/api/delete-user", {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${idToken}`,
-        "user-id": user.uid,
-      },
-    });
+    if (result.isConfirmed) {
+      setIsDeleting(true);
+      try {
+        const idToken = await currentUser.getIdToken();
 
-    if (response.ok) {
-      await deleteUserFromDatabase(user).then(() => {
-        Swal.fire({
-          title: text.userDetailsPage.swal.successTitle,
-          text: text.userDetailsPage.swal.successText,
-          icon: "success",
+        const response = await fetch("/api/delete-user", {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${idToken}`,
+            "user-id": user.uid,
+          },
         });
-        navigate("/admin/users/all");
-      });
-    } else {
-      Swal.fire({
-        title: text.userDetailsPage.swal.errorTitle,
-        text: text.userDetailsPage.swal.errorDelete,
-        icon: "error",
-      });
+
+        if (response.ok) {
+          Swal.fire({
+            title: text.userDetailsPage.swal.successTitle,
+            text: text.userDetailsPage.swal.successText,
+            icon: "success",
+          });
+          await refetch();
+          setIsDeleting(false);
+          return response.result;
+        } else {
+          setIsDeleting(false);
+          Swal.fire({
+            title: text.userDetailsPage.swal.errorTitle,
+            text: text.userDetailsPage.swal.errorDelete,
+            icon: "error",
+          });
+        }
+      } catch (error) {
+        setIsDeleting(false);
+        Swal.fire({
+          title: text.userDetailsPage.swal.errorTitle,
+          text: error.message,
+          icon: "error",
+        });
+      }
+    } else if (result.isDenied) {
+      return;
     }
-  } catch (error) {
-    Swal.fire({
-      title: text.userDetailsPage.swal.errorTitle,
-      text: error.message,
-      icon: "error",
-    });
-  }
+  });
 };
 
 export const getAllUser = async (currentUser) => {

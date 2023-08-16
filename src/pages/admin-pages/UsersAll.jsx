@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 import { Fragment, useEffect, useState, useContext } from "react";
 import { UserContext } from "../../context";
 import { Icon } from "@iconify/react";
@@ -17,7 +16,6 @@ const UsersAll = () => {
   const navigate = useNavigate();
 
   const allUserQuery = async () => {
-    setAllUser([]);
     const users = await getAllUser(currentUser);
     return users;
   };
@@ -26,48 +24,33 @@ const UsersAll = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      if (users)
-        try {
-          const updatedUsers = await Promise.all(
-            users.users.map(async (user) => {
-              let imgsrc;
-              if (user && user?.photoExtension) {
-                imgsrc = await getUserImage(user.uid);
-              } else {
-                imgsrc = await getStoredImage("blog/profile.jpg");
-              }
+      try {
+        const updatedUsers = await Promise.all(
+          users.users.map(async (user) => {
+            let imgsrc;
+            if (user && user?.photoExtension) {
+              imgsrc = await getUserImage(user.uid);
+            } else {
+              imgsrc = await getStoredImage("blog/profile.jpg");
+            }
 
-              return { ...user, imgsrc };
-            })
-          );
+            return { ...user, imgsrc };
+          })
+        );
 
-          setAllUser(updatedUsers);
-        } catch (error) {
-          console.error(error);
-        }
+        setAllUser(updatedUsers);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
-    fetchUsers();
+    if (users && !isLoading && !isDeleting) fetchUsers();
   }, [users]);
 
-  if (allUser.length === 0 || isLoading || isDeleting) return <Loading />;
+  if (allUser.length === 0 || isDeleting) return <Loading />;
 
-  const confirmDelete = (user) => {
-    Swal.fire({
-      title: text.userDetailsPage.swal.question,
-      showDenyButton: true,
-      confirmButtonText: text.userDetailsPage.swal.confirm,
-      denyButtonText: text.userDetailsPage.swal.cancel,
-    }).then(async (result) => {
-      setIsDeleting(true);
-      if (result.isConfirmed) {
-        await deleteUser(user, currentUser, text, navigate);
-        await refetch();
-        setIsDeleting(false);
-      } else if (result.isDenied) {
-        return;
-      }
-    });
+  const confirmDelete = async (user) => {
+    await deleteUser(user, currentUser, text, refetch, setIsDeleting);
   };
 
   return (
