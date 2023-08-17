@@ -563,6 +563,7 @@ const fr_text = {
     swal: {
       errorTitle: "Quelque chose s'est mal passé!",
       errorMessage: "L'article n'a pas été enregistré.",
+      errorType: "Veuillez sélectionner un type d'article valide.",
       successTitle: "Succès!",
       successMessage: "L'article a été publié.",
     },

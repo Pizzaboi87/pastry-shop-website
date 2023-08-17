@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { BlogContext, UserContext } from "../context";
 import { blogNewFormStyle } from "../styles";
 import { uploadPost } from "../utils/firebase-admin";
+import Swal from "sweetalert2";
 
 const BlogForm = ({ dbPost }) => {
   const { text, currentUser } = useContext(UserContext);
@@ -42,13 +43,22 @@ const BlogForm = ({ dbPost }) => {
       const fileExtension = files[0].name.split(".").pop();
       const newFileName = `${postid}.${fileExtension}`;
       uploadFile = new File([files[0]], newFileName);
+
+      if (!uploadFile.type.includes("image/")) {
+        Swal.fire({
+          title: text.blogForm.swal.errorTitle,
+          text: text.blogForm.swal.errorType,
+          icon: "error",
+        });
+        return;
+      }
     }
 
     if (name === "image") {
       setBlogForm({
         ...blogForm,
         imageFile: uploadFile,
-        image: "/blog/" + uploadFile.name,
+        image: "/blog/" + newFileName,
       });
     } else if (name === "tags") {
       const tagArray = value.split(",");

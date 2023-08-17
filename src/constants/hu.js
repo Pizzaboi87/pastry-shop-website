@@ -555,6 +555,7 @@ const hu_text = {
     swal: {
       errorTitle: "Valami hiba történt!",
       errorMessage: "A bejegyzés nem lett mentve.",
+      errorType: "Kérjük, válassz egy érvényes képfájlt!",
       successTitle: "Siker!",
       successMessage: "A bejegyzés feltöltésre került.",
     },

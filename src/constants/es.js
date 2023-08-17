@@ -555,6 +555,7 @@ const es_text = {
     swal: {
       errorTitle: "¡Algo salió mal!",
       errorMessage: "El artículo no ha sido guardado.",
+      errorType: "¡Por favor carga un archivo de imagen válido!",
       successTitle: "¡Éxito!",
       successMessage: "El artículo ha sido subido.",
     },

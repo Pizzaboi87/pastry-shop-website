@@ -555,6 +555,7 @@ const en_text = {
     swal: {
       errorTitle: "Something went wrong!",
       errorMessage: "The post has not been saved.",
+      errorType: "Please select a valid image file.",
       successTitle: "Success!",
       successMessage: "The post has been uploaded.",
     },
