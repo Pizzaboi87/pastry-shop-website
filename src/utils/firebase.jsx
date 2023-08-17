@@ -283,47 +283,6 @@ export const storeComment = async (comment) => {
   }
 };
 
-const storePostData = async (post) => {
-  const blogPostsRef = ref(database, "blogPosts");
-
-  try {
-    const snapshot = await get(blogPostsRef);
-    const postData = snapshot.val();
-
-    if (postData && postData[post.postid]) {
-      const existingPost = postData[post.postid];
-
-      if (JSON.stringify(existingPost) !== JSON.stringify(post)) {
-        await set(ref(database, `blogPosts/${post.postid}`), post);
-      }
-    } else {
-      await set(ref(database, `blogPosts/${post.postid}`), post);
-    }
-  } catch (error) {
-    console.error("An error occurred while storing post data.", error);
-  }
-};
-
-export const uploadBlogPost = async (post) => {
-  if (!post.imageFile.name) {
-    try {
-      await storePostData(post);
-    } catch (error) {
-      console.error("Error uploading blog post:", error);
-    }
-  } else {
-    try {
-      await storeImage(
-        post.imageFile,
-        `blog/${post.postid}.${post.imageFile.name.split(".").pop()}`
-      );
-      await storePostData(post);
-    } catch (error) {
-      console.error("Error uploading blog post image:", error);
-    }
-  }
-};
-
 export const deleteComment = async (id) => {
   const commentsRef = ref(database, "comments");
   const snapshot = await get(commentsRef);

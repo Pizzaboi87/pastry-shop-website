@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { uploadBlogPost, getAllPost, storeImage } from "./firebase";
+import { getAllPost, storeImage } from "./firebase";
 
 const updateData = async (setFirebaseData) => {
   try {
