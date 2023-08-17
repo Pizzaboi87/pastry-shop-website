@@ -1,10 +1,8 @@
-import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { BlogContext, UserContext } from "../context";
 import { blogNewFormStyle } from "../styles";
 import { uploadPost } from "../utils/firebase-admin";
-import { getAllPost } from "../utils/firebase";
 
 const BlogForm = ({ dbPost }) => {
   const { text, currentUser } = useContext(UserContext);
