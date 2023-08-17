@@ -8,6 +8,8 @@ admin.initializeApp({
     "https://le-ciel-sucre-default-rtdb.europe-west1.firebasedatabase.app",
 });
 
+const database = admin.database();
+
 export default async (req, res) => {
   const authHeader = req.headers.authorization;
 
@@ -24,7 +26,17 @@ export default async (req, res) => {
       return res.status(403).json({ message: "Permission denied." });
     }
 
-    res.status(200).json({ message: "Success" });
+    const blogPostsRef = database.ref("blogPosts");
+    const post = JSON.parse(req.body);
+
+    try {
+      await blogPostsRef.child(post.postid).set(post);
+
+      res.status(200).json({ message: "Success" });
+    } catch (error) {
+      console.error("Error verifying during post uploading:", error);
+      res.status(401).json({ message: "Upload error" });
+    }
   } catch (error) {
     console.error("Error verifying ID token:", error);
     res.status(401).json({ message: "Unauthorized" });

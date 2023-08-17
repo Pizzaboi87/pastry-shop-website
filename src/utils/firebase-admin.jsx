@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { uploadBlogPost, getAllPost } from "./firebase";
+import { uploadBlogPost, getAllPost, storeImage } from "./firebase";
 
 const updateData = async (setFirebaseData) => {
   try {
@@ -149,21 +149,51 @@ export const getAllUser = async (currentUser) => {
   }
 };
 
-export const uploadPost = async (currentUser, blogForm) => {
+export const uploadPost = async (
+  text,
+  currentUser,
+  blogForm,
+  setIsLoading,
+  setFirebaseData,
+  navigate
+) => {
+  setIsLoading(true);
   try {
     const idToken = await currentUser.getIdToken();
+    await storeImage(blogForm.imageFile, blogForm.image);
 
     const response = await fetch("/api/store-post", {
-      method: "GET",
+      method: "POST",
       headers: {
         Authorization: `Bearer ${idToken}`,
       },
+      body: JSON.stringify(blogForm),
     });
 
     if (response.ok) {
-      await uploadBlogPost(blogForm);
+      await updateData(setFirebaseData);
+      setIsLoading(false);
+      Swal.fire({
+        title: text.blogForm.swal.successTitle,
+        text: text.blogForm.swal.successMessage,
+        icon: "success",
+      });
+      navigate("/admin/blog/all");
+    } else {
+      setIsLoading(false);
+      Swal.fire({
+        title: text.blogForm.swal.errorTitle,
+        text: text.blogForm.swal.errorMessage,
+        icon: "error",
+      });
     }
   } catch (error) {
     console.log(error);
+    setIsLoading(false);
+    Swal.fire({
+      title: text.blogForm.swal.errorTitle,
+      text: text.blogForm.swal.errorMessage,
+      icon: "error",
+    });
   }
 };

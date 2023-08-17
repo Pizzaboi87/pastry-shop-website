@@ -36,15 +36,6 @@ const BlogForm = ({ dbPost }) => {
   const { author, title, blurb, post, date, image, postid, tags, imageFile } =
     blogForm;
 
-  const updateData = async () => {
-    try {
-      const data = await getAllPost();
-      setFirebaseData(data);
-    } catch (error) {
-      console.error("An error happened during data fetching.", error);
-    }
-  };
-
   const handleChange = (event) => {
     const { name, value, files } = event.target;
     let uploadFile = {};
@@ -79,25 +70,14 @@ const BlogForm = ({ dbPost }) => {
   //------------------------------------------------------NOT READY: Validate missing.------------------------------------------------------
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsLoading(true);
-    try {
-      await uploadPost(currentUser, blogForm);
-      updateData();
-      setIsLoading(false);
-      Swal.fire({
-        title: text.blogForm.swal.successTitle,
-        text: text.blogForm.swal.successMessage,
-        icon: "success",
-      });
-      navigate("/admin/blog/all");
-    } catch (error) {
-      setIsLoading(false);
-      Swal.fire({
-        title: text.blogForm.swal.errorTitle,
-        text: text.blogForm.swal.errorMessage,
-        icon: "error",
-      });
-    }
+    await uploadPost(
+      text,
+      currentUser,
+      blogForm,
+      setIsLoading,
+      setFirebaseData,
+      navigate
+    );
   };
 
   return (
