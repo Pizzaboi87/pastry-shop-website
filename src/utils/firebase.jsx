@@ -263,23 +263,12 @@ export const storeImage = async (imageFile, imagePath) => {
 };
 
 export const storeComment = async (comment) => {
-  const commentsRef = ref(database, "comments");
-
   try {
-    const snapshot = await get(commentsRef);
-    const commentData = snapshot.val();
-
-    if (commentData && commentData[comment.id]) {
-      const existingComment = commentData[comment.id];
-
-      if (JSON.stringify(existingComment) !== JSON.stringify(comment)) {
-        await set(ref(database, `comments/${comment.id}`), comment);
-      }
-    } else {
-      await set(ref(database, `comments/${comment.id}`), comment);
-    }
+    await set(ref(database, `comments/${comment.id}`), comment);
+    return true;
   } catch (error) {
     console.error("An error occurred while storing comment data.", error);
+    return false;
   }
 };
 

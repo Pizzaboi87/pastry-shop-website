@@ -3,14 +3,18 @@ import { useContext, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BlogContext, UserContext } from "../../context";
 import { Icon } from "@iconify/react";
-import { changeCommentStatus, deleteComment } from "../../utils/firebase";
+import { changeCommentStatus } from "../../utils/firebase";
 import { adminPageStyle, blogNewFormStyle } from "../../styles";
+import { deleteComment } from "../../utils/firebase-admin";
+import { Loading } from "../../components";
 
 const BlogCommentPage = () => {
   const { commentID } = useParams();
-  const navigate = useNavigate();
-  const { text } = useContext(UserContext);
+  const { text, currentUser } = useContext(UserContext);
   const { allComments, setAllComments } = useContext(BlogContext);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const navigate = useNavigate();
+
   const actualComment = allComments.filter(
     (comment) => comment.id === commentID
   )[0];
@@ -24,33 +28,15 @@ const BlogCommentPage = () => {
     });
   };
 
-  const confirmDelete = (id) => {
-    Swal.fire({
-      title: text.blogCommentPage.swal.question,
-      showDenyButton: true,
-      confirmButtonText: text.blogCommentPage.swal.confirm,
-      denyButtonText: text.blogCommentPage.swal.cancel,
-    }).then((result) => {
-      if (result.isConfirmed) {
-        deleteComment(id)
-          .then(() => {
-            setCommentForm(defaultForm);
-          })
-          .then(() => {
-            navigate("/admin/blog/comments");
-          })
-          .catch((error) => {
-            Swal.fire({
-              title: text.blogAll.swal.error,
-              text: text.blogAll.swal.errorMsg,
-              icon: "error",
-            });
-            console.error("Error deleting comment:", error);
-          });
-      } else if (result.isDenied) {
-        return;
-      }
-    });
+  const confirmDelete = async (id) => {
+    await deleteComment(
+      id,
+      text,
+      currentUser,
+      navigate,
+      setAllComments,
+      setIsDeleting
+    );
   };
 
   const defaultForm = {
@@ -75,6 +61,8 @@ const BlogCommentPage = () => {
   const handleChange = () => {};
 
   const handleSubmit = () => {};
+
+  if (isDeleting) return <Loading />;
 
   return (
     <div className={`${adminPageStyle.wrapper} relative`}>

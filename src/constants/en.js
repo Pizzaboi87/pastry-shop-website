@@ -647,6 +647,10 @@ const en_text = {
       question: "Do you want to delete the comment?",
       confirm: "Delete",
       cancel: "Cancel",
+      successTitle: "Success!",
+      successText: "The comment has been deleted.",
+      errorTitle: "Something went wrong!",
+      errorText: "The comment has not been deleted.",
     },
   },
   userAccountForm: {

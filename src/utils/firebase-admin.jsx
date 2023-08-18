@@ -10,6 +10,63 @@ const updateData = async (setFirebaseData) => {
   }
 };
 
+export const deleteComment = async (
+  id,
+  text,
+  currentUser,
+  navigate,
+  setAllComments,
+  setIsDeleting
+) => {
+  Swal.fire({
+    title: text.blogCommentPage.swal.question,
+    showDenyButton: true,
+    confirmButtonText: text.blogCommentPage.swal.confirm,
+    denyButtonText: text.blogCommentPage.swal.cancel,
+  }).then(async (result) => {
+    setIsDeleting(true);
+    if (result.isConfirmed) {
+      try {
+        const idToken = await currentUser.getIdToken();
+
+        const response = await fetch("/api/delete-comment", {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${idToken}`,
+            "comment-id": id,
+          },
+        });
+
+        if (response.ok) {
+          Swal.fire({
+            title: text.blogCommentPage.swal.successTitle,
+            text: text.blogCommentPage.swal.successText,
+            icon: "success",
+          });
+          setAllComments((prevComments) =>
+            prevComments.filter((comm) => comm.id !== id)
+          );
+          setIsDeleting(false);
+          navigate("/admin/blog/comments");
+        } else {
+          setIsDeleting(false);
+          throw new Error("Comment deletion failed.");
+        }
+      } catch (error) {
+        setIsDeleting(false);
+        Swal.fire({
+          title: text.blogCommentPage.swal.errorTitle,
+          text: text.blogCommentPage.swal.errorText,
+          icon: "error",
+        });
+        console.error("Error deleting comment:", error);
+      }
+    } else if (result.isDenied) {
+      return;
+    }
+  });
+};
+
 export const deleteBlogPost = async (
   postid,
   setFirebaseData,

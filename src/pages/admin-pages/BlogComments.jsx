@@ -8,18 +8,18 @@ import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
 import { Loading } from "../../components";
 import {
   changeCommentStatus,
-  deleteComment,
   getStoredImage,
   getUserImage,
 } from "../../utils/firebase";
-import { getAllUser } from "../../utils/firebase-admin";
+import { getAllUser, deleteComment } from "../../utils/firebase-admin";
 import { useQuery } from "react-query";
 
 const BlogComments = () => {
   const { allComments, setAllComments } = useContext(BlogContext);
   const { text, currentUser } = useContext(UserContext);
-  const navigate = useNavigate();
   const [commentsWithUsers, setCommentsWithUsers] = useState([]);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const navigate = useNavigate();
 
   const allUserQuery = async () => {
     const users = await getAllUser(currentUser);
@@ -63,33 +63,18 @@ const BlogComments = () => {
     });
   };
 
-  const confirmDelete = (id) => {
-    Swal.fire({
-      title: text.blogCommentPage.swal.question,
-      showDenyButton: true,
-      confirmButtonText: text.blogCommentPage.swal.confirm,
-      denyButtonText: text.blogCommentPage.swal.cancel,
-    }).then((result) => {
-      if (result.isConfirmed) {
-        deleteComment(id)
-          .then(() => {
-            setAllComments((prevComments) =>
-              prevComments.filter((comm) => comm.id !== id)
-            );
-          })
-          .catch((error) => {
-            Swal.fire({
-              title: text.blogAll.swal.error,
-              text: text.blogAll.swal.errorMsg,
-              icon: "error",
-            });
-            console.error("Error deleting comment:", error);
-          });
-      } else if (result.isDenied) {
-        return;
-      }
-    });
+  const confirmDelete = async (id) => {
+    await deleteComment(
+      id,
+      text,
+      currentUser,
+      navigate,
+      setAllComments,
+      setIsDeleting
+    );
   };
+
+  if (isDeleting) return <Loading />;
 
   return (
     <div className={adminPageStyle.wrapper}>

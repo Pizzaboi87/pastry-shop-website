@@ -56,21 +56,20 @@ const BlogCommentForm = ({ postID }) => {
     setCommentForm({ ...commentForm, [name]: value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (!valueCheck(title, comment)) return;
     else {
-      try {
-        storeComment(commentForm).then(() => {
-          Swal.fire({
-            icon: "success",
-            title: text.blogCommentForm.swal.successTitle,
-            text: text.blogCommentForm.swal.successMessage,
-          });
-          setCommentForm(defaultForm);
+      const resp = await storeComment(commentForm);
+      if (resp) {
+        Swal.fire({
+          icon: "success",
+          title: text.blogCommentForm.swal.successTitle,
+          text: text.blogCommentForm.swal.successMessage,
         });
-      } catch (error) {
-        errorSwal(error);
+        setCommentForm(defaultForm);
+      } else {
+        errorSwal(text.blogCommentForm.swal.errorTitle);
       }
     }
   };
