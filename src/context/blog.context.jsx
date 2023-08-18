@@ -8,6 +8,7 @@ export const BlogContextProvider = ({ children }) => {
   const [allBlogPost, setAllBlogPost] = useState([]);
   const [allComments, setAllComments] = useState([]);
   const [firebaseData, setFirebaseData] = useState({});
+  const [firebaseComments, setFirebaseComments] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,8 +48,20 @@ export const BlogContextProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const firebaseData = await getAllComments();
-        const commentsArray = Object.values(firebaseData);
+        const data = await getAllComments();
+        setFirebaseComments(data);
+      } catch (error) {
+        console.error("An error happened during comments fetching.", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const commentsArray = Object.values(firebaseComments);
         setAllComments(commentsArray.sort((a, b) => b.date - a.date));
       } catch (error) {
         console.error("An error happened during data fetching.", error);
@@ -56,7 +69,7 @@ export const BlogContextProvider = ({ children }) => {
     };
 
     fetchData();
-  }, []);
+  }, [firebaseComments]);
 
   if (allBlogPost.length === 0 || allComments.length === 0) return <Loading />;
 
@@ -67,6 +80,8 @@ export const BlogContextProvider = ({ children }) => {
     setFirebaseData,
     allComments,
     setAllComments,
+    firebaseComments,
+    setFirebaseComments,
   };
 
   return <BlogContext.Provider value={value}>{children}</BlogContext.Provider>;

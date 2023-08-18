@@ -11,7 +11,8 @@ import { Loading } from "../../components";
 const BlogCommentPage = () => {
   const { commentID } = useParams();
   const { text, currentUser } = useContext(UserContext);
-  const { allComments, setAllComments } = useContext(BlogContext);
+  const { allComments, setAllComments, setFirebaseComments } =
+    useContext(BlogContext);
   const [isDeleting, setIsDeleting] = useState(false);
   const navigate = useNavigate();
 
@@ -34,7 +35,7 @@ const BlogCommentPage = () => {
       text,
       currentUser,
       navigate,
-      setAllComments,
+      setFirebaseComments,
       setIsDeleting
     );
   };

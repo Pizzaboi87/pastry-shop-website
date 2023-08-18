@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { getAllPost, storeImage } from "./firebase";
+import { getAllComments, getAllPost, storeImage } from "./firebase";
 
 const updateData = async (setFirebaseData) => {
   try {
@@ -10,12 +10,21 @@ const updateData = async (setFirebaseData) => {
   }
 };
 
+const updateComments = async (setFirebaseComments) => {
+  try {
+    const data = await getAllComments();
+    setFirebaseComments(data);
+  } catch (error) {
+    console.error("An error happened during data fetching.", error);
+  }
+};
+
 export const deleteComment = async (
   id,
   text,
   currentUser,
   navigate,
-  setAllComments,
+  setFirebaseComments,
   setIsDeleting
 ) => {
   Swal.fire({
@@ -43,9 +52,7 @@ export const deleteComment = async (
             text: text.blogCommentPage.swal.successText,
             icon: "success",
           });
-          setAllComments((prevComments) =>
-            prevComments.filter((comm) => comm.id !== id)
-          );
+          await updateComments(setFirebaseComments);
           setIsDeleting(false);
           navigate("/admin/blog/comments");
         } else {

@@ -15,7 +15,8 @@ import { getAllUser, deleteComment } from "../../utils/firebase-admin";
 import { useQuery } from "react-query";
 
 const BlogComments = () => {
-  const { allComments, setAllComments } = useContext(BlogContext);
+  const { allComments, setAllComments, setFirebaseComments } =
+    useContext(BlogContext);
   const { text, currentUser } = useContext(UserContext);
   const [commentsWithUsers, setCommentsWithUsers] = useState([]);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -69,7 +70,7 @@ const BlogComments = () => {
       text,
       currentUser,
       navigate,
-      setAllComments,
+      setFirebaseComments,
       setIsDeleting
     );
   };
