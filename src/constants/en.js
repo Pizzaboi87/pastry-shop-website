@@ -755,6 +755,14 @@ const en_text = {
       cancel: "Cancel",
     },
   },
+  tooltip: {
+    deleteUser: "Delete user",
+    viewUser: "View user",
+    published: "Comment is published now.",
+    hided: "Comment is hided now.",
+    deleteComment: "Delete comment.",
+    viewComment: "View comment.",
+  },
 };
 
 export default en_text;

@@ -767,6 +767,14 @@ const fr_text = {
       cancel: "Annuler",
     },
   },
+  tooltip: {
+    deleteUser: "Supprimer l'utilisateur.",
+    viewUser: "Voir l'utilisateur.",
+    published: "Le commentaire est maintenant publié.",
+    hided: "Le commentaire est maintenant masqué.",
+    deleteComment: "Supprimer le commentaire.",
+    viewComment: "Voir le commentaire.",
+  },
 };
 
 export default fr_text;

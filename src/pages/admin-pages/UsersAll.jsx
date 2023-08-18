@@ -109,13 +109,13 @@ const UsersAll = () => {
       </ul>
       <Tooltip
         anchorSelect=".delete"
-        content="Delete user."
+        content={text.tooltip.deleteUser}
         style={tooltipStyle}
         place="top"
       />
       <Tooltip
         anchorSelect=".edit"
-        content="View user."
+        content={text.tooltip.viewUser}
         style={tooltipStyle}
         place="top"
       />

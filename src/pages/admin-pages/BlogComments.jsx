@@ -164,25 +164,25 @@ const BlogComments = () => {
       </ul>
       <Tooltip
         anchorSelect=".published"
-        content="Comment is published now."
+        content={text.tooltip.published}
         style={tooltipStyle}
         place="top"
       />
       <Tooltip
         anchorSelect=".hided"
-        content="Comment is hided now."
+        content={text.tooltip.hided}
         style={tooltipStyle}
         place="top"
       />
       <Tooltip
         anchorSelect=".delete"
-        content="Delete comment."
+        content={text.tooltip.deleteComment}
         style={tooltipStyle}
         place="top"
       />
       <Tooltip
         anchorSelect=".edit"
-        content="View comment."
+        content={text.tooltip.viewComment}
         style={tooltipStyle}
         place="top"
       />

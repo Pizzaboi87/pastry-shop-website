@@ -758,6 +758,14 @@ const hu_text = {
       cancel: "Mégse",
     },
   },
+  tooltip: {
+    deleteUser: "Felhasználó törlése.",
+    viewUser: "Felhasználó megtekintése.",
+    published: "A komment most már közzétéve.",
+    hided: "A komment most el van rejtve.",
+    deleteComment: "Komment törlése.",
+    viewComment: "Komment megtekintése.",
+  },
 };
 
 export default hu_text;

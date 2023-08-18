@@ -105,7 +105,6 @@ const BlogForm = ({ dbPost }) => {
     } else {
       setBlogForm({ ...blogForm, [name]: value });
     }
-    console.log(uploadFile);
   };
 
   const handleSubmit = async (event) => {
