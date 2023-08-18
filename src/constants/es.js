@@ -552,10 +552,19 @@ const es_text = {
     tags: "Etiquetas (separadas por comas)",
     button: "Guardar",
     savingButton: "Guardando...",
+    imageDisable:
+      "Mientras el título no sea válido, la carga de imágenes está inactiva.",
+    titleDisable:
+      "Ya has subido una imagen, por lo que el título ya no se puede editar.",
     swal: {
       errorTitle: "¡Algo salió mal!",
       errorMessage: "El artículo no ha sido guardado.",
       errorType: "¡Por favor carga un archivo de imagen válido!",
+      errorName: "Por favor, añade un nombre válido.",
+      errorPostTitle: "Por favor, añade un título válido.",
+      errorBlurb: "Por favor, añade un texto de descripción válido.",
+      errorPostText: "Por favor, añade un texto de publicación válido.",
+      errorTags: "Por favor, añade hashtags válidos.",
       successTitle: "¡Éxito!",
       successMessage: "El artículo ha sido subido.",
     },

@@ -1,13 +1,23 @@
+import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { BlogContext, UserContext } from "../context";
 import { blogNewFormStyle } from "../styles";
 import { uploadPost } from "../utils/firebase-admin";
-import Swal from "sweetalert2";
 
 const BlogForm = ({ dbPost }) => {
   const { text, currentUser } = useContext(UserContext);
   const { setFirebaseData } = useContext(BlogContext);
+
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+
+  let uploadFile = {};
+  let newFileName = "";
+  let fileExtension = "";
+
+  const normalRegex = /^[A-Za-z0-9-.()\//ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
+  const textRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\n\s]+$/;
 
   const getBackImage = (url) => {
     const start = url.indexOf("%2F") + 3;
@@ -15,9 +25,6 @@ const BlogForm = ({ dbPost }) => {
     const extracted = "/blog/" + url.substring(start, end);
     return extracted;
   };
-
-  const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
 
   const defaultForm = {
     author: dbPost ? dbPost.author : "",
@@ -32,24 +39,49 @@ const BlogForm = ({ dbPost }) => {
   };
 
   const [blogForm, setBlogForm] = useState(defaultForm);
-  const { author, title, blurb, post, date, image, postid, tags, imageFile } =
-    blogForm;
+  const { author, title, blurb, post, date, postid, tags, image } = blogForm;
+
+  const errorSwal = (error) => {
+    Swal.fire({
+      icon: "error",
+      title: text.blogForm.swal.errorTitle,
+      text: error,
+    });
+  };
+
+  const valueCheck = (author, title, blurb, post, tags) => {
+    switch (true) {
+      case !normalRegex.test(author):
+        errorSwal(text.blogForm.swal.errorName);
+        return;
+      case !textRegex.test(title):
+        errorSwal(text.blogForm.swal.errorPostTitle);
+        return;
+      case !textRegex.test(blurb):
+        errorSwal(text.blogForm.swal.errorBlurb);
+        return;
+      case !textRegex.test(post):
+        errorSwal(text.blogForm.swal.errorPostText);
+        return;
+      case !normalRegex.test(tags):
+        errorSwal(text.blogForm.swal.errorTags);
+        return;
+      default:
+        return true;
+    }
+  };
 
   const handleChange = (event) => {
     const { name, value, files } = event.target;
-    let uploadFile = {};
 
     if (files) {
-      const fileExtension = files[0].name.split(".").pop();
-      const newFileName = `${postid}.${fileExtension}`;
+      fileExtension = files[0].name.split(".").pop();
+      newFileName = `${postid}.${fileExtension}`;
       uploadFile = new File([files[0]], newFileName);
 
-      if (!uploadFile.type.includes("image/")) {
-        Swal.fire({
-          title: text.blogForm.swal.errorTitle,
-          text: text.blogForm.swal.errorType,
-          icon: "error",
-        });
+      const allowedExtensions = ["jpg", "jpeg", "png", "webp", "bmp", "svg"];
+      if (!allowedExtensions.some((ext) => fileExtension.includes(ext))) {
+        errorSwal(text.blogForm.swal.errorType);
         return;
       }
     }
@@ -73,11 +105,13 @@ const BlogForm = ({ dbPost }) => {
     } else {
       setBlogForm({ ...blogForm, [name]: value });
     }
+    console.log(uploadFile);
   };
 
-  //------------------------------------------------------NOT READY: Validate missing.------------------------------------------------------
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!valueCheck(author, title, blurb, post, tags)) return;
+
     await uploadPost(
       text,
       currentUser,
@@ -113,8 +147,12 @@ const BlogForm = ({ dbPost }) => {
             required
             name="title"
             value={title}
+            disabled={image ? true : false}
+            title={image ? text.blogForm.titleDisable : null}
             onChange={handleChange}
-            className={blogNewFormStyle.input}
+            className={`${blogNewFormStyle.input} ${
+              image ? "cursor-not-allowed" : "cursor-normal"
+            }`}
           />
         </label>
         <label className={blogNewFormStyle.label}>
@@ -135,8 +173,12 @@ const BlogForm = ({ dbPost }) => {
             type="file"
             name="image"
             accept="image/*"
+            title={text.blogForm.imageDisable}
+            disabled={normalRegex.test(title) ? false : true}
             onChange={handleChange}
-            className={blogNewFormStyle.input}
+            className={`${blogNewFormStyle.input} ${
+              normalRegex.test(title) ? "cursor-normal" : "cursor-not-allowed"
+            }`}
           />
         </label>
         <label className={blogNewFormStyle.label}>

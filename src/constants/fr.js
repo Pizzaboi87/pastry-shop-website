@@ -560,10 +560,19 @@ const fr_text = {
     tags: "Mots-Clés (séparés par des virgules)",
     button: "Enregistrer",
     savingButton: "Enregistrement en cours...",
+    imageDisable:
+      "Tant que le titre n'est pas valide, le téléchargement de l'image est désactivé.",
+    titleDisable:
+      "Vous avez déjà téléchargé une image, donc le titre ne peut plus être modifié.",
     swal: {
       errorTitle: "Quelque chose s'est mal passé!",
       errorMessage: "L'article n'a pas été enregistré.",
       errorType: "Veuillez sélectionner un type d'article valide.",
+      errorName: "Veuillez ajouter un nom valide.",
+      errorPostTitle: "Veuillez ajouter un titre valide.",
+      errorBlurb: "Veuillez ajouter un texte de description valide.",
+      errorPostText: "Veuillez ajouter un texte de publication valide.",
+      errorTags: "Veuillez ajouter des hashtags valides.",
       successTitle: "Succès!",
       successMessage: "L'article a été publié.",
     },

@@ -552,10 +552,18 @@ const hu_text = {
     tags: "Hashtag-ek (vesszővel elválasztva)",
     button: "Mentés",
     savingButton: "Mentés folyamatban...",
+    imageDisable: "Amíg a cím érvénytelen, a képfeltöltés inaktív.",
+    titleDisable: "Már feltöltöttél egy képet, így a cím már nem módosítható.",
+
     swal: {
       errorTitle: "Valami hiba történt!",
       errorMessage: "A bejegyzés nem lett mentve.",
       errorType: "Kérjük, válassz egy érvényes képfájlt!",
+      errorName: "Kérjük, adj meg érvényes nevet.",
+      errorPostTitle: "Kérjük, adj meg érvényes címet.",
+      errorBlurb: "Kérjük, adj meg érvényes rövid szöveget.",
+      errorPostText: "Kérjük, adj meg érvényes bejegyzés szöveget.",
+      errorTags: "Kérjük, adj meg érvényes hashtageket.",
       successTitle: "Siker!",
       successMessage: "A bejegyzés feltöltésre került.",
     },

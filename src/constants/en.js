@@ -552,10 +552,18 @@ const en_text = {
     tags: "Hashtags (separated by commas)",
     button: "Save",
     savingButton: "Saving...",
+    imageDisable: "As long as title is invalid, image upload is inactive.",
+    titleDisable:
+      "You have already uploaded a picture, so the title can no longer be edited.",
     swal: {
       errorTitle: "Something went wrong!",
       errorMessage: "The post has not been saved.",
       errorType: "Please select a valid image file.",
+      errorName: "Please add a valid name.",
+      errorPostTitle: "Please add a valid title.",
+      errorBlurb: "Please add a valid blurb text.",
+      errorPostText: "Please add a valid post text.",
+      errorTags: "Please add valid hashtags.",
       successTitle: "Success!",
       successMessage: "The post has been uploaded.",
     },
