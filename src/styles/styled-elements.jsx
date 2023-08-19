@@ -139,6 +139,13 @@ export const Theme_Motion_Span = styled(motion.span)`
   color: ${getTextColor};
 `;
 
+export const Theme_Span = styled.span`
+  background-color: ${getBackgroundColor};
+  &:hover {
+    background-color: ${getHoverBackgroundColor};
+  }
+`;
+
 export const Theme_Form = styled.form`
   background-color: ${getBackgroundColor};
 `;
