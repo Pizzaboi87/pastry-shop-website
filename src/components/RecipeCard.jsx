@@ -1,7 +1,5 @@
 import { useContext, useState } from "react";
-import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
-import { Icon } from "@iconify/react";
 import { UserContext } from "../context";
 import { Theme_Icon, Theme_Motion_Div } from "../styles";
 import {
@@ -12,9 +10,10 @@ import {
   EmailShareButton,
   EmailIcon,
 } from "react-share";
+import { getUserData, updateUserData } from "../utils/firebase";
 
 const RecipeCard = ({ recipe }) => {
-  const { text } = useContext(UserContext);
+  const { text, userData, setUserData } = useContext(UserContext);
   const motionPropsR = slideIn("right");
   const [liked, setLiked] = useState(false);
 
@@ -22,6 +21,42 @@ const RecipeCard = ({ recipe }) => {
   const quoteText = `\u{1F63B} ${recipe.title}\n${ingredients.map(
     (ingredient) => "\n" + ingredient
   )}\n\n${recipe.instructions}\n\n`;
+
+  const fetchActualData = async () => {
+    const userDatafromDB = await getUserData(userData.uid);
+    setUserData(userDatafromDB);
+  };
+
+  const handleLike = async () => {
+    const newLiked = !liked;
+    setLiked(newLiked);
+    console.log("Recipe: ", recipe.title);
+
+    if (userData && newLiked) {
+      if (userData.likedRecipes) {
+        const { likedRecipes } = userData;
+        await updateUserData(userData.uid, {
+          likedRecipes: [...likedRecipes, recipe.title],
+        });
+      } else {
+        await updateUserData(userData.uid, {
+          likedRecipes: [recipe.title],
+        });
+      }
+      await fetchActualData();
+    } else if (userData && !newLiked) {
+      const { likedRecipes } = userData;
+      const newLikedRecipes = likedRecipes.filter(
+        (likedRecipe) => likedRecipe !== recipe.title
+      );
+      await updateUserData(userData.uid, {
+        likedRecipes: newLikedRecipes,
+      });
+      await fetchActualData();
+    } else {
+      return null;
+    }
+  };
 
   //-----------------------------------------------------NOT READY: Like/favourite function missing.-----------------------------------------------------
   return (
@@ -37,7 +72,7 @@ const RecipeCard = ({ recipe }) => {
         icon={liked ? "mdi:heart" : "mdi:heart-outline"}
         $iconcolor="logo"
         className="text-[3rem] absolute xl:right-8 right-2 xl:top-10 top-2 cursor-pointer"
-        onClick={() => setLiked(!liked)}
+        onClick={handleLike}
       />
       <h1 className="mb-4 xl:text-[1.8rem] text-[1.4rem] text-left font-[500] text-text">
         {recipe.title}
