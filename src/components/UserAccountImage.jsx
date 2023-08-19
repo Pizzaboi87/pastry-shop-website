@@ -19,25 +19,36 @@ const UserAccountImage = ({
 
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
-    uploadUserImage(currentUser.uid, file)
-      .then(() => {
-        getUserImage(currentUser.uid).then((url) => setUserImage(url));
-        Swal.fire({
-          icon: "success",
-          title: text.userAccountImage.swal.successMessage,
-          showConfirmButton: false,
-          timer: 1500,
+    const extension = file.name.split(".").pop();
+    const validExtensions = ["jpg", "jpeg", "png", "webp", "bmp", "svg"];
+    if (validExtensions.some((ext) => extension.includes(ext))) {
+      uploadUserImage(currentUser.uid, file)
+        .then(() => {
+          getUserImage(currentUser.uid).then((url) => setUserImage(url));
+          Swal.fire({
+            icon: "success",
+            title: text.userAccountImage.swal.successMessage,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        })
+        .catch((error) => {
+          console.error("An error occured during the image upload:", error);
+          Swal.fire({
+            icon: "error",
+            title: text.userAccountImage.swal.errorMessage,
+            showConfirmButton: false,
+            timer: 1500,
+          });
         });
-      })
-      .catch((error) => {
-        console.error("An error occured during the image upload:", error);
-        Swal.fire({
-          icon: "error",
-          title: text.userAccountImage.swal.errorMessage,
-          showConfirmButton: false,
-          timer: 1500,
-        });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: text.userAccountImage.swal.errorType,
+        showConfirmButton: false,
+        timer: 1500,
       });
+    }
   };
 
   return (

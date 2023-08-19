@@ -693,6 +693,7 @@ const fr_text = {
     swal: {
       successMessage: "Image mise à jour avec succès!",
       errorMessage: "Désolé, nous n'avons pas pu mettre à jour votre image!",
+      errorType: "Veuillez sélectionner un type d'image valide.",
     },
   },
   userOtherSettings: {

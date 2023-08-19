@@ -40,6 +40,9 @@ export const UserContextProvider = ({ children }) => {
         if (userDatafromDB.photoExtension?.length > 0) {
           const userImagefromDB = await getUserImage(user.uid);
           setUserImage(userImagefromDB);
+        } else if (user?.photoURL) {
+          const googleImage = user.photoURL;
+          setUserImage(googleImage);
         } else {
           const defaultImage = await getStoredImage("blog/profile.jpg");
           setUserImage(defaultImage);

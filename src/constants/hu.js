@@ -684,6 +684,7 @@ const hu_text = {
     swal: {
       successMessage: "A kép sikeresen frissült!",
       errorMessage: "Sajnáljuk, nem sikerült frissíteni a képedet!",
+      errorType: "Kérjük, válassz egy érvényes képfájlt!",
     },
   },
   userOtherSettings: {

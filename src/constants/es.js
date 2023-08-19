@@ -686,6 +686,7 @@ const es_text = {
     swal: {
       successMessage: "¡Imagen actualizada exitosamente!",
       errorMessage: "Lo sentimos, no pudimos actualizar tu imagen.",
+      errorType: "¡Por favor carga un archivo de imagen válido!",
     },
   },
   userOtherSettings: {
