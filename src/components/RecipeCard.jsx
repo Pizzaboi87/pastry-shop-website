@@ -1,6 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { slideIn } from "../utils/motion";
 import { UserContext } from "../context";
+import { getUserData, updateUserData } from "../utils/firebase";
 import { Theme_Icon, Theme_Motion_Div } from "../styles";
 import {
   FacebookShareButton,
@@ -10,7 +11,6 @@ import {
   EmailShareButton,
   EmailIcon,
 } from "react-share";
-import { getUserData, updateUserData } from "../utils/firebase";
 
 const RecipeCard = ({ recipe }) => {
   const { text, userData, setUserData } = useContext(UserContext);
@@ -27,38 +27,27 @@ const RecipeCard = ({ recipe }) => {
     setUserData(userDatafromDB);
   };
 
+  useEffect(() => {
+    if (userData && userData.likedRecipes) {
+      const { likedRecipes } = userData;
+      setLiked(likedRecipes.includes(recipe.title));
+    }
+  }, [userData]);
+
   const handleLike = async () => {
     const newLiked = !liked;
     setLiked(newLiked);
-    console.log("Recipe: ", recipe.title);
 
-    if (userData && newLiked) {
-      if (userData.likedRecipes) {
-        const { likedRecipes } = userData;
-        await updateUserData(userData.uid, {
-          likedRecipes: [...likedRecipes, recipe.title],
-        });
-      } else {
-        await updateUserData(userData.uid, {
-          likedRecipes: [recipe.title],
-        });
-      }
-      await fetchActualData();
-    } else if (userData && !newLiked) {
-      const { likedRecipes } = userData;
-      const newLikedRecipes = likedRecipes.filter(
-        (likedRecipe) => likedRecipe !== recipe.title
-      );
-      await updateUserData(userData.uid, {
-        likedRecipes: newLikedRecipes,
-      });
-      await fetchActualData();
-    } else {
-      return null;
-    }
+    const updatedLikedRecipes = newLiked
+      ? [...userData.likedRecipes, recipe.title]
+      : userData.likedRecipes.filter(
+          (likedRecipe) => likedRecipe !== recipe.title
+        );
+
+    await updateUserData(userData.uid, { likedRecipes: updatedLikedRecipes });
+    await fetchActualData();
   };
 
-  //-----------------------------------------------------NOT READY: Like/favourite function missing.-----------------------------------------------------
   return (
     <Theme_Motion_Div
       $bgcolor="primary"
