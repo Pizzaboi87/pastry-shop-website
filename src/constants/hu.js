@@ -650,6 +650,10 @@ const hu_text = {
       question: "Törölni szeretnéd a hozzászólást?",
       confirm: "Törlés",
       cancel: "Mégse",
+      successTitle: "Siker!",
+      successText: "A hozzászólás törlésre került.",
+      errorTitle: "Valami hiba történt!",
+      errorText: "A hozzászólást nem sikerült törölni.",
     },
   },
   userAccountForm: {

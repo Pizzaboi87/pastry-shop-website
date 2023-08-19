@@ -659,6 +659,10 @@ const fr_text = {
       question: "Voulez-vous supprimer le commentaire?",
       confirm: "Supprimer",
       cancel: "Annuler",
+      successTitle: "Succès !",
+      successText: "Le commentaire a été supprimé.",
+      errorTitle: "Quelque chose a mal tourné !",
+      errorText: "Le commentaire n'a pas été supprimé.",
     },
   },
   userAccountForm: {

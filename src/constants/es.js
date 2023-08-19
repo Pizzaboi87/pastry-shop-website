@@ -652,6 +652,10 @@ const es_text = {
       question: "¿Deseas eliminar el comentario?",
       confirm: "Eliminar",
       cancel: "Cancelar",
+      successTitle: "¡Éxito!",
+      successText: "El comentario ha sido eliminado.",
+      errorTitle: "¡Algo salió mal!",
+      errorText: "El comentario no ha sido eliminado.",
     },
   },
   userAccountForm: {
