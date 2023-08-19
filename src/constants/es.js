@@ -578,9 +578,8 @@ const es_text = {
     confirmPassword: "Repetir Contraseña",
     button: "Registrarse",
     swal: {
-      successTitle: "Tu registro ha sido exitoso.",
-      successText:
-        "Por favor, activa tu cuenta haciendo clic\nen el enlace enviado a tu email.",
+      successTitle: "¡Bienvenid@!",
+      successText: "Tu registro ha sido exitoso.",
       errorTitle: "¡Algo salió mal!",
       errorPassword:
         "Por favor, proporciona una contraseña válida: Mínimo 8 caracteres - letras, números y/o caracteres especiales: ,.-;:?!()%”@$/€",

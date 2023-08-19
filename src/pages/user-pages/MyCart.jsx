@@ -20,9 +20,9 @@ const MyCart = () => {
           $bordercolor="transparent"
           className="w-full h-[30rem]"
         >
-          <h1 className="text-[3rem]">{`Test amount: ${
+          <h1 className="text-[3rem]">{`Test amount: ${Math.floor(
             currency.value * amount
-          }${currency.symbol}`}</h1>
+          )}${currency.symbol}`}</h1>
         </Theme_Div>
       </UserPanel>
     </TransitionParent>

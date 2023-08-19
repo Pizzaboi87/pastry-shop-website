@@ -102,6 +102,39 @@ export const UserContextProvider = ({ children }) => {
     }
   }, [userLanguage]);
 
+  useEffect(() => {
+    switch (userCurrency) {
+      case "usd":
+        setCurrency({
+          symbol: "$",
+          name: "USD",
+          value: 1.1,
+        });
+        break;
+      case "gbp":
+        setCurrency({
+          symbol: "£",
+          name: "GBP",
+          value: 0.86,
+        });
+        break;
+      case "huf":
+        setCurrency({
+          symbol: "Ft",
+          name: "HUF",
+          value: 380,
+        });
+        break;
+      default:
+        setCurrency({
+          symbol: "€",
+          name: "EUR",
+          value: 1,
+        });
+        break;
+    }
+  }, [userCurrency]);
+
   const userContextValue = {
     currentUser,
     setCurrentUser,

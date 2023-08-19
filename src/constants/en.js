@@ -577,9 +577,8 @@ const en_text = {
     confirmPassword: "Repeat Password",
     button: "Sign Up",
     swal: {
-      successTitle: "Your registration was successful.",
-      successText:
-        "Please activate your account by clicking\non the link sent to your email address.",
+      successTitle: "Welcome!",
+      successText: "Your registration was successful.",
       errorTitle: "Something went wrong!",
       errorPassword:
         "Please provide a valid password: Minimum 8 characters - letters, numbers and/or special characters: ,.-;:?!()%”@$/€",

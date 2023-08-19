@@ -577,9 +577,8 @@ const hu_text = {
     confirmPassword: "Jelszó ismét",
     button: "Regisztráció",
     swal: {
-      successTitle: "Sikeres regisztráció.",
-      successText:
-        "Kérjük, aktiváld a fiókod a megadott e-mail címre érkezett linkre kattintva.",
+      successTitle: "Isten hozott!",
+      successText: "Sikeresen regisztráltál az oldalunkra.",
       errorTitle: "Valami hiba történt!",
       errorPassword:
         "Kérjük, adj meg érvényes jelszót: Minimum 8 karakter - betűk, számok és/vagy speciális karakterek: ,.-;:?!()%”@$/€",

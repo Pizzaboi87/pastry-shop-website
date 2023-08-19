@@ -586,9 +586,8 @@ const fr_text = {
     confirmPassword: "Répéter le Mot de Passe",
     button: "S'Inscrire",
     swal: {
-      successTitle: "Votre inscription a été effectuée avec succès.",
-      successText:
-        "Veuillez activer votre compte en cliquant\nsur le lien envoyé à votre adresse email.",
+      successTitle: "Bienvenue!",
+      successText: "Votre inscription a été effectuée avec succès.",
       errorTitle: "Quelque chose s'est mal passé!",
       errorPassword:
         "Veuillez fournir un mot de passe valide : Minimum 8 caractères - lettres, chiffres et/ou caractères spéciaux : ,.-;:?!()%”@$/€",
