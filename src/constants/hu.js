@@ -472,6 +472,7 @@ const hu_text = {
   courseCardButton: "Részletek",
   loading: "betöltés...",
   adminSignOut: "Admin Kijelentkezés",
+  deletedUser: "A felhasználó már nincs regisztrálva az oldalon.",
   blogComment: {
     title: "Hozzászólások",
     login: "Kérjük, jelentkezz be a hozzászólás írásához!",

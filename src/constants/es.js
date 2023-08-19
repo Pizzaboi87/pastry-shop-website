@@ -473,6 +473,7 @@ const es_text = {
   courseCardButton: "Más detalles",
   loading: "cargando...",
   adminSignOut: "Cerrar Sesión de Administrador",
+  deletedUser: "El usuario ya no está registrado en el sitio.",
   blogComment: {
     title: "Comentarios",
     login: "¡Por favor, inicia sesión para escribir un comentario!",

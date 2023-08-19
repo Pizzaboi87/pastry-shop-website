@@ -272,23 +272,6 @@ export const storeComment = async (comment) => {
   }
 };
 
-export const deleteComment = async (id) => {
-  const commentsRef = ref(database, "comments");
-  const snapshot = await get(commentsRef);
-  let existingIndex = -1;
-
-  snapshot.forEach((childSnapshot) => {
-    const commentSnapshot = childSnapshot.val();
-    if (commentSnapshot.id === id) {
-      existingIndex = childSnapshot.key;
-    }
-  });
-
-  if (existingIndex !== -1) {
-    await set(ref(database, `comments/${existingIndex}`), null);
-  }
-};
-
 export const changeCommentStatus = async (id, isPublished) => {
   const commentsRef = ref(database, "comments");
   const snapshot = await get(commentsRef);

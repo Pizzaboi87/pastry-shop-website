@@ -473,6 +473,7 @@ const en_text = {
   courseCardButton: "Learn More",
   loading: "loading...",
   adminSignOut: "Admin Sign Out",
+  deletedUser: "The user is no longer registered on the site.",
   blogComment: {
     title: "Comments",
     login: "Please log in to write a comment!",

@@ -13,6 +13,7 @@ import jamgreen from "./jam-green.webp";
 import jampink from "./jam-pink.webp";
 import loading from "./loading.gif";
 import logo from "./logo.png";
+import lost from "./lost.gif";
 import macaron from "./macaron.webp";
 import showcase from "./showcase.webp";
 import stamp from "./stamp.webp";
@@ -36,6 +37,7 @@ export {
   jampink,
   loading,
   logo,
+  lost,
   macaron,
   showcase,
   stamp,

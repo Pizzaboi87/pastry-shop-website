@@ -481,6 +481,7 @@ const fr_text = {
   courseCardButton: "En savoir plus",
   loading: "chargement...",
   adminSignOut: "Déconnexion Admin",
+  deletedUser: "L'utilisateur n'est plus inscrit sur le site.",
   blogComment: {
     title: "Commentaires",
     login: "Veuillez vous connecter pour écrire un commentaire!",
