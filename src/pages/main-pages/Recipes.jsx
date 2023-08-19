@@ -69,7 +69,11 @@ const Recipes = () => {
       ) : (
         <>
           {recipes.map((recipe, index) => (
-            <RecipeCard recipe={recipe} key={`${recipe.title}-${index}`} />
+            <RecipeCard
+              recipe={recipe}
+              isOwnPage={false}
+              key={`${recipe.title}-${index}`}
+            />
           ))}
           {noMore ? (
             <h1 className="text-text py-3 text-[1.3rem]">

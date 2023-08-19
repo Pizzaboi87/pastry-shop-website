@@ -29,6 +29,8 @@ import {
   UsersAll,
 } from "../pages/admin-pages";
 import {
+  AllFavourites,
+  FavouritePage,
   Favourites,
   MyAccount,
   MyCart,
@@ -63,7 +65,11 @@ const MainContent = () => {
             <Route path="shop/orders" element={<ShopOrders />} />
           </Route>
 
-          <Route path="/myfavourites" element={<Favourites />} />
+          <Route path="myfavourites" element={<Favourites />}>
+            <Route path="" element={<AllFavourites />} />
+            <Route path=":favourite" element={<FavouritePage />} />
+          </Route>
+
           <Route path="/myaccount" element={<MyAccount />} />
           <Route path="/mycart" element={<MyCart />} />
           <Route path="/myorders" element={<PreviousOrders />} />

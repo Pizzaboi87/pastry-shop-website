@@ -16,6 +16,7 @@ import {
   Theme_Input,
   Theme_Textarea,
   Theme_Stamp,
+  Theme_Span,
   Theme_Select,
   Theme_PhoneInput,
 } from "./styled-elements";
@@ -236,6 +237,7 @@ export {
   Theme_Input,
   Theme_Textarea,
   Theme_Stamp,
+  Theme_Span,
   Theme_Select,
   Theme_PhoneInput,
 };

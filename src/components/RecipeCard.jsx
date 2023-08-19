@@ -12,7 +12,7 @@ import {
   EmailIcon,
 } from "react-share";
 
-const RecipeCard = ({ recipe }) => {
+const RecipeCard = ({ recipe, isOwnPage }) => {
   const { text, userData, setUserData } = useContext(UserContext);
   const motionPropsR = slideIn("right");
   const [liked, setLiked] = useState(false);
@@ -55,7 +55,9 @@ const RecipeCard = ({ recipe }) => {
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
       key={recipe.title}
-      className="2xl:w-[80%] w-full h-auto mb-20 text-justify p-12 rounded-xl shadow-xl"
+      className={`${
+        isOwnPage ? "" : "mb-20"
+      } 2xl:w-[80%] w-full h-auto text-justify p-12 rounded-xl shadow-xl`}
     >
       <Theme_Icon
         icon={liked ? "mdi:heart" : "mdi:heart-outline"}
