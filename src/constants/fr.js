@@ -551,6 +551,7 @@ const fr_text = {
     },
   },
   blogForm: {
+    languageLabel: "Langue de l'Article",
     date: "Date de Publication",
     title: "Titre de l'Article",
     author: "Nom de l'Auteur",
@@ -577,6 +578,24 @@ const fr_text = {
       successTitle: "Succès!",
       successMessage: "L'article a été publié.",
     },
+    language: [
+      {
+        id: "eng",
+        name: "Anglais",
+      },
+      {
+        id: "fra",
+        name: "Français",
+      },
+      {
+        id: "esp",
+        name: "Espagnol",
+      },
+      {
+        id: "hun",
+        name: "Hongrois",
+      },
+    ],
   },
   signUpForm: {
     title: "Inscription",

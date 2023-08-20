@@ -4,13 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { BlogContext, UserContext } from "../context";
 import { blogNewFormStyle } from "../styles";
 import { uploadPost } from "../utils/firebase-admin";
+import { translate } from "../utils/translate";
 
 const BlogForm = ({ dbPost }) => {
-  const { text, currentUser } = useContext(UserContext);
+  const { text, currentUser, userLanguage } = useContext(UserContext);
   const { setFirebaseData } = useContext(BlogContext);
 
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+  const [formTranslations, setFormTranslations] = useState([]);
 
   let uploadFile = {};
   let newFileName = "";
@@ -35,11 +37,13 @@ const BlogForm = ({ dbPost }) => {
     postid: dbPost ? dbPost.postid : "",
     image: dbPost ? getBackImage(dbPost.image) : "",
     tags: dbPost ? dbPost.tags : [],
+    language: dbPost ? dbPost.language : userLanguage,
     imageFile: {},
   };
 
   const [blogForm, setBlogForm] = useState(defaultForm);
-  const { author, title, blurb, post, date, postid, tags, image } = blogForm;
+  const { author, title, blurb, post, date, postid, tags, image, language } =
+    blogForm;
 
   const errorSwal = (error) => {
     Swal.fire({
@@ -69,6 +73,24 @@ const BlogForm = ({ dbPost }) => {
       default:
         return true;
     }
+  };
+
+  const getTranslations = async (text) => {
+    const langCodes = ["en", "fr", "es", "hu"];
+    const originalCode = language.slice(0, -1);
+
+    const translations = await Promise.all(
+      langCodes.map(async (code) => {
+        if (code === originalCode) {
+          return text;
+        } else {
+          const translation = await translate(text, originalCode, code);
+          return translation;
+        }
+      })
+    );
+
+    return translations;
   };
 
   const handleChange = (event) => {
@@ -111,14 +133,9 @@ const BlogForm = ({ dbPost }) => {
     event.preventDefault();
     if (!valueCheck(author, title, blurb, post, tags)) return;
 
-    await uploadPost(
-      text,
-      currentUser,
-      blogForm,
-      setIsLoading,
-      setFirebaseData,
-      navigate
-    );
+    const translations = await getTranslations(blogForm.blurb);
+    console.log(translations);
+    setFormTranslations(translations);
   };
 
   return (
@@ -126,16 +143,36 @@ const BlogForm = ({ dbPost }) => {
       onSubmit={handleSubmit}
       className="w-full grid grid-cols-4 gap-x-16 gap-y-8"
     >
-      <div className="col-span-2 flex flex-col justify-between">
+      <div className="col-span-2 flex flex-col gap-y-4 justify-between">
+        <label className={blogNewFormStyle.label}>
+          {text.blogForm.languageLabel}
+          <select
+            required
+            value={language}
+            name="language"
+            onChange={handleChange}
+            className={blogNewFormStyle.input}
+          >
+            {text.blogForm.language.map((language) => (
+              <option key={language.id} value={language.id}>
+                {language.name}
+              </option>
+            ))}
+          </select>
+        </label>
+
         <label className={blogNewFormStyle.label}>
           {text.blogForm.date}
           <input
             type="date"
             required
+            disabled={dbPost ? true : false}
             name="date"
             value={date}
             onChange={handleChange}
-            className={blogNewFormStyle.input}
+            className={`${blogNewFormStyle.input} ${
+              dbPost ? "cursor-not-allowed" : "cursor-normal"
+            }`}
           />
         </label>
 
@@ -146,11 +183,11 @@ const BlogForm = ({ dbPost }) => {
             required
             name="title"
             value={title}
-            disabled={image ? true : false}
-            title={image ? text.blogForm.titleDisable : null}
+            disabled={image || dbPost ? true : false}
+            title={dbPost ? null : image ? text.blogForm.titleDisable : null}
             onChange={handleChange}
             className={`${blogNewFormStyle.input} ${
-              image ? "cursor-not-allowed" : "cursor-normal"
+              image || dbPost ? "cursor-not-allowed" : "cursor-normal"
             }`}
           />
         </label>
@@ -160,9 +197,12 @@ const BlogForm = ({ dbPost }) => {
             type="text"
             required
             name="author"
+            disabled={dbPost ? true : false}
             value={author}
             onChange={handleChange}
-            className={blogNewFormStyle.input}
+            className={`${blogNewFormStyle.input} ${
+              dbPost ? "cursor-not-allowed" : "cursor-normal"
+            }`}
           />
         </label>
         <label className={blogNewFormStyle.label}>
@@ -196,7 +236,7 @@ const BlogForm = ({ dbPost }) => {
         <label className={blogNewFormStyle.label}>
           {text.blogForm.post}
           <textarea
-            rows={15}
+            rows={17}
             required
             name="post"
             value={post}

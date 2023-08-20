@@ -12,6 +12,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+input:disabled {
+  background-color: #dadada;
+}
+
 .fadeInPage {
   animation: 0.5s fadeIn forwards;
 }

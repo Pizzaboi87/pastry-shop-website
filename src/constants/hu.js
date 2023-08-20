@@ -543,6 +543,7 @@ const hu_text = {
     },
   },
   blogForm: {
+    languageLabel: "Bejegyzés Nyelve",
     date: "Bejegyzés Dátuma",
     title: "Bejegyzés Címe",
     author: "Szerző Neve",
@@ -555,7 +556,6 @@ const hu_text = {
     savingButton: "Mentés folyamatban...",
     imageDisable: "Amíg a cím érvénytelen, a képfeltöltés inaktív.",
     titleDisable: "Már feltöltöttél egy képet, így a cím már nem módosítható.",
-
     swal: {
       errorTitle: "Valami hiba történt!",
       errorMessage: "A bejegyzés nem lett mentve.",
@@ -568,6 +568,24 @@ const hu_text = {
       successTitle: "Siker!",
       successMessage: "A bejegyzés feltöltésre került.",
     },
+    language: [
+      {
+        id: "eng",
+        name: "Angol",
+      },
+      {
+        id: "fra",
+        name: "Francia",
+      },
+      {
+        id: "esp",
+        name: "Spanyol",
+      },
+      {
+        id: "hun",
+        name: "Magyar",
+      },
+    ],
   },
   signUpForm: {
     title: "Regisztráció",

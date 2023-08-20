@@ -543,6 +543,7 @@ const en_text = {
     },
   },
   blogForm: {
+    languageLabel: "Post language",
     date: "Post Date",
     title: "Post Title",
     author: "Author Name",
@@ -568,6 +569,24 @@ const en_text = {
       successTitle: "Success!",
       successMessage: "The post has been uploaded.",
     },
+    language: [
+      {
+        id: "eng",
+        name: "English",
+      },
+      {
+        id: "fra",
+        name: "French",
+      },
+      {
+        id: "esp",
+        name: "Spanish",
+      },
+      {
+        id: "hun",
+        name: "Hungarian",
+      },
+    ],
   },
   signUpForm: {
     title: "Sign Up",
