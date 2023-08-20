@@ -42,8 +42,18 @@ const BlogForm = ({ dbPost }) => {
   };
 
   const [blogForm, setBlogForm] = useState(defaultForm);
-  const { author, title, blurb, post, date, postid, tags, image, language } =
-    blogForm;
+  const {
+    author,
+    title,
+    blurb,
+    post,
+    date,
+    postid,
+    tags,
+    image,
+    language,
+    imageFile,
+  } = blogForm;
 
   const errorSwal = (error) => {
     Swal.fire({
@@ -75,22 +85,41 @@ const BlogForm = ({ dbPost }) => {
     }
   };
 
-  const getTranslations = async (text) => {
+  const getTranslations = async () => {
     const langCodes = ["en", "fr", "es", "hu"];
     const originalCode = language.slice(0, -1);
 
-    const translations = await Promise.all(
-      langCodes.map(async (code) => {
-        if (code === originalCode) {
-          return text;
-        } else {
-          const translation = await translate(text, originalCode, code);
-          return translation;
-        }
-      })
-    );
+    const formObjects = {};
 
-    return translations;
+    for (const code of langCodes) {
+      const translatedForm = { ...blogForm };
+
+      if (code !== originalCode) {
+        translatedForm.title = await translate(title, originalCode, code);
+        translatedForm.blurb = await translate(blurb, originalCode, code);
+        translatedForm.post = await translate(post, originalCode, code);
+      }
+
+      let formName = "";
+      switch (code) {
+        case "fr":
+          formName = "fraForm";
+          break;
+        case "es":
+          formName = "espForm";
+          break;
+        case "hu":
+          formName = "hunForm";
+          break;
+        default:
+          formName = "engForm";
+          break;
+      }
+
+      formObjects[formName] = translatedForm;
+    }
+
+    return formObjects;
   };
 
   const handleChange = (event) => {
@@ -133,9 +162,16 @@ const BlogForm = ({ dbPost }) => {
     event.preventDefault();
     if (!valueCheck(author, title, blurb, post, tags)) return;
 
-    const translations = await getTranslations(blogForm.blurb);
-    console.log(translations);
-    setFormTranslations(translations);
+    const formObjects = await getTranslations();
+
+    /*await uploadPost(
+      text,
+      currentUser,
+      blogForm,
+      setIsLoading,
+      setFirebaseData,
+      navigate
+    );*/
   };
 
   return (
