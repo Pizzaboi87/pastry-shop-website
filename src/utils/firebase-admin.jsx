@@ -1,9 +1,9 @@
 import Swal from "sweetalert2";
 import { getAllComments, getAllPost } from "./firebase";
 
-const updateData = async (setFirebaseData) => {
+const updateData = async (setFirebaseData, userLanguage) => {
   try {
-    const data = await getAllPost();
+    const data = await getAllPost(userLanguage);
     setFirebaseData(data);
   } catch (error) {
     console.error("An error happened during data fetching.", error);
@@ -80,7 +80,8 @@ export const deleteBlogPost = async (
   setIsLoading,
   setResult,
   currentUser,
-  text
+  text,
+  userLanguage
 ) => {
   Swal.fire({
     title: text.blogAll.swal.question,
@@ -107,7 +108,7 @@ export const deleteBlogPost = async (
             text: text.blogAll.swal.successText,
             icon: "success",
           });
-          await updateData(setFirebaseData);
+          await updateData(setFirebaseData, userLanguage);
           setIsLoading(false);
           setResult(true);
         } else {

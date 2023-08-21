@@ -16,7 +16,6 @@ export const translate = async (query, from, to) => {
 
   try {
     const response = await fetch(url, options);
-    console.log("response: ", response);
     const result = await response.text();
     const parsedResult = JSON.parse(result);
     const translatedText = parsedResult.data.translatedText;

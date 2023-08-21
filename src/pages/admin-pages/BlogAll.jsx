@@ -8,7 +8,7 @@ import { Loading } from "../../components";
 
 const BlogAll = () => {
   const { allBlogPost, setFirebaseData } = useContext(BlogContext);
-  const { text, currentUser } = useContext(UserContext);
+  const { text, currentUser, userLanguage } = useContext(UserContext);
   const [posts, setPosts] = useState([]);
   const [result, setResult] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -24,7 +24,8 @@ const BlogAll = () => {
       setIsLoading,
       setResult,
       currentUser,
-      text
+      text,
+      userLanguage
     );
   };
 

@@ -31,6 +31,7 @@ export const BlogContextProvider = ({ children }) => {
         const processedData = await Promise.all(
           Object.keys(firebaseData).map(async (postid) => {
             const element = firebaseData[postid];
+            if (!element) return;
             const imageUrl = await getStoredImage(element.image);
             return { ...element, postid, image: imageUrl };
           })

@@ -8,7 +8,7 @@ import { deleteBlogPost } from "../../utils/firebase-admin";
 
 const BlogPostEditPage = () => {
   const { allBlogPost, setFirebaseData } = useContext(BlogContext);
-  const { text, currentUser } = useContext(UserContext);
+  const { text, currentUser, userLanguage } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState(false);
   const { id } = useParams();
@@ -23,7 +23,8 @@ const BlogPostEditPage = () => {
       setIsLoading,
       setResult,
       currentUser,
-      text
+      text,
+      userLanguage
     );
   };
 
