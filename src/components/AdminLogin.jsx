@@ -29,9 +29,8 @@ const AdminLogin = () => {
   };
 
   const valueCheck = (user, password) => {
-    const nameRegex = /^[A-Za-z-/ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
-    const passwordRegex =
-      /^[A-Za-z0-9,.\-_;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
+    const nameRegex = /^[-\p{L}\s]+$/u;
+    const passwordRegex = /^[0-9,.\-_;:?!()%"@$/€\p{L}\s]+$/u;
 
     switch (true) {
       case !nameRegex.test(user):

@@ -26,8 +26,7 @@ const UserDeleteAccountForm = () => {
   };
 
   const valueCheck = (password) => {
-    const passwordRegex =
-      /^[A-Za-z0-9,.\-_;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
+    const passwordRegex = /^[\p{L}0-9,.\-_;:?!()%"@$/€\s]+$/u;
 
     switch (true) {
       case !passwordRegex.test(password):

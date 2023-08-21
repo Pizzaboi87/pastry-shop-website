@@ -38,8 +38,7 @@ const SignInForm = () => {
 
   const valueCheck = (email, password) => {
     const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-    const passwordRegex =
-      /^[A-Za-z0-9,.\-_;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
+    const passwordRegex = /^[0-9,.\-_;:?!()%"@$/€\p{L}\s]+$/u;
 
     switch (true) {
       case !emailRegex.test(email):

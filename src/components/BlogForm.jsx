@@ -6,6 +6,7 @@ import { blogNewFormStyle } from "../styles";
 import { uploadPost } from "../utils/firebase-admin";
 import { translate } from "../utils/translate";
 import { getAllPost, storeImage } from "../utils/firebase";
+import { normalizeSync } from "normalize-diacritics";
 
 const BlogForm = ({ dbPost }) => {
   const { text, currentUser, userLanguage } = useContext(UserContext);
@@ -15,12 +16,12 @@ const BlogForm = ({ dbPost }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isTranslating, setIsTranslating] = useState(false);
 
-  let uploadFile = {};
-  let newFileName = "";
-  let fileExtension = "";
+  const normalRegex = /^[0-9-.,()\//\p{L}\s]+$/u;
+  const textRegex = /^[0-9,.\-;:?!()%"@$/€\p{L}0-9\n\s]+$/u;
 
-  const normalRegex = /^[A-Za-z0-9-.,()\//ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
-  const textRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\n\s]+$/;
+  let uploadFile = {};
+  let fileExtension = "";
+  let newFileName = "";
 
   const getBackImage = (url) => {
     const start = url.indexOf("%2F") + 3;
@@ -127,6 +128,17 @@ const BlogForm = ({ dbPost }) => {
     return formObjects;
   };
 
+  const generateCleanTitle = (title) => {
+    const cleanedTitle = title
+      .toLowerCase()
+      .replace(/[^\p{L}0-9\s]/gu, "")
+      .split(/\s+/g)
+      .map((word) => normalizeSync(word))
+      .join("-");
+
+    return cleanedTitle;
+  };
+
   const handleChange = (event) => {
     const { name, value, files } = event.target;
 
@@ -152,7 +164,7 @@ const BlogForm = ({ dbPost }) => {
       const tagArray = value.split(",");
       setBlogForm({ ...blogForm, tags: tagArray.map((tag) => tag.trim()) });
     } else if (name === "title") {
-      const newPostid = value.toLowerCase().split(" ").join("-");
+      const newPostid = generateCleanTitle(value);
       setBlogForm({
         ...blogForm,
         title: value,
@@ -178,10 +190,10 @@ const BlogForm = ({ dbPost }) => {
 
     await uploadPromises;
 
-    const data = await getAllPost();
+    const data = await getAllPost(userLanguage);
     setFirebaseData(data);
 
-    navigate("/blog/all");
+    navigate("/admin/blog/all");
   };
 
   return (

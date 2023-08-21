@@ -58,8 +58,8 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
     address,
     zipCode
   ) => {
-    const normalRegex = /^[A-Za-z-.()\//ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
-    const withNumberRegex = /^[A-Za-z0-9-.()\//ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
+    const normalRegex = /^[\p{L}-.()\//\s]+$/u;
+    const withNumberRegex = /^[\p{L}0-9-.()\//\s]+$/u;
 
     switch (true) {
       case fullName && !normalRegex.test(fullName):

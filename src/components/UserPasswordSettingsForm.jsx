@@ -27,8 +27,7 @@ const UserPasswordSettingsForm = () => {
   };
 
   const valueCheck = (currentPassword, newPassword, confirmPassword) => {
-    const passwordRegex =
-      /^[A-Za-z0-9,.\-_;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
+    const passwordRegex = /^[\p{L}0-9,.\-_;:?!()%"@$/€\s]+$/u;
 
     switch (true) {
       case !passwordRegex.test(currentPassword):

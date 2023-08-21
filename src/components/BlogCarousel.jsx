@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BlogCarousel = ({ posts }) => {
   const images = posts.map((post, index) => (
     <Link
-      to={`/blog/post/` + post.title.toLowerCase().split(" ").join("-")}
+      to={`/blog/post/` + post.postid}
       className="cursor-pointer"
       key={index}
     >

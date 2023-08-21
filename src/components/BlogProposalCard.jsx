@@ -11,7 +11,7 @@ const BlogProposalCard = ({ post }) => {
   };
 
   return (
-    <Link to={`/blog/post/` + post.title.toLowerCase().split(" ").join("-")}>
+    <Link to={`/blog/post/` + post.postid}>
       <Theme_Div
         $bgcolor="primary"
         $bordercolor="transparent"

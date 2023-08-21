@@ -43,9 +43,8 @@ const CourseForm = ({ courses }) => {
   };
 
   const valueCheck = (name, question) => {
-    const nameRegex = /^[A-Za-z-/ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
-    const questionRegex =
-      /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\n\s]+$/;
+    const nameRegex = /^[-\p{L}\s]+$/u;
+    const questionRegex = /^[0-9A-Za-z,.\-;:?!()%"@$/€\p{L}\n\s]+$/u;
 
     switch (true) {
       case !nameRegex.test(name):
