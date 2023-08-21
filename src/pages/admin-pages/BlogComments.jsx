@@ -115,7 +115,14 @@ const BlogComments = () => {
                   {comment.author}
                 </p>
               </li>
-              <li className={`${tableStyle} col-span-2`}>{comment.title}</li>
+              <li className={`${tableStyle} col-span-2`}>
+                <Link
+                  to={`/admin/blog/comments/${comment.id}`}
+                  className="hover:text-logopink cursor-pointer"
+                >
+                  {comment.title}
+                </Link>
+              </li>
               <li className={`${tableStyle} col-span-2`}>
                 {new Date(comment.date)
                   .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })

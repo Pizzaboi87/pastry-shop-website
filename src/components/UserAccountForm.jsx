@@ -58,7 +58,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
     address,
     zipCode
   ) => {
-    const normalRegex = /^[\p{L}-.()\//\s]+$/u;
+    const normalRegex = /^[\p{L}\-.()\//\s]+$/u;
     const withNumberRegex = /^[\p{L}0-9-.()\//\s]+$/u;
 
     switch (true) {

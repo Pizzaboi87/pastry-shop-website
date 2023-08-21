@@ -12,8 +12,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
-input:disabled {
+input:disabled,
+textarea:disabled {
   background-color: #dadada;
+  cursor: not-allowed;
 }
 
 .fadeInPage {
