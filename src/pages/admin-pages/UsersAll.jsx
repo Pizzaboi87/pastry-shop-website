@@ -12,6 +12,7 @@ import { useQuery } from "react-query";
 const UsersAll = () => {
   const [allUser, setAllUser] = useState([]);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isDescending, setIsDescending] = useState(true);
   const { text, currentUser } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -64,6 +65,34 @@ const UsersAll = () => {
     window.open(mailtoLink);
   };
 
+  const sortValues = (id) => {
+    let sortedUsers;
+    switch (id) {
+      case "date":
+        sortedUsers = [...allUser].sort(
+          (a, b) => a.createdAt._seconds - b.createdAt._seconds
+        );
+        break;
+      case "name":
+        sortedUsers = [...allUser].sort((a, b) =>
+          a.displayName.localeCompare(b.displayName)
+        );
+        break;
+      default:
+        sortedUsers = [...allUser].sort((a, b) =>
+          a.email.localeCompare(b.email)
+        );
+        break;
+    }
+
+    if (!isDescending) {
+      sortedUsers.reverse();
+    }
+
+    setAllUser(sortedUsers);
+    setIsDescending(!isDescending);
+  };
+
   return (
     <div className={adminPageStyle.wrapper}>
       <h1 className={adminPageStyle.title}>{text.usersAllTitle}</h1>
@@ -72,9 +101,19 @@ const UsersAll = () => {
         {text.usersAllHeaders.map((header) => (
           <li
             key={header.id}
-            className={`${header.style} text-text text-[1.1rem] font-[600] pl-2`}
+            className={`${header.style} min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 flex items-center gap-x-4`}
           >
             {header.title}
+
+            {header.id === "date" ||
+            header.id === "email" ||
+            header.id === "name" ? (
+              <Icon
+                icon="solar:round-sort-vertical-broken"
+                className="text-[2rem] hover:text-logopink cursor-pointer"
+                onClick={() => sortValues(header.id)}
+              />
+            ) : null}
           </li>
         ))}
 

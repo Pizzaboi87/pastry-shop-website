@@ -436,12 +436,12 @@ const hu_text = {
       style: "bg-yellowdark col-span-2",
     },
     {
-      title: "Hozzászólás Címe",
+      title: "Cím",
       id: "title",
       style: "bg-yellowlight col-span-2",
     },
     {
-      title: "Hozzászólás Dátuma",
+      title: "Dátum",
       id: "date",
       style: "bg-yellowdark col-span-2",
     },

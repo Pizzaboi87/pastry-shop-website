@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 import { Fragment, useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { BlogContext, UserContext } from "../../context";
@@ -6,19 +5,20 @@ import { Tooltip } from "react-tooltip";
 import { Icon } from "@iconify/react";
 import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
 import { Loading } from "../../components";
+import { getAllUser, deleteComment } from "../../utils/firebase-admin";
+import { useQuery } from "react-query";
 import {
   changeCommentStatus,
   getStoredImage,
   getUserImage,
 } from "../../utils/firebase";
-import { getAllUser, deleteComment } from "../../utils/firebase-admin";
-import { useQuery } from "react-query";
 
 const BlogComments = () => {
   const { allComments, setAllComments, setFirebaseComments } =
     useContext(BlogContext);
   const { text, currentUser } = useContext(UserContext);
   const [commentsWithUsers, setCommentsWithUsers] = useState([]);
+  const [isDescending, setIsDescending] = useState(true);
   const [isDeleting, setIsDeleting] = useState(false);
   const navigate = useNavigate();
 
@@ -77,6 +77,32 @@ const BlogComments = () => {
 
   if (isDeleting) return <Loading />;
 
+  const sortValues = (id) => {
+    let sortedComments;
+    switch (id) {
+      case "date":
+        sortedComments = [...commentsWithUsers].sort((a, b) => a.date - b.date);
+        break;
+      case "name":
+        sortedComments = [...commentsWithUsers].sort((a, b) =>
+          a.author.localeCompare(b.author)
+        );
+        break;
+      default:
+        sortedComments = [...commentsWithUsers].sort((a, b) =>
+          a.title.localeCompare(b.title)
+        );
+        break;
+    }
+
+    if (!isDescending) {
+      sortedComments.reverse();
+    }
+
+    setCommentsWithUsers(sortedComments);
+    setIsDescending(!isDescending);
+  };
+
   return (
     <div className={adminPageStyle.wrapper}>
       <h1 className={adminPageStyle.title}>{text.blogCommentsTitle}</h1>
@@ -85,9 +111,19 @@ const BlogComments = () => {
         {text.commentsHeaders.map((header) => (
           <li
             key={header.id}
-            className={`${header.style} text-text text-[1.1rem] font-[600] pl-2`}
+            className={`${header.style} min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 flex gap-x-4 items-center`}
           >
             {header.title}
+
+            {header.id === "name" ||
+            header.id === "title" ||
+            header.id === "date" ? (
+              <Icon
+                icon="solar:round-sort-vertical-broken"
+                className="text-[2rem] hover:text-logopink cursor-pointer"
+                onClick={() => sortValues(header.id)}
+              />
+            ) : null}
           </li>
         ))}
 
