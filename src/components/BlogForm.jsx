@@ -5,6 +5,7 @@ import { BlogContext, UserContext } from "../context";
 import { blogNewFormStyle } from "../styles";
 import { uploadPost } from "../utils/firebase-admin";
 import { translate } from "../utils/translate";
+import { getAllPost, storeImage } from "../utils/firebase";
 
 const BlogForm = ({ dbPost }) => {
   const { text, currentUser, userLanguage } = useContext(UserContext);
@@ -12,13 +13,13 @@ const BlogForm = ({ dbPost }) => {
 
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const [formTranslations, setFormTranslations] = useState([]);
+  const [isTranslating, setIsTranslating] = useState(false);
 
   let uploadFile = {};
   let newFileName = "";
   let fileExtension = "";
 
-  const normalRegex = /^[A-Za-z0-9-.()\//ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
+  const normalRegex = /^[A-Za-z0-9-.,()\//ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\s]+$/;
   const textRegex = /^[A-Za-z0-9,.\-;:?!()%"@$/€ñÑáÁéÉíÍóÓöÖőŐúÚüÜűŰ\n\s]+$/;
 
   const getBackImage = (url) => {
@@ -77,7 +78,7 @@ const BlogForm = ({ dbPost }) => {
       case !textRegex.test(post):
         errorSwal(text.blogForm.swal.errorPostText);
         return;
-      case !normalRegex.test(tags):
+      case !normalRegex.test(tags.toString()):
         errorSwal(text.blogForm.swal.errorTags);
         return;
       default:
@@ -86,22 +87,25 @@ const BlogForm = ({ dbPost }) => {
   };
 
   const getTranslations = async () => {
-    const langCodes = ["en", "fr", "es", "hu"];
+    setIsTranslating(true);
+    const langCodes = ["eng", "fra", "esp", "hun"];
     const originalCode = language.slice(0, -1);
 
     const formObjects = {};
 
     for (const code of langCodes) {
       const translatedForm = { ...blogForm };
+      const toCode = code.slice(0, -1);
 
-      if (code !== originalCode) {
-        translatedForm.title = await translate(title, originalCode, code);
-        translatedForm.blurb = await translate(blurb, originalCode, code);
-        translatedForm.post = await translate(post, originalCode, code);
+      if (toCode !== originalCode) {
+        translatedForm.title = await translate(title, originalCode, toCode);
+        translatedForm.blurb = await translate(blurb, originalCode, toCode);
+        translatedForm.post = await translate(post, originalCode, toCode);
+        translatedForm.language = code;
       }
 
       let formName = "";
-      switch (code) {
+      switch (toCode) {
         case "fr":
           formName = "fraForm";
           break;
@@ -119,6 +123,7 @@ const BlogForm = ({ dbPost }) => {
       formObjects[formName] = translatedForm;
     }
 
+    setIsTranslating(false);
     return formObjects;
   };
 
@@ -162,16 +167,21 @@ const BlogForm = ({ dbPost }) => {
     event.preventDefault();
     if (!valueCheck(author, title, blurb, post, tags)) return;
 
+    await storeImage(imageFile, image);
     const formObjects = await getTranslations();
 
-    /*await uploadPost(
-      text,
-      currentUser,
-      blogForm,
-      setIsLoading,
-      setFirebaseData,
-      navigate
-    );*/
+    const uploadPromises = Promise.all(
+      Object.values(formObjects).map(async (translatedForm) => {
+        await uploadPost(text, currentUser, translatedForm, setIsLoading);
+      })
+    );
+
+    await uploadPromises;
+
+    const data = await getAllPost();
+    setFirebaseData(data);
+
+    navigate("/blog/all");
   };
 
   return (
@@ -300,7 +310,11 @@ const BlogForm = ({ dbPost }) => {
           isLoading ? "cursor-progress" : "cursor-pointer"
         } `}
       >
-        {isLoading ? text.blogForm.savingButton : text.blogForm.button}
+        {isTranslating
+          ? text.blogForm.translateButton
+          : isLoading
+          ? text.blogForm.savingButton
+          : text.blogForm.button}
       </button>
     </form>
   );

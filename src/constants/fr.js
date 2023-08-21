@@ -562,6 +562,7 @@ const fr_text = {
     tags: "Mots-Clés (séparés par des virgules)",
     button: "Enregistrer",
     savingButton: "Enregistrement en cours...",
+    translateButton: "Traduire l'Article",
     imageDisable:
       "Tant que le titre n'est pas valide, le téléchargement de l'image est désactivé.",
     titleDisable:

@@ -211,8 +211,8 @@ export const updateUserPassword = async (
   }
 };
 
-export const getAllPost = async () => {
-  const blogPostsRef = ref(database, "blogPosts/");
+export const getAllPost = async (lang) => {
+  const blogPostsRef = ref(database, `blogPosts/${lang}`);
   return new Promise((resolve, reject) => {
     onValue(
       blogPostsRef,

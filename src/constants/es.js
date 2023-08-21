@@ -554,6 +554,7 @@ const es_text = {
     tags: "Etiquetas (separadas por comas)",
     button: "Guardar",
     savingButton: "Guardando...",
+    translateButton: "Traducirando...",
     imageDisable:
       "Mientras el título no sea válido, la carga de imágenes está inactiva.",
     titleDisable:

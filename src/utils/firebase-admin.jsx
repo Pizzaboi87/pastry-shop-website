@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { getAllComments, getAllPost, storeImage } from "./firebase";
+import { getAllComments, getAllPost } from "./firebase";
 
 const updateData = async (setFirebaseData) => {
   try {
@@ -213,18 +213,10 @@ export const getAllUser = async (currentUser) => {
   }
 };
 
-export const uploadPost = async (
-  text,
-  currentUser,
-  blogForm,
-  setIsLoading,
-  setFirebaseData,
-  navigate
-) => {
+export const uploadPost = async (text, currentUser, blogForm, setIsLoading) => {
   setIsLoading(true);
   try {
     const idToken = await currentUser.getIdToken();
-    await storeImage(blogForm.imageFile, blogForm.image);
 
     const response = await fetch("/api/store-post", {
       method: "POST",
@@ -235,14 +227,12 @@ export const uploadPost = async (
     });
 
     if (response.ok) {
-      await updateData(setFirebaseData);
       setIsLoading(false);
       Swal.fire({
         title: text.blogForm.swal.successTitle,
         text: text.blogForm.swal.successMessage,
         icon: "success",
       });
-      navigate("/admin/blog/all");
     } else {
       setIsLoading(false);
       Swal.fire({

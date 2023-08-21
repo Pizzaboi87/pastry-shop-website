@@ -553,7 +553,8 @@ const hu_text = {
     post: "Bejegyzés Szövege",
     tags: "Hashtag-ek (vesszővel elválasztva)",
     button: "Mentés",
-    savingButton: "Mentés folyamatban...",
+    savingButton: "Mentés...",
+    translateButton: "Fordítás...",
     imageDisable: "Amíg a cím érvénytelen, a képfeltöltés inaktív.",
     titleDisable: "Már feltöltöttél egy képet, így a cím már nem módosítható.",
     swal: {

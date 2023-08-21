@@ -1,8 +1,8 @@
 import { authMiddleware, database } from "../src/utils/authMiddleware.js";
 
 const storePostHandler = async (req, res) => {
-  const blogPostsRef = database.ref("blogPosts");
   const post = JSON.parse(req.body);
+  const blogPostsRef = database.ref(`blogPosts/${post.language}/`);
 
   try {
     await blogPostsRef.child(post.postid).set(post);

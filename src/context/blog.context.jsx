@@ -1,6 +1,7 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useContext } from "react";
 import { getStoredImage, getAllPost, getAllComments } from "../utils/firebase";
 import { Loading } from "../components";
+import { UserContext } from "./user.context";
 
 export const BlogContext = createContext();
 
@@ -9,11 +10,12 @@ export const BlogContextProvider = ({ children }) => {
   const [allComments, setAllComments] = useState([]);
   const [firebaseData, setFirebaseData] = useState({});
   const [firebaseComments, setFirebaseComments] = useState({});
+  const { userLanguage } = useContext(UserContext);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getAllPost();
+        const data = await getAllPost(userLanguage);
         setFirebaseData(data);
       } catch (error) {
         console.error("An error happened during data fetching.", error);
@@ -21,7 +23,7 @@ export const BlogContextProvider = ({ children }) => {
     };
 
     fetchData();
-  }, []);
+  }, [userLanguage]);
 
   useEffect(() => {
     const fetchData = async () => {

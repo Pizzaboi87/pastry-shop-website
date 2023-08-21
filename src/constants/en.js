@@ -554,6 +554,7 @@ const en_text = {
     tags: "Hashtags (separated by commas)",
     button: "Save",
     savingButton: "Saving...",
+    translateButton: "Translating...",
     imageDisable: "As long as title is invalid, image upload is inactive.",
     titleDisable:
       "You have already uploaded a picture, so the title can no longer be edited.",
