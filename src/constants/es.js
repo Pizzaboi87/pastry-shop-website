@@ -410,7 +410,7 @@ const es_text = {
       style: "bg-yellowlight col-span-3",
     },
     {
-      title: "Fecha de registro",
+      title: "Fecha",
       id: "date",
       style: "bg-yellowdark col-span-2",
     },
@@ -468,6 +468,7 @@ const es_text = {
   usersAllTitle: "Todos los Usuarios Registrados",
   blogCategoryCardTitle: "Etiquetas Populares",
   blogCommentsTitle: "Todos los Comentarios del Blog",
+  blogCommentsSearch: "Buscar por nombre o título...",
   blogNewTitle: "Agregar Nuevo Artículo",
   blogPostEditTitle: "Editar Artículo",
   shopAllTitle: "Todos los Artículos de la Tienda - Panel de Administración",

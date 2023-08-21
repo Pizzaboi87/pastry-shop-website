@@ -110,7 +110,7 @@ const UsersAll = () => {
             header.id === "name" ? (
               <Icon
                 icon="solar:round-sort-vertical-broken"
-                className="text-[2rem] hover:text-logopink cursor-pointer"
+                className="text-[1.8rem] hover:text-logopink cursor-pointer"
                 onClick={() => sortValues(header.id)}
               />
             ) : null}

@@ -467,6 +467,7 @@ const en_text = {
   usersAllTitle: "All Registered User",
   blogCategoryCardTitle: "Popular tags",
   blogCommentsTitle: "All Blog Comments",
+  blogCommentsSearch: "Search by name or title...",
   blogNewTitle: "Add New Article",
   blogPostEditTitle: "Edit Article",
   shopAllTitle: "All Shop Items Admin Page",

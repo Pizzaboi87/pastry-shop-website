@@ -466,6 +466,7 @@ const hu_text = {
   usersAllTitle: "Minden Regisztrált Felhasználó",
   blogCategoryCardTitle: "Népszerű címkék",
   blogCommentsTitle: "Minden Hozzászólás",
+  blogCommentsSearch: "Keresés név vagy cím alapján...",
   blogNewTitle: "Új Cikk Hozzáadása",
   blogPostEditTitle: "Cikk Szerkesztése",
   shopAllTitle: "Minden Termék",

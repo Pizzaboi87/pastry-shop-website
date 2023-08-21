@@ -3,7 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { BlogContext, UserContext } from "../../context";
 import { Tooltip } from "react-tooltip";
 import { Icon } from "@iconify/react";
-import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
+import {
+  adminLoginStyle,
+  adminPageStyle,
+  tableStyle,
+  tooltipStyle,
+} from "../../styles";
 import { Loading } from "../../components";
 import { getAllUser, deleteComment } from "../../utils/firebase-admin";
 import { useQuery } from "react-query";
@@ -18,6 +23,7 @@ const BlogComments = () => {
     useContext(BlogContext);
   const { text, currentUser } = useContext(UserContext);
   const [commentsWithUsers, setCommentsWithUsers] = useState([]);
+  const [filteredComments, setFilteredComments] = useState([]);
   const [isDescending, setIsDescending] = useState(true);
   const [isDeleting, setIsDeleting] = useState(false);
   const navigate = useNavigate();
@@ -49,6 +55,7 @@ const BlogComments = () => {
       );
 
       setCommentsWithUsers(updatedComments);
+      setFilteredComments(updatedComments);
     };
     if (users) fetchCommentUsers();
   }, [allComments, users]);
@@ -81,15 +88,15 @@ const BlogComments = () => {
     let sortedComments;
     switch (id) {
       case "date":
-        sortedComments = [...commentsWithUsers].sort((a, b) => a.date - b.date);
+        sortedComments = [...filteredComments].sort((a, b) => a.date - b.date);
         break;
       case "name":
-        sortedComments = [...commentsWithUsers].sort((a, b) =>
+        sortedComments = [...filteredComments].sort((a, b) =>
           a.author.localeCompare(b.author)
         );
         break;
       default:
-        sortedComments = [...commentsWithUsers].sort((a, b) =>
+        sortedComments = [...filteredComments].sort((a, b) =>
           a.title.localeCompare(b.title)
         );
         break;
@@ -99,13 +106,34 @@ const BlogComments = () => {
       sortedComments.reverse();
     }
 
-    setCommentsWithUsers(sortedComments);
+    setFilteredComments(sortedComments);
     setIsDescending(!isDescending);
+  };
+
+  const handleChange = (e) => {
+    const { value } = e.target;
+    if (!value) setFilteredComments(commentsWithUsers);
+    const filteredComments = commentsWithUsers.filter((comment) =>
+      comment.title.toLowerCase().includes(value.toLowerCase()) ||
+      comment.author.toLowerCase().includes(value.toLowerCase())
+        ? comment
+        : null
+    );
+    setFilteredComments(filteredComments);
   };
 
   return (
     <div className={adminPageStyle.wrapper}>
       <h1 className={adminPageStyle.title}>{text.blogCommentsTitle}</h1>
+
+      <form>
+        <input
+          className={`${adminLoginStyle.input} border-2 w-[20rem] h-[2rem] mb-4`}
+          type="text"
+          placeholder={text.blogCommentsSearch}
+          onChange={handleChange}
+        />
+      </form>
 
       <ul className="grid grid-cols-8 w-full px-8 items-center">
         {text.commentsHeaders.map((header) => (
@@ -120,14 +148,14 @@ const BlogComments = () => {
             header.id === "date" ? (
               <Icon
                 icon="solar:round-sort-vertical-broken"
-                className="text-[2rem] hover:text-logopink cursor-pointer"
+                className="text-[1.8rem] hover:text-logopink cursor-pointer"
                 onClick={() => sortValues(header.id)}
               />
             ) : null}
           </li>
         ))}
 
-        {commentsWithUsers.map((comment) => {
+        {filteredComments.map((comment) => {
           const toDetailsPage = () => {
             if (comment.userID) navigate(`/admin/users/${comment.userID}`);
             else navigate(`/admin/users/deleted-user`);
