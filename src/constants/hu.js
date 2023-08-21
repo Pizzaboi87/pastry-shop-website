@@ -419,6 +419,11 @@ const hu_text = {
       style: "bg-yellowlight col-span-2",
     },
   ],
+  usersAllEmail: {
+    subject: "Új üzenet a Le Ciel Sucré-tól",
+    bodyStart: "Kedves ",
+    bodyEnd: ",\n\nÜdvözlettel,\nA Le Ciel Sucré csapata",
+  },
   commentsHeaders: [
     {
       title: "Fotó",

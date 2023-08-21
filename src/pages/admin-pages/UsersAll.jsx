@@ -53,6 +53,17 @@ const UsersAll = () => {
     await deleteUser(user, currentUser, text, refetch, setIsDeleting);
   };
 
+  const sendMail = (email, adressee) => {
+    const subject = text.usersAllEmail.subject;
+    const body = `${text.usersAllEmail.bodyStart}${adressee}${text.usersAllEmail.bodyEnd}`;
+
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.open(mailtoLink);
+  };
+
   return (
     <div className={adminPageStyle.wrapper}>
       <h1 className={adminPageStyle.title}>{text.usersAllTitle}</h1>
@@ -85,7 +96,12 @@ const UsersAll = () => {
                 {user.displayName}
               </Link>
             </li>
-            <li className={`${tableStyle} col-span-3`}>{user.email}</li>
+            <li
+              className={`${tableStyle} col-span-3 hover:text-logopink cursor-pointer`}
+              onClick={() => sendMail(user.email, user.displayName)}
+            >
+              {user.email}
+            </li>
             <li className={`${tableStyle} col-span-2`}>
               {new Date(user.createdAt._seconds * 1000)
                 .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })

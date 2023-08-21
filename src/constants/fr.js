@@ -427,6 +427,11 @@ const fr_text = {
       style: "bg-yellowlight col-span-2",
     },
   ],
+  usersAllEmail: {
+    subject: "Nouveau message de Ciel Sucré",
+    bodyStart: "Cher/Chère ",
+    bodyEnd: ",\n\nMeilleures salutations,\nL'équipe de Le Ciel Sucré",
+  },
   commentsHeaders: [
     {
       title: "Image",

@@ -420,6 +420,11 @@ const en_text = {
       style: "bg-yellowlight col-span-2",
     },
   ],
+  usersAllEmail: {
+    subject: "New Message from Ciel Sucré",
+    bodyStart: "Dear ",
+    bodyEnd: ",\n\nBest regards,\nLe Ciel Sucré Team",
+  },
   commentsHeaders: [
     {
       title: "Image",
