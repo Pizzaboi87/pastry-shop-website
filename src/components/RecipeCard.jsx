@@ -8,7 +8,6 @@ import {
   FacebookIcon,
   TwitterShareButton,
   TwitterIcon,
-  EmailShareButton,
   EmailIcon,
 } from "react-share";
 

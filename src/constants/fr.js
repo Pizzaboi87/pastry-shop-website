@@ -504,6 +504,7 @@ const fr_text = {
   },
   recipes: {
     title: "Nos Recettes Préférées",
+    subTitle: "(le texte est traduit automatiquement)",
     notFound: "aucun résultat",
     noMore: "fin de la liste",
     show: "afficher plus",

@@ -495,6 +495,7 @@ const hu_text = {
   },
   recipes: {
     title: "Kedvenc Receptjeink",
+    subTitle: "(a szöveg gépi fordítással készült)",
     notFound: "nincs találat",
     noMore: "lista vége",
     show: "mutass még",

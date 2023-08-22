@@ -1,7 +1,14 @@
-import { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { fetchRecipe } from "../../utils/fetchRecipe";
 import { UserContext } from "../../context";
-import { Theme_Button, Theme_H1, titleStyle } from "../../styles";
+import {
+  Theme_Button,
+  Theme_H1,
+  Theme_P,
+  subTitleStyle,
+  titleStyle,
+} from "../../styles";
+import { translateRecipe } from "../../utils/translateRecipe";
 import {
   Loading,
   RecipeCard,
@@ -10,37 +17,66 @@ import {
 } from "../../components";
 
 const Recipes = () => {
-  const { text } = useContext(UserContext);
+  const { text, userLanguage } = useContext(UserContext);
   const [offset, setOffset] = useState(0);
   const [recipes, setRecipes] = useState([]);
   const [notFound, setNotFound] = useState(false);
   const [loading, setLoading] = useState(true);
   const [noMore, setNoMore] = useState(false);
   const [searchQuery, setSearchQuery] = useState("dessert");
+  const [fetching, setFetching] = useState(false);
 
   const getRecipes = async () => {
     setNoMore(false);
-    const result = await fetchRecipe(searchQuery, offset);
-    setLoading(false);
+    setFetching(true);
+    try {
+      const result = await fetchRecipe(searchQuery, offset);
 
-    if (result.length) {
-      setRecipes((prevRecipes) => {
-        if (offset) {
-          return [...prevRecipes, ...result];
-        } else {
-          return result;
+      if (result.length) {
+        const translatedRecipes = await Promise.all(
+          result.map(async (recipe) => {
+            const translatedInstructions = await translateRecipe(
+              recipe.instructions,
+              userLanguage.slice(0, -1)
+            );
+            const translatedIngredients = await translateRecipe(
+              recipe.ingredients,
+              userLanguage.slice(0, -1)
+            );
+            return {
+              ...recipe,
+              instructions: translatedInstructions,
+              ingredients: translatedIngredients,
+            };
+          })
+        );
+
+        setRecipes((prevRecipes) => {
+          if (offset) {
+            return [...prevRecipes, ...translatedRecipes];
+          } else {
+            return translatedRecipes;
+          }
+        });
+      } else {
+        setNoMore(true);
+        if (!offset) {
+          setNotFound(true);
         }
-      });
-    } else {
-      setNoMore(true);
-      if (!offset) {
-        setNotFound(true);
       }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+      setFetching(false);
     }
   };
 
   const showMore = () => {
-    setOffset(offset + 10);
+    if (!fetching) {
+      setOffset(offset + 10);
+      getRecipes();
+    }
   };
 
   useEffect(() => {
@@ -52,6 +88,11 @@ const Recipes = () => {
       <Theme_H1 $textcolor="title" className={titleStyle}>
         {text.recipes.title}
       </Theme_H1>
+      {userLanguage !== "eng" && (
+        <Theme_P $textcolor="title" className={subTitleStyle}>
+          {text.recipes.subTitle}
+        </Theme_P>
+      )}
       <SearchForm
         setLoading={setLoading}
         setNotFound={setNotFound}

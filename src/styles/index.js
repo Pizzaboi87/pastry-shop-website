@@ -193,8 +193,10 @@ const tooltipStyle = {
   fontWeight: 600,
 };
 
-const titleStyle =
-  "xl:text-[3rem] text-[2rem] text-center text-text font-[600] mb-8";
+const titleStyle = "xl:text-[3rem] text-[2rem] text-center font-[600] mb-8";
+
+const subTitleStyle =
+  "xl:text-[1.5rem] text-[1rem] text-center font-[400] -mt-8 mb-8";
 
 export {
   phoneInputStyle,
@@ -220,6 +222,7 @@ export {
   userPageStyle,
   userPhoneInputStyle,
   titleStyle,
+  subTitleStyle,
   Theme_Div,
   Theme_Motion_Div,
   Theme_Motion_Span,
