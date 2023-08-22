@@ -476,6 +476,8 @@ const es_text = {
   shopOrdersTitle: "Pedidos de la Tienda - Panel de Administración",
   noPermissionTitle: "No tienes permiso para ver esta página.",
   recipeCardTitle: "Ingredientes:",
+  recipeEmail: "Nueva receta del Ciel Sucré",
+  recipeFooter: "Encuentre más en nuestro sitio web:",
   blogPostCardButton: "Leer artículo",
   courseCardButton: "Más detalles",
   loading: "cargando...",

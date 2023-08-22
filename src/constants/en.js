@@ -475,6 +475,8 @@ const en_text = {
   shopOrdersTitle: "Shop Orders Admin Page",
   noPermissionTitle: "You do not have permission to view this page.",
   recipeCardTitle: "Ingredients:",
+  recipeCardEmail: "New recipe from Ciel Sucré",
+  recipeFooter: "Find more on our website:",
   blogPostCardButton: "Read article",
   courseCardButton: "Learn More",
   loading: "loading...",

@@ -48,6 +48,17 @@ const RecipeCard = ({ recipe, isOwnPage }) => {
     await fetchActualData();
   };
 
+  const sendMail = (email) => {
+    const subject = text.recipeEmail;
+    const body = `${quoteText} ${text.recipeFooter}\n\u{1F517} https://ciel-sucre.vercel.app`;
+
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.open(mailtoLink);
+  };
+
   return (
     <Theme_Motion_Div
       $bgcolor="primary"
@@ -115,15 +126,7 @@ const RecipeCard = ({ recipe, isOwnPage }) => {
         >
           <TwitterIcon size={36} />
         </TwitterShareButton>
-        <EmailShareButton
-          title="Le Ciel Sucré"
-          body={quoteText}
-          url={
-            "Find more on our website:\n\u{1F517} https://ciel-sucre.vercel.app"
-          }
-        >
-          <EmailIcon size={36} />
-        </EmailShareButton>
+        <EmailIcon size={36} onClick={sendMail} className="cursor-pointer" />
       </div>
     </Theme_Motion_Div>
   );

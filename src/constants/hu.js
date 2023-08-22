@@ -474,6 +474,8 @@ const hu_text = {
   shopOrdersTitle: "Rendelések",
   noPermissionTitle: "Nincs jogosultságod ehhez az oldalhoz.",
   recipeCardTitle: "Hozzávalók:",
+  recipeEmail: "Új recept a Ciel Sucré-tól",
+  recipeFooter: "Bővebben honlapunkon:",
   blogPostCardButton: "Cikk Olvasása",
   courseCardButton: "Részletek",
   loading: "betöltés...",

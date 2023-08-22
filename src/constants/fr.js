@@ -483,6 +483,8 @@ const fr_text = {
   shopOrdersTitle: "Commandes de la Boutique Page d'Administration",
   noPermissionTitle: "Vous n'avez pas la permission de voir cette page.",
   recipeCardTitle: "Ingrédients:",
+  recipeCardEmail: "Nouvelle recette du Ciel Sucré",
+  recipeFooter: "En savoir plus sur notre site Web:",
   blogPostCardButton: "Lire l'article",
   courseCardButton: "En savoir plus",
   loading: "chargement...",
