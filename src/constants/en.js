@@ -33,7 +33,7 @@ const en_text = {
       id: "myaccount",
     },
     {
-      title: "Previous Orders",
+      title: "Orders",
       id: "myorders",
     },
     {

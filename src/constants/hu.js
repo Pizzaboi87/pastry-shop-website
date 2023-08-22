@@ -33,7 +33,7 @@ const hu_text = {
       id: "myaccount",
     },
     {
-      title: "Korábbi Rendeléseim",
+      title: "Rendeléseim",
       id: "myorders",
     },
     {

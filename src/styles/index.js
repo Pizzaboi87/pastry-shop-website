@@ -92,6 +92,13 @@ const menuOnStyle = {
   height: "100vh",
 };
 
+const personalMenuOffStyle = {
+  transition: "0.5s ease-in-out",
+  transform: "translateX(200vw)",
+  width: 0,
+  height: "100vh",
+};
+
 const glassStyle = `bg-[rgba(255, 255, 255, 0.2)] rounded-2xl boxShadow-[0 4px 30px rgba(0, 0, 0, 0.1)] backdrop-blur-sm border-1 border-solid border-[rgba(255, 255, 255, 0.3)]`;
 
 const blogNewFormStyle = {
@@ -207,6 +214,7 @@ export {
   containerStyle,
   menuOffStyle,
   menuOnStyle,
+  personalMenuOffStyle,
   glassStyle,
   blogNewFormStyle,
   tableStyle,

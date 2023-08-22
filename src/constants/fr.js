@@ -33,7 +33,7 @@ const fr_text = {
       id: "myaccount",
     },
     {
-      title: "Commandes Précédentes",
+      title: "Commandes",
       id: "myorders",
     },
     {
