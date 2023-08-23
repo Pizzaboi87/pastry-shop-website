@@ -52,7 +52,7 @@ const UserAccountImage = ({
   };
 
   return (
-    <div className="col-span-1 flex flex-col items-center gap-y-2 sticky top-36 h-fit">
+    <div className="xl:col-span-1 col-span-6 flex flex-col items-center gap-y-2 xl:sticky top-36 h-fit">
       <div
         className="profilecontainer w-[10rem] h-[10rem] rounded-full border-white border-2 bg-center bg-cover overflow-hidden"
         style={{ backgroundImage: `url(${userImage})` }}

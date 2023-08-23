@@ -250,7 +250,6 @@ export const Theme_PhoneInput = styled.div`
     return `
       margin-top: 0.5rem; 
       width: 100%;
-      height: 2.3rem;
       background-color: white;
       border-radius: 10px;
       outline-style: dotted;

@@ -43,7 +43,7 @@ const userPhoneInputStyle = {
   width: "100%",
   height: "100%",
   padding: "0 0 0 4rem",
-  margin: "0.6rem 0 0 0",
+  margin: "0.5rem 0 0 0",
   fontSize: "1rem",
   fontWeight: "400",
   outline: "none",
@@ -183,9 +183,10 @@ const adminLoginStyle = {
 const userPageStyle = {
   input:
     "text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted",
-  label: "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] py-4",
+  label:
+    "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
   button:
-    "py-1 rounded-xl shadow-xl border-none text-[1.2rem] font-[500] col-span-1 col-start-7",
+    "py-1 rounded-xl shadow-xl border-none text-[1.2rem] font-[500] xl:col-span-1 xl:col-start-7 xl:mx-0 xl:px-0 xl:py-0 mx-auto px-6 py-2",
   passwordButton:
     "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] col-start-5 col-span-2",
   deleteButton:

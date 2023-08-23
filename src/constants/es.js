@@ -459,7 +459,7 @@ const es_text = {
   coursesTitle: "Nuestros Cursos",
   shopTitle: "Nuestra Tienda",
   favouritesTitle: "Página de Favoritos del Usuario",
-  myAccountTitle: "Detalles de Mi Cuenta",
+  myAccountTitle: "Mi Cuenta",
   myCartTitle: "Mi Carrito de Compras",
   previousOrdersTitle: "Historial de Pedidos del Usuario",
   settingsTitle: "Mis Configuraciones",
