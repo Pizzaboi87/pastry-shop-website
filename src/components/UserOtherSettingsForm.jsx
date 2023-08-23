@@ -72,7 +72,7 @@ const UserOtherSettingsForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-6 gap-x-8">
-      <label className={`${userPageStyle.label} col-span-2 `}>
+      <label className={`${userPageStyle.label} md:col-span-2 col-span-6`}>
         {text.userOtherSettings.language.title}
         <Theme_Select
           value={selectedLang}
@@ -88,7 +88,7 @@ const UserOtherSettingsForm = () => {
         </Theme_Select>
       </label>
 
-      <label className={`${userPageStyle.label} col-span-1 `}>
+      <label className={`${userPageStyle.label} md:col-span-1 col-span-6`}>
         {text.userOtherSettings.currency.title}
         <Theme_Select
           value={selectedCurr}
@@ -104,7 +104,7 @@ const UserOtherSettingsForm = () => {
         </Theme_Select>
       </label>
 
-      <label className={`${userPageStyle.label} col-span-3 `}>
+      <label className={`${userPageStyle.label} md:col-span-3 col-span-6`}>
         {text.userOtherSettings.theme.title}
         <Theme_Select
           value={selectedTheme}
@@ -120,7 +120,7 @@ const UserOtherSettingsForm = () => {
         </Theme_Select>
       </label>
 
-      <span className="flex flex-row items-center gap-x-4 mb-2 col-span-4">
+      <span className="flex flex-row items-center gap-x-4 md:mb-2 mt-2 md:mt-0 md:col-span-4 col-span-6">
         <Theme_Input
           checked={newsletter}
           name="newsletter"

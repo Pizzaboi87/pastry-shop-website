@@ -96,6 +96,11 @@ const CourseForm = ({ courses }) => {
     }
   };
 
+  const inputStyle = {
+    ...phoneInputStyle,
+    height: window.innerWidth < 500 ? "2.5rem" : "3rem",
+  };
+
   return (
     <Theme_Form
       $bgcolor="primary"
@@ -124,7 +129,7 @@ const CourseForm = ({ courses }) => {
           country={"hu"}
           value={phone}
           onChange={handlePhoneChange}
-          inputStyle={phoneInputStyle}
+          inputStyle={inputStyle}
         />
       </label>
       <label className={courseFormStyle.label}>

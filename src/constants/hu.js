@@ -651,7 +651,7 @@ const hu_text = {
     course: "*Melyik tanfolyam érdekel téged:",
     optionsTitle: "Válassz a tanfolyamok közül",
     question: "*Van valami kérdésed?",
-    sending: "Küldés folyamatban...",
+    sending: "Küldés...",
     send: "Küldés",
     swal: {
       successTitle: "Siker!",
@@ -694,7 +694,7 @@ const hu_text = {
     address: "Cím",
     zip: "Irányítószám",
     button: "Mentés",
-    savingButton: "Mentés folyamatban...",
+    savingButton: "Mentés...",
     swal: {
       successTitle: "Siker!",
       successMessage: "A fiók frissítésre került.",
@@ -739,7 +739,7 @@ const hu_text = {
     },
     newsletter: "Feliratkozás hírlevelünkre",
     button: "Frissítés",
-    loading: "Frissítés folyamatban...",
+    loading: "Frissítés...",
   },
   settings: {
     reset: "Jelszóváltoztatás",
@@ -749,7 +749,7 @@ const hu_text = {
   userDelete: {
     password: "Jelszó",
     button: "Fiók törlése",
-    loading: "Törlés folyamatban...",
+    loading: "Törlés...",
     swal: {
       title: "Figyelem!",
       text: "Biztosan törölni szeretnéd a fiókodat?",
@@ -767,9 +767,9 @@ const hu_text = {
   userPasswordForm: {
     current: "Jelenlegi jelszó",
     new: "Új jelszó",
-    confirm: "Új jelszó megerősítése",
+    confirm: "Új jelszó újra",
     button: "Frissítés",
-    loading: "Frissítés folyamatban...",
+    loading: "Frissítés...",
     swal: {
       successTitle: "Siker!",
       successText: "A jelszavad sikeresen megváltozott.",

@@ -23,7 +23,6 @@ import {
 
 const phoneInputStyle = {
   width: "100%",
-  height: "3rem",
   fontSize: "1.2rem",
   fontWeight: "400",
   borderRadius: "15px",
@@ -188,9 +187,9 @@ const userPageStyle = {
   button:
     "py-1 rounded-xl shadow-xl border-none text-[1.2rem] font-[500] xl:col-span-1 md:col-span-3 md:col-start-3 xl:col-start-7 xl:mx-0 xl:px-0 mx-auto px-6 py-2",
   passwordButton:
-    "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] col-start-5 col-span-2",
+    "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] md:col-start-5 col-start-3 md:col-span-2 col-span-4 md:mt-0 mt-4",
   deleteButton:
-    "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] self-end px-8",
+    "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] md:self-end col-start-3 md:px-8 col-span-4 md:mt-0 mt-4",
 
   title: "col-span-6 xl:text-[3rem] text-[2rem] font-[600] mb-8 text-center",
 };

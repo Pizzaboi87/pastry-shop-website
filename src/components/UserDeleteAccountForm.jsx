@@ -99,8 +99,11 @@ const UserDeleteAccountForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-[50%] flex flex-col">
-      <label className={`${userPageStyle.label} col-span-2 `}>
+    <form
+      onSubmit={handleSubmit}
+      className="md:w-[50%] md:flex md:flex-col grid grid-cols-6"
+    >
+      <label className={`${userPageStyle.label} md:col-span-2 col-span-6`}>
         {text.userDelete.password}
         <Theme_Input
           $outlinecolor="logo"

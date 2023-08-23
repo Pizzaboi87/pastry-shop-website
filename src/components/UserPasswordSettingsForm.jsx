@@ -85,7 +85,7 @@ const UserPasswordSettingsForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-6 gap-x-8">
-      <label className={`${userPageStyle.label} col-span-2 `}>
+      <label className={`${userPageStyle.label} md:col-span-2 col-span-6`}>
         {text.userPasswordForm.current}
         <Theme_Input
           $outlinecolor="logo"
@@ -98,7 +98,7 @@ const UserPasswordSettingsForm = () => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} col-span-2 `}>
+      <label className={`${userPageStyle.label} md:col-span-2 col-span-6`}>
         {text.userPasswordForm.new}
         <Theme_Input
           $outlinecolor="logo"
@@ -111,7 +111,7 @@ const UserPasswordSettingsForm = () => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} col-span-2 `}>
+      <label className={`${userPageStyle.label} md:col-span-2 col-span-6`}>
         {text.userPasswordForm.confirm}
         <Theme_Input
           $outlinecolor="logo"
