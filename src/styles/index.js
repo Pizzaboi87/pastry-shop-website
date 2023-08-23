@@ -186,7 +186,7 @@ const userPageStyle = {
   label:
     "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
   button:
-    "py-1 rounded-xl shadow-xl border-none text-[1.2rem] font-[500] xl:col-span-1 xl:col-start-7 xl:mx-0 xl:px-0 xl:py-0 mx-auto px-6 py-2",
+    "py-1 rounded-xl shadow-xl border-none text-[1.2rem] font-[500] xl:col-span-1 md:col-span-3 md:col-start-3 xl:col-start-7 xl:mx-0 xl:px-0 mx-auto px-6 py-2",
   passwordButton:
     "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] col-start-5 col-span-2",
   deleteButton:

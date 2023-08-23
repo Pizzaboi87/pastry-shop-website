@@ -126,9 +126,9 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full grid xl:grid-cols-7 xl:px-16 xl:py-6 py-2 gap-y-2"
+      className="w-full grid md:grid-cols-7 xl:px-16 xl:py-6 py-2 gap-y-2"
     >
-      <label className={`${userPageStyle.label} xl:col-span-3 xl:col-start-1`}>
+      <label className={`${userPageStyle.label} md:col-span-3  md:col-start-1`}>
         {text.userAccountForm.fullName}
         <Theme_Input
           type="text"
@@ -141,7 +141,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} xl:col-span-3 xl:col-start-5`}>
+      <label className={`${userPageStyle.label} md:col-span-3 md:col-start-5`}>
         {text.userAccountForm.displayName}
         <Theme_Input
           type="text"
@@ -154,7 +154,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} xl:col-span-3 xl:col-start-1`}>
+      <label className={`${userPageStyle.label} md:col-span-3  md:col-start-1`}>
         {text.userAccountForm.email}
         <Theme_Input
           type="text"
@@ -168,7 +168,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} xl:col-span-3 xl:col-start-5`}>
+      <label className={`${userPageStyle.label} md:col-span-3 md:col-start-5`}>
         {text.userAccountForm.phone}
         <Theme_PhoneInput
           $outlinecolor="logo"
@@ -183,7 +183,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           />
         </Theme_PhoneInput>
       </label>
-      <label className={`${userPageStyle.label} xl:col-span-3 xl:col-start-1`}>
+      <label className={`${userPageStyle.label} md:col-span-3  md:col-start-1`}>
         {text.userAccountForm.country}
         <Theme_Input
           type="text"
@@ -196,7 +196,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} xl:col-span-3 xl:col-start-5`}>
+      <label className={`${userPageStyle.label} md:col-span-3 md:col-start-5`}>
         {text.userAccountForm.city}
         <Theme_Input
           type="text"
@@ -209,7 +209,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} xl:col-span-3 xl:col-start-1`}>
+      <label className={`${userPageStyle.label} md:col-span-3  md:col-start-1`}>
         {text.userAccountForm.address}
         <Theme_Input
           type="text"
@@ -222,7 +222,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} xl:col-span-3 xl:col-start-5`}>
+      <label className={`${userPageStyle.label} md:col-span-3 md:col-start-5`}>
         {text.userAccountForm.zip}
         <Theme_Input
           type="text"
