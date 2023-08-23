@@ -67,7 +67,7 @@ const RecipeCard = ({ recipe, isOwnPage }) => {
       key={recipe.title}
       className={`${
         isOwnPage ? "" : "mb-20"
-      } 2xl:w-[80%] w-full h-auto text-justify p-12 rounded-xl shadow-xl`}
+      } 2xl:w-[80%] w-full h-auto text-justify md:p-12 p-4 rounded-xl shadow-xl`}
     >
       <Theme_Icon
         icon={liked ? "mdi:heart" : "mdi:heart-outline"}

@@ -32,7 +32,7 @@ const FavouritePage = () => {
   return (
     <>
       {recipe && originalName ? (
-        <span className="flex gap-x-6">
+        <span className="flex flex-col md:flex-row md:gap-x-6">
           <Theme_Icon
             $iconcolor="logo"
             icon="line-md:arrow-left-circle"

@@ -22,7 +22,7 @@ const UserPanel = ({ children }) => {
       <Theme_Div
         $bgcolor="background"
         $bordercolor="transparent"
-        className="xl:col-span-5 col-span-6 rounded-2xl shadow-inner shadow-black xl:p-12 p-6"
+        className="xl:col-span-5 col-span-6 rounded-2xl shadow-inner shadow-black xl:p-12 p-4"
       >
         {children}
       </Theme_Div>
