@@ -67,12 +67,12 @@ const AdminLogin = () => {
       <Theme_Form
         $bgcolor="primary"
         onSubmit={handleSubmit}
-        className="grid grid-cols-5 w-[40rem] rounded-xl shadow-xl items-center p-4 gap-8"
+        className="grid grid-cols-5 md:w-[40rem] w-full rounded-xl shadow-xl items-center p-4 gap-8"
       >
-        <h1 className="col-span-3 col-start-2 text-center text-text text-[2rem] font-[600]">
+        <h1 className="md:col-span-3 col-span-5 md:col-start-2 text-center text-text text-[2rem] font-[600]">
           Admin Login
         </h1>
-        <span className="col-span-3 col-start-2 flex flex-col gap-y-4">
+        <span className="md:col-span-3 col-span-5 md:col-start-2 flex flex-col gap-y-4">
           <label className={adminLoginStyle.label}>
             UserName
             <Theme_Input
@@ -106,7 +106,7 @@ const AdminLogin = () => {
           $bordercolor="transparent"
           $hoverbgcolor="dark"
           $hovertextcolor="textlight"
-          className={`${adminLoginStyle.button} col-span-1 col-start-3`}
+          className={`${adminLoginStyle.button} md:col-span-1 col-span-2 col-start-2 md:col-start-3`}
         >
           Login
         </Theme_Button>

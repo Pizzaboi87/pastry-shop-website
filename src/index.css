@@ -106,3 +106,22 @@ textarea:disabled {
   transition: 0.5s ease-in-out;
   transform: translateY(0);
 }
+
+.squeezed {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.squeezedwithicon {
+  height: 4rem;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.expanded {
+  height: auto;
+  opacity: 1;
+  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}

@@ -14,13 +14,13 @@ const AdminPanel = ({ children }) => {
 
       <AdminMenu />
 
-      <div className="col-span-5 bg-white rounded-xl shadow-inner shadow-black p-4">
+      <div className="md:col-span-5 col-span-6 bg-white rounded-xl shadow-inner shadow-black p-4">
         {children}
       </div>
 
       <button
         onClick={() => setIsAdmin(false)}
-        className="col-start-6 bg-purple text-white text-[1.2rem] hover:bg-yellowdark hover:text-text font-[500] rounded-xl mt-4 py-2"
+        className="md:col-start-6 md:col-auto col-span-6 bg-purple text-white text-[1.2rem] hover:bg-yellowdark hover:text-text font-[500] rounded-xl mt-4 py-2"
       >
         {text.adminSignOut}
       </button>

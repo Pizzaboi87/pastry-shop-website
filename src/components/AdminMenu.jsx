@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context";
+import { Icon } from "@iconify/react";
 
 const AdminMenu = () => {
   const { text } = useContext(UserContext);
+  const [squeezed, setSqueezed] = useState(false);
 
   const menuItems = text.adminMenu.map((item) => (
     <span key={item.title}>
@@ -24,8 +26,17 @@ const AdminMenu = () => {
   ));
 
   return (
-    <div className="p-2 col-span-1 flex flex-col bg-white rounded-xl items-center h-fit sticky top-[10rem] shadow-inner shadow-black">
-      <ul>
+    <div
+      className={`${
+        squeezed ? "h-[5rem]" : "h-fit"
+      } pt-4 px-2 md:col-span-1 col-span-6 md:mb-0 mb-4 flex flex-col bg-white rounded-xl items-center md:sticky top-[10rem] shadow-inner shadow-black`}
+    >
+      <Icon
+        icon="icomoon-free:menu2"
+        className="md:hidden block text-[3rem] mx-auto cursor-pointer hover:text-logopink"
+        onClick={() => setSqueezed(!squeezed)}
+      />
+      <ul className={`${squeezed ? "squeezed" : "expanded"} md:pt-0 pt-4`}>
         <li className="text-text text-[1.4rem] font-[700] mb-4">
           {text.adminMenuTitle}
         </li>
