@@ -101,7 +101,7 @@ const UsersAll = () => {
         {text.usersAllHeaders.map((header) => (
           <li
             key={header.id}
-            className={`${header.style} min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 flex items-center gap-x-4`}
+            className={`${header.style} hidden md:min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 md:flex items-center gap-x-4`}
           >
             {header.title}
 
@@ -119,15 +119,17 @@ const UsersAll = () => {
 
         {allUser.map((user, index) => (
           <Fragment key={`${index}-${user.email}`}>
-            <li className={`${tableStyle} col-span-1`}>
+            <li className={`${tableStyle} md:col-span-1 col-span-10`}>
               <img
                 src={user.imgsrc}
                 alt="profile"
-                className="w-12 h-12 mx-auto object-cover rounded-full cursor-pointer"
+                className="md:w-12 w-16 md:h-12 h-16 mx-auto object-cover rounded-full cursor-pointer"
                 onClick={() => navigate(`/admin/users/${user.id}`)}
               />
             </li>
-            <li className={`${tableStyle} col-span-2`}>
+            <li
+              className={`${tableStyle} md:col-span-2 col-span-10 md:text-left text-center`}
+            >
               <Link
                 to={`/admin/users/${user.id}`}
                 className="text-text text-[1rem] hover:text-logopink cursor-pointer"
@@ -136,17 +138,17 @@ const UsersAll = () => {
               </Link>
             </li>
             <li
-              className={`${tableStyle} col-span-3 hover:text-logopink cursor-pointer`}
+              className={`${tableStyle} md:col-span-3 col-span-10 md:text-left text-center hover:text-logopink cursor-pointer`}
               onClick={() => sendMail(user.email, user.displayName)}
             >
               {user.email}
             </li>
-            <li className={`${tableStyle} col-span-2`}>
+            <li className={`${tableStyle} md:block hidden col-span-2`}>
               {new Date(user.createdAt._seconds * 1000)
                 .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
                 .slice(0, -3)}
             </li>
-            <li className="flex gap-4 justify-center items-center py-2 col-span-2">
+            <li className="md:flex hidden gap-4 justify-center items-center py-2 col-span-2">
               <Icon
                 icon="bi:trash3-fill"
                 className="delete outline-none text-text text-[2rem] hover:text-logopink cursor-pointer"
@@ -159,6 +161,7 @@ const UsersAll = () => {
                 <Icon icon="raphael:edit" />
               </Link>
             </li>
+            <hr className="h-[0.05rem] md:hidden col-span-10 bg-black mb-4 mt-2" />
           </Fragment>
         ))}
       </ul>

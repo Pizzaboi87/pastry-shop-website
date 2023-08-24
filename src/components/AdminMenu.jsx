@@ -1,11 +1,23 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context";
 import { Icon } from "@iconify/react";
 
 const AdminMenu = () => {
   const { text } = useContext(UserContext);
-  const [squeezed, setSqueezed] = useState(false);
+  const [squeezed, setSqueezed] = useState(true);
+
+  useEffect(() => {
+    if (window.innerWidth > 768) setSqueezed(false);
+
+    const handleResize = () => {
+      if (window.innerWidth > 768) setSqueezed(false);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const menuItems = text.adminMenu.map((item) => (
     <span key={item.title}>

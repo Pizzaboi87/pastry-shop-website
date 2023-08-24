@@ -109,7 +109,7 @@ const blogNewFormStyle = {
     "col-start-4 py-2 bg-purple hover:bg-yellowdark hover:text-text rounded-xl shadow-xl border-none text-white font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
-const tableStyle = "text-text text-[1rem] font-[500] pl-2 py-2";
+const tableStyle = "text-text text-[1rem] font-[500] pl-2 md:py-2";
 
 const awningStyle = {
   wrapper: "piece w-[80px] h-full rounded-b-full shadow-xl",
@@ -167,7 +167,7 @@ const signUpFormStyle = {
 
 const adminPageStyle = {
   wrapper: "w-full h-full flex flex-col items-center p-4",
-  title: "text-text text-[1.5rem] font-[600] mb-8",
+  title: "text-text text-[1.5rem] text-center font-[600] mb-8",
 };
 
 const adminLoginStyle = {
