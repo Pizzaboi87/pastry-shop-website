@@ -69,22 +69,24 @@ const BlogCommentPage = () => {
     <div className={`${adminPageStyle.wrapper} relative`}>
       <h1 className={adminPageStyle.title}>{text.blogCommentPage.title}</h1>
 
-      <Icon
-        icon="bi:trash3-fill"
-        className="delete outline-none text-text text-[3rem] hover:text-logopink cursor-pointer absolute top-[1rem] left-[1rem]"
-        onClick={() => confirmDelete(actualComment.id)}
-      />
+      <span className="md:absolute md:mb-0 mb-4 top-0 right-0 w-full flex justify-between items-center md">
+        <Icon
+          icon="bi:trash3-fill"
+          className="delete outline-none text-text text-[3rem] hover:text-logopink cursor-pointer"
+          onClick={() => confirmDelete(actualComment.id)}
+        />
 
-      <Icon
-        icon={actualComment.isPublished ? "mdi:publish" : "mdi:publish-off"}
-        className={`${
-          actualComment.isPublished ? "text-green" : "text-red"
-        } outline-none text-[4rem] cursor-pointer absolute top-[1rem] right-[1rem]`}
-        onClick={() => changePublish(actualComment)}
-      />
+        <Icon
+          icon={actualComment.isPublished ? "mdi:publish" : "mdi:publish-off"}
+          className={`${
+            actualComment.isPublished ? "text-green" : "text-red"
+          } outline-none text-[4rem] cursor-pointer`}
+          onClick={() => changePublish(actualComment)}
+        />
+      </span>
 
       <form className="w-full grid grid-cols-4 gap-y-8 gap-x-16">
-        <label className={`${blogNewFormStyle.label} col-span-2`}>
+        <label className={`${blogNewFormStyle.label} md:col-span-2 col-span-4`}>
           {text.blogCommentPage.id}
           <input
             disabled
@@ -95,7 +97,7 @@ const BlogCommentPage = () => {
           />
         </label>
 
-        <label className={`${blogNewFormStyle.label} col-span-2`}>
+        <label className={`${blogNewFormStyle.label} md:col-span-2 col-span-4`}>
           {text.blogCommentPage.date}
           <input
             disabled
@@ -106,7 +108,7 @@ const BlogCommentPage = () => {
           />
         </label>
 
-        <label className={`${blogNewFormStyle.label} col-span-2`}>
+        <label className={`${blogNewFormStyle.label} md:col-span-2 col-span-4`}>
           {text.blogCommentPage.author}
           <input
             disabled
@@ -117,7 +119,7 @@ const BlogCommentPage = () => {
           />
         </label>
 
-        <label className={`${blogNewFormStyle.label} col-span-2`}>
+        <label className={`${blogNewFormStyle.label} md:col-span-2 col-span-4`}>
           {text.blogCommentPage.email}
           <input
             disabled
@@ -128,7 +130,7 @@ const BlogCommentPage = () => {
           />
         </label>
 
-        <span className="col-span-2 flex flex-col gap-8">
+        <span className="md:col-span-2 col-span-4 flex flex-col gap-8">
           <label className={blogNewFormStyle.label}>
             {text.blogCommentPage.commentTitle}
             <input
@@ -152,7 +154,7 @@ const BlogCommentPage = () => {
           </label>
         </span>
 
-        <label className={`${blogNewFormStyle.label} col-span-2`}>
+        <label className={`${blogNewFormStyle.label} md:col-span-2 col-span-4`}>
           {text.blogCommentPage.commentText}
           <textarea
             disabled
