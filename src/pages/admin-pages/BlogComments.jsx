@@ -128,18 +128,18 @@ const BlogComments = () => {
 
       <form>
         <input
-          className={`${adminLoginStyle.input} border-2 w-[20rem] h-[2rem] mb-4`}
+          className={`${adminLoginStyle.input} border-2 w-[20rem] h-[3rem] mb-4`}
           type="text"
           placeholder={text.blogCommentsSearch}
           onChange={handleChange}
         />
       </form>
 
-      <ul className="grid grid-cols-8 w-full px-8 items-center">
+      <ul className="grid grid-cols-8 w-full md:px-8 px-4 items-center">
         {text.commentsHeaders.map((header) => (
           <li
             key={header.id}
-            className={`${header.style} min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 flex gap-x-4 items-center`}
+            className={`${header.style} min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 hidden md:flex gap-x-4 items-center`}
           >
             {header.title}
 
@@ -163,15 +163,15 @@ const BlogComments = () => {
 
           return (
             <Fragment key={comment.id}>
-              <li className={`${tableStyle} col-span-1`}>
+              <li className={`${tableStyle} md:col-span-1 col-span-8`}>
                 <img
                   src={comment.imgsrc}
                   alt="profile"
-                  className="w-12 h-12 mx-auto rounded-full object-cover cursor-pointer"
+                  className="md:w-12 w-16 md:h-12 h-16 mx-auto rounded-full object-cover cursor-pointer"
                   onClick={toDetailsPage}
                 />
               </li>
-              <li className="col-span-2">
+              <li className="md:col-span-2 col-span-8 md:text-left text-center">
                 <p
                   className={`${tableStyle} cursor-pointer hover:text-logopink inline`}
                   onClick={toDetailsPage}
@@ -179,7 +179,9 @@ const BlogComments = () => {
                   {comment.author}
                 </p>
               </li>
-              <li className={`${tableStyle} col-span-2`}>
+              <li
+                className={`${tableStyle} md:col-span-2 col-span-8 md:text-left text-center`}
+              >
                 <Link
                   to={`/admin/blog/comments/${comment.id}`}
                   className="hover:text-logopink cursor-pointer"
@@ -187,13 +189,13 @@ const BlogComments = () => {
                   {comment.title}
                 </Link>
               </li>
-              <li className={`${tableStyle} col-span-2`}>
+              <li className={`${tableStyle} hidden md:block col-span-2`}>
                 {new Date(comment.date)
                   .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
                   .slice(0, -3)}
               </li>
 
-              <li className="flex gap-4 justify-center items-center py-2 col-span-1">
+              <li className="md:flex hidden gap-4 justify-center items-center py-2 col-span-1">
                 <Icon
                   icon="bi:trash3-fill"
                   className="delete text-text outline-none text-[2rem] hover:text-logopink cursor-pointer"
@@ -215,6 +217,7 @@ const BlogComments = () => {
                   onClick={() => changePublish(comment)}
                 />
               </li>
+              <hr className="h-[0.1rem] md:hidden col-span-8 bg-black mb-4 mt-2" />
             </Fragment>
           );
         })}

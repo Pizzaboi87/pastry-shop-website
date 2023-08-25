@@ -161,7 +161,7 @@ const UsersAll = () => {
                 <Icon icon="raphael:edit" />
               </Link>
             </li>
-            <hr className="h-[0.05rem] md:hidden col-span-10 bg-black mb-4 mt-2" />
+            <hr className="h-[0.1rem] md:hidden col-span-10 bg-black mb-4 mt-2" />
           </Fragment>
         ))}
       </ul>
