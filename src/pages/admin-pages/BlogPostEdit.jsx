@@ -40,7 +40,7 @@ const BlogPostEditPage = () => {
 
       <Icon
         icon="bi:trash3-fill"
-        className="text-text text-[3rem] hover:text-yellowdark cursor-pointer absolute top-[1rem] left-[1rem]"
+        className="text-text text-[3rem] hover:text-yellowdark cursor-pointer self-start md:mb-0 mb-4 md:absolute top-[1rem] left-[1rem]"
         onClick={() => confirmDelete(post.postid)}
       />
 

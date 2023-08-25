@@ -199,9 +199,9 @@ const BlogForm = ({ dbPost }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full grid grid-cols-4 gap-x-16 gap-y-8"
+      className="w-full grid grid-cols-4 md:gap-x-16 gap-y-8"
     >
-      <div className="col-span-2 flex flex-col gap-y-4 justify-between">
+      <div className="md:col-span-2 col-span-4 flex flex-col gap-y-4 justify-between">
         <label className={blogNewFormStyle.label}>
           {text.blogForm.languageLabel}
           <select
@@ -209,7 +209,7 @@ const BlogForm = ({ dbPost }) => {
             value={language}
             name="language"
             onChange={handleChange}
-            className={blogNewFormStyle.input}
+            className={`${blogNewFormStyle.input} h-[2.2rem]`}
           >
             {text.blogForm.language.map((language) => (
               <option key={language.id} value={language.id}>
@@ -290,7 +290,7 @@ const BlogForm = ({ dbPost }) => {
           />
         </label>
       </div>
-      <div className="col-span-2 flex flex-col justify-between gap-y-4">
+      <div className="md:col-span-2 col-span-4 flex flex-col justify-between gap-y-4">
         <label className={blogNewFormStyle.label}>
           {text.blogForm.post}
           <textarea
