@@ -8,10 +8,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { deleteUser, getAllUser } from "../../utils/firebase-admin";
 import { getStoredImage, getUserImage } from "../../utils/firebase";
 import { useQuery } from "react-query";
+import { useSwalMessage } from "../../utils/useSwalMessage";
 
 const UsersAll = () => {
   const [allUser, setAllUser] = useState([]);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [result, setResult] = useState(false);
+  const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
   const [isDescending, setIsDescending] = useState(true);
   const { text, currentUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -51,7 +54,17 @@ const UsersAll = () => {
   if (allUser.length === 0 || isDeleting) return <Loading />;
 
   const confirmDelete = async (user) => {
-    await deleteUser(user, currentUser, text, refetch, setIsDeleting);
+    await deleteUser(
+      user,
+      currentUser,
+      text,
+      refetch,
+      setIsDeleting,
+      setResult,
+      showErrorSwal,
+      showSuccessSwal,
+      showQuestionSwal
+    );
   };
 
   const sendMail = (email, adressee) => {

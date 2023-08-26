@@ -5,10 +5,12 @@ import { BlogForm, Loading } from "../../components";
 import { adminPageStyle } from "../../styles";
 import { Icon } from "@iconify/react";
 import { deleteBlogPost } from "../../utils/firebase-admin";
+import { useSwalMessage } from "../../utils/useSwalMessage";
 
 const BlogPostEditPage = () => {
   const { allBlogPost, setFirebaseData } = useContext(BlogContext);
   const { text, currentUser, userLanguage } = useContext(UserContext);
+  const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState(false);
   const { id } = useParams();
@@ -24,7 +26,10 @@ const BlogPostEditPage = () => {
       setResult,
       currentUser,
       text,
-      userLanguage
+      userLanguage,
+      showErrorSwal,
+      showSuccessSwal,
+      showQuestionSwal
     );
   };
 

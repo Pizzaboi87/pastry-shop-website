@@ -27,8 +27,8 @@ export const useSwalMessage = () => {
     [text.swal.successTitle]
   );
 
-  const showQuestionSwal = useCallback((question) => {
-    Swal.fire({
+  const showQuestionSwal = useCallback(async (question) => {
+    const result = await Swal.fire({
       title: text.swal.questionTitle,
       text: question,
       icon: "warning",
@@ -38,6 +38,8 @@ export const useSwalMessage = () => {
       confirmButtonText: text.swal.confirm,
       cancelButtonText: text.swal.cancel,
     });
+
+    return result;
   }, []);
 
   return { showErrorSwal, showSuccessSwal, showQuestionSwal };

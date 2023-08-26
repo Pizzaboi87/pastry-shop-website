@@ -1,7 +1,4 @@
 import { getAllComments, getAllPost } from "./firebase";
-import { useSwalMessage } from "./useSwalMessage";
-
-const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
 
 const updateData = async (setFirebaseData, userLanguage) => {
   try {
@@ -27,40 +24,45 @@ export const deleteComment = async (
   currentUser,
   navigate,
   setFirebaseComments,
-  setIsDeleting
+  setIsDeleting,
+  showErrorSwal,
+  showSuccessSwal,
+  showQuestionSwal
 ) => {
-  showQuestionSwal(text.blogCommentPage.swal.question).then(async (result) => {
-    setIsDeleting(true);
-    if (result.isConfirmed) {
-      try {
-        const idToken = await currentUser.getIdToken();
+  await showQuestionSwal(text.blogCommentPage.swal.question).then(
+    async (result) => {
+      setIsDeleting(true);
+      if (result.isConfirmed) {
+        try {
+          const idToken = await currentUser.getIdToken();
 
-        const response = await fetch("/api/delete-comment", {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${idToken}`,
-            "comment-id": id,
-          },
-        });
+          const response = await fetch("/api/delete-comment", {
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${idToken}`,
+              "comment-id": id,
+            },
+          });
 
-        if (response.ok) {
-          showSuccessSwal(text.blogCommentPage.swal.successText);
-          await updateComments(setFirebaseComments);
+          if (response.ok) {
+            showSuccessSwal(text.blogCommentPage.swal.successText);
+            await updateComments(setFirebaseComments);
+            setIsDeleting(false);
+            navigate("/admin/blog/comments");
+          } else {
+            setIsDeleting(false);
+            throw new Error("Comment deletion failed.");
+          }
+        } catch (error) {
           setIsDeleting(false);
-          navigate("/admin/blog/comments");
-        } else {
-          setIsDeleting(false);
-          throw new Error("Comment deletion failed.");
+          showErrorSwal(text.blogCommentPage.swal.errorText);
+          console.error("Error deleting comment:", error);
         }
-      } catch (error) {
-        setIsDeleting(false);
-        showErrorSwal(text.blogCommentPage.swal.errorText);
-        console.error("Error deleting comment:", error);
+      } else if (result.isDenied) {
+        return;
       }
-    } else if (result.isDenied) {
-      return;
     }
-  });
+  );
 };
 
 export const deleteBlogPost = async (
@@ -70,9 +72,12 @@ export const deleteBlogPost = async (
   setResult,
   currentUser,
   text,
-  userLanguage
+  userLanguage,
+  showErrorSwal,
+  showSuccessSwal,
+  showQuestionSwal
 ) => {
-  showQuestionSwal(text.blogAll.swal.question).then(async (result) => {
+  await showQuestionSwal(text.blogAll.swal.question).then(async (result) => {
     if (result.isConfirmed) {
       setIsLoading(true);
       try {
@@ -112,42 +117,47 @@ export const deleteUser = async (
   text,
   refetch,
   setIsDeleting,
-  setResult
+  setResult,
+  showErrorSwal,
+  showSuccessSwal,
+  showQuestionSwal
 ) => {
-  showQuestionSwal(text.userDetailsPage.swal.question).then(async (result) => {
-    setIsDeleting(true);
-
-    if (result.isConfirmed) {
+  await showQuestionSwal(text.userDetailsPage.swal.question).then(
+    async (result) => {
       setIsDeleting(true);
-      try {
-        const idToken = await currentUser.getIdToken();
 
-        const response = await fetch("/api/delete-user", {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${idToken}`,
-            "user-id": user.uid,
-          },
-        });
+      if (result.isConfirmed) {
+        setIsDeleting(true);
+        try {
+          const idToken = await currentUser.getIdToken();
 
-        if (response.ok) {
-          showSuccessSwal(text.userDetailsPage.swal.successText);
-          await refetch();
+          const response = await fetch("/api/delete-user", {
+            method: "DELETE",
+            headers: {
+              Authorization: `Bearer ${idToken}`,
+              "user-id": user.uid,
+            },
+          });
+
+          if (response.ok) {
+            showSuccessSwal(text.userDetailsPage.swal.successText);
+            await refetch();
+            setIsDeleting(false);
+            setResult(true);
+          } else {
+            setIsDeleting(false);
+            showErrorSwal(text.userDetailsPage.swal.errorDelete);
+          }
+        } catch (error) {
           setIsDeleting(false);
-          setResult(true);
-        } else {
-          setIsDeleting(false);
-          showErrorSwal(text.userDetailsPage.swal.errorDelete);
+          showErrorSwal(error.message);
+          console.error("Error deleting user:", error);
         }
-      } catch (error) {
-        setIsDeleting(false);
-        showErrorSwal(error.message);
-        console.error("Error deleting user:", error);
+      } else if (result.isDenied) {
+        return;
       }
-    } else if (result.isDenied) {
-      return;
     }
-  });
+  );
 };
 
 export const getAllUser = async (currentUser) => {
@@ -169,7 +179,14 @@ export const getAllUser = async (currentUser) => {
   }
 };
 
-export const uploadPost = async (text, currentUser, blogForm, setIsLoading) => {
+export const uploadPost = async (
+  text,
+  currentUser,
+  blogForm,
+  setIsLoading,
+  showErrorSwal,
+  showSuccessSwal
+) => {
   setIsLoading(true);
   try {
     const idToken = await currentUser.getIdToken();

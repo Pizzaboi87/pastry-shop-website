@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 import { adminPageStyle } from "../../styles";
 import { deleteBlogPost } from "../../utils/firebase-admin";
 import { Loading } from "../../components";
+import { useSwalMessage } from "../../utils/useSwalMessage";
 
 const BlogAll = () => {
   const { allBlogPost, setFirebaseData } = useContext(BlogContext);
   const { text, currentUser, userLanguage } = useContext(UserContext);
+  const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
   const [posts, setPosts] = useState([]);
   const [result, setResult] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +27,10 @@ const BlogAll = () => {
       setResult,
       currentUser,
       text,
-      userLanguage
+      userLanguage,
+      showErrorSwal,
+      showSuccessSwal,
+      showQuestionSwal
     );
   };
 

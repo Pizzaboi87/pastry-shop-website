@@ -6,14 +6,16 @@ import { changeCommentStatus } from "../../utils/firebase";
 import { adminPageStyle, blogNewFormStyle } from "../../styles";
 import { deleteComment } from "../../utils/firebase-admin";
 import { Loading } from "../../components";
+import { useSwalMessage } from "../../utils/useSwalMessage";
 
 const BlogCommentPage = () => {
   const { commentID } = useParams();
   const { text, currentUser } = useContext(UserContext);
-  const { allComments, setAllComments, setFirebaseComments } =
-    useContext(BlogContext);
+  const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
   const [isDeleting, setIsDeleting] = useState(false);
   const navigate = useNavigate();
+  const { allComments, setAllComments, setFirebaseComments } =
+    useContext(BlogContext);
 
   const actualComment = allComments.filter(
     (comment) => comment.id === commentID
@@ -35,7 +37,10 @@ const BlogCommentPage = () => {
       currentUser,
       navigate,
       setFirebaseComments,
-      setIsDeleting
+      setIsDeleting,
+      showErrorSwal,
+      showSuccessSwal,
+      showQuestionSwal
     );
   };
 

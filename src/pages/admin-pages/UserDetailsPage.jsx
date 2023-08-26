@@ -6,9 +6,11 @@ import { Loading, UserAccountForm } from "../../components";
 import { Icon } from "@iconify/react";
 import { deleteUser, getAllUser } from "../../utils/firebase-admin";
 import { useQuery } from "react-query";
+import { useSwalMessage } from "../../utils/useSwalMessage";
 
 const UserDetailsPage = () => {
   const { text, currentUser } = useContext(UserContext);
+  const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
   const [selectedUser, setSelectedUser] = useState(null);
   const [isDeleting, setIsDeleting] = useState(false);
   const [result, setResult] = useState(false);
@@ -35,7 +37,10 @@ const UserDetailsPage = () => {
       text,
       refetch,
       setIsDeleting,
-      setResult
+      setResult,
+      showErrorSwal,
+      showSuccessSwal,
+      showQuestionSwal
     );
   };
 

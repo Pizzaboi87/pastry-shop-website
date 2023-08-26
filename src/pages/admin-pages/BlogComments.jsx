@@ -11,6 +11,7 @@ import {
 } from "../../styles";
 import { Loading } from "../../components";
 import { getAllUser, deleteComment } from "../../utils/firebase-admin";
+import { useSwalMessage } from "../../utils/useSwalMessage";
 import { useQuery } from "react-query";
 import {
   changeCommentStatus,
@@ -22,6 +23,7 @@ const BlogComments = () => {
   const { allComments, setAllComments, setFirebaseComments } =
     useContext(BlogContext);
   const { text, currentUser } = useContext(UserContext);
+  const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
   const [commentsWithUsers, setCommentsWithUsers] = useState([]);
   const [filteredComments, setFilteredComments] = useState([]);
   const [isDescending, setIsDescending] = useState(true);
@@ -78,7 +80,10 @@ const BlogComments = () => {
       currentUser,
       navigate,
       setFirebaseComments,
-      setIsDeleting
+      setIsDeleting,
+      showErrorSwal,
+      showSuccessSwal,
+      showQuestionSwal
     );
   };
 

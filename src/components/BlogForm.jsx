@@ -10,7 +10,7 @@ import { useSwalMessage } from "../utils/useSwalMessage";
 
 const BlogForm = ({ dbPost }) => {
   const { text, currentUser, userLanguage } = useContext(UserContext);
-  const { showErrorSwal } = useSwalMessage();
+  const { showErrorSwal, showSuccessSwal } = useSwalMessage();
   const { setFirebaseData } = useContext(BlogContext);
 
   const navigate = useNavigate();
@@ -177,7 +177,14 @@ const BlogForm = ({ dbPost }) => {
 
     const uploadPromises = Promise.all(
       Object.values(formObjects).map(async (translatedForm) => {
-        await uploadPost(text, currentUser, translatedForm, setIsLoading);
+        await uploadPost(
+          text,
+          currentUser,
+          translatedForm,
+          setIsLoading,
+          showErrorSwal,
+          showSuccessSwal
+        );
       })
     );
 
