@@ -34,24 +34,16 @@ const CourseForm = ({ courses }) => {
     });
   };
 
-  const errorSwal = (error) => {
-    Swal.fire({
-      icon: "error",
-      title: text.courseForm.swal.errorTitle,
-      text: error,
-    });
-  };
-
   const valueCheck = (name, question) => {
     const nameRegex = /^[-\p{L}\s]+$/u;
     const questionRegex = /^[0-9A-Za-z,.\-;:?!()%"@$/€\p{L}\n\s]+$/u;
 
     switch (true) {
       case !nameRegex.test(name):
-        errorSwal(text.courseForm.swal.errorName);
+        errorSwal(text.courseForm.swal.errorName, text);
         return;
       case !questionRegex.test(question):
-        errorSwal(text.courseForm.swal.errorMessage);
+        errorSwal(text.courseForm.swal.errorMessage, text);
         return;
       default:
         return true;
@@ -90,7 +82,7 @@ const CourseForm = ({ courses }) => {
         setForm(defaultForm);
       } catch (error) {
         console.log(error.text);
-        errorSwal(text.courseForm.swal.errorNotSent);
+        errorSwal(text.courseForm.swal.errorNotSent, text);
         setLoading(false);
       }
     }

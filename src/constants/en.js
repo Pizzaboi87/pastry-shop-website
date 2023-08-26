@@ -542,7 +542,6 @@ const en_text = {
     commentPlaceholder: "What do you think about it?",
     button: "Submit",
     swal: {
-      errorTitle: "Something went wrong!",
       successTitle: "Your comment has been recorded!",
       successMessage: "Now it will be reviewed by our administrator.",
       errorName: "Please enter a valid name.",
@@ -567,7 +566,6 @@ const en_text = {
     titleDisable:
       "You have already uploaded a picture, so the title can no longer be edited.",
     swal: {
-      errorTitle: "Something went wrong!",
       errorMessage: "The post has not been saved.",
       errorType: "Please select a valid image file.",
       errorName: "Please add a valid name.",
@@ -597,6 +595,9 @@ const en_text = {
       },
     ],
   },
+  swal: {
+    errorTitle: "Something went wrong!",
+  },
   signUpForm: {
     title: "Sign Up",
     userName: "Username",
@@ -607,7 +608,6 @@ const en_text = {
     swal: {
       successTitle: "Welcome!",
       successText: "Your registration was successful.",
-      errorTitle: "Something went wrong!",
       errorPassword:
         "Please provide a valid password: Minimum 8 characters - letters, numbers and/or special characters: ,.-;:?!()%”@$/€",
       errorPasswordMatch: "Passwords do not match.",
@@ -619,7 +619,6 @@ const en_text = {
   },
   adminLogin: {
     swal: {
-      errorTitle: "Something went wrong!",
       errorUser: "Please write a valid UserName.",
       errorPassword: "Password format is not correct.",
       errorWrongCredentials: "UserName or password is not correct.",
@@ -633,7 +632,6 @@ const en_text = {
     forgot: "Forgot your password?",
     google: "Sign In with Google",
     swal: {
-      errorTitle: "Something went wrong!",
       errorPassword: "Incorrect password.",
       errorEmail: "Please write a valid email address.",
       errorUser: "User not found.",
@@ -656,7 +654,6 @@ const en_text = {
       successTitle: "Success!",
       successTextStart: "Thank you for your interest in our",
       successTextEnd: "course. We will contact you soon!",
-      errorTitle: "Something went wrong!",
       errorName: "Please enter a valid name.",
       errorMessage: "Please enter a valid message.",
       errorNotSent: "Your message hasn't been sent, please try again later.",
@@ -677,7 +674,6 @@ const en_text = {
       cancel: "Cancel",
       successTitle: "Success!",
       successText: "The comment has been deleted.",
-      errorTitle: "Something went wrong!",
       errorText: "The comment has not been deleted.",
     },
   },
@@ -695,7 +691,6 @@ const en_text = {
     swal: {
       successTitle: "Success!",
       successMessage: "The account has been updated.",
-      errorTitle: "Something went wrong!",
       errorNotUpdated: "Sorry, we couldn't update the account!",
       errorName: "Please add a valid name.",
       errorDisplayName: "Please add a valid username.",
@@ -754,7 +749,6 @@ const en_text = {
       cancelButton: "Cancel",
       successTitle: "Success!",
       successText: "Your account has been deleted!",
-      errorTitle: "Something went wrong!",
       errorText: "Your account has not been deleted!",
       errorPassword: "Please provide your password.",
       errorAuth: "Your password is not correct.",
@@ -770,7 +764,6 @@ const en_text = {
     swal: {
       successTitle: "Success!",
       successText: "Your password has been changed.",
-      errorTitle: "Something went wrong!",
       errorPassword: "Please provide a valid password.",
       errorMatch: "New passwords do not match.",
       errorAuth: "Your current password is not correct.",
@@ -781,7 +774,6 @@ const en_text = {
     swal: {
       successTitle: "Success!",
       successText: "The user has been deleted.",
-      errorTitle: "Something went wrong!",
       errorDelete: "The user has not been deleted.",
       question: "Do you want to delete the user?",
       confirm: "Delete",

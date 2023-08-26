@@ -544,7 +544,6 @@ const es_text = {
     commentPlaceholder: "¿Qué opinas al respecto?",
     button: "Enviar",
     swal: {
-      errorTitle: "¡Algo salió mal!",
       successTitle: "Tu comentario ha sido registrado.",
       successMessage: "Ahora será revisado por nuestro administrador.",
       errorName: "Por favor, ingresa un nombre válido.",
@@ -570,7 +569,6 @@ const es_text = {
     titleDisable:
       "Ya has subido una imagen, por lo que el título ya no se puede editar.",
     swal: {
-      errorTitle: "¡Algo salió mal!",
       errorMessage: "El artículo no ha sido guardado.",
       errorType: "¡Por favor carga un archivo de imagen válido!",
       errorName: "Por favor, añade un nombre válido.",
@@ -600,6 +598,9 @@ const es_text = {
       },
     ],
   },
+  swal: {
+    errorTitle: "¡Algo salió mal!",
+  },
   signUpForm: {
     title: "Usuario no abonado",
     userName: "Nombre de Usuario",
@@ -610,7 +611,6 @@ const es_text = {
     swal: {
       successTitle: "¡Bienvenid@!",
       successText: "Tu registro ha sido exitoso.",
-      errorTitle: "¡Algo salió mal!",
       errorPassword:
         "Por favor, proporciona una contraseña válida: Mínimo 8 caracteres - letras, números y/o caracteres especiales: ,.-;:?!()%”@$/€",
       errorPasswordMatch: "Las contraseñas no coinciden.",
@@ -624,7 +624,6 @@ const es_text = {
   },
   adminLogin: {
     swal: {
-      errorTitle: "¡Algo salió mal!",
       errorUser: "Por favor, escribe un Nombre de Usuario válido.",
       errorPassword: "El formato de la contraseña no es correcto.",
       errorWrongCredentials:
@@ -639,7 +638,6 @@ const es_text = {
     forgot: "¿Olvidaste tu contraseña?",
     google: "Iniciar Sesión con Google",
     swal: {
-      errorTitle: "¡Algo salió mal!",
       errorPassword: "Contraseña incorrecta.",
       errorEmail: "Por favor, escribe una email válida.",
       errorUser: "Usuario no encontrado.",
@@ -662,7 +660,6 @@ const es_text = {
       successTitle: "¡Éxito!",
       successTextStart: "Gracias por tu interés en nuestro curso.",
       successTextEnd: "¡Nos pondremos en contacto contigo pronto!",
-      errorTitle: "¡Algo salió mal!",
       errorName: "Por favor, ingresa un nombre válido.",
       errorMessage: "Por favor, ingresa un mensaje válido.",
       errorNotSent:
@@ -684,7 +681,6 @@ const es_text = {
       cancel: "Cancelar",
       successTitle: "¡Éxito!",
       successText: "El comentario ha sido eliminado.",
-      errorTitle: "¡Algo salió mal!",
       errorText: "El comentario no ha sido eliminado.",
     },
   },
@@ -702,7 +698,6 @@ const es_text = {
     swal: {
       successTitle: "¡Éxito!",
       successMessage: "La cuenta ha sido actualizada.",
-      errorTitle: "¡Algo salió mal!",
       errorNotUpdated: "Lo sentimos, no pudimos actualizar los datos.",
       errorName: "Por favor, ingresa un nombre válido.",
       errorDisplayName: "Por favor, ingresa un nombre de usuario válido.",
@@ -761,7 +756,6 @@ const es_text = {
       cancelButton: "Cancelar",
       successTitle: "¡Éxito!",
       successText: "¡Tu cuenta ha sido eliminada!",
-      errorTitle: "¡Algo salió mal!",
       errorText: "¡Tu cuenta no ha sido eliminada!",
       errorPassword: "Por favor, proporciona tu contraseña.",
       errorAuth: "Tu contraseña no es correcta.",
@@ -778,7 +772,6 @@ const es_text = {
     swal: {
       successTitle: "¡Éxito!",
       successText: "Tu contraseña ha sido cambiada.",
-      errorTitle: "¡Algo salió mal!",
       errorPassword: "Por favor, proporciona una contraseña válida.",
       errorMatch: "Las nuevas contraseñas no coinciden.",
       errorAuth: "Tu contraseña actual no es correcta.",
@@ -790,7 +783,6 @@ const es_text = {
     swal: {
       successTitle: "¡Éxito!",
       successText: "El usuario ha sido eliminado.",
-      errorTitle: "¡Algo salió mal!",
       errorDelete: "El usuario no ha sido eliminado.",
       question: "¿Desea eliminar al usuario?",
       confirm: "Eliminar",

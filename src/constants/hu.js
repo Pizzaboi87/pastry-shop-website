@@ -542,7 +542,6 @@ const hu_text = {
     commentPlaceholder: "Mit gondolsz erről?",
     button: "Küldés",
     swal: {
-      errorTitle: "Valami hiba történt!",
       successTitle: "A hozzászólásod rögzítésre került!",
       successMessage:
         "Az adminisztrátorunk hamarosan megvizsgálja a bejegyzést.",
@@ -567,7 +566,6 @@ const hu_text = {
     imageDisable: "Amíg a cím érvénytelen, a képfeltöltés inaktív.",
     titleDisable: "Már feltöltöttél egy képet, így a cím már nem módosítható.",
     swal: {
-      errorTitle: "Valami hiba történt!",
       errorMessage: "A bejegyzés nem lett mentve.",
       errorType: "Kérjük, válassz egy érvényes képfájlt!",
       errorName: "Kérjük, adj meg érvényes nevet.",
@@ -597,6 +595,9 @@ const hu_text = {
       },
     ],
   },
+  swal: {
+    errorTitle: "Valami hiba történt!",
+  },
   signUpForm: {
     title: "Regisztráció",
     userName: "Felhasználónév",
@@ -607,7 +608,6 @@ const hu_text = {
     swal: {
       successTitle: "Isten hozott!",
       successText: "Sikeresen regisztráltál az oldalunkra.",
-      errorTitle: "Valami hiba történt!",
       errorPassword:
         "Kérjük, adj meg érvényes jelszót: Minimum 8 karakter - betűk, számok és/vagy speciális karakterek: ,.-;:?!()%”@$/€",
       errorPasswordMatch: "A jelszavak nem egyeznek.",
@@ -620,7 +620,6 @@ const hu_text = {
   },
   adminLogin: {
     swal: {
-      errorTitle: "Valami hiba történt!",
       errorUser: "Kérjük, adj meg érvényes Felhasználónevet.",
       errorPassword: "A jelszó formátuma nem megfelelő.",
       errorWrongCredentials: "A Felhasználónév vagy a jelszó helytelen.",
@@ -634,7 +633,6 @@ const hu_text = {
     forgot: "Elfelejtetted a jelszavad?",
     google: "Bejelentkezés a Google-fiókkal",
     swal: {
-      errorTitle: "Valami hiba történt!",
       errorPassword: "Helytelen jelszó.",
       errorEmail: "Kérjük, adj meg érvényes e-mail címet.",
       errorUser: "Felhasználó nem található.",
@@ -658,7 +656,6 @@ const hu_text = {
       successTextStart: "Köszönjük érdeklődésedet a",
       successTextEnd:
         "tanfolyamunk iránt. Hamarosan felvesszük veled a kapcsolatot!",
-      errorTitle: "Valami hiba történt!",
       errorName: "Kérjük, adj meg érvényes nevet.",
       errorMessage: "Kérjük, adj meg érvényes üzenetet.",
       errorNotSent:
@@ -680,7 +677,6 @@ const hu_text = {
       cancel: "Mégse",
       successTitle: "Siker!",
       successText: "A hozzászólás törlésre került.",
-      errorTitle: "Valami hiba történt!",
       errorText: "A hozzászólást nem sikerült törölni.",
     },
   },
@@ -698,7 +694,6 @@ const hu_text = {
     swal: {
       successTitle: "Siker!",
       successMessage: "A fiók frissítésre került.",
-      errorTitle: "Valami hiba történt!",
       errorNotUpdated: "Sajnáljuk, nem sikerült frissíteni az adatokat!",
       errorName: "Kérjük, adj meg érvényes nevet.",
       errorDisplayName: "Kérjük, adj meg érvényes felhasználónevet.",
@@ -757,7 +752,6 @@ const hu_text = {
       cancelButton: "Mégse",
       successTitle: "Siker!",
       successText: "A fiókodat töröltük!",
-      errorTitle: "Valami hiba történt!",
       errorText: "A fiókodat nem sikerült törölni!",
       errorPassword: "Kérjük, add meg a jelszavad.",
       errorAuth: "A jelszavad nem helyes.",
@@ -773,7 +767,6 @@ const hu_text = {
     swal: {
       successTitle: "Siker!",
       successText: "A jelszavad sikeresen megváltozott.",
-      errorTitle: "Valami hiba történt!",
       errorPassword: "Kérjük, adj meg érvényes jelszót.",
       errorMatch: "Az új jelszavak nem egyeznek.",
       errorAuth: "A jelenlegi jelszavad nem helyes.",
@@ -784,7 +777,6 @@ const hu_text = {
     swal: {
       successTitle: "Siker!",
       successText: "A felhasználót töröltük.",
-      errorTitle: "Valami hiba történt!",
       errorDelete: "A felhasználót nem sikerült törölni.",
       question: "Biztosan törölni szeretnéd a felhasználót?",
       confirm: "Törlés",

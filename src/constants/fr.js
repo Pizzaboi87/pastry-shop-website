@@ -551,7 +551,6 @@ const fr_text = {
     commentPlaceholder: "Qu'en pensez-vous?",
     button: "Soumettre",
     swal: {
-      errorTitle: "Quelque chose s'est mal passé!",
       successTitle: "Votre commentaire a été enregistré!",
       successMessage: "Il sera désormais examiné par notre administrateur.",
       errorName: "Veuillez entrer un nom valide.",
@@ -577,7 +576,6 @@ const fr_text = {
     titleDisable:
       "Vous avez déjà téléchargé une image, donc le titre ne peut plus être modifié.",
     swal: {
-      errorTitle: "Quelque chose s'est mal passé!",
       errorMessage: "L'article n'a pas été enregistré.",
       errorType: "Veuillez sélectionner un type d'article valide.",
       errorName: "Veuillez ajouter un nom valide.",
@@ -607,6 +605,9 @@ const fr_text = {
       },
     ],
   },
+  swal: {
+    errorTitle: "Quelque chose s'est mal passé!",
+  },
   signUpForm: {
     title: "Inscription",
     userName: "Nom d'Utilisateur",
@@ -617,7 +618,6 @@ const fr_text = {
     swal: {
       successTitle: "Bienvenue!",
       successText: "Votre inscription a été effectuée avec succès.",
-      errorTitle: "Quelque chose s'est mal passé!",
       errorPassword:
         "Veuillez fournir un mot de passe valide : Minimum 8 caractères - lettres, chiffres et/ou caractères spéciaux : ,.-;:?!()%”@$/€",
       errorPasswordMatch: "Les mots de passe ne correspondent pas.",
@@ -631,7 +631,6 @@ const fr_text = {
   },
   adminLogin: {
     swal: {
-      errorTitle: "Quelque chose s'est mal passé!",
       errorUser: "Veuillez entrer un nom d'utilisateur valide.",
       errorPassword: "Le format du mot de passe n'est pas correct.",
       errorWrongCredentials: "Nom d'utilisateur ou mot de passe incorrect.",
@@ -645,7 +644,6 @@ const fr_text = {
     forgot: "Mot de passe oublié?",
     google: "Se Connecter avec Google",
     swal: {
-      errorTitle: "Quelque chose s'est mal passé!",
       errorPassword: "Mot de passe incorrect.",
       errorEmail: "Veuillez fournir une adresse email valide.",
       errorUser: "Utilisateur non trouvé.",
@@ -668,7 +666,6 @@ const fr_text = {
       successTitle: "Succès!",
       successTextStart: "Merci pour votre intérêt pour notre",
       successTextEnd: "cours. Nous vous contacterons bientôt!",
-      errorTitle: "Quelque chose s'est mal passé!",
       errorName: "Veuillez entrer un nom valide.",
       errorMessage: "Veuillez entrer un message valide.",
       errorNotSent:
@@ -690,7 +687,6 @@ const fr_text = {
       cancel: "Annuler",
       successTitle: "Succès !",
       successText: "Le commentaire a été supprimé.",
-      errorTitle: "Quelque chose a mal tourné !",
       errorText: "Le commentaire n'a pas été supprimé.",
     },
   },
@@ -708,7 +704,6 @@ const fr_text = {
     swal: {
       successTitle: "Succès!",
       successMessage: "Le compte a été mis à jour.",
-      errorTitle: "Quelque chose s'est mal passé!",
       errorNotUpdated: "Désolé, nous n'avons pas pu mettre à jour les données!",
       errorName: "Veuillez ajouter un nom valide.",
       errorDisplayName: "Veuillez ajouter un nom d'utilisateur valide.",
@@ -767,7 +762,6 @@ const fr_text = {
       cancelButton: "Annuler",
       successTitle: "Succès !",
       successText: "Votre compte a été supprimé !",
-      errorTitle: "Quelque chose s'est mal passé !",
       errorText: "Votre compte n'a pas été supprimé !",
       errorPassword: "Veuillez fournir votre mot de passe.",
       errorAuth: "Votre mot de passe n'est pas correct.",
@@ -783,7 +777,6 @@ const fr_text = {
     swal: {
       successTitle: "Succès !",
       successText: "Votre mot de passe a été modifié.",
-      errorTitle: "Quelque chose s'est mal passé !",
       errorPassword: "Veuillez fournir un mot de passe valide.",
       errorMatch: "Les nouveaux mots de passe ne correspondent pas.",
       errorAuth: "Votre mot de passe actuel n'est pas correct.",
@@ -794,7 +787,6 @@ const fr_text = {
     swal: {
       successTitle: "Succès !",
       successText: "L'utilisateur a été supprimé.",
-      errorTitle: "Quelque chose s'est mal passé !",
       errorDelete: "L'utilisateur n'a pas été supprimé.",
       question: "Voulez-vous supprimer l'utilisateur ?",
       confirm: "Supprimer",

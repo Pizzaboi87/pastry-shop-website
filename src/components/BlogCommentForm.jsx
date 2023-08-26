@@ -1,7 +1,7 @@
-import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { UserContext } from "../context";
 import { storeComment } from "../utils/firebase";
+import { errorSwal } from "../utils/swalMessages";
 import { v4 as uuidv4 } from "uuid";
 import {
   Theme_Button,
@@ -22,14 +22,6 @@ const BlogCommentForm = ({ postID }) => {
     date: Date.now(),
     id: uuidv4(),
     isPublished: false,
-  };
-
-  const errorSwal = (error) => {
-    Swal.fire({
-      icon: "error",
-      title: text.blogCommentForm.swal.errorTitle,
-      text: error,
-    });
   };
 
   const [commentForm, setCommentForm] = useState(defaultForm);

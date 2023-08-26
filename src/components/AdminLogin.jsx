@@ -1,5 +1,5 @@
-import Swal from "sweetalert2";
 import TransitionParent from "./TransitionParent";
+import { errorSwal } from "../utils/swalMessages";
 import { useContext, useState } from "react";
 import { UserContext } from "../context";
 import {
@@ -20,24 +20,16 @@ const AdminLogin = () => {
   const [form, setForm] = useState(defaultForm);
   const { user, password } = form;
 
-  const errorSwal = (error) => {
-    Swal.fire({
-      icon: "error",
-      title: text.adminLogin.swal.errorTitle,
-      text: error,
-    });
-  };
-
   const valueCheck = (user, password) => {
     const nameRegex = /^[-\p{L}\s]+$/u;
     const passwordRegex = /^[0-9,.\-_;:?!()%"@$/€\p{L}\s]+$/u;
 
     switch (true) {
       case !nameRegex.test(user):
-        errorSwal(text.adminLogin.swal.errorUser);
+        errorSwal(text.adminLogin.swal.errorUser, text);
         return;
       case !passwordRegex.test(password):
-        errorSwal(text.adminLogin.swal.errorPassword);
+        errorSwal(text.adminLogin.swal.errorPassword, text);
         return;
       default:
         return true;
@@ -56,7 +48,7 @@ const AdminLogin = () => {
       user !== import.meta.env.VITE_ADMIN_NAME ||
       password !== import.meta.env.VITE_ADMIN_PASSWORD
     ) {
-      errorSwal(text.adminLogin.swal.errorWrongCredentials);
+      errorSwal(text.adminLogin.swal.errorWrongCredentials, text);
     } else {
       setIsAdmin(true);
     }

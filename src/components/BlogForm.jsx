@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { BlogContext, UserContext } from "../context";
@@ -57,30 +56,22 @@ const BlogForm = ({ dbPost }) => {
     imageFile,
   } = blogForm;
 
-  const errorSwal = (error) => {
-    Swal.fire({
-      icon: "error",
-      title: text.blogForm.swal.errorTitle,
-      text: error,
-    });
-  };
-
   const valueCheck = (author, title, blurb, post, tags) => {
     switch (true) {
       case !normalRegex.test(author):
-        errorSwal(text.blogForm.swal.errorName);
+        errorSwal(text.blogForm.swal.errorName, text);
         return;
       case !textRegex.test(title):
-        errorSwal(text.blogForm.swal.errorPostTitle);
+        errorSwal(text.blogForm.swal.errorPostTitle, text);
         return;
       case !textRegex.test(blurb):
-        errorSwal(text.blogForm.swal.errorBlurb);
+        errorSwal(text.blogForm.swal.errorBlurb, text);
         return;
       case !textRegex.test(post):
-        errorSwal(text.blogForm.swal.errorPostText);
+        errorSwal(text.blogForm.swal.errorPostText, text);
         return;
       case !normalRegex.test(tags.toString()):
-        errorSwal(text.blogForm.swal.errorTags);
+        errorSwal(text.blogForm.swal.errorTags, text);
         return;
       default:
         return true;
@@ -149,7 +140,7 @@ const BlogForm = ({ dbPost }) => {
 
       const allowedExtensions = ["jpg", "jpeg", "png", "webp", "bmp", "svg"];
       if (!allowedExtensions.some((ext) => fileExtension.includes(ext))) {
-        errorSwal(text.blogForm.swal.errorType);
+        errorSwal(text.blogForm.swal.errorType, text);
         return;
       }
     }
