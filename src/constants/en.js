@@ -528,9 +528,6 @@ const en_text = {
     title: "All Available Blog Posts",
     swal: {
       question: "Do you want to delete the post?",
-      confirm: "Delete",
-      cancel: "Cancel",
-      successTitle: "Success!",
       successText: "The post has been deleted.",
       error: "Something went wrong!",
       errorMsg: "The post has not been deleted.",
@@ -542,8 +539,8 @@ const en_text = {
     commentPlaceholder: "What do you think about it?",
     button: "Submit",
     swal: {
-      successTitle: "Your comment has been recorded!",
-      successMessage: "Now it will be reviewed by our administrator.",
+      successMessage:
+        "Your comment has been recorded, now it will be reviewed by our administrator.",
       errorName: "Please enter a valid name.",
       errorCommentTitle: "Please enter a valid title.",
       errorComment: "Please enter a valid comment.",
@@ -573,7 +570,6 @@ const en_text = {
       errorBlurb: "Please add a valid blurb text.",
       errorPostText: "Please add a valid post text.",
       errorTags: "Please add valid hashtags.",
-      successTitle: "Success!",
       successMessage: "The post has been uploaded.",
     },
     language: [
@@ -597,6 +593,10 @@ const en_text = {
   },
   swal: {
     errorTitle: "Something went wrong!",
+    successTitle: "Success!",
+    questionTitle: "Attention!",
+    confirm: "Confirm",
+    cancel: "Cancel",
   },
   signUpForm: {
     title: "Sign Up",
@@ -606,7 +606,6 @@ const en_text = {
     confirmPassword: "Repeat Password",
     button: "Sign Up",
     swal: {
-      successTitle: "Welcome!",
       successText: "Your registration was successful.",
       errorPassword:
         "Please provide a valid password: Minimum 8 characters - letters, numbers and/or special characters: ,.-;:?!()%”@$/€",
@@ -651,7 +650,6 @@ const en_text = {
     sending: "Sending...",
     send: "Send",
     swal: {
-      successTitle: "Success!",
       successTextStart: "Thank you for your interest in our",
       successTextEnd: "course. We will contact you soon!",
       errorName: "Please enter a valid name.",
@@ -670,9 +668,6 @@ const en_text = {
     relatedID: "Related-Post",
     swal: {
       question: "Do you want to delete the comment?",
-      confirm: "Delete",
-      cancel: "Cancel",
-      successTitle: "Success!",
       successText: "The comment has been deleted.",
       errorText: "The comment has not been deleted.",
     },
@@ -689,7 +684,6 @@ const en_text = {
     button: "Save",
     savingButton: "Saving...",
     swal: {
-      successTitle: "Success!",
       successMessage: "The account has been updated.",
       errorNotUpdated: "Sorry, we couldn't update the account!",
       errorName: "Please add a valid name.",
@@ -743,11 +737,7 @@ const en_text = {
     button: "Delete Account",
     loading: "Deleting...",
     swal: {
-      title: "Attention!",
       text: "Are you sure you want to delete your account?",
-      confirmButton: "Delete",
-      cancelButton: "Cancel",
-      successTitle: "Success!",
       successText: "Your account has been deleted!",
       errorText: "Your account has not been deleted!",
       errorPassword: "Please provide your password.",
@@ -762,7 +752,6 @@ const en_text = {
     button: "Update",
     loading: "Updating...",
     swal: {
-      successTitle: "Success!",
       successText: "Your password has been changed.",
       errorPassword: "Please provide a valid password.",
       errorMatch: "New passwords do not match.",
@@ -772,12 +761,9 @@ const en_text = {
   },
   userDetailsPage: {
     swal: {
-      successTitle: "Success!",
       successText: "The user has been deleted.",
       errorDelete: "The user has not been deleted.",
       question: "Do you want to delete the user?",
-      confirm: "Delete",
-      cancel: "Cancel",
     },
   },
   tooltip: {

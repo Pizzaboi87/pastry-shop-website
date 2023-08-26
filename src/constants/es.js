@@ -530,9 +530,6 @@ const es_text = {
     title: "Todos los Artículos de Blog Disponibles",
     swal: {
       question: "¿Deseas eliminar el artículo?",
-      confirm: "Eliminar",
-      cancel: "Cancelar",
-      successTitle: "¡Éxito!",
       successText: "El artículo ha sido eliminado.",
       error: "¡Algo salió mal!",
       errorMsg: "El artículo no ha sido eliminado.",
@@ -544,8 +541,8 @@ const es_text = {
     commentPlaceholder: "¿Qué opinas al respecto?",
     button: "Enviar",
     swal: {
-      successTitle: "Tu comentario ha sido registrado.",
-      successMessage: "Ahora será revisado por nuestro administrador.",
+      successMessage:
+        "Tu comentario ha sido registrado, ahora será revisado por nuestro administrador.",
       errorName: "Por favor, ingresa un nombre válido.",
       errorCommentTitle: "Por favor, ingresa un título válido.",
       errorComment: "Por favor, ingresa un comentario válido.",
@@ -576,7 +573,6 @@ const es_text = {
       errorBlurb: "Por favor, añade un texto de descripción válido.",
       errorPostText: "Por favor, añade un texto de publicación válido.",
       errorTags: "Por favor, añade hashtags válidos.",
-      successTitle: "¡Éxito!",
       successMessage: "El artículo ha sido subido.",
     },
     language: [
@@ -600,6 +596,10 @@ const es_text = {
   },
   swal: {
     errorTitle: "¡Algo salió mal!",
+    successTitle: "¡Éxito!",
+    questionTitle: "¡Atención!",
+    confirm: "Confirmar",
+    cancel: "Cancelar",
   },
   signUpForm: {
     title: "Usuario no abonado",
@@ -609,7 +609,6 @@ const es_text = {
     confirmPassword: "Repetir Contraseña",
     button: "Registrarse",
     swal: {
-      successTitle: "¡Bienvenid@!",
       successText: "Tu registro ha sido exitoso.",
       errorPassword:
         "Por favor, proporciona una contraseña válida: Mínimo 8 caracteres - letras, números y/o caracteres especiales: ,.-;:?!()%”@$/€",
@@ -657,7 +656,6 @@ const es_text = {
     sending: "Enviando...",
     send: "Enviar",
     swal: {
-      successTitle: "¡Éxito!",
       successTextStart: "Gracias por tu interés en nuestro curso.",
       successTextEnd: "¡Nos pondremos en contacto contigo pronto!",
       errorName: "Por favor, ingresa un nombre válido.",
@@ -677,9 +675,6 @@ const es_text = {
     relatedID: "Post Relacionado",
     swal: {
       question: "¿Deseas eliminar el comentario?",
-      confirm: "Eliminar",
-      cancel: "Cancelar",
-      successTitle: "¡Éxito!",
       successText: "El comentario ha sido eliminado.",
       errorText: "El comentario no ha sido eliminado.",
     },
@@ -696,7 +691,6 @@ const es_text = {
     button: "Guardar",
     savingButton: "Guardando...",
     swal: {
-      successTitle: "¡Éxito!",
       successMessage: "La cuenta ha sido actualizada.",
       errorNotUpdated: "Lo sentimos, no pudimos actualizar los datos.",
       errorName: "Por favor, ingresa un nombre válido.",
@@ -750,11 +744,7 @@ const es_text = {
     button: "Eliminar cuenta",
     loading: "Eliminando...",
     swal: {
-      title: "¡Atención!",
       text: "¿Estás seguro de que deseas eliminar tu cuenta?",
-      confirmButton: "Eliminar",
-      cancelButton: "Cancelar",
-      successTitle: "¡Éxito!",
       successText: "¡Tu cuenta ha sido eliminada!",
       errorText: "¡Tu cuenta no ha sido eliminada!",
       errorPassword: "Por favor, proporciona tu contraseña.",
@@ -770,7 +760,6 @@ const es_text = {
     button: "Actualizar",
     loading: "Actualizando...",
     swal: {
-      successTitle: "¡Éxito!",
       successText: "Tu contraseña ha sido cambiada.",
       errorPassword: "Por favor, proporciona una contraseña válida.",
       errorMatch: "Las nuevas contraseñas no coinciden.",
@@ -781,12 +770,9 @@ const es_text = {
   },
   userDetailsPage: {
     swal: {
-      successTitle: "¡Éxito!",
       successText: "El usuario ha sido eliminado.",
       errorDelete: "El usuario no ha sido eliminado.",
       question: "¿Desea eliminar al usuario?",
-      confirm: "Eliminar",
-      cancel: "Cancelar",
     },
   },
   tooltip: {

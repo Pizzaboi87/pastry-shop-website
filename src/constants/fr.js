@@ -537,9 +537,6 @@ const fr_text = {
     title: "Tous les Articles de Blog Disponibles",
     swal: {
       question: "Voulez-vous supprimer l'article?",
-      confirm: "Supprimer",
-      cancel: "Annuler",
-      successTitle: "Succès!",
       successText: "L'article a été supprimé avec succès!",
       error: "Quelque chose s'est mal passé!",
       errorMsg: "L'article n'a pas été supprimé.",
@@ -551,8 +548,8 @@ const fr_text = {
     commentPlaceholder: "Qu'en pensez-vous?",
     button: "Soumettre",
     swal: {
-      successTitle: "Votre commentaire a été enregistré!",
-      successMessage: "Il sera désormais examiné par notre administrateur.",
+      successMessage:
+        "Votre commentaire a été enregistré, il sera désormais examiné par notre administrateur.",
       errorName: "Veuillez entrer un nom valide.",
       errorCommentTitle: "Veuillez entrer un titre valide.",
       errorComment: "Veuillez entrer un commentaire valide.",
@@ -583,7 +580,6 @@ const fr_text = {
       errorBlurb: "Veuillez ajouter un texte de description valide.",
       errorPostText: "Veuillez ajouter un texte de publication valide.",
       errorTags: "Veuillez ajouter des hashtags valides.",
-      successTitle: "Succès!",
       successMessage: "L'article a été publié.",
     },
     language: [
@@ -607,6 +603,10 @@ const fr_text = {
   },
   swal: {
     errorTitle: "Quelque chose s'est mal passé!",
+    successTitle: "Succès!",
+    questionTitle: "Attention!",
+    confirm: "Confirmer",
+    cancel: "Annuler",
   },
   signUpForm: {
     title: "Inscription",
@@ -616,7 +616,6 @@ const fr_text = {
     confirmPassword: "Répéter le Mot de Passe",
     button: "S'Inscrire",
     swal: {
-      successTitle: "Bienvenue!",
       successText: "Votre inscription a été effectuée avec succès.",
       errorPassword:
         "Veuillez fournir un mot de passe valide : Minimum 8 caractères - lettres, chiffres et/ou caractères spéciaux : ,.-;:?!()%”@$/€",
@@ -663,7 +662,6 @@ const fr_text = {
     sending: "Envoi en cours...",
     send: "Envoyer",
     swal: {
-      successTitle: "Succès!",
       successTextStart: "Merci pour votre intérêt pour notre",
       successTextEnd: "cours. Nous vous contacterons bientôt!",
       errorName: "Veuillez entrer un nom valide.",
@@ -683,9 +681,6 @@ const fr_text = {
     relatedID: "Article Lié",
     swal: {
       question: "Voulez-vous supprimer le commentaire?",
-      confirm: "Supprimer",
-      cancel: "Annuler",
-      successTitle: "Succès !",
       successText: "Le commentaire a été supprimé.",
       errorText: "Le commentaire n'a pas été supprimé.",
     },
@@ -702,7 +697,6 @@ const fr_text = {
     button: "Enregistrer",
     savingButton: "Enregistrement en cours...",
     swal: {
-      successTitle: "Succès!",
       successMessage: "Le compte a été mis à jour.",
       errorNotUpdated: "Désolé, nous n'avons pas pu mettre à jour les données!",
       errorName: "Veuillez ajouter un nom valide.",
@@ -756,11 +750,7 @@ const fr_text = {
     button: "Supprimer le compte",
     loading: "Suppression en cours...",
     swal: {
-      title: "Attention !",
       text: "Êtes-vous sûr de vouloir supprimer votre compte ?",
-      confirmButton: "Supprimer",
-      cancelButton: "Annuler",
-      successTitle: "Succès !",
       successText: "Votre compte a été supprimé !",
       errorText: "Votre compte n'a pas été supprimé !",
       errorPassword: "Veuillez fournir votre mot de passe.",
@@ -775,7 +765,6 @@ const fr_text = {
     button: "Mettre à jour",
     loading: "Mise à jour en cours...",
     swal: {
-      successTitle: "Succès !",
       successText: "Votre mot de passe a été modifié.",
       errorPassword: "Veuillez fournir un mot de passe valide.",
       errorMatch: "Les nouveaux mots de passe ne correspondent pas.",
@@ -785,12 +774,9 @@ const fr_text = {
   },
   userDetailsPage: {
     swal: {
-      successTitle: "Succès !",
       successText: "L'utilisateur a été supprimé.",
       errorDelete: "L'utilisateur n'a pas été supprimé.",
       question: "Voulez-vous supprimer l'utilisateur ?",
-      confirm: "Supprimer",
-      cancel: "Annuler",
     },
   },
   tooltip: {

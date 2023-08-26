@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import { UserContext } from "../context";
 import { Theme_Button, Theme_Input, userPageStyle } from "../styles";
@@ -8,7 +7,7 @@ import { useSwalMessage } from "../utils/useSwalMessage";
 
 const UserDeleteAccountForm = () => {
   const { text, currentUser } = useContext(UserContext);
-  const { showErrorSwal } = useSwalMessage();
+  const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -45,16 +44,7 @@ const UserDeleteAccountForm = () => {
       return;
     } else {
       try {
-        const result = await Swal.fire({
-          title: text.userDelete.swal.title,
-          text: text.userDelete.swal.text,
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#d33",
-          cancelButtonColor: "#3085d6",
-          confirmButtonText: text.userDelete.swal.confirmButton,
-          cancelButtonText: text.userDelete.swal.cancelButton,
-        });
+        const result = await showQuestionSwal(text.userDelete.swal.text);
 
         if (result.isConfirmed) {
           await reauthenticateUser(currentUser, password);
@@ -62,11 +52,7 @@ const UserDeleteAccountForm = () => {
           try {
             await deleteMyself(currentUser);
             navigate("/");
-            Swal.fire({
-              title: text.userDelete.swal.successTitle,
-              text: text.userDelete.swal.successText,
-              icon: "success",
-            }).then(() => {
+            showSuccessSwal(text.userDelete.swal.successText).then(() => {
               setForm(defaultForm);
               setIsLoading(false);
             });

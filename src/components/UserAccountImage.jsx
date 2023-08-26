@@ -1,8 +1,8 @@
-import Swal from "sweetalert2";
 import { useRef, useContext } from "react";
 import { UserContext } from "../context";
 import { getUserImage, uploadUserImage } from "../utils/firebase";
 import { Theme_Icon } from "../styles";
+import { useSwalMessage } from "../utils/useSwalMessage";
 
 const UserAccountImage = ({
   userData,
@@ -11,6 +11,7 @@ const UserAccountImage = ({
   currentUser,
 }) => {
   const { text } = useContext(UserContext);
+  const { showErrorSwal, showSuccessSwal } = useSwalMessage();
   const fileInputRef = useRef(null);
 
   const handleChangeImage = (event) => {
@@ -25,29 +26,14 @@ const UserAccountImage = ({
       uploadUserImage(currentUser.uid, file)
         .then(() => {
           getUserImage(currentUser.uid).then((url) => setUserImage(url));
-          Swal.fire({
-            icon: "success",
-            title: text.userAccountImage.swal.successMessage,
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          showSuccessSwal(text.userAccountImage.swal.successMessage);
         })
         .catch((error) => {
           console.error("An error occured during the image upload:", error);
-          Swal.fire({
-            icon: "error",
-            title: text.userAccountImage.swal.errorMessage,
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          showErrorSwal(text.userAccountImage.swal.errorMessage);
         });
     } else {
-      Swal.fire({
-        icon: "error",
-        title: text.userAccountImage.swal.errorType,
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      showErrorSwal(text.userAccountImage.swal.errorType);
     }
   };
 

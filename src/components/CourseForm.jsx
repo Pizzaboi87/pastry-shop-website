@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 import PhoneInput from "react-phone-input-2";
 import emailjs from "@emailjs/browser";
 import { useState, useContext } from "react";
@@ -14,7 +13,7 @@ import "react-phone-input-2/lib/bootstrap.css";
 
 const CourseForm = ({ courses }) => {
   const { text } = useContext(UserContext);
-  const { showErrorSwal } = useSwalMessage();
+  const { showErrorSwal, showSuccessSwal } = useSwalMessage();
 
   const defaultForm = {
     name: "",
@@ -27,14 +26,6 @@ const CourseForm = ({ courses }) => {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState(defaultForm);
   const { name, phone, email, course, question } = form;
-
-  const successSwal = () => {
-    Swal.fire({
-      icon: "success",
-      title: text.courseForm.swal.successTitle,
-      text: `${text.courseForm.swal.successTextStart} ${form.course} ${text.courseForm.swal.successTextEnd}`,
-    });
-  };
 
   const valueCheck = (name, question) => {
     const nameRegex = /^[-\p{L}\s]+$/u;
@@ -79,7 +70,9 @@ const CourseForm = ({ courses }) => {
           },
           import.meta.env.VITE_KEY
         );
-        successSwal();
+        showSuccessSwal(
+          `${text.courseForm.swal.successTextStart} ${form.course} ${text.courseForm.swal.successTextEnd}`
+        );
         setLoading(false);
         setForm(defaultForm);
       } catch (error) {

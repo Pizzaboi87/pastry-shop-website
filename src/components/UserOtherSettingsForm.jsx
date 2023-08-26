@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { updateUserData } from "../utils/firebase";
 import { UserContext } from "../context";
@@ -25,7 +24,7 @@ const UserOtherSettingsForm = () => {
     userNewsLetter,
     setUserNewsLetter,
   } = useContext(UserContext);
-  const { showErrorSwal } = useSwalMessage();
+  const { showErrorSwal, showSuccessSwal } = useSwalMessage();
   const [isLoading, setIsLoading] = useState(false);
 
   const defaultForm = {
@@ -54,12 +53,7 @@ const UserOtherSettingsForm = () => {
       setUserNewsLetter(newsletter);
       updateUserData(currentUser.uid, form)
         .then(() => {
-          Swal.fire({
-            icon: "success",
-            title: text.userAccountForm.swal.successMessage,
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          showSuccessSwal(text.userAccountForm.swal.successMessage);
         })
         .then(() => {
           setIsLoading(false);

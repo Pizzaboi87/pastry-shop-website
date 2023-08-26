@@ -1,13 +1,12 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../context";
 import { Theme_Button, Theme_Input, userPageStyle } from "../styles";
-import Swal from "sweetalert2";
 import { updateUserPassword } from "../utils/firebase";
 import { useSwalMessage } from "../utils/useSwalMessage";
 
 const UserPasswordSettingsForm = () => {
   const { text, currentUser } = useContext(UserContext);
-  const { showErrorSwal } = useSwalMessage();
+  const { showErrorSwal, showSuccessSwal } = useSwalMessage();
   const [isLoading, setIsLoading] = useState(false);
 
   const defaultForm = {
@@ -54,11 +53,7 @@ const UserPasswordSettingsForm = () => {
     } else {
       try {
         await updateUserPassword(currentUser, currentPassword, newPassword);
-        Swal.fire({
-          title: text.userPasswordForm.swal.successTitle,
-          text: text.userPasswordForm.swal.successText,
-          icon: "success",
-        }).then(() => {
+        showSuccessSwal(text.userPasswordForm.swal.successText).then(() => {
           setIsLoading(false);
           setForm(defaultForm);
         });

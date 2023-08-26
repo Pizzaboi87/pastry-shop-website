@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 import PhoneInput from "react-phone-input-2";
 import { useState, useContext, useEffect } from "react";
 import { updateUserData } from "../utils/firebase";
@@ -14,7 +13,7 @@ import {
 
 const UserAccountForm = ({ userData, setUserData, currentUser }) => {
   const { text } = useContext(UserContext);
-  const { showErrorSwal } = useSwalMessage();
+  const { showErrorSwal, showSuccessSwal } = useSwalMessage();
 
   const defaultForm = {
     fullName: userData.fullName ? userData.fullName : "",
@@ -98,12 +97,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       try {
         updateUserData(currentUser.uid, userAccountForm)
           .then(() => {
-            Swal.fire({
-              icon: "success",
-              title: text.userAccountForm.swal.successMessage,
-              showConfirmButton: false,
-              timer: 1500,
-            });
+            showSuccessSwal(text.userAccountForm.swal.successMessage);
           })
           .then(() => {
             setIsLoading(false);

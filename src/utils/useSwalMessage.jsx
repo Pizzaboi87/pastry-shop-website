@@ -27,5 +27,18 @@ export const useSwalMessage = () => {
     [text.swal.successTitle]
   );
 
-  return { showErrorSwal, showSuccessSwal };
+  const showQuestionSwal = useCallback((question) => {
+    Swal.fire({
+      title: text.swal.questionTitle,
+      text: question,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: text.swal.confirm,
+      cancelButtonText: text.swal.cancel,
+    });
+  }, []);
+
+  return { showErrorSwal, showSuccessSwal, showQuestionSwal };
 };

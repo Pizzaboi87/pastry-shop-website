@@ -12,7 +12,7 @@ import {
 
 const BlogCommentForm = ({ postID }) => {
   const { userData, text } = useContext(UserContext);
-  const { showErrorSwal } = useSwalMessage();
+  const { showErrorSwal, showSuccessSwal } = useSwalMessage();
 
   const defaultForm = {
     author: userData.displayName ? userData.displayName : "",
@@ -55,11 +55,7 @@ const BlogCommentForm = ({ postID }) => {
     else {
       const resp = await storeComment(commentForm);
       if (resp) {
-        Swal.fire({
-          icon: "success",
-          title: text.blogCommentForm.swal.successTitle,
-          text: text.blogCommentForm.swal.successMessage,
-        });
+        showSuccessSwal(text.blogCommentForm.swal.successMessage);
         setCommentForm(defaultForm);
       } else {
         showErrorSwal(text.blogCommentForm.swal.errorTitle);

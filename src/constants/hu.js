@@ -528,9 +528,6 @@ const hu_text = {
     title: "Az összes elérhető blogbejegyzés",
     swal: {
       question: "Szeretnéd törölni a bejegyzést?",
-      confirm: "Törlés",
-      cancel: "Mégse",
-      successTitle: "Siker!",
       successText: "A bejegyzés törölve lett.",
       error: "Valami hiba történt!",
       errorMsg: "A bejegyzés nem lett törölve.",
@@ -542,9 +539,8 @@ const hu_text = {
     commentPlaceholder: "Mit gondolsz erről?",
     button: "Küldés",
     swal: {
-      successTitle: "A hozzászólásod rögzítésre került!",
       successMessage:
-        "Az adminisztrátorunk hamarosan megvizsgálja a bejegyzést.",
+        "A hozzászólásod rögzítésre került, az adminisztrátorunk hamarosan megvizsgálja a bejegyzést.",
       errorName: "Kérjük, adj meg érvényes nevet.",
       errorCommentTitle: "Kérjük, adj érvényes címet a hozzászólásnak.",
       errorComment: "Kérjük, írj egy érvényes hozzászólást.",
@@ -573,7 +569,6 @@ const hu_text = {
       errorBlurb: "Kérjük, adj meg érvényes rövid szöveget.",
       errorPostText: "Kérjük, adj meg érvényes bejegyzés szöveget.",
       errorTags: "Kérjük, adj meg érvényes hashtageket.",
-      successTitle: "Siker!",
       successMessage: "A bejegyzés feltöltésre került.",
     },
     language: [
@@ -597,6 +592,10 @@ const hu_text = {
   },
   swal: {
     errorTitle: "Valami hiba történt!",
+    successTitle: "Siker!",
+    questionTitle: "Figyelem!",
+    confirm: "Rendben",
+    cancel: "Mégse",
   },
   signUpForm: {
     title: "Regisztráció",
@@ -606,7 +605,6 @@ const hu_text = {
     confirmPassword: "Jelszó ismét",
     button: "Regisztráció",
     swal: {
-      successTitle: "Isten hozott!",
       successText: "Sikeresen regisztráltál az oldalunkra.",
       errorPassword:
         "Kérjük, adj meg érvényes jelszót: Minimum 8 karakter - betűk, számok és/vagy speciális karakterek: ,.-;:?!()%”@$/€",
@@ -652,7 +650,6 @@ const hu_text = {
     sending: "Küldés...",
     send: "Küldés",
     swal: {
-      successTitle: "Siker!",
       successTextStart: "Köszönjük érdeklődésedet a",
       successTextEnd:
         "tanfolyamunk iránt. Hamarosan felvesszük veled a kapcsolatot!",
@@ -673,9 +670,6 @@ const hu_text = {
     relatedID: "Kapcsolódó Bejegyzés",
     swal: {
       question: "Törölni szeretnéd a hozzászólást?",
-      confirm: "Törlés",
-      cancel: "Mégse",
-      successTitle: "Siker!",
       successText: "A hozzászólás törlésre került.",
       errorText: "A hozzászólást nem sikerült törölni.",
     },
@@ -692,7 +686,6 @@ const hu_text = {
     button: "Mentés",
     savingButton: "Mentés...",
     swal: {
-      successTitle: "Siker!",
       successMessage: "A fiók frissítésre került.",
       errorNotUpdated: "Sajnáljuk, nem sikerült frissíteni az adatokat!",
       errorName: "Kérjük, adj meg érvényes nevet.",
@@ -746,11 +739,7 @@ const hu_text = {
     button: "Fiók törlése",
     loading: "Törlés...",
     swal: {
-      title: "Figyelem!",
       text: "Biztosan törölni szeretnéd a fiókodat?",
-      confirmButton: "Törlés",
-      cancelButton: "Mégse",
-      successTitle: "Siker!",
       successText: "A fiókodat töröltük!",
       errorText: "A fiókodat nem sikerült törölni!",
       errorPassword: "Kérjük, add meg a jelszavad.",
@@ -765,7 +754,6 @@ const hu_text = {
     button: "Frissítés",
     loading: "Frissítés...",
     swal: {
-      successTitle: "Siker!",
       successText: "A jelszavad sikeresen megváltozott.",
       errorPassword: "Kérjük, adj meg érvényes jelszót.",
       errorMatch: "Az új jelszavak nem egyeznek.",
@@ -775,12 +763,9 @@ const hu_text = {
   },
   userDetailsPage: {
     swal: {
-      successTitle: "Siker!",
       successText: "A felhasználót töröltük.",
       errorDelete: "A felhasználót nem sikerült törölni.",
       question: "Biztosan törölni szeretnéd a felhasználót?",
-      confirm: "Törlés",
-      cancel: "Mégse",
     },
   },
   tooltip: {

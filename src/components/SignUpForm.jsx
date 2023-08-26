@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { UserContext } from "../context";
 import { motion } from "framer-motion";
@@ -12,16 +11,8 @@ import {
 
 const SignUpForm = () => {
   const { text } = useContext(UserContext);
-  const { showErrorSwal } = useSwalMessage();
+  const { showErrorSwal, showSuccessSwal } = useSwalMessage();
   const navigate = useNavigate();
-
-  const successSwal = () => {
-    Swal.fire({
-      icon: "success",
-      title: text.signUpForm.swal.successTitle,
-      text: text.signUpForm.swal.successText,
-    });
-  };
 
   const defaultForm = {
     displayName: "",
@@ -80,7 +71,7 @@ const SignUpForm = () => {
         );
 
         await createUserDocumentFromAuth(user, { displayName }).then(() => {
-          successSwal();
+          showSuccessSwal(text.signUpForm.swal.successText);
         });
         resetForm();
       } catch (error) {

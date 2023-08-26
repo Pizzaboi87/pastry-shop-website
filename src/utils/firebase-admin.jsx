@@ -1,5 +1,7 @@
-import Swal from "sweetalert2";
 import { getAllComments, getAllPost } from "./firebase";
+import { useSwalMessage } from "./useSwalMessage";
+
+const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
 
 const updateData = async (setFirebaseData, userLanguage) => {
   try {
@@ -27,12 +29,7 @@ export const deleteComment = async (
   setFirebaseComments,
   setIsDeleting
 ) => {
-  Swal.fire({
-    title: text.blogCommentPage.swal.question,
-    showDenyButton: true,
-    confirmButtonText: text.blogCommentPage.swal.confirm,
-    denyButtonText: text.blogCommentPage.swal.cancel,
-  }).then(async (result) => {
+  showQuestionSwal(text.blogCommentPage.swal.question).then(async (result) => {
     setIsDeleting(true);
     if (result.isConfirmed) {
       try {
@@ -47,11 +44,7 @@ export const deleteComment = async (
         });
 
         if (response.ok) {
-          Swal.fire({
-            title: text.blogCommentPage.swal.successTitle,
-            text: text.blogCommentPage.swal.successText,
-            icon: "success",
-          });
+          showSuccessSwal(text.blogCommentPage.swal.successText);
           await updateComments(setFirebaseComments);
           setIsDeleting(false);
           navigate("/admin/blog/comments");
@@ -61,11 +54,7 @@ export const deleteComment = async (
         }
       } catch (error) {
         setIsDeleting(false);
-        Swal.fire({
-          title: text.blogCommentPage.swal.errorTitle,
-          text: text.blogCommentPage.swal.errorText,
-          icon: "error",
-        });
+        showErrorSwal(text.blogCommentPage.swal.errorText);
         console.error("Error deleting comment:", error);
       }
     } else if (result.isDenied) {
@@ -83,12 +72,7 @@ export const deleteBlogPost = async (
   text,
   userLanguage
 ) => {
-  Swal.fire({
-    title: text.blogAll.swal.question,
-    showDenyButton: true,
-    confirmButtonText: text.blogAll.swal.confirm,
-    denyButtonText: text.blogAll.swal.cancel,
-  }).then(async (result) => {
+  showQuestionSwal(text.blogAll.swal.question).then(async (result) => {
     if (result.isConfirmed) {
       setIsLoading(true);
       try {
@@ -103,29 +87,17 @@ export const deleteBlogPost = async (
         });
 
         if (response.ok) {
-          Swal.fire({
-            title: text.blogAll.swal.successTitle,
-            text: text.blogAll.swal.successText,
-            icon: "success",
-          });
+          showSuccessSwal(text.blogAll.swal.successText);
           await updateData(setFirebaseData, userLanguage);
           setIsLoading(false);
           setResult(true);
         } else {
           setIsLoading(false);
-          Swal.fire({
-            title: text.blogAll.swal.error,
-            text: text.blogAll.swal.errorMsg,
-            icon: "error",
-          });
+          showErrorSwal(text.blogAll.swal.errorMsg);
         }
       } catch (error) {
         setIsLoading(false);
-        Swal.fire({
-          title: text.blogAll.swal.error,
-          text: text.blogAll.swal.errorMsg,
-          icon: "error",
-        });
+        showErrorSwal(text.blogAll.swal.errorMsg);
         console.error("Error deleting post:", error);
       }
     } else if (result.isDenied) {
@@ -142,12 +114,7 @@ export const deleteUser = async (
   setIsDeleting,
   setResult
 ) => {
-  Swal.fire({
-    title: text.userDetailsPage.swal.question,
-    showDenyButton: true,
-    confirmButtonText: text.userDetailsPage.swal.confirm,
-    denyButtonText: text.userDetailsPage.swal.cancel,
-  }).then(async (result) => {
+  showQuestionSwal(text.userDetailsPage.swal.question).then(async (result) => {
     setIsDeleting(true);
 
     if (result.isConfirmed) {
@@ -164,29 +131,17 @@ export const deleteUser = async (
         });
 
         if (response.ok) {
-          Swal.fire({
-            title: text.userDetailsPage.swal.successTitle,
-            text: text.userDetailsPage.swal.successText,
-            icon: "success",
-          });
+          showSuccessSwal(text.userDetailsPage.swal.successText);
           await refetch();
           setIsDeleting(false);
           setResult(true);
         } else {
           setIsDeleting(false);
-          Swal.fire({
-            title: text.userDetailsPage.swal.errorTitle,
-            text: text.userDetailsPage.swal.errorDelete,
-            icon: "error",
-          });
+          showErrorSwal(text.userDetailsPage.swal.errorDelete);
         }
       } catch (error) {
         setIsDeleting(false);
-        Swal.fire({
-          title: text.userDetailsPage.swal.errorTitle,
-          text: error.message,
-          icon: "error",
-        });
+        showErrorSwal(error.message);
         console.error("Error deleting user:", error);
       }
     } else if (result.isDenied) {
@@ -229,26 +184,14 @@ export const uploadPost = async (text, currentUser, blogForm, setIsLoading) => {
 
     if (response.ok) {
       setIsLoading(false);
-      Swal.fire({
-        title: text.blogForm.swal.successTitle,
-        text: text.blogForm.swal.successMessage,
-        icon: "success",
-      });
+      showSuccessSwal(text.blogForm.swal.successMessage);
     } else {
       setIsLoading(false);
-      Swal.fire({
-        title: text.blogForm.swal.errorTitle,
-        text: text.blogForm.swal.errorMessage,
-        icon: "error",
-      });
+      showErrorSwal(text.blogForm.swal.errorMessage);
     }
   } catch (error) {
     console.log(error);
     setIsLoading(false);
-    Swal.fire({
-      title: text.blogForm.swal.errorTitle,
-      text: text.blogForm.swal.errorMessage,
-      icon: "error",
-    });
+    showErrorSwal(text.blogForm.swal.errorMessage);
   }
 };
