@@ -4,9 +4,11 @@ import { UserContext } from "../context";
 import { Theme_Button, Theme_Input, userPageStyle } from "../styles";
 import { deleteMyself, reauthenticateUser } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
+import { useSwalMessage } from "../utils/useSwalMessage";
 
 const UserDeleteAccountForm = () => {
   const { text, currentUser } = useContext(UserContext);
+  const { showErrorSwal } = useSwalMessage();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -17,20 +19,12 @@ const UserDeleteAccountForm = () => {
   const [form, setForm] = useState(defaultForm);
   const { password } = form;
 
-  const errorSwal = (error) => {
-    Swal.fire({
-      title: text.userDelete.swal.errorTitle,
-      text: error,
-      icon: "error",
-    });
-  };
-
   const valueCheck = (password) => {
     const passwordRegex = /^[\p{L}0-9,.\-_;:?!()%"@$/€\s]+$/u;
 
     switch (true) {
       case !passwordRegex.test(password):
-        errorSwal(text.userDelete.swal.errorPassword);
+        showErrorSwal(text.userDelete.swal.errorPassword);
         return;
       default:
         return true;
@@ -80,14 +74,14 @@ const UserDeleteAccountForm = () => {
             setIsLoading(false);
             setForm(defaultForm);
             console.log(error);
-            errorSwal(text.userDelete.swal.errorText);
+            showErrorSwal(text.userDelete.swal.errorText);
           }
         }
       } catch (error) {
         setIsLoading(false);
         setForm(defaultForm);
         console.log(error);
-        errorSwal(
+        showErrorSwal(
           error.code === "auth/wrong-password"
             ? text.userDelete.swal.errorAuth
             : error.code === "auth/too-many-requests"

@@ -3,10 +3,11 @@ import { UserContext } from "../context";
 import { Theme_Button, Theme_Input, userPageStyle } from "../styles";
 import Swal from "sweetalert2";
 import { updateUserPassword } from "../utils/firebase";
-import { set } from "firebase/database";
+import { useSwalMessage } from "../utils/useSwalMessage";
 
 const UserPasswordSettingsForm = () => {
   const { text, currentUser } = useContext(UserContext);
+  const { showErrorSwal } = useSwalMessage();
   const [isLoading, setIsLoading] = useState(false);
 
   const defaultForm = {
@@ -18,29 +19,21 @@ const UserPasswordSettingsForm = () => {
   const [form, setForm] = useState(defaultForm);
   const { currentPassword, newPassword, confirmPassword } = form;
 
-  const errorSwal = (error) => {
-    Swal.fire({
-      title: text.userPasswordForm.swal.errorTitle,
-      text: error,
-      icon: "error",
-    });
-  };
-
   const valueCheck = (currentPassword, newPassword, confirmPassword) => {
     const passwordRegex = /^[\p{L}0-9,.\-_;:?!()%"@$/€\s]+$/u;
 
     switch (true) {
       case !passwordRegex.test(currentPassword):
-        errorSwal(text.userPasswordForm.swal.errorPassword);
+        showErrorSwal(text.userPasswordForm.swal.errorPassword);
         return;
       case !passwordRegex.test(newPassword):
-        errorSwal(text.userPasswordForm.swal.errorPassword);
+        showErrorSwal(text.userPasswordForm.swal.errorPassword);
         return;
       case !passwordRegex.test(confirmPassword):
-        errorSwal(text.userPasswordForm.swal.errorPassword);
+        showErrorSwal(text.userPasswordForm.swal.errorPassword);
         return;
       case newPassword !== confirmPassword:
-        errorSwal(text.userPasswordForm.swal.errorMatch);
+        showErrorSwal(text.userPasswordForm.swal.errorMatch);
         return;
       default:
         return true;
@@ -72,7 +65,7 @@ const UserPasswordSettingsForm = () => {
       } catch (error) {
         console.log(error);
         setIsLoading(false);
-        errorSwal(
+        showErrorSwal(
           error.code === "auth/wrong-password"
             ? text.userPasswordForm.swal.errorAuth
             : error.code === "auth/too-many-requests"

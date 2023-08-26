@@ -3,6 +3,7 @@ import PhoneInput from "react-phone-input-2";
 import emailjs from "@emailjs/browser";
 import { useState, useContext } from "react";
 import { UserContext } from "../context";
+import { useSwalMessage } from "../utils/useSwalMessage";
 import {
   Theme_Button,
   Theme_Form,
@@ -13,6 +14,7 @@ import "react-phone-input-2/lib/bootstrap.css";
 
 const CourseForm = ({ courses }) => {
   const { text } = useContext(UserContext);
+  const { showErrorSwal } = useSwalMessage();
 
   const defaultForm = {
     name: "",
@@ -40,10 +42,10 @@ const CourseForm = ({ courses }) => {
 
     switch (true) {
       case !nameRegex.test(name):
-        errorSwal(text.courseForm.swal.errorName, text);
+        showErrorSwal(text.courseForm.swal.errorName);
         return;
       case !questionRegex.test(question):
-        errorSwal(text.courseForm.swal.errorMessage, text);
+        showErrorSwal(text.courseForm.swal.errorMessage);
         return;
       default:
         return true;
@@ -82,7 +84,7 @@ const CourseForm = ({ courses }) => {
         setForm(defaultForm);
       } catch (error) {
         console.log(error.text);
-        errorSwal(text.courseForm.swal.errorNotSent, text);
+        showErrorSwal(text.courseForm.swal.errorNotSent);
         setLoading(false);
       }
     }

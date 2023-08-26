@@ -1,5 +1,5 @@
 import TransitionParent from "./TransitionParent";
-import { errorSwal } from "../utils/swalMessages";
+import { useSwalMessage } from "../utils/useSwalMessage";
 import { useContext, useState } from "react";
 import { UserContext } from "../context";
 import {
@@ -11,6 +11,7 @@ import {
 
 const AdminLogin = () => {
   const { text, setIsAdmin } = useContext(UserContext);
+  const { showErrorSwal } = useSwalMessage();
 
   const defaultForm = {
     user: "",
@@ -26,10 +27,10 @@ const AdminLogin = () => {
 
     switch (true) {
       case !nameRegex.test(user):
-        errorSwal(text.adminLogin.swal.errorUser, text);
+        showErrorSwal(text.adminLogin.swal.errorUser);
         return;
       case !passwordRegex.test(password):
-        errorSwal(text.adminLogin.swal.errorPassword, text);
+        showErrorSwal(text.adminLogin.swal.errorPassword);
         return;
       default:
         return true;
@@ -48,7 +49,7 @@ const AdminLogin = () => {
       user !== import.meta.env.VITE_ADMIN_NAME ||
       password !== import.meta.env.VITE_ADMIN_PASSWORD
     ) {
-      errorSwal(text.adminLogin.swal.errorWrongCredentials, text);
+      showErrorSwal(text.adminLogin.swal.errorWrongCredentials);
     } else {
       setIsAdmin(true);
     }

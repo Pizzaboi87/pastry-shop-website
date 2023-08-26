@@ -2,18 +2,17 @@ import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { UserContext } from "../context";
 import { motion } from "framer-motion";
-import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 import { Theme_Button, Theme_Input, signUpFormStyle } from "../styles";
+import { useSwalMessage } from "../utils/useSwalMessage";
 import {
   createUserDocumentFromAuth,
   createAuthUserWithEmailAndPassword,
-  auth,
-  signOutUser,
 } from "../utils/firebase";
 
 const SignUpForm = () => {
   const { text } = useContext(UserContext);
+  const { showErrorSwal } = useSwalMessage();
   const navigate = useNavigate();
 
   const successSwal = () => {
@@ -21,14 +20,6 @@ const SignUpForm = () => {
       icon: "success",
       title: text.signUpForm.swal.successTitle,
       text: text.signUpForm.swal.successText,
-    });
-  };
-
-  const errorSwal = (error) => {
-    Swal.fire({
-      icon: "error",
-      title: text.signUpForm.swal.errorTitle,
-      text: error,
     });
   };
 
@@ -53,19 +44,19 @@ const SignUpForm = () => {
 
     switch (true) {
       case !nameRegex.test(displayName):
-        errorSwal(text.signUpForm.swal.errorName);
+        showErrorSwal(text.signUpForm.swal.errorName);
         return;
       case password !== confirmPassword:
-        errorSwal(text.signUpForm.swal.errorPasswordMatch);
+        showErrorSwal(text.signUpForm.swal.errorPasswordMatch);
         return;
       case !emailRegex.test(email):
-        errorSwal(text.signUpForm.swal.errorEmail);
+        showErrorSwal(text.signUpForm.swal.errorEmail);
         return;
       case !passwordRegex.test(password):
-        errorSwal(text.signUpForm.swal.errorPassword);
+        showErrorSwal(text.signUpForm.swal.errorPassword);
         return;
       case !passwordRegex.test(password):
-        errorSwal(text.signUpForm.swal.errorPassword);
+        showErrorSwal(text.signUpForm.swal.errorPassword);
         return;
       default:
         return true;
@@ -94,9 +85,9 @@ const SignUpForm = () => {
         resetForm();
       } catch (error) {
         if (error.code === "auth/email-already-in-use") {
-          errorSwal(text.signUpForm.swal.errorInUse);
+          showErrorSwal(text.signUpForm.swal.errorInUse);
         } else {
-          errorSwal(text.signUpForm.swal.errorOther);
+          showErrorSwal(text.signUpForm.swal.errorOther);
           console.log(error);
         }
       } finally {

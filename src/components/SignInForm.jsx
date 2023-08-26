@@ -1,28 +1,18 @@
-import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { UserContext } from "../context";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
+import { useSwalMessage } from "../utils/useSwalMessage";
 import { Theme_Button, Theme_Input, signInFormStyle } from "../styles";
 import {
   signInWithGoogleRedirect,
   signInAuthUserWithEmailAndPassword,
-  updateUserData,
 } from "../utils/firebase";
 
 const SignInForm = () => {
   const { text } = useContext(UserContext);
-  const navigate = useNavigate();
-
-  const errorSwal = (error) => {
-    Swal.fire({
-      icon: "error",
-      title: text.signInForm.swal.errorTitle,
-      text: error,
-    });
-  };
+  const { showErrorSwal } = useSwalMessage();
 
   const defaultForm = {
     email: "",
@@ -42,10 +32,10 @@ const SignInForm = () => {
 
     switch (true) {
       case !emailRegex.test(email):
-        errorSwal(text.signInForm.swal.errorEmail);
+        showErrorSwal(text.signInForm.swal.errorEmail);
         return;
       case !passwordRegex.test(password):
-        errorSwal(text.signInForm.swal.errorPassword);
+        showErrorSwal(text.signInForm.swal.errorPassword);
         return;
       default:
         return true;
@@ -70,13 +60,13 @@ const SignInForm = () => {
       } catch (error) {
         switch (error.code) {
           case "auth/wrong-password":
-            errorSwal(text.signInForm.swal.errorPassword);
+            showErrorSwal(text.signInForm.swal.errorPassword);
             break;
           case "auth/user-not-found":
-            errorSwal(text.signInForm.swal.errorUser);
+            showErrorSwal(text.signInForm.swal.errorUser);
             break;
           default:
-            errorSwal(text.signInForm.swal.errorOther);
+            showErrorSwal(text.signInForm.swal.errorOther);
             console.log(error);
             break;
         }
@@ -88,7 +78,7 @@ const SignInForm = () => {
     try {
       await signInWithGoogleRedirect();
     } catch (error) {
-      errorSwal(text.signInForm.swal.errorOther);
+      showErrorSwal(text.signInForm.swal.errorOther);
       console.log(error);
     }
   };

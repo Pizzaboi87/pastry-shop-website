@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import { useState, useContext } from "react";
 import { updateUserData } from "../utils/firebase";
 import { UserContext } from "../context";
+import { useSwalMessage } from "../utils/useSwalMessage";
 import {
   Theme_Button,
   Theme_Input,
@@ -24,6 +25,7 @@ const UserOtherSettingsForm = () => {
     userNewsLetter,
     setUserNewsLetter,
   } = useContext(UserContext);
+  const { showErrorSwal } = useSwalMessage();
   const [isLoading, setIsLoading] = useState(false);
 
   const defaultForm = {
@@ -66,7 +68,7 @@ const UserOtherSettingsForm = () => {
     } catch (error) {
       setIsLoading(false);
       console.error("Error during the update of user's data: ", error);
-      errorSwal(text.userAccountForm.swal.errorNotUpdated);
+      showErrorSwal(text.userAccountForm.swal.errorNotUpdated);
     }
   };
 

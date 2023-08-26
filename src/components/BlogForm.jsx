@@ -6,9 +6,11 @@ import { uploadPost } from "../utils/firebase-admin";
 import { translate } from "../utils/translate";
 import { getAllPost, storeImage } from "../utils/firebase";
 import { normalizeSync } from "normalize-diacritics";
+import { useSwalMessage } from "../utils/useSwalMessage";
 
 const BlogForm = ({ dbPost }) => {
   const { text, currentUser, userLanguage } = useContext(UserContext);
+  const { showErrorSwal } = useSwalMessage();
   const { setFirebaseData } = useContext(BlogContext);
 
   const navigate = useNavigate();
@@ -59,19 +61,19 @@ const BlogForm = ({ dbPost }) => {
   const valueCheck = (author, title, blurb, post, tags) => {
     switch (true) {
       case !normalRegex.test(author):
-        errorSwal(text.blogForm.swal.errorName, text);
+        showErrorSwal(text.blogForm.swal.errorName);
         return;
       case !textRegex.test(title):
-        errorSwal(text.blogForm.swal.errorPostTitle, text);
+        showErrorSwal(text.blogForm.swal.errorPostTitle);
         return;
       case !textRegex.test(blurb):
-        errorSwal(text.blogForm.swal.errorBlurb, text);
+        showErrorSwal(text.blogForm.swal.errorBlurb);
         return;
       case !textRegex.test(post):
-        errorSwal(text.blogForm.swal.errorPostText, text);
+        showErrorSwal(text.blogForm.swal.errorPostText);
         return;
       case !normalRegex.test(tags.toString()):
-        errorSwal(text.blogForm.swal.errorTags, text);
+        showErrorSwal(text.blogForm.swal.errorTags);
         return;
       default:
         return true;
@@ -140,7 +142,7 @@ const BlogForm = ({ dbPost }) => {
 
       const allowedExtensions = ["jpg", "jpeg", "png", "webp", "bmp", "svg"];
       if (!allowedExtensions.some((ext) => fileExtension.includes(ext))) {
-        errorSwal(text.blogForm.swal.errorType, text);
+        showErrorSwal(text.blogForm.swal.errorType);
         return;
       }
     }

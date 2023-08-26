@@ -1,7 +1,7 @@
+import { useSwalMessage } from "../utils/useSwalMessage";
 import { useState, useContext } from "react";
 import { UserContext } from "../context";
 import { storeComment } from "../utils/firebase";
-import { errorSwal } from "../utils/swalMessages";
 import { v4 as uuidv4 } from "uuid";
 import {
   Theme_Button,
@@ -12,6 +12,7 @@ import {
 
 const BlogCommentForm = ({ postID }) => {
   const { userData, text } = useContext(UserContext);
+  const { showErrorSwal } = useSwalMessage();
 
   const defaultForm = {
     author: userData.displayName ? userData.displayName : "",
@@ -33,10 +34,10 @@ const BlogCommentForm = ({ postID }) => {
 
     switch (true) {
       case !commentRegex.test(title):
-        errorSwal(text.blogCommentForm.swal.errorCommentTitle);
+        showErrorSwal(text.blogCommentForm.swal.errorCommentTitle);
         return;
       case !commentRegex.test(comment):
-        errorSwal(text.blogCommentForm.swal.errorComment);
+        showErrorSwal(text.blogCommentForm.swal.errorComment);
         return;
       default:
         return true;
@@ -61,7 +62,7 @@ const BlogCommentForm = ({ postID }) => {
         });
         setCommentForm(defaultForm);
       } else {
-        errorSwal(text.blogCommentForm.swal.errorTitle);
+        showErrorSwal(text.blogCommentForm.swal.errorTitle);
       }
     }
   };

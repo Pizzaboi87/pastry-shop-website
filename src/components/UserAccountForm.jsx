@@ -3,6 +3,7 @@ import PhoneInput from "react-phone-input-2";
 import { useState, useContext, useEffect } from "react";
 import { updateUserData } from "../utils/firebase";
 import { UserContext } from "../context";
+import { useSwalMessage } from "../utils/useSwalMessage";
 import {
   Theme_Button,
   Theme_Input,
@@ -13,6 +14,7 @@ import {
 
 const UserAccountForm = ({ userData, setUserData, currentUser }) => {
   const { text } = useContext(UserContext);
+  const { showErrorSwal } = useSwalMessage();
 
   const defaultForm = {
     fullName: userData.fullName ? userData.fullName : "",
@@ -42,14 +44,6 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
     if (userData) setUserAccountForm(defaultForm);
   }, [userData]);
 
-  const errorSwal = (error) => {
-    Swal.fire({
-      icon: "error",
-      title: text.userAccountForm.swal.errorTitle,
-      text: error,
-    });
-  };
-
   const valueCheck = (
     fullName,
     displayName,
@@ -63,22 +57,22 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
 
     switch (true) {
       case fullName && !normalRegex.test(fullName):
-        errorSwal(text.userAccountForm.swal.errorName);
+        showErrorSwal(text.userAccountForm.swal.errorName);
         return;
       case displayName && !withNumberRegex.test(displayName):
-        errorSwal(text.userAccountForm.swal.errorDisplayName);
+        showErrorSwal(text.userAccountForm.swal.errorDisplayName);
         return;
       case country && !normalRegex.test(country):
-        errorSwal(text.userAccountForm.swal.errorCountry);
+        showErrorSwal(text.userAccountForm.swal.errorCountry);
         return;
       case city && !normalRegex.test(city):
-        errorSwal(text.userAccountForm.swal.errorCity);
+        showErrorSwal(text.userAccountForm.swal.errorCity);
         return;
       case address && !withNumberRegex.test(address):
-        errorSwal(text.userAccountForm.swal.errorAddress);
+        showErrorSwal(text.userAccountForm.swal.errorAddress);
         return;
       case zipCode && !withNumberRegex.test(zipCode):
-        errorSwal(text.userAccountForm.swal.errorZip);
+        showErrorSwal(text.userAccountForm.swal.errorZip);
         return;
       default:
         return true;
@@ -118,7 +112,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       } catch (error) {
         setIsLoading(false);
         console.error("Error during the update of user's data: ", error);
-        errorSwal(text.userAccountForm.swal.errorNotUpdated);
+        showErrorSwal(text.userAccountForm.swal.errorNotUpdated);
       }
     }
   };
