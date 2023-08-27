@@ -2,8 +2,8 @@ import { useState, useContext } from "react";
 import { UserContext } from "../context";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 import { useSwalMessage } from "../utils/useSwalMessage";
+import { useValidation } from "../utils/useValidation";
 import { Theme_Button, Theme_Input, signInFormStyle } from "../styles";
 import {
   signInWithGoogleRedirect,
@@ -26,21 +26,20 @@ const SignInForm = () => {
   const [form, setForm] = useState(defaultForm);
   const { email, password } = form;
 
-  const valueCheck = (email, password) => {
-    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-    const passwordRegex = /^[0-9,.\-_;:?!()%"@$/€\p{L}\s]+$/u;
-
-    switch (true) {
-      case !emailRegex.test(email):
-        showErrorSwal(text.signInForm.swal.errorEmail);
-        return;
-      case !passwordRegex.test(password):
-        showErrorSwal(text.signInForm.swal.errorPassword);
-        return;
-      default:
-        return true;
-    }
+  const validationRules = {
+    email: {
+      value: email,
+      regex: "email",
+      errorMessage: text.signInForm.swal.errorEmail,
+    },
+    password: {
+      value: password,
+      regex: "password",
+      errorMessage: text.signInForm.swal.errorPassword,
+    },
   };
+
+  const { isValid } = useValidation(validationRules);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -49,7 +48,7 @@ const SignInForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!valueCheck(email, password)) return;
+    if (!isValid()) return;
     else {
       try {
         const { user } = await signInAuthUserWithEmailAndPassword(

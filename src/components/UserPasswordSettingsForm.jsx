@@ -3,6 +3,7 @@ import { UserContext } from "../context";
 import { Theme_Button, Theme_Input, userPageStyle } from "../styles";
 import { updateUserPassword } from "../utils/firebase";
 import { useSwalMessage } from "../utils/useSwalMessage";
+import { useValidation } from "../utils/useValidation";
 
 const UserPasswordSettingsForm = () => {
   const { text, currentUser } = useContext(UserContext);
@@ -18,26 +19,25 @@ const UserPasswordSettingsForm = () => {
   const [form, setForm] = useState(defaultForm);
   const { currentPassword, newPassword, confirmPassword } = form;
 
-  const valueCheck = (currentPassword, newPassword, confirmPassword) => {
-    const passwordRegex = /^[\p{L}0-9,.\-_;:?!()%"@$/€\s]+$/u;
-
-    switch (true) {
-      case !passwordRegex.test(currentPassword):
-        showErrorSwal(text.userPasswordForm.swal.errorPassword);
-        return;
-      case !passwordRegex.test(newPassword):
-        showErrorSwal(text.userPasswordForm.swal.errorPassword);
-        return;
-      case !passwordRegex.test(confirmPassword):
-        showErrorSwal(text.userPasswordForm.swal.errorPassword);
-        return;
-      case newPassword !== confirmPassword:
-        showErrorSwal(text.userPasswordForm.swal.errorMatch);
-        return;
-      default:
-        return true;
-    }
+  const validationRules = {
+    currentPassword: {
+      value: currentPassword,
+      regex: "password",
+      errorMessage: text.userPasswordForm.swal.errorPassword,
+    },
+    newPassword: {
+      value: newPassword,
+      regex: "password",
+      errorMessage: text.userPasswordForm.swal.errorPassword,
+    },
+    confirmPassword: {
+      value: confirmPassword,
+      regex: "password",
+      errorMessage: text.userPasswordForm.swal.errorPassword,
+    },
   };
+
+  const { isValid } = useValidation(validationRules);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -47,8 +47,12 @@ const UserPasswordSettingsForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
-    if (!valueCheck(currentPassword, newPassword, confirmPassword)) {
+    if (!isValid()) {
       setIsLoading(false);
+      return;
+    } else if (newPassword !== confirmPassword) {
+      setIsLoading(false);
+      showErrorSwal(text.userPasswordForm.swal.errorMatch);
       return;
     } else {
       try {

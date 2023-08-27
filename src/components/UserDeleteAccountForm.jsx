@@ -4,6 +4,7 @@ import { Theme_Button, Theme_Input, userPageStyle } from "../styles";
 import { deleteMyself, reauthenticateUser } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useSwalMessage } from "../utils/useSwalMessage";
+import { useValidation } from "../utils/useValidation";
 
 const UserDeleteAccountForm = () => {
   const { text, currentUser } = useContext(UserContext);
@@ -18,17 +19,15 @@ const UserDeleteAccountForm = () => {
   const [form, setForm] = useState(defaultForm);
   const { password } = form;
 
-  const valueCheck = (password) => {
-    const passwordRegex = /^[\p{L}0-9,.\-_;:?!()%"@$/€\s]+$/u;
-
-    switch (true) {
-      case !passwordRegex.test(password):
-        showErrorSwal(text.userDelete.swal.errorPassword);
-        return;
-      default:
-        return true;
-    }
+  const validationRules = {
+    password: {
+      value: password,
+      regex: "password",
+      errorMessage: text.userDelete.swal.errorPassword,
+    },
   };
+
+  const { isValid } = useValidation(validationRules);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -39,7 +38,7 @@ const UserDeleteAccountForm = () => {
     event.preventDefault();
     setIsLoading(true);
 
-    if (!valueCheck(password)) {
+    if (!isValid()) {
       setIsLoading(false);
       return;
     } else {

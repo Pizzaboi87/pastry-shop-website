@@ -3,6 +3,7 @@ import emailjs from "@emailjs/browser";
 import { useState, useContext } from "react";
 import { UserContext } from "../context";
 import { useSwalMessage } from "../utils/useSwalMessage";
+import { useValidation } from "../utils/useValidation";
 import {
   Theme_Button,
   Theme_Form,
@@ -27,21 +28,20 @@ const CourseForm = ({ courses }) => {
   const [form, setForm] = useState(defaultForm);
   const { name, phone, email, course, question } = form;
 
-  const valueCheck = (name, question) => {
-    const nameRegex = /^[-\p{L}\s]+$/u;
-    const questionRegex = /^[0-9A-Za-z,.\-;:?!()%"@$/€\p{L}\n\s]+$/u;
-
-    switch (true) {
-      case !nameRegex.test(name):
-        showErrorSwal(text.courseForm.swal.errorName);
-        return;
-      case !questionRegex.test(question):
-        showErrorSwal(text.courseForm.swal.errorMessage);
-        return;
-      default:
-        return true;
-    }
+  const validationRules = {
+    name: {
+      value: name,
+      regex: "name",
+      errorMessage: text.courseForm.swal.errorName,
+    },
+    question: {
+      value: question,
+      regex: "text",
+      errorMessage: text.courseForm.swal.errorMessage,
+    },
   };
+
+  const { isValid } = useValidation(validationRules);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -54,7 +54,7 @@ const CourseForm = ({ courses }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!valueCheck(name, question)) return;
+    if (!isValid()) return;
     else {
       setLoading(true);
       try {

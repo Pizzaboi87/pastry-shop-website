@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Theme_Button, Theme_Input, signUpFormStyle } from "../styles";
 import { useSwalMessage } from "../utils/useSwalMessage";
+import { useValidation } from "../utils/useValidation";
 import {
   createUserDocumentFromAuth,
   createAuthUserWithEmailAndPassword,
@@ -28,31 +29,25 @@ const SignUpForm = () => {
   const [form, setForm] = useState(defaultForm);
   const { displayName, email, password, confirmPassword } = form;
 
-  const valueCheck = (displayName, email, password, confirmPassword) => {
-    const nameRegex = /^[-\p{L}0-9\s]+$/u;
-    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-    const passwordRegex = /^[\p{L}0-9,.\-_;:?!()%"@$/€\s]{8,}$/u;
-
-    switch (true) {
-      case !nameRegex.test(displayName):
-        showErrorSwal(text.signUpForm.swal.errorName);
-        return;
-      case password !== confirmPassword:
-        showErrorSwal(text.signUpForm.swal.errorPasswordMatch);
-        return;
-      case !emailRegex.test(email):
-        showErrorSwal(text.signUpForm.swal.errorEmail);
-        return;
-      case !passwordRegex.test(password):
-        showErrorSwal(text.signUpForm.swal.errorPassword);
-        return;
-      case !passwordRegex.test(password):
-        showErrorSwal(text.signUpForm.swal.errorPassword);
-        return;
-      default:
-        return true;
-    }
+  const validationRules = {
+    displayName: {
+      value: displayName,
+      regex: "name",
+      errorMessage: text.signUpForm.swal.errorName,
+    },
+    email: {
+      value: email,
+      regex: "email",
+      errorMessage: text.signUpForm.swal.errorEmail,
+    },
+    password: {
+      value: password,
+      regex: "password",
+      errorMessage: text.signUpForm.swal.errorPassword,
+    },
   };
+
+  const { isValid } = useValidation(validationRules);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -62,8 +57,11 @@ const SignUpForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!valueCheck(displayName, email, password, confirmPassword)) return;
-    else {
+    if (!isValid()) return;
+    else if (password !== confirmPassword) {
+      showErrorSwal(text.signUpForm.swal.errorPasswordMatch);
+      return;
+    } else {
       try {
         const { user } = await createAuthUserWithEmailAndPassword(
           email,

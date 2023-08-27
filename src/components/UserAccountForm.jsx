@@ -3,6 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import { updateUserData } from "../utils/firebase";
 import { UserContext } from "../context";
 import { useSwalMessage } from "../utils/useSwalMessage";
+import { useValidation } from "../utils/useValidation";
 import {
   Theme_Button,
   Theme_Input,
@@ -43,40 +44,40 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
     if (userData) setUserAccountForm(defaultForm);
   }, [userData]);
 
-  const valueCheck = (
-    fullName,
-    displayName,
-    country,
-    city,
-    address,
-    zipCode
-  ) => {
-    const normalRegex = /^[\p{L}\-.()\//\s]+$/u;
-    const withNumberRegex = /^[\p{L}0-9-.()\//\s]+$/u;
-
-    switch (true) {
-      case fullName && !normalRegex.test(fullName):
-        showErrorSwal(text.userAccountForm.swal.errorName);
-        return;
-      case displayName && !withNumberRegex.test(displayName):
-        showErrorSwal(text.userAccountForm.swal.errorDisplayName);
-        return;
-      case country && !normalRegex.test(country):
-        showErrorSwal(text.userAccountForm.swal.errorCountry);
-        return;
-      case city && !normalRegex.test(city):
-        showErrorSwal(text.userAccountForm.swal.errorCity);
-        return;
-      case address && !withNumberRegex.test(address):
-        showErrorSwal(text.userAccountForm.swal.errorAddress);
-        return;
-      case zipCode && !withNumberRegex.test(zipCode):
-        showErrorSwal(text.userAccountForm.swal.errorZip);
-        return;
-      default:
-        return true;
-    }
+  const validationRules = {
+    fullName: {
+      value: fullName,
+      name: "name",
+      errorMessage: text.userAccountForm.swal.errorName,
+    },
+    displayName: {
+      value: displayName,
+      name: "withNumber",
+      errorMessage: text.userAccountForm.swal.errorDisplayName,
+    },
+    country: {
+      value: country,
+      name: "normal",
+      errorMessage: text.userAccountForm.swal.errorCountry,
+    },
+    city: {
+      value: city,
+      name: "normal",
+      errorMessage: text.userAccountForm.swal.errorCity,
+    },
+    address: {
+      value: address,
+      name: "withNumber",
+      errorMessage: text.userAccountForm.swal.errorAddress,
+    },
+    zipCode: {
+      value: zipCode,
+      name: "withNumber",
+      errorMessage: text.userAccountForm.swal.errorZip,
+    },
   };
+
+  const { isValid } = useValidation(validationRules);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -91,23 +92,20 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
     event.preventDefault();
     setIsLoading(true);
 
-    if (!valueCheck(fullName, displayName, country, city, address, zipCode)) {
-      return;
-    } else {
-      try {
-        updateUserData(currentUser.uid, userAccountForm)
-          .then(() => {
-            showSuccessSwal(text.userAccountForm.swal.successMessage);
-          })
-          .then(() => {
-            setIsLoading(false);
-            setUserData({ ...userData, ...userAccountForm });
-          });
-      } catch (error) {
-        setIsLoading(false);
-        console.error("Error during the update of user's data: ", error);
-        showErrorSwal(text.userAccountForm.swal.errorNotUpdated);
-      }
+    if (!isValid()) return;
+    try {
+      updateUserData(currentUser.uid, userAccountForm)
+        .then(() => {
+          showSuccessSwal(text.userAccountForm.swal.successMessage);
+        })
+        .then(() => {
+          setIsLoading(false);
+          setUserData({ ...userData, ...userAccountForm });
+        });
+    } catch (error) {
+      setIsLoading(false);
+      console.error("Error during the update of user's data: ", error);
+      showErrorSwal(text.userAccountForm.swal.errorNotUpdated);
     }
   };
 

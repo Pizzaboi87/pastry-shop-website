@@ -1,5 +1,6 @@
-import { useSwalMessage } from "../utils/useSwalMessage";
 import { useState, useContext } from "react";
+import { useSwalMessage } from "../utils/useSwalMessage";
+import { useValidation } from "../utils/useValidation";
 import { UserContext } from "../context";
 import { storeComment } from "../utils/firebase";
 import { v4 as uuidv4 } from "uuid";
@@ -28,21 +29,20 @@ const BlogCommentForm = ({ postID }) => {
   const [commentForm, setCommentForm] = useState(defaultForm);
   const { author, email, title, comment } = commentForm;
 
-  const valueCheck = (title, comment) => {
-    const commentRegex =
-      /(?:[\u{1F000}-\u{1FFFF}]|\p{Emoji_Presentation}|\p{Emoji}\ufe0f|[\p{L}0-9,.\-;:?!()%"@$/€\n\s])/u;
-
-    switch (true) {
-      case !commentRegex.test(title):
-        showErrorSwal(text.blogCommentForm.swal.errorCommentTitle);
-        return;
-      case !commentRegex.test(comment):
-        showErrorSwal(text.blogCommentForm.swal.errorComment);
-        return;
-      default:
-        return true;
-    }
+  const validationRules = {
+    title: {
+      value: title,
+      regex: "comment",
+      errorMessage: text.blogCommentForm.swal.errorCommentTitle,
+    },
+    comment: {
+      value: comment,
+      regex: "comment",
+      errorMessage: text.blogCommentForm.swal.errorComment,
+    },
   };
+
+  const { isValid } = useValidation(validationRules);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -51,7 +51,7 @@ const BlogCommentForm = ({ postID }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!valueCheck(title, comment)) return;
+    if (!isValid()) return;
     else {
       const resp = await storeComment(commentForm);
       if (resp) {

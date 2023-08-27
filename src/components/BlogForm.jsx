@@ -7,6 +7,7 @@ import { translate } from "../utils/translate";
 import { getAllPost, storeImage } from "../utils/firebase";
 import { normalizeSync } from "normalize-diacritics";
 import { useSwalMessage } from "../utils/useSwalMessage";
+import { useValidation } from "../utils/useValidation";
 
 const BlogForm = ({ dbPost }) => {
   const { text, currentUser, userLanguage } = useContext(UserContext);
@@ -16,9 +17,6 @@ const BlogForm = ({ dbPost }) => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [isTranslating, setIsTranslating] = useState(false);
-
-  const normalRegex = /^[0-9-.,()\//\p{L}\s]+$/u;
-  const textRegex = /^[0-9,.\-;:?!()%"@$/€\p{L}0-9\n\s]+$/u;
 
   let uploadFile = {};
   let fileExtension = "";
@@ -58,27 +56,35 @@ const BlogForm = ({ dbPost }) => {
     imageFile,
   } = blogForm;
 
-  const valueCheck = (author, title, blurb, post, tags) => {
-    switch (true) {
-      case !normalRegex.test(author):
-        showErrorSwal(text.blogForm.swal.errorName);
-        return;
-      case !textRegex.test(title):
-        showErrorSwal(text.blogForm.swal.errorPostTitle);
-        return;
-      case !textRegex.test(blurb):
-        showErrorSwal(text.blogForm.swal.errorBlurb);
-        return;
-      case !textRegex.test(post):
-        showErrorSwal(text.blogForm.swal.errorPostText);
-        return;
-      case !normalRegex.test(tags.toString()):
-        showErrorSwal(text.blogForm.swal.errorTags);
-        return;
-      default:
-        return true;
-    }
+  const validationRules = {
+    author: {
+      value: author,
+      regex: "normal",
+      errorMessage: text.blogForm.swal.errorName,
+    },
+    title: {
+      value: title,
+      regex: "text",
+      errorMessage: text.blogForm.swal.errorPostTitle,
+    },
+    blurb: {
+      value: blurb,
+      regex: "text",
+      errorMessage: text.blogForm.swal.errorBlurb,
+    },
+    post: {
+      value: post,
+      regex: "text",
+      errorMessage: text.blogForm.swal.errorPostText,
+    },
+    tags: {
+      value: tags.toString(),
+      regex: "normal",
+      errorMessage: text.blogForm.swal.errorTags,
+    },
   };
+
+  const { isValid } = useValidation(validationRules);
 
   const getTranslations = async () => {
     setIsTranslating(true);
@@ -170,7 +176,7 @@ const BlogForm = ({ dbPost }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!valueCheck(author, title, blurb, post, tags)) return;
+    if (!isValid()) return;
 
     await storeImage(imageFile, image);
     const formObjects = await getTranslations();
