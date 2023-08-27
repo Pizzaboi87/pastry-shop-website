@@ -1,5 +1,6 @@
 import TransitionParent from "./TransitionParent";
 import { useSwalMessage } from "../utils/useSwalMessage";
+import { useValidation } from "../utils/useValidation";
 import { useContext, useState } from "react";
 import { UserContext } from "../context";
 import {
@@ -21,21 +22,20 @@ const AdminLogin = () => {
   const [form, setForm] = useState(defaultForm);
   const { user, password } = form;
 
-  const valueCheck = (user, password) => {
-    const nameRegex = /^[-\p{L}\s]+$/u;
-    const passwordRegex = /^[0-9,.\-_;:?!()%"@$/€\p{L}\s]+$/u;
-
-    switch (true) {
-      case !nameRegex.test(user):
-        showErrorSwal(text.adminLogin.swal.errorUser);
-        return;
-      case !passwordRegex.test(password):
-        showErrorSwal(text.adminLogin.swal.errorPassword);
-        return;
-      default:
-        return true;
-    }
+  const validationRules = {
+    user: {
+      value: user,
+      regex: "name",
+      errorMessage: text.adminLogin.swal.errorUser,
+    },
+    password: {
+      value: password,
+      regex: "password",
+      errorMessage: text.adminLogin.swal.errorPassword,
+    },
   };
+
+  const { isValid } = useValidation(validationRules);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -44,7 +44,7 @@ const AdminLogin = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!valueCheck(user, password)) return;
+    if (!isValid()) return;
     else if (
       user !== import.meta.env.VITE_ADMIN_NAME ||
       password !== import.meta.env.VITE_ADMIN_PASSWORD
