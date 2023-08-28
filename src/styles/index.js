@@ -246,6 +246,60 @@ const noPermissionStyle = {
   image: "w-[15rem]",
 };
 
+const paragraphsStyle = {
+  imgFirst: "2xl:ml-24",
+  imgLast: "ml-0",
+  paragraph: "my-2",
+  wrapper:
+    "md:text-justify 2xl:max-w-[40%] max-w-[90%] 2xl:text-[1.25rem] text-[1.5rem] mt-8 xl:mt-0  text-text leading-9",
+};
+
+const postcardStyle = {
+  wrapper:
+    "hidden xs:flex sm:w-[90%] ms:w-[75%] bg-white sm:flex-row flex-col xs:mb-24",
+  messageWrapper:
+    "sm:w-[50%] sm:p-8 p-2 pb-10 sm:my-4 sm:mx-0 mx-4 sm:border-r-2 border-r-0 sm:border-b-0 border-b-2",
+  stampImage:
+    "absolute lg:border-[0.3125rem] md:border-[0.2rem] border-[0.15rem] lg:top-2 md:top-[0.75rem] top-[0.5rem] lg:left-2 left-[0.5rem] lg:w-[11.5rem] md:w-[6.5rem] w-[5.25rem] lg:h-[9rem] h-[4rem] bg-stamp bg-cover",
+  message:
+    "font-letter text-text xl:text-[2.2rem] sm:text-[1.3rem] text-[1rem]",
+  messageOne: "lg:my-8 sm:my-4 my-2",
+  messageTwo: "lg:mb-8 sm:mb-8 my-2",
+  messageThree: "lg:mb-16 sm:mb-8 mb-4",
+  stampContainer:
+    "sm:w-[50%] sm:rotate-0 rotate-90 flex flex-col items-center sm:pb-24 pb-2 sm:pt-8 pt-0",
+  stamp:
+    "lg:w-[12.5rem] md:w-[7.5rem] w-[6.25rem] xl:h-[10rem] lg:h-[11.3rem] md:h-[5.5rem] h-[5rem] relative lg:self-end lg:mr-8 lg:ml-0 ml-36",
+  stampPicture:
+    "absolute w-full lg:bottom-[-2rem] bottom-[-1rem] lg:left-[-2rem] left-[-1rem]",
+  addressWrapper:
+    "h-[75%] w-full flex flex-col items-center justify-center gap-6",
+  addressContainer: "sm:w-[70%] ms:w-[45%] w-[60%] border-b-4",
+  address:
+    "font-letter text-text xl:text-[2.7rem] sm:text-[1.8rem] text-[1.4rem] ml-8",
+  zipWrapper: "sm:w-[70%] ms:w-[45%] w-[60%] flex gap-4",
+  zipContainer:
+    "border-4 lg:w-[3rem] sm:[2.2rem] w-[2rem] md:h-[4rem] sm:h-[3rem] h-[2.5rem] text-center",
+  zip: "font-letter text-text lg:text-[2.2rem] sm:text-[1.8rem] text-[1.5rem]",
+};
+
+const recipeCardStyle = {
+  wrapper:
+    "2xl:w-[80%] w-full h-auto text-justify md:p-12 p-4 rounded-xl shadow-xl",
+  notOwn: "mb-20",
+  likeIcon:
+    "text-[3rem] absolute xl:right-8 right-2 xl:top-10 top-2 cursor-pointer",
+  title: "mb-4 xl:text-[1.8rem] text-[1.4rem] text-left font-[500] text-text",
+  cardTitle: "text-[1.3rem] text-text font-[400]",
+  list: "mb-8 font-[300] text-text text-[1rem]",
+  listItem: "flex flex-row gap-2 items-center md:mb-0 my-1",
+  span: "w-[2rem] h-[2rem]",
+  ingredientsIcon: "text-[2rem] cursor-pointer self-center",
+  instructions: "text-[1.1rem] font-[400] text-text",
+  socialWrapper: "mt-8 flex gap-4",
+  email: "cursor-pointer",
+};
+
 const phoneInputStyle = {
   width: "100%",
   fontSize: "1.2rem",
@@ -327,16 +381,6 @@ const glassStyle = `bg-[rgba(255, 255, 255, 0.2)] rounded-2xl boxShadow-[0 4px 3
 
 const tableStyle = "text-text text-[1rem] font-[500] pl-2 md:py-2";
 
-const postcardStyle = {
-  stampImage:
-    "absolute lg:border-[0.3125rem] md:border-[0.2rem] border-[0.15rem] lg:top-2 md:top-[0.75rem] top-[0.5rem] lg:left-2 left-[0.5rem] lg:w-[11.5rem] md:w-[6.5rem] w-[5.25rem] lg:h-[9rem] h-[4rem] bg-stamp bg-cover",
-  message:
-    "font-letter text-text xl:text-[2.2rem] sm:text-[1.3rem] text-[1rem]",
-  addressWrapper: "sm:w-[70%] ms:w-[45%] w-[60%] border-b-4",
-  address:
-    "font-letter text-text xl:text-[2.7rem] sm:text-[1.8rem] text-[1.4rem] ml-8",
-};
-
 const signInFormStyle = {
   input:
     "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted",
@@ -413,6 +457,9 @@ export {
   navMobileStyle,
   navUserStyle,
   noPermissionStyle,
+  paragraphsStyle,
+  postcardStyle,
+  recipeCardStyle,
   phoneInputStyle,
   recolorStyle,
   shadowStyle,
@@ -424,7 +471,6 @@ export {
   personalMenuOffStyle,
   glassStyle,
   tableStyle,
-  postcardStyle,
   signInFormStyle,
   signUpFormStyle,
   adminPageStyle,

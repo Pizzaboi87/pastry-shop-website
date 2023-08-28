@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
+import { paragraphsStyle } from "../styles";
 
 const Paragraphs = ({ dirText, imgFirst, text }) => {
   const motionProps = slideIn(dirText);
@@ -10,11 +11,14 @@ const Paragraphs = ({ dirText, imgFirst, text }) => {
       whileInView={motionProps.whileInView}
       viewport={motionProps.viewport}
       className={`${
-        imgFirst ? "2xl:ml-24" : "ml-0"
-      } md:text-justify 2xl:max-w-[40%] max-w-[90%] 2xl:text-[1.25rem] text-[1.5rem] mt-8 xl:mt-0  text-text leading-9`}
+        imgFirst ? paragraphsStyle.imgFirst : paragraphsStyle.imgLast
+      } ${paragraphsStyle.wrapper}`}
     >
       {text.map((paragraph, index) => (
-        <p key={`${paragraph[0]}-${index}`} className="my-2">
+        <p
+          key={`${paragraph[0]}-${index}`}
+          className={paragraphsStyle.paragraph}
+        >
           {paragraph}
         </p>
       ))}

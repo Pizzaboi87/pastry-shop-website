@@ -1,8 +1,8 @@
+import { UserContext } from "../context";
 import { useContext, useEffect, useState } from "react";
 import { slideIn } from "../utils/motion";
-import { UserContext } from "../context";
 import { getUserData, updateUserData } from "../utils/firebase";
-import { Theme_Icon, Theme_Motion_Div } from "../styles";
+import { Theme_Icon, Theme_Motion_Div, recipeCardStyle } from "../styles";
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -65,23 +65,19 @@ const RecipeCard = ({ recipe, isOwnPage }) => {
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
       key={recipe.title}
-      className={`${
-        isOwnPage ? "" : "mb-20"
-      } 2xl:w-[80%] w-full h-auto text-justify md:p-12 p-4 rounded-xl shadow-xl`}
+      className={`${isOwnPage ? "" : recipeCardStyle.notOwn} ${
+        recipeCardStyle.wrapper
+      }`}
     >
       <Theme_Icon
         icon={liked ? "mdi:heart" : "mdi:heart-outline"}
         $iconcolor="logo"
-        className="text-[3rem] absolute xl:right-8 right-2 xl:top-10 top-2 cursor-pointer"
+        className={recipeCardStyle.likeIcon}
         onClick={handleLike}
       />
-      <h1 className="mb-4 xl:text-[1.8rem] text-[1.4rem] text-left font-[500] text-text">
-        {recipe.title}
-      </h1>
-      <h2 className="text-[1.3rem] text-text font-[400]">
-        {text.recipeCardTitle}
-      </h2>
-      <ul className="mb-8 font-[300] text-text text-[1rem]">
+      <h1 className={recipeCardStyle.title}>{recipe.title}</h1>
+      <h2 className={recipeCardStyle.cardTitle}>{text.recipeCardTitle}</h2>
+      <ul className={recipeCardStyle.list}>
         {ingredients.map((ingredient, index) => {
           const [checked, setChecked] = useState(false);
 
@@ -92,13 +88,13 @@ const RecipeCard = ({ recipe, isOwnPage }) => {
           return (
             <li
               key={`${ingredient}-${index}`}
-              className="flex flex-row gap-2 items-center md:mb-0 my-1"
+              className={recipeCardStyle.listItem}
             >
-              <span className="w-[2rem] h-[2rem]">
+              <span className={recipeCardStyle.span}>
                 <Theme_Icon
                   icon={checked ? "mdi:muffin" : "ri:checkbox-blank-line"}
                   $iconcolor="logo"
-                  className="text-[2rem] cursor-pointer self-center"
+                  className={recipeCardStyle.ingredientsIcon}
                   onClick={toggleChecked}
                 />
               </span>
@@ -107,10 +103,8 @@ const RecipeCard = ({ recipe, isOwnPage }) => {
           );
         })}
       </ul>
-      <p className="text-[1.1rem] font-[400] text-text">
-        {recipe.instructions}
-      </p>
-      <div className="mt-8 flex gap-4">
+      <p className={recipeCardStyle.instructions}>{recipe.instructions}</p>
+      <div className={recipeCardStyle.socialWrapper}>
         <FacebookShareButton
           url={"https://ciel-sucre.vercel.app"}
           quote={quoteText}
@@ -125,7 +119,11 @@ const RecipeCard = ({ recipe, isOwnPage }) => {
         >
           <TwitterIcon size={36} />
         </TwitterShareButton>
-        <EmailIcon size={36} onClick={sendMail} className="cursor-pointer" />
+        <EmailIcon
+          size={36}
+          onClick={sendMail}
+          className={recipeCardStyle.email}
+        />
       </div>
     </Theme_Motion_Div>
   );
