@@ -1,7 +1,7 @@
 import { BlogContext, UserContext } from "../context";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { blogFormStyle, blogFormStyle } from "../styles";
+import { blogFormStyle } from "../styles";
 import { uploadPost } from "../utils/firebase-admin";
 import { translate } from "../utils/translate";
 import { getAllPost, storeImage } from "../utils/firebase";
@@ -17,6 +17,7 @@ const BlogForm = ({ dbPost }) => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [isTranslating, setIsTranslating] = useState(false);
+  const normalRegex = /^[\p{L}\-.()\//0-9\s]+$/u;
 
   let uploadFile = {};
   let fileExtension = "";

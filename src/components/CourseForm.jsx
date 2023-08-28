@@ -91,12 +91,10 @@ const CourseForm = ({ courses }) => {
   return (
     <Theme_Form
       $bgcolor="primary"
-      className="col-span-2 md:py-8 md:px-8 py-4 px-1 rounded-xl shadow-xl"
+      className={courseFormStyle.form}
       onSubmit={handleSubmit}
     >
-      <h1 className="md:text-4xl text-xl text-center text-text font-[500] mb-8">
-        {text.courseForm.title}
-      </h1>
+      <h1 className={courseFormStyle.title}>{text.courseForm.title}</h1>
       <label className={courseFormStyle.label}>
         {text.courseForm.name}
         <input

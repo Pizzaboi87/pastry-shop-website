@@ -1,76 +1,73 @@
 import { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context";
-import { Theme_Button, Theme_Div, Theme_Link } from "../styles";
+import {
+  Theme_Button,
+  Theme_Div,
+  Theme_Link,
+  blogPostCardStyle,
+} from "../styles";
 
 const BlogPostCard = ({ post, isOwnPage }) => {
   const { text } = useContext(UserContext);
-
-  const article = post.post.split("		").map((paragraph, index) => (
-    <p key={index}>
-      {paragraph.split("\n").map((line, index) => (
-        <Fragment key={index}>
-          {line}
-          <br />
-        </Fragment>
-      ))}
-    </p>
-  ));
 
   return (
     <Theme_Div
       $bgcolor="primary"
       $bordercolor="transparent"
-      className="w-full rounded-2xl mb-16 shadow-xl"
+      className={blogPostCardStyle.wrapper}
     >
       {isOwnPage ? (
-        <img
-          src={post.image}
-          alt="image"
-          className="w-full h-[25rem] object-cover rounded-t-2xl"
-        />
+        <img src={post.image} alt="image" className={blogPostCardStyle.image} />
       ) : (
         <Link to={`/blog/post/` + post.postid}>
           <img
             src={post.image}
             alt="image"
-            className="w-full h-[25rem] object-cover rounded-t-2xl"
+            className={blogPostCardStyle.image}
           />
         </Link>
       )}
 
-      <div className="p-8 flex flex-col items-center justify-center">
+      <div className={blogPostCardStyle.container}>
         {!isOwnPage && (
-          <h1 className="self-center mb-4 text-text text-[1.3rem] font-[600]">
-            {post.title}
-          </h1>
+          <h1 className={blogPostCardStyle.title}>{post.title}</h1>
         )}
 
         {isOwnPage && (
-          <div className="flex w-full justify-between mb-4">
+          <div className={blogPostCardStyle.dateAuthor}>
             <h2>{post.date}</h2>
             <h2>{post.author}</h2>
           </div>
         )}
 
         <p
-          className={`${
-            isOwnPage ? "font-[600]" : "font-[400]"
-          } text-text text-justify text-[1rem] mb-4`}
+          className={`${isOwnPage ? "font-[600]" : "font-[400]"} ${
+            blogPostCardStyle.text
+          }`}
         >
           {post.blurb}
         </p>
 
         {isOwnPage && (
-          <span className="text-text text-justify text-[1rem] mb-4">
-            {article}
+          <span className={blogPostCardStyle.text}>
+            {post.post.split("		").map((paragraph, index) => (
+              <p key={index}>
+                {paragraph.split("\n").map((line, index) => (
+                  <Fragment key={index}>
+                    {line}
+                    <br />
+                  </Fragment>
+                ))}
+              </p>
+            ))}
           </span>
         )}
 
-        <ul className="flex gap-4 self-start mt-4">
+        <ul className={blogPostCardStyle.list}>
           {isOwnPage &&
             post.tags.map((tag, index) => (
-              <li key={index} className="text-[1.2rem]">
+              <li key={index} className={blogPostCardStyle.listItem}>
                 <Theme_Link
                   $textcolor="text"
                   $bgcolor="transparent"
@@ -93,7 +90,7 @@ const BlogPostCard = ({ post, isOwnPage }) => {
             $bordercolor="transparent"
             $hoverbgcolor="dark"
             $hovertextcolor="textlight"
-            className="rounded-xl px-4 py-2 font-[600] shadow-xl self-center"
+            className={blogPostCardStyle.button}
           >
             {text.blogPostCardButton}
           </Theme_Button>

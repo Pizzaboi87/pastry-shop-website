@@ -119,6 +119,74 @@ const blogFormStyle = {
     "md:col-start-4 md:col-auto col-span-4 py-2 bg-purple hover:bg-yellowdark hover:text-text rounded-xl shadow-xl border-none text-white font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
+const blogPostCardStyle = {
+  wrapper: "w-full rounded-2xl mb-16 shadow-xl",
+  image: "w-full h-[25rem] object-cover rounded-t-2xl",
+  container: "p-8 flex flex-col items-center justify-center",
+  title: "self-center mb-4 text-text text-[1.3rem] font-[600]",
+  dateAuthor: "flex w-full justify-between mb-4",
+  text: "text-text text-justify text-[1rem] mb-4",
+  list: "flex gap-4 self-start mt-4",
+  listItem: "text-[1.2rem]",
+  button: "rounded-xl px-4 py-2 font-[600] shadow-xl self-center",
+};
+
+const blogProposalStyle = {
+  wrapper: "h-fit rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer",
+  image: "col-span-2 rounded-full w-[5rem] h-[5rem] object-cover border-2",
+  container: "col-span-4 flex flex-col items-center w-full",
+  title: "text-text text-[1rem] font-[600] self-start",
+};
+
+const blogStickyStyle = {
+  wrapper:
+    "xl:sticky top-[20%] xl:col-span-2 col-span-6 w-full h-fit flex flex-col",
+  container: "flex xl:flex-col mb-6 gap-x-4 xl:gap-y-4 xl:mt-4",
+};
+
+const courseCardStyle = {
+  wrapper:
+    "w-full sm:w-[20rem] xs:h-[35rem] md:h-[31rem] mx-auto mb-4 text-justify p-4 rounded-xl shadow-xl flex flex-col items-center justify-between",
+  titleWrapper: "flex flex-col justify-center items-center w-full",
+  title: "mb-4 text-text text-[1.3rem] font-[500]",
+  imageWrapper: "overflow-hidden w-full md:h-[10rem] h-[13rem] mb-8",
+  image:
+    "w-full sm:h-[10rem] h-[13rem] object-cover mb-4 hover:scale-150 hover:translate-y-8 ease-in-out transition-all duration-500",
+  detailsWrapper: "h-full flex flex-col justify-between",
+  details: "text-text text-justify mb-4 text-[1.15rem] md:text-[1rem]",
+  button:
+    "flex mx-auto justify-center rounded-xl shadow-sm border-none text-center px-3 py-2 text-[1rem] font-[400] w-[50%]",
+};
+
+const courseFormStyle = {
+  form: "col-span-2 md:py-8 md:px-8 py-4 px-1 rounded-xl shadow-xl",
+  title: "md:text-4xl text-xl text-center text-text font-[500] mb-8",
+  input:
+    "text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-2 outline-offset-2 outline-dotted outline-text",
+  label: "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] p-4",
+  button:
+    "px-16 py-2 rounded-xl shadow-xl border-none text-[1rem] font-[500] mx-auto block",
+};
+
+const footerStyle = {
+  wrapper: "w-full flex flex-col xl:mt-24 mt-8 text-text",
+  image: "h-[7rem]",
+  container:
+    "flex flex-wrap sm:flex-row flex-col justify-between items-center sm:px-20",
+  logoContainer: "flex flex-col items-center justify-center",
+  logo: "bg-logo bg-logoimage w-[6rem] h-[6rem] bg-white bg-center rounded-full",
+  copyright: "font-[400] text-[1rem] text-center",
+  linkContainer:
+    "flex sm:flex-row flex-col sm:pl-0 pl-8 sm:pt-0 pt-8 sm:w-[50%] w-full justify-between",
+  linkList: "flex flex-col leading-8 pb-8",
+  linkTitle: "font-[600] sm:text-[1.2rem] text-[1.5rem]",
+  linkItem: "font-[400] sm:text-[1rem] text-[1.2rem]",
+  underLinks:
+    "flex justify-end flex-wrap sm:px-16 px-6 py-2 border-t-2 border-dotted",
+  underLinkSpan: "flex gap-4 font-[400] text-[1rem]",
+  underLink: "text-center",
+};
+
 const phoneInputStyle = {
   width: "100%",
   fontSize: "1.2rem",
@@ -200,14 +268,6 @@ const glassStyle = `bg-[rgba(255, 255, 255, 0.2)] rounded-2xl boxShadow-[0 4px 3
 
 const tableStyle = "text-text text-[1rem] font-[500] pl-2 md:py-2";
 
-const courseFormStyle = {
-  input:
-    "text-text md:text-[1.2rem] text-[1rem] font-[400] py-2 px-4 rounded-xl outline-2 outline-offset-2 outline-dotted outline-text",
-  label: "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] p-4",
-  button:
-    "px-16 py-2 rounded-xl shadow-xl border-none text-[1rem] font-[500] mx-auto block",
-};
-
 const postcardStyle = {
   stampImage:
     "absolute lg:border-[0.3125rem] md:border-[0.2rem] border-[0.15rem] lg:top-2 md:top-[0.75rem] top-[0.5rem] lg:left-2 left-[0.5rem] lg:w-[11.5rem] md:w-[6.5rem] w-[5.25rem] lg:h-[9rem] h-[4rem] bg-stamp bg-cover",
@@ -280,6 +340,12 @@ export {
   blogCommentStyle,
   blogCommentFormStyle,
   blogFormStyle,
+  blogPostCardStyle,
+  blogProposalStyle,
+  blogStickyStyle,
+  courseCardStyle,
+  courseFormStyle,
+  footerStyle,
   phoneInputStyle,
   recolorStyle,
   shadowStyle,
@@ -291,7 +357,6 @@ export {
   personalMenuOffStyle,
   glassStyle,
   tableStyle,
-  courseFormStyle,
   postcardStyle,
   signInFormStyle,
   signUpFormStyle,
