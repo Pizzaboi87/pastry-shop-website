@@ -37,12 +37,13 @@ import {
   PreviousOrders,
   Settings,
 } from "../pages/user-pages";
+import { mainContentStyle } from "../styles";
 
 const MainContent = () => {
   const location = useLocation();
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className={mainContentStyle.wrapper}>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Navigate to="/home" />} />

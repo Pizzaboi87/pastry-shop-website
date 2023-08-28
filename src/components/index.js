@@ -21,7 +21,9 @@ import MainContent from "./MainContent";
 import Navbar from "./Navbar";
 import NavDesktop from "./NavDesktop";
 import NavMobile from "./NavMobile";
+import NavMobileMenu from "./NavMobileMenu";
 import NavUser from "./NavUser";
+import NavUserMobile from "./NavUserMobile";
 import NoPermission from "./NoPermission";
 import Paragraphs from "./Paragraphs";
 import Postcard from "./Postcard";
@@ -65,7 +67,9 @@ export {
   Navbar,
   NavDesktop,
   NavMobile,
+  NavMobileMenu,
   NavUser,
+  NavUserMobile,
   NoPermission,
   Paragraphs,
   Postcard,

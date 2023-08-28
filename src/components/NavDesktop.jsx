@@ -1,20 +1,23 @@
 import NavUser from "./NavUser";
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { logo } from "../assets";
 import { UserContext } from "../context";
-import { Theme_Button, Theme_Li, Theme_Link, Theme_Nav } from "../styles";
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { logo } from "../assets";
+import {
+  Theme_Button,
+  Theme_Li,
+  Theme_Link,
+  Theme_Nav,
+  navDesktopStyle,
+} from "../styles";
 
 const NavDesktop = () => {
-  const { currentUser, text, isReg, setIsReg } = useContext(UserContext);
+  const { currentUser, text, setIsReg } = useContext(UserContext);
   const [openMyAccount, setOpenMyAccount] = useState(false);
 
   return (
-    <Theme_Nav
-      $bgcolor="secondary"
-      className="lg:visible invisible 2xl:w-[85%] w-full h-[7rem] fixed pt-4 top-7 rounded-2xl flex items-center justify-around text-[1rem] 2xl:text-[1.3rem] font-[400] shadow-md z-10"
-    >
-      <ul className="flex justify-center items-center 2xl:gap-12 gap-8">
+    <Theme_Nav $bgcolor="secondary" className={navDesktopStyle.wrapper}>
+      <ul className={navDesktopStyle.list}>
         {text.navLinksLeft.map((link) => (
           <Theme_Li key={link.title} $textcolor="text" $hovertextcolor="logo">
             <Link to={link.id} onClick={() => setOpenMyAccount(false)}>
@@ -24,11 +27,7 @@ const NavDesktop = () => {
         ))}
 
         <li>
-          <img
-            className="rounded-full h-[6rem] contrast-100"
-            src={logo}
-            alt="logo"
-          />
+          <img className={navDesktopStyle.logo} src={logo} alt="logo" />
         </li>
 
         {text.navLinksRight.map((link) => (
@@ -62,7 +61,7 @@ const NavDesktop = () => {
                   $bordercolor="transparent"
                   $hoverbgcolor="dark"
                   $hovertextcolor="textlight"
-                  className="rounded-xl shadow-sm border-none text-center font-[400] px-8 py-1"
+                  className={navDesktopStyle.button}
                   onClick={() => {
                     setIsReg(false);
                     () => setOpenMyAccount(false);

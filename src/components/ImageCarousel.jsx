@@ -1,4 +1,5 @@
 import Carousel from "react-multi-carousel";
+import { imageCarouselStyle } from "../styles";
 import "react-multi-carousel/lib/styles.css";
 
 const ImageCarousel = ({ children, type }) => {
@@ -28,7 +29,7 @@ const ImageCarousel = ({ children, type }) => {
   return (
     <Carousel
       responsive={responsive}
-      containerClass="w-full flex items-center"
+      containerClass={imageCarouselStyle.container}
       itemClass={type === "review" ? "mx-auto" : "mx-2"}
       autoPlay={true}
       swipeable={true}
@@ -37,7 +38,7 @@ const ImageCarousel = ({ children, type }) => {
       infinite={true}
       partialVisible={false}
       renderDotsOutside={true}
-      dotListClass="custom-dot-list-style mb-3"
+      dotListClass={imageCarouselStyle.dotList}
     >
       {children}
     </Carousel>

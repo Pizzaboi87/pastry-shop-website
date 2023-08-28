@@ -187,6 +187,65 @@ const footerStyle = {
   underLink: "text-center",
 };
 
+const imageStyle = {
+  image: "md:w-[80%] xl:w-[40%] w-[100%] mt-8 rounded-3xl shadow-xl",
+};
+
+const imageCarouselStyle = {
+  container: "w-full flex items-center",
+  dotList: "custom-dot-list-style mb-3",
+};
+
+const loadingStyle = {
+  wrapper: "flex flex-col w-full h-full items-center justify-start",
+  image: "w-[20rem] h-[20rem]",
+  title: "text-text text-[2rem] font-[500] -mt-[5rem]",
+};
+
+const mainContentStyle = {
+  wrapper: "flex flex-col items-center w-full",
+};
+
+const navDesktopStyle = {
+  wrapper:
+    "lg:visible invisible 2xl:w-[85%] w-full h-[7rem] fixed pt-4 top-7 rounded-2xl flex items-center justify-around text-[1rem] 2xl:text-[1.3rem] font-[400] shadow-md z-10",
+  list: "flex justify-center items-center 2xl:gap-12 gap-8",
+  logo: "rounded-full h-[6rem] contrast-100",
+  button: "rounded-xl shadow-sm border-none text-center font-[400] px-8 py-1",
+};
+
+const navMobileStyle = {
+  logo: "w-[5rem] h-[5rem] mx-auto fixed top-[3rem] left-0 right-0 z-[3]",
+  menuContainer:
+    "lg:invisible visible fixed top-0 left-0 w-full h-[8rem] z-[2] flex justify-between items-end rounded-b-xl shadow-xl",
+  menuIcon: "md:text-[4.2rem] text-[3.4rem] ml-4 mb-2",
+  userMenuIcon: "md:text-[3.8rem] text-[2.8rem] mr-4 mb-2",
+  sideMenuContainer:
+    "bg-main bg-mobBackground fixed top-0 left-0 z-[12] flex items-center justify-center",
+  sideMenuList:
+    "flex flex-col md:text-[5rem] text-[2.5rem] font-[400] items-center",
+  userListItem: "text-[1.2rem]",
+  userButton: "md:text-[5rem] text-[2.5rem] font-[400]",
+  closeIconRight:
+    "absolute top-[2rem] right-[1rem] md:text-[4.8rem] text-[4rem]",
+  closeIconLeft: "absolute top-[2rem] left-[1rem] md:text-[4.8rem] text-[4rem]",
+};
+
+const navUserStyle = {
+  wrapper:
+    "lg:visible invisible flex flex-col items-center justify-center fixed 3xl:right-[12rem] 2xl:right-[8rem] right-4 top-[8rem] w-[15rem] rounded-b-xl shadow-xl z-[9] transition-all duration-500 ease-in-out",
+  openWrapper: "h-[15rem]",
+  closeWrapper: "h-0",
+  openList: "visible opacity-1 delay-300",
+  closeList: "invisible opacity-0",
+  list: "flex flex-col p-5 transition-all ease-in-out",
+  listItem: "text-[1.2rem]",
+};
+
+const noPermissionStyle = {
+  image: "w-[15rem]",
+};
+
 const phoneInputStyle = {
   width: "100%",
   fontSize: "1.2rem",
@@ -346,6 +405,14 @@ export {
   courseCardStyle,
   courseFormStyle,
   footerStyle,
+  imageStyle,
+  imageCarouselStyle,
+  loadingStyle,
+  mainContentStyle,
+  navDesktopStyle,
+  navMobileStyle,
+  navUserStyle,
+  noPermissionStyle,
   phoneInputStyle,
   recolorStyle,
   shadowStyle,
