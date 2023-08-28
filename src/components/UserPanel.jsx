@@ -1,8 +1,8 @@
 import UserAccountImage from "./UserAccountImage";
 import Loading from "./Loading";
-import { useContext } from "react";
 import { UserContext } from "../context";
-import { Theme_Div } from "../styles";
+import { useContext } from "react";
+import { Theme_Div, userPanelStyle } from "../styles";
 
 const UserPanel = ({ children }) => {
   const { userData, userImage, setUserImage, currentUser } =
@@ -22,7 +22,7 @@ const UserPanel = ({ children }) => {
       <Theme_Div
         $bgcolor="background"
         $bordercolor="transparent"
-        className="xl:col-span-5 col-span-6 rounded-2xl shadow-inner shadow-black xl:p-12 p-4"
+        className={userPanelStyle.container}
       >
         {children}
       </Theme_Div>

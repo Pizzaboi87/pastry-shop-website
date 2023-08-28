@@ -390,6 +390,31 @@ const textImageStyle = {
     "w-full flex 2xl:flex-row flex-col items-center justify-center 2xl:mt-36 3xl:mt-56 mt-6",
 };
 
+const userAccountImageStyle = {
+  wrapper:
+    "xl:col-span-1 col-span-6 flex flex-col items-center gap-y-2 xl:sticky top-36 h-fit",
+  image:
+    "profilecontainer w-[10rem] h-[10rem] rounded-full border-white border-2 bg-center bg-cover overflow-hidden",
+  inputWrapper:
+    "changeimage w-full h-full bg-[#ffffffbb] rounded-full flex items-center justify-center",
+  icon: "text-[3rem] cursor-pointer",
+  name: "text-text text-[1.4rem] font-[600]",
+};
+
+const userDeleteFormStyle = {
+  form: "md:w-[50%] md:flex md:flex-col grid grid-cols-6",
+  label: "md:col-span-2 col-span-6",
+};
+
+const userOtherStyle = {
+  form: "grid grid-cols-6 gap-x-8",
+  labelOne: "md:col-span-2 col-span-6",
+  labelTwo: "md:col-span-1 col-span-6",
+  labelThree: "md:col-span-3 col-span-6",
+  span: "flex flex-row items-center gap-x-4 md:mb-2 mt-2 md:mt-0 md:col-span-4 col-span-6",
+  checkbox: "w-[1rem] h-[1rem]",
+};
+
 const userPageStyle = {
   form: "w-full grid md:grid-cols-7 xl:px-16 xl:py-6 py-2 gap-y-2",
   odd: "md:col-span-3  md:col-start-1",
@@ -406,8 +431,17 @@ const userPageStyle = {
     "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] md:col-start-5 col-start-3 md:col-span-2 col-span-4 md:mt-0 mt-4",
   deleteButton:
     "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] md:self-end col-start-3 md:px-8 col-span-4 md:mt-0 mt-4",
-
   title: "col-span-6 xl:text-[3rem] text-[2rem] font-[600] mb-8 text-center",
+};
+
+const userPanelStyle = {
+  container:
+    "xl:col-span-5 col-span-6 rounded-2xl shadow-inner shadow-black xl:p-12 p-4",
+};
+
+const userPasswordStyle = {
+  form: "grid grid-cols-6 gap-x-8",
+  label: "md:col-span-2 col-span-6",
 };
 
 const userPhoneInputStyle = {
@@ -525,7 +559,12 @@ export {
   signUpFormStyle,
   teamCardStyle,
   textImageStyle,
+  userAccountImageStyle,
+  userDeleteFormStyle,
+  userOtherStyle,
   userPageStyle,
+  userPanelStyle,
+  userPasswordStyle,
   userPhoneInputStyle,
   recolorStyle,
   shadowStyle,

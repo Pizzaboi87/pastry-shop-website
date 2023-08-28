@@ -6,6 +6,7 @@ import {
   Theme_Button,
   Theme_Input,
   Theme_Select,
+  userOtherStyle,
   userPageStyle,
 } from "../styles";
 
@@ -67,8 +68,8 @@ const UserOtherSettingsForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-6 gap-x-8">
-      <label className={`${userPageStyle.label} md:col-span-2 col-span-6`}>
+    <form onSubmit={handleSubmit} className={userOtherStyle.form}>
+      <label className={`${userPageStyle.label} ${userOtherStyle.labelOne}`}>
         {text.userOtherSettings.language.title}
         <Theme_Select
           value={selectedLang}
@@ -77,14 +78,15 @@ const UserOtherSettingsForm = () => {
           $outlinecolor="logo"
           className={userPageStyle.input}
         >
-          <option value="eng">{text.userOtherSettings.language.option1}</option>
-          <option value="fra">{text.userOtherSettings.language.option2}</option>
-          <option value="esp">{text.userOtherSettings.language.option3}</option>
-          <option value="hun">{text.userOtherSettings.language.option4}</option>
+          {["eng", "fra", "esp", "hun"].map((lang, index) => (
+            <option key={index} value={lang}>
+              {text.userOtherSettings.language[`option${index + 1}`]}
+            </option>
+          ))}
         </Theme_Select>
       </label>
 
-      <label className={`${userPageStyle.label} md:col-span-1 col-span-6`}>
+      <label className={`${userPageStyle.label} ${userOtherStyle.labelTwo}`}>
         {text.userOtherSettings.currency.title}
         <Theme_Select
           value={selectedCurr}
@@ -93,14 +95,15 @@ const UserOtherSettingsForm = () => {
           $outlinecolor="logo"
           className={userPageStyle.input}
         >
-          <option value="eur">{text.userOtherSettings.currency.option1}</option>
-          <option value="usd">{text.userOtherSettings.currency.option2}</option>
-          <option value="gbp">{text.userOtherSettings.currency.option3}</option>
-          <option value="huf">{text.userOtherSettings.currency.option4}</option>
+          {["eur", "usd", "gbp", "huf"].map((curr, index) => (
+            <option key={index} value={curr}>
+              {text.userOtherSettings.currency[`option${index + 1}`]}
+            </option>
+          ))}
         </Theme_Select>
       </label>
 
-      <label className={`${userPageStyle.label} md:col-span-3 col-span-6`}>
+      <label className={`${userPageStyle.label} ${userOtherStyle.labelThree}`}>
         {text.userOtherSettings.theme.title}
         <Theme_Select
           value={selectedTheme}
@@ -109,21 +112,22 @@ const UserOtherSettingsForm = () => {
           $outlinecolor="logo"
           className={userPageStyle.input}
         >
-          <option value="pink">{text.userOtherSettings.theme.option1}</option>
-          <option value="blue">{text.userOtherSettings.theme.option2}</option>
-          <option value="green">{text.userOtherSettings.theme.option3}</option>
-          <option value="brown">{text.userOtherSettings.theme.option4}</option>
+          {["pink", "blue", "green", "brown"].map((theme, index) => (
+            <option key={index} value={theme}>
+              {text.userOtherSettings.theme[`option${index + 1}`]}
+            </option>
+          ))}
         </Theme_Select>
       </label>
 
-      <span className="flex flex-row items-center gap-x-4 md:mb-2 mt-2 md:mt-0 md:col-span-4 col-span-6">
+      <span className={userOtherStyle.span}>
         <Theme_Input
           checked={newsletter}
           name="newsletter"
           onChange={handleChange}
           $outlinecolor="logo"
           type="checkbox"
-          className="w-[1rem] h-[1rem]"
+          className={userPageStyle.checkbox}
         />
         <p>{text.userOtherSettings.newsletter}</p>
       </span>

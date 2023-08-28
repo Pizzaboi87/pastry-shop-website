@@ -1,10 +1,15 @@
-import { useContext, useState } from "react";
 import { UserContext } from "../context";
-import { Theme_Button, Theme_Input, userPageStyle } from "../styles";
-import { deleteMyself, reauthenticateUser } from "../utils/firebase";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSwalMessage } from "../utils/useSwalMessage";
 import { useValidation } from "../utils/useValidation";
+import { deleteMyself, reauthenticateUser } from "../utils/firebase";
+import {
+  Theme_Button,
+  Theme_Input,
+  userDeleteFormStyle,
+  userPageStyle,
+} from "../styles";
 
 const UserDeleteAccountForm = () => {
   const { text, currentUser } = useContext(UserContext);
@@ -78,11 +83,8 @@ const UserDeleteAccountForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="md:w-[50%] md:flex md:flex-col grid grid-cols-6"
-    >
-      <label className={`${userPageStyle.label} md:col-span-2 col-span-6`}>
+    <form onSubmit={handleSubmit} className={userDeleteFormStyle.form}>
+      <label className={`${userPageStyle.label} ${userDeleteFormStyle.label}`}>
         {text.userDelete.password}
         <Theme_Input
           $outlinecolor="logo"

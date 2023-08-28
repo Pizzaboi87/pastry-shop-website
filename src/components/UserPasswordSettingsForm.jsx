@@ -1,9 +1,14 @@
-import { useContext, useState } from "react";
 import { UserContext } from "../context";
-import { Theme_Button, Theme_Input, userPageStyle } from "../styles";
+import { useContext, useState } from "react";
 import { updateUserPassword } from "../utils/firebase";
 import { useSwalMessage } from "../utils/useSwalMessage";
 import { useValidation } from "../utils/useValidation";
+import {
+  Theme_Button,
+  Theme_Input,
+  userPageStyle,
+  userPasswordStyle,
+} from "../styles";
 
 const UserPasswordSettingsForm = () => {
   const { text, currentUser } = useContext(UserContext);
@@ -76,8 +81,8 @@ const UserPasswordSettingsForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-6 gap-x-8">
-      <label className={`${userPageStyle.label} md:col-span-2 col-span-6`}>
+    <form onSubmit={handleSubmit} className={userPasswordStyle.form}>
+      <label className={`${userPageStyle.label} ${userPasswordStyle.label}`}>
         {text.userPasswordForm.current}
         <Theme_Input
           $outlinecolor="logo"
@@ -90,7 +95,7 @@ const UserPasswordSettingsForm = () => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} md:col-span-2 col-span-6`}>
+      <label className={`${userPageStyle.label} ${userPasswordStyle.label}`}>
         {text.userPasswordForm.new}
         <Theme_Input
           $outlinecolor="logo"
@@ -103,7 +108,7 @@ const UserPasswordSettingsForm = () => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} md:col-span-2 col-span-6`}>
+      <label className={`${userPageStyle.label} ${userPasswordStyle.label}`}>
         {text.userPasswordForm.confirm}
         <Theme_Input
           $outlinecolor="logo"

@@ -13,7 +13,7 @@ const NavUser = ({ openMyAccount, setOpenMyAccount }) => {
       $bgcolor="secondary"
       $bordercolor="transparent"
       className={`${
-        openMyAccount ? navUserStyle.closeWrapper : navUserStyle.closeWrapper
+        openMyAccount ? navUserStyle.openWrapper : navUserStyle.closeWrapper
       } ${navUserStyle.wrapper}`}
     >
       <ul

@@ -1,8 +1,8 @@
-import { useRef, useContext } from "react";
 import { UserContext } from "../context";
+import { useRef, useContext } from "react";
 import { getUserImage, uploadUserImage } from "../utils/firebase";
-import { Theme_Icon } from "../styles";
 import { useSwalMessage } from "../utils/useSwalMessage";
+import { Theme_Icon, userAccountImageStyle } from "../styles";
 
 const UserAccountImage = ({
   userData,
@@ -38,16 +38,16 @@ const UserAccountImage = ({
   };
 
   return (
-    <div className="xl:col-span-1 col-span-6 flex flex-col items-center gap-y-2 xl:sticky top-36 h-fit">
+    <div className={userAccountImageStyle.wrapper}>
       <div
-        className="profilecontainer w-[10rem] h-[10rem] rounded-full border-white border-2 bg-center bg-cover overflow-hidden"
+        className={userAccountImageStyle.image}
         style={{ backgroundImage: `url(${userImage})` }}
       >
-        <div className="changeimage w-full h-full bg-[#ffffffbb] rounded-full flex items-center justify-center">
+        <div className={userAccountImageStyle.inputWrapper}>
           <Theme_Icon
             $iconcolor="title"
             icon="ri:image-edit-fill"
-            className="text-[3rem] cursor-pointer"
+            className={userAccountImageStyle.icon}
             onClick={handleChangeImage}
           />
           <input
@@ -59,9 +59,7 @@ const UserAccountImage = ({
           />
         </div>
       </div>
-      <h1 className="text-text text-[1.4rem] font-[600]">
-        {userData.displayName}
-      </h1>
+      <h1 className={userAccountImageStyle.name}>{userData.displayName}</h1>
     </div>
   );
 };
