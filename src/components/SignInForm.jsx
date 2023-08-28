@@ -1,6 +1,6 @@
-import { useState, useContext } from "react";
 import { UserContext } from "../context";
 import { Icon } from "@iconify/react";
+import { useState, useContext } from "react";
 import { motion } from "framer-motion";
 import { useSwalMessage } from "../utils/useSwalMessage";
 import { useValidation } from "../utils/useValidation";
@@ -88,13 +88,11 @@ const SignInForm = () => {
       animate={{ opacity: 1, maxHeight: "75vh" }}
       exit={{ opacity: 0, maxHeight: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="flex flex-col w-full h-full items-center justify-center"
+      className={signInFormStyle.wrapper}
     >
-      <h1 className="xl:text-4xl lg:text-xl md:text-4xl text-xl text-center text-text font-[600] mb-6">
-        {text.signInForm.title}
-      </h1>
+      <h1 className={signInFormStyle.title}>{text.signInForm.title}</h1>
 
-      <form className="flex flex-col items-start" onSubmit={handleSubmit}>
+      <form className={signInFormStyle.form} onSubmit={handleSubmit}>
         <label className={signInFormStyle.label}>
           {text.signInForm.email}
           <Theme_Input
@@ -134,7 +132,7 @@ const SignInForm = () => {
         </Theme_Button>
       </form>
 
-      <button className="mt-2 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]">
+      <button className={signInFormStyle.forgotButton}>
         {text.signInForm.forgot}
       </button>
 
@@ -144,7 +142,7 @@ const SignInForm = () => {
         $bordercolor="logo"
         $hoverbgcolor="transparent"
         $hovertextcolor="text"
-        className={signInFormStyle.forgotButton}
+        className={signInFormStyle.googleButton}
         onClick={handleGoogleSignIn}
       >
         <Icon icon="devicon:google" className="mr-2" />

@@ -1,8 +1,9 @@
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { slideIn } from "../utils/motion";
-import { Theme_Div } from "../styles";
+import { Theme_Div, teamCardStyle } from "../styles";
 
 const TeamCard = ({ staff, index }) => {
   const motionPropsR = slideIn("right", index * 0.25);
@@ -26,32 +27,29 @@ const TeamCard = ({ staff, index }) => {
       initial={motionPropsR.initial}
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
-      className="card relative mx-auto xl:w-[18rem] 3xl:w-[20rem] w-[20rem] h-[30rem] overflow-hidden rounded-xl shadow-xl"
+      className={teamCardStyle.wrapper}
     >
-      <img src={image} alt="member" className="h-full object-cover absolute" />
-      <div className="filter absolute w-full h-[30rem] bg-[#fcdfda88]"></div>
+      <img src={image} alt="member" className={teamCardStyle.image} />
+      <div className={teamCardStyle.filter} />
       <Theme_Div
         $bgcolor="glasscard"
         $bordercolor="transparent"
-        className="info absolute w-full h-[10rem] bottom-0 flex flex-col items-center justify-between"
+        className={teamCardStyle.content}
       >
-        <span className="flex flex-col items-center pt-8">
-          <h1 className="text-white font-[800] text-[1.4rem]">{staff.name}</h1>
-          <h2 className="text-white font-[600] text-[1.2rem]">{staff.title}</h2>
+        <span className={teamCardStyle.span}>
+          <h1 className={teamCardStyle.name}>{staff.name}</h1>
+          <h2 className={teamCardStyle.job}>{staff.title}</h2>
         </span>
-        <div className="w-full flex gap-2 items-center justify-end justify-self-end py-4 pr-4">
+        <div className={teamCardStyle.socialWrapper}>
           {staff.social.map((social, index) => (
-            <a
+            <Link
               key={index}
-              href={social.link}
+              to={social.link}
               target="_blank"
-              className="social w-[2.5rem] h-[2.5rem] flex items-center justify-center"
+              className={teamCardStyle.link}
             >
-              <Icon
-                icon={social.icon}
-                className="icon text-white text-[1.8rem]"
-              />
-            </a>
+              <Icon icon={social.icon} className={teamCardStyle.icon} />
+            </Link>
           ))}
         </div>
       </Theme_Div>

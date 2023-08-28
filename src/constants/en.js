@@ -509,6 +509,9 @@ const en_text = {
   searchForm: {
     placeholder: "Search a recipe",
     button: "Search",
+    swal: {
+      error: "Please provide a valid search term.",
+    },
   },
   navbar: {
     reg: "Register",

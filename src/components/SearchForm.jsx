@@ -1,6 +1,6 @@
-import { useState, useContext } from "react";
 import { UserContext } from "../context";
-import { Theme_Button } from "../styles";
+import { useState, useContext } from "react";
+import { Theme_Button, searchFormStyle } from "../styles";
 
 const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
   const { text } = useContext(UserContext);
@@ -27,16 +27,13 @@ const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex md:flex-row flex-col justify-center items-center mb-16 gap-4"
-    >
+    <form onSubmit={handleSubmit} className={searchFormStyle.form}>
       <input
         type="text"
         placeholder={text.searchForm.placeholder}
         onChange={handleChange}
         value={searchText}
-        className="px-4 py-2 rounded-xl shadow-md outline-dotted outline-2 outline-offset-2 outline-text"
+        className={searchFormStyle.input}
       />
       <Theme_Button
         type="submit"
@@ -45,7 +42,7 @@ const SearchForm = ({ setLoading, setNotFound, setSearchQuery, setOffset }) => {
         $bordercolor="transparent"
         $hoverbgcolor="dark"
         $hovertextcolor="textlight"
-        className="px-4 py-3 cursor-pointer font-bold rounded-xl shadow-md"
+        className={searchFormStyle.button}
       >
         {text.searchForm.button}
       </Theme_Button>

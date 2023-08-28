@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
-import { Theme_Div, Theme_Img } from "../styles";
+import { Theme_Div, Theme_Img, reviewCardStyle } from "../styles";
 
 const ReviewCard = ({ review }) => {
   const stars = review.stars;
@@ -29,42 +29,40 @@ const ReviewCard = ({ review }) => {
     <Theme_Div
       $bgcolor="primary"
       $bordercolor="transparent"
-      className="mx-auto xs:w-[20rem] w-[16rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing"
+      className={reviewCardStyle.wrapper}
     >
       <img
         src={bgImage}
         alt="background"
-        className="w-full h-[25%] bg-cover rounded-t-xl object-cover"
+        className={reviewCardStyle.background}
       />
       <Theme_Img
         $bgcolor="primary"
         $bordercolor="primary"
         src={image}
         alt="profile"
-        className="rounded-full w-[10rem] h-[10rem] absolute top-[10%] object-cover border-4"
+        className={reviewCardStyle.profile}
       />
-      <div className="flex flex-col items-center absolute top-[45%]">
-        <h1 className="text-text text-[1.6rem] font-[600]">{review.name}</h1>
-        <h2 className="text-text text-[1.3rem] font-[400]">{review.job}</h2>
+      <div className={reviewCardStyle.nameContainer}>
+        <h1 className={reviewCardStyle.name}>{review.name}</h1>
+        <h2 className={reviewCardStyle.job}>{review.job}</h2>
       </div>
-      <p className="italic text-text text-[1rem] font-[300] absolute top-[65%] text-justify px-4">
-        {`"${review.review}"`}
-      </p>
-      <span className="absolute top-[88%] flex w-full left-[33%]">
+      <p className={reviewCardStyle.review}>{`"${review.review}"`}</p>
+      <span className={reviewCardStyle.span}>
         {[...Array(5)].map((_, index) => (
           <Icon
             key={index}
             icon="ph:star-light"
-            className="text-yellowdark text-[1.4rem]"
+            className={reviewCardStyle.star}
           />
         ))}
       </span>
-      <span className="absolute top-[88%] flex w-full left-[33%]">
+      <span className={reviewCardStyle.span}>
         {[...Array(stars)].map((_, index) => (
           <Icon
             key={index}
             icon="ph:star-fill"
-            className="text-yellowdark text-[1.4rem]"
+            className={reviewCardStyle.star}
           />
         ))}
       </span>

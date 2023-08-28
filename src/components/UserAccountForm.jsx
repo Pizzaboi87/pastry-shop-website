@@ -1,7 +1,7 @@
 import PhoneInput from "react-phone-input-2";
+import { UserContext } from "../context";
 import { useState, useContext, useEffect } from "react";
 import { updateUserData } from "../utils/firebase";
-import { UserContext } from "../context";
 import { useSwalMessage } from "../utils/useSwalMessage";
 import { useValidation } from "../utils/useValidation";
 import {
@@ -110,11 +110,8 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="w-full grid md:grid-cols-7 xl:px-16 xl:py-6 py-2 gap-y-2"
-    >
-      <label className={`${userPageStyle.label} md:col-span-3  md:col-start-1`}>
+    <form onSubmit={handleSubmit} className={userPageStyle.form}>
+      <label className={`${userPageStyle.label} ${userPageStyle.odd}`}>
         {text.userAccountForm.fullName}
         <Theme_Input
           type="text"
@@ -127,7 +124,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} md:col-span-3 md:col-start-5`}>
+      <label className={`${userPageStyle.label} ${userPageStyle.even}`}>
         {text.userAccountForm.displayName}
         <Theme_Input
           type="text"
@@ -140,7 +137,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} md:col-span-3  md:col-start-1`}>
+      <label className={`${userPageStyle.label} ${userPageStyle.odd}`}>
         {text.userAccountForm.email}
         <Theme_Input
           type="text"
@@ -150,16 +147,13 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           $outlinecolor="logo"
           value={email}
           onChange={handleChange}
-          className={`${userPageStyle.input} disabled:bg-[#f0f0f0] cursor-not-allowed`}
+          className={`${userPageStyle.input} ${userPageStyle.email}`}
         />
       </label>
 
-      <label className={`${userPageStyle.label} md:col-span-3 md:col-start-5`}>
+      <label className={`${userPageStyle.label} ${userPageStyle.even}`}>
         {text.userAccountForm.phone}
-        <Theme_PhoneInput
-          $outlinecolor="logo"
-          className="xl:h-[2.3rem] h-[2rem]"
-        >
+        <Theme_PhoneInput $outlinecolor="logo" className={userPageStyle.phone}>
           <PhoneInput
             required
             country={"hu"}
@@ -169,7 +163,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           />
         </Theme_PhoneInput>
       </label>
-      <label className={`${userPageStyle.label} md:col-span-3  md:col-start-1`}>
+      <label className={`${userPageStyle.label} ${userPageStyle.odd}`}>
         {text.userAccountForm.country}
         <Theme_Input
           type="text"
@@ -182,7 +176,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} md:col-span-3 md:col-start-5`}>
+      <label className={`${userPageStyle.label} ${userPageStyle.even}`}>
         {text.userAccountForm.city}
         <Theme_Input
           type="text"
@@ -195,7 +189,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} md:col-span-3  md:col-start-1`}>
+      <label className={`${userPageStyle.label} ${userPageStyle.odd}`}>
         {text.userAccountForm.address}
         <Theme_Input
           type="text"
@@ -208,7 +202,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} md:col-span-3 md:col-start-5`}>
+      <label className={`${userPageStyle.label} ${userPageStyle.even}`}>
         {text.userAccountForm.zip}
         <Theme_Input
           type="text"

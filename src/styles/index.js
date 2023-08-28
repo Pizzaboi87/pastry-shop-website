@@ -254,6 +254,23 @@ const paragraphsStyle = {
     "md:text-justify 2xl:max-w-[40%] max-w-[90%] 2xl:text-[1.25rem] text-[1.5rem] mt-8 xl:mt-0  text-text leading-9",
 };
 
+const phoneInputStyle = {
+  width: "100%",
+  fontSize: "1.2rem",
+  fontWeight: "400",
+  borderRadius: "15px",
+  outline: "none",
+  border: "none",
+  padding: "0.5rem 4rem",
+  color: "#2f2f2f",
+  backgroundColor: "#fff",
+  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
+  outlineStyle: "dotted",
+  outlineOffset: "2px",
+  outlineWidth: "2px",
+  outlineColor: "#2b2730",
+};
+
 const postcardStyle = {
   wrapper:
     "hidden xs:flex sm:w-[90%] ms:w-[75%] bg-white sm:flex-row flex-col xs:mb-24",
@@ -300,21 +317,97 @@ const recipeCardStyle = {
   email: "cursor-pointer",
 };
 
-const phoneInputStyle = {
-  width: "100%",
-  fontSize: "1.2rem",
-  fontWeight: "400",
-  borderRadius: "15px",
-  outline: "none",
-  border: "none",
-  padding: "0.5rem 4rem",
-  color: "#2f2f2f",
-  backgroundColor: "#fff",
-  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
-  outlineStyle: "dotted",
-  outlineOffset: "2px",
-  outlineWidth: "2px",
-  outlineColor: "#2b2730",
+const reviewCardStyle = {
+  wrapper:
+    "mx-auto xs:w-[20rem] w-[16rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing",
+  background: "w-full h-[25%] bg-cover rounded-t-xl object-cover",
+  profile:
+    "rounded-full w-[10rem] h-[10rem] absolute top-[10%] object-cover border-4",
+  nameContainer: "flex flex-col items-center absolute top-[45%]",
+  name: "text-text text-[1.6rem] font-[600]",
+  job: "text-text text-[1.3rem] font-[400]",
+  review:
+    "italic text-text text-[1rem] font-[300] absolute top-[65%] text-justify px-4",
+  span: "absolute top-[88%] flex w-full left-[33%]",
+  star: "text-yellowdark text-[1.4rem]",
+};
+
+const searchFormStyle = {
+  form: "flex md:flex-row flex-col justify-center items-center mb-16 gap-4",
+  input:
+    "px-4 py-2 rounded-xl shadow-md outline-dotted outline-2 outline-offset-2 outline-text",
+  button: "px-4 py-3 cursor-pointer font-bold rounded-xl shadow-md",
+};
+
+const signInFormStyle = {
+  wrapper: "flex flex-col w-full h-full items-center justify-center",
+  title:
+    "xl:text-4xl lg:text-xl md:text-4xl text-xl text-center text-text font-[600] mb-6",
+  form: "flex flex-col items-start",
+  input:
+    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted",
+  label:
+    "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
+  button:
+    "px-16 py-2 rounded-xl shadow-xl border-none font-[500] mx-auto block mt-8 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+  forgotButton:
+    "mt-2 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+  googleButton:
+    "flex items-center justify-center border-2 shadow-xl rounded-md px-2 py-1 mt-6 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+};
+
+const signUpFormStyle = {
+  wrapper: "flex flex-col w-full h-full items-center justify-center",
+  title:
+    "xl:text-4xl lg:text-xl md:text-4xl text-xl text-center text-text font-[600] mb-6",
+  form: "flex flex-col items-start",
+  input:
+    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted",
+  label:
+    "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1 mt-4",
+  button:
+    "px-16 py-2 rounded-xl shadow-xl border-none font-[500] mx-auto block xs:mt-8 mt-4 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+};
+
+const teamCardStyle = {
+  wrapper:
+    "card relative mx-auto xl:w-[18rem] 3xl:w-[20rem] w-[20rem] h-[30rem] overflow-hidden rounded-xl shadow-xl",
+  image: "h-full object-cover absolute",
+  filter: "filter absolute w-full h-[30rem] bg-[#fcdfda88]",
+  content:
+    "info absolute w-full h-[10rem] bottom-0 flex flex-col items-center justify-between",
+  span: "flex flex-col items-center pt-8",
+  name: "text-white font-[800] text-[1.4rem]",
+  job: "text-white font-[600] text-[1.2rem]",
+  socialWrapper:
+    "w-full flex gap-2 items-center justify-end justify-self-end py-4 pr-4",
+  link: "social w-[2.5rem] h-[2.5rem] flex items-center justify-center",
+  icon: "icon text-white text-[1.8rem]",
+};
+
+const textImageStyle = {
+  wrapper:
+    "w-full flex 2xl:flex-row flex-col items-center justify-center 2xl:mt-36 3xl:mt-56 mt-6",
+};
+
+const userPageStyle = {
+  form: "w-full grid md:grid-cols-7 xl:px-16 xl:py-6 py-2 gap-y-2",
+  odd: "md:col-span-3  md:col-start-1",
+  even: "md:col-span-3 md:col-start-5",
+  email: "disabled:bg-[#f0f0f0] cursor-not-allowed",
+  phone: "xl:h-[2.3rem] h-[2rem]",
+  input:
+    "text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted",
+  label:
+    "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
+  button:
+    "py-1 rounded-xl shadow-xl border-none text-[1.2rem] font-[500] xl:col-span-1 md:col-span-3 md:col-start-3 xl:col-start-7 xl:mx-0 xl:px-0 mx-auto px-6 py-2",
+  passwordButton:
+    "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] md:col-start-5 col-start-3 md:col-span-2 col-span-4 md:mt-0 mt-4",
+  deleteButton:
+    "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] md:self-end col-start-3 md:px-8 col-span-4 md:mt-0 mt-4",
+
+  title: "col-span-6 xl:text-[3rem] text-[2rem] font-[600] mb-8 text-center",
 };
 
 const userPhoneInputStyle = {
@@ -381,44 +474,9 @@ const glassStyle = `bg-[rgba(255, 255, 255, 0.2)] rounded-2xl boxShadow-[0 4px 3
 
 const tableStyle = "text-text text-[1rem] font-[500] pl-2 md:py-2";
 
-const signInFormStyle = {
-  input:
-    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted",
-  label:
-    "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
-  button:
-    "px-16 py-2 rounded-xl shadow-xl border-none font-[500] mx-auto block mt-8 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
-  forgotButton:
-    "flex items-center justify-center border-2 shadow-xl rounded-md px-2 py-1 mt-6 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
-};
-
-const signUpFormStyle = {
-  input:
-    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted",
-  label:
-    "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1 mt-4",
-  button:
-    "px-16 py-2 rounded-xl shadow-xl border-none font-[500] mx-auto block xs:mt-8 mt-4 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
-};
-
 const adminPageStyle = {
   wrapper: "w-full h-full flex flex-col items-center p-4",
   title: "text-text text-[1.5rem] text-center font-[600] mb-8",
-};
-
-const userPageStyle = {
-  input:
-    "text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted",
-  label:
-    "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
-  button:
-    "py-1 rounded-xl shadow-xl border-none text-[1.2rem] font-[500] xl:col-span-1 md:col-span-3 md:col-start-3 xl:col-start-7 xl:mx-0 xl:px-0 mx-auto px-6 py-2",
-  passwordButton:
-    "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] md:col-start-5 col-start-3 md:col-span-2 col-span-4 md:mt-0 mt-4",
-  deleteButton:
-    "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] md:self-end col-start-3 md:px-8 col-span-4 md:mt-0 mt-4",
-
-  title: "col-span-6 xl:text-[3rem] text-[2rem] font-[600] mb-8 text-center",
 };
 
 const tooltipStyle = {
@@ -458,9 +516,17 @@ export {
   navUserStyle,
   noPermissionStyle,
   paragraphsStyle,
+  phoneInputStyle,
   postcardStyle,
   recipeCardStyle,
-  phoneInputStyle,
+  reviewCardStyle,
+  searchFormStyle,
+  signInFormStyle,
+  signUpFormStyle,
+  teamCardStyle,
+  textImageStyle,
+  userPageStyle,
+  userPhoneInputStyle,
   recolorStyle,
   shadowStyle,
   authStyle,
@@ -471,12 +537,8 @@ export {
   personalMenuOffStyle,
   glassStyle,
   tableStyle,
-  signInFormStyle,
-  signUpFormStyle,
   adminPageStyle,
   tooltipStyle,
-  userPageStyle,
-  userPhoneInputStyle,
   titleStyle,
   subTitleStyle,
   Theme_Div,

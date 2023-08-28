@@ -1,8 +1,9 @@
-import ScrollToTop from "./ScrollToTop";
 import { Theme_Motion_Div } from "../styles";
-import { motion } from "framer-motion";
+import { useScrollToTop } from "../utils/useScrollToTop";
 
 const TransitionParent = ({ children, isHome, isFlex, isRew }) => {
+  useScrollToTop();
+
   return (
     <Theme_Motion_Div
       $bgcolor={isHome ? "transparent" : "glasslight"}
@@ -20,7 +21,6 @@ const TransitionParent = ({ children, isHome, isFlex, isRew }) => {
       exit={{ y: 100, opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <ScrollToTop />
       {children}
     </Theme_Motion_Div>
   );

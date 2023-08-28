@@ -509,6 +509,9 @@ const hu_text = {
   searchForm: {
     placeholder: "Keress egy receptet",
     button: "Keresés",
+    swal: {
+      error: "Kérjük, adj meg egy érvényes keresőszót!",
+    },
   },
   navbar: {
     reg: "Regisztráció",

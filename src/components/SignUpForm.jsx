@@ -1,10 +1,10 @@
-import { useState, useContext } from "react";
 import { UserContext } from "../context";
+import { useState, useContext } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { Theme_Button, Theme_Input, signUpFormStyle } from "../styles";
 import { useSwalMessage } from "../utils/useSwalMessage";
 import { useValidation } from "../utils/useValidation";
+import { Theme_Button, Theme_Input, signUpFormStyle } from "../styles";
 import {
   createUserDocumentFromAuth,
   createAuthUserWithEmailAndPassword,
@@ -91,12 +91,10 @@ const SignUpForm = () => {
       animate={{ opacity: 1, maxHeight: "75vh" }}
       exit={{ opacity: 0, maxHeight: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="flex flex-col w-full h-full items-center justify-center"
+      className={signUpFormStyle.wrapper}
     >
-      <h1 className="xl:text-4xl lg:text-xl md:text-4xl text-xl text-center text-text font-[600] mb-6">
-        {text.signUpForm.title}
-      </h1>
-      <form className="flex flex-col items-start" onSubmit={handleSubmit}>
+      <h1 className={signUpFormStyle.title}>{text.signUpForm.title}</h1>
+      <form className={signUpFormStyle.form} onSubmit={handleSubmit}>
         <label className={signUpFormStyle.label}>
           {text.signUpForm.userName}
           <Theme_Input

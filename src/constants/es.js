@@ -511,6 +511,9 @@ const es_text = {
   searchForm: {
     placeholder: "Buscar una receta",
     button: "Buscar",
+    swal: {
+      error: "Por favor, ingresa un término de búsqueda válido.",
+    },
   },
   navbar: {
     reg: "Registro",
