@@ -1,5 +1,6 @@
 import ImageCarousel from "./ImageCarousel";
 import { Link } from "react-router-dom";
+import { blogCarouselStyle } from "../styles";
 
 const BlogCarousel = ({ posts }) => {
   const images = posts.map((post, index) => (
@@ -8,14 +9,8 @@ const BlogCarousel = ({ posts }) => {
       className="cursor-pointer"
       key={index}
     >
-      <img
-        src={post.image}
-        alt="image"
-        className="w-[20rem] h-[12rem] object-cover border-2 border-white rounded-xl shadow-xl mb-4"
-      />
-      <p className="text-text text-center text-[1.2rem] font-[600]">
-        {post.title}
-      </p>
+      <img src={post.image} alt="image" className={blogCarouselStyle.image} />
+      <p className={blogCarouselStyle.title}>{post.title}</p>
     </Link>
   ));
 

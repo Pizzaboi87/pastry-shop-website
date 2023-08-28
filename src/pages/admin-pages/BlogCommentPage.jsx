@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { BlogContext, UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { changeCommentStatus } from "../../utils/firebase";
-import { adminPageStyle, blogNewFormStyle } from "../../styles";
+import { adminPageStyle, blogFormStyle } from "../../styles";
 import { deleteComment } from "../../utils/firebase-admin";
 import { Loading } from "../../components";
 import { useSwalMessage } from "../../utils/useSwalMessage";
@@ -90,82 +90,82 @@ const BlogCommentPage = () => {
       </span>
 
       <form className="w-full grid grid-cols-4 gap-y-8 gap-x-16">
-        <label className={`${blogNewFormStyle.label} md:col-span-2 col-span-4`}>
+        <label className={`${blogFormStyle.label} md:col-span-2 col-span-4`}>
           {text.blogCommentPage.id}
           <input
             disabled
             type="text"
             name="id"
             value={id}
-            className={blogNewFormStyle.input}
+            className={blogFormStyle.input}
           />
         </label>
 
-        <label className={`${blogNewFormStyle.label} md:col-span-2 col-span-4`}>
+        <label className={`${blogFormStyle.label} md:col-span-2 col-span-4`}>
           {text.blogCommentPage.date}
           <input
             disabled
             type="text"
             name="date"
             value={date}
-            className={blogNewFormStyle.input}
+            className={blogFormStyle.input}
           />
         </label>
 
-        <label className={`${blogNewFormStyle.label} md:col-span-2 col-span-4`}>
+        <label className={`${blogFormStyle.label} md:col-span-2 col-span-4`}>
           {text.blogCommentPage.author}
           <input
             disabled
             type="text"
             name="author"
             value={author}
-            className={blogNewFormStyle.input}
+            className={blogFormStyle.input}
           />
         </label>
 
-        <label className={`${blogNewFormStyle.label} md:col-span-2 col-span-4`}>
+        <label className={`${blogFormStyle.label} md:col-span-2 col-span-4`}>
           {text.blogCommentPage.email}
           <input
             disabled
             type="text"
             name="email"
             value={email}
-            className={blogNewFormStyle.input}
+            className={blogFormStyle.input}
           />
         </label>
 
         <span className="md:col-span-2 col-span-4 flex flex-col gap-8">
-          <label className={blogNewFormStyle.label}>
+          <label className={blogFormStyle.label}>
             {text.blogCommentPage.commentTitle}
             <input
               disabled
               type="text"
               name="title"
               value={title}
-              className={blogNewFormStyle.input}
+              className={blogFormStyle.input}
             />
           </label>
 
-          <label className={blogNewFormStyle.label}>
+          <label className={blogFormStyle.label}>
             {text.blogCommentPage.relatedID}
             <input
               disabled
               type="text"
               name="relatedID"
               value={relatedID}
-              className={blogNewFormStyle.input}
+              className={blogFormStyle.input}
             />
           </label>
         </span>
 
-        <label className={`${blogNewFormStyle.label} md:col-span-2 col-span-4`}>
+        <label className={`${blogFormStyle.label} md:col-span-2 col-span-4`}>
           {text.blogCommentPage.commentText}
           <textarea
             disabled
             rows={5}
             name="comment"
             value={comment}
-            className={blogNewFormStyle.input}
+            className={blogFormStyle.input}
           />
         </label>
       </form>

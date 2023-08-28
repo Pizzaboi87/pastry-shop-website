@@ -1,14 +1,14 @@
+import { UserContext } from "../context";
 import { useState, useContext } from "react";
 import { useSwalMessage } from "../utils/useSwalMessage";
 import { useValidation } from "../utils/useValidation";
-import { UserContext } from "../context";
 import { storeComment } from "../utils/firebase";
 import { v4 as uuidv4 } from "uuid";
 import {
   Theme_Button,
   Theme_Input,
   Theme_Textarea,
-  blogCommentStyle,
+  blogCommentFormStyle,
 } from "../styles";
 
 const BlogCommentForm = ({ postID }) => {
@@ -64,7 +64,7 @@ const BlogCommentForm = ({ postID }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col mt-4">
+    <form onSubmit={handleSubmit} className={blogCommentFormStyle.form}>
       <Theme_Textarea
         required
         name="comment"
@@ -73,11 +73,11 @@ const BlogCommentForm = ({ postID }) => {
         placeholder={text.blogCommentForm.commentPlaceholder}
         rows={5}
         $outlinecolor="logo"
-        className={blogCommentStyle.textarea}
+        className={blogCommentFormStyle.textarea}
       />
 
-      <span className="flex w-full justify-evenly items-end">
-        <label className={blogCommentStyle.label}>
+      <span className={blogCommentFormStyle.span}>
+        <label className={blogCommentFormStyle.label}>
           {text.blogCommentForm.name}
           <Theme_Input
             required
@@ -87,11 +87,11 @@ const BlogCommentForm = ({ postID }) => {
             value={author}
             onChange={handleChange}
             $outlinecolor="logo"
-            className={blogCommentStyle.input}
+            className={blogCommentFormStyle.input}
           />
         </label>
 
-        <label className={blogCommentStyle.label}>
+        <label className={blogCommentFormStyle.label}>
           {text.blogCommentForm.title}
           <Theme_Input
             required
@@ -100,7 +100,7 @@ const BlogCommentForm = ({ postID }) => {
             value={title}
             onChange={handleChange}
             $outlinecolor="logo"
-            className={blogCommentStyle.input}
+            className={blogCommentFormStyle.input}
           />
         </label>
 
@@ -111,7 +111,7 @@ const BlogCommentForm = ({ postID }) => {
           $bordercolor="transparent"
           $hoverbgcolor="dark"
           $hovertextcolor="textlight"
-          className={blogCommentStyle.button}
+          className={blogCommentFormStyle.button}
         >
           {text.blogCommentForm.button}
         </Theme_Button>

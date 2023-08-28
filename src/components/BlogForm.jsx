@@ -1,7 +1,7 @@
+import { BlogContext, UserContext } from "../context";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { BlogContext, UserContext } from "../context";
-import { blogNewFormStyle } from "../styles";
+import { blogFormStyle, blogFormStyle } from "../styles";
 import { uploadPost } from "../utils/firebase-admin";
 import { translate } from "../utils/translate";
 import { getAllPost, storeImage } from "../utils/firebase";
@@ -203,19 +203,16 @@ const BlogForm = ({ dbPost }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="w-full grid grid-cols-4 md:gap-x-16 gap-y-8"
-    >
-      <div className="md:col-span-2 col-span-4 flex flex-col gap-y-4 justify-between">
-        <label className={blogNewFormStyle.label}>
+    <form onSubmit={handleSubmit} className={blogFormStyle.form}>
+      <div className={blogFormStyle.container}>
+        <label className={blogFormStyle.label}>
           {text.blogForm.languageLabel}
           <select
             required
             value={language}
             name="language"
             onChange={handleChange}
-            className={`${blogNewFormStyle.input} h-[2.2rem]`}
+            className={`${blogFormStyle.input} h-[2.2rem]`}
           >
             {text.blogForm.language.map((language) => (
               <option key={language.id} value={language.id}>
@@ -225,7 +222,7 @@ const BlogForm = ({ dbPost }) => {
           </select>
         </label>
 
-        <label className={blogNewFormStyle.label}>
+        <label className={blogFormStyle.label}>
           {text.blogForm.date}
           <input
             type="date"
@@ -234,13 +231,13 @@ const BlogForm = ({ dbPost }) => {
             name="date"
             value={date}
             onChange={handleChange}
-            className={`${blogNewFormStyle.input} ${
+            className={`${blogFormStyle.input} ${
               dbPost ? "cursor-not-allowed" : "cursor-normal"
             }`}
           />
         </label>
 
-        <label className={blogNewFormStyle.label}>
+        <label className={blogFormStyle.label}>
           {text.blogForm.title}
           <input
             type="text"
@@ -250,12 +247,12 @@ const BlogForm = ({ dbPost }) => {
             disabled={image || dbPost ? true : false}
             title={dbPost ? null : image ? text.blogForm.titleDisable : null}
             onChange={handleChange}
-            className={`${blogNewFormStyle.input} ${
+            className={`${blogFormStyle.input} ${
               image || dbPost ? "cursor-not-allowed" : "cursor-normal"
             }`}
           />
         </label>
-        <label className={blogNewFormStyle.label}>
+        <label className={blogFormStyle.label}>
           {text.blogForm.author}
           <input
             type="text"
@@ -264,12 +261,12 @@ const BlogForm = ({ dbPost }) => {
             disabled={dbPost ? true : false}
             value={author}
             onChange={handleChange}
-            className={`${blogNewFormStyle.input} ${
+            className={`${blogFormStyle.input} ${
               dbPost ? "cursor-not-allowed" : "cursor-normal"
             }`}
           />
         </label>
-        <label className={blogNewFormStyle.label}>
+        <label className={blogFormStyle.label}>
           {dbPost ? text.blogForm.newImage : text.blogForm.postImage}
           <input
             required={dbPost ? false : true}
@@ -279,12 +276,12 @@ const BlogForm = ({ dbPost }) => {
             title={text.blogForm.imageDisable}
             disabled={normalRegex.test(title) ? false : true}
             onChange={handleChange}
-            className={`${blogNewFormStyle.input} ${
+            className={`${blogFormStyle.input} ${
               normalRegex.test(title) ? "cursor-normal" : "cursor-not-allowed"
             }`}
           />
         </label>
-        <label className={blogNewFormStyle.label}>
+        <label className={blogFormStyle.label}>
           {text.blogForm.blurb}
           <textarea
             rows={5}
@@ -292,12 +289,12 @@ const BlogForm = ({ dbPost }) => {
             name="blurb"
             value={blurb}
             onChange={handleChange}
-            className={blogNewFormStyle.input}
+            className={blogFormStyle.input}
           />
         </label>
       </div>
-      <div className="md:col-span-2 col-span-4 flex flex-col justify-between gap-y-4">
-        <label className={blogNewFormStyle.label}>
+      <div className={blogFormStyle.container}>
+        <label className={blogFormStyle.label}>
           {text.blogForm.post}
           <textarea
             rows={17}
@@ -305,10 +302,10 @@ const BlogForm = ({ dbPost }) => {
             name="post"
             value={post}
             onChange={handleChange}
-            className={blogNewFormStyle.input}
+            className={blogFormStyle.input}
           />
         </label>
-        <label className={blogNewFormStyle.label}>
+        <label className={blogFormStyle.label}>
           {text.blogForm.tags}
           <input
             type="text"
@@ -316,7 +313,7 @@ const BlogForm = ({ dbPost }) => {
             name="tags"
             value={tags}
             onChange={handleChange}
-            className={blogNewFormStyle.input}
+            className={blogFormStyle.input}
           />
         </label>
       </div>
@@ -324,7 +321,7 @@ const BlogForm = ({ dbPost }) => {
       <button
         type="submit"
         disabled={isLoading ? true : false}
-        className={`${blogNewFormStyle.button} ${
+        className={`${blogFormStyle.button} ${
           isLoading ? "cursor-progress" : "cursor-pointer"
         } `}
       >

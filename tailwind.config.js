@@ -22,6 +22,7 @@ module.exports = {
       screens: {
         xs: "300px",
         ms: "500px",
+        "2xl": "1400px",
         "3xl": "1600px",
       },
       backgroundSize: {

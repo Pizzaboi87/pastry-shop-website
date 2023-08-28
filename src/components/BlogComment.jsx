@@ -1,8 +1,8 @@
 import BlogCommentForm from "./BlogCommentForm";
+import { UserContext, BlogContext } from "../context";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { UserContext, BlogContext } from "../context";
-import { Theme_Div } from "../styles";
+import { Theme_Div, blogCommentStyle } from "../styles";
 
 const BlogComment = () => {
   const { id } = useParams();
@@ -14,29 +14,25 @@ const BlogComment = () => {
   );
 
   return (
-    <div className="col-span-4 mb-16">
+    <div className={blogCommentStyle.wrapper}>
       <Theme_Div
         $bgcolor="primary"
         $bordercolor="transparent"
-        className="w-full rounded-2xl shadow-xl p-6 mb-16"
+        className={blogCommentStyle.container}
       >
-        <h1 className="text-text text-[1.3rem] font-[600] mb-16">
-          {text.blogComment.title}
-        </h1>
+        <h1 className={blogCommentStyle.title}>{text.blogComment.title}</h1>
         <ul>
           {allRelevantComment.map((comment, index) => (
-            <div className="flex flex-col my-8" key={index}>
-              <span className="w-full flex justify-between">
-                <p className="tex-text font-[600]">{comment.author}</p>
+            <div className={blogCommentStyle.commentWrapper} key={index}>
+              <span className={blogCommentStyle.span}>
+                <p className={blogCommentStyle.author}>{comment.author}</p>
                 <p>
                   {new Date(comment.date)
                     .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
                     .slice(0, -3)}
                 </p>
               </span>
-              <p className="text-text text-[1.2rem] decoration-double underline">
-                {comment.title}
-              </p>
+              <p className={blogCommentStyle.commentTitle}>{comment.title}</p>
               <p>{comment.comment}</p>
             </div>
           ))}
@@ -45,8 +41,8 @@ const BlogComment = () => {
       {currentUser ? (
         <BlogCommentForm postID={id} />
       ) : (
-        <div className="w-full text-center">
-          <h1 className="text-text text-[1.2rem] font-[600]">
+        <div className={blogCommentStyle.loginWrapper}>
+          <h1 className={blogCommentStyle.loginTitle}>
             {text.blogComment.login}
           </h1>
         </div>

@@ -1,8 +1,8 @@
 import TransitionParent from "./TransitionParent";
+import { UserContext } from "../context";
+import { useContext, useState } from "react";
 import { useSwalMessage } from "../utils/useSwalMessage";
 import { useValidation } from "../utils/useValidation";
-import { useContext, useState } from "react";
-import { UserContext } from "../context";
 import {
   Theme_Button,
   Theme_Form,
@@ -60,12 +60,10 @@ const AdminLogin = () => {
       <Theme_Form
         $bgcolor="primary"
         onSubmit={handleSubmit}
-        className="grid grid-cols-5 md:w-[40rem] w-full rounded-xl shadow-xl items-center p-4 gap-8"
+        className={adminLoginStyle.form}
       >
-        <h1 className="md:col-span-3 col-span-5 md:col-start-2 text-center text-text text-[2rem] font-[600]">
-          Admin Login
-        </h1>
-        <span className="md:col-span-3 col-span-5 md:col-start-2 flex flex-col gap-y-4">
+        <h1 className={adminLoginStyle.title}>Admin Login</h1>
+        <span className={adminLoginStyle.span}>
           <label className={adminLoginStyle.label}>
             UserName
             <Theme_Input
@@ -99,7 +97,7 @@ const AdminLogin = () => {
           $bordercolor="transparent"
           $hoverbgcolor="dark"
           $hovertextcolor="textlight"
-          className={`${adminLoginStyle.button} md:col-span-1 col-span-2 col-start-2 md:col-start-3`}
+          className={adminLoginStyle.button}
         >
           Login
         </Theme_Button>

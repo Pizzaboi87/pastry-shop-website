@@ -21,6 +21,104 @@ import {
   Theme_PhoneInput,
 } from "./styled-elements";
 
+const adminLoginStyle = {
+  form: "grid grid-cols-5 md:w-[40rem] w-full rounded-xl shadow-xl items-center p-4 gap-8",
+  title:
+    "md:col-span-3 col-span-5 md:col-start-2 text-center text-text text-[2rem] font-[600]",
+  span: "md:col-span-3 col-span-5 md:col-start-2 flex flex-col gap-y-4",
+  label:
+    "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] gap-y-2",
+  input:
+    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted",
+  button:
+    "col-start-4 py-2 rounded-xl shadow-xl border-none font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] md:col-span-1 col-span-2 col-start-2 md:col-start-3",
+};
+
+const adminMenuStyle = {
+  wrapper:
+    "pt-4 px-2 md:col-span-1 col-span-6 md:mb-0 mb-4 flex flex-col bg-white rounded-xl items-center md:sticky top-[10rem] shadow-inner shadow-black",
+  mainList: "md:pt-0 pt-4",
+  mainListItem: "text-text text-[1.2rem] font-[600]",
+  subList: "pl-2 pb-4",
+  subListItem: "text-text text-[1.4rem] font-[700] mb-4",
+  title: "text-text text-[1rem] font-[500] hover:text-logopink",
+  icon: "md:hidden block text-[3rem] mx-auto cursor-pointer hover:text-logopink",
+};
+
+const adminPanelStyle = {
+  wrapper:
+    "glass grid grid-cols-6 xl:w-[90%] w-full bg-purpleglass rounded-xl md:p-12 p-4 gap-x-8 shadow-2xl",
+  container:
+    "md:col-span-5 col-span-6 bg-white rounded-xl shadow-inner shadow-black p-4",
+  button:
+    "md:col-start-6 md:col-auto col-span-6 bg-purple text-white text-[1.2rem] hover:bg-yellowdark hover:text-text font-[500] rounded-xl mt-4 py-2",
+};
+
+const authButtonStyle = {
+  wrapper:
+    "relative lg:w-[50%] w-full lg:h-full h-[14vh] flex flex-col items-center justify-center",
+  title: "text-text font-[500] xs:text-[1.2rem] text-[0.9rem] mb-2",
+  button:
+    "rounded-xl shadow-sm border-none font-[400] text-center px-3 xs:py-2 py-1",
+};
+
+const awningStyle = {
+  wrapper: "w-full h-[3.5rem] fixed top-0 left-0 z-[11] flex",
+  awning: "piece w-[80px] h-full rounded-b-full shadow-xl",
+  shadow: "w-full h-full rounded-b-full",
+};
+
+const blogCarouselStyle = {
+  image:
+    "w-[20rem] h-[12rem] object-cover border-2 border-white rounded-xl shadow-xl mb-4",
+  title: "text-text text-center text-[1.2rem] font-[600]",
+};
+
+const blogCategoryCardStyle = {
+  wrapper:
+    "rounded-xl xl:mb-0 mb-6 flex flex-col h-fit items-center justify-center shadow-xl px-3 py-3",
+  list: "flex flex-wrap justify-center gap-x-6 gap-y-2",
+  title: "mb-3 text-text text-[1.5rem] font-[600]",
+  button:
+    "rounded-xl py-1 px-2 shadow-sm font-[700] text-[1rem] cursor-pointer",
+};
+
+const blogCommentStyle = {
+  wrapper: "col-span-4 mb-16",
+  container: "w-full rounded-2xl shadow-xl p-6 mb-16",
+  title: "text-text text-[1.3rem] font-[600] mb-16",
+  commentWrapper: "flex flex-col my-8",
+  span: "w-full flex justify-between",
+  author: "tex-text font-[600]",
+  commentTitle: "text-text text-[1.2rem] decoration-double underline",
+  loginWrapper: "w-full text-center",
+  loginTitle: "text-text text-[1.2rem] font-[600]",
+};
+
+const blogCommentFormStyle = {
+  form: "flex flex-col mt-4",
+  span: "flex w-full justify-evenly items-end",
+  input:
+    "w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-3 rounded-xl outline-none outline-dotted",
+  textarea:
+    "bg-white rounded-2xl shadow-xl p-6 w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] outline-none outline-dotted mb-4",
+  label:
+    "w-[30%] flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
+  button:
+    "px-16 py-2 rounded-xl shadow-xl border-none font-[500] block xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+};
+
+const blogFormStyle = {
+  form: "w-full grid grid-cols-4 md:gap-x-16 gap-y-8",
+  container: "md:col-span-2 col-span-4 flex flex-col gap-y-4 justify-between",
+  label:
+    "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] gap-y-2",
+  input:
+    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted outline-purple",
+  button:
+    "md:col-start-4 md:col-auto col-span-4 py-2 bg-purple hover:bg-yellowdark hover:text-text rounded-xl shadow-xl border-none text-white font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+};
+
 const phoneInputStyle = {
   width: "100%",
   fontSize: "1.2rem",
@@ -100,32 +198,7 @@ const personalMenuOffStyle = {
 
 const glassStyle = `bg-[rgba(255, 255, 255, 0.2)] rounded-2xl boxShadow-[0 4px 30px rgba(0, 0, 0, 0.1)] backdrop-blur-sm border-1 border-solid border-[rgba(255, 255, 255, 0.3)]`;
 
-const blogNewFormStyle = {
-  label:
-    "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] gap-y-2",
-  input:
-    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted outline-purple",
-  button:
-    "md:col-start-4 md:col-auto col-span-4 py-2 bg-purple hover:bg-yellowdark hover:text-text rounded-xl shadow-xl border-none text-white font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
-};
-
 const tableStyle = "text-text text-[1rem] font-[500] pl-2 md:py-2";
-
-const awningStyle = {
-  wrapper: "piece w-[80px] h-full rounded-b-full shadow-xl",
-  shadow: "w-full h-full rounded-b-full",
-};
-
-const blogCommentStyle = {
-  input:
-    "w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-3 rounded-xl outline-none outline-dotted",
-  textarea:
-    "bg-white rounded-2xl shadow-xl p-6 w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] outline-none outline-dotted mb-4",
-  label:
-    "w-[30%] flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
-  button:
-    "px-16 py-2 rounded-xl shadow-xl border-none font-[500] block xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
-};
 
 const courseFormStyle = {
   input:
@@ -170,15 +243,6 @@ const adminPageStyle = {
   title: "text-text text-[1.5rem] text-center font-[600] mb-8",
 };
 
-const adminLoginStyle = {
-  label:
-    "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] gap-y-2",
-  input:
-    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted",
-  button:
-    "col-start-4 py-2 rounded-xl shadow-xl border-none font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
-};
-
 const userPageStyle = {
   input:
     "text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted",
@@ -206,6 +270,16 @@ const subTitleStyle =
   "xl:text-[1.5rem] text-[1rem] text-center font-[400] -mt-8 mb-8";
 
 export {
+  adminLoginStyle,
+  adminMenuStyle,
+  adminPanelStyle,
+  authButtonStyle,
+  awningStyle,
+  blogCarouselStyle,
+  blogCategoryCardStyle,
+  blogCommentStyle,
+  blogCommentFormStyle,
+  blogFormStyle,
   phoneInputStyle,
   recolorStyle,
   shadowStyle,
@@ -216,17 +290,13 @@ export {
   menuOnStyle,
   personalMenuOffStyle,
   glassStyle,
-  blogNewFormStyle,
   tableStyle,
-  awningStyle,
-  blogCommentStyle,
   courseFormStyle,
   postcardStyle,
   signInFormStyle,
   signUpFormStyle,
   adminPageStyle,
   tooltipStyle,
-  adminLoginStyle,
   userPageStyle,
   userPhoneInputStyle,
   titleStyle,
