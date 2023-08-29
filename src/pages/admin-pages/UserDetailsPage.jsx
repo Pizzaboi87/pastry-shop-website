@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context";
-import { adminPageStyle } from "../../styles";
-import { useNavigate, useParams } from "react-router-dom";
 import { Loading, UserAccountForm } from "../../components";
 import { Icon } from "@iconify/react";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { deleteUser, getAllUser } from "../../utils/firebase-admin";
-import { useQuery } from "react-query";
 import { useSwalMessage } from "../../utils/useSwalMessage";
+import { useQuery } from "react-query";
+import { adminPageStyle } from "../../styles";
 
 const UserDetailsPage = () => {
   const { text, currentUser } = useContext(UserContext);
@@ -54,7 +54,7 @@ const UserDetailsPage = () => {
 
       <Icon
         icon="bi:trash3-fill"
-        className="delete outline-none text-text text-[3rem] hover:text-logopink cursor-pointer md:absolute self-start top-[1rem] left-[1rem]"
+        className={adminPageStyle.deleteIcon}
         onClick={() => confirmDelete(selectedUser)}
       />
 

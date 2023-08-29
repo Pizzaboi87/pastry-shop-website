@@ -1,7 +1,7 @@
-import { useContext } from "react";
 import { UserContext } from "../../context";
-import { adminPageStyle } from "../../styles";
+import { useContext } from "react";
 import { lost } from "../../assets";
+import { adminPageStyle } from "../../styles";
 
 const DeletedUser = () => {
   const { text } = useContext(UserContext);

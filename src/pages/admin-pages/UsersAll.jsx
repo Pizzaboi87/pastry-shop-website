@@ -1,14 +1,19 @@
-import { Fragment, useEffect, useState, useContext } from "react";
 import { UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { Loading } from "../../components";
-import { adminPageStyle, tableStyle, tooltipStyle } from "../../styles";
 import { Tooltip } from "react-tooltip";
+import { Fragment, useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { deleteUser, getAllUser } from "../../utils/firebase-admin";
 import { getStoredImage, getUserImage } from "../../utils/firebase";
-import { useQuery } from "react-query";
 import { useSwalMessage } from "../../utils/useSwalMessage";
+import { useQuery } from "react-query";
+import {
+  adminPageStyle,
+  tableStyle,
+  tooltipStyle,
+  usersAllStyle,
+} from "../../styles";
 
 const UsersAll = () => {
   const [allUser, setAllUser] = useState([]);
@@ -110,11 +115,11 @@ const UsersAll = () => {
     <div className={adminPageStyle.wrapper}>
       <h1 className={adminPageStyle.title}>{text.usersAllTitle}</h1>
 
-      <ul className="grid grid-cols-10 w-full items-center">
+      <ul className={usersAllStyle.container}>
         {text.usersAllHeaders.map((header) => (
           <li
             key={header.id}
-            className={`${header.style} hidden md:min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 md:flex items-center gap-x-4`}
+            className={`${header.style} ${usersAllStyle.headerContainer}`}
           >
             {header.title}
 
@@ -123,7 +128,7 @@ const UsersAll = () => {
             header.id === "name" ? (
               <Icon
                 icon="solar:round-sort-vertical-broken"
-                className="text-[1.8rem] hover:text-logopink cursor-pointer"
+                className={usersAllStyle.sortIcon}
                 onClick={() => sortValues(header.id)}
               />
             ) : null}
@@ -132,49 +137,47 @@ const UsersAll = () => {
 
         {allUser.map((user, index) => (
           <Fragment key={`${index}-${user.email}`}>
-            <li className={`${tableStyle} md:col-span-1 col-span-10`}>
+            <li className={`${tableStyle} ${usersAllStyle.imageContainer}`}>
               <img
                 src={user.imgsrc}
                 alt="profile"
-                className="md:w-12 w-16 md:h-12 h-16 mx-auto object-cover rounded-full cursor-pointer"
+                className={usersAllStyle.image}
                 onClick={() => navigate(`/admin/users/${user.id}`)}
               />
             </li>
-            <li
-              className={`${tableStyle} md:col-span-2 col-span-10 md:text-left text-center`}
-            >
+            <li className={`${tableStyle} ${usersAllStyle.nameContainer}`}>
               <Link
                 to={`/admin/users/${user.id}`}
-                className="text-text text-[1rem] hover:text-logopink cursor-pointer"
+                className={usersAllStyle.name}
               >
                 {user.displayName}
               </Link>
             </li>
             <li
-              className={`${tableStyle} md:col-span-3 col-span-10 md:text-left text-center hover:text-logopink cursor-pointer`}
+              className={`${tableStyle} ${usersAllStyle.emailContainer}`}
               onClick={() => sendMail(user.email, user.displayName)}
             >
               {user.email}
             </li>
-            <li className={`${tableStyle} md:block hidden col-span-2`}>
+            <li className={`${tableStyle} ${usersAllStyle.dateContainer}`}>
               {new Date(user.createdAt._seconds * 1000)
                 .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
                 .slice(0, -3)}
             </li>
-            <li className="md:flex hidden gap-4 justify-center items-center py-2 col-span-2">
+            <li className={usersAllStyle.iconContainer}>
               <Icon
                 icon="bi:trash3-fill"
-                className="delete outline-none text-text text-[2rem] hover:text-logopink cursor-pointer"
+                className={usersAllStyle.deleteIcon}
                 onClick={() => confirmDelete(user)}
               />
               <Link
                 to={`/admin/users/${user.id}`}
-                className="edit outline-none text-text text-[2rem] hover:text-logopink cursor-pointer"
+                className={usersAllStyle.editIcon}
               >
                 <Icon icon="raphael:edit" />
               </Link>
             </li>
-            <hr className="h-[0.1rem] md:hidden col-span-10 bg-black mb-4 mt-2" />
+            <hr className={usersAllStyle.hrLine} />
           </Fragment>
         ))}
       </ul>

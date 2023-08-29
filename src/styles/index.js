@@ -146,6 +146,29 @@ const blogCommentPageStyle = {
   flex: "md:col-span-2 col-span-4 flex flex-col gap-8",
 };
 
+const blogCommentsStyle = {
+  input: `${adminLoginStyle.input} border-2 w-[20rem] h-[3rem] mb-4`,
+  list: "grid grid-cols-8 w-full md:px-8 px-4 items-center",
+  header:
+    "min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 hidden md:flex gap-x-4 items-center",
+  sortIcon: "text-[1.8rem] hover:text-logopink cursor-pointer",
+  imageContainer: "md:col-span-1 col-span-8",
+  image:
+    "md:w-12 w-16 md:h-12 h-16 mx-auto rounded-full object-cover cursor-pointer",
+  textContainer: "md:col-span-2 col-span-8 md:text-left text-center",
+  author: "cursor-pointer hover:text-logopink inline",
+  hoverText: "hover:text-logopink cursor-pointer",
+  mobileHide: "hidden md:block col-span-2",
+  iconContainer:
+    "md:flex hidden gap-4 justify-center items-center py-2 col-span-1",
+  deleteIcon: "delete text-text outline-none text-[2rem]",
+  editIcon: "edit text-text outline-none text-[1.5rem]",
+  published: "published text-green",
+  notPublished: "hided text-red",
+  publishIcon: "outline-none text-[2.5rem] mt-[0.1rem] cursor-pointer",
+  hrLine: "h-[0.1rem] md:hidden col-span-8 bg-black mb-4 mt-2",
+};
+
 const blogPostCardStyle = {
   wrapper: "w-full rounded-2xl mb-16 shadow-xl",
   image: "w-full h-[25rem] object-cover rounded-t-2xl",
@@ -486,6 +509,28 @@ const userPhoneInputStyle = {
   backgroundColor: "white",
 };
 
+const usersAllStyle = {
+  container: "grid grid-cols-10 w-full items-center",
+  headerContainer:
+    "hidden md:min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 md:flex items-center gap-x-4",
+  sortIcon: "text-[1.8rem] hover:text-logopink cursor-pointer",
+  imageContainer: "md:col-span-1 col-span-10",
+  image:
+    "md:w-12 w-16 md:h-12 h-16 mx-auto object-cover rounded-full cursor-pointer",
+  nameContainer: "md:col-span-2 col-span-10 md:text-left text-center",
+  name: "text-text text-[1rem] hover:text-logopink cursor-pointer",
+  emailContainer:
+    "md:col-span-3 col-span-10 md:text-left text-center hover:text-logopink cursor-pointer",
+  dateContainer: "md:block hidden col-span-2",
+  iconContainer:
+    "md:flex hidden gap-4 justify-center items-center py-2 col-span-2",
+  deleteIcon:
+    "delete outline-none text-text text-[2rem] hover:text-logopink cursor-pointer",
+  editIcon:
+    "edit outline-none text-text text-[2rem] hover:text-logopink cursor-pointer",
+  hrLine: "h-[0.1rem] md:hidden col-span-10 bg-black mb-4 mt-2",
+};
+
 const recolorStyle = {
   filter:
     "grayscale(100%) invert(62%) sepia(26%) saturate(7061%) hue-rotate(307deg) brightness(93%) contrast(93%)",
@@ -538,6 +583,9 @@ const tableStyle = "text-text text-[1rem] font-[500] pl-2 md:py-2";
 const adminPageStyle = {
   wrapper: "w-full h-full flex flex-col items-center p-4",
   title: "text-text text-[1.5rem] text-center font-[600] mb-8",
+  icon: "text-text text-[3rem] hover:text-yellowdark cursor-pointer self-start md:mb-0 mb-4 md:absolute top-[1rem] left-[1rem]",
+  deleteIcon:
+    "delete outline-none text-text text-[3rem] hover:text-logopink cursor-pointer md:absolute self-start top-[1rem] left-[1rem]",
 };
 
 const tooltipStyle = {
@@ -563,6 +611,7 @@ export {
   blogCommentStyle,
   blogCommentFormStyle,
   blogCommentPageStyle,
+  blogCommentsStyle,
   blogFormStyle,
   blogPostCardStyle,
   blogProposalStyle,
@@ -595,6 +644,7 @@ export {
   userPanelStyle,
   userPasswordStyle,
   userPhoneInputStyle,
+  usersAllStyle,
   recolorStyle,
   shadowStyle,
   authStyle,

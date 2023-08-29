@@ -1,15 +1,9 @@
-import { Fragment, useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import { BlogContext, UserContext } from "../../context";
 import { Tooltip } from "react-tooltip";
 import { Icon } from "@iconify/react";
-import {
-  adminLoginStyle,
-  adminPageStyle,
-  tableStyle,
-  tooltipStyle,
-} from "../../styles";
 import { Loading } from "../../components";
+import { Fragment, useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { getAllUser, deleteComment } from "../../utils/firebase-admin";
 import { useSwalMessage } from "../../utils/useSwalMessage";
 import { useQuery } from "react-query";
@@ -18,6 +12,12 @@ import {
   getStoredImage,
   getUserImage,
 } from "../../utils/firebase";
+import {
+  adminPageStyle,
+  blogCommentsStyle,
+  tableStyle,
+  tooltipStyle,
+} from "../../styles";
 
 const BlogComments = () => {
   const { allComments, setAllComments, setFirebaseComments } =
@@ -133,18 +133,18 @@ const BlogComments = () => {
 
       <form>
         <input
-          className={`${adminLoginStyle.input} border-2 w-[20rem] h-[3rem] mb-4`}
+          className={blogCommentsStyle.input}
           type="text"
           placeholder={text.blogCommentsSearch}
           onChange={handleChange}
         />
       </form>
 
-      <ul className="grid grid-cols-8 w-full md:px-8 px-4 items-center">
+      <ul className={blogCommentsStyle.list}>
         {text.commentsHeaders.map((header) => (
           <li
             key={header.id}
-            className={`${header.style} min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 hidden md:flex gap-x-4 items-center`}
+            className={`${header.style} ${blogCommentsStyle.header}`}
           >
             {header.title}
 
@@ -153,7 +153,7 @@ const BlogComments = () => {
             header.id === "date" ? (
               <Icon
                 icon="solar:round-sort-vertical-broken"
-                className="text-[1.8rem] hover:text-logopink cursor-pointer"
+                className={blogCommentsStyle.sortIcon}
                 onClick={() => sortValues(header.id)}
               />
             ) : null}
@@ -168,47 +168,49 @@ const BlogComments = () => {
 
           return (
             <Fragment key={comment.id}>
-              <li className={`${tableStyle} md:col-span-1 col-span-8`}>
+              <li
+                className={`${tableStyle} ${blogCommentsStyle.imageContainer}`}
+              >
                 <img
                   src={comment.imgsrc}
                   alt="profile"
-                  className="md:w-12 w-16 md:h-12 h-16 mx-auto rounded-full object-cover cursor-pointer"
+                  className={blogCommentsStyle.image}
                   onClick={toDetailsPage}
                 />
               </li>
-              <li className="md:col-span-2 col-span-8 md:text-left text-center">
+              <li className={blogCommentsStyle.textContainer}>
                 <p
-                  className={`${tableStyle} cursor-pointer hover:text-logopink inline`}
+                  className={`${tableStyle} ${blogCommentsStyle.author}`}
                   onClick={toDetailsPage}
                 >
                   {comment.author}
                 </p>
               </li>
               <li
-                className={`${tableStyle} md:col-span-2 col-span-8 md:text-left text-center`}
+                className={`${tableStyle} ${blogCommentsStyle.textContainer}`}
               >
                 <Link
                   to={`/admin/blog/comments/${comment.id}`}
-                  className="hover:text-logopink cursor-pointer"
+                  className={blogCommentsStyle.hoverText}
                 >
                   {comment.title}
                 </Link>
               </li>
-              <li className={`${tableStyle} hidden md:block col-span-2`}>
+              <li className={`${tableStyle} ${blogCommentsStyle.mobileHide}`}>
                 {new Date(comment.date)
                   .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
                   .slice(0, -3)}
               </li>
 
-              <li className="md:flex hidden gap-4 justify-center items-center py-2 col-span-1">
+              <li className={blogCommentsStyle.iconContainer}>
                 <Icon
                   icon="bi:trash3-fill"
-                  className="delete text-text outline-none text-[2rem] hover:text-logopink cursor-pointer"
+                  className={`${blogCommentsStyle.deleteIcon} ${blogCommentsStyle.hoverText}`}
                   onClick={() => confirmDelete(comment.id)}
                 />
                 <Link
                   to={`/admin/blog/comments/${comment.id}`}
-                  className="edit text-text outline-none text-[1.5rem] hover:text-logopink cursor-pointer"
+                  className={`${blogCommentsStyle.editIcon} ${blogCommentsStyle.hoverText}`}
                 >
                   <Icon icon="raphael:edit" />
                 </Link>
@@ -216,13 +218,13 @@ const BlogComments = () => {
                   icon={comment.isPublished ? "mdi:publish" : "mdi:publish-off"}
                   className={`${
                     comment.isPublished
-                      ? "published text-green"
-                      : "hided text-red"
-                  } outline-none text-[2.5rem] mt-[0.1rem] cursor-pointer`}
+                      ? blogCommentsStyle.published
+                      : blogCommentsStyle.notPublished
+                  } ${blogCommentsStyle.publishIcon}`}
                   onClick={() => changePublish(comment)}
                 />
               </li>
-              <hr className="h-[0.1rem] md:hidden col-span-8 bg-black mb-4 mt-2" />
+              <hr className={blogCommentsStyle.hrLine} />
             </Fragment>
           );
         })}

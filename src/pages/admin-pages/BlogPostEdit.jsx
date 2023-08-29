@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from "react";
 import { BlogContext, UserContext } from "../../context";
-import { useNavigate, useParams } from "react-router-dom";
 import { BlogForm, Loading } from "../../components";
-import { adminPageStyle } from "../../styles";
 import { Icon } from "@iconify/react";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { deleteBlogPost } from "../../utils/firebase-admin";
 import { useSwalMessage } from "../../utils/useSwalMessage";
+import { adminPageStyle } from "../../styles";
 
 const BlogPostEditPage = () => {
   const { allBlogPost, setFirebaseData } = useContext(BlogContext);
@@ -45,7 +45,7 @@ const BlogPostEditPage = () => {
 
       <Icon
         icon="bi:trash3-fill"
-        className="text-text text-[3rem] hover:text-yellowdark cursor-pointer self-start md:mb-0 mb-4 md:absolute top-[1rem] left-[1rem]"
+        className={adminPageStyle.icon}
         onClick={() => confirmDelete(post.postid)}
       />
 
