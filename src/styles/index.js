@@ -68,6 +68,21 @@ const awningStyle = {
   shadow: "w-full h-full rounded-b-full",
 };
 
+const blogAllStyle = {
+  container: "flex w-full h-full flex-wrap gap-y-8 gap-x-4 justify-evenly",
+  postContainer:
+    "card relative bg-primary overflow-hidden 3xl:w-[15rem] w-[17rem] 3xl:h-[15rem] h-[12rem] flex flex-col items-center cursor-pointer rounded-xl shadow-xl",
+  image: "absolute w-full 3xl:h-[12rem] h-[10rem] object-cover",
+  filter: "filter absolute w-full h-full bg-purpleglass",
+  content:
+    "w-full 3xl:h-[12rem] h-[10rem] flex items-center justify-center gap-4",
+  icon: "text-white text-[3rem] hover:text-yellowdark cursor-pointer",
+  titleContainer: "absolute bottom-0 w-full 3xl:h-[3rem] h-[2rem]",
+  bg: "bg-yellowdark",
+  flex: "flex items-center justify-center",
+  title: "text-text text-[1.2rem] font-[500]",
+};
+
 const blogCarouselStyle = {
   image:
     "w-[20rem] h-[12rem] object-cover border-2 border-white rounded-xl shadow-xl mb-4",
@@ -117,6 +132,18 @@ const blogFormStyle = {
     "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted outline-purple",
   button:
     "md:col-start-4 md:col-auto col-span-4 py-2 bg-purple hover:bg-yellowdark hover:text-text rounded-xl shadow-xl border-none text-white font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+};
+
+const blogCommentPageStyle = {
+  span: "md:absolute md:mb-0 mb-4 top-0 right-0 w-full flex justify-between items-center md",
+  deleteIcon:
+    "delete outline-none text-text text-[3rem] hover:text-logopink cursor-pointer",
+  publishIcon: "outline-none text-[4rem] cursor-pointer",
+  green: "text-green",
+  red: "text-red",
+  form: "w-full grid grid-cols-4 gap-y-8 gap-x-16",
+  label: `${blogFormStyle.label} md:col-span-2 col-span-4`,
+  flex: "md:col-span-2 col-span-4 flex flex-col gap-8",
 };
 
 const blogPostCardStyle = {
@@ -530,10 +557,12 @@ export {
   adminPanelStyle,
   authButtonStyle,
   awningStyle,
+  blogAllStyle,
   blogCarouselStyle,
   blogCategoryCardStyle,
   blogCommentStyle,
   blogCommentFormStyle,
+  blogCommentPageStyle,
   blogFormStyle,
   blogPostCardStyle,
   blogProposalStyle,

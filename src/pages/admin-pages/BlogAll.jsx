@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
 import { BlogContext, UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
-import { adminPageStyle } from "../../styles";
-import { deleteBlogPost } from "../../utils/firebase-admin";
 import { Loading } from "../../components";
+import { useContext, useEffect, useState } from "react";
+import { adminPageStyle, blogAllStyle } from "../../styles";
+import { deleteBlogPost } from "../../utils/firebase-admin";
 import { useSwalMessage } from "../../utils/useSwalMessage";
 
 const BlogAll = () => {
@@ -48,38 +48,30 @@ const BlogAll = () => {
     <div className={adminPageStyle.wrapper}>
       <h1 className={adminPageStyle.title}>{text.blogAll.title}</h1>
 
-      <div className="flex w-full h-full flex-wrap gap-y-8 gap-x-4 justify-evenly">
+      <div className={blogAllStyle.container}>
         {posts.map((post) => (
-          <div
-            key={post.postid}
-            className="card relative bg-primary overflow-hidden 3xl:w-[15rem] w-[17rem] 3xl:h-[15rem] h-[12rem] flex flex-col items-center cursor-pointer rounded-xl shadow-xl"
-          >
-            <img
-              src={post.image}
-              alt="blog"
-              className="absolute w-full 3xl:h-[12rem] h-[10rem] object-cover"
-            />
+          <div key={post.postid} className={blogAllStyle.postContainer}>
+            <img src={post.image} alt="blog" className={blogAllStyle.image} />
 
-            <div className="filter absolute w-full h-full bg-purpleglass">
-              <div className="w-full 3xl:h-[12rem] h-[10rem] flex items-center justify-center gap-4">
+            <div className={blogAllStyle.filter}>
+              <div className={blogAllStyle.content}>
                 <Icon
                   icon="bi:trash3-fill"
-                  className="text-white text-[3rem] hover:text-yellowdark cursor-pointer"
+                  className={blogAllStyle.icon}
                   onClick={() => confirmDelete(post.postid)}
                 />
-                <Link
-                  to={post.postid}
-                  className="text-white text-[3rem] hover:text-yellowdark cursor-pointer"
-                >
+                <Link to={post.postid} className={blogAllStyle.icon}>
                   <Icon icon="raphael:edit" />
                 </Link>
               </div>
-              <div className="absolute bottom-0 w-full 3xl:h-[3rem] h-[2rem] bg-yellowdark"></div>
+              <div
+                className={`${blogAllStyle.titleContainer} ${blogAllStyle.bg}`}
+              ></div>
             </div>
-            <div className="absolute bottom-0 w-full 3xl:h-[3rem] h-[2rem] flex items-center justify-center">
-              <h1 className="text-text text-[1.2rem] font-[500]">
-                {truncate(post.title)}
-              </h1>
+            <div
+              className={`${blogAllStyle.titleContainer} ${blogAllStyle.flex}`}
+            >
+              <h1 className={blogAllStyle.title}>{truncate(post.title)}</h1>
             </div>
           </div>
         ))}

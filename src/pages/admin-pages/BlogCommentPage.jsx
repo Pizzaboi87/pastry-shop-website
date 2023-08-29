@@ -1,12 +1,16 @@
-import { useContext, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import { BlogContext, UserContext } from "../../context";
 import { Icon } from "@iconify/react";
-import { changeCommentStatus } from "../../utils/firebase";
-import { adminPageStyle, blogFormStyle } from "../../styles";
-import { deleteComment } from "../../utils/firebase-admin";
 import { Loading } from "../../components";
+import { useContext, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { changeCommentStatus } from "../../utils/firebase";
+import { deleteComment } from "../../utils/firebase-admin";
 import { useSwalMessage } from "../../utils/useSwalMessage";
+import {
+  adminPageStyle,
+  blogCommentPageStyle,
+  blogFormStyle,
+} from "../../styles";
 
 const BlogCommentPage = () => {
   const { commentID } = useParams();
@@ -73,24 +77,26 @@ const BlogCommentPage = () => {
     <div className={`${adminPageStyle.wrapper} relative`}>
       <h1 className={adminPageStyle.title}>{text.blogCommentPage.title}</h1>
 
-      <span className="md:absolute md:mb-0 mb-4 top-0 right-0 w-full flex justify-between items-center md">
+      <span className={blogCommentPageStyle.span}>
         <Icon
           icon="bi:trash3-fill"
-          className="delete outline-none text-text text-[3rem] hover:text-logopink cursor-pointer"
+          className={blogCommentPageStyle.deleteIcon}
           onClick={() => confirmDelete(actualComment.id)}
         />
 
         <Icon
           icon={actualComment.isPublished ? "mdi:publish" : "mdi:publish-off"}
           className={`${
-            actualComment.isPublished ? "text-green" : "text-red"
-          } outline-none text-[4rem] cursor-pointer`}
+            actualComment.isPublished
+              ? blogCommentPageStyle.green
+              : blogCommentPageStyle.red
+          } ${blogCommentPageStyle.publishIcon}}`}
           onClick={() => changePublish(actualComment)}
         />
       </span>
 
-      <form className="w-full grid grid-cols-4 gap-y-8 gap-x-16">
-        <label className={`${blogFormStyle.label} md:col-span-2 col-span-4`}>
+      <form className={blogCommentPageStyle.form}>
+        <label className={blogCommentPageStyle.label}>
           {text.blogCommentPage.id}
           <input
             disabled
@@ -101,7 +107,7 @@ const BlogCommentPage = () => {
           />
         </label>
 
-        <label className={`${blogFormStyle.label} md:col-span-2 col-span-4`}>
+        <label className={blogCommentPageStyle.label}>
           {text.blogCommentPage.date}
           <input
             disabled
@@ -112,7 +118,7 @@ const BlogCommentPage = () => {
           />
         </label>
 
-        <label className={`${blogFormStyle.label} md:col-span-2 col-span-4`}>
+        <label className={blogCommentPageStyle.label}>
           {text.blogCommentPage.author}
           <input
             disabled
@@ -123,7 +129,7 @@ const BlogCommentPage = () => {
           />
         </label>
 
-        <label className={`${blogFormStyle.label} md:col-span-2 col-span-4`}>
+        <label className={blogCommentPageStyle.label}>
           {text.blogCommentPage.email}
           <input
             disabled
@@ -134,7 +140,7 @@ const BlogCommentPage = () => {
           />
         </label>
 
-        <span className="md:col-span-2 col-span-4 flex flex-col gap-8">
+        <span className={blogCommentPageStyle.flex}>
           <label className={blogFormStyle.label}>
             {text.blogCommentPage.commentTitle}
             <input
@@ -158,7 +164,7 @@ const BlogCommentPage = () => {
           </label>
         </span>
 
-        <label className={`${blogFormStyle.label} md:col-span-2 col-span-4`}>
+        <label className={blogCommentPageStyle.label}>
           {text.blogCommentPage.commentText}
           <textarea
             disabled
