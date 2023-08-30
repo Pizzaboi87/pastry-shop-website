@@ -21,7 +21,7 @@ import {
   Theme_PhoneInput,
 } from "./styled-elements";
 
-const adminLoginStyle = {
+export const adminLoginStyle = {
   form: "grid grid-cols-5 md:w-[40rem] w-full rounded-xl shadow-xl items-center p-4 gap-8",
   title:
     "md:col-span-3 col-span-5 md:col-start-2 text-center text-text text-[2rem] font-[600]",
@@ -34,7 +34,7 @@ const adminLoginStyle = {
     "col-start-4 py-2 rounded-xl shadow-xl border-none font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] md:col-span-1 col-span-2 col-start-2 md:col-start-3",
 };
 
-const adminMenuStyle = {
+export const adminMenuStyle = {
   wrapper:
     "pt-4 px-2 md:col-span-1 col-span-6 md:mb-0 mb-4 flex flex-col bg-white rounded-xl items-center md:sticky top-[10rem] shadow-inner shadow-black",
   mainList: "md:pt-0 pt-4",
@@ -45,7 +45,7 @@ const adminMenuStyle = {
   icon: "md:hidden block text-[3rem] mx-auto cursor-pointer hover:text-logopink",
 };
 
-const adminPanelStyle = {
+export const adminPanelStyle = {
   wrapper:
     "glass grid grid-cols-6 xl:w-[90%] w-full bg-purpleglass rounded-xl md:p-12 p-4 gap-x-8 shadow-2xl",
   container:
@@ -54,7 +54,7 @@ const adminPanelStyle = {
     "md:col-start-6 md:col-auto col-span-6 bg-purple text-white text-[1.2rem] hover:bg-yellowdark hover:text-text font-[500] rounded-xl mt-4 py-2",
 };
 
-const authButtonStyle = {
+export const authButtonStyle = {
   wrapper:
     "relative lg:w-[50%] w-full lg:h-full h-[14vh] flex flex-col items-center justify-center",
   title: "text-text font-[500] xs:text-[1.2rem] text-[0.9rem] mb-2",
@@ -62,13 +62,13 @@ const authButtonStyle = {
     "rounded-xl shadow-sm border-none font-[400] text-center px-3 xs:py-2 py-1",
 };
 
-const awningStyle = {
+export const awningStyle = {
   wrapper: "w-full h-[3.5rem] fixed top-0 left-0 z-[11] flex",
   awning: "piece w-[80px] h-full rounded-b-full shadow-xl",
   shadow: "w-full h-full rounded-b-full",
 };
 
-const blogAllStyle = {
+export const blogAllStyle = {
   container: "flex w-full h-full flex-wrap gap-y-8 gap-x-4 justify-evenly",
   postContainer:
     "card relative bg-primary overflow-hidden 3xl:w-[15rem] w-[17rem] 3xl:h-[15rem] h-[12rem] flex flex-col items-center cursor-pointer rounded-xl shadow-xl",
@@ -83,13 +83,13 @@ const blogAllStyle = {
   title: "text-text text-[1.2rem] font-[500]",
 };
 
-const blogCarouselStyle = {
+export const blogCarouselStyle = {
   image:
     "w-[20rem] h-[12rem] object-cover border-2 border-white rounded-xl shadow-xl mb-4",
   title: "text-text text-center text-[1.2rem] font-[600]",
 };
 
-const blogCategoryCardStyle = {
+export const blogCategoryCardStyle = {
   wrapper:
     "rounded-xl xl:mb-0 mb-6 flex flex-col h-fit items-center justify-center shadow-xl px-3 py-3",
   list: "flex flex-wrap justify-center gap-x-6 gap-y-2",
@@ -98,7 +98,7 @@ const blogCategoryCardStyle = {
     "rounded-xl py-1 px-2 shadow-sm font-[700] text-[1rem] cursor-pointer",
 };
 
-const blogCommentStyle = {
+export const blogCommentStyle = {
   wrapper: "col-span-4 mb-16",
   container: "w-full rounded-2xl shadow-xl p-6 mb-16",
   title: "text-text text-[1.3rem] font-[600] mb-16",
@@ -110,7 +110,7 @@ const blogCommentStyle = {
   loginTitle: "text-text text-[1.2rem] font-[600]",
 };
 
-const blogCommentFormStyle = {
+export const blogCommentFormStyle = {
   form: "flex flex-col mt-4",
   span: "flex w-full justify-evenly items-end",
   input:
@@ -123,7 +123,7 @@ const blogCommentFormStyle = {
     "px-16 py-2 rounded-xl shadow-xl border-none font-[500] block xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
-const blogFormStyle = {
+export const blogFormStyle = {
   form: "w-full grid grid-cols-4 md:gap-x-16 gap-y-8",
   container: "md:col-span-2 col-span-4 flex flex-col gap-y-4 justify-between",
   label:
@@ -134,7 +134,7 @@ const blogFormStyle = {
     "md:col-start-4 md:col-auto col-span-4 py-2 bg-purple hover:bg-yellowdark hover:text-text rounded-xl shadow-xl border-none text-white font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
-const blogCommentPageStyle = {
+export const blogCommentPageStyle = {
   span: "md:absolute md:mb-0 mb-4 top-0 right-0 w-full flex justify-between items-center md",
   deleteIcon:
     "delete outline-none text-text text-[3rem] hover:text-logopink cursor-pointer",
@@ -146,7 +146,7 @@ const blogCommentPageStyle = {
   flex: "md:col-span-2 col-span-4 flex flex-col gap-8",
 };
 
-const blogCommentsStyle = {
+export const blogCommentsStyle = {
   input: `${adminLoginStyle.input} border-2 w-[20rem] h-[3rem] mb-4`,
   list: "grid grid-cols-8 w-full md:px-8 px-4 items-center",
   header:
@@ -169,7 +169,7 @@ const blogCommentsStyle = {
   hrLine: "h-[0.1rem] md:hidden col-span-8 bg-black mb-4 mt-2",
 };
 
-const blogPostCardStyle = {
+export const blogPostCardStyle = {
   wrapper: "w-full rounded-2xl mb-16 shadow-xl",
   image: "w-full h-[25rem] object-cover rounded-t-2xl",
   container: "p-8 flex flex-col items-center justify-center",
@@ -181,20 +181,20 @@ const blogPostCardStyle = {
   button: "rounded-xl px-4 py-2 font-[600] shadow-xl self-center",
 };
 
-const blogProposalStyle = {
+export const blogProposalStyle = {
   wrapper: "h-fit rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer",
   image: "col-span-2 rounded-full w-[5rem] h-[5rem] object-cover border-2",
   container: "col-span-4 flex flex-col items-center w-full",
   title: "text-text text-[1rem] font-[600] self-start",
 };
 
-const blogStickyStyle = {
+export const blogStickyStyle = {
   wrapper:
     "xl:sticky top-[20%] xl:col-span-2 col-span-6 w-full h-fit flex flex-col",
   container: "flex xl:flex-col mb-6 gap-x-4 xl:gap-y-4 xl:mt-4",
 };
 
-const courseCardStyle = {
+export const courseCardStyle = {
   wrapper:
     "w-full sm:w-[20rem] xs:h-[35rem] md:h-[31rem] mx-auto mb-4 text-justify p-4 rounded-xl shadow-xl flex flex-col items-center justify-between",
   titleWrapper: "flex flex-col justify-center items-center w-full",
@@ -208,7 +208,7 @@ const courseCardStyle = {
     "flex mx-auto justify-center rounded-xl shadow-sm border-none text-center px-3 py-2 text-[1rem] font-[400] w-[50%]",
 };
 
-const courseFormStyle = {
+export const courseFormStyle = {
   form: "col-span-2 md:py-8 md:px-8 py-4 px-1 rounded-xl shadow-xl",
   title: "md:text-4xl text-xl text-center text-text font-[500] mb-8",
   input:
@@ -218,7 +218,7 @@ const courseFormStyle = {
     "px-16 py-2 rounded-xl shadow-xl border-none text-[1rem] font-[500] mx-auto block",
 };
 
-const footerStyle = {
+export const footerStyle = {
   wrapper: "w-full flex flex-col xl:mt-24 mt-8 text-text",
   image: "h-[7rem]",
   container:
@@ -237,26 +237,26 @@ const footerStyle = {
   underLink: "text-center",
 };
 
-const imageStyle = {
+export const imageStyle = {
   image: "md:w-[80%] xl:w-[40%] w-[100%] mt-8 rounded-3xl shadow-xl",
 };
 
-const imageCarouselStyle = {
+export const imageCarouselStyle = {
   container: "w-full flex items-center",
   dotList: "custom-dot-list-style mb-3",
 };
 
-const loadingStyle = {
+export const loadingStyle = {
   wrapper: "flex flex-col w-full h-full items-center justify-start",
   image: "w-[20rem] h-[20rem]",
   title: "text-text text-[2rem] font-[500] -mt-[5rem]",
 };
 
-const mainContentStyle = {
+export const mainContentStyle = {
   wrapper: "flex flex-col items-center w-full",
 };
 
-const navDesktopStyle = {
+export const navDesktopStyle = {
   wrapper:
     "lg:visible invisible 2xl:w-[85%] w-full h-[7rem] fixed pt-4 top-7 rounded-2xl flex items-center justify-around text-[1rem] 2xl:text-[1.3rem] font-[400] shadow-md z-10",
   list: "flex justify-center items-center 2xl:gap-12 gap-8",
@@ -264,7 +264,7 @@ const navDesktopStyle = {
   button: "rounded-xl shadow-sm border-none text-center font-[400] px-8 py-1",
 };
 
-const navMobileStyle = {
+export const navMobileStyle = {
   logo: "w-[5rem] h-[5rem] mx-auto fixed top-[3rem] left-0 right-0 z-[3]",
   menuContainer:
     "lg:invisible visible fixed top-0 left-0 w-full h-[8rem] z-[2] flex justify-between items-end rounded-b-xl shadow-xl",
@@ -281,7 +281,7 @@ const navMobileStyle = {
   closeIconLeft: "absolute top-[2rem] left-[1rem] md:text-[4.8rem] text-[4rem]",
 };
 
-const navUserStyle = {
+export const navUserStyle = {
   wrapper:
     "lg:visible invisible flex flex-col items-center justify-center fixed 3xl:right-[12rem] 2xl:right-[8rem] right-4 top-[8rem] w-[15rem] rounded-b-xl shadow-xl z-[9] transition-all duration-500 ease-in-out",
   openWrapper: "h-[15rem]",
@@ -292,11 +292,11 @@ const navUserStyle = {
   listItem: "text-[1.2rem]",
 };
 
-const noPermissionStyle = {
+export const noPermissionStyle = {
   image: "w-[15rem]",
 };
 
-const paragraphsStyle = {
+export const paragraphsStyle = {
   imgFirst: "2xl:ml-24",
   imgLast: "ml-0",
   paragraph: "my-2",
@@ -304,7 +304,7 @@ const paragraphsStyle = {
     "md:text-justify 2xl:max-w-[40%] max-w-[90%] 2xl:text-[1.25rem] text-[1.5rem] mt-8 xl:mt-0  text-text leading-9",
 };
 
-const phoneInputStyle = {
+export const phoneInputStyle = {
   width: "100%",
   fontSize: "1.2rem",
   fontWeight: "400",
@@ -321,7 +321,7 @@ const phoneInputStyle = {
   outlineColor: "#2b2730",
 };
 
-const postcardStyle = {
+export const postcardStyle = {
   wrapper:
     "hidden xs:flex sm:w-[90%] ms:w-[75%] bg-white sm:flex-row flex-col xs:mb-24",
   messageWrapper:
@@ -350,7 +350,7 @@ const postcardStyle = {
   zip: "font-letter text-text lg:text-[2.2rem] sm:text-[1.8rem] text-[1.5rem]",
 };
 
-const recipeCardStyle = {
+export const recipeCardStyle = {
   wrapper:
     "2xl:w-[80%] w-full h-auto text-justify md:p-12 p-4 rounded-xl shadow-xl",
   notOwn: "mb-20",
@@ -367,7 +367,7 @@ const recipeCardStyle = {
   email: "cursor-pointer",
 };
 
-const reviewCardStyle = {
+export const reviewCardStyle = {
   wrapper:
     "mx-auto xs:w-[20rem] w-[16rem] h-[30rem] border relative flex flex-col items-center rounded-xl shadow-xl hover:cursor-grab active:cursor-grabbing",
   background: "w-full h-[25%] bg-cover rounded-t-xl object-cover",
@@ -382,14 +382,14 @@ const reviewCardStyle = {
   star: "text-yellowdark text-[1.4rem]",
 };
 
-const searchFormStyle = {
+export const searchFormStyle = {
   form: "flex md:flex-row flex-col justify-center items-center mb-16 gap-4",
   input:
     "px-4 py-2 rounded-xl shadow-md outline-dotted outline-2 outline-offset-2 outline-text",
   button: "px-4 py-3 cursor-pointer font-bold rounded-xl shadow-md",
 };
 
-const signInFormStyle = {
+export const signInFormStyle = {
   wrapper: "flex flex-col w-full h-full items-center justify-center",
   title:
     "xl:text-4xl lg:text-xl md:text-4xl text-xl text-center text-text font-[600] mb-6",
@@ -406,7 +406,7 @@ const signInFormStyle = {
     "flex items-center justify-center border-2 shadow-xl rounded-md px-2 py-1 mt-6 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
-const signUpFormStyle = {
+export const signUpFormStyle = {
   wrapper: "flex flex-col w-full h-full items-center justify-center",
   title:
     "xl:text-4xl lg:text-xl md:text-4xl text-xl text-center text-text font-[600] mb-6",
@@ -419,7 +419,7 @@ const signUpFormStyle = {
     "px-16 py-2 rounded-xl shadow-xl border-none font-[500] mx-auto block xs:mt-8 mt-4 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
-const teamCardStyle = {
+export const teamCardStyle = {
   wrapper:
     "card relative mx-auto xl:w-[18rem] 3xl:w-[20rem] w-[20rem] h-[30rem] overflow-hidden rounded-xl shadow-xl",
   image: "h-full object-cover absolute",
@@ -435,12 +435,12 @@ const teamCardStyle = {
   icon: "icon text-white text-[1.8rem]",
 };
 
-const textImageStyle = {
+export const textImageStyle = {
   wrapper:
     "w-full flex 2xl:flex-row flex-col items-center justify-center 2xl:mt-36 3xl:mt-56 mt-6",
 };
 
-const userAccountImageStyle = {
+export const userAccountImageStyle = {
   wrapper:
     "xl:col-span-1 col-span-6 flex flex-col items-center gap-y-2 xl:sticky top-36 h-fit",
   image:
@@ -451,12 +451,12 @@ const userAccountImageStyle = {
   name: "text-text text-[1.4rem] font-[600]",
 };
 
-const userDeleteFormStyle = {
+export const userDeleteFormStyle = {
   form: "md:w-[50%] md:flex md:flex-col grid grid-cols-6",
   label: "md:col-span-2 col-span-6",
 };
 
-const userOtherStyle = {
+export const userOtherStyle = {
   form: "grid grid-cols-6 gap-x-8",
   labelOne: "md:col-span-2 col-span-6",
   labelTwo: "md:col-span-1 col-span-6",
@@ -465,7 +465,7 @@ const userOtherStyle = {
   checkbox: "w-[1rem] h-[1rem]",
 };
 
-const userPageStyle = {
+export const userPageStyle = {
   form: "w-full grid md:grid-cols-7 xl:px-16 xl:py-6 py-2 gap-y-2",
   odd: "md:col-span-3  md:col-start-1",
   even: "md:col-span-3 md:col-start-5",
@@ -484,17 +484,17 @@ const userPageStyle = {
   title: "col-span-6 xl:text-[3rem] text-[2rem] font-[600] mb-8 text-center",
 };
 
-const userPanelStyle = {
+export const userPanelStyle = {
   container:
     "xl:col-span-5 col-span-6 rounded-2xl shadow-inner shadow-black xl:p-12 p-4",
 };
 
-const userPasswordStyle = {
+export const userPasswordStyle = {
   form: "grid grid-cols-6 gap-x-8",
   label: "md:col-span-2 col-span-6",
 };
 
-const userPhoneInputStyle = {
+export const userPhoneInputStyle = {
   width: "100%",
   height: "100%",
   padding: "0 0 0 4rem",
@@ -509,7 +509,7 @@ const userPhoneInputStyle = {
   backgroundColor: "white",
 };
 
-const usersAllStyle = {
+export const usersAllStyle = {
   container: "grid grid-cols-10 w-full items-center",
   headerContainer:
     "hidden md:min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 md:flex items-center gap-x-4",
@@ -531,56 +531,56 @@ const usersAllStyle = {
   hrLine: "h-[0.1rem] md:hidden col-span-10 bg-black mb-4 mt-2",
 };
 
-const recolorStyle = {
+export const recolorStyle = {
   filter:
     "grayscale(100%) invert(62%) sepia(26%) saturate(7061%) hue-rotate(307deg) brightness(93%) contrast(93%)",
 };
 
-const shadowStyle = {
+export const shadowStyle = {
   background:
     "linear-gradient(180deg, rgba(166, 163, 163, 0.3) 30%, rgba(255, 255, 255, 1) 100%)",
 };
 
-const containerStyle = {
+export const containerStyle = {
   transition: "0.5s ease-in-out",
 };
 
-const authStyle = {
+export const authStyle = {
   background: "rgba(255, 255, 255, 0.2)",
   boxShadow: "rgba(0, 0, 0, 0.12)",
 };
 
-const formStyle = {
+export const formStyle = {
   boxShadow: "0 5px 45px rgba(0,0,0,0.25",
   transition: "0.5s ease-in-out",
 };
 
-const menuOffStyle = {
+export const menuOffStyle = {
   transition: "0.5s ease-in-out",
   transform: "translateX(-100vw)",
   width: 0,
   height: "100vh",
 };
 
-const menuOnStyle = {
+export const menuOnStyle = {
   transition: "0.5s ease-in-out",
   transform: "translateX(0)",
   width: "100vw",
   height: "100vh",
 };
 
-const personalMenuOffStyle = {
+export const personalMenuOffStyle = {
   transition: "0.5s ease-in-out",
   transform: "translateX(200vw)",
   width: 0,
   height: "100vh",
 };
 
-const glassStyle = `bg-[rgba(255, 255, 255, 0.2)] rounded-2xl boxShadow-[0 4px 30px rgba(0, 0, 0, 0.1)] backdrop-blur-sm border-1 border-solid border-[rgba(255, 255, 255, 0.3)]`;
+export const glassStyle = `bg-[rgba(255, 255, 255, 0.2)] rounded-2xl boxShadow-[0 4px 30px rgba(0, 0, 0, 0.1)] backdrop-blur-sm border-1 border-solid border-[rgba(255, 255, 255, 0.3)]`;
 
-const tableStyle = "text-text text-[1rem] font-[500] pl-2 md:py-2";
+export const tableStyle = "text-text text-[1rem] font-[500] pl-2 md:py-2";
 
-const adminPageStyle = {
+export const adminPageStyle = {
   wrapper: "w-full h-full flex flex-col items-center p-4",
   title: "text-text text-[1.5rem] text-center font-[600] mb-8",
   icon: "text-text text-[3rem] hover:text-yellowdark cursor-pointer self-start md:mb-0 mb-4 md:absolute top-[1rem] left-[1rem]",
@@ -588,77 +588,19 @@ const adminPageStyle = {
     "delete outline-none text-text text-[3rem] hover:text-logopink cursor-pointer md:absolute self-start top-[1rem] left-[1rem]",
 };
 
-const tooltipStyle = {
+export const tooltipStyle = {
   backgroundColor: "#6554af",
   color: "#fff",
   fontWeight: 600,
 };
 
-const titleStyle = "xl:text-[3rem] text-[2rem] text-center font-[600] mb-8";
+export const titleStyle =
+  "xl:text-[3rem] text-[2rem] text-center font-[600] mb-8";
 
-const subTitleStyle =
+export const subTitleStyle =
   "xl:text-[1.5rem] text-[1rem] text-center font-[400] -mt-8 mb-8";
 
 export {
-  adminLoginStyle,
-  adminMenuStyle,
-  adminPanelStyle,
-  authButtonStyle,
-  awningStyle,
-  blogAllStyle,
-  blogCarouselStyle,
-  blogCategoryCardStyle,
-  blogCommentStyle,
-  blogCommentFormStyle,
-  blogCommentPageStyle,
-  blogCommentsStyle,
-  blogFormStyle,
-  blogPostCardStyle,
-  blogProposalStyle,
-  blogStickyStyle,
-  courseCardStyle,
-  courseFormStyle,
-  footerStyle,
-  imageStyle,
-  imageCarouselStyle,
-  loadingStyle,
-  mainContentStyle,
-  navDesktopStyle,
-  navMobileStyle,
-  navUserStyle,
-  noPermissionStyle,
-  paragraphsStyle,
-  phoneInputStyle,
-  postcardStyle,
-  recipeCardStyle,
-  reviewCardStyle,
-  searchFormStyle,
-  signInFormStyle,
-  signUpFormStyle,
-  teamCardStyle,
-  textImageStyle,
-  userAccountImageStyle,
-  userDeleteFormStyle,
-  userOtherStyle,
-  userPageStyle,
-  userPanelStyle,
-  userPasswordStyle,
-  userPhoneInputStyle,
-  usersAllStyle,
-  recolorStyle,
-  shadowStyle,
-  authStyle,
-  formStyle,
-  containerStyle,
-  menuOffStyle,
-  menuOnStyle,
-  personalMenuOffStyle,
-  glassStyle,
-  tableStyle,
-  adminPageStyle,
-  tooltipStyle,
-  titleStyle,
-  subTitleStyle,
   Theme_Div,
   Theme_Motion_Div,
   Theme_Motion_Span,
