@@ -1,7 +1,7 @@
-import { useContext } from "react";
 import { UserContext } from "../../context";
 import { CourseCard, TransitionParent } from "../../components";
-import { Theme_H1, titleStyle } from "../../styles";
+import { useContext } from "react";
+import { Theme_H1, coursesStyle, titleStyle } from "../../styles";
 
 const Courses = () => {
   const { text } = useContext(UserContext);
@@ -11,7 +11,7 @@ const Courses = () => {
       <Theme_H1 $textcolor="title" className={titleStyle}>
         {text.coursesTitle}
       </Theme_H1>
-      <div className="w-full flex md:flex-row flex-col gap-4 items-center justify-center">
+      <div className={coursesStyle.container}>
         {text.courses.map((course, index) => (
           <CourseCard key={course.title} course={course} index={index} />
         ))}

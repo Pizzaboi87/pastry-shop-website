@@ -218,6 +218,11 @@ export const blogStyle = {
   postContainer: "xl:col-span-4 col-span-6"
 }
 
+export const blogTagPageStyle = {
+  title: `${titleStyle} col-span-6`,
+  cardContainer: "xl:col-span-4 col-span-6"
+}
+
 export const courseCardStyle = {
   wrapper:
     "w-full sm:w-[20rem] xs:h-[35rem] md:h-[31rem] mx-auto mb-4 text-justify p-4 rounded-xl shadow-xl flex flex-col items-center justify-between",
@@ -242,6 +247,25 @@ export const courseFormStyle = {
     "px-16 py-2 rounded-xl shadow-xl border-none text-[1rem] font-[500] mx-auto block",
 };
 
+export const coursesStyle = {
+  container: "w-full flex md:flex-row flex-col gap-4 items-center justify-center"
+}
+
+export const coursePageStyle = {
+  arrayContainer: "flex md:flex-row flex-col items-center justify-center xl:gap-16 mb-8",
+  imageSpan: "flex flex-col gap-8 xl:gap-12",
+  imageFirst: "3xl:w-[60rem] md:w-[30rem] w-full rounded-xl shadow-xl",
+  imageSecond: "3xl:w-[60rem] md:w-[30rem] w-full mb-6 rounded-xl shadow-xl",
+  list: "list-disc pl-4 xl:mb-8 xl:w-[60rem] w-full ml-4 pr-4",
+  listItem: "text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] text-justify",
+  firstItem: "font-[600] list-none",
+  notArrayContainer: "xl:flex md:flex-row-reverse flex-col items-center justify-center text-justify mb-8",
+  imageRegular: "xl:w-[30rem] md:w-[20rem] w-full mb-8 md:float-right md:ml-8 rounded-xl shadow-xl",
+  paragraph: "text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] mb-8 inline",
+  formContainer: "w-full xl:grid xl:grid-cols-3 flex-col flex self-center mt-16 md:pb-16 pb-4 xl:px-16 2xl:px-0 md:gap-8 justify-between",
+  imageContainer: "w-full flex flex-col gap-4 self-center mb-8 md:mb-0"
+}
+
 export const footerStyle = {
   wrapper: "w-full flex flex-col xl:mt-24 mt-8 text-text",
   image: "h-[7rem]",
@@ -260,6 +284,19 @@ export const footerStyle = {
   underLinkSpan: "flex gap-4 font-[400] text-[1rem]",
   underLink: "text-center",
 };
+
+export const homeStyle = {
+  container: "xl:w-[75%] w-full flex xl:flex-row flex-col items-center justify-center",
+  motionSpan: "px-8 2xl:px-0",
+  titleContainer: "lg:mb-6 2xl:max-w-[95%]",
+  titleSpan: "flex xl:flex-col flex-row flex-wrap lg:mb-2",
+  title: "3xl:text-[4.5rem] 2xl:text-[3.5rem] text-[1.9rem] 2xl:font-[400] font-[600]",
+  titleSpace: "visible xl:hidden text-[2rem]",
+  subTitle: "xl:my-2 2xl:text-[1rem] xl:text-[1.2rem] text-[1.4rem] text-justify 2xl:max-w-[80%]",
+  buttonFirst: "rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[1.3rem] 2xl:inline-block hidden",
+  buttonSecond: "rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[2rem] md:text-[3rem] xl:hidden inline-block mt-16 mb-0",
+  
+}
 
 export const imageStyle = {
   image: "md:w-[80%] xl:w-[40%] w-[100%] mt-8 rounded-3xl shadow-xl",

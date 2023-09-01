@@ -1,9 +1,9 @@
+import { UserContext } from "../../context";
+import { CourseForm, TransitionParent } from "../../components";
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { UserContext } from "../../context";
 import { course1, course2, course3 } from "../../assets";
-import { CourseForm, TransitionParent } from "../../components";
-import { Theme_H1, titleStyle } from "../../styles";
+import { Theme_H1, coursePageStyle, titleStyle } from "../../styles";
 
 const CoursePage = () => {
   const { text } = useContext(UserContext);
@@ -45,28 +45,25 @@ const CoursePage = () => {
         course.longDetails.map((detail, index) => {
           if (Array.isArray(detail)) {
             return (
-              <div
-                key={index}
-                className="flex md:flex-row flex-col items-center justify-center xl:gap-16 mb-8"
-              >
-                <span className="flex flex-col gap-8 xl:gap-12">
+              <div key={index} className={coursePageStyle.arrayContainer}>
+                <span className={coursePageStyle.imageSpan}>
                   <img
                     src={images[index]}
                     alt="course-picture"
-                    className="3xl:w-[60rem] md:w-[30rem] w-full rounded-xl shadow-xl"
+                    className={coursePageStyle.imageFirst}
                   />
                   <img
                     src={images[index + 2]}
                     alt="course-picture"
-                    className="3xl:w-[60rem] md:w-[30rem] w-full mb-6 rounded-xl shadow-xl"
+                    className={coursePageStyle.imageSecond}
                   />
                 </span>
-                <ul className="list-disc pl-4 xl:mb-8 xl:w-[60rem] w-full ml-4 pr-4">
+                <ul className={coursePageStyle.list}>
                   {detail.map((item, itemIndex) => (
                     <li
                       key={itemIndex}
-                      className={`text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] text-justify ${
-                        itemIndex === 0 ? "font-[600] list-none" : ""
+                      className={`${coursePageStyle.listItem} ${
+                        itemIndex === 0 ? coursePageStyle.firstItem : ""
                       }`}
                     >
                       {item}
@@ -77,24 +74,19 @@ const CoursePage = () => {
             );
           } else {
             return (
-              <div
-                key={index}
-                className="xl:flex md:flex-row-reverse flex-col items-center justify-center text-justify mb-8"
-              >
+              <div key={index} className={coursePageStyle.notArrayContainer}>
                 <img
                   src={images[index]}
                   alt="course-picture"
-                  className="xl:w-[30rem] md:w-[20rem] w-full mb-8 md:float-right md:ml-8 rounded-xl shadow-xl"
+                  className={coursePageStyle.imageRegular}
                 />
-                <p className="text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] mb-8 inline">
-                  {detail}
-                </p>
+                <p className={coursePageStyle.paragraph}>{detail}</p>
               </div>
             );
           }
         })}
-      <div className="w-full xl:grid xl:grid-cols-3 flex-col flex self-center mt-16 md:pb-16 pb-4 xl:px-16 2xl:px-0 md:gap-8 justify-between">
-        <div className="w-full flex flex-col gap-4 self-center mb-8 md:mb-0">
+      <div className={coursePageStyle.formContainer}>
+        <div className={coursePageStyle.imageContainer}>
           <img src={course1} alt="course_1" />
           <img src={course2} alt="course_2" />
           <img src={course3} alt="course_3" />

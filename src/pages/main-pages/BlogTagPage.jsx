@@ -1,7 +1,7 @@
+import { BlogContext } from "../../context";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { BlogContext } from "../../context";
-import { Theme_H1, titleStyle } from "../../styles";
+import { Theme_H1, blogTagPageStyle } from "../../styles";
 import {
   BlogPostCard,
   BlogStickyCard,
@@ -15,10 +15,10 @@ const BlogTagPage = () => {
 
   return (
     <TransitionParent isFlex={false}>
-      <Theme_H1 $textcolor="title" className={`${titleStyle} col-span-6`}>
+      <Theme_H1 $textcolor="title" className={blogTagPageStyle.title}>
         #{tag}
       </Theme_H1>
-      <div className="xl:col-span-4 col-span-6 ">
+      <div className={blogTagPageStyle.cardContainer}>
         {posts.map((post, index) => (
           <BlogPostCard
             key={`blogPostCard-{post.id}-${index}`}
