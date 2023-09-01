@@ -1,6 +1,6 @@
-import { useContext } from "react";
 import { UserContext } from "../../context";
 import { TransitionParent } from "../../components";
+import { useContext } from "react";
 import { Theme_H1, titleStyle } from "../../styles";
 
 const Shop = () => {

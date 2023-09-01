@@ -59,6 +59,10 @@ export const adminPanelStyle = {
     "md:col-start-6 md:col-auto col-span-6 bg-purple text-white text-[1.2rem] hover:bg-yellowdark hover:text-text font-[500] rounded-xl mt-4 py-2",
 };
 
+export const appStyle = {
+  container: "md:pt-56 pt-36 w-full flex flex-col items-center bg-main lg:bg-background bg-mobBackground"
+}
+
 export const authButtonStyle = {
   wrapper:
     "relative lg:w-[50%] w-full lg:h-full h-[14vh] flex flex-col items-center justify-center",
@@ -295,7 +299,7 @@ export const homeStyle = {
   subTitle: "xl:my-2 2xl:text-[1rem] xl:text-[1.2rem] text-[1.4rem] text-justify 2xl:max-w-[80%]",
   buttonFirst: "rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[1.3rem] 2xl:inline-block hidden",
   buttonSecond: "rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[2rem] md:text-[3rem] xl:hidden inline-block mt-16 mb-0",
-  
+
 }
 
 export const imageStyle = {
@@ -356,6 +360,20 @@ export const navUserStyle = {
 export const noPermissionStyle = {
   image: "w-[15rem]",
 };
+
+export const notFoundStyle = {
+  container: "flex items-center justify-center",
+  title: "error text-[#e0e0e0] text-[6.4rem] font-[400] mb-5 mr-2",
+  image: "w-[15rem]"
+}
+
+export const ourStoryStyle = {
+  textContainer: "mb-10",
+  staffContainer: "w-full flex md:flex-row flex-col flex-wrap justify-between gap-8",
+  image: "w-[30rem] float-right ml-6 mb-4 rounded-xl shadow-xl",
+  paragraph: "text-text 2xl:text-[1.25rem] text-[1.5rem] text-justify font-[400] mb-4",
+  sign: "text-text text-[2.5rem] font-[400] mb-4 font-letter"
+}
 
 export const paragraphsStyle = {
   imgFirst: "2xl:ml-24",
@@ -427,6 +445,12 @@ export const recipeCardStyle = {
   socialWrapper: "mt-8 flex gap-4",
   email: "cursor-pointer",
 };
+
+export const recipesStyle = {
+  loadingContainer: "mt-[-5rem]",
+  text: "text-text py-3 text-[1.3rem]",
+  button: "px-8 rounded-xl shadow-xl border-none py-3 text-[1.3rem] font-bold"
+}
 
 export const reviewCardStyle = {
   wrapper:

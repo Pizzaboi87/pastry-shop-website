@@ -1,13 +1,6 @@
-import React, { useEffect, useState, useContext } from "react";
-import { fetchRecipe } from "../../utils/fetchRecipe";
 import { UserContext } from "../../context";
-import {
-  Theme_Button,
-  Theme_H1,
-  Theme_P,
-  subTitleStyle,
-  titleStyle,
-} from "../../styles";
+import { useEffect, useState, useContext } from "react";
+import { fetchRecipe } from "../../utils/fetchRecipe";
 import { translateRecipe } from "../../utils/translateRecipe";
 import {
   Loading,
@@ -15,6 +8,14 @@ import {
   SearchForm,
   TransitionParent,
 } from "../../components";
+import {
+  Theme_Button,
+  Theme_H1,
+  Theme_P,
+  recipesStyle,
+  subTitleStyle,
+  titleStyle,
+} from "../../styles";
 
 const Recipes = () => {
   const { text, userLanguage } = useContext(UserContext);
@@ -100,13 +101,11 @@ const Recipes = () => {
         setOffset={setOffset}
       />
       {loading ? (
-        <div className="mt-[-5rem]">
+        <div className={recipesStyle.loadingContainer}>
           <Loading />
         </div>
       ) : notFound ? (
-        <h1 className="text-text py-3 text-[1.3rem]">
-          {text.recipes.notFound}
-        </h1>
+        <h1 className={recipesStyle.text}>{text.recipes.notFound}</h1>
       ) : (
         <>
           {recipes.map((recipe, index) => (
@@ -117,9 +116,7 @@ const Recipes = () => {
             />
           ))}
           {noMore ? (
-            <h1 className="text-text py-3 text-[1.3rem]">
-              {text.recipes.noMore}
-            </h1>
+            <h1 className={recipesStyle.text}>{text.recipes.noMore}</h1>
           ) : (
             <Theme_Button
               $bgcolor="logo"
@@ -128,7 +125,7 @@ const Recipes = () => {
               $hoverbgcolor="dark"
               $hovertextcolor="textlight"
               onClick={showMore}
-              className="px-8 rounded-xl shadow-xl border-none py-3 text-[1.3rem] font-bold"
+              className={recipesStyle.button}
             >
               {text.recipes.show}
             </Theme_Button>

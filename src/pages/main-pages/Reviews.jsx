@@ -1,6 +1,6 @@
+import { UserContext } from "../../context";
 import { useContext } from "react";
 import { Theme_H1, titleStyle } from "../../styles";
-import { UserContext } from "../../context";
 import {
   ReviewCard,
   ImageCarousel,
