@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Navbar, Footer, MainContent, Awning } from "./components";
-import { BlogContextProvider, UserContextProvider, appStyle } from "./context";
+import { BlogContextProvider, UserContextProvider } from "./context";
+import { appStyle } from "./styles";
 
 const App = () => {
   const queryClient = new QueryClient();

@@ -141,7 +141,7 @@ const UserOtherSettingsForm = () => {
         type="submit"
         disabled={isLoading ? true : false}
         className={`${userPageStyle.passwordButton} ${
-          isLoading ? "cursor-progress" : "cursor-pointer"
+          isLoading ? userPageStyle.loading : userPageStyle.notLoading
         } `}
       >
         {isLoading

@@ -74,7 +74,7 @@ const BlogCommentPage = () => {
   if (isDeleting) return <Loading />;
 
   return (
-    <div className={`${adminPageStyle.wrapper} relative`}>
+    <div className={adminPageStyle.wrapperRelative}>
       <h1 className={adminPageStyle.title}>{text.blogCommentPage.title}</h1>
 
       <span className={blogCommentPageStyle.span}>

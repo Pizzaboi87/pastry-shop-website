@@ -40,7 +40,7 @@ const BlogPostEditPage = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <div className={`${adminPageStyle.wrapper} relative`}>
+    <div className={adminPageStyle.wrapperRelative}>
       <h1 className={adminPageStyle.title}>{text.blogPostEditTitle}</h1>
 
       <Icon

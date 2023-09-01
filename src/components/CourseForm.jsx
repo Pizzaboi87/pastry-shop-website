@@ -165,9 +165,9 @@ const CourseForm = ({ courses }) => {
         $bordercolor="transparent"
         $hoverbgcolor="dark"
         $hovertextcolor="textlight"
-        className={`${loading ? "cursor-progress" : "cursor-pointer"} ${
-          courseFormStyle.button
-        }`}
+        className={`${
+          loading ? courseFormStyle.loading : courseFormStyle.notLoading
+        } ${courseFormStyle.button}`}
         type="submit"
         disabled={loading}
       >

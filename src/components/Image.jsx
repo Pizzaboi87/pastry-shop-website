@@ -12,7 +12,9 @@ const Image = ({ dirPic, image, imgFirst }) => {
       viewport={motionProps.viewport}
       src={image}
       alt={image}
-      className={`${imgFirst ? "ml-0" : "2xl:ml-24"} ${imageStyle.image}`}
+      className={`${imgFirst ? imageStyle.first : imageStyle.notFirst} ${
+        imageStyle.image
+      }`}
     />
   );
 };

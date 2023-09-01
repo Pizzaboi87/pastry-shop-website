@@ -84,7 +84,7 @@ const UserDeleteAccountForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className={userDeleteFormStyle.form}>
-      <label className={`${userPageStyle.label} ${userDeleteFormStyle.label}`}>
+      <label className={userDeleteFormStyle.label}>
         {text.userDelete.password}
         <Theme_Input
           $outlinecolor="logo"
@@ -106,7 +106,7 @@ const UserDeleteAccountForm = () => {
         type="submit"
         disabled={isLoading ? true : false}
         className={`${userPageStyle.deleteButton} ${
-          isLoading ? "cursor-progress" : "cursor-pointer"
+          isLoading ? userPageStyle.loading : userPageStyle.notLoading
         } `}
       >
         {isLoading ? text.userDelete.loading : text.userDelete.button}

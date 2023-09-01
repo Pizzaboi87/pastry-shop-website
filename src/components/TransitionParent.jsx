@@ -1,5 +1,5 @@
-import { Theme_Motion_Div } from "../styles";
 import { useScrollToTop } from "../utils/useScrollToTop";
+import { Theme_Motion_Div, tParentStyle } from "../styles";
 
 const TransitionParent = ({ children, isHome, isFlex, isRew }) => {
   useScrollToTop();
@@ -8,13 +8,9 @@ const TransitionParent = ({ children, isHome, isFlex, isRew }) => {
     <Theme_Motion_Div
       $bgcolor={isHome ? "transparent" : "glasslight"}
       className={`
-        ${
-          isHome
-            ? "3xl:mt-8 -mt-[1rem] w-full flex flex-col items-center overflow-hidden"
-            : "3xl:w-[80%] xl:w-[90%] w-full glass shadow-xl rounded-xl"
-        }
-          ${isFlex ? "flex flex-col items-center" : "grid grid-cols-6 gap-x-12"}
-          ${isRew ? "pt-8 pb-12" : "md:p-12 p-4"}
+        ${isHome ? tParentStyle.isHome : tParentStyle.notIsHome}
+          ${isFlex ? tParentStyle.isFlex : tParentStyle.notIsFlex}
+          ${isRew ? tParentStyle.isRew : tParentStyle.notIsRew}
       `}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}

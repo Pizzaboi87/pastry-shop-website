@@ -1,7 +1,7 @@
-import { useContext } from "react";
 import { UserContext } from "../../context";
+import { useContext } from "react";
 import { TransitionParent, UserPanel } from "../../components";
-import { Theme_Div, Theme_H1, userPageStyle } from "../../styles";
+import { Theme_Div, Theme_H1, myCartStyle, userPageStyle } from "../../styles";
 
 const MyCart = () => {
   const { text, currency } = useContext(UserContext);
@@ -18,12 +18,8 @@ const MyCart = () => {
         <Theme_Div
           $bgcolor="primary"
           $bordercolor="transparent"
-          className="w-full h-[30rem]"
-        >
-          <h1 className="text-[3rem]">{`Test amount: ${Math.floor(
-            currency.value * amount
-          )}${currency.symbol}`}</h1>
-        </Theme_Div>
+          className={myCartStyle.container}
+        ></Theme_Div>
       </UserPanel>
     </TransitionParent>
   );

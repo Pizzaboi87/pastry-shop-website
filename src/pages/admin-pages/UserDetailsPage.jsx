@@ -47,7 +47,7 @@ const UserDetailsPage = () => {
   if (isLoading || isDeleting || !selectedUser) return <Loading />;
 
   return (
-    <div className={`${adminPageStyle.wrapper} relative`}>
+    <div className={adminPageStyle.wrapperRelative}>
       <h1 className={adminPageStyle.title}>{`${
         selectedUser.displayName ? selectedUser.displayName : "User"
       }'s Personal page`}</h1>

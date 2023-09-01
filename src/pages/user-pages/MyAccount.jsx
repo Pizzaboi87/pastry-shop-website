@@ -1,5 +1,5 @@
-import { useContext } from "react";
 import { UserContext } from "../../context";
+import { useContext } from "react";
 import { Theme_H1, userPageStyle } from "../../styles";
 import {
   Loading,

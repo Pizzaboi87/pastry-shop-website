@@ -8,7 +8,7 @@ const AdminPanel = ({ children }) => {
 
   return (
     <div className={adminPanelStyle.wrapper}>
-      <Theme_H1 $textcolor="title" className={`${titleStyle} col-span-6`}>
+      <Theme_H1 $textcolor="title" className={adminPanelStyle.title}>
         {text.adminPanelTitle}
       </Theme_H1>
 

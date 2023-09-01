@@ -22,7 +22,9 @@ const AdminMenu = () => {
 
   return (
     <div
-      className={`${squeezed ? "h-[5rem]" : "h-fit"} ${adminMenuStyle.wrapper}`}
+      className={`${
+        squeezed ? adminMenuStyle.squeezed : adminMenuStyle.notSqueezed
+      } ${adminMenuStyle.wrapper}`}
     >
       <Icon
         icon="icomoon-free:menu2"

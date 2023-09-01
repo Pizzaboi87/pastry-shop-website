@@ -213,7 +213,7 @@ const BlogForm = ({ dbPost }) => {
             value={language}
             name="language"
             onChange={handleChange}
-            className={`${blogFormStyle.input} h-[2.2rem]`}
+            className={blogFormStyle.language}
           >
             {text.blogForm.language.map((language) => (
               <option key={language.id} value={language.id}>
@@ -233,7 +233,7 @@ const BlogForm = ({ dbPost }) => {
             value={date}
             onChange={handleChange}
             className={`${blogFormStyle.input} ${
-              dbPost ? "cursor-not-allowed" : "cursor-normal"
+              dbPost ? blogFormStyle.dbPost : blogFormStyle.notDbPost
             }`}
           />
         </label>
@@ -249,7 +249,7 @@ const BlogForm = ({ dbPost }) => {
             title={dbPost ? null : image ? text.blogForm.titleDisable : null}
             onChange={handleChange}
             className={`${blogFormStyle.input} ${
-              image || dbPost ? "cursor-not-allowed" : "cursor-normal"
+              image || dbPost ? blogFormStyle.dbPost : blogFormStyle.notDbPost
             }`}
           />
         </label>
@@ -263,7 +263,7 @@ const BlogForm = ({ dbPost }) => {
             value={author}
             onChange={handleChange}
             className={`${blogFormStyle.input} ${
-              dbPost ? "cursor-not-allowed" : "cursor-normal"
+              dbPost ? blogFormStyle.dbPost : blogFormStyle.notDbPost
             }`}
           />
         </label>
@@ -278,7 +278,9 @@ const BlogForm = ({ dbPost }) => {
             disabled={normalRegex.test(title) ? false : true}
             onChange={handleChange}
             className={`${blogFormStyle.input} ${
-              normalRegex.test(title) ? "cursor-normal" : "cursor-not-allowed"
+              normalRegex.test(title)
+                ? blogFormStyle.notDbPost
+                : blogFormStyle.dbPost
             }`}
           />
         </label>
@@ -323,7 +325,7 @@ const BlogForm = ({ dbPost }) => {
         type="submit"
         disabled={isLoading ? true : false}
         className={`${blogFormStyle.button} ${
-          isLoading ? "cursor-progress" : "cursor-pointer"
+          isLoading ? blogFormStyle.loading : blogFormStyle.pointer
         } `}
       >
         {isTranslating

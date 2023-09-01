@@ -6,7 +6,7 @@ const BlogCarousel = ({ posts }) => {
   const images = posts.map((post, index) => (
     <Link
       to={`/blog/post/` + post.postid}
-      className="cursor-pointer"
+      className={blogCarouselStyle.link}
       key={index}
     >
       <img src={post.image} alt="image" className={blogCarouselStyle.image} />

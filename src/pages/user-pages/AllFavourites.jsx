@@ -1,8 +1,8 @@
-import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../context";
-import { Theme_Icon, Theme_Span } from "../../styles";
-import { getUserData, updateUserData } from "../../utils/firebase";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { getUserData, updateUserData } from "../../utils/firebase";
+import { Theme_Icon, Theme_Span, allFavouritesStyle } from "../../styles";
 
 const AllFavourites = () => {
   const { userData, setUserData } = useContext(UserContext);
@@ -44,7 +44,7 @@ const AllFavourites = () => {
           key={favourite}
           $bgcolor="light"
           $hoverbgcolor="glasslight"
-          className="flex items-center min-w-[75%] md:w-auto w-full md:h-[3rem] h-[3.5rem] rounded-xl shadow-xl p-2 cursor-pointer gap-x-4 hover:-translate-y-1 transition-all duration-500 border border-text"
+          className={allFavouritesStyle.container}
           onClick={() =>
             navigate(convertToSlug(favourite), {
               state: { originalName: favourite },
@@ -54,12 +54,10 @@ const AllFavourites = () => {
           <Theme_Icon
             icon="mdi:heart"
             $iconcolor="logo"
-            className="text-[2.2rem] cursor-pointer"
+            className={allFavouritesStyle.icon}
             onClick={() => deleteFavourite(favourite)}
           />
-          <h1 className="text-text md:text-[1.2rem] md:w-auto w-[75%] text-[1rem] text-center font-[600]">
-            {favourite}
-          </h1>
+          <h1 className={allFavouritesStyle.title}>{favourite}</h1>
         </Theme_Span>
       ))}
     </>

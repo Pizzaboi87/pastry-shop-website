@@ -1,7 +1,7 @@
-import { useContext } from "react";
 import { UserContext } from "../../context";
+import { useContext } from "react";
 import { TransitionParent, UserPanel } from "../../components";
-import { Theme_H1, userPageStyle } from "../../styles";
+import { Theme_H1, userPageStyle, previousOrdersStyle } from "../../styles";
 
 const PreviousOrders = () => {
   const { text } = useContext(UserContext);
@@ -13,7 +13,7 @@ const PreviousOrders = () => {
       </Theme_H1>
 
       <UserPanel>
-        <div className="w-full h-[30rem] bg-purple"></div>
+        <div className={previousOrdersStyle.container}></div>
       </UserPanel>
     </TransitionParent>
   );

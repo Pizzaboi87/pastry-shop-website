@@ -1,9 +1,9 @@
-import { useLocation, useNavigate } from "react-router-dom";
 import { Loading, RecipeCard } from "../../components";
-import { fetchRecipe } from "../../utils/fetchRecipe";
-import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
-import { Theme_Icon } from "../../styles";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { fetchRecipe } from "../../utils/fetchRecipe";
+import { Theme_Icon, favouritePageStyle } from "../../styles";
 
 const FavouritePage = () => {
   const navigate = useNavigate();
@@ -32,11 +32,11 @@ const FavouritePage = () => {
   return (
     <>
       {recipe && originalName ? (
-        <span className="flex flex-col md:flex-row md:gap-x-6">
+        <span className={favouritePageStyle.container}>
           <Theme_Icon
             $iconcolor="logo"
             icon="line-md:arrow-left-circle"
-            className="text-[4rem] cursor-pointer hover:-translate-y-1 transition-all duration-300 self-start"
+            className={favouritePageStyle.icon}
             onClick={() => navigate(-1)}
           />
           <RecipeCard recipe={recipe} isOwnPage={true} />

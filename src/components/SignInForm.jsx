@@ -106,7 +106,7 @@ const SignInForm = () => {
           />
         </label>
 
-        <label className={`${signInFormStyle.label} mt-4`}>
+        <label className={signInFormStyle.labelMt}>
           {text.signInForm.password}
           <Theme_Input
             required
@@ -145,7 +145,7 @@ const SignInForm = () => {
         className={signInFormStyle.googleButton}
         onClick={handleGoogleSignIn}
       >
-        <Icon icon="devicon:google" className="mr-2" />
+        <Icon icon="devicon:google" className={signInFormStyle.icon} />
         {text.signInForm.google}
       </Theme_Button>
     </motion.div>

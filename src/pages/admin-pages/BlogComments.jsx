@@ -7,17 +7,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { getAllUser, deleteComment } from "../../utils/firebase-admin";
 import { useSwalMessage } from "../../utils/useSwalMessage";
 import { useQuery } from "react-query";
+import { adminPageStyle, blogCommentsStyle, tooltipStyle } from "../../styles";
 import {
   changeCommentStatus,
   getStoredImage,
   getUserImage,
 } from "../../utils/firebase";
-import {
-  adminPageStyle,
-  blogCommentsStyle,
-  tableStyle,
-  tooltipStyle,
-} from "../../styles";
 
 const BlogComments = () => {
   const { allComments, setAllComments, setFirebaseComments } =
@@ -168,9 +163,7 @@ const BlogComments = () => {
 
           return (
             <Fragment key={comment.id}>
-              <li
-                className={`${tableStyle} ${blogCommentsStyle.imageContainer}`}
-              >
+              <li className={blogCommentsStyle.imageContainer}>
                 <img
                   src={comment.imgsrc}
                   alt="profile"
@@ -179,16 +172,11 @@ const BlogComments = () => {
                 />
               </li>
               <li className={blogCommentsStyle.textContainer}>
-                <p
-                  className={`${tableStyle} ${blogCommentsStyle.author}`}
-                  onClick={toDetailsPage}
-                >
+                <p className={blogCommentsStyle.author} onClick={toDetailsPage}>
                   {comment.author}
                 </p>
               </li>
-              <li
-                className={`${tableStyle} ${blogCommentsStyle.textContainer}`}
-              >
+              <li className={blogCommentsStyle.textContainer}>
                 <Link
                   to={`/admin/blog/comments/${comment.id}`}
                   className={blogCommentsStyle.hoverText}
@@ -196,7 +184,7 @@ const BlogComments = () => {
                   {comment.title}
                 </Link>
               </li>
-              <li className={`${tableStyle} ${blogCommentsStyle.mobileHide}`}>
+              <li className={blogCommentsStyle.mobileHide}>
                 {new Date(comment.date)
                   .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
                   .slice(0, -3)}

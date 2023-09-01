@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { colors } from "../styles/colors";
+import { contextStyle } from "../styles";
 import { hu_text, en_text, es_text, fr_text } from "../constants";
 import { Loading } from "../components";
 import {
@@ -163,7 +164,7 @@ export const UserContextProvider = ({ children }) => {
 
   if (!isDataLoaded)
     return (
-      <div className="w-full h-[100vh]">
+      <div className={contextStyle.loadingContainer}>
         <Loading />
       </div>
     );

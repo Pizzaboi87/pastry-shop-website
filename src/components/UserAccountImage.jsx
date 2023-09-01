@@ -55,7 +55,7 @@ const UserAccountImage = ({
             accept="image/*"
             ref={fileInputRef}
             onChange={handleFileInputChange}
-            className="hidden"
+            className={userAccountImageStyle.input}
           />
         </div>
       </div>

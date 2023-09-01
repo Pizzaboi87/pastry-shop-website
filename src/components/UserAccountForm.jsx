@@ -111,7 +111,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
 
   return (
     <form onSubmit={handleSubmit} className={userPageStyle.form}>
-      <label className={`${userPageStyle.label} ${userPageStyle.odd}`}>
+      <label className={userPageStyle.oddLabel}>
         {text.userAccountForm.fullName}
         <Theme_Input
           type="text"
@@ -124,7 +124,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} ${userPageStyle.even}`}>
+      <label className={userPageStyle.evenLabel}>
         {text.userAccountForm.displayName}
         <Theme_Input
           type="text"
@@ -137,7 +137,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} ${userPageStyle.odd}`}>
+      <label className={userPageStyle.oddLabel}>
         {text.userAccountForm.email}
         <Theme_Input
           type="text"
@@ -147,11 +147,11 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           $outlinecolor="logo"
           value={email}
           onChange={handleChange}
-          className={`${userPageStyle.input} ${userPageStyle.email}`}
+          className={userPageStyle.email}
         />
       </label>
 
-      <label className={`${userPageStyle.label} ${userPageStyle.even}`}>
+      <label className={userPageStyle.evenLabel}>
         {text.userAccountForm.phone}
         <Theme_PhoneInput $outlinecolor="logo" className={userPageStyle.phone}>
           <PhoneInput
@@ -163,7 +163,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
           />
         </Theme_PhoneInput>
       </label>
-      <label className={`${userPageStyle.label} ${userPageStyle.odd}`}>
+      <label className={userPageStyle.oddLabel}>
         {text.userAccountForm.country}
         <Theme_Input
           type="text"
@@ -176,7 +176,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} ${userPageStyle.even}`}>
+      <label className={userPageStyle.evenLabel}>
         {text.userAccountForm.city}
         <Theme_Input
           type="text"
@@ -189,7 +189,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} ${userPageStyle.odd}`}>
+      <label className={userPageStyle.oddLabel}>
         {text.userAccountForm.address}
         <Theme_Input
           type="text"
@@ -202,7 +202,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         />
       </label>
 
-      <label className={`${userPageStyle.label} ${userPageStyle.even}`}>
+      <label className={userPageStyle.evenLabel}>
         {text.userAccountForm.zip}
         <Theme_Input
           type="text"
@@ -221,7 +221,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         $hoverbgcolor="dark"
         $hovertextcolor="textlight"
         className={`${userPageStyle.button} ${
-          isLoading ? "cursor-progress" : "cursor-pointer"
+          isLoading ? userPageStyle.loading : userPageStyle.notLoading
         } `}
         disabled={isLoading ? true : false}
       >

@@ -42,9 +42,9 @@ const BlogPostCard = ({ post, isOwnPage }) => {
         )}
 
         <p
-          className={`${isOwnPage ? "font-[600]" : "font-[400]"} ${
-            blogPostCardStyle.text
-          }`}
+          className={`${
+            isOwnPage ? blogPostCardStyle.own : blogPostCardStyle.notOwn
+          } ${blogPostCardStyle.text}`}
         >
           {post.blurb}
         </p>
@@ -82,7 +82,9 @@ const BlogPostCard = ({ post, isOwnPage }) => {
 
         <Link
           to={`/blog/post/` + post.postid}
-          className={isOwnPage ? "hidden" : "block"}
+          className={
+            isOwnPage ? blogPostCardStyle.hidden : blogPostCardStyle.block
+          }
         >
           <Theme_Button
             $bgcolor="logo"
