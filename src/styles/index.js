@@ -49,7 +49,16 @@ export const adminMenuStyle = {
   title: "text-text text-[1rem] font-[500] hover:text-logopink",
   icon: "md:hidden block text-[3rem] mx-auto cursor-pointer hover:text-logopink",
   squeezed: "h-[5rem]",
-  notSqueezed: "h-fit"
+  notSqueezed: "h-fit",
+};
+
+export const adminPageStyle = {
+  wrapper: "w-full h-full flex flex-col items-center p-4",
+  wrapperRelative: "w-full h-full flex flex-col items-center p-4 relative",
+  title: "text-text text-[1.5rem] text-center font-[600] mb-8",
+  icon: "text-text text-[3rem] hover:text-yellowdark cursor-pointer self-start md:mb-0 mb-4 md:absolute top-[1rem] left-[1rem]",
+  deleteIcon:
+    "delete outline-none text-text text-[3rem] hover:text-logopink cursor-pointer md:absolute self-start top-[1rem] left-[1rem]",
 };
 
 export const adminPanelStyle = {
@@ -63,14 +72,17 @@ export const adminPanelStyle = {
 };
 
 export const allFavouritesStyle = {
-  container: "flex items-center min-w-[75%] md:w-auto w-full md:h-[3rem] h-[3.5rem] rounded-xl shadow-xl p-2 cursor-pointer gap-x-4 hover:-translate-y-1 transition-all duration-500 border border-text",
-  title: "text-text md:text-[1.2rem] md:w-auto w-[75%] text-[1rem] text-center font-[600]",
-  icon: "text-[2.2rem] cursor-pointer"
-}
+  container:
+    "flex items-center min-w-[75%] md:w-auto w-full md:h-[3rem] h-[3.5rem] rounded-xl shadow-xl p-2 cursor-pointer gap-x-4 hover:-translate-y-1 transition-all duration-500 border border-text",
+  title:
+    "text-text md:text-[1.2rem] md:w-auto w-[75%] text-[1rem] text-center font-[600]",
+  icon: "text-[2.2rem] cursor-pointer",
+};
 
 export const appStyle = {
-  container: "md:pt-56 pt-36 w-full flex flex-col items-center bg-main lg:bg-background bg-mobBackground"
-}
+  container:
+    "md:pt-56 pt-36 w-full flex flex-col items-center bg-main lg:bg-background bg-mobBackground",
+};
 
 export const authButtonStyle = {
   wrapper:
@@ -81,12 +93,17 @@ export const authButtonStyle = {
 };
 
 export const authenticationStyle = {
-  container: "glass shadow-xl md:-mt-40 -mt-20 lg:h-[102vh] h-[90vh] xl:w-[90%] 3xl:w-[80%] w-full rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative",
-  buttonContainer: "lg:w-[80%] w-[85%] lg:h-[70vh] h-[90%] lg:mt-0 mt-[15%] flex items-center justify-between lg:flex-row flex-col rounded-xl",
-  isReg: "lg:left-[47.5%] lg:top-auto xs:top-[27%] md:top-[29%] ms:top-[31%] top-[26%] lg:rounded-r-xl rounded-xl",
-  notIsReg: "lg:left-[12.5%] lg:top-auto xs:top-[10%] ms:top-[14%] top-[9.75%] lg:rounded-l-xl rounded-xl",
-  formContainer: "absolute lg:w-[40%] w-[85%] lg:h-[75vh] md:h-[68%] ms:h-[67%] h-[70%] bg-white z-[10] flex justify-center items-center"
-}
+  container:
+    "glass shadow-xl md:-mt-40 -mt-20 lg:h-[102vh] h-[90vh] xl:w-[90%] 3xl:w-[80%] w-full rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative",
+  buttonContainer:
+    "lg:w-[80%] w-[85%] lg:h-[70vh] h-[90%] lg:mt-0 mt-[15%] flex items-center justify-between lg:flex-row flex-col rounded-xl",
+  isReg:
+    "lg:left-[47.5%] lg:top-auto xs:top-[27%] md:top-[29%] ms:top-[31%] top-[26%] lg:rounded-r-xl rounded-xl",
+  notIsReg:
+    "lg:left-[12.5%] lg:top-auto xs:top-[10%] ms:top-[14%] top-[9.75%] lg:rounded-l-xl rounded-xl",
+  formContainer:
+    "absolute lg:w-[40%] w-[85%] lg:h-[75vh] md:h-[68%] ms:h-[67%] h-[70%] bg-white z-[10] flex justify-center items-center",
+};
 
 export const awningStyle = {
   wrapper: "w-full h-[3.5rem] fixed top-0 left-0 z-[11] flex",
@@ -113,7 +130,7 @@ export const blogCarouselStyle = {
   image:
     "w-[20rem] h-[12rem] object-cover border-2 border-white rounded-xl shadow-xl mb-4",
   title: "text-text text-center text-[1.2rem] font-[600]",
-  link: "cursor-pointer"
+  link: "cursor-pointer",
 };
 
 export const blogCategoryCardStyle = {
@@ -164,8 +181,8 @@ export const blogFormStyle = {
   dbPost: "cursor-not-allowed",
   notDbPost: "cursor-normal",
   loading: "cursor-progress",
-  pointer: "cursor-pointer"
-  };
+  pointer: "cursor-pointer",
+};
 
 export const blogCommentPageStyle = {
   span: "md:absolute md:mb-0 mb-4 top-0 right-0 w-full flex justify-between items-center md",
@@ -215,13 +232,13 @@ export const blogPostCardStyle = {
   own: "font-[600]",
   notOwn: "font-[400]",
   hidden: "hidden",
-  block: "block"
+  block: "block",
 };
 
 export const blogPostPageStyle = {
   title: `${titleStyle} col-span-6`,
-  cardContainer: "xl:col-span-4 col-span-6"
-}
+  cardContainer: "xl:col-span-4 col-span-6",
+};
 
 export const blogProposalStyle = {
   wrapper: "h-fit rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer",
@@ -239,17 +256,17 @@ export const blogStickyStyle = {
 export const blogStyle = {
   title: `${titleStyle} col-span-6`,
   carouselContainer: "col-span-6 xl:mb-24 mb-8 -mx-12",
-  postContainer: "xl:col-span-4 col-span-6"
-}
+  postContainer: "xl:col-span-4 col-span-6",
+};
 
 export const blogTagPageStyle = {
   title: `${titleStyle} col-span-6`,
-  cardContainer: "xl:col-span-4 col-span-6"
-}
+  cardContainer: "xl:col-span-4 col-span-6",
+};
 
 export const contextStyle = {
-  loadingContainer: "w-full h-[100vh]"
-}
+  loadingContainer: "w-full h-[100vh]",
+};
 
 export const courseCardStyle = {
   wrapper:
@@ -274,37 +291,45 @@ export const courseFormStyle = {
   button:
     "px-16 py-2 rounded-xl shadow-xl border-none text-[1rem] font-[500] mx-auto block",
   loading: "cursor-progress",
-  notLoading: "cursor-pointer"
+  notLoading: "cursor-pointer",
 };
 
 export const coursesStyle = {
-  container: "w-full flex md:flex-row flex-col gap-4 items-center justify-center"
-}
+  container:
+    "w-full flex md:flex-row flex-col gap-4 items-center justify-center",
+};
 
 export const coursePageStyle = {
-  arrayContainer: "flex md:flex-row flex-col items-center justify-center xl:gap-16 mb-8",
+  arrayContainer:
+    "flex md:flex-row flex-col items-center justify-center xl:gap-16 mb-8",
   imageSpan: "flex flex-col gap-8 xl:gap-12",
   imageFirst: "3xl:w-[60rem] md:w-[30rem] w-full rounded-xl shadow-xl",
   imageSecond: "3xl:w-[60rem] md:w-[30rem] w-full mb-6 rounded-xl shadow-xl",
   list: "list-disc pl-4 xl:mb-8 xl:w-[60rem] w-full ml-4 pr-4",
-  listItem: "text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] text-justify",
+  listItem:
+    "text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] text-justify",
   firstItem: "font-[600] list-none",
-  notArrayContainer: "xl:flex md:flex-row-reverse flex-col items-center justify-center text-justify mb-8",
-  imageRegular: "xl:w-[30rem] md:w-[20rem] w-full mb-8 md:float-right md:ml-8 rounded-xl shadow-xl",
-  paragraph: "text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] mb-8 inline",
-  formContainer: "w-full xl:grid xl:grid-cols-3 flex-col flex self-center mt-16 md:pb-16 pb-4 xl:px-16 2xl:px-0 md:gap-8 justify-between",
-  imageContainer: "w-full flex flex-col gap-4 self-center mb-8 md:mb-0"
-}
+  notArrayContainer:
+    "xl:flex md:flex-row-reverse flex-col items-center justify-center text-justify mb-8",
+  imageRegular:
+    "xl:w-[30rem] md:w-[20rem] w-full mb-8 md:float-right md:ml-8 rounded-xl shadow-xl",
+  paragraph:
+    "text-text 2xl:text-[1.25rem] text-[1.5rem] font-[400] mb-8 inline",
+  formContainer:
+    "w-full xl:grid xl:grid-cols-3 flex-col flex self-center mt-16 md:pb-16 pb-4 xl:px-16 2xl:px-0 md:gap-8 justify-between",
+  imageContainer: "w-full flex flex-col gap-4 self-center mb-8 md:mb-0",
+};
 
 export const favouritePageStyle = {
   container: "flex flex-col md:flex-row md:gap-x-6",
-  icon: "text-[4rem] cursor-pointer hover:-translate-y-1 transition-all duration-300 self-start"
-}
+  icon: "text-[4rem] cursor-pointer hover:-translate-y-1 transition-all duration-300 self-start",
+};
 
 export const favouritesStyle = {
-  container: "3xl:w-[80%] xl:w-[90%] w-full glass shadow-xl rounded-xl grid grid-cols-6 gap-x-12 md:p-12 p-4",
-  outletContainer: "min-h-[30rem] w-full flex flex-col gap-y-6 items-center"
-}
+  container:
+    "3xl:w-[80%] xl:w-[90%] w-full glass shadow-xl rounded-xl grid grid-cols-6 gap-x-12 md:p-12 p-4",
+  outletContainer: "min-h-[30rem] w-full flex flex-col gap-y-6 items-center",
+};
 
 export const footerStyle = {
   wrapper: "w-full flex flex-col xl:mt-24 mt-8 text-text",
@@ -326,22 +351,26 @@ export const footerStyle = {
 };
 
 export const homeStyle = {
-  container: "xl:w-[75%] w-full flex xl:flex-row flex-col items-center justify-center",
+  container:
+    "xl:w-[75%] w-full flex xl:flex-row flex-col items-center justify-center",
   motionSpan: "px-8 2xl:px-0",
   titleContainer: "lg:mb-6 2xl:max-w-[95%]",
   titleSpan: "flex xl:flex-col flex-row flex-wrap lg:mb-2",
-  title: "3xl:text-[4.5rem] 2xl:text-[3.5rem] text-[1.9rem] 2xl:font-[400] font-[600]",
+  title:
+    "3xl:text-[4.5rem] 2xl:text-[3.5rem] text-[1.9rem] 2xl:font-[400] font-[600]",
   titleSpace: "visible xl:hidden text-[2rem]",
-  subTitle: "xl:my-2 2xl:text-[1rem] xl:text-[1.2rem] text-[1.4rem] text-justify 2xl:max-w-[80%]",
-  buttonFirst: "rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[1.3rem] 2xl:inline-block hidden",
-  buttonSecond: "rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[2rem] md:text-[3rem] xl:hidden inline-block mt-16 mb-0",
-
-}
+  subTitle:
+    "xl:my-2 2xl:text-[1rem] xl:text-[1.2rem] text-[1.4rem] text-justify 2xl:max-w-[80%]",
+  buttonFirst:
+    "rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[1.3rem] 2xl:inline-block hidden",
+  buttonSecond:
+    "rounded-xl shadow-sm border-none text-center font-[500] px-8 py-3 text-[2rem] md:text-[3rem] xl:hidden inline-block mt-16 mb-0",
+};
 
 export const imageStyle = {
   image: "md:w-[80%] xl:w-[40%] w-[100%] mt-8 rounded-3xl shadow-xl",
   first: "ml-0",
-  notFirst: "2xl:ml-24"
+  notFirst: "2xl:ml-24",
 };
 
 export const imageCarouselStyle = {
@@ -361,7 +390,7 @@ export const mainContentStyle = {
 
 export const myCartStyle = {
   container: "w-full h-[30rem]",
-}
+};
 
 export const navDesktopStyle = {
   wrapper:
@@ -406,16 +435,18 @@ export const noPermissionStyle = {
 export const notFoundStyle = {
   container: "flex items-center justify-center",
   title: "error text-[#e0e0e0] text-[6.4rem] font-[400] mb-5 mr-2",
-  image: "w-[15rem]"
-}
+  image: "w-[15rem]",
+};
 
 export const ourStoryStyle = {
   textContainer: "mb-10",
-  staffContainer: "w-full flex md:flex-row flex-col flex-wrap justify-between gap-8",
+  staffContainer:
+    "w-full flex md:flex-row flex-col flex-wrap justify-between gap-8",
   image: "w-[30rem] float-right ml-6 mb-4 rounded-xl shadow-xl",
-  paragraph: "text-text 2xl:text-[1.25rem] text-[1.5rem] text-justify font-[400] mb-4",
-  sign: "text-text text-[2.5rem] font-[400] mb-4 font-letter"
-}
+  paragraph:
+    "text-text 2xl:text-[1.25rem] text-[1.5rem] text-justify font-[400] mb-4",
+  sign: "text-text text-[2.5rem] font-[400] mb-4 font-letter",
+};
 
 export const paragraphsStyle = {
   imgFirst: "2xl:ml-24",
@@ -472,8 +503,8 @@ export const postcardStyle = {
 };
 
 export const previousOrdersStyle = {
-  container: "w-full h-[30rem] bg-purple"
-}
+  container: "w-full h-[30rem] bg-purple",
+};
 
 export const recipeCardStyle = {
   wrapper:
@@ -495,8 +526,8 @@ export const recipeCardStyle = {
 export const recipesStyle = {
   loadingContainer: "mt-[-5rem]",
   text: "text-text py-3 text-[1.3rem]",
-  button: "px-8 rounded-xl shadow-xl border-none py-3 text-[1.3rem] font-bold"
-}
+  button: "px-8 rounded-xl shadow-xl border-none py-3 text-[1.3rem] font-bold",
+};
 
 export const reviewCardStyle = {
   wrapper:
@@ -523,8 +554,8 @@ export const searchFormStyle = {
 export const settingsStyle = {
   title: "text-text text-[1.4rem] font-[600]",
   titleMt: "text-text text-[1.4rem] font-[600] mt-8",
-  hrLine: "my-8 border-dotted border-t-2"
-}
+  hrLine: "my-8 border-dotted border-t-2",
+};
 
 export const signInFormStyle = {
   wrapper: "flex flex-col w-full h-full items-center justify-center",
@@ -559,6 +590,9 @@ export const signUpFormStyle = {
     "px-16 py-2 rounded-xl shadow-xl border-none font-[500] mx-auto block xs:mt-8 mt-4 xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
+export const subTitleStyle =
+  "xl:text-[1.5rem] text-[1rem] text-center font-[400] -mt-8 mb-8";
+
 export const teamCardStyle = {
   wrapper:
     "card relative mx-auto xl:w-[18rem] 3xl:w-[20rem] w-[20rem] h-[30rem] overflow-hidden rounded-xl shadow-xl",
@@ -581,13 +615,14 @@ export const textImageStyle = {
 };
 
 export const tParentStyle = {
-  isHome: "3xl:mt-8 -mt-[1rem] w-full flex flex-col items-center overflow-hidden",
+  isHome:
+    "3xl:mt-8 -mt-[1rem] w-full flex flex-col items-center overflow-hidden",
   notIsHome: "3xl:w-[80%] xl:w-[90%] w-full glass shadow-xl rounded-xl",
   isFlex: "flex flex-col items-center",
   notIsFlex: "grid grid-cols-6 gap-x-12",
   isRew: "pt-8 pb-12",
-  notIsRew: "md:p-12 p-4"
-}
+  notIsRew: "md:p-12 p-4",
+};
 
 export const userAccountImageStyle = {
   wrapper:
@@ -598,12 +633,13 @@ export const userAccountImageStyle = {
     "changeimage w-full h-full bg-[#ffffffbb] rounded-full flex items-center justify-center",
   icon: "text-[3rem] cursor-pointer",
   name: "text-text text-[1.4rem] font-[600]",
-  input: "hidden"
+  input: "hidden",
 };
 
 export const userDeleteFormStyle = {
   form: "md:w-[50%] md:flex md:flex-col grid grid-cols-6",
-  label: "md:col-span-2 col-span-6 flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
+  label:
+    "md:col-span-2 col-span-6 flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
 };
 
 export const userOtherStyle = {
@@ -622,10 +658,12 @@ export const userPageStyle = {
     "text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted",
   email:
     "disabled:bg-[#f0f0f0] cursor-not-allowed text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted",
-  label: "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
+  label:
+    "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
   oddLabel:
     "md:col-span-3 md:col-start-1 flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
-  evenLabel: "md:col-span-3 md:col-start-5 flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
+  evenLabel:
+    "md:col-span-3 md:col-start-5 flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
   button:
     "py-1 rounded-xl shadow-xl border-none text-[1.2rem] font-[500] xl:col-span-1 md:col-span-3 md:col-start-3 xl:col-start-7 xl:mx-0 xl:px-0 mx-auto px-6 py-2",
   passwordButton:
@@ -634,7 +672,7 @@ export const userPageStyle = {
     "py-2 rounded-2xl shadow-xl border-none text-[1.2rem] font-[500] md:self-end col-start-3 md:px-8 col-span-4 md:mt-0 mt-4",
   title: "col-span-6 xl:text-[3rem] text-[2rem] font-[600] mb-8 text-center",
   loading: "cursor-progress",
-  notLoading: "cursor-pointer"
+  notLoading: "cursor-pointer",
 };
 
 export const userPanelStyle = {
@@ -672,8 +710,7 @@ export const usersAllStyle = {
     "md:w-12 w-16 md:h-12 h-16 mx-auto object-cover rounded-full cursor-pointer",
   nameContainer: `${tableStyle} md:col-span-2 col-span-10 md:text-left text-center`,
   name: "text-text text-[1rem] hover:text-logopink cursor-pointer",
-  emailContainer:
-    `${tableStyle} md:col-span-3 col-span-10 md:text-left text-center hover:text-logopink cursor-pointer`,
+  emailContainer: `${tableStyle} md:col-span-3 col-span-10 md:text-left text-center hover:text-logopink cursor-pointer`,
   dateContainer: `${tableStyle} md:block hidden col-span-2`,
   iconContainer:
     "md:flex hidden gap-4 justify-center items-center py-2 col-span-2",
@@ -729,25 +766,11 @@ export const personalMenuOffStyle = {
   height: "100vh",
 };
 
-export const glassStyle = `bg-[rgba(255, 255, 255, 0.2)] rounded-2xl boxShadow-[0 4px 30px rgba(0, 0, 0, 0.1)] backdrop-blur-sm border-1 border-solid border-[rgba(255, 255, 255, 0.3)]`;
-
-export const adminPageStyle = {
-  wrapper: "w-full h-full flex flex-col items-center p-4",
-  wrapperRelative: "w-full h-full flex flex-col items-center p-4 relative",
-  title: "text-text text-[1.5rem] text-center font-[600] mb-8",
-  icon: "text-text text-[3rem] hover:text-yellowdark cursor-pointer self-start md:mb-0 mb-4 md:absolute top-[1rem] left-[1rem]",
-  deleteIcon:
-    "delete outline-none text-text text-[3rem] hover:text-logopink cursor-pointer md:absolute self-start top-[1rem] left-[1rem]",
-};
-
 export const tooltipStyle = {
   backgroundColor: "#6554af",
   color: "#fff",
   fontWeight: 600,
 };
-
-export const subTitleStyle =
-  "xl:text-[1.5rem] text-[1rem] text-center font-[400] -mt-8 mb-8";
 
 export {
   Theme_Div,
