@@ -1,8 +1,14 @@
+import { UserContext } from "../../context";
+import { AuthButton, SignInForm, SignUpForm } from "../../components";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Theme_Div, authStyle, containerStyle, formStyle } from "../../styles";
-import { AuthButton, SignInForm, SignUpForm } from "../../components";
-import { UserContext } from "../../context";
+import {
+  Theme_Div,
+  authStyle,
+  containerStyle,
+  formStyle,
+  authenticationStyle,
+} from "../../styles";
 
 const Authentication = () => {
   const { currentUser, text, isReg, setIsReg } = useContext(UserContext);
@@ -16,13 +22,10 @@ const Authentication = () => {
     <Theme_Div
       $bgcolor={isReg ? "glasslight" : "glassdark"}
       $bordercolor="transparent"
-      className="glass shadow-xl md:-mt-40 -mt-20 lg:h-[102vh] h-[90vh] xl:w-[90%] 3xl:w-[80%] w-full rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative"
+      className={authenticationStyle.container}
       style={containerStyle}
     >
-      <div
-        className="lg:w-[80%] w-[85%] lg:h-[70vh] h-[90%] lg:mt-0 mt-[15%] flex items-center justify-between lg:flex-row flex-col rounded-xl"
-        style={authStyle}
-      >
+      <div className={authenticationStyle.buttonContainer} style={authStyle}>
         <AuthButton
           text={text.authentication.signIn}
           btnText={text.authentication.signInBtn}
@@ -38,10 +41,8 @@ const Authentication = () => {
       </div>
       <div
         className={`${
-          isReg
-            ? "lg:left-[47.5%] lg:top-auto xs:top-[27%] md:top-[29%] ms:top-[31%] top-[26%] lg:rounded-r-xl rounded-xl"
-            : "lg:left-[12.5%] lg:top-auto xs:top-[10%] ms:top-[14%] top-[9.75%] lg:rounded-l-xl rounded-xl"
-        } absolute lg:w-[40%] w-[85%] lg:h-[75vh] md:h-[68%] ms:h-[67%] h-[70%] bg-white z-[10] flex justify-center items-center`}
+          isReg ? authenticationStyle.isReg : authenticationStyle.notIsReg
+        } ${authenticationStyle.formContainer}`}
         style={formStyle}
       >
         {isReg ? <SignUpForm /> : <SignInForm />}

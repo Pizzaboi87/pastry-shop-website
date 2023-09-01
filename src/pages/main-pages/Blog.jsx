@@ -1,6 +1,6 @@
-import { useContext } from "react";
 import { BlogContext, UserContext } from "../../context";
-import { Theme_H1, titleStyle } from "../../styles";
+import { useContext } from "react";
+import { Theme_H1, blogStyle } from "../../styles";
 import {
   BlogCarousel,
   BlogPostCard,
@@ -14,17 +14,17 @@ const Blog = () => {
 
   return (
     <TransitionParent isFlex={false}>
-      <Theme_H1 $textcolor="title" className={`${titleStyle} col-span-6`}>
+      <Theme_H1 $textcolor="title" className={blogStyle.title}>
         {text.blogTitle}
       </Theme_H1>
 
-      <div className="col-span-6 xl:mb-24 mb-8 -mx-12">
+      <div className={blogStyle.carouselContainer}>
         <BlogCarousel posts={allBlogPost} />
       </div>
 
       <BlogStickyCard posts={allBlogPost} />
 
-      <div className="xl:col-span-4 col-span-6 ">
+      <div className={blogStyle.postContainer}>
         {allBlogPost.map((post) => (
           <BlogPostCard key={post.postid} post={post} isOwnPage={false} />
         ))}

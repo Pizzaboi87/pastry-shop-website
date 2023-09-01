@@ -21,6 +21,11 @@ import {
   Theme_PhoneInput,
 } from "./styled-elements";
 
+export const tableStyle = "text-text text-[1rem] font-[500] pl-2 md:py-2";
+
+export const titleStyle =
+  "xl:text-[3rem] text-[2rem] text-center font-[600] mb-8";
+
 export const adminLoginStyle = {
   form: "grid grid-cols-5 md:w-[40rem] w-full rounded-xl shadow-xl items-center p-4 gap-8",
   title:
@@ -61,6 +66,14 @@ export const authButtonStyle = {
   button:
     "rounded-xl shadow-sm border-none font-[400] text-center px-3 xs:py-2 py-1",
 };
+
+export const authenticationStyle = {
+  container: "glass shadow-xl md:-mt-40 -mt-20 lg:h-[102vh] h-[90vh] xl:w-[90%] 3xl:w-[80%] w-full rounded-xl md:p-12 p-4 flex flex-col items-center justify-center relative",
+  buttonContainer: "lg:w-[80%] w-[85%] lg:h-[70vh] h-[90%] lg:mt-0 mt-[15%] flex items-center justify-between lg:flex-row flex-col rounded-xl",
+  isReg: "lg:left-[47.5%] lg:top-auto xs:top-[27%] md:top-[29%] ms:top-[31%] top-[26%] lg:rounded-r-xl rounded-xl",
+  notIsReg: "lg:left-[12.5%] lg:top-auto xs:top-[10%] ms:top-[14%] top-[9.75%] lg:rounded-l-xl rounded-xl",
+  formContainer: "absolute lg:w-[40%] w-[85%] lg:h-[75vh] md:h-[68%] ms:h-[67%] h-[70%] bg-white z-[10] flex justify-center items-center"
+}
 
 export const awningStyle = {
   wrapper: "w-full h-[3.5rem] fixed top-0 left-0 z-[11] flex",
@@ -181,6 +194,11 @@ export const blogPostCardStyle = {
   button: "rounded-xl px-4 py-2 font-[600] shadow-xl self-center",
 };
 
+export const blogPostPageStyle = {
+  title: `${titleStyle} col-span-6`,
+  cardContainer: "xl:col-span-4 col-span-6"
+}
+
 export const blogProposalStyle = {
   wrapper: "h-fit rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer",
   image: "col-span-2 rounded-full w-[5rem] h-[5rem] object-cover border-2",
@@ -193,6 +211,12 @@ export const blogStickyStyle = {
     "xl:sticky top-[20%] xl:col-span-2 col-span-6 w-full h-fit flex flex-col",
   container: "flex xl:flex-col mb-6 gap-x-4 xl:gap-y-4 xl:mt-4",
 };
+
+export const blogStyle = {
+  title: `${titleStyle} col-span-6`,
+  carouselContainer: "col-span-6 xl:mb-24 mb-8 -mx-12",
+  postContainer: "xl:col-span-4 col-span-6"
+}
 
 export const courseCardStyle = {
   wrapper:
@@ -514,14 +538,14 @@ export const usersAllStyle = {
   headerContainer:
     "hidden md:min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 md:flex items-center gap-x-4",
   sortIcon: "text-[1.8rem] hover:text-logopink cursor-pointer",
-  imageContainer: "md:col-span-1 col-span-10",
+  imageContainer: `${tableStyle} md:col-span-1 col-span-10`,
   image:
     "md:w-12 w-16 md:h-12 h-16 mx-auto object-cover rounded-full cursor-pointer",
-  nameContainer: "md:col-span-2 col-span-10 md:text-left text-center",
+  nameContainer: `${tableStyle} md:col-span-2 col-span-10 md:text-left text-center`,
   name: "text-text text-[1rem] hover:text-logopink cursor-pointer",
   emailContainer:
-    "md:col-span-3 col-span-10 md:text-left text-center hover:text-logopink cursor-pointer",
-  dateContainer: "md:block hidden col-span-2",
+    `${tableStyle} md:col-span-3 col-span-10 md:text-left text-center hover:text-logopink cursor-pointer`,
+  dateContainer: `${tableStyle} md:block hidden col-span-2`,
   iconContainer:
     "md:flex hidden gap-4 justify-center items-center py-2 col-span-2",
   deleteIcon:
@@ -578,8 +602,6 @@ export const personalMenuOffStyle = {
 
 export const glassStyle = `bg-[rgba(255, 255, 255, 0.2)] rounded-2xl boxShadow-[0 4px 30px rgba(0, 0, 0, 0.1)] backdrop-blur-sm border-1 border-solid border-[rgba(255, 255, 255, 0.3)]`;
 
-export const tableStyle = "text-text text-[1rem] font-[500] pl-2 md:py-2";
-
 export const adminPageStyle = {
   wrapper: "w-full h-full flex flex-col items-center p-4",
   title: "text-text text-[1.5rem] text-center font-[600] mb-8",
@@ -593,9 +615,6 @@ export const tooltipStyle = {
   color: "#fff",
   fontWeight: 600,
 };
-
-export const titleStyle =
-  "xl:text-[3rem] text-[2rem] text-center font-[600] mb-8";
 
 export const subTitleStyle =
   "xl:text-[1.5rem] text-[1rem] text-center font-[400] -mt-8 mb-8";

@@ -121,7 +121,7 @@ const UsersAll = () => {
             key={header.id}
             className={`${header.style} ${usersAllStyle.headerContainer}`}
           >
-            {header.title}
+            {header.title} 
 
             {header.id === "date" ||
             header.id === "email" ||
@@ -137,7 +137,7 @@ const UsersAll = () => {
 
         {allUser.map((user, index) => (
           <Fragment key={`${index}-${user.email}`}>
-            <li className={`${tableStyle} ${usersAllStyle.imageContainer}`}>
+            <li className={usersAllStyle.imageContainer}>
               <img
                 src={user.imgsrc}
                 alt="profile"
@@ -145,7 +145,7 @@ const UsersAll = () => {
                 onClick={() => navigate(`/admin/users/${user.id}`)}
               />
             </li>
-            <li className={`${tableStyle} ${usersAllStyle.nameContainer}`}>
+            <li className={usersAllStyle.nameContainer}>
               <Link
                 to={`/admin/users/${user.id}`}
                 className={usersAllStyle.name}
@@ -154,12 +154,12 @@ const UsersAll = () => {
               </Link>
             </li>
             <li
-              className={`${tableStyle} ${usersAllStyle.emailContainer}`}
+              className={usersAllStyle.emailContainer}
               onClick={() => sendMail(user.email, user.displayName)}
             >
               {user.email}
             </li>
-            <li className={`${tableStyle} ${usersAllStyle.dateContainer}`}>
+            <li className={usersAllStyle.dateContainer}>
               {new Date(user.createdAt._seconds * 1000)
                 .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
                 .slice(0, -3)}
