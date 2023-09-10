@@ -16,18 +16,23 @@ import {
   subTitleStyle,
   titleStyle,
 } from "../../styles";
+import allRecipes from "../../constants/recipes/recipes.json";
 
 const Recipes = () => {
   const { text, userLanguage } = useContext(UserContext);
-  const [offset, setOffset] = useState(0);
+  //const [offset, setOffset] = useState(0);
   const [recipes, setRecipes] = useState([]);
   const [notFound, setNotFound] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [noMore, setNoMore] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("dessert");
-  const [fetching, setFetching] = useState(false);
+  const [loading, setLoading] = useState(false);
+  //const [noMore, setNoMore] = useState(false);
+  //const [searchQuery, setSearchQuery] = useState("dessert");
+  //const [fetching, setFetching] = useState(false);
 
-  const getRecipes = async () => {
+  useEffect(() => {
+    console.log(allRecipes);
+  }, [allRecipes]);
+
+  /*const getRecipes = async () => {
     setNoMore(false);
     setFetching(true);
     try {
@@ -82,7 +87,7 @@ const Recipes = () => {
 
   useEffect(() => {
     getRecipes();
-  }, [searchQuery, offset]);
+  }, [searchQuery, offset]);*/
 
   return (
     <TransitionParent isFlex>
@@ -91,15 +96,16 @@ const Recipes = () => {
       </Theme_H1>
       {userLanguage !== "eng" && (
         <Theme_P $textcolor="title" className={subTitleStyle}>
-          {text.recipes.subTitle}
+          {/*{text.recipes.subTitle}*/}
+          This page is under re-construction.
         </Theme_P>
       )}
-      <SearchForm
+      {/*<SearchForm
         setLoading={setLoading}
         setNotFound={setNotFound}
         setSearchQuery={setSearchQuery}
         setOffset={setOffset}
-      />
+      />*/}
       {loading ? (
         <div className={recipesStyle.loadingContainer}>
           <Loading />
@@ -115,7 +121,7 @@ const Recipes = () => {
               key={`${recipe.title}-${index}`}
             />
           ))}
-          {noMore ? (
+          {/*{noMore ? (
             <h1 className={recipesStyle.text}>{text.recipes.noMore}</h1>
           ) : (
             <Theme_Button
@@ -129,7 +135,7 @@ const Recipes = () => {
             >
               {text.recipes.show}
             </Theme_Button>
-          )}
+          )}*/}
         </>
       )}
     </TransitionParent>

@@ -211,6 +211,22 @@ export const updateUserPassword = async (
   }
 };
 
+export const getAllRecipes = async (lang) => {
+  const recipesRef = ref(database, `recipes/${lang}`);
+  return new Promise((resolve, reject) => {
+    onValue(
+      recipesRef,
+      (snapshot) => {
+        const recipes = snapshot.val();
+        resolve(recipes);
+      },
+      (error) => {
+        reject(error);
+      }
+    );
+  });
+};
+
 export const getAllPost = async (lang) => {
   const blogPostsRef = ref(database, `blogPosts/${lang}`);
   return new Promise((resolve, reject) => {
