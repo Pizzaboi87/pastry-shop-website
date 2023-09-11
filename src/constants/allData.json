@@ -1345,7 +1345,7 @@
       "id_21": {
         "id": "21",
         "title": "Easy butterfly cakes",
-        "difficulty": "Easy",
+        "difficulty": "easy",
         "portion": "Makes 12",
         "time": "Hands-on time 20 min, oven time 20-25 min",
         "description": "Light-as-air sponge is topped with vanilla buttercream in these almost-too-good-to-eat butterfly cakes. They're great to make with kids - or as part of a retro afternoon tea.",
@@ -1383,7 +1383,7 @@
       "id_22": {
         "id": "22",
         "title": "Chocolate cupcakes",
-        "difficulty": "Easy",
+        "difficulty": "easy",
         "portion": "Makes 12",
         "time": "Hands-on time 20 min, oven time 25-30 min",
         "description": "These indulgent chocolate cupcakes use the all-in-one method so they're a breeze to make. Top with generous, thick swirls of the chocolate ganache and serve to family and friends. They're guaranteed to put smiles on faces",
@@ -1414,7 +1414,7 @@
       "id_23": {
         "id": "23",
         "title": "Orange blossom, lemon thyme and almond cake",
-        "difficulty": "Easy",
+        "difficulty": "easy",
         "portion": "Serves 12",
         "time": "Hands-on time 25 min, cooking time 30 min, plus cooling",
         "description": "This stunning cake sees zesty orange and almond sponge slathered in honey and orange blossom cream, then drizzled in rosé red berry syrup. Why not bake it as a Mother's Day surprise or for a summery afternoon tea centrepiece?",
@@ -1452,7 +1452,7 @@
       "id_24": {
         "id": "24",
         "title": "Eton mess traybake",
-        "difficulty": "Easy",
+        "difficulty": "easy",
         "portion": "Serves 12-15",
         "time": "Hands-on time 20 min, oven time 25-30 min",
         "description": "We've turned the crowdpleasing dessert, Eton mess, into a teatime traybake. A strawberry and almond cake is topped with meringues, strawberries and double cream; the ultimate summer dessert.",
@@ -1491,7 +1491,7 @@
       "id_25": {
         "id": "25",
         "title": "Nut-free carrot cupcakes",
-        "difficulty": "Easy",
+        "difficulty": "easy",
         "portion": "Makes 22",
         "time": "Hands-on time 20 min, oven time 20-22 min, plus cooling",
         "description": "These nut-free carrot cupcakes are slathered in cream cheese icing. Serve as part of a nut-free afternoon tea or kids' party spread.",
@@ -1528,7 +1528,7 @@
       "id_26": {
         "id": "26",
         "title": "Raspberry and lemon sponge cake",
-        "difficulty": "Easy",
+        "difficulty": "easy",
         "portion": "Serves 8-10",
         "time": "Hands on time 30 mins, 30 mins to cook, plus cooling",
         "description": "Try this lemony twist on a Victoria sponge cake, filled with raspberry jam and fresh cream - it's a scrumptious teatime or Mother's Day treat.",
@@ -1569,7 +1569,7 @@
       "id_27": {
         "id": "27",
         "title": "Strawberry and rose victoria sponge sandwich",
-        "difficulty": "Easy",
+        "difficulty": "easy",
         "portion": "Serves 12",
         "time": "Hands-on time 40 min, oven time 20-25 min",
         "description": "Want a classic Victoria sponge with a bit more…oomph? This recipe uses decadent rose extract and petals to create a truly beautiful cake with a difference.",
@@ -1610,7 +1610,7 @@
       "id_28": {
         "id": "28",
         "title": "Toffee ice-cream cake",
-        "difficulty": "Easy",
+        "difficulty": "easy",
         "portion": "Serves 10",
         "time": "Ready in less than 30 minutes",
         "description": "",
@@ -1641,7 +1641,7 @@
       "id_29": {
         "id": "29",
         "title": "Easy flourless chocolate cake",
-        "difficulty": "Easy",
+        "difficulty": "easy",
         "portion": "Serves 10",
         "time": "Hands-on time 20 min, oven time 40 minutes, plus cooling",
         "description": "A crisp outside and gloriously fudgy centre make this easy flourless chocolate cake the best of dinner party desserts. Make it up to two days before then serve warm with ice cream - heaven.",
@@ -1672,7 +1672,7 @@
       "id_30": {
         "id": "30",
         "title": "Sticky toffee pudding cake",
-        "difficulty": "Easy",
+        "difficulty": "easy",
         "portion": "Serves 16",
         "time": "Hands-on time 1 hour 10 min, oven time 30-35 min, plus chilling",
         "description": "Martha Collinson's sticky toffee pudding cake has all the flavours of the classic pud. Drizzle toffee sauce over the buttercream to finish.",
@@ -3909,6 +3909,388 @@
             "Step 4": "Deja que el merengue se enfríe y luego vierte el chocolate derretido, alisándolo con el dorso de una cuchara. Deja enfriar en un lugar fresco, luego usa un cuchillo afilado caliente para cortar en 16 rectángulos."
           }
         ]
+      },
+      "id_21": {
+        "id": "21",
+        "title": "Magdalenas fáciles de mariposa",
+        "difficulty": "easy",
+        "portion": "Rinde 12",
+        "time": "Tiempo activo 20 minutos, tiempo de horno 20-25 minutos",
+        "description": "Un bizcocho ligero como el aire se cubre con crema de mantequilla de vainilla en estas magdalenas de mariposa que son casi demasiado buenas para comer. Son ideales para hacer con niños o como parte de una merienda retro por la tarde.",
+        "ingredients": [
+          "160 g de mantequilla sin sal, ablandada",
+          "160 g de azúcar en polvo dorado",
+          "3 huevos medianos de gallinas camperas, batidos",
+          "160 g de harina con levadura",
+          "2 cucharaditas de extracto de vainilla en pasta",
+          "160 g de mantequilla sin sal, ablandada",
+          "270 g de azúcar glas",
+          "1 cucharadita de extracto de vainilla en pasta",
+          "Molde para magdalenas de 12 cavidades",
+          "12 cápsulas de papel para magdalenas (usamos Dr. Oetker)",
+          "Manga pastelera desechable"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 170°C/150°C con ventilador/gas 3½. Pon todos los ingredientes de las magdalenas en un bol grande. Con una batidora de mano eléctrica o una cuchara de madera, bátelos juntos hasta obtener una masa suave y espesa (esto llevará unos 5 minutos)."
+          },
+          {
+            "Step 2": "Forra el molde para magdalenas con las cápsulas de papel y reparte la masa uniformemente en ellas. Hornea durante 20-25 minutos hasta que estén doradas y un palillo insertado en el centro salga limpio. Deja enfriar en el molde sobre una rejilla."
+          },
+          {
+            "Step 3": "Mientras tanto, prepara la crema de mantequilla. Pon la mantequilla ablandada en un bol grande y bátela con una batidora de mano eléctrica o una cuchara de madera. Añade la mitad del azúcar glas y bate hasta que esté combinado, luego agrega el azúcar restante con la vainilla. Bate hasta que quede suave y más claro en color."
+          },
+          {
+            "Step 4": "Utiliza una pequeña espátula para extender montones de crema sobre las magdalenas enfriadas. O, para hacer magdalenas de mariposa, utiliza un cuchillo pequeño y afilado para cortar un círculo de pastel en la parte superior de cada magdalena, dejando un borde pequeño de no más de 1 cm de profundidad. Corta el círculo de pastel por la mitad para hacer las alas de mariposa."
+          },
+          {
+            "Step 5": "Llena una manga pastelera desechable con la crema y corta la punta (no es necesario usar boquilla). Aplica la crema sobre los pequeños agujeros en las magdalenas y luego coloca las alas de pastel encima. Tamiza azúcar glas por encima y disfruta de inmediato o guárdalas en un recipiente hermético y cómelas durante los próximos días."
+          }
+        ]
+      },
+      "id_22": {
+        "id": "22",
+        "title": "Cupcakes de chocolate",
+        "difficulty": "easy",
+        "portion": "Rinde 12",
+        "time": "Tiempo activo 20 min, tiempo de horno 25-30 min",
+        "description": "Estos indulgentes cupcakes de chocolate utilizan el método todo en uno, por lo que son muy fáciles de hacer. Cubre con generosos y espesos remolinos de ganache de chocolate y sirve a familiares y amigos. Están garantizados para poner sonrisas en los rostros.",
+        "ingredients": [
+          "160g de mantequilla sin sal, ablandada",
+          "160g de azúcar en polvo dorado",
+          "3 huevos medianos de gallinas camperas, batidos",
+          "160g de harina con levadura incorporada",
+          "2 cucharaditas de pasta o extracto de vainilla",
+          "40g de cacao en polvo oscuro (usamos Green & Black's)",
+          "3 cucharadas de leche",
+          "100g de chocolate oscuro, picado en trozos grandes",
+          "150ml de nata líquida para montar, a temperatura ambiente",
+          "Molde para muffins de 12 cavidades; 12 cápsulas de papel para muffins (usamos Dr. Oetker)"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 170°C/150°C con ventilador/gas 3 1/2. Pon todos los ingredientes del pastel en un bol grande. Con una batidora de mano eléctrica, bate todo junto para hacer una masa espesa y suave (esto tomará aproximadamente 5 minutos)."
+          },
+          {
+            "Step 2": "Forra el molde para muffins con cápsulas de papel y divide la masa por igual entre ellas. Hornea durante 20-25 minutos hasta que el pastel esté bien levantado y un palillo insertado en el centro salga limpio."
+          },
+          {
+            "Step 3": "Para la ganache, coloca el chocolate en un bol apto para microondas, cúbrelo con film transparente y caliéntalo a la temperatura más baja durante un minuto a la vez, revolviendo después de cada minuto hasta que esté derretido. Deja reposar durante 5 minutos y luego usa un batidor de varillas para batir lentamente la crema poco a poco. Cuando se forme una ganache espesa y brillante, utiliza una pequeña espátula para extenderla sobre los cupcakes. Refrigera en la nevera (cúbrelo una vez que la ganache se haya endurecido) o déjalos a temperatura ambiente si los vas a comer de inmediato. Son mejores a temperatura ambiente, así que sácalos de la nevera una hora antes de comer."
+          }
+        ]
+      },
+      "id_23": {
+        "id": "23",
+        "title": "Pastel de flor de naranjo, tomillo limón y almendra",
+        "difficulty": "easy",
+        "portion": "Para 12 personas",
+        "time": "Tiempo activo 25 minutos, tiempo de cocción 30 minutos, más tiempo de enfriamiento",
+        "description": "Este impresionante pastel consiste en una esponjosa mezcla de naranja y almendra cubierta con crema de miel y flor de naranjo, luego rociada con jarabe de bayas rojas de rosé. ¿Por qué no hornearlo como una sorpresa para el Día de la Madre o como centro de una tarde de té veraniega?",
+        "ingredients": [
+          "100 ml de aceite de oliva suave",
+          "100 g de azúcar en polvo dorado",
+          "3 huevos medianos de gallinas camperas",
+          "Ralladura y jugo de 1 naranja",
+          "2 cucharaditas de agua de flor de naranjo",
+          "100 g de yogur natural",
+          "150 g de harina con levadura incorporada",
+          "100 g de almendras molidas",
+          "3 cucharadas de azúcar en polvo dorado",
+          "Unas ramitas de tomillo limón, y algunas extras para decorar",
+          "100 ml de vino rosado",
+          "150 g de frambuesas",
+          "100 ml de nata líquida para montar",
+          "150 g de crème fraîche",
+          "1 cucharada de miel líquida",
+          "½-1 cucharadita de agua de flor de naranjo (dependiendo de la intensidad)",
+          "Molde desmontable de 20 cm, base forrada y ligeramente engrasada"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 180°C/160°C con ventilador/gas 4. Pon el aceite de oliva, el azúcar, los huevos, la ralladura y el jugo de naranja, el agua de flor de naranjo, el yogur, la harina con levadura incorporada y las almendras molidas en un tazón grande y bate hasta que estén combinados. Vierte la mezcla en el molde preparado y hornea durante 35 minutos o hasta que un palillo insertado en el centro salga limpio. Deja enfriar en una rejilla en el molde durante 5-10 minutos, luego desmolda y deja enfriar por completo."
+          },
+          {
+            "Step 2": "Mientras tanto, prepara las bayas rojas de rosé. Coloca el azúcar, el tomillo y el vino rosado en una cacerola mediana y calienta hasta que el azúcar se haya disuelto. Lleva a ebullición, luego reduce a fuego lento durante 5 minutos hasta que espese a jarabe. Retira del fuego y deja enfriar durante 10 minutos. Agrega las frambuesas, revuelve suavemente y reserva."
+          },
+          {
+            "Step 3": "En un tazón, bate la nata, la crème fraîche, la miel y la cantidad de agua de flor de naranjo que creas necesaria hasta que forme picos suaves. Coloca el pastel en un plato o soporte para pastel y pon la crema encima. Agrega las bayas, rocía con el jarabe y esparce algunas hojas extra de tomillo."
+          }
+        ]
+      },
+      "id_24": {
+        "id": "24",
+        "title": "Eton mess en bandeja",
+        "difficulty": "easy",
+        "portion": "Para 12-15 personas",
+        "time": "Tiempo activo 20 minutos, tiempo de horno 25-30 minutos",
+        "description": "Hemos convertido el querido postre Eton mess en una bandeja para la hora del té. Un pastel de fresa y almendras está cubierto con merengues, fresas y nata; el postre definitivo para el verano.",
+        "ingredients": [
+          "200g de mantequilla, ablandada",
+          "200g de azúcar en polvo",
+          "1 cucharadita de pasta de vainilla",
+          "50g de almendras molidas",
+          "4 huevos medianos de gallinas criadas en libertad",
+          "175g de harina con levadura incorporada",
+          "4 cucharadas de nata líquida",
+          "250g de fresas pequeñas, maduras pero firmes, sin pedúnculo y cortadas por la mitad",
+          "1 cucharada de azúcar granulada",
+          "250ml de nata líquida",
+          "50g de azúcar glas",
+          "4 merengues caseros (ver Receta Maestra), desmenuzados",
+          "200g de fresas pequeñas, sin pedúnculo y cortadas en rodajas gruesas",
+          "Pequeño puñado de hojas frescas de menta baby",
+          "Molde para pastel rectangular de 20cm x 30cm o molde para brownie, engrasado y forrado con papel pergamino antiadherente"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 190°C/170°C con ventilador/gas 5. Para hacer el bizcocho, bate la mantequilla y el azúcar en un tazón grande con una batidora de mano eléctrica durante 5 minutos hasta que estén suaves y cremosos. Agrega la pasta de vainilla y luego mezcla las almendras molidas. Agrega los huevos uno por uno, agregando una cucharada de harina con los últimos 2 huevos. Tamiza el resto de la harina y una pizca de sal y, con una cuchara de metal grande, incorpora con movimientos suaves y envolventes en forma de ocho, junto con las 4 cucharadas de nata líquida."
+          },
+          {
+            "Step 2": "Vierte la mezcla en el molde preparado y nivela la superficie. Espárcelas 250g de fresas preparadas por encima y espolvorea con el azúcar granulado. Hornea durante 25-30 minutos hasta que un palillo insertado en el centro del pastel salga limpio."
+          },
+          {
+            "Step 3": "Saca el pastel del horno y deja enfriar en el molde durante 10 minutos. Transfiere a una rejilla para enfriar, dejando el papel pergamino en su lugar, y deja enfriar completamente."
+          },
+          {
+            "Step 4": "Para armar, despega el papel pergamino y luego transfiere el bizcocho a un plato de servir. Bate los 250ml de nata líquida y el azúcar glas en un tazón grande hasta que la nata forme picos suaves. Extiende generosamente la nata montada sobre el bizcocho y espolvorea con los merengues desmenuzados, las fresas y las hojas de menta. Corta en porciones iguales para servir."
+          }
+        ]
+      },
+      "id_25": {
+        "id": "25",
+        "title": "Magdalenas de zanahoria sin nueces",
+        "difficulty": "easy",
+        "portion": "Rinde 22",
+        "time": "Tiempo de preparación 20 minutos, tiempo de horno 20-22 minutos, más enfriamiento",
+        "description": "Estas magdalenas de zanahoria sin nueces están cubiertas con glaseado de queso crema. Sírvelas como parte de una merienda sin frutos secos o en una fiesta infantil.",
+        "ingredients": [
+          "200g de zanahorias ralladas (aproximadamente 2 zanahorias medianas)",
+          "250ml de aceite de oliva suave",
+          "4 huevos grandes de corral",
+          "225g de azúcar moreno claro",
+          "75g de pasas de uva sultanas",
+          "75g de pasas de uva",
+          "Ralladura de 1 naranja",
+          "2 cucharaditas de especias variadas molidas",
+          "½ cucharadita de pimienta de Jamaica molida",
+          "225g de harina con levadura",
+          "1 cucharadita de bicarbonato de sodio",
+          "100g de mantequilla sin sal, a temperatura ambiente",
+          "250g de queso crema Philadelphia entero, a temperatura ambiente",
+          "100g de azúcar glas",
+          "Flores de azúcar (disponibles en la sección de repostería de supermercados grandes o en squires.co.uk)",
+          "2 moldes para muffins de 12 agujeros forrados con 22 moldes de silicona para magdalenas (disponibles en tiendas de utensilios de cocina o amazon.co.uk)"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 180°C/160°C con ventilador/gas 4. Con una cuchara de madera, mezcla todos los ingredientes de las magdalenas en un bol grande hasta que estén bien combinados. Usa una cuchara de helado o una cucharada de postre para repartir la masa por igual entre los moldes. Hornea durante 20-22 minutos, hasta que al introducir un palillo en el centro de una magdalena este salga limpio y las magdalenas estén esponjosas."
+          },
+          {
+            "Step 2": "Deja las magdalenas en los moldes hasta que se enfríen lo suficiente como para manejarlas, luego colócalas en una rejilla para que se enfríen por completo. Una vez frías, sácalas de los moldes (y repite con otro lote si haces más)."
+          },
+          {
+            "Step 3": "Para el glaseado, usa una cuchara de madera para batir la mantequilla en un bol hasta que esté suave y esponjosa. Añade el queso crema y luego tamiza el azúcar glas y bate hasta que quede suave y bien combinado. Coloca cucharadas/decora sobre las magdalenas enfriadas y decora con las flores de azúcar."
+          }
+        ]
+      },
+      "id_26": {
+        "id": "26",
+        "title": "Pastel de frambuesa y limón",
+        "difficulty": "easy",
+        "portion": "Para 8-10 porciones",
+        "time": "Tiempo de preparación 30 minutos, tiempo de cocción 30 minutos, más tiempo de enfriamiento",
+        "description": "Prueba esta versión con limón de una tarta Victoria, rellena de mermelada de frambuesa y crema fresca; es un delicioso regalo para la hora del té o para el Día de la Madre.",
+        "ingredients": [
+          "225g de mantequilla ablandada, más extra para engrasar",
+          "Ralladura de 2 limones",
+          "225g de azúcar caster dorado",
+          "4 huevos grandes de corral",
+          "225g de harina con levadura",
+          "½ cucharadita de polvo de hornear",
+          "Un puñado de frambuesas frescas",
+          "Jugo de 2 limones",
+          "3 cucharadas de azúcar glas, más extra para espolvorear",
+          "400 ml de nata para montar",
+          "3 cucharadas de mermelada de frambuesa"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 180°C/convección160°C/gas 4. Engrasa 2 moldes redondos de 20 cm y forra las bases con papel de horno. Pon la mantequilla, la ralladura de limón y el azúcar en un bol y bate con una cuchara de madera o una batidora eléctrica hasta que estén suaves y cremosos."
+          },
+          {
+            "Step 2": "Rompe 1 huevo en la mezcla de mantequilla y azúcar y bátelo con la cuchara de madera o la batidora. Agrega otro huevo y bate nuevamente, luego repite hasta que hayas añadido los 4 huevos. Cuando añadas el último huevo, deberás agregar un par de cucharadas de harina para evitar que la mezcla se corte."
+          },
+          {
+            "Step 3": "Tamiza la harina restante y el polvo de hornear en la mezcla de la tarta, luego usa una cuchara de metal para incorporarla (usa la cuchara para cortar en el medio de la mezcla y luego muévela hacia el fondo del bol y hacia arriba por el otro lado). La idea es incorporar la harina suavemente para que no salga el aire de la mezcla."
+          },
+          {
+            "Step 4": "Con una cuchara, divide la mezcla entre los moldes. Hornea durante 20-25 minutos o hasta que estén crecidos y cocidos. Trata de no abrir la puerta del horno hasta el final del tiempo de cocción, o podrían no crecer adecuadamente."
+          },
+          {
+            "Step 5": "Haz el glaseado. Corta los limones por la mitad y exprime el jugo en un bol. Tamiza el azúcar glas y mézclalo. Pincha agujeros por todo el pastel con un palillo y luego vierte el glaseado sobre ellos. Cuando estén lo suficientemente fríos como para manejar, voltea los pasteles sobre una rejilla, despega el papel y déjalos enfriar."
+          },
+          {
+            "Step 6": "Para hacer el relleno, pon la nata en un bol limpio y bátela hasta que se formen picos suaves. Mezcla la mermelada para lograr un efecto marmolado en lugar de mezclar completamente. Extiende la nata sobre uno de los pasteles y coloca el otro encima. Espolvorea con azúcar glas y decora con frambuesas frescas."
+          }
+        ]
+      },
+      "id_27": {
+        "id": "27",
+        "title": "Pastel victoria de fresa y rosa",
+        "difficulty": "easy",
+        "portion": "Para 12 porciones",
+        "time": "Tiempo de preparación 40 minutos, tiempo de cocción en el horno 20-25 minutos",
+        "description": "¿Quieres un clásico pastel Victoria con un toque extra? Esta receta utiliza extracto de rosa decadente y pétalos para crear un pastel verdaderamente hermoso y diferente.",
+        "ingredients": [
+          "250g de mantequilla sin sal ablandada, más extra para engrasar",
+          "250g de azúcar caster",
+          "4 huevos grandes de corral",
+          "250g de harina con levadura incorporada",
+          "50g de azúcar granulado",
+          "Unas gotas de colorante alimentario rosa",
+          "1 cucharadita de extracto de rosa, más unas gotas adicionales",
+          "400ml de crema doble",
+          "2 cucharadas de azúcar glas",
+          "400g de fresas, desinfectadas y cortadas en rodajas",
+          "Pétalos de rosa comestibles para decorar, azucarados"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 180°C/convección 160°C/gas 4. Engrasa y forra 2 moldes de 20 cm para sandwich."
+          },
+          {
+            "Step 2": "Bate la mantequilla ablandada con el azúcar hasta que esté pálida y esponjosa. Agrega los huevos, uno a uno, batiendo bien entre cada adición. Agrega la harina y dóblala en la mezcla para formar una masa suave."
+          },
+          {
+            "Step 3": "Divide la masa de manera uniforme entre los moldes para pasteles y hornea en el centro del horno durante 20-25 minutos, hasta que estén dorados y hayan subido, y un palillo insertado en el centro salga limpio. Voltea sobre una rejilla y deja enfriar."
+          },
+          {
+            "Step 4": "Coloca el azúcar granulado en un mortero con unas gotas de colorante alimentario rosa y extracto de rosa. Machaca suavemente hasta que esté uniformemente coloreado, luego extiéndelo sobre una bandeja para hornear forrada para que se seque. Reserva."
+          },
+          {
+            "Step 5": "Una vez que los pasteles estén fríos, prepara el relleno. En un tazón, bate la crema con el azúcar glas hasta que mantenga su forma, luego agrega 1 cucharadita de extracto de rosa y bate hasta que forme picos suaves."
+          },
+          {
+            "Step 6": "Unta uno de los pasteles con la crema y luego coloca las fresas en rodajas encima. Cubre con el segundo pastel y espolvorea con el azúcar rosa y los pétalos de rosa azucarados."
+          }
+        ]
+      },
+      "id_28": {
+        "id": "28",
+        "title": "Pastel de helado de toffee",
+        "difficulty": "easy",
+        "portion": "Para 10 porciones",
+        "time": "Listo en menos de 30 minutos",
+        "description": "Un delicioso pastel de helado de toffee con un toque de miel y frambuesas. ¡Fácil de hacer y perfecto para cualquier ocasión!",
+        "ingredients": [
+          "100g de miel dorada",
+          "100g de azúcar en polvo",
+          "1 cucharadita de bicarbonato de sodio",
+          "600g de helado de vainilla de buena calidad",
+          "200g de frambuesas",
+          "2 bizcochos Madeira de 300g cada uno (usamos Waitrose)",
+          "100g de dulce de leche"
+        ],
+        "method": [
+          {
+            "Step 1": "Unta ligeramente una bandeja de horno mediana con aceite. Para hacer el caramelo, añade 100g de miel dorada a una cacerola con 100g de azúcar en polvo. Calienta suavemente hasta que el azúcar se disuelva, luego aumenta el fuego y deja hervir hasta que el jarabe se espese y adquiera un color caramelo dorado oscuro. Bate 1 cucharadita de bicarbonato de sodio en el caramelo y luego vierte la mezcla en la bandeja de horno. Deja enfriar y endurecer, luego rompe el caramelo en trozos."
+          },
+          {
+            "Step 2": "Ablanda un envase de 600g de helado de vainilla de buena calidad. Mezcla la mitad del caramelo toffee y 200g de frambuesas en el helado (guarda el resto del caramelo en un recipiente hermético). Corta en rodajas finas 2 bizcochos Madeira de 300g cada uno (usamos Waitrose) y unta 100g de dulce de leche finamente sobre todas las rodajas (solo en un lado)."
+          },
+          {
+            "Step 3": "Usa un tercio de las rodajas, con el lado untado hacia arriba, solapando ligeramente para cubrir la base de un molde de plumcake de 1.6 litros forrado con film transparente (con suficiente film sobresaliendo). Vierte encima la mitad del helado de caramelo y alisa con el dorso de una cuchara. Repite las capas, terminando con las rodajas restantes de bizcocho Madeira, con el lado untado hacia abajo. Cubre firmemente con el film transparente y coloca el molde en el congelador hasta que vuelva a congelarse."
+          },
+          {
+            "Step 4": "Para servir, tira hacia atrás el film transparente e invierte el pastel de helado en un plato de servir. Despega cuidadosamente el film transparente. Espolvorea con parte del caramelo toffee sobrante y córtalo en rodajas gruesas para servir."
+          }
+        ]
+      },
+      "id_29": {
+        "id": "29",
+        "title": "Pastel de chocolate sin harina fácil",
+        "difficulty": "easy",
+        "portion": "Para 10 porciones",
+        "time": "Tiempo de preparación 20 minutos, tiempo de horno 40 minutos, más tiempo de enfriamiento",
+        "description": "Un exterior crujiente y un centro gloriosamente húmedo hacen de este pastel de chocolate sin harina fácil el mejor postre para una cena. Puedes prepararlo hasta dos días antes y luego servirlo caliente con helado, ¡un verdadero paraíso!",
+        "ingredients": [
+          "150g de chocolate con leche y 150g de chocolate negro, troceados",
+          "250g de mantequilla sin sal, más extra para engrasar",
+          "200g de azúcar en polvo",
+          "4 huevos grandes de gallinas camperas, separados",
+          "1 cucharadita de extracto de vainilla",
+          "½ cucharadita de cremor tártaro",
+          "Molde para pastel desmontable de 23 cm, base forrada con papel de hornear antiadherente y lados engrasados"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 180°C/160°C con ventilador/gas 4. Derrite suavemente el chocolate y la mantequilla en una cacerola de base pesada, luego agrega 100g de azúcar. Deja enfriar un poco y luego bate las yemas de huevo y la vainilla con una cuchara de madera. Vierte en un bol grande para mezclar."
+          },
+          {
+            "Step 2": "En un bol grande, perfectamente limpio, bate las claras de huevo con una batidora eléctrica hasta que estén espumosas, agrega el cremor tártaro y luego bate hasta que se formen picos firmes cuando se retiren las varillas. Bate el azúcar restante, 1 cucharada a la vez, hasta que esté espeso y brillante."
+          },
+          {
+            "Step 3": "Mezcla una cucharada de clara de huevo en la mezcla de chocolate para aflojarla, luego incorpora el resto de las claras en 2-3 adiciones. Utilizando una cuchara de metal grande y un movimiento en forma de ocho, raspa los lados del bol y luego dobla la mezcla sobre sí misma, dando un cuarto de vuelta al bol cada vez. Raspa también el fondo del bol después de cada giro para incorporar toda la mezcla."
+          },
+          {
+            "Step 4": "Vierte la masa en el molde preparado, luego hornea durante 40 minutos o hasta que esté subido y la parte superior comience a agrietarse. Deja enfriar el pastel en el molde. Sírvelo caliente o a temperatura ambiente con helado."
+          }
+        ]
+      },
+      "id_30": {
+        "id": "30",
+        "title": "Pastel de pudín pegajoso de caramelo",
+        "difficulty": "easy",
+        "portion": "Sirve 16",
+        "time": "Tiempo activo 1 hora 10 minutos, tiempo en el horno 30-35 minutos, más enfriamiento",
+        "description": "El pastel de pudín pegajoso de caramelo de Martha Collinson tiene todos los sabores del pudín clásico. Rocía la salsa de caramelo sobre el buttercream para terminar.",
+        "ingredients": [
+          "200g de mantequilla sin sal, más extra para engrasar",
+          "250g de azúcar moscovado oscuro",
+          "100g de melaza negra",
+          "100g de jarabe dorado",
+          "200ml de leche",
+          "2 huevos grandes de corral",
+          "250g de harina común",
+          "1 cucharadita de bicarbonato de sodio",
+          "200g de dátiles Medjool picados",
+          "250ml de crema doble",
+          "1 cucharada de melaza negra",
+          "150g de azúcar demerara",
+          "100g de mantequilla sin sal",
+          "200g de mantequilla sin sal ablandada",
+          "300g de azúcar glas",
+          "100ml de salsa de caramelo (ver arriba)",
+          "100g de nueces pecanas picadas",
+          "4 dátiles Medjool, deshuesados y cortados en rodajas finas",
+          "3 moldes para pastel redondos de 18 cm, bases forradas con papel de hornear antiadherente; una plataforma giratoria para pasteles (opcional)"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 180°C/160°C ventilador/gas 4. Para los bizcochos, calienta la mantequilla, el azúcar, la melaza y el jarabe dorado en una cacerola grande, revolviendo hasta que todo el azúcar se haya disuelto. Retira la cacerola del fuego."
+          },
+          {
+            "Step 2": "Vierte lentamente la leche en la cacerola con la mezcla caliente, batiendo continuamente, luego bate los huevos hasta que estén bien mezclados. Tamiza la harina y el bicarbonato de sodio juntos en la cacerola, luego bátelos juntos hasta que estén suaves. Incorpora los dátiles picados."
+          },
+          {
+            "Step 3": "Divide la mezcla uniformemente entre los moldes preparados, ya sea contando cucharadas iguales de mezcla o pesando los moldes, luego hornea los pasteles durante 30-35 minutos o hasta que estén firmes y un palillo insertado en el centro salga limpio. Saca del horno y deja enfriar brevemente en los moldes, luego transfiere a una rejilla para enfriar completamente."
+          },
+          {
+            "Step 4": "Mientras tanto, prepara la salsa de caramelo. Pon la crema doble, la melaza, el azúcar y la mantequilla en una cacerola y calienta suavemente hasta que el azúcar se haya disuelto. Sube el fuego y hierve durante 5 minutos o hasta que la salsa cubra bien el dorso de una cuchara de metal. Vierte en una jarra resistente al calor/apta para microondas y reserva para que se enfríe."
+          },
+          {
+            "Step 5": "Para hacer el buttercream, bate brevemente la mantequilla en un bol grande, utilizando una batidora eléctrica, para ablandarla. Agrega el azúcar glas poco a poco, incorporando cada adición antes de agregar más. Bate durante 5-10 minutos hasta que esté ligero y esponjoso, luego agrega 100 ml de la salsa de caramelo enfriada y bate durante unos minutos más."
+          },
+          {
+            "Step 6": "Para montar el pastel, coloca la primera capa en un soporte para pasteles o plato de servicio en una plataforma giratoria, si tienes una. Usa una pequeña cantidad de buttercream para fijar el bizcocho base al plato o soporte, luego coloca aproximadamente una quinta parte del buttercream. Usa una espátula para extender el buttercream hasta los bordes del pastel, luego coloca otro bizcocho encima. Repite el proceso de buttercream y coloca la última capa encima."
+          },
+          {
+            "Step 7": "Cubre la parte superior y los lados del pastel con el buttercream restante, raspando el exceso de los lados con una espátula grande para que los pasteles queden fina y uniformemente cubiertos y las capas se vean un poco. La parte superior debe estar suave y los bordes ordenados. Enfría el pastel durante al menos 30 minutos para que el buttercream se endurezca."
+          },
+          {
+            "Step 8": "Calienta suavemente la salsa de caramelo restante en el microondas hasta que esté lo suficientemente líquida como para verterla, pero no lo suficientemente caliente como para derretir el buttercream. Vierte la salsa directamente en el centro del pastel, luego extiéndela hasta los bordes con una espátula, acariciándola suavemente por los lados para crear largos chorros. Espolvorea las nueces pecanas alrededor del borde de la mitad del pastel, luego coloca las rodajas de dátiles entre ellas."
+          }
+        ]
       }
     },
     "fra": {
@@ -4881,6 +5263,388 @@
             "Step 4": "Laissez la meringue prendre, puis versez le chocolat fondu par-dessus, en lissant avec le dos d'une cuillère. Laissez prendre dans un endroit frais, puis utilisez un couteau bien aiguisé et chaud pour découper en 16 rectangles."
           }
         ]
+      },
+      "id_21": {
+        "id": "21",
+        "title": "Petits gâteaux papillon faciles",
+        "difficulty": "easy",
+        "portion": "Pour 12",
+        "time": "Temps actif 20 min, temps de cuisson 20-25 min",
+        "description": "Un gâteau léger comme l'air est recouvert de crème au beurre à la vanille dans ces petits gâteaux papillon presque trop bons pour être mangés. Ils sont parfaits à réaliser avec les enfants ou à déguster lors d'un goûter rétro.",
+        "ingredients": [
+          "160 g de beurre non salé ramolli",
+          "160 g de sucre en poudre doré",
+          "3 œufs moyens de poules élevées en plein air, battus",
+          "160 g de farine avec levure incorporée",
+          "2 cuillères à café d'extrait de vanille en pâte",
+          "160 g de beurre non salé ramolli",
+          "270 g de sucre glace",
+          "1 cuillère à café d'extrait de vanille en pâte",
+          "Moule à muffins de 12 cavités",
+          "12 caissettes en papier pour muffins (nous avons utilisé Dr. Oetker)",
+          "Pochette à douille jetable"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 170°C/150°C chaleur tournante/gaz 3½. Mettez tous les ingrédients des petits gâteaux dans un grand saladier. À l'aide d'un batteur électrique ou d'une cuillère en bois, battez-les ensemble jusqu'à obtenir une pâte lisse et épaisse (cela prendra environ 5 minutes)."
+          },
+          {
+            "Step 2": "Chemisez le moule à muffins avec les caissettes en papier et répartissez uniformément la pâte. Faites cuire pendant 20-25 minutes jusqu'à ce qu'ils soient dorés et qu'un cure-dent inséré au centre en ressorte propre. Laissez refroidir dans le moule sur une grille."
+          },
+          {
+            "Step 3": "Pendant ce temps, préparez la crème au beurre. Mettez le beurre ramolli dans un grand saladier et battez-le à l'aide d'un batteur électrique ou d'une cuillère en bois. Ajoutez la moitié du sucre glace et battez jusqu'à ce que le mélange soit homogène, puis ajoutez le reste du sucre avec la vanille. Fouettez ou battez jusqu'à ce que la crème soit lisse et plus claire en couleur."
+          },
+          {
+            "Step 4": "Utilisez une petite spatule pour étaler des cuillerées de crème sur les petits gâteaux refroidis. Ou, pour faire des petits gâteaux papillon, utilisez un petit couteau bien aiguisé pour découper un cercle de gâteau sur le dessus de chaque petit gâteau en laissant une petite bordure de moins de 1 cm de profondeur. Coupez le cercle de gâteau en deux pour faire les ailes de papillon."
+          },
+          {
+            "Step 5": "Remplissez une pochette à douille jetable de crème et coupez l'extrémité (pas besoin de douille). Appliquez la crème sur les petits trous des gâteaux, puis placez les ailes de gâteau par-dessus. Saupoudrez de sucre glace et dégustez immédiatement ou conservez-les dans un récipient hermétique et dégustez-les au cours des prochains jours."
+          }
+        ]
+      },
+      "id_22": {
+        "id": "22",
+        "title": "Cupcakes au chocolat",
+        "difficulty": "easy",
+        "portion": "Pour 12",
+        "time": "Temps actif 20 min, temps de cuisson 25-30 min",
+        "description": "Ces délicieux cupcakes au chocolat utilisent la méthode tout-en-un, donc ils sont un jeu d'enfant à préparer. Recouvrez-les de généreuses spirales épaisses de ganache au chocolat et servez-les à la famille et aux amis. Ils sont garantis pour mettre des sourires sur les visages.",
+        "ingredients": [
+          "160g de beurre non salé, ramolli",
+          "160g de sucre en poudre doré",
+          "3 œufs moyens de poules élevées en plein air, battus",
+          "160g de farine avec levure incorporée",
+          "2 cuillères à café de pâte ou d'extrait de vanille",
+          "40g de cacao en poudre noir (nous avons utilisé Green & Black's)",
+          "3 cuillères à soupe de lait",
+          "100g de chocolat noir, grossièrement haché",
+          "150ml de crème épaisse, à température ambiante",
+          "Moule à muffins de 12 cavités ; 12 caissettes en papier pour muffins (nous avons utilisé Dr. Oetker)"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 170°C/150°C chaleur tournante/gaz 3 1/2. Mettez tous les ingrédients du gâteau dans un grand saladier. À l'aide d'un batteur électrique, battez le tout ensemble pour obtenir une pâte épaisse et lisse (cela prendra environ 5 minutes)."
+          },
+          {
+            "Step 2": "Chemisez le moule à muffins avec les caissettes en papier et répartissez la pâte également entre elles. Faites cuire pendant 25-30 minutes jusqu'à ce que le gâteau soit bien gonflé et qu'un cure-dent inséré au centre en ressorte propre."
+          },
+          {
+            "Step 3": "Pour la ganache, placez le chocolat dans un bol adapté au micro-ondes, couvrez-le de film plastique puis chauffez-le à la puissance la plus basse pendant une minute à la fois, en remuant après chaque minute jusqu'à ce qu'il soit fondu. Laissez reposer pendant 5 minutes, puis utilisez un fouet pour incorporer lentement la crème petit à petit. Lorsqu'une ganache épaisse et brillante se forme, utilisez une petite spatule pour l'étaler sur les cupcakes. Réfrigérez-les (couvrez-les une fois que la ganache a durci) ou laissez-les à température ambiante si vous les mangez immédiatement. Ils sont meilleurs à température ambiante, alors sortez-les du réfrigérateur une heure avant de les déguster."
+          }
+        ]
+      },
+      "id_23": {
+        "id": "23",
+        "title": "Gâteau à la fleur d'oranger, thym citron et amande",
+        "difficulty": "easy",
+        "portion": "Pour 12 personnes",
+        "time": "Temps actif 25 minutes, temps de cuisson 30 minutes, plus le temps de refroidissement",
+        "description": "Ce superbe gâteau est composé d'une éponge à l'orange et aux amandes zestée, nappée de crème au miel et à la fleur d'oranger, puis arrosée de sirop aux baies rouges de rosé. Pourquoi ne pas le préparer en surprise pour la fête des mères ou comme pièce maîtresse d'un goûter estival ?",
+        "ingredients": [
+          "100 ml d'huile d'olive légère",
+          "100 g de sucre en poudre doré",
+          "3 œufs moyens de poules élevées en plein air",
+          "Zeste râpé et jus d'une orange",
+          "2 cuillères à café d'eau de fleur d'oranger",
+          "100 g de yaourt nature",
+          "150 g de farine avec levure incorporée",
+          "100 g d'amandes en poudre",
+          "3 cuillères à soupe de sucre en poudre doré",
+          "Quelques brins de thym citron, plus quelques-uns pour la décoration",
+          "100 ml de vin rosé",
+          "150 g de framboises",
+          "100 ml de crème liquide",
+          "150 g de crème fraîche",
+          "1 cuillère à soupe de miel liquide",
+          "½-1 cuillère à café d'eau de fleur d'oranger (en fonction de l'intensité)",
+          "Moule à gâteau à charnière de 20 cm, base doublée de papier et légèrement beurrée"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 180°C/160°C chaleur tournante/gaz 4. Mettez l'huile d'olive, le sucre, les œufs, le zeste et le jus d'orange, l'eau de fleur d'oranger, le yaourt, la farine avec levure incorporée et les amandes en poudre dans un grand bol et fouettez jusqu'à ce que le mélange soit juste homogène. Versez dans le moule préparé et enfournez pendant 35 minutes ou jusqu'à ce qu'un cure-dent enfoncé au centre en ressorte propre. Laissez refroidir sur une grille dans le moule pendant 5 à 10 minutes, puis démoulez et laissez refroidir complètement."
+          },
+          {
+            "Step 2": "Pendant ce temps, préparez les baies rouges au rosé. Mettez le sucre, le thym et le vin rosé dans une casserole moyenne et chauffez jusqu'à ce que le sucre soit dissous. Portez à ébullition, puis réduisez à feu doux pendant 5 minutes jusqu'à épaississement en sirop. Retirez du feu et laissez refroidir pendant 10 minutes. Ajoutez les framboises, remuez délicatement et réservez."
+          },
+          {
+            "Step 3": "Dans un bol, fouettez la crème, la crème fraîche, le miel et autant d'eau de fleur d'oranger que vous estimez nécessaire jusqu'à ce qu'elle forme des pics souples. Placez le gâteau sur une assiette ou un support à gâteau et étalez la crème par-dessus. Ajoutez les baies, arrosez de sirop et parsemez de quelques feuilles de thym supplémentaires."
+          }
+        ]
+      },
+      "id_24": {
+        "id": "24",
+        "title": "Biscuit Eton mess",
+        "difficulty": "easy",
+        "portion": "Pour 12-15 personnes",
+        "time": "Temps actif 20 minutes, temps de cuisson 25-30 minutes",
+        "description": "Nous avons transformé le dessert très apprécié d'Eton mess en un biscuit pour le thé. Un gâteau aux fraises et aux amandes est garni de meringues, de fraises et de crème fouettée ; le dessert estival ultime.",
+        "ingredients": [
+          "200 g de beurre ramolli",
+          "200 g de sucre glace",
+          "1 cuillère à café de pâte de vanille",
+          "50 g d'amandes en poudre",
+          "4 œufs moyens de poules élevées en plein air",
+          "175 g de farine avec levure incorporée",
+          "4 cuillères à soupe de crème liquide",
+          "250 g de petites fraises mûres mais fermes, équeutées et coupées en deux",
+          "1 cuillère à soupe de sucre en grains",
+          "250 ml de crème liquide",
+          "50 g de sucre glace",
+          "4 meringues maison (voir Recette de base), émiettées",
+          "200 g de petites fraises, équeutées et coupées en tranches épaisses",
+          "Petite poignée de feuilles de menthe fraîche",
+          "Moule à gâteau rectangulaire de 20 cm x 30 cm ou moule à brownie, graissé et doublé de papier cuisson antiadhésif"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 190°C/170°C chaleur tournante/gaz 5. Pour réaliser le biscuit, battez le beurre et le sucre glace dans un grand bol à l'aide d'un mixeur électrique pendant 5 minutes, jusqu'à ce que le mélange soit léger et crémeux. Incorporez la pâte de vanille, puis mélangez les amandes en poudre. Incorporez les œufs un par un, en ajoutant une cuillère à soupe de farine avec les 2 derniers œufs. Tamisez le reste de la farine et une pincée de sel, puis, à l'aide d'une grande cuillère en métal, incorporez-les en effectuant un mouvement en forme de huit, en ajoutant les 4 cuillères à soupe de crème liquide."
+          },
+          {
+            "Step 2": "Versez la préparation dans le moule préparé et lissez la surface. Répartissez les 250 g de fraises préparées sur le dessus et saupoudrez de sucre en grains. Enfournez pendant 25 à 30 minutes, jusqu'à ce qu'un cure-dent enfoncé au centre du gâteau en ressorte propre."
+          },
+          {
+            "Step 3": "Retirez le gâteau du four et laissez-le refroidir dans le moule pendant 10 minutes. Transférez sur une grille de refroidissement en laissant le papier cuisson en place, et laissez refroidir complètement."
+          },
+          {
+            "Step 4": "Pour l'assemblage, décollez le papier cuisson, puis transférez le biscuit sur un plat de service. Fouettez les 250 ml de crème liquide et le sucre glace dans un grand bol jusqu'à ce que la crème forme des pics mous. Étalez généreusement la crème fouettée sur le biscuit et parsemez de meringues émiettées, de fraises et de feuilles de menthe. Coupez en parts égales pour servir."
+          }
+        ]
+      },
+      "id_25": {
+        "id": "25",
+        "title": "Muffins aux carottes sans noix",
+        "difficulty": "easy",
+        "portion": "Pour 22 muffins",
+        "time": "Temps de préparation 20 min, temps de cuisson au four 20-22 min, plus refroidissement",
+        "description": "Ces muffins aux carottes sans noix sont nappés de glaçage au fromage à la crème. Servez-les lors d'un goûter sans noix ou pour un goûter d'anniversaire pour enfants.",
+        "ingredients": [
+          "200g de carottes râpées (environ 2 carottes moyennes)",
+          "250ml d'huile d'olive légère",
+          "4 gros œufs de plein air",
+          "225g de sucre roux clair",
+          "75g de raisins secs sultanas",
+          "75g de raisins secs",
+          "Zeste râpé d'une orange",
+          "2 cuillères à café d'épices mélangées moulues",
+          "½ cuillère à café de piment de la Jamaïque moulu",
+          "225g de farine avec levure incorporée",
+          "1 cuillère à café de bicarbonate de soude",
+          "100g de beurre non salé, à température ambiante",
+          "250g de fromage à la crème Philadelphia entier, à température ambiante",
+          "100g de sucre glace",
+          "Fleurs en sucre (disponibles dans le rayon pâtisserie des supermarchés plus importants ou sur squires.co.uk)",
+          "2 moules à muffins de 12 trous garnis de 22 moules en silicone pour muffins (disponibles dans les magasins d'ustensiles de cuisine ou sur amazon.co.uk)"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 180°C/160°C à chaleur tournante/gaz 4. À l'aide d'une cuillère en bois, mélangez tous les ingrédients des muffins dans un grand saladier jusqu'à obtenir une consistance homogène. Utilisez une cuillère à glace ou une cuillère à dessert pour répartir la pâte également dans les moules. Faites cuire au four pendant 20 à 22 minutes, jusqu'à ce qu'un cure-dent enfoncé au milieu d'un muffin en ressorte propre et que les muffins soient moelleux."
+          },
+          {
+            "Step 2": "Laissez les muffins dans les moules jusqu'à ce qu'ils refroidissent suffisamment pour être manipulés, puis placez-les sur une grille pour les laisser refroidir complètement. Une fois refroidis, démoulez-les (et répétez avec un autre lot si vous en préparez plus)."
+          },
+          {
+            "Step 3": "Pour le glaçage, utilisez une cuillère en bois pour battre le beurre dans un saladier jusqu'à ce qu'il soit doux et crémeux. Incorporez le fromage à la crème, puis tamisez le sucre glace et battez jusqu'à obtenir un mélange lisse et homogène. À l'aide d'une cuillère ou d'une poche à douille, répartissez-le sur les muffins refroidis et décorez-les avec les fleurs en sucre."
+          }
+        ]
+      },
+      "id_26": {
+        "id": "26",
+        "title": "Gâteau à la framboise et au citron",
+        "difficulty": "easy",
+        "portion": "Pour 8-10 parts",
+        "time": "Temps de préparation 30 minutes, temps de cuisson 30 minutes, plus temps de refroidissement",
+        "description": "Essayez cette variante citronnée d'un gâteau Victoria, garnie de confiture de framboises et de crème fraîche - c'est un délicieux régal pour le goûter ou pour la fête des mères.",
+        "ingredients": [
+          "225g de beurre ramolli, plus un peu pour graisser",
+          "Zeste râpé de 2 citrons",
+          "225g de sucre doré en poudre",
+          "4 gros œufs de plein air",
+          "225g de farine avec levure incorporée",
+          "½ cuillère à café de levure chimique",
+          "Quelques framboises fraîches",
+          "Jus de 2 citrons",
+          "3 cuillères à soupe de sucre glace, plus un peu pour saupoudrer",
+          "Pot de 400ml de crème double",
+          "3 cuillères à soupe de confiture de framboises"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 180°C/160°C à chaleur tournante/gaz 4. Graissez 2 moules ronds de 20 cm et tapissez le fond de papier sulfurisé. Mettez le beurre, le zeste de citron et le sucre dans un bol et battez avec une cuillère en bois ou un batteur électrique jusqu'à ce que le mélange soit doux et crémeux."
+          },
+          {
+            "Step 2": "Cassez 1 œuf dans le mélange de beurre et de sucre et battez-le avec la cuillère en bois ou le batteur. Ajoutez un autre œuf et battez à nouveau, puis répétez jusqu'à ce que vous ayez ajouté les 4 œufs. Lorsque vous ajoutez le dernier œuf, vous devrez ajouter quelques cuillerées de farine pour éviter que le mélange ne tourne."
+          },
+          {
+            "Step 3": "Tamisez la farine restante et la levure chimique dans le mélange de gâteau, puis utilisez une cuillère en métal pour l'incorporer (utilisez la cuillère pour couper au milieu du mélange, puis déplacez-la vers le bas du bol et remontez de l'autre côté). L'idée est d'incorporer la farine délicatement pour ne pas chasser l'air du mélange."
+          },
+          {
+            "Step 4": "À l'aide d'une cuillère, répartissez le mélange entre les moules. Enfournez pendant 20 à 25 minutes ou jusqu'à ce qu'ils soient bien gonflés et cuits. Essayez de ne pas ouvrir la porte du four avant la fin du temps de cuisson, sinon ils risquent de ne pas bien gonfler."
+          },
+          {
+            "Step 5": "Préparez le glaçage. Coupez les citrons en deux et pressez le jus dans un bol. Tamisez le sucre glace et mélangez-le. Piquez des trous dans les gâteaux avec un cure-dent, puis versez le glaçage dessus. Lorsqu'ils sont assez froids pour être manipulés, retournez les gâteaux sur une grille, décollez le papier et laissez-les refroidir."
+          },
+          {
+            "Step 6": "Pour préparer la garniture, mettez la crème dans un bol propre et fouettez-la jusqu'à ce qu'elle forme des pics souples. Incorporez la confiture pour obtenir un effet marbré plutôt qu'un mélange complet. Étalez la crème sur l'un des gâteaux et posez l'autre par-dessus. Saupoudrez de sucre glace et décorez de framboises fraîches."
+          }
+        ]
+      },
+      "id_27": {
+        "id": "27",
+        "title": "Gâteau victoria à la fraise et à la rose",
+        "difficulty": "easy",
+        "portion": "Pour 12 parts",
+        "time": "Temps de préparation 40 minutes, temps de cuisson au four 20-25 minutes",
+        "description": "Vous voulez un classique gâteau Victoria avec un petit plus... de la décadence ? Cette recette utilise de l'extrait de rose somptueux et des pétales pour créer un gâteau vraiment magnifique avec une touche différente.",
+        "ingredients": [
+          "250g de beurre non salé ramolli, plus un peu pour graisser",
+          "250g de sucre en poudre",
+          "4 gros œufs de plein air",
+          "250g de farine avec levure incorporée",
+          "50g de sucre granulé",
+          "Quelques gouttes de colorant alimentaire rose",
+          "1 c. à café d'extrait de rose, plus quelques gouttes supplémentaires",
+          "400ml de crème double",
+          "2 c. à soupe de sucre glace",
+          "400g de fraises, équeutées et coupées en tranches",
+          "Pétales de rose comestibles pour la décoration, saupoudrés de sucre"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 180°C/convection 160°C/gaz 4. Graissez et tapissez 2 moules à sandwich de 20 cm."
+          },
+          {
+            "Step 2": "Battez le beurre ramolli avec le sucre jusqu'à ce que le mélange soit pâle et léger. Ajoutez les œufs, un à un, en battant bien entre chaque ajout. Ajoutez la farine et pliez-la dans le mélange pour former une pâte lisse."
+          },
+          {
+            "Step 3": "Répartissez uniformément la pâte entre les moules à gâteau et faites cuire au centre du four pendant 20 à 25 minutes, jusqu'à ce qu'ils soient dorés et bien gonflés, et qu'un cure-dent inséré au centre en ressorte propre. Retournez-les sur une grille et laissez refroidir."
+          },
+          {
+            "Step 4": "Mettez le sucre granulé dans un mortier avec quelques gouttes de colorant alimentaire rose et d'extrait de rose. Écrasez doucement jusqu'à ce qu'il soit uniformément coloré, puis étalez-le sur une plaque de cuisson doublée de papier sulfurisé pour le faire sécher. Réservez."
+          },
+          {
+            "Step 5": "Une fois que les gâteaux sont refroidis, préparez la garniture. Dans un bol, fouettez la crème avec le sucre glace jusqu'à ce qu'elle tienne à peine sa forme, puis incorporez 1 c. à café d'extrait de rose et fouettez jusqu'à obtenir des pics moelleux."
+          },
+          {
+            "Step 6": "Étalez l'une des gâteaux avec la crème, puis disposez les tranches de fraises par-dessus. Recouvrez du deuxième gâteau et saupoudrez-le de sucre rose et de pétales de rose comestibles saupoudrés de sucre."
+          }
+        ]
+      },
+      "id_28": {
+        "id": "28",
+        "title": "Gâteau glacé au toffee",
+        "difficulty": "easy",
+        "portion": "Pour 10 parts",
+        "time": "Prêt en moins de 30 minutes",
+        "description": "Un délicieux gâteau glacé au toffee avec une touche de miel et de framboises. Facile à préparer et parfait pour toutes les occasions !",
+        "ingredients": [
+          "100g de sirop doré",
+          "100g de sucre en poudre",
+          "1 cuillère à café de bicarbonate de soude",
+          "600g de glace à la vanille de bonne qualité",
+          "200g de framboises",
+          "2 gâteaux Madeira de 300g chacun (nous avons utilisé Waitrose)",
+          "100g de dulce de leche"
+        ],
+        "method": [
+          {
+            "Step 1": "Huilez légèrement un plat de cuisson moyen. Pour faire le caramel, ajoutez 100g de sirop doré dans une casserole avec 100g de sucre en poudre. Chauffez doucement jusqu'à ce que le sucre soit dissous, puis augmentez le feu et laissez bouillir jusqu'à ce que le sirop épaississe et prenne une couleur caramel doré foncé. Incorporez 1 cuillère à café de bicarbonate de soude dans le caramel, puis versez le mélange dans le plat de cuisson. Laissez refroidir et durcir, puis cassez le caramel en morceaux."
+          },
+          {
+            "Step 2": "Ramollissez un pot de 600g de glace à la vanille de bonne qualité. Incorporez la moitié du caramel toffee et 200g de framboises (gardez le reste du caramel dans un récipient hermétique). Tranchez finement 2 gâteaux Madeira de 300g chacun (nous avons utilisé Waitrose) et étalez finement 100g de dulce de leche sur toutes les tranches (d'un seul côté)."
+          },
+          {
+            "Step 3": "Utilisez un tiers des tranches, côté étalé vers le haut, en les chevauchant légèrement pour couvrir le fond d'un moule à cake de 1,6 litre doublé de film plastique (avec beaucoup qui dépasse). À l'aide d'une cuillère, étalez la moitié de la glace au toffee, en lissant avec le dos de la cuillère. Répétez les couches, en terminant avec les tranches restantes de gâteau Madeira, côté étalé vers le bas. Couvrez hermétiquement avec le film plastique et placez le moule au congélateur jusqu'à ce qu'il soit bien congelé."
+          },
+          {
+            "Step 4": "Pour servir, tirez doucement sur le film plastique et démoulez le gâteau glacé sur un plat de service. Retirez soigneusement le film plastique. Saupoudrez de caramel toffee restant et coupez en tranches épaisses pour servir."
+          }
+        ]
+      },
+      "id_29": {
+        "id": "29",
+        "title": "Gâteau au chocolat sans farine facile",
+        "difficulty": "easy",
+        "portion": "Pour 10 parts",
+        "time": "Temps de préparation 20 minutes, temps de cuisson au four 40 minutes, plus temps de refroidissement",
+        "description": "Un extérieur croustillant et un centre délicieusement fondant font de ce gâteau au chocolat sans farine facile le meilleur dessert pour un dîner. Vous pouvez le préparer jusqu'à deux jours à l'avance, puis le servir chaud avec de la glace - un vrai délice !",
+        "ingredients": [
+          "150g de chocolat au lait et 150g de chocolat noir, coupés en morceaux",
+          "250g de beurre non salé, plus un peu pour graisser",
+          "200g de sucre en poudre",
+          "4 gros œufs de poules élevées en plein air, séparés",
+          "1 cuillère à café d'extrait de vanille",
+          "½ cuillère à café de crème de tartre",
+          "Moule à gâteau à charnière de 23 cm, le fond garni de papier sulfurisé antiadhésif et les côtés graissés"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 180°C/160°C en mode ventilateur/gaz 4. Faites fondre doucement le chocolat et le beurre dans une casserole à fond épais, puis incorporez 100g de sucre. Laissez refroidir légèrement, puis battez les jaunes d'œufs et la vanille à l'aide d'une cuillère en bois. Versez dans un grand saladier."
+          },
+          {
+            "Step 2": "Dans un grand bol, parfaitement propre, fouettez les blancs d'œufs à l'aide d'un batteur électrique jusqu'à ce qu'ils soient mousseux, ajoutez la crème de tartre, puis fouettez jusqu'à ce que des pics fermes se forment lorsque les batteurs sont retirés. Incorporez le sucre restant, 1 cuillère à soupe à la fois, jusqu'à ce qu'il soit épais et brillant."
+          },
+          {
+            "Step 3": "Mélangez une cuillère à soupe de blanc d'œuf dans le mélange de chocolat pour le détendre, puis incorporez le reste des blancs en neige en 2-3 ajouts. À l'aide d'une grande cuillère en métal et d'un mouvement en forme de huit, grattez les côtés du bol, puis pliez le mélange sur lui-même, en faisant tourner le bol d'un quart de tour à chaque fois. Grattez également le fond du bol après chaque rotation pour incorporer tout le mélange."
+          },
+          {
+            "Step 4": "Versez la pâte dans le moule préparé, puis faites cuire au four pendant 40 minutes ou jusqu'à ce qu'il soit bien gonflé et que le dessus commence à se fissurer. Laissez refroidir le gâteau dans le moule. Servez chaud ou à température ambiante avec de la glace."
+          }
+        ]
+      },
+      "id_30": {
+        "id": "30",
+        "title": "Gâteau au pudding collant au caramel",
+        "difficulty": "easy",
+        "portion": "Pour 16 personnes",
+        "time": "Temps actif 1 heure 10 minutes, temps de cuisson au four 30-35 minutes, plus refroidissement",
+        "description": "Le gâteau au pudding collant au caramel de Martha Collinson a toutes les saveurs du pudding classique. Versez la sauce au caramel sur le glaçage au beurre pour terminer.",
+        "ingredients": [
+          "200g de beurre non salé, plus un peu plus pour graisser",
+          "250g de sucre muscovado noir",
+          "100g de mélasse noire",
+          "100g de sirop doré",
+          "200ml de lait",
+          "2 gros œufs de poule élevée en liberté",
+          "250g de farine tout usage",
+          "1 cuillère à café de bicarbonate de soude",
+          "200g de dattes Medjool hachées",
+          "250ml de crème double",
+          "1 cuillère à soupe de mélasse noire",
+          "150g de sucre demerara",
+          "100g de beurre non salé",
+          "200g de beurre non salé ramolli",
+          "300g de sucre glace",
+          "100ml de sauce au caramel (voir ci-dessus)",
+          "100g de noix de pécan hachées",
+          "4 dattes Medjool, dénoyautées et coupées en fines rondelles",
+          "3 moules à gâteau ronds de 18 cm, fonds garnis de papier cuisson antiadhésif ; un plateau tournant à gâteau (en option)"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 180°C/160°C ventilateur/gaz 4. Pour les gâteaux, faites chauffer le beurre, le sucre, la mélasse et le sirop doré dans une grande casserole, en remuant jusqu'à ce que tout le sucre soit dissous. Retirez la casserole du feu."
+          },
+          {
+            "Step 2": "Versez lentement le lait dans la casserole avec le mélange chaud, en fouettant continuellement, puis battez les œufs jusqu'à ce qu'ils soient bien mélangés. Tamisez la farine et le bicarbonate de soude ensemble dans la casserole, puis fouettez jusqu'à obtenir une consistance lisse. Incorporez les dattes hachées."
+          },
+          {
+            "Step 3": "Répartissez la préparation également entre les moules préparés, soit en comptant des cuillerées égales de préparation, soit en pesant les moules, puis faites cuire les gâteaux pendant 30 à 35 minutes ou jusqu'à ce qu'ils soient fermes et qu'un cure-dent inséré au centre en ressorte propre. Retirez du four et laissez refroidir brièvement dans les moules, puis transférez sur une grille pour refroidir complètement."
+          },
+          {
+            "Step 4": "Pendant ce temps, préparez la sauce au caramel. Mettez la crème double, la mélasse, le sucre et le beurre dans une casserole et faites chauffer doucement jusqu'à ce que le sucre soit dissous. Augmentez le feu et laissez bouillir pendant 5 minutes ou jusqu'à ce que la sauce enrobe bien le dos d'une cuillère en métal. Versez dans une cruche résistante à la chaleur/compatible avec le micro-ondes et réservez pour qu'elle refroidisse."
+          },
+          {
+            "Step 5": "Pour préparer le glaçage au beurre, battez brièvement le beurre dans un grand bol, à l'aide d'un batteur électrique, pour le ramollir. Incorporez le sucre glace peu à peu, en incorporant chaque ajout avant d'en ajouter davantage. Battez pendant 5 à 10 minutes jusqu'à ce que le mélange soit léger et mousseux, puis ajoutez 100 ml de la sauce au caramel refroidie et battez pendant encore quelques minutes."
+          },
+          {
+            "Step 6": "Pour assembler le gâteau, placez la première couche sur un plat de service ou un plateau tournant à gâteau, si vous en avez un. Utilisez une petite quantité de glaçage au beurre pour fixer le gâteau de base sur le plat ou le support, puis recouvrez-le d'environ un cinquième du glaçage au beurre. Utilisez une spatule pour étaler le glaçage au beurre jusqu'aux bords du gâteau, puis placez une autre couche par-dessus. Répétez le processus de glaçage au beurre et placez la dernière couche par-dessus."
+          },
+          {
+            "Step 7": "Recouvrez le dessus et les côtés du gâteau avec le reste du glaçage au beurre, en raclant l'excédent des côtés avec une grande spatule pour que les gâteaux soient finement et uniformément couverts et que les couches soient légèrement visibles. Le dessus doit être lisse et les bords nets. Réfrigérez le gâteau pendant au moins 30 minutes pour que le glaçage au beurre durcisse."
+          },
+          {
+            "Step 8": "Faites chauffer doucement la sauce au caramel restante au micro-ondes jusqu'à ce qu'elle soit suffisamment liquide pour être versée, mais pas assez chaude pour faire fondre le glaçage au beurre. Versez la sauce directement au centre du gâteau, puis étalez-la jusqu'aux bords à l'aide d'une spatule, en la faisant doucement descendre sur les côtés pour créer de longues coulures. Saupoudrez les noix de pécan autour du bord de la moitié du gâteau, puis insérez les rondelles de datte parmi elles."
+          }
+        ]
       }
     },
     "hun": {
@@ -5848,6 +6612,388 @@
           },
           {
             "Step 4": "Hagyd megdermedni a habot, majd öntsd rá a olvasztott csokoládét, egy kanál hátuljával simítsd el. Hagyd megdermedni egy hűvös helyen, majd egy forró éles késsel vágd 16 négyzetbe."
+          }
+        ]
+      },
+      "id_21": {
+        "id": "21",
+        "title": "Egyszerű pillangó muffinok",
+        "difficulty": "easy",
+        "portion": "12 darabhoz",
+        "time": "Elkészítési idő 20 perc, sütési idő 20-25 perc",
+        "description": "Légies könnyedségű piskótát vanília vajkrémmel borítanak ezeken az majdnem túl szép, hogy megegyék pillangó muffinokon. Nagyszerűek gyerekekkel elkészíteni, vagy egy retró délutáni tea részeként fogyasztani.",
+        "ingredients": [
+          "160 g vaj, szobahőmérsékleten puha",
+          "160 g aranybarna cukor",
+          "3 közepes méretű szabadtartású tojás, felvert",
+          "160 g önemelő liszt",
+          "2 tk vanília babkivonat",
+          "160 g vaj, szobahőmérsékleten puha",
+          "270 g porcukor",
+          "1 tk vanília babkivonat",
+          "12 lyukú muffinforma",
+          "12 muffinpapír forma (Dr. Oetker-t használtunk)",
+          "Egyszer használatos habzsák"
+        ],
+        "method": [
+          {
+            "1. lépés": "Melegítsd elő a sütőt 170°C-ra / 150°C légkeveréses sütőnél / gáz 3½. Tedd az összes muffin hozzávalót egy nagy keverőtálba. Használj elektromos kézi mixer vagy fakanalat, és keverd össze sűrű sima tésztává (ez kb. 5 percet vesz igénybe)."
+          },
+          {
+            "2. lépés": "Kend ki a muffinformát a papír formákkal, majd kanalazd egyenletesen a tésztát. Süsd 20-25 percig, amíg megsül, aranybarna és a közepébe szúrt fogvájó tiszta marad. Hagyd kihűlni a formában rácsra téve."
+          },
+          {
+            "3. lépés": "Eközben készítsd el a vajkrémet. Tedd a puha vajat egy nagy keverőtálba, majd verj elektromos kézi mixerrel vagy fakanalakkal. Add hozzá a porcukor felét, és keverd össze, majd add hozzá a maradék cukrot a vaníliával. Verj vagy keverj, amíg sima és világosabb színű lesz."
+          },
+          {
+            "4. lépés": "Használj egy kis palettakést, hogy elterítsd a vajkrémet a kihűlt muffinokon. Vagy készíts pillangó muffinokat úgy, hogy egy kis éles késsel vágsz egy kör alakú süteménydarabot minden muffin tetejéről, hagyva egy kis szélt, ami nem haladja meg a 1 cm-t. Vágd félbe a süteménykört, hogy pillangószárnyakat kapj."
+          },
+          {
+            "5. lépés": "Töltsd fel az egyszer használatos habzsákot a krémmel, majd vágd le a végét (nincs szükség dúzsihoz). Kend a krémet a muffinok kis lyukaira, majd helyezd a muffin szárnyakat rájuk. Szitáld meg porcukorral, és azonnal fogyaszd el, vagy tedd el egy zárható dobozba, és egyél meg néhány nap alatt."
+          }
+        ]
+      },
+      "id_22": {
+        "id": "22",
+        "title": "Csokoládés muffinok",
+        "difficulty": "easy",
+        "portion": "12 darabhoz",
+        "time": "Elkészítési idő 20 perc, sütési idő 25-30 perc",
+        "description": "Ezek a kényeztető csokoládés muffinok az 'egy tálban' módszerrel készülnek, így könnyű őket elkészíteni. Borítsd meg őket bőséges, sűrű csokoládé ganachéval, és szolgáld fel családodnak és barátaidnak. Garantáltan mosolyt csalnak az arcokra.",
+        "ingredients": [
+          "160g vaj, szobahőmérsékleten puha",
+          "160g aranybarna cukor",
+          "3 közepes méretű szabadtartású tojás, felvert",
+          "160g önemelő liszt",
+          "2 tk vanília babkivonat vagy kivonat",
+          "40g sötét kakaópor (mi a Green & Black's-ot használtuk)",
+          "3 evőkanál tej",
+          "100g sötét csokoládé, durván felaprítva",
+          "150ml tejszín, szobahőmérsékleten",
+          "Muffin sütőforma 12 lyukkal; 12 muffin papír forma (mi a Dr. Oetker-t használtuk)"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 170°C-ra / 150°C légkeveréses sütőnél / gáz 3 1/2. Tedd az összes sütemény hozzávalót egy nagy keverőtálba. Használj elektromos kézi mixert, és keverd össze mindent, hogy vastag, sima tésztát kapj (ez kb. 5 percet vesz igénybe)."
+          },
+          {
+            "Step 2": "Vonj ki muffin sütőformákat muffinpapírral, majd oszd el a tésztát egyenlően bennük. Süsd 25-30 percig, amíg a sütemény jól megnő, és a közepébe szúrt fogtisztító pálcika tiszta marad."
+          },
+          {
+            "Step 3": "A ganachéhoz tedd a csokoládét egy mikrohullámú tálba, takard le folpack fóliával, majd melegítsd a legalacsonyabb fokozaton egy percig egyszerre, minden perc után keverd meg, amíg elolvad. Hagyd állni 5 percig, majd használj lassan egy lufikorbácsot, hogy lassan belekeverd a tejszínt. Amikor sűrű, fényes ganachét kapsz, használj egy kis palettakést a muffinokra. Hűtsd le a hűtőszekrényben (takard le, amint a ganache megdermedt) vagy hagyd szobahőmérsékleten, ha azonnal fogyasztod. Legjobb szobahőmérsékleten fogyasztva, tehát vegyük ki őket a hűtőből egy órával azelőtt, hogy megegyük."
+          }
+        ]
+      },
+      "id_23": {
+        "id": "23",
+        "title": "Narancsvirág, citrom, kakukkfű és mandulatorta",
+        "difficulty": "easy",
+        "portion": "12 adag",
+        "time": "Elkészítési idő 25 perc, sütési idő 30 perc, plusz hűtési idő",
+        "description": "Ez a lenyűgöző torta narancsos és mandulás tésztából áll, amit méz és narancsvirág krém borít, majd rózsaszín bogyós sziruppal locsol meg. Miért ne sütnéd ezt egy Anyák Napjára vagy egy nyári délutáni teához központi díszítőelemként?",
+        "ingredients": [
+          "100 ml könnyű olívaolaj",
+          "100 g aranybarna cukor",
+          "3 közepes méretű szabadtartású tojás",
+          "1 narancs reszelt héja és leve",
+          "2 tk narancsvirág víz",
+          "100 g natúr joghurt",
+          "150 g önemelő liszt",
+          "100 g őrölt mandula",
+          "3 evőkanál aranybarna cukor",
+          "Néhány citrom kakukkfű ág, plusz extra díszítéshez",
+          "100 ml rozé bor",
+          "150 g málna",
+          "100 ml tejszín",
+          "150 g crème fraîche",
+          "1 evőkanál folyékony méz",
+          "½-1 tk narancsvirág víz (az erősségtől függően)",
+          "20 cm-es szívó aljú tortaforma, alját béleld ki és enyhén zsírozd meg"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 180°C-ra / 160°C légkeveréses sütőnél / gáz 4. Tegyél könnyű olívaolajat, cukrot, tojásokat, narancs reszelt héját és levét, narancsvirág vizet, joghurtot, önemelő lisztet és őrölt mandulát egy nagy tálba, majd keverd össze, amíg éppen csak összeáll. Öntsd a készített formába és süsd 35 percig, vagy amíg a közepébe szúrt fogpiszkáló tiszta nem marad. Hagyd hűlni egy rácsra téve a formában 5-10 percig, majd fordítsd ki és hagyd teljesen kihűlni."
+          },
+          {
+            "Step 2": "Eközben készítsd el a rozé bogyókat. Tedd a cukrot, a citrom kakukkfűt és a rozé bort egy közepes lábasba, majd melegítsd, amíg a cukor fel nem oldódik. Forrald fel, majd alacsony hőfokon főzd 5 percig, amíg besűrűsödik a szirup. Vedd le a tűzről, és hagyd hűlni 10 percig. Adj hozzá málnát, óvatosan keverd el, majd tedd félre."
+          },
+          {
+            "Step 3": "Egy tálban verd fel a tejszínt, a crème fraîche-t, a mézet, és annyi narancsvirág vizet, amennyit szükségesnek tartasz, amíg puha habokat nem képez. Helyezd a tortát egy tányérra vagy tortatartóra, és kanalazd rá a krémet. Adj hozzá bogyókat, locsold meg a sziruppal, és szórd meg néhány extra citrom kakukkfű levéllel."
+          }
+        ]
+      },
+      "id_24": {
+        "id": "24",
+        "title": "Eton mess tálcás sütemény",
+        "difficulty": "easy",
+        "portion": "12-15 adag",
+        "time": "Elkészítési idő 20 perc, sütési idő 25-30 perc",
+        "description": "Az Eton mess népszerű desszertet teatrayként tálaltuk. Egy eper és mandula tortát borítanak a habcsókok, eper és tejszín; az ultimátum nyári desszert.",
+        "ingredients": [
+          "200g vaj, puha",
+          "200g porcukor",
+          "1 tk vanília paszta",
+          "50g őrölt mandula",
+          "4 közepes méretű szabadtartású tojás",
+          "175g önemelő liszt",
+          "4 ek tejszín",
+          "250g kicsi, érett de kemény eper, csumájuk levéve és félbevágva",
+          "1 ek kristálycukor",
+          "250ml tejszín",
+          "50g porcukor",
+          "4 házilag készült meringue (lásd Mester Recept), morzsásra törve",
+          "200g kicsi eper, csumájuk levéve és vastagon felszeletelve",
+          "Kis maréknyi friss kis mentalevél",
+          "20cm x 30cm sekély tortaforma vagy brownie forma, kikent és sütőpapírral bélelt"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 190°C-ra / 170°C légkeveréses sütőnél / gáz 5. A tészta elkészítéséhez keverd össze a vajat és a porcukrot egy tálban egy elektromos kézi habverővel 5 percig, amíg könnyű és krémes nem lesz. Keverd hozzá a vanília pasztát, majd keverd hozzá az őrölt mandulát. Egyesével add hozzá a tojásokat, az utolsó 2 tojással együtt egy evőkanál liszttel. Szitáld rá a maradék lisztet és egy csipet sót, majd egy nagy fémkanállal hajtsd be nyolcas alakzatban, közben hozzáadva a 4 evőkanál tejszínt."
+          },
+          {
+            "Step 2": "Kanalazd a keveréket a készített formába és simítsd el a tetejét. Szórd rá az előkészített 250g epret és hintsd meg a kristálycukorral. Süsd 25-30 percig, amíg egy fogpiszkáló, amit a sütemény közepébe szúrtál, tiszta nem marad."
+          },
+          {
+            "Step 3": "Vedd ki a süteményt a sütőből, és hagyd hűlni a formában 10 percig. Áthelyezés hűtőrácsra, hagyd a sütőpapírt a helyén, és hagyd teljesen kihűlni."
+          },
+          {
+            "Step 4": "Az összeállításhoz húzd le a sütőpapírt, majd áthelyezheted a süteményt egy tálalótányérra. Egy nagy tálban verd fel a 250ml tejszínt és a porcukrot, amíg a tejszín puha habot nem képez. Vastagon kend meg a sütemény tetejét a felvert tejszínnel, majd szórd meg a morzsásra tört meringue-kkel, az eperrel és a mentalevelekkel. Vágd egyenlő részekre tálaláshoz."
+          }
+        ]
+      },
+      "id_25": {
+        "id": "25",
+        "title": "Diómentes répatorták",
+        "difficulty": "easy",
+        "portion": "22 darabhoz",
+        "time": "Elkészítési idő: 20 perc, sütési idő: 20-22 perc, plusz hűtés",
+        "description": "Ezeket a diómentes répatortákat krémsajt glazúrral borítottuk. Szolgáld fel őket diómentes délutáni teához vagy gyerekeknek szánt buli nassolás részeként.",
+        "ingredients": [
+          "200 g reszelt sárgarépa (kb. 2 közepes sárgarépa)",
+          "250 ml könnyű olívaolaj",
+          "4 nagy méretű szabadtartású tojás",
+          "225 g világosbarna puha cukor",
+          "75 g sultana mazsola",
+          "75 g mazsola",
+          "1 narancs lereszelt héja",
+          "2 tk őrölt vegyes fűszer",
+          "½ tk őrölt szegfűszeg",
+          "225 g önemelkedő liszt",
+          "1 tk szódabikarbóna",
+          "100 g sótlan vaj, szobahőmérsékleten",
+          "250 g teljes tejű Philadelphia krémsajt, szobahőmérsékleten",
+          "100 g porcukor",
+          "Cukorvirágok (a nagyobb szupermarketek sütési részlegéből vagy squires.co.uk oldalról)",
+          "2 x 12 lyukú muffin tálca, amelyeket 22 szilikon muffin tartóval béleltünk (kaphatók konyhai felszerelés üzletekben vagy amazon.co.uk oldalon)"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 180°C-ra/160°C-ra légkeveréses sütőben/gáz 4 fokon. Egy fakanállal keverd össze egy nagy keverőtálban az összes torta hozzávalót, amíg jól össze nem keverednek. Egy fagylaltkanállal vagy desszertkanállal oszd el az egyenlően az állagot a formák között. Süsd 20-22 percig, amíg egy fogpiszkálót a torta közepébe szúrva tiszta kijön és rugalmasak lesznek."
+          },
+          {
+            "Step 2": "Hagyd a tortákat a tálcákban, amíg elég hűvösek lesznek ahhoz, hogy megfoghasd őket, majd tedd őket egy rácsra, hogy teljesen kihűljenek. Amikor kihűltek, emeld ki a formákból (majd ismételd meg egy másik adaggal, ha többet készítesz)."
+          },
+          {
+            "Step 3": "A krémhez használj egy fakanalat, hogy a vajat egy tálban addig verd, amíg puha és krémes lesz. Keverd hozzá a krémsajtot, majd szitáld rá a porcukrot, és addig keverd, amíg sima és jól össze nem keveredik. Kanalazd/fecskendezd a kihűlt tortákra és díszítsd meg cukorvirágokkal."
+          }
+        ]
+      },
+      "id_26": {
+        "id": "26",
+        "title": "Málnás és citromos piskóta",
+        "difficulty": "easy",
+        "portion": "8-10 adag",
+        "time": "Elkészítési idő 30 perc, 30 perc sütés, plusz hűtés",
+        "description": "Próbáld ki ezt a citromos változatot a Viktória piskótának, melyet málna lekvárral és friss tejszínnel töltenek meg - ez egy isteni délutáni tea vagy Anyák Napja finomsága.",
+        "ingredients": [
+          "225g puha vaj, plusz extra a kikenéshez",
+          "2 citrom reszelt héja",
+          "225g arany színű kristálycukor",
+          "4 nagy méretű szabadtartású tojás",
+          "225g önemelkedő liszt",
+          "½ tk sütőpor",
+          "Néhány friss málna",
+          "2 citrom leve",
+          "3 evőkanál porcukor, plusz extra szóráshoz",
+          "400ml dupla tejszín",
+          "3 evőkanál málna lekvár"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 180°C-ra/légkeverés 160°C-ra/gáz 4 fokra. Kend ki 2 db 20 cm átmérőjű kerek sütőformát, és béleld ki az aljukat sütőpapírral. Tegyél a vajat, citromhéjat és cukrot egy tálba, majd keverd össze egy fa kanállal vagy elektromos habverővel, amíg puha és krémes lesz."
+          },
+          {
+            "Step 2": "Üsd fel az egyik tojást a vaj és cukor keverékhez, majd keverd el fa kanállal vagy habverővel. Adj hozzá egy másik tojást és ismételd meg a keverést, majd ismételd meg, amíg az összes 4 tojást hozzáadod. Amikor az utolsó tojást hozzáadod, néhány kanálnyi lisztet kell hozzáadnod, hogy megakadályozd a keverék szétválását."
+          },
+          {
+            "Step 3": "Szitáld át a maradék lisztet és sütőport a piskótakeverékbe, majd használj egy fém kanalat a behajtogatáshoz (használd a kanalat a keverék közepén átvágni, majd mozgasd az aljához és a másik oldalra). A lényeg az, hogy óvatosan dolgozd be a lisztet, hogy ne távozzon belőle a levegő."
+          },
+          {
+            "Step 4": "Kanállal oszd el a keveréket a formák között. Süsd 20-25 percig, vagy amíg megnőnek és átsülnek. Próbálj meg nem kinyitni a sütőajtót a sütés vége előtt, különben nem fognak megfelelően megnőni."
+          },
+          {
+            "Step 5": "Készítsd el a mázat. Vágd félbe a citromokat, és facsard ki a levüket egy tálba. Szitáld rá a porcukrot, majd keverd össze. Szurkáld meg a piskótákat egy nyársal vagy tűvel, majd locsold meg őket a mázzal. Amikor már elég hűvösek ahhoz, hogy megfoghasd, borítsd ki őket egy rácsra, húzd le róluk a sütőpapírt, és hagyd őket kihűlni."
+          },
+          {
+            "Step 6": "A töltelék elkészítéséhez tegyél a tejszínt egy tiszta tálba, majd veresd kemény habbá. Keverd hozzá a lekvárt úgy, hogy maradjanak benne sávos hatások, ne keverd teljesen el. Kenj egyik piskótára tejszínt, majd tedd rá a másik piskótát. Szórd meg porcukorral, és díszítsd friss málnákkal."
+          }
+        ]
+      },
+      "id_27": {
+        "id": "27",
+        "title": "Eperes és rózsás victoria szendvics torta",
+        "difficulty": "easy",
+        "portion": "12 adag",
+        "time": "Elkészítési idő 40 perc, sütési idő 20-25 perc",
+        "description": "Szeretnél egy klasszikus Victoria tortát egy kis plusz...csavarral? Ez a recept dekadens rózsakivonatot és szirmokat használ egy valóban gyönyörű, különleges torta készítéséhez.",
+        "ingredients": [
+          "250g puha, sós vaj, plusz extra a kikenéshez",
+          "250g porcukor",
+          "4 nagy méretű szabadtartású tojás",
+          "250g önemelkedő liszt",
+          "50g kristálycukor",
+          "Néhány csepp rózsaszín ételfesték",
+          "1 tk rózsakivonat, plusz néhány csepp",
+          "400ml tejszín",
+          "2 evőkanál porcukor",
+          "400g eper, csumázva és szeletelve",
+          "Ehető rózsaszirom a díszítéshez, cukrozva"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 180°C-ra/légkeverés 160°C-ra/gáz 4 fokra. Kend ki és béleld ki 2 x 20 cm-es szendvics tortaformát sütőpapírral."
+          },
+          {
+            "Step 2": "Keverd össze a puha vajat a porcukorral, amíg világos és habos lesz. Adj hozzá egyenként a tojásokat, közöttük alaposan elkeverve. Keverd hozzá a lisztet, és dolgozd össze, hogy sima tésztát kapj."
+          },
+          {
+            "Step 3": "Osztasd el egyenlően a tésztát a tortaformák között, majd süsd a sütő közepén 20-25 percig, amíg aranybarna és megemelkedik, és a közepébe szúrt fogpiszkáló tiszta marad. Fordítsd egy rácsra, és hagyd kihűlni."
+          },
+          {
+            "Step 4": "Tedd a kristálycukrot egy mozsárba néhány csepp rózsaszín ételfestékkel és rózsakivonattal. Lassan töröld össze, amíg egyenletesen színeződik, majd terítsd szét egy sütőpapírral bélelt tepsin, hogy megszáradjon. Tartsd félre."
+          },
+          {
+            "Step 5": "Amikor a torták kihűltek, készítsd el a tölteléket. Egy tálban verd fel a tejszínt a porcukorral, amíg éppen csak megfogja a formáját, majd keverj hozzá 1 tk rózsakivonatot, és verj habbá."
+          },
+          {
+            "Step 6": "Kenj meg egyik tortalapot a tejszínnel, majd rendezd el rajta a szeletelt epret. Fedd le a másik tortalappal, és szórd meg rózsaszín cukorral és cukrozott ehető rózsaszirmokkal."
+          }
+        ]
+      },
+      "id_28": {
+        "id": "28",
+        "title": "Toffifee fagylalt torta",
+        "difficulty": "easy",
+        "portion": "10 adag",
+        "time": "30 percnél rövidebb idő alatt elkészül",
+        "description": "Egy ínycsiklandó toffifee fagylalt torta egy kis méz és málna kiegészítéssel. Könnyen elkészíthető és bármilyen alkalomra tökéletes!",
+        "ingredients": [
+          "100g arany szirup",
+          "100g porcukor",
+          "1 tk szódabikarbóna",
+          "600g jó minőségű vanília fagylalt",
+          "200g málna",
+          "2 x 300g Madeira piskóta (Waitrose terméket használtunk)",
+          "100g dulce de leche"
+        ],
+        "method": [
+          {
+            "Step 1": "Könnyen olajozz meg egy közepes sütőtálat. A karamellhez adj hozzá 100g arany szirupot egy lábasban 100g porcukorral. Lassan melegítsd, amíg a cukor feloldódik, majd növeld a hőt, és forrald addig, amíg a szirup besűrűsödik és sötét aranybarna karamellszínű lesz. Keverj hozzá 1 tk szódabikarbónát a karamellbe, majd öntsd a keveréket a sütőtálba. Hagyd kihűlni és megdermedni, majd törj darabokra a karamellből."
+          },
+          {
+            "Step 2": "Lazítsd fel egy 600g-os jó minőségű vanília fagylaltot. Keverd hozzá a karamell toffit és 200g málnát (a maradék karamellt hermetikusan lezárható tartályban tárold). Vékonyan szeleteld fel a 2 x 300g Madeira piskótát (Waitrose terméket használtunk) és teríts rájuk 100g dulce de leche-t vékonyan (csak az egyik oldalukra)."
+          },
+          {
+            "Step 3": "Használj egy harmadát a szeleteknek, a megkenett oldalukkal felfelé, kissé átfedve a 1,6 literes hosszúkás formában, amit fóliával béleltél ki (több fólia kihajlással). Kanállal terítsd el rajtuk a karamell toffi fagyit felét, simítsd el kanál hátuljával. Ismételd meg a rétegezést, a maradék Madeira piskóta szeletekkel zárd a tetejét, a megkenett oldalukkal lefelé. Szorosan fedd le a fóliával és tedd a formát a mélyhűtőbe, amíg újra megdermed."
+          },
+          {
+            "Step 4": "Tálaláshoz húzd le a fóliát és borítsd a fagylalt tortát egy tálalótányérra. Vigyázz, és óvatosan húzd le a fóliát. Szórd meg a maradék karamell toffival, majd szeleteld vastagon tálaláshoz."
+          }
+        ]
+      },
+      "id_29": {
+        "id": "29",
+        "title": "Egyszerű lisztmentes csokoládétorta",
+        "difficulty": "easy",
+        "portion": "10 adag",
+        "time": "Elkészítési idő 20 perc, sütési idő 40 perc, plusz hűtési idő",
+        "description": "A ropogós külső és a csodálatosan szaftos közepű teszi ezt az egyszerű lisztmentes csokoládétortát a legjobb vacsora utáni desszertté. Akár két nappal előre is elkészítheted, majd melegen tálald fagylalttal - mennyei ízorgia.",
+        "ingredients": [
+          "150g tejcsokoládé és 150g étcsokoládé, darabokra törve",
+          "250g sózatlan vaj, plusz a formázáshoz",
+          "200g porcukor",
+          "4 nagy méretű szabadtartású tojás, szétválasztva",
+          "1 tk vanília kivonat",
+          "½ tk tejsavó sütőpor",
+          "23 cm átmérőjű tortaforma, alja bélelt sütőpapírral és oldalai kivajazva"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 180°C/160°C fokra. Lassan olvaszd fel a csokoládét és a vajat egy nehéz aljú lábasban, majd keverd hozzá a cukor 100g-ját. Hagyd kicsit hűlni, majd keverd hozzá a sárgáját és a vaníliát egy fa kanállal. Öntsd egy nagy keverőtálba."
+          },
+          {
+            "Step 2": "Egy nagy, tökéletesen tiszta tálban verjük fel a tojásfehérjét egy elektromos habverővel, amíg habos lesz, adjuk hozzá a tejsavót, majd verjük addig, amíg merev csúcsok képződnek, amikor kivesszük a habverőt. Adjuk hozzá a maradék cukrot is, evőkanálnyi mennyiségben, és verjük, amíg sűrű és fényes lesz."
+          },
+          {
+            "Step 3": "Keverjünk egy kanálnyi tojásfehérjét a csokoládés keverékbe, hogy lazítsuk, majd hajtogassuk be a maradék fehérjéket 2-3 részletben. Egy nagy fém kanállal és nyolcas alakzatban mozgatva kaparjuk le a tál oldalait, majd hajtogassuk a keveréket önmaga tetejére, mindegyik fordulatkor a tál negyedfordulatot végezzen. Az alját is kapargassuk meg minden fordulat után, hogy belefoglaljuk az összes keveréket."
+          },
+          {
+            "Step 4": "Öntsük a tésztát előkészített formába, majd süssük 40 percig vagy amíg meg nem emelkedik és a teteje elkezd repedezni. Hagyd hűlni a tortát a formában. Melegen vagy szobahőmérsékleten tálald fagylalttal."
+          }
+        ]
+      },
+      "id_30": {
+        "id": "30",
+        "title": "Ragacsos tofipuding torta",
+        "difficulty": "easy",
+        "portion": "16 adag",
+        "time": "Elkészítési idő 1 óra 10 perc, sütés 30-35 perc, plusz hűtés",
+        "description": "Martha Collinson ragacsos tofipuding tortája magában hordozza a klasszikus pudingsütemény ízeit. Öntsd a tofikrémet a vajkrém tetejére a befejezéshez.",
+        "ingredients": [
+          "200g sótlan vaj, plusz extra a kikenéshez",
+          "250g sötét muszkovádó cukor",
+          "100g fekete melasz",
+          "100g arany szirup",
+          "200ml tej",
+          "2 nagy szabad tartású tojás",
+          "250g sima liszt",
+          "1 tk szódabikarbóna",
+          "200g darabolt medjool datolya",
+          "250ml dupla krém",
+          "1 evőkanál fekete melasz",
+          "150g demerara cukor",
+          "100g sótlan vaj",
+          "200g sótlan vaj, megpuhítva",
+          "300g porcukor",
+          "100ml tofi szósz (lásd fent)",
+          "100g pekán dió, darabolt",
+          "4 medjool datolya, kimagozva és vékony szeletekre vágva",
+          "3 db 18 cm átmérőjű kerek tortaformába, aljukat béleld ki tapadásmentes sütőpapírral; torta forgató (opcionális)"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 180°C-ra/160°C fokos légkeveréses sütőre/gáz 4-re. A piskótákhoz melegítsd fel a vajat, a cukrot, a melaszt és az arany szirupot egy nagy serpenyőben, állandóan keverve, amíg minden cukor feloldódik. Vegyük le a serpenyőt a tűzről."
+          },
+          {
+            "Step 2": "Lassan öntsd a tejet a forró keverékhez, folyamatosan kevergetve, majd verd bele a tojásokat, amíg jól össze nem keverednek. Szitáld át a lisztet és a szódabikarbónát együtt a serpenyőbe, majd keverd össze, amíg sima nem lesz. Dolgozd bele a darabolt datolyát."
+          },
+          {
+            "Step 3": "Oszd el a keveréket egyenlően az előkészített tortaformákban, vagy egyenlő kanalak számolásával, vagy mérlegelve a formákat. Süsd a tortákat 30-35 percig, vagy amíg szilárdak és egy fogpiszkáló a közepébe szúrva tiszta marad. Vegyél ki a sütőből, és hagyd kicsit hűlni a formákban, majd tedd rácsra, hogy teljesen kihűljenek."
+          },
+          {
+            "Step 4": "Eközben készítsd el a tofi szószt. Tedd a dupla krémet, a melaszt, a cukrot és a vajat egy lábasba, és melegítsd fel óvatosan, amíg a cukor fel nem oldódik. Növeld a hőt, és forrald fel 5 percig, vagy amíg a szósz sűrűn nem vonja be a fém kanál hátoldalát. Öntsd egy hőálló/mikrohullámú biztonságos kancsóba, és tedd félre, hogy kihűljön."
+          },
+          {
+            "Step 5": "A vajkrém elkészítéséhez röviden keverd fel a vajat egy nagy tálban, elektromos mixerrel, hogy megpuhuljon. Lassan add hozzá a porcukrot, mindig azelőtt, hogy újabb adagot tennél hozzá, és minden adagot bekeverj, mielőtt hozzáadnál többet. Keverd 5-10 percig, amíg könnyű és habos lesz, majd adj hozzá 100 ml a kihűlt tofi szószból, és keverd még néhány percig."
+          },
+          {
+            "Step 6": "Az összeszereléshez helyezd az első réteget egy tortaállványra vagy tálra egy tortaforgatóval, ha van. Használj egy kis mennyiségű vajkrémet az alap piskótához, hogy rögzítsd a tányéron vagy állványon, majd fedd le körülbelül ötödével a vajkrémből. Használj palettakést a vajkrém szétkenéséhez a torta széleire, majd helyezz egy másik piskótát rá. Ismételd meg a vajkrém folyamatot, majd helyezd az utolsó réteget a tetejére."
+          },
+          {
+            "Step 7": "Fedd le a torta tetejét és oldalait a maradék vajkrémmel, egy nagy palettakéssel távolítsd el a felesleget a szélekről, hogy a torták vékonyan és egyenletesen legyenek bevonva, és a rétegek kicsit látszódjanak. A tetejét simává kell tenni, az oldalak pedig szépek legyenek. Hűtsd le a tortát legalább 30 percig, hogy a vajkrém megdermedjen."
+          },
+          {
+            "Step 8": "Óvatosan melegítsd fel a maradék tofi szószt a mikrohullámú sütőben, amíg éppen elég folyékony lesz ahhoz, hogy önthető legyen, de ne legyen elég meleg ahhoz, hogy megolvadjon a vajkrém. Öntsd a szószt közvetlenül a torta közepére, majd egy palettakéssel terítsd szét a szélekig, óvatosan lefelé húzva, hogy hosszú csöppeket képezzen. Szórd meg a pekándiót a torta felének szélénél, majd helyezd el közöttük a datolya szeleteket."
           }
         ]
       }
