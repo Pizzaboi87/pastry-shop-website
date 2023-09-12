@@ -4696,6 +4696,27 @@
             "Step 4": "Saca los bizcochos enfriados de los moldes. Extiende la mitad del glaseado en uno de los bizcochos, coloca el segundo encima y luego extiende el resto del glaseado por encima. Espolvorea con los pistachos restantes y deja reposar durante 20 minutos antes de cortar."
           }
         ]
+      },
+      "id_41": {
+        "id": "41",
+        "title": "Glaseado de mantequilla simple",
+        "difficulty": "easy",
+        "portion": "Suficiente para un pastel grande",
+        "time": "Tiempo activo: 5 minutos",
+        "description": "Una rápida y sencilla receta de glaseado de mantequilla, hecha con azúcar glas, mantequilla y queso crema, para usar en cupcakes, magdalenas o pasteles de cumpleaños.",
+        "ingredients": [
+          "300g de mantequilla sin sal, a temperatura ambiente",
+          "200g de queso crema entero, a temperatura ambiente",
+          "500g de azúcar glas"
+        ],
+        "method": [
+          {
+            "Step 1": "Coloca la mantequilla y el queso crema en un bol para mezclar (ver consejos) y bate con una batidora eléctrica hasta que estén combinados y suaves."
+          },
+          {
+            "Step 2": "Tamiza el azúcar glas en lotes, batiendo bien entre cada adición hasta que esté suave."
+          }
+        ]
       }
     },
     "fra": {
@@ -6455,6 +6476,27 @@
             "Step 4": "Démoulez les gâteaux refroidis des moules. Étalez la moitié du glaçage sur l'un des gâteaux, placez-y le deuxième, puis étalez le reste du glaçage par-dessus. Saupoudrez des pistaches restantes et laissez reposer pendant 20 minutes avant de couper."
           }
         ]
+      },
+      "id_41": {
+        "id": "41",
+        "title": "Glaçage au beurre simple",
+        "difficulty": "easy",
+        "portion": "Pour un grand gâteau",
+        "time": "Temps actif : 5 minutes",
+        "description": "Une recette rapide et facile de glaçage au beurre, réalisée avec du sucre glace, du beurre et du fromage à la crème, à utiliser sur des cupcakes, des petits gâteaux ou des gâteaux d'anniversaire.",
+        "ingredients": [
+          "300g de beurre non salé, à température ambiante",
+          "200g de fromage à la crème entier, à température ambiante",
+          "500g de sucre glace"
+        ],
+        "method": [
+          {
+            "Step 1": "Mettez le beurre et le fromage à la crème dans un bol de mélange (voir conseils) et battez avec un batteur électrique jusqu'à ce qu'ils soient bien mélangés et lisses."
+          },
+          {
+            "Step 2": "Tamisez le sucre glace en plusieurs fois, en battant bien entre chaque ajout jusqu'à obtenir une texture lisse."
+          }
+        ]
       }
     },
     "hun": {
@@ -8209,6 +8251,27 @@
           },
           {
             "Step 4": "Kivesszük a hűlt piskót a formákból. Az egyikre terítjük az összes máz felét, majd rátesszük a másikat, és a maradék mázzal lekenjük a tetejét. A maradék pisztáciával megszórjuk, majd hagyjuk 20 percig állni, mielőtt szeletelnénk."
+          }
+        ]
+      },
+      "id_41": {
+        "id": "41",
+        "title": "Egyszerű vajkrém máz",
+        "difficulty": "easy",
+        "portion": "Egy nagy tortához elegendő",
+        "time": "Kézi munka: 5 perc",
+        "description": "Egy gyors és egyszerű vajkrém máz recept - porcukorral, vajjal és tejszínes sajttal készül - cupcake-khez, tündér süteményekhez vagy születésnapi tortákhoz.",
+        "ingredients": [
+          "300g sótlan vaj, szobahőmérsékleten",
+          "200g teljes tejfölös sajt, szobahőmérsékleten",
+          "500g porcukor"
+        ],
+        "method": [
+          {
+            "Step 1": "Tegye a vajat és a tejszínes sajtot egy keverőtálba (lásd tippek) és keverje össze egy elektromos habverővel, amíg össze nem áll és sima lesz."
+          },
+          {
+            "Step 2": "Szitálja be a porcukrot adagonként, jól megkeverve minden hozzáadás után, amíg sima nem lesz."
           }
         ]
       }
