@@ -5050,6 +5050,111 @@
             "Step 6": "Para la ganache, calienta suavemente la nata en una cacerola pequeña. Agrega 2 cucharaditas de pasta o extracto de vainilla y el jarabe de glucosa, luego incorpora el chocolate derretido de 250g, removiendo suavemente hasta que la mezcla esté suave. Incorpora la mantequilla de 25g, luego deja reposar durante unos minutos, removiendo ocasionalmente, hasta que tenga una consistencia para extender. Extiende por todo el pastel, usando una espátula para alisar la superficie. Decora con moras y velas, si lo deseas, luego sirve."
           }
         ]
+      },
+      "id_49": {
+        "id": "49",
+        "title": "Pastel de capa de manzana con caramelo",
+        "difficulty": "easy",
+        "portion": "Para 12-16 porciones",
+        "time": "Tarda 45 minutos en preparar, 1 hora en cocinar",
+        "description": "Tres esponjas húmedas de manzana se apilan juntas con manzanas caramelizadas, salsa de caramelo salado y yogur griego. Este pastel de capas para celebraciones es una verdadera delicia. Mira nuestro video de cómo hacerlo a continuación.",
+        "ingredients": [
+          "4 manzanas Cox",
+          "340g, más 50g de azúcar caster",
+          "375g de mantequilla sin sal, a temperatura ambiente, más extra para engrasar",
+          "5 huevos grandes de corral",
+          "385g de harina de repostería",
+          "1 cucharadita de levadura en polvo",
+          "4 manzanas para comer, como Braeburn",
+          "50g de azúcar caster",
+          "70g de mantequilla sin sal",
+          "350ml de yogur griego entero y espeso (nos gusta Total Full Fat)",
+          "75g de mantequilla sin sal",
+          "50g de azúcar moreno claro y suave",
+          "50g de azúcar caster",
+          "50g de jarabe dorado",
+          "20g de azúcar glas",
+          "230ml de nata para montar"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 170ºC/ventilador 150ºC/gas 3½. Engrasa y forra los lados y el fondo de 3 moldes para pasteles de 20 cm con papel de hornear. Para la esponja, pela, descorazona y corta las manzanas. Colócalas en una cacerola a fuego medio-alto y agrega 100 ml de agua y los 50 g de azúcar caster. Cocina durante 10-15 minutos, revolviendo frecuentemente y agregando más agua si es necesario, hasta que se conviertan en puré en su mayoría. Retira del fuego y deja enfriar por completo."
+          },
+          {
+            "Step 2": "En un bol, bate la mantequilla y el azúcar con una batidora eléctrica hasta que estén suaves y esponjosos. Agrega los huevos uno a uno, batiendo bien después de cada adición. Agrega la manzana enfriada y bate."
+          },
+          {
+            "Step 3": "Tamiza la harina y el polvo de hornear con una pizca de sal, luego incorpóralos con una cuchara de metal. Divide la mezcla por igual entre los 3 moldes para pasteles y hornea durante 30 minutos hasta que la esponja recupere su forma cuando se toque. Si estás cocinando los 3 pasteles en el mismo horno, es posible que necesites sacar el pastel superior y mover el de abajo hacia arriba durante 5 minutos adicionales, dejando el del medio donde está."
+          },
+          {
+            "Step 4": "Deja enfriar las esponjas durante 10 minutos en los moldes, luego gíralas cuidadosamente sobre una rejilla para que se enfríen por completo."
+          },
+          {
+            "Step 5": "Mientras tanto, prepara el relleno. Pela y descorazona las manzanas, luego córtalas en rodajas finas a lo largo. Coloca una sartén a fuego medio-alto y agrega las manzanas en rodajas, el azúcar y la mantequilla."
+          },
+          {
+            "Step 6": "Cocina, revolviendo a menudo, hasta que las manzanas se caramelicen ligeramente (esto debería tomar unos 15 minutos; reduce el calor o retira la sartén si sucede demasiado rápido). Cuando las manzanas estén doradas y caramelizadas, retíralas de la sartén con una cuchara ranurada y colócalas sobre papel de hornear para que se enfríen."
+          },
+          {
+            "Step 7": "Cuando los pasteles se hayan enfriado, coloca una esponja en un plato para servir y agrega la mitad del yogur griego. Espolvorea justo menos de la mitad de las manzanas pegajosas, luego coloca una segunda esponja encima y repite el proceso, reservando algunas manzanas para la decoración final. Coloca encima la esponja restante."
+          },
+          {
+            "Step 8": "Coloca todos los ingredientes del caramelo en una sartén y caliéntalos suavemente para derretirlos. Cocina a fuego lento durante 7-8 minutos, revolviendo, hasta que se convierta en caramelo dorado."
+          },
+          {
+            "Step 9": "Vierte el caramelo sobre la parte superior del pastel, permitiendo que el caramelo corra por los lados. Deja el pastel en un lugar fresco durante 1 hora aproximadamente (ver consejo), luego sírvelo, cortándolo con un cuchillo serrado."
+          }
+        ]
+      },
+      "id_50": {
+        "id": "50",
+        "title": "Pastel red velvet",
+        "difficulty": "medium",
+        "portion": "Para 20-24 porciones",
+        "time": "Tiempo de preparación 40 minutos, tiempo de horno 40 minutos",
+        "description": "Aunque esta receta de pastel red velvet parece compleja, es fácil de hacer siempre y cuando sigas la receta al pie de la letra. Vale la pena el esfuerzo, ya que obtendrás un pastel maravillosamente ligero y delicioso.",
+        "ingredients": [
+          "200g de mantequilla sin sal, ablandada, más extra para engrasar",
+          "235g de harina de todo uso, más extra para espolvorear",
+          "400g de azúcar en polvo",
+          "1 cucharadita de extracto de vainilla",
+          "4 huevos grandes de gallinas en libertad, separados",
+          "30g de maicena",
+          "1 cucharada de levadura en polvo",
+          "2 cucharadas de cacao en polvo",
+          "235ml de suero de mantequilla",
+          "60ml de colorante alimentario rojo (nos gusta Silver Spoon)",
+          "1½ cucharaditas de vinagre de vino blanco",
+          "1½ cucharaditas de bicarbonato de sodio",
+          "300ml de nata para montar",
+          "600g de queso crema entero (nos gusta Philadelphia, ver consejo)",
+          "500g de mascarpone",
+          "300g de azúcar glas",
+          "Hojas de acebo de chocolate blanco y almendras azucaradas doradas para decorar"
+        ],
+        "method": [
+          {
+            "Step 1": "Para hacer las esponjas, precalienta el horno a 180°C/ventilador160°C/gas 4, luego engrasa, espolvorea con harina y forra la base de 3 moldes para pasteles desmontables de 20 cm. En un bol grande, bate la mantequilla y el azúcar glas con una batidora eléctrica durante 5 minutos o hasta que estén pálidos y esponjosos. Agrega la vainilla y las yemas de huevo, una a una, batiendo bien después de cada adición."
+          },
+          {
+            "Step 2": "En un segundo bol grande, combina la harina, la maicena, el polvo de hornear y el cacao. En un tercer bol, mezcla el suero de mantequilla con el colorante alimentario rojo. Tamiza un tercio de los ingredientes secos en la mezcla de mantequilla, luego vierte un tercio del suero de mantequilla y mezcla hasta que estén justo combinados. Repite este proceso con los ingredientes secos y el suero de mantequilla restantes."
+          },
+          {
+            "Step 3": "En un bol grande y limpio, bate las claras de huevo con una pizca de sal hasta que formen picos bastante firmes. Añade a la mezcla del pastel, un cuarto cada vez, doblando suavemente con una cuchara de metal grande hasta que estén justo incorporados."
+          },
+          {
+            "Step 4": "En un bol pequeño, mezcla el vinagre y el bicarbonato de sodio hasta que burbujee. Incorpóralo suavemente a la mezcla del pastel, luego vierte rápidamente en los moldes y alisa la superficie. Hornea durante 40 minutos o hasta que un palillo insertado en el centro de cada esponja salga limpio."
+          },
+          {
+            "Step 5": "Deja que los pasteles se enfríen en los moldes durante 10 minutos, luego desmóldalos sobre rejillas metálicas para que se enfríen por completo. Corta cada esponja por la mitad horizontalmente para crear 6 discos (ver consejos)."
+          },
+          {
+            "Step 6": "Para hacer el glaseado, bate la nata en un bol grande hasta que tengas picos medianamente firmes, luego reserva. En un bol aparte, bate el queso crema, el mascarpone y el azúcar glas hasta que estén firmes, luego incorpóralo a la nata montada."
+          },
+          {
+            "Step 7": "Para armar el pastel, coloca una esponja en una fuente y extiende una capa de glaseado. Coloca encima una segunda esponja, luego repite hasta que todas las 6 esponjas estén cubiertas con glaseado. Usa el glaseado restante para cubrir la parte superior y los lados del pastel, alisando con una espátula mientras avanzas. Finalmente, decora la parte superior con hojas de acebo de chocolate blanco y almendras azucaradas doradas. Refrigera el pastel durante unas horas antes de cortarlo; se mantendrá en el refrigerador durante cuatro días."
+          }
+        ]
       }
     },
     "fra": {
@@ -7163,6 +7268,111 @@
             "Step 6": "Pour la ganache, réchauffez doucement la crème dans une petite casserole. Ajoutez les 2 cuillères à café de pâte ou d'extrait de vanille et le sirop de glucose, puis incorporez le chocolat fondu de 250g, en remuant doucement jusqu'à ce que le mélange soit lisse. Incorporez le beurre de 25g, puis laissez reposer pendant quelques minutes, en remuant de temps en temps, jusqu'à ce qu'il ait une consistance tartinable. Étalez-le partout sur le gâteau, en utilisant une spatule pour lisser la surface. Décorez avec des mûres et des bougies, si vous le souhaitez, puis servez."
           }
         ]
+      },
+      "id_49": {
+        "id": "49",
+        "title": "Gâteau à la couche de caramel aux pommes",
+        "difficulty": "easy",
+        "portion": "Pour 12 à 16 parts",
+        "time": "Prend 45 minutes à préparer, 1 heure à cuire",
+        "description": "Trois éponges moelleuses à la pomme sont superposées avec des pommes caramélisées, de la sauce au caramel salé et du yaourt grec. Ce gâteau à couches de célébration est un pur bonheur. Regardez notre vidéo explicative ci-dessous.",
+        "ingredients": [
+          "4 pommes Cox",
+          "340g, plus 50g de sucre en poudre",
+          "375g de beurre non salé, à température ambiante, plus un peu pour graisser",
+          "5 gros œufs de plein air",
+          "385g de farine à gâteau",
+          "1 cuillère à café de levure chimique",
+          "4 pommes à croquer, comme la Braeburn",
+          "50g de sucre en poudre",
+          "70g de beurre non salé",
+          "350ml de yaourt grec épais et entier (nous aimons Total Full Fat)",
+          "75g de beurre non salé",
+          "50g de sucre roux clair",
+          "50g de sucre en poudre",
+          "50g de sirop doré",
+          "20g de sucre glace",
+          "230ml de crème double"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 170ºC/ventilateur 150ºC/gaz 3½. Graissez et tapissez les côtés et le fond de 3 moules à gâteau de 20 cm de papier cuisson. Pour l'éponge, pelez, épépinez et coupez les pommes. Mettez-les dans une casserole à feu moyen-élevé et ajoutez 100 ml d'eau et les 50g de sucre en poudre. Faites cuire pendant 10-15 minutes, en remuant fréquemment et en ajoutant plus d'eau si nécessaire, jusqu'à ce qu'elles soient principalement réduites en purée. Retirez du feu et laissez refroidir complètement."
+          },
+          {
+            "Step 2": "Dans un bol, battez le beurre et le sucre avec un batteur électrique jusqu'à ce que le mélange soit léger et mousseux. Incorporez les œufs un par un, en battant bien après chaque ajout. Incorporez la compote de pommes refroidie."
+          },
+          {
+            "Step 3": "Tamisez la farine et la levure avec une pincée de sel, puis incorporez-les avec une cuillère en métal. Répartissez également la préparation dans les 3 moules à gâteau, puis enfournez pendant 30 minutes jusqu'à ce que l'éponge reprenne sa forme au toucher. Si vous faites cuire les 3 gâteaux dans le même four, vous devrez peut-être retirer le gâteau du dessus et déplacer celui du bas vers le haut pendant 5 minutes supplémentaires, en laissant celui du milieu où il est."
+          },
+          {
+            "Step 4": "Laissez refroidir les éponges pendant 10 minutes dans les moules, puis retournez-les soigneusement sur une grille pour les laisser refroidir complètement."
+          },
+          {
+            "Step 5": "Pendant ce temps, préparez la garniture. Pelez et épépinez les pommes, puis coupez-les en fines tranches dans le sens de la longueur. Mettez une poêle à feu moyen-élevé et ajoutez les pommes en tranches, le sucre et le beurre."
+          },
+          {
+            "Step 6": "Faites cuire en remuant souvent jusqu'à ce que les pommes caramélisent légèrement (cela devrait prendre environ 15 minutes - réduisez le feu ou retirez la poêle si cela se produit trop rapidement). Lorsque les pommes sont dorées et caramélisées, retirez-les de la poêle à l'aide d'une écumoire et déposez-les sur du papier cuisson pour les laisser refroidir."
+          },
+          {
+            "Step 7": "Lorsque les gâteaux ont refroidi, placez une éponge sur un plat de service et ajoutez la moitié du yaourt grec. Parsemez de juste moins de la moitié des pommes collantes, puis placez une deuxième éponge par-dessus et répétez le processus, en réservant quelques pommes pour la décoration finale. Placez la dernière éponge par-dessus."
+          },
+          {
+            "Step 8": "Mettez tous les ingrédients du caramel dans une casserole et faites chauffer doucement pour les faire fondre. Laissez mijoter pendant 7 à 8 minutes en remuant, jusqu'à ce qu'il se transforme en caramel doré."
+          },
+          {
+            "Step 9": "Versez-le sur le dessus du gâteau, en laissant le caramel couler sur les côtés. Laissez le gâteau refroidir pendant environ 1 heure (voir conseil), puis servez, en le coupant avec un couteau dentelé."
+          }
+        ]
+      },
+      "id_50": {
+        "id": "50",
+        "title": "Gâteau au velours rouge",
+        "difficulty": "medium",
+        "portion": "Pour 20-24 portions",
+        "time": "Temps de préparation 40 minutes, temps de cuisson 40 minutes",
+        "description": "Bien que cette recette de gâteau au velours rouge semble complexe, elle est simple à réaliser tant que vous suivez la recette à la lettre - cela en vaut la peine car vous obtiendrez un gâteau merveilleusement léger et délicieux.",
+        "ingredients": [
+          "200g de beurre non salé ramolli, plus un peu pour graisser",
+          "235g de farine tout usage, plus un peu pour saupoudrer",
+          "400g de sucre en poudre",
+          "1 cuillère à café d'extrait de vanille",
+          "4 gros œufs de poules élevées en liberté, séparés",
+          "30g de fécule de maïs",
+          "1 cuillère à soupe de levure chimique",
+          "2 cuillères à soupe de cacao en poudre",
+          "235ml de babeurre",
+          "60ml de colorant alimentaire rouge (nous aimons Silver Spoon)",
+          "1½ cuillère à café de vinaigre de vin blanc",
+          "1½ cuillère à café de bicarbonate de soude",
+          "300ml de crème liquide",
+          "600g de fromage à la crème entier (nous aimons Philadelphia, voir astuce)",
+          "500g de mascarpone",
+          "300g de sucre glace",
+          "Feuilles de houx en chocolat blanc et amandes dorées cristallisées pour décorer"
+        ],
+        "method": [
+          {
+            "Step 1": "Pour préparer les gâteaux, préchauffez le four à 180°C/fan160°C/gaz 4, puis graissez, saupoudrez de farine et chemisez le fond de 3 moules à gâteau de 20 cm à fond amovible. Dans un grand bol, battez le beurre et le sucre en poudre avec un batteur électrique pendant 5 minutes ou jusqu'à ce qu'ils soient pâles et mousseux. Ajoutez la vanille et les jaunes d'œufs, un à un, en battant bien après chaque ajout."
+          },
+          {
+            "Step 2": "Dans un deuxième grand bol, mélangez la farine, la fécule de maïs, la levure chimique et le cacao. Dans un troisième bol, mélangez le babeurre avec le colorant alimentaire rouge. Tamisez un tiers des ingrédients secs dans le mélange de beurre, puis versez un tiers du babeurre et mélangez jusqu'à ce que le tout soit juste combiné. Répétez ce processus avec les ingrédients secs restants et le babeurre."
+          },
+          {
+            "Step 3": "Dans un grand bol propre, fouettez les blancs d'œufs avec une pincée de sel jusqu'à ce qu'ils forment des pics assez fermes. Ajoutez au mélange à gâteau, un quart à la fois, en pliant doucement avec une grande cuillère en métal jusqu'à ce que le tout soit juste incorporé."
+          },
+          {
+            "Step 4": "Dans un petit bol, mélangez le vinaigre et le bicarbonate de soude jusqu'à ce qu'ils moussent. Incorporez doucement au mélange à gâteau, puis versez rapidement dans les moules et lissez les dessus. Faites cuire au four pendant 40 minutes ou jusqu'à ce qu'un cure-dent enfoncé au milieu de chaque gâteau en ressorte propre."
+          },
+          {
+            "Step 5": "Laissez les gâteaux refroidir dans les moules pendant 10 minutes, puis démoulez-les sur des grilles métalliques pour les laisser refroidir complètement. Coupez chaque gâteau en deux horizontalement pour obtenir 6 disques (voir astuces)."
+          },
+          {
+            "Step 6": "Pour préparer le glaçage, fouettez la crème dans un grand bol jusqu'à obtenir des pics moyennement fermes, puis réservez. Dans un autre bol, battez le fromage à la crème, le mascarpone et le sucre glace jusqu'à obtenir une consistance ferme, puis incorporez-le à la crème fouettée."
+          },
+          {
+            "Step 7": "Pour assembler le gâteau, placez un disque de gâteau sur un plat de service et étalez une couche de glaçage. Placez un deuxième disque de gâteau par-dessus, puis répétez jusqu'à ce que les 6 disques de gâteau soient superposés avec du glaçage. Utilisez le glaçage restant pour recouvrir le dessus et les côtés du gâteau, en lissant avec une spatule au fur et à mesure."
+          }
+        ]
       }
     },
     "hun": {
@@ -9271,6 +9481,111 @@
           },
           {
             "Step 6": "A ganache elkészítéséhez óvatosan melegítsd fel a tejszínt egy kis lábosban. Adj hozzá 2 teáskanál vanília paszta vagy kivonatot és a glükóz szirupot, majd óvatosan keverd bele a 250g olvasztott sötét csokoládét, folyamatosan kevergetve, amíg a keverék simává válik. Végül, keverd bele a 25g puha vajat, majd hagyd egy rövid ideig állni, időnként kevergetve, amíg kenhető állagúvá válik. Kenj le vele minden részét a tortának, és egy spatulával simítsd el a felszínét. Díszítsd málnával és gyertyákkal, ha szeretnéd, majd tálald."
+          }
+        ]
+      },
+      "id_49": {
+        "id": "49",
+        "title": "Almás karamelltorta",
+        "difficulty": "easy",
+        "portion": "12-16 adagra",
+        "time": "Elkészítési idő: 45 perc, sütési idő: 1 óra",
+        "description": "Három nedves almás piskótát rétegezünk karamellizált almákkal, sós karamell szósszal és görög joghurttal. Ez a ünnepi réteges torta igazi öröm. Nézd meg alább a hogyan készítsd videónkat.",
+        "ingredients": [
+          "4 cox almát",
+          "340g, plusz 50g kristálycukor",
+          "375g sótlan vaj, szobahőmérsékleten, plusz extra a formázáshoz",
+          "5 nagy méretű szabadtartású tojás",
+          "385g liszt",
+          "1 tk sütőpor",
+          "4 evőalmát, például braeburn",
+          "50g kristálycukor",
+          "70g sótlan vaj",
+          "350ml sűrű teljes tejű görög joghurt (Total Full Fat a kedvencünk)",
+          "75g sótlan vaj",
+          "50g puha világosbarna cukor",
+          "50g kristálycukor",
+          "50g aranyszirup",
+          "20g porcukor",
+          "230ml tejszín"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 170°C-ra/fan 150°C-ra/gáz 3½-re. Kenj ki és béleld ki sütőpapírral 3 db 20 cm-es tortaformát. Az almás piskóta elkészítéséhez hámozd meg, magozd ki és darabold fel az almákat. Tegyél egy lábasba közepes-magas lángon, és adj hozzá 100 ml vizet és a 50g kristálycukrot. Főzd 10-15 percig, gyakran kevergetve, és ha szükséges, adj hozzá több vizet, amíg nagyrészt pürévé nem válik. Vedd le a tűzről, és hagyd teljesen kihűlni."
+          },
+          {
+            "Step 2": "Egy tálban habosítsd fel a vajat és a cukrot elektromos kézi mixerrel, amíg könnyű és habos lesz. Egyenként keverd hozzá a tojásokat, minden hozzáadás után alaposan keverd el. Keverd hozzá a kihűlt almát."
+          },
+          {
+            "Step 3": "Szitáld át a lisztet és a sütőport egy csipet sóval, majd hajtsd be egy fémkanállal. Oszd el az elkészült masszát egyenlő részekre a 3 tortaformában, majd süsd 30 percig, amíg a piskóta visszapattan, ha megérinted. Ha az összes tortát ugyanabban a sütőben sütöd, lehet, hogy ki kell venned a felső tortát, és az alsót felfelé kell mozgatnod további 5 percig, a középsőt pedig hagyd ott, ahol van."
+          },
+          {
+            "Step 4": "Hagyd hűlni a piskótákat 10 percig a formában, majd óvatosan fordítsd ki őket egy rácsra, hogy teljesen kihűljenek."
+          },
+          {
+            "Step 5": "Eközben készítsd el a tölteléket. Hámozd meg és magozd ki az almákat, majd vékony szeletekre vágd hosszanti irányban. Tegyél egy lábast közepes-magas hőfokra, és adj hozzá az almát, a cukrot és a vajat."
+          },
+          {
+            "Step 6": "Főzd, gyakran keverve, amíg az almák enyhén karamellizálódnak (ez kb. 15 percig tart - csökkentsd a hőt, vagy vedd le a lábast, ha túl gyorsan történik). Amikor az almák aranybarnák és karamellizáltak, szedd ki őket a lábasból egy lyukas kanállal, majd tedd sütőpapírra hűlni."
+          },
+          {
+            "Step 7": "Amikor a piskóták kihűltek, tedd az egyiket egy tálalótányérra, és kend meg a görög joghurt felével. Szórd rá a karamellizált almák kicsivel kevesebb mint felét, majd tedd rá a második piskótát, és ismételd meg a folyamatot, néhány almát félre téve a végső díszítéshez. Tegyél rá a maradék piskótát."
+          },
+          {
+            "Step 8": "Tedd az összes karamell összetevőt egy lábasba, és óvatosan melegítsd fel, hogy felolvadjon. Forrald 7-8 percig, közben kevergetve, amíg aranybarnára karamellizálódik."
+          },
+          {
+            "Step 9": "Öntsd rá a torta tetejére, engedd lefolyni a karamellt az oldalakra. Hagyd hűlni a tortát egy hűvös helyen kb. 1 órán keresztül (lásd tipp), majd szolgáld fel, egy fogazott késsel szeletelve."
+          }
+        ]
+      },
+      "id_50": {
+        "id": "50",
+        "title": "Red velvet torta",
+        "difficulty": "medium",
+        "portion": "20-24 adagra",
+        "time": "Elkészítési idő: 40 perc, sütési idő: 40 perc",
+        "description": "Bár ez a recept bonyolultnak tűnhet, egyszerű elkészíteni, amennyiben szigorúan követed a receptet - megéri az erőfeszítést, mert egy csodálatosan könnyű és ízletes tortát kapsz majd.",
+        "ingredients": [
+          "200g sótlan vaj, puha, plusz extra a formázáshoz",
+          "235g sima liszt, plusz extra a lisztezéshez",
+          "400g porcukor",
+          "1 tk vanília kivonat",
+          "4 nagy méretű szabadtartású tojás, fehérjét és sárgáját különválasztva",
+          "30g kukoricaliszt",
+          "1 evőkanál sütőpor",
+          "2 evőkanál kakaópor",
+          "235ml tejszín",
+          "60ml piros ételfesték (mi a Silver Spoon-t ajánljuk)",
+          "1½ tk fehérbor ecet",
+          "1½ tk szódabikarbóna",
+          "300ml habtejszín",
+          "600g teljes zsírtartalmú krémsajt (mi a Philadelphia-t ajánljuk, lásd tipp)",
+          "500g mascarpone",
+          "300g porcukor",
+          "Fehér csokoládé borostyánlevelek és aranyozott cukrozott mandulák a díszítéshez"
+        ],
+        "method": [
+          {
+            "Step 1": "A piskóták elkészítéséhez először melegítsd elő a sütőt 180°C-ra/fan160°C-ra/gáz 4-re, majd kenj ki, lisztezés után béleld ki 3 db 20 cm-es kiszéthető tortaformát. Egy nagy tálban habosítsd fel a vajat és a porcukrot egy elektromos kézi habverővel 5 percig, vagy amíg világos és habos nem lesz. Add hozzá a vaníliát és a tojássárgáját egyenként, alaposan elkeverve mindegyik hozzáadás után."
+          },
+          {
+            "Step 2": "Egy másik nagy tálban keverd össze a lisztet, a kukoricalisztet, a sütőport és a kakaót. Egy harmadik tálban keverd össze a tejszínt a piros ételfestékkel. Szitáld a száraz hozzávalók egyharmadát a vajas keverékbe, majd öntsd hozzá a tejszínt, és keverd össze, amíg éppen csak összeáll. Ismételd meg ezt a folyamatot a megmaradt száraz hozzávalókkal és tejszínnel."
+          },
+          {
+            "Step 3": "Egy nagy, tiszta tálban verd fel a tojásfehérjéket egy csipet sóval, amíg viszonylag kemény habot nem képeznek. Add hozzá a tortakeverékhez negyedrészt, óvatosan behajlítva egy nagy fémkanállal, amíg éppen csak összekeverednek."
+          },
+          {
+            "Step 4": "Egy kis tálban keverd össze a fehérbor ecetet és a szódabikarbónát, amíg habzik. Óvatosan dolgozd be a tortakeverékbe, majd gyorsan öntsd a formákba és simítsd el a tetejüket. Süsd 40 percig, vagy amíg a közepén beledugott fogpiszkáló tiszta nem marad."
+          },
+          {
+            "Step 5": "Hagyd a tortákat 10 percig hűlni a formákban, majd fordítsd ki rácsokra, hogy teljesen kihűljenek. Vágd félbe vízszintesen mindegyik piskótát, hogy 6 korongot kapj (lásd tippek)."
+          },
+          {
+            "Step 6": "A krém elkészítéséhez verd fel a tejszínt egy nagy tálban, amíg közepesen kemény habot nem kapsz, majd tedd félre. Egy külön tálban keverd össze a krémsajtot, a mascarponét és a porcukrot, amíg szilárd nem lesz, majd óvatosan forgasd hozzá a felvert tejszínt."
+          },
+          {
+            "Step 7": "A torta összeállításához helyezz egy piskótakorongot egy tálra és kenj rá egy réteg krémet. Helyezz rá egy másik piskótakorongot, majd ismételd meg, amíg az összes 6 piskótakorongot krémmel rétegezed be. Használd fel a megmaradt krémet a torta tetejének és oldalainak bevonásához, közben egy spatulával simítsd."
           }
         ]
       }
