@@ -5327,6 +5327,116 @@
             "Step 4": "Una vez cocidos, déjalos enfriar en los moldes. Una vez fríos, retíralos de los moldes. Para terminar, únelos con tu relleno favorito y decora según desees."
           }
         ]
+      },
+      "id_55": {
+        "id": "55",
+        "title": "Pastel de mousse de chocolate definitivo",
+        "difficulty": "medium",
+        "portion": "Sirve de 10 a 12 porciones",
+        "time": "Tarda 45 minutos en preparar, 45-50 minutos en cocinar, más enfriamiento durante la noche",
+        "description": "Una receta de pastel de chocolate suntuoso, rico y húmedo que es perfecto para servir en cumpleaños y celebraciones; servirá de 10 a 12 invitados. También puedes agregar un toque de Grand Marnier para un giro especial.",
+        "ingredients": [
+          "225g de chocolate negro (70% de sólidos de cacao)",
+          "5 huevos grandes de gallinas en libertad, separados",
+          "150g de azúcar caster dorado",
+          "125g de mantequilla sin sal, ablandada",
+          "50g de almendras molidas",
+          "4 cucharadas de Grand Marnier (opcional)",
+          "Margaritas de papel de arroz (opcional), para decorar",
+          "142 ml de nata líquida",
+          "225g de chocolate negro (70% de sólidos de cacao)",
+          "4 huevos grandes de gallinas en libertad, separados",
+          "200g de chocolate negro (70% de sólidos de cacao)",
+          "50g de mantequilla",
+          "2 cucharadas de azúcar glas"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 180°C/convección 160°C/gas 4. Forra la base de un molde para pastel desmontable de 20 cm con papel de hornear."
+          },
+          {
+            "Step 2": "Para el pastel, coloca el chocolate en un tazón pequeño sobre una cacerola de agua hirviendo y derrite lentamente. Retira del fuego, revuelve hasta que esté suave y reserva para que se enfríe un poco."
+          },
+          {
+            "Step 3": "Coloca las yemas de huevo y el azúcar en un tazón y bate con una batidora eléctrica hasta que estén pálidos y espesos. Sigue batiendo y agrega la mantequilla ablandada, poco a poco, luego baja la velocidad de la batidora y mezcla el chocolate derretido, luego incorpora las almendras molidas."
+          },
+          {
+            "Step 4": "En un tazón limpio, bate las claras de huevo a picos suaves. Bate un cuarto de las claras de huevo en la mezcla de chocolate para aflojarla, luego incorpora el resto. Vierte en el molde. Hornea durante aproximadamente 45-50 minutos, hasta que esté elevado y firme pero aún un poco húmedo en el centro cuando se pinche con un palillo. Deja enfriar en el molde. Cuando esté frío, retira y córtalo por la mitad horizontalmente. Coloca la capa superior, con el lado cortado hacia arriba, nuevamente en el molde y rocía con la mitad del licor, si lo deseas."
+          },
+          {
+            "Step 5": "Prepara la mousse. Bate ligeramente la nata y reserva. Derrite el chocolate sobre una cacerola de agua hirviendo. Bate las yemas de huevo y luego incorpóralas a la nata. Bate las claras de huevo en un tazón hasta que estén a punto de nieve, luego mézclalas con la mezcla de chocolate. Vierte sobre la capa de pastel en el molde, extendiéndola hasta los bordes."
+          },
+          {
+            "Step 6": "Coloca la otra capa de pastel con el lado cortado hacia abajo encima de la mousse y rocía con el licor restante, si lo deseas. Deja enfriar durante la noche."
+          },
+          {
+            "Step 7": "Saca el pastel del molde y colócalo en un plato. Para el glaseado, derrite el chocolate, la mantequilla y el azúcar glas en un tazón sobre una cacerola de agua hirviendo. Vierte sobre la parte superior del pastel y deja que gotee ligeramente por los bordes. Decora con las flores de arroz, si lo deseas, y sírvelo cortado en porciones."
+          }
+        ]
+      },
+      "id_56": {
+        "id": "56",
+        "title": "Cupcakes de lavanda",
+        "difficulty": "easy",
+        "portion": "Hace 12 cupcakes o 24 mini cupcakes",
+        "time": "Tarda 20 minutos en hacer, más la decoración",
+        "description": "Suavemente aromatizados con azúcar de lavanda, limón o romero, estos hermosos mini cupcakes perfumados lucen tan bien como saben.",
+        "ingredients": [
+          "100g de mantequilla, ablandada",
+          "100g de azúcar caster",
+          "100g de harina leudante",
+          "2 huevos",
+          "100g de azúcar glas",
+          "4 cucharaditas de agua o jugo de limón",
+          "Colorante alimentario"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 180°C/convección 160°C/gas 4. Forra un molde para mini pasteles con moldes de papel. Coloca todos los ingredientes en un tazón y bate hasta que quede suave. Divide la mezcla entre los moldes de papel y hornea en el centro del horno durante 12-15 minutos (o 20-25 minutos si son cupcakes más grandes)."
+          },
+          {
+            "Step 2": "Saca los cupcakes del molde y deja enfriar en una rejilla. Mezcla el azúcar glas con agua y coloréalo con unas gotas del colorante alimentario deseado. Cubre la parte superior de los cupcakes con el glaseado y decóralos a tu gusto."
+          }
+        ]
+      },
+      "id_57": {
+        "id": "57",
+        "title": "Pastel de bandeja de chocolate y bayas",
+        "difficulty": "easy",
+        "portion": "para mucha gente",
+        "time": "Tarda 20 minutos en hacer, 45 minutos en hornear, más el enfriamiento",
+        "description": "Una receta rápida y fácil de pastel de cumpleaños de chocolate hecho con bayas congeladas de tu elección. Una elección perfecta para la fiesta de cumpleaños de un niño.",
+        "ingredients": [
+          "250g de mantequilla, ablandada, más extra",
+          "250g de harina con levadura",
+          "1 cucharadita de polvo de hornear",
+          "225g de polvo de chocolate para beber",
+          "250g de azúcar moreno claro",
+          "4 huevos, ligeramente batidos",
+          "3 cucharadas de leche",
+          "200g de bayas congeladas (frambuesas, moras y arándanos)",
+          "200g de chocolate blanco, troceado",
+          "Frambuesas frescas",
+          "Malvaviscos pequeños rosados",
+          "Velas"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 180°C/convección 160°C/gas 4. Engrasa y forra la base de un molde para pastel de 30 cm x 20 cm. Tamiza la harina, el polvo de hornear y el polvo de chocolate para beber en un tazón grande."
+          },
+          {
+            "Step 2": "En otro tazón, bate la mantequilla y el azúcar juntos hasta que estén pálidos y esponjosos. Agrega gradualmente los huevos, batiendo bien después de cada adición. Añade la mezcla de harina y la leche y mezcla suavemente hasta que estén combinados."
+          },
+          {
+            "Step 3": "Vierte la mezcla de pastel en el molde y coloca las bayas congeladas. Hornea durante 45 minutos, cubriendo con una doble capa de papel de hornear a la mitad del tiempo para evitar que se dore demasiado, hasta que esté elevado y cocido. Cuando presiones ligeramente el pastel, debería recuperar su forma. Enfría ligeramente en el molde y luego desmolda y enfría sobre una rejilla."
+          },
+          {
+            "Step 4": "Para decorar, coloca el chocolate en un tazón. Coloca el tazón sobre una cacerola de agua hirviendo a fuego lento y deja que se derrita, revolviendo ocasionalmente. Retira cuidadosamente el tazón de la cacerola."
+          },
+          {
+            "Step 5": "Usando una cucharita, rocía el chocolate en líneas sobre el pastel. Coloca las bayas, los malvaviscos y las velas encima antes de servir."
+          }
+        ]
       }
     },
     "fra": {
@@ -7717,6 +7827,116 @@
             "Step 4": "Une fois cuits, laissez-les refroidir dans les moules. Une fois refroidis, retirez-les des moules. Pour finir, assemblez-les avec votre garniture préférée et décorez selon votre goût."
           }
         ]
+      },
+      "id_55": {
+        "id": "55",
+        "title": "Gâteau mousse au chocolat ultime",
+        "difficulty": "medium",
+        "portion": "Pour 10 à 12 personnes",
+        "time": "Prend 45 minutes à préparer, 45 à 50 minutes à cuire, plus le refroidissement pendant la nuit",
+        "description": "Une recette de gâteau au chocolat somptueux, riche et moelleux, parfait pour les anniversaires et les célébrations ; il servira de 10 à 12 convives. Vous pouvez également ajouter une touche de Grand Marnier pour une note spéciale.",
+        "ingredients": [
+          "225g de chocolat noir (70% de cacao)",
+          "5 gros œufs de poules élevées en plein air, séparés",
+          "150g de sucre en poudre doré",
+          "125g de beurre non salé, ramolli",
+          "50g d'amandes en poudre",
+          "4 cuillères à soupe de Grand Marnier (facultatif)",
+          "Pâquerettes en papier de riz (facultatif), pour décorer",
+          "142 ml de crème liquide",
+          "225g de chocolat noir (70% de cacao)",
+          "4 gros œufs de poules élevées en plein air, séparés",
+          "200g de chocolat noir (70% de cacao)",
+          "50g de beurre",
+          "2 cuillères à soupe de sucre glace"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 180°C/160°C en chaleur tournante/gaz 4. Tapissez le fond d'un moule à gâteau à charnière de 20 cm de diamètre de papier cuisson."
+          },
+          {
+            "Step 2": "Pour le gâteau, placez le chocolat dans un petit bol posé sur une casserole d'eau frémissante et faites fondre doucement. Retirez du feu, remuez jusqu'à obtenir une consistance lisse et réservez pour qu'il refroidisse légèrement."
+          },
+          {
+            "Step 3": "Placez les jaunes d'œufs et le sucre dans un bol et battez avec un fouet électrique jusqu'à ce qu'ils soient pâles et épais. Continuez à fouetter en ajoutant le beurre ramolli, petit à petit, puis réduisez la vitesse du fouet et incorporez le chocolat fondu, puis ajoutez les amandes en poudre."
+          },
+          {
+            "Step 4": "Dans un bol propre, montez les blancs d'œufs en pics mous. Incorporez un quart des blancs d'œufs dans le mélange de chocolat pour le détendre, puis incorporez le reste. Versez dans le moule. Faites cuire pendant environ 45 à 50 minutes, jusqu'à ce qu'il soit gonflé et ferme mais encore légèrement humide au centre lorsque vous le piquez avec une brochette. Laissez refroidir dans le moule. Une fois refroidi, retirez et coupez horizontalement en deux. Replacez la couche supérieure, côté coupé vers le haut, dans le moule et arrosez-la avec la moitié du liquide, si vous le souhaitez."
+          },
+          {
+            "Step 5": "Préparez la mousse. Fouettez légèrement la crème et réservez-la. Faites fondre le chocolat au-dessus d'une casserole d'eau frémissante. Battez les jaunes d'œufs, puis incorporez-les à la crème. Fouettez les blancs d'œufs dans un bol jusqu'à ce qu'ils forment des pics mous, puis incorporez-les au mélange de chocolat. Versez sur la couche de gâteau dans le moule, en l'étalant jusqu'aux bords."
+          },
+          {
+            "Step 6": "Placez l'autre moitié du gâteau, côté coupé vers le bas, sur la mousse et arrosez-la du reste du liquide, si vous le souhaitez. Laissez refroidir toute la nuit."
+          },
+          {
+            "Step 7": "Retirez le gâteau du moule et placez-le sur une assiette. Pour le glaçage, faites fondre le chocolat, le beurre et le sucre glace dans un bol au-dessus d'une casserole d'eau frémissante. Versez sur le dessus du gâteau et laissez-le dégouliner légèrement sur les bords. Décorez avec les fleurs de riz, si vous le souhaitez, et servez coupé en parts."
+          }
+        ]
+      },
+      "id_56": {
+        "id": "56",
+        "title": "Cupcakes à la lavande",
+        "difficulty": "easy",
+        "portion": "Donne 12 cupcakes ou 24 mini cupcakes",
+        "time": "Prend 20 minutes à préparer, plus la décoration",
+        "description": "Délicatement parfumés avec du sucre à la lavande, du citron ou du romarin, ces magnifiques mini cupcakes parfumés sont aussi beaux qu'ils sont délicieux.",
+        "ingredients": [
+          "100g de beurre ramolli",
+          "100g de sucre en poudre",
+          "100g de farine avec levure incorporée",
+          "2 œufs",
+          "100g de sucre glace",
+          "4 cuillères à café d'eau ou de jus de citron",
+          "Colorant alimentaire"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 180°C/160°C en chaleur tournante/gaz 4. Tapissez un moule à mini gâteaux de caissettes en papier. Placez tous les ingrédients dans un bol et battez-les ensemble jusqu'à obtenir une consistance lisse. Répartissez la préparation dans les caissettes en papier et faites cuire au centre du four pendant 12 à 15 minutes (ou 20 à 25 minutes pour des cupcakes plus gros)."
+          },
+          {
+            "Step 2": "Retirez-les du moule à gâteau et laissez-les refroidir sur une grille. Mélangez le sucre glace avec de l'eau et colorez-le avec quelques gouttes de colorant alimentaire de votre choix. Glacez le dessus des cupcakes et décorez-les comme vous le souhaitez."
+          }
+        ]
+      },
+      "id_57": {
+        "id": "57",
+        "title": "Gâteau au chocolat et aux baies",
+        "difficulty": "easy",
+        "portion": "pour beaucoup de personnes",
+        "time": "Prend 20 minutes à préparer, 45 minutes à cuire, plus le refroidissement",
+        "description": "Une recette de gâteau d'anniversaire au chocolat rapide et facile réalisée avec des baies surgelées de votre choix. Un choix parfait pour la fête d'anniversaire d'un enfant.",
+        "ingredients": [
+          "250g de beurre ramolli, plus un peu",
+          "250g de farine avec levure incorporée",
+          "1 cuillère à café de levure chimique",
+          "225g de poudre de chocolat à boire",
+          "250g de sucre brun clair",
+          "4 œufs, légèrement battus",
+          "3 cuillères à soupe de lait",
+          "200g de baies congelées (framboises, mûres et myrtilles)",
+          "200g de chocolat blanc, cassé en morceaux",
+          "Framboises fraîches",
+          "Petites guimauves roses",
+          "Bougies"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 180°C/160°C en chaleur tournante/gaz 4. Graissez et tapissez le fond d'un moule à gâteau de 30 cm x 20 cm. Tamisez la farine, la levure chimique et la poudre de chocolat à boire dans un grand bol."
+          },
+          {
+            "Step 2": "Dans un autre bol, crèmez le beurre et le sucre ensemble jusqu'à ce qu'ils soient pâles et mousseux. Ajoutez progressivement les œufs, en battant bien après chaque ajout. Ajoutez le mélange de farine et de lait et mélangez doucement jusqu'à ce qu'ils soient combinés."
+          },
+          {
+            "Step 3": "Versez la préparation dans le moule et enfoncez-y les baies congelées. Faites cuire au four pendant 45 minutes, en couvrant à mi-cuisson d'une double couche de papier cuisson pour éviter qu'il ne dore trop, jusqu'à ce qu'il soit gonflé et cuit. Lorsque vous appuyez légèrement sur le gâteau, il devrait reprendre sa forme. Laissez refroidir légèrement dans le moule, puis démoulez et laissez refroidir sur une grille."
+          },
+          {
+            "Step 4": "Pour la décoration, mettez le chocolat dans un bol. Posez le bol sur une casserole d'eau frémissante et laissez-le fondre en remuant de temps en temps. Retirez soigneusement le bol de la casserole."
+          },
+          {
+            "Step 5": "À l'aide d'une cuillère à café, versez le chocolat en lignes sur le gâteau. Disposez les baies, les guimauves et les bougies par-dessus avant de servir."
+          }
+        ]
       }
     },
     "hun": {
@@ -10102,6 +10322,116 @@
           },
           {
             "Step 4": "Amikor elkészültek, hagyjuk őket kihűlni a formákban. Miután kihűltek, vegyük ki őket a formákból. Végül összeállítjuk kedvenc töltelékkel és díszítjük ízlés szerint."
+          }
+        ]
+      },
+      "id_55": {
+        "id": "55",
+        "title": "Ultimát csokoládéhabos torta",
+        "difficulty": "medium",
+        "portion": "10-12 adag",
+        "time": "Elkészítés: 45 perc, sütés: 45-50 perc, plusz egy éjszakai hűtés",
+        "description": "Egy gazdag és nedves csokoládétorta receptje, amely tökéletes születésnapokra és ünnepekre - 10-12 vendégnek elegendő. Opcionálisan adhatsz hozzá egy kis Grand Marnier likőrt is a különleges ízért.",
+        "ingredients": [
+          "225g étcsokoládé (70% kakaótartalom)",
+          "5 nagy méretű szabadtojás, felezve",
+          "150g aranybarna cukor",
+          "125g sótlan vaj, megpuhítva",
+          "50g őrölt mandula",
+          "4 evőkanál Grand Marnier (opcionális)",
+          "Rizspapír margaréták (opcionális), díszítéshez",
+          "142 ml dupla tejszín",
+          "225g étcsokoládé (70% kakaótartalom)",
+          "4 nagy méretű szabadtojás, felezve",
+          "200g étcsokoládé (70% kakaótartalom)",
+          "50g vaj",
+          "2 evőkanál porcukor"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 180°C-ra (ventilátoros sütő esetén 160°C) gázsütő esetén 4-es fokozaton. Az 20 cm átmérőjű tortaformának béleld ki az alját sütőpapírral."
+          },
+          {
+            "Step 2": "A tortához tedd a csokoládét egy kisebb tálba, amit helyezz egy lábas fölé, amiben enyhén forrásban lévő víz található, majd lassan olvaszd meg. A tűzről levéve keverd, amíg sima lesz, majd tedd félre, hogy kicsit hűljön."
+          },
+          {
+            "Step 3": "Egy tálban keverd össze a tojássárgáját és a cukrot egy elektromos habverővel, amíg világos és sűrű nem lesz. Folyamatosan keverve adagold hozzá a megpuhított vajat, majd csökkentsd a habverő sebességét, és keverd hozzá a felolvasztott csokoládét, végül forgasd bele az őrölt mandulát."
+          },
+          {
+            "Step 4": "Egy tiszta tálban verj kemény habbá a tojásfehérjékből. Kezdd el lazítani a csokoládés masszát a habból kivett egy negyedrésszel, majd óvatosan forgasd hozzá a maradékot. Öntsd a masszát a formába. Süsd körülbelül 45-50 percig, amíg megnő és megdermed, de még mindig nedves marad a közepén, ha egy nyársat szúrsz bele. Hagyd kihűlni a formában. Amikor kihűlt, vedd ki, és vágd félbe vízszintesen. A felső réteget, a vágott oldala felül, tedd vissza a formába, és locsold meg a likőr felével, ha használod."
+          },
+          {
+            "Step 5": "Készítsd el a habot. Enyhén verje fel a tejszínt, majd tedd félre. Olvasszuk meg a csokoládét egy lábasban enyhén forrásban lévő víz felett. Keverd hozzá a tojássárgáját, majd forgasd bele a tejszínt. Verjük fel a tojásfehérjét egy tálban kemény habbá, majd óvatosan keverjük bele a csokoládés keverékbe. Kanalazzuk a tortaalapra a formában, szélesítve a szélekig."
+          },
+          {
+            "Step 6": "Helyezzük a másik tortaalapot, a vágott oldallal lefelé a habra, majd locsoljuk meg a maradék likőrrel, ha használod. Hagyd éjszakára hűlni."
+          },
+          {
+            "Step 7": "Vegyük ki a tortát a formából, és tegyük egy tányérra. A mázhoz olvasszuk meg a csokoládét, a vajat és a porcukrot egy tálban enyhén forrásban lévő víz felett. Kanalazzuk a torta tetejére, és hagyjuk, hogy kissé lecsöpögjön a széleken. Díszítsük rizspapír virágokkal, ha használod, és szeletelve tálaljuk."
+          }
+        ]
+      },
+      "id_56": {
+        "id": "56",
+        "title": "Levendula cupcakes",
+        "difficulty": "easy",
+        "portion": "12 cupcakes vagy 24 mini cupcakes készül",
+        "time": "Elkészítés: 20 perc, plusz a dekoráció",
+        "description": "Gyengéden ízesített levendula cukorral, citrommal vagy rozmaringgal, ezek a gyönyörű illatos mini cupcakes nem csak finomak, de csodásan is mutatnak.",
+        "ingredients": [
+          "100g vaj, megpuhítva",
+          "100g porcukor",
+          "100g önemelő liszt",
+          "2 tojás",
+          "100g porcukor",
+          "4 teáskanál víz vagy citromlé",
+          "Élelmiszerszínezék"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 180°C-ra (ventilátoros sütő esetén 160°C) gázsütő esetén 4-es fokozaton. Készíts elő egy mini süteményformát papír formákkal. Helyezd az összes hozzávalót egy keverőtálba, és keverd össze, amíg sima lesz. Oszd el a keveréket a papír formák között, majd süsd a sütő közepén 12-15 percig (vagy 20-25 percig, ha nagyobb cupcakes-t készítesz)."
+          },
+          {
+            "Step 2": "Vedd ki a süteményformából, és hagyd kihűlni egy rácsra. Keverd össze a porcukrot vízzel, és színezd néhány csepp kívánt élelmiszerszínezékkel. Kenj be vele a cupcakes tetejét, majd díszítsd, ahogyan szeretnéd."
+          }
+        ]
+      },
+      "id_57": {
+        "id": "57",
+        "title": "Csokoládé és bogyós sütemény tálban",
+        "difficulty": "easy",
+        "portion": "sok embernek",
+        "time": "Elkészítés: 20 perc, sütés: 45 perc, plusz hűtés",
+        "description": "Egy gyors és egyszerű csokoládés születésnapi torta recept, melyet választhatsz fagyasztott bogyókkal kedved szerint. Egy tökéletes választás egy gyermek születésnapi bulijához.",
+        "ingredients": [
+          "250g vaj, megpuhítva, plusz extra",
+          "250g önemelő liszt",
+          "1 tk sütőpor",
+          "225g italcsokoládé por",
+          "250g világos barna cukor",
+          "4 tojás, enyhén felvert",
+          "3 evőkanál tej",
+          "200g fagyasztott bogyók (málna, szeder és áfonya)",
+          "200g fehér csokoládé, darabokra tördelve",
+          "Friss málna",
+          "Kis rózsaszín pillecukrok",
+          "Gyertyák"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 180°C-ra (ventilátoros sütő esetén 160°C) gázsütő esetén 4-es fokozaton. Kend ki és béleld ki alulról egy 30 cm x 20 cm-es tortaformát. Szitáld át a lisztet, a sütőport és az italcsokoládé port egy nagy tálba."
+          },
+          {
+            "Step 2": "Egy másik tálban krémezd össze a vajat és a cukrot, amíg világos és habos nem lesz. Fokozatosan add hozzá a tojásokat, jól elkeverve minden hozzáadás után. Add hozzá a lisztkeveréket és a tejet, majd óvatosan keverd össze."
+          },
+          {
+            "Step 3": "Öntsd a tortakeveréket a formába, majd nyomkodd bele a fagyasztott bogyókat. Süsd 45 percig, és a sütés felénél takard le dupla réteg sütőpapírral, hogy ne süljön túl, amíg megnő és megsül. Ha könnyedén megnyomod a tortát, vissza kell ugrania. Hűtsd meg kissé a formában, majd fordítsd ki, és hűtsd tovább egy rácsra helyezve."
+          },
+          {
+            "Step 4": "A díszítéshez tedd a csokoládét egy tálba. Pihentesd a tálát egy lábas fölött, amiben enyhén forrásban lévő víz található, és hagyd megolvadni, néha keverve. Vigyázz, amikor eltávolítod a tálat a lábosról."
+          },
+          {
+            "Step 5": "Egy teáskanállal húzz csokoládévonalakat a torta tetejére. Rendezd el a bogyókat, pillecukrokat és gyertyákat a tetején, mielőtt felszolgálnád."
           }
         ]
       }
