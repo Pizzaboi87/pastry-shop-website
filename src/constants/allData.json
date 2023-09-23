@@ -5437,6 +5437,75 @@
             "Step 5": "Usando una cucharita, rocía el chocolate en líneas sobre el pastel. Coloca las bayas, los malvaviscos y las velas encima antes de servir."
           }
         ]
+      },
+      "id_58": {
+        "id": "58",
+        "title": "Pastel de coco y chocolate fácil",
+        "difficulty": "easy",
+        "portion": "Sirve 16",
+        "time": "Tarda 30 minutos en hacer, 40 minutos en hornear, más el enfriamiento",
+        "description": "Muestra a los niños cuánta diversión puede ser hornear: serán convertidos de por vida una vez que prueben esta fácil receta de pastel de coco y chocolate.",
+        "ingredients": [
+          "350g de mantequilla sin sal, más extra para engrasar",
+          "150g de coco rallado y endulzado (o coco desecado)",
+          "350g de harina con levadura incorporada",
+          "350g de azúcar caster dorado",
+          "6 huevos grandes, ligeramente batidos",
+          "200g de chocolate con leche, troceado"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 180°C/convección 160°C/gas 4. Engrasa un molde redondo profundo de 23 cm con mantequilla y forra la base con papel de hornear. Pon la mantequilla en un bol y métela en el microondas a máxima potencia (900W) durante 1 minuto, o en una cacerola hasta que esté casi derretida."
+          },
+          {
+            "Step 2": "Coloca 100g de coco en un tazón grande. Agrega la harina con levadura, el azúcar, los huevos y la mantequilla casi derretida. Mezcla con una cuchara de madera hasta que quede suave y combinado."
+          },
+          {
+            "Step 3": "Vierte la mezcla en el molde forrado y hornea durante 40-50 minutos, o hasta que esté elevado, dorado pálido y firme en la superficie. Un palillo insertado en el centro debería salir limpio. Desmolda y enfría sobre una rejilla."
+          },
+          {
+            "Step 4": "Para hacer una plantilla de corazón, dibuja un corazón en un trozo de papel cuadrado de 23 cm y recórtalo con tijeras. Coloca el corazón de papel encima del pastel y utiliza un cuchillo dentado para recortar alrededor de él."
+          },
+          {
+            "Step 5": "Pon el chocolate en un bol resistente al calor y mételo en el microondas a máxima potencia (900W) durante 1 minuto y medio, o hasta que esté justo derretido. (O coloca el bol sobre una cacerola con agua hirviendo, asegurándote de que el bol no toque el agua). Remueve el chocolate hasta que esté suave. Coloca la rejilla sobre una bandeja para hornear y extiende un poco de chocolate alrededor de los lados del pastel con una espátula. Vierte el resto del chocolate sobre la parte superior, permitiendo que caiga por los lados. Espolvorea el coco restante y deja que el chocolate se endurezca. Si lo deseas, guárdalo en un recipiente hermético en un lugar fresco durante hasta 3 días."
+          }
+        ]
+      },
+      "id_59": {
+        "id": "59",
+        "title": "Pastel de limón y coco",
+        "difficulty": "easy",
+        "portion": "Para 8 porciones",
+        "time": "Toma 25 minutos preparar, 25-30 minutos hornear, más enfriamiento",
+        "description": "Un buen lemon curd le da a esta fácil receta de pastel de esponja un toque especial. Hornéalo y disfrútalo como postre o con una taza de té por la tarde.",
+        "ingredients": [
+          "125g de mantequilla sin sal, más extra para engrasar",
+          "225g de azúcar caster dorado",
+          "Ralladura fina de 1 limón",
+          "100ml de crema de coco",
+          "4 huevos medianos, batidos",
+          "225g de harina con levadura, tamizada",
+          "1 cucharadita de levadura en polvo",
+          "150g de lemon curd de buena calidad",
+          "Envase de 142ml de crema doble",
+          "100ml de crema de coco",
+          "Azúcar glas, para espolvorear",
+          "Primaveras amarillas, opcional, para decorar"
+        ],
+        "method": [
+          {
+            "Step 1": "Precalienta el horno a 180°C/convección 160°C/gas 4. Engrasa y forra la base de 2 moldes redondos para pasteles de 18 cm con papel de hornear."
+          },
+          {
+            "Step 2": "Bate la mantequilla, el azúcar y la ralladura de limón juntos con una batidora eléctrica de mano. Añade gradualmente la crema de coco y los huevos, agregando 1 cucharada de harina para evitar que se corte. Tamiza el resto de la harina y la levadura en polvo. Mezcla hasta que esté justo combinado."
+          },
+          {
+            "Step 3": "Reparte la mezcla por igual entre los moldes, nivelando las superficies. Hornea durante 25-30 minutos, hasta que estén dorados. Enfría en los moldes durante 15 minutos antes de desmoldar sobre una rejilla. Enfría completamente."
+          },
+          {
+            "Step 4": "Extiende el lemon curd sobre el lado plano de 1 pastel, casi hasta el borde. Bate la crema hasta obtener picos suaves. Agrega la crema de coco y bate nuevamente hasta obtener picos suaves. Coloca encima del curd y coloca el otro pastel encima. Enfría para que el relleno se endurezca. Espolvorea con azúcar glas y decora con primaveras amarillas para servir."
+          }
+        ]
       }
     },
     "fra": {
@@ -7937,6 +8006,75 @@
             "Step 5": "À l'aide d'une cuillère à café, versez le chocolat en lignes sur le gâteau. Disposez les baies, les guimauves et les bougies par-dessus avant de servir."
           }
         ]
+      },
+      "id_58": {
+        "id": "58",
+        "title": "Gâteau facile au chocolat et à la noix de coco",
+        "difficulty": "easy",
+        "portion": "Pour 16 personnes",
+        "time": "Prend 30 minutes à préparer, 40 minutes à cuire, plus le refroidissement",
+        "description": "Montrez aux enfants à quel point la pâtisserie peut être amusante - ils seront conquis pour la vie une fois qu'ils auront goûté à cette recette facile de gâteau au chocolat et à la noix de coco.",
+        "ingredients": [
+          "350g de beurre non salé, plus un peu pour graisser",
+          "150g de noix de coco râpée sucrée (ou de noix de coco desséchée)",
+          "350g de farine avec levure incorporée",
+          "350g de sucre en poudre doré",
+          "6 gros œufs, légèrement battus",
+          "200g de chocolat au lait, coupé en morceaux"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 180°C/160°C en chaleur tournante/gaz 4. Graissez un moule à gâteau rond profond de 23 cm avec du beurre et tapissez le fond de papier sulfurisé. Mettez le beurre dans un bol et faites-le chauffer au micro-ondes à pleine puissance (900W) pendant 1 minute, ou dans une casserole jusqu'à ce qu'il soit presque fondu."
+          },
+          {
+            "Step 2": "Mettez 100g de noix de coco dans un grand bol. Ajoutez la farine avec levure, le sucre, les œufs et le beurre presque fondu. Mélangez avec une cuillère en bois jusqu'à ce que le mélange soit lisse et homogène."
+          },
+          {
+            "Step 3": "Versez le mélange dans le moule préparé et faites cuire au four pendant 40 à 50 minutes, ou jusqu'à ce qu'il soit gonflé, doré pâle et ferme à la surface. Un couteau inséré au centre devrait en ressortir propre. Démoulez et laissez refroidir sur une grille."
+          },
+          {
+            "Step 4": "Pour créer un modèle de cœur, dessinez un cœur sur un carré de papier de 23 cm de côté et découpez-le avec des ciseaux. Placez le cœur en papier sur le gâteau et utilisez un couteau à dents pour découper autour."
+          },
+          {
+            "Step 5": "Mettez le chocolat dans un bol résistant à la chaleur et faites-le chauffer au micro-ondes à pleine puissance (900W) pendant 1 minute et demi, ou jusqu'à ce qu'il soit juste fondu. (Ou posez le bol sur une casserole d'eau frémissante en veillant à ce que le bol ne touche pas l'eau.) Remuez le chocolat jusqu'à ce qu'il soit lisse. Placez la grille sur une plaque à pâtisserie et étalez un peu de chocolat sur les côtés du gâteau à l'aide d'une spatule. Versez le reste du chocolat sur le dessus, en le laissant couler sur les côtés. Saupoudrez le reste de noix de coco et laissez le chocolat durcir. Si vous le souhaitez, conservez-le dans un récipient hermétique dans un endroit frais pendant jusqu'à 3 jours."
+          }
+        ]
+      },
+      "id_59": {
+        "id": "59",
+        "title": "Gâteau au citron et à la noix de coco",
+        "difficulty": "easy",
+        "portion": "Pour 8 portions",
+        "time": "Prend 25 minutes à préparer, 25-30 minutes à cuire, plus le refroidissement",
+        "description": "Un bon lemon curd donne à cette recette facile de gâteau éponge une touche spéciale. Faites-le cuire et dégustez-le en dessert ou avec une tasse de thé l'après-midi.",
+        "ingredients": [
+          "125g de beurre non salé, plus un peu pour graisser",
+          "225g de sucre en poudre doré",
+          "Zeste finement râpé d'un citron",
+          "100ml de crème de noix de coco",
+          "4 œufs moyens, battus",
+          "225g de farine avec levure incorporée, tamisée",
+          "1 cuillère à café de levure chimique",
+          "150g de lemon curd de bonne qualité",
+          "1 carton de 142ml de crème double",
+          "100ml de crème de noix de coco",
+          "Sucre glace, pour saupoudrer",
+          "Primevères jaunes, en option, pour la décoration"
+        ],
+        "method": [
+          {
+            "Step 1": "Préchauffez le four à 180°C/160°C en chaleur tournante/gaz 4. Graissez et tapissez le fond de 2 moules à gâteau ronds de 18 cm de diamètre avec du papier sulfurisé."
+          },
+          {
+            "Step 2": "Crémez le beurre, le sucre et le zeste de citron ensemble avec un mixeur électrique à main. Incorporez progressivement la crème de coco et les œufs, en ajoutant 1 cuillère à soupe de farine pour éviter qu'elle ne caille. Tamisez le reste de la farine et la levure chimique. Incorporez jusqu'à ce que le mélange soit juste combiné."
+          },
+          {
+            "Step 3": "Répartissez également le mélange dans les moules, en nivelant les surfaces. Faites cuire au four pendant 25-30 minutes, jusqu'à ce qu'ils soient dorés. Laissez refroidir dans les moules pendant 15 minutes avant de les démouler sur une grille. Laissez refroidir complètement."
+          },
+          {
+            "Step 4": "Étalez le lemon curd sur le côté plat d'un gâteau, presque jusqu'au bord. Fouettez la crème jusqu'à obtenir des pics souples. Ajoutez la crème de noix de coco et fouettez à nouveau jusqu'à obtenir des pics souples. Étalez sur le lemon curd et superposez avec l'autre gâteau. Réfrigérez pour que la garniture durcisse. Saupoudrez de sucre glace et décorez éventuellement avec des primevères jaunes pour servir."
+          }
+        ]
       }
     },
     "hun": {
@@ -10432,6 +10570,75 @@
           },
           {
             "Step 5": "Egy teáskanállal húzz csokoládévonalakat a torta tetejére. Rendezd el a bogyókat, pillecukrokat és gyertyákat a tetején, mielőtt felszolgálnád."
+          }
+        ]
+      },
+      "id_58": {
+        "id": "58",
+        "title": "Egyszerű kókuszos és csokoládés sütemény",
+        "difficulty": "easy",
+        "portion": "16 adag",
+        "time": "Elkészítés: 30 perc, sütés: 40 perc, plusz hűtés",
+        "description": "Mutassátok meg a gyerekeknek, mennyire szórakoztató lehet a sütés-főzés - egyszer megkóstolták ezt az egyszerű kókuszos és csokoládés sütemény receptet, és örökké rajongói lesznek.",
+        "ingredients": [
+          "350g sótlan vaj, plusz extra a kikenéshez",
+          "150g édesített kókuszreszelék (vagy szárított kókusz)",
+          "350g önemelő liszt",
+          "350g aranybarna cukor",
+          "6 nagy tojás, enyhén felvert",
+          "200g tejcsokoládé, darabokra törve"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 180°C-ra (ventilátoros sütő esetén 160°C) gázsütő esetén 4-es fokozaton. Kenj ki egy mély 23 cm átmérőjű kerek tortaformát vajjal, és béleld ki az alját sütőpapírral. Tegyél a vajat egy tálba, majd melegítsd a mikrohullámú sütőben maximális teljesítményen (900W) 1 percig, vagy egy lábasban, amíg majdnem megolvad."
+          },
+          {
+            "Step 2": "Tegyél 100g kókuszt egy nagy tálba. Adj hozzá önemelő lisztet, cukrot, tojást és a majdnem megolvasztott vajat. Keverd össze fa kanállal, amíg sima és egyenletes lesz a tészta."
+          },
+          {
+            "Step 3": "Kanalazd a tésztát a bélelt formába, majd süsd 40-50 percig, vagy amíg megemelkedik, aranyszínű és felülete megszilárdul. Ha közepébe szúrsz egy hurkát, tiszta tojásnak kell kijönnie. Fordítsd ki, és hagyd hűlni egy rácsra."
+          },
+          {
+            "Step 4": "Szívmintát készíteni, rajzolj egy szívet egy 23 cm-es négyzet alakú papírdarabra, majd vágd ki ollóval. Helyezd a papírszívét a sütemény tetejére, és használj fogazott kést az alakzat körülvágásához."
+          },
+          {
+            "Step 5": "Tedd a csokoládét egy hőálló tálba, majd melegítsd mikrohullámú sütőben maximális teljesítményen (900W) 1 és fél percig, vagy amíg éppen csak megolvad. (Vagy tedd a tálat egy lábas vízgőz fölé, ügyelve arra, hogy a tál ne érjen a vízhez.) Keverd simára a csokoládét. Helyezd a rácsot egy sütőlemezre, majd vágj egy palettakéssel némi csokoládét a sütemény oldalára. Öntsd a maradék csokoládét a tetejére, hagyd, hogy lecsorgjon oldalra. Szórj rá a maradék kókuszreszeléket, majd hagyd megdermedni a csokoládét. Ha szeretnéd, hermetikusan zárt dobozban hűvös helyen eltarthatod akár 3 napig is."
+          }
+        ]
+      },
+      "id_59": {
+        "id": "59",
+        "title": "Citromos és kókuszos torta",
+        "difficulty": "easy",
+        "portion": "8 adag",
+        "time": "Elkészítés: 25 perc, sütés: 25-30 perc, plusz hűtés",
+        "description": "Egy jó minőségű citromkrém feldobja ezt az könnyű piskótatorta receptet. Süsd meg és élvezd desszertként vagy egy délutáni teával.",
+        "ingredients": [
+          "125g sótlan vaj, plusz extra a kikenéshez",
+          "225g arany caster cukor",
+          "1 citrom finomra reszelt héja",
+          "100ml kókuszkrém",
+          "4 közepes tojás, felvert",
+          "225g önemelő liszt, szitálva",
+          "1 tk sütőpor",
+          "150g jó minőségű citromkrém",
+          "142ml dobozos tejszín",
+          "100ml kókuszkrém",
+          "Púderszukor, szóráshoz",
+          "Sárga ibolyák, opcionálisan, díszítéshez"
+        ],
+        "method": [
+          {
+            "Step 1": "Melegítsd elő a sütőt 180°C-ra (ventilátoros sütő esetén 160°C) gázsütő esetén 4-es fokozaton. Kenj ki 2 db 18 cm átmérőjű kerek tortaformát és béleld ki őket sütőpapírral."
+          },
+          {
+            "Step 2": "Krémezd össze a vajat, a cukrot és a citromhéjat egy elektromos kézi habverővel. Fokozatosan keverd hozzá a kókuszkrémet és a felvert tojásokat, miközben 1 evőkanál lisztet is hozzáadsz, hogy ne csomósodjon meg. Szitáld hozzá a maradék lisztet és a sütőport. Keverd össze, amíg éppen csak összeáll."
+          },
+          {
+            "Step 3": "Oszd el az elkészült masszát egyenlően a tortaformák között, és simítsd el a tetejüket. Süsd 25-30 percig, amíg aranybarnák lesznek. Hagyd őket a formában 15 percig hűlni, majd fordítsd ki rácsra, és hagyd teljesen kihűlni."
+          },
+          {
+            "Step 4": "Kenj citromkrémet az egyik torta lap lapos oldalára, majdnem a szélekig. Verd fel a tejszínt lágy habbá. Adj hozzá kókuszkrémet, és ismét verd lágy habbá. Kend a citromkrém tetejére, majd helyezd rá a másik torta lapot. Hűtsd le, hogy a töltelék megszilárduljon. Szórd meg púderszukorral, és díszítsd sárga ibolyákkal, ha szeretnéd."
           }
         ]
       }
