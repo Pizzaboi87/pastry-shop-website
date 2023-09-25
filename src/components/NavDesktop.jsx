@@ -1,6 +1,6 @@
 import NavUser from "./NavUser";
 import { UserContext } from "../context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { logo } from "../assets";
 import {
@@ -14,33 +14,48 @@ import {
 const NavDesktop = () => {
   const { currentUser, text, setIsReg } = useContext(UserContext);
   const [openMyAccount, setOpenMyAccount] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigate = (link) => {
+    setOpenMyAccount(false);
+    navigate(link);
+  };
 
   return (
     <Theme_Nav $bgcolor="secondary" className={navDesktopStyle.wrapper}>
       <ul className={navDesktopStyle.list}>
-        {text.navLinksLeft.map((link) => (
-          <Theme_Li key={link.title} $textcolor="text" $hovertextcolor="logo">
-            <Link to={link.id} onClick={() => setOpenMyAccount(false)}>
+        <ul className={navDesktopStyle.listWrapper}>
+          {text.navLinksLeft.map((link) => (
+            <Theme_Li
+              key={link.title}
+              $textcolor="text"
+              $hovertextcolor="logo"
+              className={navDesktopStyle.cursor}
+              onClick={() => handleNavigate(link.id)}
+            >
               {link.title}
-            </Link>
-          </Theme_Li>
-        ))}
+            </Theme_Li>
+          ))}
+        </ul>
 
-        <li>
+        <li className={navDesktopStyle.logoWrapper}>
           <img className={navDesktopStyle.logo} src={logo} alt="logo" />
         </li>
 
-        {text.navLinksRight.map((link) => (
-          <Theme_Li key={link.title} $textcolor="text" $hovertextcolor="logo">
-            <Link to={link.id} onClick={() => setOpenMyAccount(false)}>
-              {link.title}
-            </Link>
-          </Theme_Li>
-        ))}
-
         {!currentUser ? (
-          <li>
-            <span>
+          <ul className={navDesktopStyle.listWrapper}>
+            {text.navLinksRight.map((link) => (
+              <Theme_Li
+                key={link.title}
+                $textcolor="text"
+                $hovertextcolor="logo"
+                className={navDesktopStyle.cursor}
+                onClick={() => handleNavigate(link.id)}
+              >
+                {link.title}
+              </Theme_Li>
+            ))}
+            <li>
               <Theme_Link
                 to="auth"
                 $textcolor="text"
@@ -52,8 +67,9 @@ const NavDesktop = () => {
                 }}
               >
                 {text.navbar.reg}
-              </Theme_Link>{" "}
-              /{" "}
+              </Theme_Link>
+            </li>
+            <li>
               <Link to="auth">
                 <Theme_Button
                   $bgcolor="logo"
@@ -70,27 +86,43 @@ const NavDesktop = () => {
                   {text.navbar.login}
                 </Theme_Button>
               </Link>
-            </span>
-          </li>
+            </li>
+          </ul>
         ) : (
           <>
-            <Theme_Li $textcolor="text" $hovertextcolor="logo">
-              <Link to="/shop" onClick={() => setOpenMyAccount(false)}>
-                {text.navbar.shop}
-              </Link>
-            </Theme_Li>
-            <li>
-              <Theme_Button
-                $bgcolor="transparent"
+            <ul className={navDesktopStyle.listWrapper}>
+              {text.navLinksRight.map((link) => (
+                <Theme_Li
+                  key={link.title}
+                  $textcolor="text"
+                  $hovertextcolor="logo"
+                  className={navDesktopStyle.cursor}
+                  onClick={() => handleNavigate(link.id)}
+                >
+                  {link.title}
+                </Theme_Li>
+              ))}
+              <Theme_Li
                 $textcolor="text"
-                $bordercolor="transparent"
-                $hoverbgcolor="transparent"
                 $hovertextcolor="logo"
-                onClick={() => setOpenMyAccount(!openMyAccount)}
+                className={navDesktopStyle.cursor}
+                onClick={() => handleNavigate("/shop")}
               >
-                {text.navbar.profile}
-              </Theme_Button>
-            </li>
+                {text.navbar.shop}
+              </Theme_Li>
+              <li>
+                <Theme_Button
+                  $bgcolor="transparent"
+                  $textcolor="text"
+                  $bordercolor="transparent"
+                  $hoverbgcolor="transparent"
+                  $hovertextcolor="logo"
+                  onClick={() => setOpenMyAccount(!openMyAccount)}
+                >
+                  {text.navbar.profile}
+                </Theme_Button>
+              </li>
+            </ul>
           </>
         )}
       </ul>

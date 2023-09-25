@@ -395,9 +395,13 @@ export const myCartStyle = {
 export const navDesktopStyle = {
   wrapper:
     "lg:visible invisible 2xl:w-[85%] w-full h-[7rem] fixed pt-4 top-7 rounded-2xl flex items-center justify-around text-[1rem] 2xl:text-[1.3rem] font-[400] shadow-md z-10",
-  list: "flex justify-center items-center 2xl:gap-12 gap-8",
+  list: "flex justify-evenly items-center w-full",
+  listWrapper: "flex justify-evenly items-center w-[45%]",
   logo: "rounded-full h-[6rem] contrast-100",
-  button: "rounded-xl shadow-sm border-none text-center font-[400] px-8 py-1",
+  logoWrapper: "flex justify-center items-center w-[10%]",
+  button:
+    "rounded-xl shadow-sm border-none text-center font-[400] px-8 py-1 cursor-pointer",
+  cursor: "cursor-pointer",
 };
 
 export const navMobileStyle = {
