@@ -507,20 +507,24 @@ export const previousOrdersStyle = {
 };
 
 export const recipeCardStyle = {
-  wrapper:
-    "2xl:w-[80%] w-full h-auto text-justify md:p-12 p-4 rounded-xl shadow-xl",
+  wrapper: "2xl:w-[80%] w-full h-auto md:p-12 p-4 rounded-xl shadow-xl",
   notOwn: "mb-20",
   likeIcon:
     "text-[3rem] absolute xl:right-8 right-2 xl:top-10 top-2 cursor-pointer",
-  title: "mb-4 xl:text-[1.8rem] text-[1.4rem] text-left font-[500] text-text",
+  title:
+    "mb-4 xl:text-[1.8rem] text-[1.4rem] text-left font-[500] text-text xl:mt-0 mt-8",
   cardTitle: "text-[1.3rem] text-text font-[400]",
-  list: "mb-8 font-[300] text-text text-[1rem]",
-  listItem: "flex flex-row gap-2 items-center md:mb-0 my-1",
+  list: "mb-8 font-[300] text-text text-[1rem] xl:w-[50%]",
+  listItem: "flex flex-row gap-2 md:mb-0 my-1",
   span: "w-[2rem] h-[2rem]",
   ingredientsIcon: "text-[2rem] cursor-pointer self-center",
-  instructions: "text-[1.1rem] font-[400] text-text",
+  instructions: "text-[1.1rem] text-justify font-[400] text-text pb-4",
   socialWrapper: "mt-8 flex gap-4",
   email: "cursor-pointer",
+  ingredientsWrapper:
+    "flex xl:flex-row flex-col-reverse xl:items-center justify-between",
+  imageWrapper: "xl:w-[40%] mb-8",
+  image: "rounded-xl shadow-xl",
 };
 
 export const recipesStyle = {

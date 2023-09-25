@@ -1,7 +1,7 @@
 import { UserContext } from "../context";
 import { useContext, useEffect, useState } from "react";
 import { slideIn } from "../utils/motion";
-import { getUserData, updateUserData } from "../utils/firebase";
+import { getStoredImage, getUserData, updateUserData } from "../utils/firebase";
 import { Theme_Icon, Theme_Motion_Div, recipeCardStyle } from "../styles";
 import {
   FacebookShareButton,
@@ -15,11 +15,20 @@ const RecipeCard = ({ recipe, isOwnPage }) => {
   const { text, userData, setUserData } = useContext(UserContext);
   const motionPropsR = slideIn("right");
   const [liked, setLiked] = useState(false);
+  const [recipeImage, setRecipeImage] = useState(null);
 
-  const ingredients = recipe.ingredients.split("|");
-  const quoteText = `\u{1F63B} ${recipe.title}\n${ingredients.map(
+  useEffect(() => {
+    const getImage = async () => {
+      const image = await getStoredImage(`cakes/original/${recipe.id}.webp`);
+      setRecipeImage(image);
+    };
+
+    getImage();
+  }, [recipe]);
+
+  const quoteText = `\u{1F63B} ${recipe.title}\n${recipe.ingredients.map(
     (ingredient) => "\n" + ingredient
-  )}\n\n${recipe.instructions}\n\n`;
+  )}\n\n${recipe.method.map((step) => "\n" + step)}\n\n`;
 
   const fetchActualData = async () => {
     const userDatafromDB = await getUserData(userData.uid);
@@ -76,34 +85,47 @@ const RecipeCard = ({ recipe, isOwnPage }) => {
         onClick={handleLike}
       />
       <h1 className={recipeCardStyle.title}>{recipe.title}</h1>
-      <h2 className={recipeCardStyle.cardTitle}>{text.recipeCardTitle}</h2>
-      <ul className={recipeCardStyle.list}>
-        {ingredients.map((ingredient, index) => {
-          const [checked, setChecked] = useState(false);
+      <div className={recipeCardStyle.ingredientsWrapper}>
+        <ul className={recipeCardStyle.list}>
+          <h2 className={recipeCardStyle.cardTitle}>{text.recipeCardTitle}</h2>
+          {recipe.ingredients.map((ingredient, index) => {
+            const [checked, setChecked] = useState(false);
 
-          const toggleChecked = () => {
-            setChecked(!checked);
-          };
+            const toggleChecked = () => {
+              setChecked(!checked);
+            };
 
-          return (
-            <li
-              key={`${ingredient}-${index}`}
-              className={recipeCardStyle.listItem}
-            >
-              <span className={recipeCardStyle.span}>
-                <Theme_Icon
-                  icon={checked ? "mdi:muffin" : "ri:checkbox-blank-line"}
-                  $iconcolor="logo"
-                  className={recipeCardStyle.ingredientsIcon}
-                  onClick={toggleChecked}
-                />
-              </span>
-              <p>{ingredient}</p>
-            </li>
-          );
-        })}
-      </ul>
-      <p className={recipeCardStyle.instructions}>{recipe.instructions}</p>
+            return (
+              <li
+                key={`${ingredient}-${index}`}
+                className={recipeCardStyle.listItem}
+              >
+                <span className={recipeCardStyle.span}>
+                  <Theme_Icon
+                    icon={checked ? "mdi:muffin" : "ri:checkbox-blank-line"}
+                    $iconcolor="logo"
+                    className={recipeCardStyle.ingredientsIcon}
+                    onClick={toggleChecked}
+                  />
+                </span>
+                <p>{ingredient}</p>
+              </li>
+            );
+          })}
+        </ul>
+        <div className={recipeCardStyle.imageWrapper}>
+          <img
+            src={recipeImage}
+            alt={recipe.title}
+            className={recipeCardStyle.image}
+          />
+        </div>
+      </div>
+      {recipe.method.map((step, index) => (
+        <p key={index} className={recipeCardStyle.instructions}>
+          {index + 1} - {step}
+        </p>
+      ))}
       <div className={recipeCardStyle.socialWrapper}>
         <FacebookShareButton
           url={"https://ciel-sucre.vercel.app"}

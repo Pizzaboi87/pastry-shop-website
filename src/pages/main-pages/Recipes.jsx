@@ -16,7 +16,7 @@ import {
   subTitleStyle,
   titleStyle,
 } from "../../styles";
-import allRecipes from "../../constants/recipes/recipes.json";
+import { getAllRecipes } from "../../utils/firebase";
 
 const Recipes = () => {
   const { text, userLanguage } = useContext(UserContext);
@@ -29,8 +29,16 @@ const Recipes = () => {
   //const [fetching, setFetching] = useState(false);
 
   useEffect(() => {
-    console.log(allRecipes);
-  }, [allRecipes]);
+    const getRecipes = async () => {
+      const allRecipes = await getAllRecipes(userLanguage);
+      const recipesArray = Object.values(allRecipes);
+      setRecipes(recipesArray);
+    };
+
+    getRecipes();
+  }, [userLanguage]);
+
+  console.log(recipes);
 
   /*const getRecipes = async () => {
     setNoMore(false);
