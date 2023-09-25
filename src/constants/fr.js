@@ -490,6 +490,10 @@ const fr_text = {
   loading: "chargement...",
   adminSignOut: "Déconnexion Admin",
   deletedUser: "L'utilisateur n'est plus inscrit sur le site.",
+  pagination: {
+    previous: "<précédente",
+    next: "suivante>",
+  },
   blogComment: {
     title: "Commentaires",
     login: "Veuillez vous connecter pour écrire un commentaire!",

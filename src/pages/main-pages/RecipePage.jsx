@@ -3,7 +3,7 @@ import { Loading } from "../../components";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { slideIn } from "../../utils/motion";
-import { Theme_Icon, Theme_Motion_Div, recipeCardStyle } from "../../styles";
+import { Theme_Icon, Theme_Motion_Div, recipePageStyle } from "../../styles";
 import {
   getAllRecipes,
   getStoredImage,
@@ -68,11 +68,11 @@ const RecipePage = () => {
   };
 
   useEffect(() => {
-    if (userData && userData.likedRecipes) {
+    if (userData && userData.likedRecipes && recipe) {
       const { likedRecipes } = userData;
       setLiked(likedRecipes.includes(recipe.title));
     }
-  }, [userData]);
+  }, [userData, recipe]);
 
   const handleLike = async () => {
     const newLiked = !liked;
@@ -109,18 +109,18 @@ const RecipePage = () => {
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
       key={recipe.title}
-      className={recipeCardStyle.wrapper}
+      className={recipePageStyle.wrapper}
     >
       <Theme_Icon
         icon={liked ? "mdi:heart" : "mdi:heart-outline"}
         $iconcolor="logo"
-        className={recipeCardStyle.likeIcon}
+        className={recipePageStyle.likeIcon}
         onClick={handleLike}
       />
-      <h1 className={recipeCardStyle.title}>{recipe.title}</h1>
-      <div className={recipeCardStyle.ingredientsWrapper}>
-        <ul className={recipeCardStyle.list}>
-          <h2 className={recipeCardStyle.cardTitle}>{text.recipeCardTitle}</h2>
+      <h1 className={recipePageStyle.title}>{recipe.title}</h1>
+      <div className={recipePageStyle.ingredientsWrapper}>
+        <ul className={recipePageStyle.list}>
+          <h2 className={recipePageStyle.cardTitle}>{text.recipeCardTitle}</h2>
           {recipe.ingredients.map((ingredient, index) => {
             const isChecked = checkedItems[index] || false;
 
@@ -134,13 +134,13 @@ const RecipePage = () => {
             return (
               <li
                 key={`${ingredient}-${index}`}
-                className={recipeCardStyle.listItem}
+                className={recipePageStyle.listItem}
               >
-                <span className={recipeCardStyle.span}>
+                <span className={recipePageStyle.span}>
                   <Theme_Icon
                     icon={isChecked ? "mdi:muffin" : "ri:checkbox-blank-line"}
                     $iconcolor="logo"
-                    className={recipeCardStyle.ingredientsIcon}
+                    className={recipePageStyle.ingredientsIcon}
                     onClick={toggleChecked}
                   />
                 </span>
@@ -149,20 +149,20 @@ const RecipePage = () => {
             );
           })}
         </ul>
-        <div className={recipeCardStyle.imageWrapper}>
+        <div className={recipePageStyle.imageWrapper}>
           <img
             src={recipeImage}
             alt={recipe.title}
-            className={recipeCardStyle.image}
+            className={recipePageStyle.image}
           />
         </div>
       </div>
       {recipe.method.map((step, index) => (
-        <p key={index} className={recipeCardStyle.instructions}>
+        <p key={index} className={recipePageStyle.instructions}>
           {index + 1} - {step}
         </p>
       ))}
-      <div className={recipeCardStyle.socialWrapper}>
+      <div className={recipePageStyle.socialWrapper}>
         <FacebookShareButton
           url={"https://ciel-sucre.vercel.app"}
           quote={quoteText}
@@ -180,7 +180,7 @@ const RecipePage = () => {
         <EmailIcon
           size={36}
           onClick={sendMail}
-          className={recipeCardStyle.email}
+          className={recipePageStyle.email}
         />
       </div>
     </Theme_Motion_Div>

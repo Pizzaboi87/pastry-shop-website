@@ -483,6 +483,10 @@ const es_text = {
   loading: "cargando...",
   adminSignOut: "Cerrar Sesión de Administrador",
   deletedUser: "El usuario ya no está registrado en el sitio.",
+  pagination: {
+    previous: "<previa",
+    next: "próxima>",
+  },
   blogComment: {
     title: "Comentarios",
     login: "¡Por favor, inicia sesión para escribir un comentario!",

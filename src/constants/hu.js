@@ -481,6 +481,10 @@ const hu_text = {
   loading: "betöltés...",
   adminSignOut: "Admin Kijelentkezés",
   deletedUser: "A felhasználó már nincs regisztrálva az oldalon.",
+  pagination: {
+    previous: "<előző",
+    next: "következő>",
+  },
   blogComment: {
     title: "Hozzászólások",
     login: "Kérjük, jelentkezz be a hozzászólás írásához!",

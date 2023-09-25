@@ -482,6 +482,10 @@ const en_text = {
   loading: "loading...",
   adminSignOut: "Admin Sign Out",
   deletedUser: "The user is no longer registered on the site.",
+  pagination: {
+    previous: "<previous",
+    next: "next>",
+  },
   blogComment: {
     title: "Comments",
     login: "Please log in to write a comment!",

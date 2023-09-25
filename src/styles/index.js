@@ -511,6 +511,21 @@ export const previousOrdersStyle = {
 };
 
 export const recipeCardStyle = {
+  wrapper:
+    "w-full sm:w-[20rem] xs:h-[35rem] md:h-[31rem] mx-auto mb-4 text-justify p-4 rounded-xl shadow-xl flex flex-col items-center justify-between",
+  titleWrapper: "flex flex-col justify-center items-center w-full",
+  title:
+    "h-[4rem] text-text text-[1.2rem] font-[500] text-center line-clamp-2 overflow-hidden",
+  imageWrapper: "overflow-hidden w-full h-[20rem] mb-8",
+  image:
+    "w-full h-[20rem] object-cover mb-4 hover:scale-150 hover:translate-y-8 ease-in-out transition-all duration-500 cursor-pointer",
+  detailsWrapper: "h-full flex flex-col justify-between",
+  details: "text-text text-justify mb-4 text-[1.15rem] md:text-[1rem]",
+  button:
+    "flex mx-auto justify-center rounded-xl shadow-sm border-none text-center px-3 py-2 text-[1rem] font-[400] w-[50%] cursor-pointer",
+};
+
+export const recipePageStyle = {
   wrapper: "2xl:w-[80%] w-full h-auto md:p-12 p-4 rounded-xl shadow-xl border",
   notOwn: "mb-20",
   likeIcon:
@@ -535,6 +550,10 @@ export const recipesStyle = {
   loadingContainer: "mt-[-5rem]",
   text: "text-text py-3 text-[1.3rem]",
   button: "px-8 rounded-xl shadow-xl border-none py-3 text-[1.3rem] font-bold",
+  cardContainer: "flex w-full h-full flex-wrap",
+  pagination: "flex justify-center w-full gap-4 mt-4",
+  activePage:
+    "text-logopink font-bold border border-black px-2 bg-white rounded-md",
 };
 
 export const reviewCardStyle = {
