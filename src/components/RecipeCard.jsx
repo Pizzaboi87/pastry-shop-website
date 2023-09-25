@@ -10,12 +10,14 @@ import {
   TwitterIcon,
   EmailIcon,
 } from "react-share";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const RecipeCard = ({ recipe, isOwnPage }) => {
   const { text, userData, setUserData } = useContext(UserContext);
   const motionPropsR = slideIn("right");
   const [liked, setLiked] = useState(false);
   const [recipeImage, setRecipeImage] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getImage = async () => {
@@ -70,6 +72,7 @@ const RecipeCard = ({ recipe, isOwnPage }) => {
   return (
     <Theme_Motion_Div
       $bgcolor="primary"
+      $bordercolor="transparent"
       initial={motionPropsR.initial}
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
@@ -118,6 +121,7 @@ const RecipeCard = ({ recipe, isOwnPage }) => {
             src={recipeImage}
             alt={recipe.title}
             className={recipeCardStyle.image}
+            onClick={() => navigate(recipe.id)}
           />
         </div>
       </div>

@@ -8,6 +8,7 @@ import Courses from "./Courses";
 import Home from "./Home";
 import NotFound from "./NotFound";
 import OurStory from "./OurStory";
+import RecipePage from "./RecipePage";
 import Recipes from "./Recipes";
 import Reviews from "./Reviews";
 import Shop from "./Shop";
@@ -23,6 +24,7 @@ export {
   Home,
   NotFound,
   OurStory,
+  RecipePage,
   Recipes,
   Reviews,
   Shop,

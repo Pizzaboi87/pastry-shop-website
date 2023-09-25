@@ -7,6 +7,7 @@ const TransitionParent = ({ children, isHome, isFlex, isRew }) => {
   return (
     <Theme_Motion_Div
       $bgcolor={isHome ? "transparent" : "glasslight"}
+      $bordercolor="transparent"
       className={`
         ${isHome ? tParentStyle.isHome : tParentStyle.notIsHome}
           ${isFlex ? tParentStyle.isFlex : tParentStyle.notIsFlex}

@@ -27,6 +27,7 @@ const CourseCard = ({ course, index }) => {
   return (
     <Theme_Motion_Div
       $bgcolor="primary"
+      $bordercolor="transparent"
       initial={motionPropsR.initial}
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}

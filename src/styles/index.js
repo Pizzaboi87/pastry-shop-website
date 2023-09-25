@@ -511,7 +511,7 @@ export const previousOrdersStyle = {
 };
 
 export const recipeCardStyle = {
-  wrapper: "2xl:w-[80%] w-full h-auto md:p-12 p-4 rounded-xl shadow-xl",
+  wrapper: "2xl:w-[80%] w-full h-auto md:p-12 p-4 rounded-xl shadow-xl border",
   notOwn: "mb-20",
   likeIcon:
     "text-[3rem] absolute xl:right-8 right-2 xl:top-10 top-2 cursor-pointer",

@@ -11,6 +11,7 @@ import {
   Home,
   NotFound,
   OurStory,
+  RecipePage,
   Recipes,
   Reviews,
   Shop,
@@ -78,6 +79,7 @@ const MainContent = () => {
 
           <Route path="/home" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
+          <Route path="/recipes/:recipeID" element={<RecipePage />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/ourstory" element={<OurStory />} />

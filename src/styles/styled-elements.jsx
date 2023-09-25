@@ -133,6 +133,7 @@ export const Theme_Div = styled.div`
 
 export const Theme_Motion_Div = styled(motion.div)`
   background-color: ${getBackgroundColor};
+  border-color: ${getBorderColor};
 `;
 
 export const Theme_Motion_Span = styled(motion.span)`
