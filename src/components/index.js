@@ -29,7 +29,6 @@ import Paragraphs from "./Paragraphs";
 import Postcard from "./Postcard";
 import RecipeCard from "./RecipeCard";
 import ReviewCard from "./ReviewCard";
-import SearchForm from "./SearchForm";
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 import TeamCard from "./TeamCard";
@@ -74,7 +73,6 @@ export {
   Postcard,
   RecipeCard,
   ReviewCard,
-  SearchForm,
   SignInForm,
   SignUpForm,
   TeamCard,

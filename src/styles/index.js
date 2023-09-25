@@ -320,11 +320,6 @@ export const coursePageStyle = {
   imageContainer: "w-full flex flex-col gap-4 self-center mb-8 md:mb-0",
 };
 
-export const favouritePageStyle = {
-  container: "flex flex-col md:flex-row md:gap-x-6",
-  icon: "text-[4rem] cursor-pointer hover:-translate-y-1 transition-all duration-300 self-start",
-};
-
 export const favouritesStyle = {
   container:
     "3xl:w-[80%] xl:w-[90%] w-full glass shadow-xl rounded-xl grid grid-cols-6 gap-x-12 md:p-12 p-4",
@@ -526,7 +521,7 @@ export const recipeCardStyle = {
 };
 
 export const recipePageStyle = {
-  wrapper: "2xl:w-[80%] w-full h-auto md:p-12 p-4 rounded-xl shadow-xl border",
+  wrapper: "w-full h-auto md:p-12 p-4 rounded-xl shadow-xl border",
   notOwn: "mb-20",
   likeIcon: "text-[4rem] cursor-pointer",
   iconContainer: "w-full flex items-center justify-between",
@@ -541,7 +536,7 @@ export const recipePageStyle = {
   socialWrapper: "mt-8 flex gap-4",
   email: "cursor-pointer",
   ingredientsWrapper:
-    "flex xl:flex-row flex-col-reverse xl:items-center justify-between",
+    "flex xl:flex-row flex-col-reverse items-center justify-between",
   imageWrapper: "xl:w-[40%] mb-8",
   image: "rounded-xl shadow-xl",
   icon: "text-[4rem] cursor-pointer hover:-translate-y-1 transition-all duration-300 self-start",
@@ -570,13 +565,6 @@ export const reviewCardStyle = {
     "italic text-text text-[1rem] font-[300] absolute top-[65%] text-justify px-4",
   span: "absolute top-[88%] flex w-full left-[33%]",
   star: "text-yellowdark text-[1.4rem]",
-};
-
-export const searchFormStyle = {
-  form: "flex md:flex-row flex-col justify-center items-center mb-16 gap-4",
-  input:
-    "px-4 py-2 rounded-xl shadow-md outline-dotted outline-2 outline-offset-2 outline-text",
-  button: "px-4 py-3 cursor-pointer font-bold rounded-xl shadow-md",
 };
 
 export const settingsStyle = {

@@ -31,7 +31,6 @@ import {
 } from "../pages/admin-pages";
 import {
   AllFavourites,
-  FavouritePage,
   Favourites,
   MyAccount,
   MyCart,
@@ -69,7 +68,7 @@ const MainContent = () => {
 
           <Route path="myfavourites" element={<Favourites />}>
             <Route path="" element={<AllFavourites />} />
-            <Route path=":favourite" element={<FavouritePage />} />
+            <Route path=":recipeID" element={<RecipePage />} />
           </Route>
 
           <Route path="/myaccount" element={<MyAccount />} />

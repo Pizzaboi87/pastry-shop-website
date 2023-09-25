@@ -510,13 +510,6 @@ const hu_text = {
     signUp: "Nincs még fiókod?",
     signUpBtn: "Regisztráció",
   },
-  searchForm: {
-    placeholder: "Keress egy receptet",
-    button: "Keresés",
-    swal: {
-      error: "Kérjük, adj meg egy érvényes keresőszót!",
-    },
-  },
   navbar: {
     reg: "Regisztráció",
     login: "Belépés",

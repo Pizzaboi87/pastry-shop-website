@@ -512,13 +512,6 @@ const es_text = {
     signUp: "¿No tienes una cuenta?",
     signUpBtn: "Registrarse",
   },
-  searchForm: {
-    placeholder: "Buscar una receta",
-    button: "Buscar",
-    swal: {
-      error: "Por favor, ingresa un término de búsqueda válido.",
-    },
-  },
   navbar: {
     reg: "Registro",
     login: "Acceder",

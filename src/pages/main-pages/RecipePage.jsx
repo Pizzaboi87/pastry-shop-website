@@ -1,7 +1,7 @@
 import { UserContext } from "../../context";
 import { Loading } from "../../components";
 import { useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { slideIn } from "../../utils/motion";
 import { Theme_Icon, Theme_Motion_Div, recipePageStyle } from "../../styles";
 import {
@@ -21,6 +21,7 @@ import {
 const RecipePage = () => {
   const { text, userData, setUserData, userLanguage } = useContext(UserContext);
   const { recipeID } = useParams();
+  const { pathname } = useLocation();
   const navigate = useNavigate();
 
   const [recipeImage, setRecipeImage] = useState(null);
@@ -71,7 +72,7 @@ const RecipePage = () => {
   useEffect(() => {
     if (userData && userData.likedRecipes && recipe) {
       const { likedRecipes } = userData;
-      setLiked(likedRecipes.includes(recipe.title));
+      setLiked(likedRecipes.includes(recipe.id));
     }
   }, [userData, recipe]);
 
@@ -80,7 +81,7 @@ const RecipePage = () => {
     setLiked(newLiked);
 
     const updatedLikedRecipes = newLiked
-      ? [...userData.likedRecipes, recipe.title]
+      ? [...userData.likedRecipes, recipe.id]
       : userData.likedRecipes.filter(
           (likedRecipe) => likedRecipe !== recipe.title
         );
@@ -110,7 +111,9 @@ const RecipePage = () => {
       whileInView={motionPropsR.whileInView}
       viewport={motionPropsR.viewport}
       key={recipe.title}
-      className={recipePageStyle.wrapper}
+      className={`${recipePageStyle.wrapper} ${
+        pathname.includes("recipes") ? "2xl:w-[80%]" : ""
+      }`}
     >
       <div className={recipePageStyle.iconContainer}>
         <Theme_Icon

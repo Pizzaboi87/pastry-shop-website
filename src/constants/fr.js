@@ -519,13 +519,6 @@ const fr_text = {
     signUp: "Vous n'avez pas de compte?",
     signUpBtn: "S'Inscrire",
   },
-  searchForm: {
-    placeholder: "Rechercher une recette",
-    button: "Rechercher",
-    swal: {
-      error: "Veuillez fournir un terme de recherche valide.",
-    },
-  },
   navbar: {
     reg: "S'Inscrire",
     login: "Se Connecter",

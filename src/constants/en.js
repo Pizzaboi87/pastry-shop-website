@@ -510,13 +510,6 @@ const en_text = {
     signUp: "Don't have an account?",
     signUpBtn: "Sign Up",
   },
-  searchForm: {
-    placeholder: "Search a recipe",
-    button: "Search",
-    swal: {
-      error: "Please provide a valid search term.",
-    },
-  },
   navbar: {
     reg: "Register",
     login: "Login",
