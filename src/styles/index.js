@@ -528,8 +528,8 @@ export const recipeCardStyle = {
 export const recipePageStyle = {
   wrapper: "2xl:w-[80%] w-full h-auto md:p-12 p-4 rounded-xl shadow-xl border",
   notOwn: "mb-20",
-  likeIcon:
-    "text-[3rem] absolute xl:right-8 right-2 xl:top-10 top-2 cursor-pointer",
+  likeIcon: "text-[4rem] cursor-pointer",
+  iconContainer: "w-full flex items-center justify-between",
   title:
     "mb-4 xl:text-[1.8rem] text-[1.4rem] text-left font-[500] text-text xl:mt-0 mt-8",
   cardTitle: "text-[1.3rem] text-text font-[400]",
@@ -544,6 +544,7 @@ export const recipePageStyle = {
     "flex xl:flex-row flex-col-reverse xl:items-center justify-between",
   imageWrapper: "xl:w-[40%] mb-8",
   image: "rounded-xl shadow-xl",
+  icon: "text-[4rem] cursor-pointer hover:-translate-y-1 transition-all duration-300 self-start",
 };
 
 export const recipesStyle = {

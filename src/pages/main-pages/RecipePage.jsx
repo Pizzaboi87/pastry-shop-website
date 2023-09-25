@@ -1,7 +1,7 @@
 import { UserContext } from "../../context";
 import { Loading } from "../../components";
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { slideIn } from "../../utils/motion";
 import { Theme_Icon, Theme_Motion_Div, recipePageStyle } from "../../styles";
 import {
@@ -21,6 +21,7 @@ import {
 const RecipePage = () => {
   const { text, userData, setUserData, userLanguage } = useContext(UserContext);
   const { recipeID } = useParams();
+  const navigate = useNavigate();
 
   const [recipeImage, setRecipeImage] = useState(null);
   const [checkedItems, setCheckedItems] = useState({});
@@ -111,12 +112,20 @@ const RecipePage = () => {
       key={recipe.title}
       className={recipePageStyle.wrapper}
     >
-      <Theme_Icon
-        icon={liked ? "mdi:heart" : "mdi:heart-outline"}
-        $iconcolor="logo"
-        className={recipePageStyle.likeIcon}
-        onClick={handleLike}
-      />
+      <div className={recipePageStyle.iconContainer}>
+        <Theme_Icon
+          $iconcolor="logo"
+          icon="line-md:arrow-left-circle"
+          className={recipePageStyle.icon}
+          onClick={() => navigate(-1)}
+        />
+        <Theme_Icon
+          icon={liked ? "mdi:heart" : "mdi:heart-outline"}
+          $iconcolor="logo"
+          className={recipePageStyle.likeIcon}
+          onClick={handleLike}
+        />
+      </div>
       <h1 className={recipePageStyle.title}>{recipe.title}</h1>
       <div className={recipePageStyle.ingredientsWrapper}>
         <ul className={recipePageStyle.list}>
