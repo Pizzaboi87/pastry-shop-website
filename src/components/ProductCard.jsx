@@ -1,8 +1,10 @@
 import { Icon } from "@iconify/react";
 import { getStoredImage } from "../utils/firebase";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../context";
 
-const ProductCard = ({ category, product, userLanguage }) => {
+const ProductCard = ({ category, product }) => {
+  const { userLanguage, currency } = useContext(UserContext);
   const [productImage, setProductImage] = useState(null);
 
   useEffect(() => {
@@ -15,6 +17,14 @@ const ProductCard = ({ category, product, userLanguage }) => {
 
     if (product) getImage();
   }, [product]);
+
+  const currencyCorr = (price) => {
+    if (currency.name === "HUF") {
+      return Math.ceil((price * currency.value) / 100) * 100;
+    } else {
+      return (price * currency.value).toFixed(1);
+    }
+  };
 
   return (
     <div className="w-[15rem] h-[30rem] relative flex flex-col rounded-xl">
@@ -44,7 +54,9 @@ const ProductCard = ({ category, product, userLanguage }) => {
         <h2 className="self-center text-center font-[400]">
           {product.comment}
         </h2>
-        <h3 className="absolute self-end bottom-2 text-[1.5rem] font-[700]">{`${product.price}$`}</h3>
+        <h3 className="absolute self-end bottom-2 text-[1.5rem] font-[700]">{`${currencyCorr(
+          product.price
+        )} ${currency.symbol}`}</h3>
       </div>
 
       <div className="w-full h-[0.4rem] bg-transparent" />

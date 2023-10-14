@@ -10,7 +10,7 @@ import { Theme_Div, Theme_H1, titleStyle } from "../../styles";
 import { getAllProducts } from "../../utils/firebase";
 
 const Shop = () => {
-  const { text, userLanguage } = useContext(UserContext);
+  const { text } = useContext(UserContext);
   const [categorySelector, setCategorySelector] = useState("gifts");
   const [products, setProducts] = useState([]);
 
@@ -26,8 +26,6 @@ const Shop = () => {
 
     getProducts(categorySelector);
   }, [categorySelector]);
-
-  console.log(products);
 
   //Temporary declaration place for data
   const categories = [
@@ -67,7 +65,6 @@ const Shop = () => {
             key={index}
             category={categorySelector}
             product={product}
-            userLanguage={userLanguage}
           />
         ))}
       </Theme_Div>
