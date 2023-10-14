@@ -10,7 +10,7 @@ const Banner = () => {
     >
       <form className="flex gap-4">
         <input
-          className="rounded-xl p-2"
+          className="rounded-xl p-2 w-[20rem]"
           type="text"
           placeholder="Search products"
         />

@@ -8518,7 +8518,7 @@
         "id": "drink_009"
       }
     },
-    "food": {
+    "foods": {
       "food_001": {
         "name": {
           "eng": "Chicken wings",

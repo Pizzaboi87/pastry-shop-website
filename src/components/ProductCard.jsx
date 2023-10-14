@@ -28,7 +28,7 @@ const ProductCard = ({ category, product, userLanguage }) => {
       <div className="w-full h-[0.4rem] bg-transparent" />
 
       <div className="w-full min-h-[10rem] shadow-xl bg-[#fefefe] p-2 flex flex-col relative">
-        <span className="flex text-[#f70] self-center">
+        <span className="flex text-[#f70] self-center mt-2">
           {Array.from({ length: product.rate }, (v, i) => i).map((_, index) => (
             <Icon key={index} icon="carbon-star-filled" />
           ))}

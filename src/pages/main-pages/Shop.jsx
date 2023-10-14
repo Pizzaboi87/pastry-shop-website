@@ -11,7 +11,7 @@ import { getAllProducts } from "../../utils/firebase";
 
 const Shop = () => {
   const { text, userLanguage } = useContext(UserContext);
-  const [category, setCategory] = useState("gifts");
+  const [categorySelector, setCategorySelector] = useState("gifts");
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -24,8 +24,8 @@ const Shop = () => {
       setProducts(productsArray);
     };
 
-    getProducts(category);
-  }, [category]);
+    getProducts(categorySelector);
+  }, [categorySelector]);
 
   console.log(products);
 
@@ -49,7 +49,11 @@ const Shop = () => {
 
       <div className="w-full h-[3rem] flex items-center justify-center gap-8">
         {categories.map((category, index) => (
-          <Category key={index} category={category} />
+          <Category
+            key={index}
+            category={category}
+            setCategorySelector={setCategorySelector}
+          />
         ))}
       </div>
 
@@ -61,7 +65,7 @@ const Shop = () => {
         {products.map((product, index) => (
           <ProductCard
             key={index}
-            category={category}
+            category={categorySelector}
             product={product}
             userLanguage={userLanguage}
           />
