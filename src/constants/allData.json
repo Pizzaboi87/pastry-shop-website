@@ -8001,5 +8001,734 @@
         ]
       }
     }
+  },
+  "products": {
+    "beverages": {
+      "bev_001": {
+        "name": {
+          "eng": "Coca Cola Cherry",
+          "esp": "Coca Cola Cherry",
+          "fra": "Coca Cola Cherry",
+          "hun": "Coca Cola Cherry"
+        },
+        "comment": "500ml",
+        "price": 1.2,
+        "rate": 4,
+        "image": "cola_cherry.webp",
+        "id": "bev_001"
+      },
+      "bev_002": {
+        "name": {
+          "eng": "Coca Cola Light",
+          "esp": "Coca Cola Light",
+          "fra": "Coca Cola Light",
+          "hun": "Coca Cola Light"
+        },
+        "comment": "500ml",
+        "price": 1.2,
+        "rate": 5,
+        "image": "cola_light.webp",
+        "id": "bev_002"
+      },
+      "bev_003": {
+        "name": {
+          "eng": "Coca Cola Original",
+          "esp": "Coca Cola Original",
+          "fra": "Coca Cola Original",
+          "hun": "Coca Cola Original"
+        },
+        "comment": "500ml",
+        "price": 1.2,
+        "rate": 4,
+        "image": "cola_original.webp",
+        "id": "bev_003"
+      },
+      "bev_004": {
+        "name": {
+          "eng": "Fanta orange",
+          "esp": "Fanta naranja",
+          "fra": "Fanta orange",
+          "hun": "Fanta narancs"
+        },
+        "comment": "500ml",
+        "price": 1.2,
+        "rate": 4,
+        "image": "fanta.webp",
+        "id": "bev_004"
+      },
+      "bev_005": {
+        "name": {
+          "eng": "Sprite",
+          "esp": "Sprite",
+          "fra": "Sprite",
+          "hun": "Sprite"
+        },
+        "comment": "500ml",
+        "price": 1.2,
+        "rate": 5,
+        "image": "sprite.webp",
+        "id": "bev_005"
+      },
+      "bev_006": {
+        "name": {
+          "eng": "Kinley tonic",
+          "esp": "Kinley tonic",
+          "fra": "Kinley tonic",
+          "hun": "Kinley tonic"
+        },
+        "comment": "500ml",
+        "price": 1.2,
+        "rate": 3,
+        "image": "kinley_tonic.webp",
+        "id": "bev_006"
+      },
+      "bev_007": {
+        "name": {
+          "eng": "Tropicana grapefruit",
+          "esp": "Tropicana pomelo",
+          "fra": "Tropicana pamplemousse",
+          "hun": "Tropicana grapefruit"
+        },
+        "comment": "500ml",
+        "price": 1.3,
+        "rate": 4,
+        "image": "tropicana_grapefruit.webp",
+        "id": "bev_007"
+      },
+      "bev_008": {
+        "name": {
+          "eng": "Tropicana orange",
+          "esp": "Tropicana naranja",
+          "fra": "Tropicana orange",
+          "hun": "Tropicana narancs"
+        },
+        "comment": "500ml",
+        "price": 1.3,
+        "rate": 5,
+        "image": "tropicana_orange.webp",
+        "id": "bev_008"
+      },
+      "bev_009": {
+        "name": {
+          "eng": "Tropicana strawberry",
+          "esp": "Tropicana fresa",
+          "fra": "Tropicana fraise",
+          "hun": "Tropicana eper"
+        },
+        "comment": "500ml",
+        "price": 1.3,
+        "rate": 5,
+        "image": "tropicana_strawberry.webp",
+        "id": "bev_009"
+      },
+      "bev_010": {
+        "name": {
+          "eng": "Evian mineral water",
+          "esp": "Evian agua mineral",
+          "fra": "Evian eau minérale",
+          "hun": "Evian ásványvíz"
+        },
+        "comment": "500ml",
+        "price": 1.0,
+        "rate": 5,
+        "image": "evian_water.webp",
+        "id": "bev_010"
+      }
+    },
+    "cakes": {
+      "cake_001": {
+        "name": {
+          "eng": "Black forest",
+          "esp": "Bosque negro",
+          "fra": "Forêt noire",
+          "hun": "Feketeerdő"
+        },
+        "comment": "120g",
+        "price": 3.0,
+        "rate": 5,
+        "image": "black_forest.webp",
+        "id": "cake_001"
+      },
+      "cake_002": {
+        "name": {
+          "eng": "Caramel cream",
+          "esp": "Crema de caramelo",
+          "fra": "Crème caramel",
+          "hun": "Krémkaramell"
+        },
+        "comment": "120g",
+        "price": 3.2,
+        "rate": 5,
+        "image": "caramel_cream.webp",
+        "id": "cake_002"
+      },
+      "cake_003": {
+        "name": {
+          "eng": "Cheesecake",
+          "esp": "Tarta de queso",
+          "fra": "Cheesecake",
+          "hun": "Sajttorta"
+        },
+        "comment": "150g",
+        "price": 3.0,
+        "rate": 4,
+        "image": "cheesecake.webp",
+        "id": "cake_003"
+      },
+      "cake_004": {
+        "name": {
+          "eng": "Chocolate cake",
+          "esp": "Pastel de chocolate",
+          "fra": "Gateau au chocolat",
+          "hun": "Csokitorta"
+        },
+        "comment": "120g",
+        "price": 3.5,
+        "rate": 5,
+        "image": "chocolate_cake.webp",
+        "id": "cake_004"
+      },
+      "cake_005": {
+        "name": {
+          "eng": "Chocolate mouse",
+          "esp": "Ratón de chocolate",
+          "fra": "Souris au chocolat",
+          "hun": "Csoki egérke"
+        },
+        "comment": "100g",
+        "price": 3.5,
+        "rate": 5,
+        "image": "chocolate_mouse.webp",
+        "id": "cake_005"
+      },
+      "cake_006": {
+        "name": {
+          "eng": "Eclair",
+          "esp": "Eclair",
+          "fra": "Eclair",
+          "hun": "Eclair"
+        },
+        "comment": "80g",
+        "price": 3.0,
+        "rate": 5,
+        "image": "eclair.webp",
+        "id": "cake_006"
+      },
+      "cake_007": {
+        "name": {
+          "eng": "Fruit tart",
+          "esp": "Pastel de fruta",
+          "fra": "Tarte aux fruits",
+          "hun": "Gyümölcstorta"
+        },
+        "comment": "120g",
+        "price": 3.3,
+        "rate": 4,
+        "image": "fruit_tart.webp",
+        "id": "cake_007"
+      },
+      "cake_008": {
+        "name": {
+          "eng": "Milfeuille",
+          "esp": "Milfeuille",
+          "fra": "Milfeuille",
+          "hun": "Milfeuille"
+        },
+        "comment": "150g",
+        "price": 3.5,
+        "rate": 5,
+        "image": "milfeuille.webp",
+        "id": "cake_008"
+      },
+      "cake_009": {
+        "name": {
+          "eng": "Milk chocolate cake",
+          "esp": "Pastel de chocolate con leche",
+          "fra": "Gâteau au chocolat au lait",
+          "hun": "Tejcsokis szelet"
+        },
+        "comment": "120g",
+        "price": 3.4,
+        "rate": 5,
+        "image": "milk_chocolate.webp",
+        "id": "cake_009"
+      },
+      "cake_010": {
+        "name": {
+          "eng": "Profiterole",
+          "esp": "Profiterole",
+          "fra": "Profiterole",
+          "hun": "Profiterole"
+        },
+        "comment": "180g",
+        "price": 3.0,
+        "rate": 5,
+        "image": "profiterole.webp",
+        "id": "cake_010"
+      },
+      "cake_011": {
+        "name": {
+          "eng": "Tiramisu",
+          "esp": "Tiramisu",
+          "fra": "Tiramisu",
+          "hun": "Tiramisu"
+        },
+        "comment": "180g",
+        "price": 3.5,
+        "rate": 5,
+        "image": "tiramisu.webp",
+        "id": "cake_011"
+      }
+    },
+    "coffees": {
+      "coffee_001": {
+        "name": {
+          "eng": "Espresso",
+          "esp": "Café exprés",
+          "fra": "Expresso",
+          "hun": "Eszpresszó"
+        },
+        "comment": "30ml",
+        "price": 2.2,
+        "rate": 5,
+        "image": "espresso.webp",
+        "id": "coffee_001"
+      },
+      "coffee_002": {
+        "name": {
+          "eng": "Frappe",
+          "esp": "Frapé",
+          "fra": "Frappe",
+          "hun": "Frappé"
+        },
+        "comment": "200ml",
+        "price": 1.7,
+        "rate": 4,
+        "image": "frappe.webp",
+        "id": "coffee_002"
+      },
+      "coffee_003": {
+        "name": {
+          "eng": "Freddo",
+          "esp": "Freddo",
+          "fra": "Freddo",
+          "hun": "Freddo"
+        },
+        "comment": "200ml",
+        "price": 2.4,
+        "rate": 5,
+        "image": "freddo.webp",
+        "id": "coffee_003"
+      },
+      "coffee_004": {
+        "name": {
+          "eng": "Mochaccino",
+          "esp": "Mocacino",
+          "fra": "Mochaccino",
+          "hun": "Mochaccino"
+        },
+        "comment": "200ml",
+        "price": 2.0,
+        "rate": 5,
+        "image": "mochaccino.webp",
+        "id": "coffee_004"
+      },
+      "coffee_005": {
+        "name": {
+          "eng": "Chocolate shake",
+          "esp": "Batido de chocolate",
+          "fra": "Shake au chocolat",
+          "hun": "Csokoládé shake"
+        },
+        "comment": "200ml",
+        "price": 2.5,
+        "rate": 5,
+        "image": "shake_chocolate.webp",
+        "id": "coffee_005"
+      },
+      "coffee_006": {
+        "name": {
+          "eng": "Pistachio shake",
+          "esp": "Batido de pistacho",
+          "fra": "Shake à la pistache",
+          "hun": "Pisztácia shake"
+        },
+        "comment": "200ml",
+        "price": 2.5,
+        "rate": 4,
+        "image": "shake_pistachio.webp",
+        "id": "coffee_006"
+      },
+      "coffee_007": {
+        "name": {
+          "eng": "Strawberry shake",
+          "esp": "Batido de fresa",
+          "fra": "Shake aux fraises",
+          "hun": "Eper shake"
+        },
+        "comment": "200ml",
+        "price": 2.5,
+        "rate": 3,
+        "image": "shake_strawberry.webp",
+        "id": "coffee_007"
+      },
+      "coffee_008": {
+        "name": {
+          "eng": "Vanilla shake",
+          "esp": "Batido de vainilla",
+          "fra": "Shake à la vanille",
+          "hun": "Vanília shake"
+        },
+        "comment": "200ml",
+        "price": 2.5,
+        "rate": 4,
+        "image": "shake_vanilla.webp",
+        "id": "coffee_008"
+      },
+      "coffee_009": {
+        "name": {
+          "eng": "Hot tea",
+          "esp": "Té caliente",
+          "fra": "Thé chaud",
+          "hun": "Forró tea"
+        },
+        "comment": "200ml",
+        "price": 1.5,
+        "rate": 5,
+        "image": "tea.webp",
+        "id": "coffee_009"
+      }
+    },
+    "drinks": {
+      "drink_001": {
+        "name": {
+          "eng": "Fuller's Black Cab",
+          "esp": "Fuller's Black Cab",
+          "fra": "Fuller's Black Cab",
+          "hun": "Fuller's Black Cab"
+        },
+        "comment": "500ml",
+        "price": 3.5,
+        "rate": 5,
+        "image": "black_cab.webp",
+        "id": "drink_001"
+      },
+      "drink_002": {
+        "name": {
+          "eng": "Fuller's London Pride",
+          "esp": "Fuller's London Pride",
+          "fra": "Fuller's London Pride",
+          "hun": "Fuller's London Pride"
+        },
+        "comment": "500ml",
+        "price": 3.5,
+        "rate": 5,
+        "image": "london_pride.webp",
+        "id": "drink_002"
+      },
+      "drink_003": {
+        "name": {
+          "eng": "Budweiser",
+          "esp": "Budweiser",
+          "fra": "Budweiser",
+          "hun": "Budweiser"
+        },
+        "comment": "500ml",
+        "price": 3.0,
+        "rate": 4,
+        "image": "budweiser.webp",
+        "id": "drink_003"
+      },
+      "drink_004": {
+        "name": {
+          "eng": "Kozel",
+          "esp": "Kozel",
+          "fra": "Kozel",
+          "hun": "Kozel"
+        },
+        "comment": "500ml",
+        "price": 2.8,
+        "rate": 3,
+        "image": "kozel.webp",
+        "id": "drink_004"
+      },
+      "drink_005": {
+        "name": {
+          "eng": "Stella Artois",
+          "esp": "Stella Artois",
+          "fra": "Stella Artois",
+          "hun": "Stella Artois"
+        },
+        "comment": "500ml",
+        "price": 2.8,
+        "rate": 3,
+        "image": "stella_artois.webp",
+        "id": "drink_005"
+      },
+      "drink_006": {
+        "name": {
+          "eng": "Domaine De Noire - Chinon",
+          "esp": "Domaine De Noire - Chinon",
+          "fra": "Domaine De Noire - Chinon",
+          "hun": "Domaine De Noire - Chinon"
+        },
+        "comment": "700ml",
+        "price": 10.0,
+        "rate": 5,
+        "image": "domain_de_noire_chinon.webp",
+        "id": "drink_006"
+      },
+      "drink_007": {
+        "name": {
+          "eng": "Mas De Cadanet - Rose",
+          "esp": "Mas De Cadanet - Rose",
+          "fra": "Mas De Cadanet - Rose",
+          "hun": "Mas De Cadanet - Rose"
+        },
+        "comment": "700ml",
+        "price": 14.0,
+        "rate": 5,
+        "image": "mas_de_cadanet_rose.webp",
+        "id": "drink_007"
+      },
+      "drink_008": {
+        "name": {
+          "eng": "Petit Villebois - Pinot Noir",
+          "esp": "Petit Villebois - Pinot Noir",
+          "fra": "Petit Villebois - Pinot Noir",
+          "hun": "Petit Villebois - Pinot Noir"
+        },
+        "comment": "700ml",
+        "price": 13.0,
+        "rate": 5,
+        "image": "petit_villebois_pinot_noir.webp",
+        "id": "drink_008"
+      },
+      "drink_009": {
+        "name": {
+          "eng": "Louis Roederer - Brut Premier",
+          "esp": "Louis Roederer - Brut Premier",
+          "fra": "Louis Roederer - Brut Premier",
+          "hun": "Louis Roederer - Brut Premier"
+        },
+        "comment": "700ml",
+        "price": 12.0,
+        "rate": 5,
+        "image": "louis_roederer_champagne.webp",
+        "id": "drink_009"
+      }
+    },
+    "food": {
+      "food_001": {
+        "name": {
+          "eng": "Chicken wings",
+          "esp": "Alitas de pollo",
+          "fra": "Ailes de poulet",
+          "hun": "Csirkeszárnyak"
+        },
+        "comment": "200g",
+        "price": 3.0,
+        "rate": 4,
+        "image": "chicken_wings.webp",
+        "id": "food_001"
+      },
+      "food_002": {
+        "name": {
+          "eng": "Club sandwich",
+          "esp": "Sándwich club",
+          "fra": "Club-sandwich",
+          "hun": "Klubszendvics"
+        },
+        "comment": "150g",
+        "price": 2.0,
+        "rate": 3,
+        "image": "club_sandwich.webp",
+        "id": "food_002"
+      },
+      "food_003": {
+        "name": {
+          "eng": "Hot-dog",
+          "esp": "Hot dog",
+          "fra": "Hot-dog",
+          "hun": "Hot dog"
+        },
+        "comment": "150g",
+        "price": 2.0,
+        "rate": 4,
+        "image": "hotdog.webp",
+        "id": "food_003"
+      },
+      "food_004": {
+        "name": {
+          "eng": "Mega Sandwich",
+          "esp": "Mega sándwich",
+          "fra": "Méga sandwich",
+          "hun": "Mega szendvics"
+        },
+        "comment": "250g",
+        "price": 3.0,
+        "rate": 5,
+        "image": "mega_sandwich.webp",
+        "id": "food_004"
+      },
+      "food_005": {
+        "name": {
+          "eng": "Pizza Ciel Sucré",
+          "esp": "Pizza Ciel Sucré",
+          "fra": "Pizza Ciel Sucré",
+          "hun": "Pizza Ciel Sucré"
+        },
+        "comment": "30cm, 600g",
+        "price": 10.0,
+        "rate": 5,
+        "image": "pizza.webp",
+        "id": "food_005"
+      },
+      "food_006": {
+        "name": {
+          "eng": "Spring salad",
+          "esp": "Ensalada de primavera",
+          "fra": "Salade printanière",
+          "hun": "Tavaszi saláta"
+        },
+        "comment": "250g",
+        "price": 6.5,
+        "rate": 4,
+        "image": "salad.webp",
+        "id": "food_006"
+      },
+      "food_007": {
+        "name": {
+          "eng": "Toast",
+          "esp": "Tostada",
+          "fra": "Griller",
+          "hun": "Toast"
+        },
+        "comment": "100g",
+        "price": 2.0,
+        "rate": 5,
+        "image": "toast.webp",
+        "id": "food_007"
+      }
+    },
+    "gifts": {
+      "gift_001": {
+        "name": {
+          "eng": "Badge",
+          "esp": "Insignia",
+          "fra": "Badge",
+          "hun": "Kitűző"
+        },
+        "comment": "15cm",
+        "price": 2.0,
+        "rate": 5,
+        "image": "badge.webp",
+        "id": "gift_001"
+      },
+      "gift_002": {
+        "name": {
+          "eng": "Canvas bag",
+          "esp": "Bolsa de lona",
+          "fra": "Sac de toile",
+          "hun": "Vászontáska"
+        },
+        "comment": "40cm x 50cm",
+        "price": 15.0,
+        "rate": 5,
+        "image": "bag.webp",
+        "id": "gift_002"
+      },
+      "gift_003": {
+        "name": {
+          "eng": "Bonbon",
+          "esp": "Caramelo",
+          "fra": "Bonbons",
+          "hun": "Bon-bon"
+        },
+        "comment": "15cm x 25cm",
+        "price": 8.5,
+        "rate": 4,
+        "image": "bonbon.webp",
+        "id": "gift_003"
+      },
+      "gift_004": {
+        "name": {
+          "eng": "Cookie cutter",
+          "esp": "Cortador de galletas",
+          "fra": "Emporte-pièce",
+          "hun": "Sütiforma"
+        },
+        "comment": "3 x 12cm",
+        "price": 7.0,
+        "rate": 5,
+        "image": "cookie_cutter.webp",
+        "id": "gift_004"
+      },
+      "gift_005": {
+        "name": {
+          "eng": "Food box",
+          "esp": "Caja de comida",
+          "fra": "Boite à nourriture",
+          "hun": "Ételes doboz"
+        },
+        "comment": "15cm x 20cm",
+        "price": 4.5,
+        "rate": 5,
+        "image": "food_box.webp",
+        "id": "gift_005"
+      },
+      "gift_006": {
+        "name": {
+          "eng": "Mousepad",
+          "esp": "Alfombrilla de ratón",
+          "fra": "Tapis de souris",
+          "hun": "Egérpad"
+        },
+        "comment": "25cm x 20cm",
+        "price": 4.0,
+        "rate": 4,
+        "image": "mousepad.webp",
+        "id": "gift_006"
+      },
+      "gift_007": {
+        "name": {
+          "eng": "Coffee mug",
+          "esp": "Taza de café",
+          "fra": "Tasse de café",
+          "hun": "Kávésbögre"
+        },
+        "comment": "200ml",
+        "price": 3.8,
+        "rate": 5,
+        "image": "mug.webp",
+        "id": "gift_007"
+      },
+      "gift_008": {
+        "name": {
+          "eng": "USB Pendrive",
+          "esp": "USB Pendrive",
+          "fra": "USB Pendrive",
+          "hun": "USB Pendrive"
+        },
+        "comment": "16GB",
+        "price": 7.0,
+        "rate": 5,
+        "image": "pendrive.webp",
+        "id": "gift_008"
+      },
+      "gift_009": {
+        "name": {
+          "eng": "Decor pillow",
+          "esp": "Almohada decorativa",
+          "fra": "Oreiller décoratif",
+          "hun": "Díszpárna"
+        },
+        "comment": "40cm x 30cm",
+        "price": 7.0,
+        "rate": 5,
+        "image": "pillow.webp",
+        "id": "gift_009"
+      }
+    }
   }
 }

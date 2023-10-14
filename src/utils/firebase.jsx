@@ -259,6 +259,22 @@ export const getAllComments = async () => {
   });
 };
 
+export const getAllProducts = async (category) => {
+  const productsRef = ref(database, `products/${category}`);
+  return new Promise((resolve, reject) => {
+    onValue(
+      productsRef,
+      (snapshot) => {
+        const products = snapshot.val();
+        resolve(products);
+      },
+      (error) => {
+        reject(error);
+      }
+    );
+  });
+};
+
 export const getStoredImage = async (image) => {
   const imageRef = refStorage(storage, image);
 

@@ -125,3 +125,25 @@ textarea:disabled {
   opacity: 1;
   transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+
+.mill {
+  transform-origin: center center;
+  animation: spin 15s linear infinite;
+}
+
+.background {
+  transform-origin: center center;
+  animation: backspin 15s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes backspin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}

@@ -15,6 +15,13 @@ import loading from "./loading.gif";
 import logo from "./logo.png";
 import lost from "./lost.gif";
 import macaron from "./macaron.webp";
+import macBlue from "./mac-blue.png";
+import macBrown from "./mac-brown.png";
+import macGreen from "./mac-green.png";
+import macPurple from "./mac-purple.png";
+import macYellow from "./mac-yellow.png";
+import mousePad from "./mousepad.png";
+import pillow from "./pillow.png";
 import showcase from "./showcase.webp";
 import stamp from "./stamp.webp";
 import stop from "./stop.gif";
@@ -39,6 +46,13 @@ export {
   logo,
   lost,
   macaron,
+  macBlue,
+  macBrown,
+  macGreen,
+  macPurple,
+  macYellow,
+  mousePad,
+  pillow,
   showcase,
   stamp,
   stop,

@@ -3,6 +3,7 @@ import AdminMenu from "./AdminMenu";
 import AdminPanel from "./AdminPanel";
 import AuthButton from "./AuthButton";
 import Awning from "./Awning";
+import Banner from "./Banner";
 import BlogCarousel from "./BlogCarousel";
 import BlogCategoryCard from "./BlogCategoryCard";
 import BlogComment from "./BlogComment";
@@ -11,6 +12,7 @@ import BlogForm from "./BlogForm";
 import BlogPostCard from "./BlogPostCard";
 import BlogProposalCard from "./BlogProposalCard";
 import BlogStickyCard from "./BlogStickyCard";
+import Category from "./Category";
 import CourseCard from "./CourseCard";
 import CourseForm from "./CourseForm";
 import Footer from "./Footer";
@@ -27,6 +29,7 @@ import NavUserMobile from "./NavUserMobile";
 import NoPermission from "./NoPermission";
 import Paragraphs from "./Paragraphs";
 import Postcard from "./Postcard";
+import ProductCard from "./ProductCard";
 import RecipeCard from "./RecipeCard";
 import ReviewCard from "./ReviewCard";
 import SignInForm from "./SignInForm";
@@ -47,6 +50,7 @@ export {
   AdminPanel,
   AuthButton,
   Awning,
+  Banner,
   BlogCarousel,
   BlogCategoryCard,
   BlogComment,
@@ -55,6 +59,7 @@ export {
   BlogPostCard,
   BlogProposalCard,
   BlogStickyCard,
+  Category,
   CourseCard,
   CourseForm,
   Footer,
@@ -71,6 +76,7 @@ export {
   NoPermission,
   Paragraphs,
   Postcard,
+  ProductCard,
   RecipeCard,
   ReviewCard,
   SignInForm,
