@@ -455,7 +455,7 @@ const hu_text = {
   blogTitle: "Blogunk",
   reviewsTitle: "Vásárlóink írták",
   coursesTitle: "Tanfolyamaink",
-  shopTitle: "Shop",
+  shopTitle: "Webshopunk",
   favouritesTitle: "Kedvenceim",
   myAccountTitle: "Saját fiókom",
   myCartTitle: "Saját Kosaram",

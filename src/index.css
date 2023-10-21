@@ -147,3 +147,19 @@ textarea:disabled {
     transform: rotate(-360deg);
   }
 }
+
+.layer {
+  background-color: rgba(206, 20, 20, 0.197);
+  transform: translateY(100%);
+  transition: 0.5s ease-in-out;
+}
+
+.container:hover .layer {
+  transform: translateY(0);
+  transition: 0.5s ease-in-out;
+}
+
+.container:hover {
+  color: white;
+  transition: 0.1s ease-in-out;
+}
