@@ -384,7 +384,7 @@ export const mainContentStyle = {
 };
 
 export const myCartStyle = {
-  container: "w-full h-[30rem]",
+  container: "w-full min-h-[30rem] flex flex-col",
 };
 
 export const navDesktopStyle = {
@@ -580,7 +580,7 @@ export const shop = {
     "flex flex-col xl:w-auto w-full items-center justify-between min-h-[12rem] xl:mr-10",
   form: "flex gap-4 xl:flex-row flex-col mt-6 xl:mt-0",
   input: "rounded-xl p-2 pl-4 w-[20rem]",
-  buttonContainer: "flex gap-4",
+  buttonContainer: "flex gap-2 w-full",
   button: "rounded-xl px-2 xl:w-auto w-[50%] self-center py-2",
   icon: "text-[2rem]",
   quantity: "text-[1.5rem] font-[600]",

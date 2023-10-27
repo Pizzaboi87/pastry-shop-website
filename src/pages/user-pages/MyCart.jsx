@@ -1,12 +1,27 @@
-import { UserContext } from "../../context";
+import { CartContext, UserContext } from "../../context";
 import { useContext } from "react";
-import { TransitionParent, UserPanel } from "../../components";
+import { OrderCard, TransitionParent, UserPanel } from "../../components";
 import { Theme_Div, Theme_H1, myCartStyle, userPageStyle } from "../../styles";
 
 const MyCart = () => {
-  const { text, currency } = useContext(UserContext);
+  const { text, userLanguage, currency } = useContext(UserContext);
+  const { cart } = useContext(CartContext);
 
-  const amount = 15;
+  const totalSum = (cart) => {
+    let sum = 0;
+    cart.forEach((item) => {
+      sum += item.product.price * item.quantity;
+    });
+    return sum;
+  };
+
+  const currencyCorr = (price) => {
+    if (currency.name === "HUF") {
+      return Math.ceil((price * currency.value) / 100) * 100;
+    } else {
+      return (price * currency.value).toFixed(1);
+    }
+  };
 
   return (
     <TransitionParent isFlex={false}>
@@ -16,10 +31,28 @@ const MyCart = () => {
 
       <UserPanel>
         <Theme_Div
-          $bgcolor="primary"
+          $bgcolor="transparent"
           $bordercolor="transparent"
           className={myCartStyle.container}
-        ></Theme_Div>
+        >
+          {cart.map((item) => (
+            <OrderCard
+              key={item.product.id}
+              product={item.product}
+              quantity={item.quantity}
+              lang={userLanguage}
+            />
+          ))}
+          {cart.length && (
+            <h1 className="text-[2rem] font-[700] self-end mr-[10%]">
+              Total:{" "}
+              {currencyCorr(totalSum(cart))
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}{" "}
+              {currency.symbol}
+            </h1>
+          )}
+        </Theme_Div>
       </UserPanel>
     </TransitionParent>
   );

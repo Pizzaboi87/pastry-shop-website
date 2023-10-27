@@ -12,6 +12,7 @@ import BlogForm from "./BlogForm";
 import BlogPostCard from "./BlogPostCard";
 import BlogProposalCard from "./BlogProposalCard";
 import BlogStickyCard from "./BlogStickyCard";
+import CartButtons from "./CartButtons";
 import Category from "./Category";
 import CourseCard from "./CourseCard";
 import CourseForm from "./CourseForm";
@@ -27,6 +28,7 @@ import NavMobileMenu from "./NavMobileMenu";
 import NavUser from "./NavUser";
 import NavUserMobile from "./NavUserMobile";
 import NoPermission from "./NoPermission";
+import OrderCard from "./OrderCard";
 import Paragraphs from "./Paragraphs";
 import Postcard from "./Postcard";
 import ProductCard from "./ProductCard";
@@ -59,6 +61,7 @@ export {
   BlogPostCard,
   BlogProposalCard,
   BlogStickyCard,
+  CartButtons,
   Category,
   CourseCard,
   CourseForm,
@@ -74,6 +77,7 @@ export {
   NavUser,
   NavUserMobile,
   NoPermission,
+  OrderCard,
   Paragraphs,
   Postcard,
   ProductCard,
