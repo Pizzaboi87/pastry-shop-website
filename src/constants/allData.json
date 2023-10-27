@@ -8015,7 +8015,8 @@
         "price": 1.2,
         "rate": 4,
         "image": "cola_cherry.webp",
-        "id": "bev_001"
+        "id": "bev_001",
+        "category": "beverages"
       },
       "bev_002": {
         "name": {
@@ -8028,7 +8029,8 @@
         "price": 1.2,
         "rate": 5,
         "image": "cola_light.webp",
-        "id": "bev_002"
+        "id": "bev_002",
+        "category": "beverages"
       },
       "bev_003": {
         "name": {
@@ -8041,7 +8043,8 @@
         "price": 1.2,
         "rate": 4,
         "image": "cola_original.webp",
-        "id": "bev_003"
+        "id": "bev_003",
+        "category": "beverages"
       },
       "bev_004": {
         "name": {
@@ -8054,7 +8057,8 @@
         "price": 1.2,
         "rate": 4,
         "image": "fanta.webp",
-        "id": "bev_004"
+        "id": "bev_004",
+        "category": "beverages"
       },
       "bev_005": {
         "name": {
@@ -8067,7 +8071,8 @@
         "price": 1.2,
         "rate": 5,
         "image": "sprite.webp",
-        "id": "bev_005"
+        "id": "bev_005",
+        "category": "beverages"
       },
       "bev_006": {
         "name": {
@@ -8080,7 +8085,8 @@
         "price": 1.2,
         "rate": 3,
         "image": "kinley_tonic.webp",
-        "id": "bev_006"
+        "id": "bev_006",
+        "category": "beverages"
       },
       "bev_007": {
         "name": {
@@ -8093,7 +8099,8 @@
         "price": 1.3,
         "rate": 4,
         "image": "tropicana_grapefruit.webp",
-        "id": "bev_007"
+        "id": "bev_007",
+        "category": "beverages"
       },
       "bev_008": {
         "name": {
@@ -8106,7 +8113,8 @@
         "price": 1.3,
         "rate": 5,
         "image": "tropicana_orange.webp",
-        "id": "bev_008"
+        "id": "bev_008",
+        "category": "beverages"
       },
       "bev_009": {
         "name": {
@@ -8119,7 +8127,8 @@
         "price": 1.3,
         "rate": 5,
         "image": "tropicana_strawberry.webp",
-        "id": "bev_009"
+        "id": "bev_009",
+        "category": "beverages"
       },
       "bev_010": {
         "name": {
@@ -8132,7 +8141,8 @@
         "price": 1.0,
         "rate": 5,
         "image": "evian_water.webp",
-        "id": "bev_010"
+        "id": "bev_010",
+        "category": "beverages"
       }
     },
     "cakes": {
@@ -8147,7 +8157,8 @@
         "price": 3.0,
         "rate": 5,
         "image": "black_forest.webp",
-        "id": "cake_001"
+        "id": "cake_001",
+        "category": "cakes"
       },
       "cake_002": {
         "name": {
@@ -8160,7 +8171,8 @@
         "price": 3.2,
         "rate": 5,
         "image": "caramel_cream.webp",
-        "id": "cake_002"
+        "id": "cake_002",
+        "category": "cakes"
       },
       "cake_003": {
         "name": {
@@ -8173,7 +8185,8 @@
         "price": 3.0,
         "rate": 4,
         "image": "cheesecake.webp",
-        "id": "cake_003"
+        "id": "cake_003",
+        "category": "cakes"
       },
       "cake_004": {
         "name": {
@@ -8186,7 +8199,8 @@
         "price": 3.5,
         "rate": 5,
         "image": "chocolate_cake.webp",
-        "id": "cake_004"
+        "id": "cake_004",
+        "category": "cakes"
       },
       "cake_005": {
         "name": {
@@ -8199,7 +8213,8 @@
         "price": 3.5,
         "rate": 5,
         "image": "chocolate_mouse.webp",
-        "id": "cake_005"
+        "id": "cake_005",
+        "category": "cakes"
       },
       "cake_006": {
         "name": {
@@ -8212,7 +8227,8 @@
         "price": 3.0,
         "rate": 5,
         "image": "eclair.webp",
-        "id": "cake_006"
+        "id": "cake_006",
+        "category": "cakes"
       },
       "cake_007": {
         "name": {
@@ -8225,7 +8241,8 @@
         "price": 3.3,
         "rate": 4,
         "image": "fruit_tart.webp",
-        "id": "cake_007"
+        "id": "cake_007",
+        "category": "cakes"
       },
       "cake_008": {
         "name": {
@@ -8238,7 +8255,8 @@
         "price": 3.5,
         "rate": 5,
         "image": "milfeuille.webp",
-        "id": "cake_008"
+        "id": "cake_008",
+        "category": "cakes"
       },
       "cake_009": {
         "name": {
@@ -8251,7 +8269,8 @@
         "price": 3.4,
         "rate": 5,
         "image": "milk_chocolate.webp",
-        "id": "cake_009"
+        "id": "cake_009",
+        "category": "cakes"
       },
       "cake_010": {
         "name": {
@@ -8264,7 +8283,8 @@
         "price": 3.0,
         "rate": 5,
         "image": "profiterole.webp",
-        "id": "cake_010"
+        "id": "cake_010",
+        "category": "cakes"
       },
       "cake_011": {
         "name": {
@@ -8277,7 +8297,8 @@
         "price": 3.5,
         "rate": 5,
         "image": "tiramisu.webp",
-        "id": "cake_011"
+        "id": "cake_011",
+        "category": "cakes"
       }
     },
     "coffees": {
@@ -8292,7 +8313,8 @@
         "price": 2.2,
         "rate": 5,
         "image": "espresso.webp",
-        "id": "coffee_001"
+        "id": "coffee_001",
+        "category": "coffees"
       },
       "coffee_002": {
         "name": {
@@ -8305,7 +8327,8 @@
         "price": 1.7,
         "rate": 4,
         "image": "frappe.webp",
-        "id": "coffee_002"
+        "id": "coffee_002",
+        "category": "coffees"
       },
       "coffee_003": {
         "name": {
@@ -8318,7 +8341,8 @@
         "price": 2.4,
         "rate": 5,
         "image": "freddo.webp",
-        "id": "coffee_003"
+        "id": "coffee_003",
+        "category": "coffees"
       },
       "coffee_004": {
         "name": {
@@ -8331,7 +8355,8 @@
         "price": 2.0,
         "rate": 5,
         "image": "mochaccino.webp",
-        "id": "coffee_004"
+        "id": "coffee_004",
+        "category": "coffees"
       },
       "coffee_005": {
         "name": {
@@ -8344,7 +8369,8 @@
         "price": 2.5,
         "rate": 5,
         "image": "shake_chocolate.webp",
-        "id": "coffee_005"
+        "id": "coffee_005",
+        "category": "coffees"
       },
       "coffee_006": {
         "name": {
@@ -8357,7 +8383,8 @@
         "price": 2.5,
         "rate": 4,
         "image": "shake_pistachio.webp",
-        "id": "coffee_006"
+        "id": "coffee_006",
+        "category": "coffees"
       },
       "coffee_007": {
         "name": {
@@ -8370,7 +8397,8 @@
         "price": 2.5,
         "rate": 3,
         "image": "shake_strawberry.webp",
-        "id": "coffee_007"
+        "id": "coffee_007",
+        "category": "coffees"
       },
       "coffee_008": {
         "name": {
@@ -8383,7 +8411,8 @@
         "price": 2.5,
         "rate": 4,
         "image": "shake_vanilla.webp",
-        "id": "coffee_008"
+        "id": "coffee_008",
+        "category": "coffees"
       },
       "coffee_009": {
         "name": {
@@ -8396,7 +8425,8 @@
         "price": 1.5,
         "rate": 5,
         "image": "tea.webp",
-        "id": "coffee_009"
+        "id": "coffee_009",
+        "category": "coffees"
       }
     },
     "drinks": {
@@ -8411,7 +8441,8 @@
         "price": 3.5,
         "rate": 5,
         "image": "black_cab.webp",
-        "id": "drink_001"
+        "id": "drink_001",
+        "category": "drinks"
       },
       "drink_002": {
         "name": {
@@ -8424,7 +8455,8 @@
         "price": 3.5,
         "rate": 5,
         "image": "london_pride.webp",
-        "id": "drink_002"
+        "id": "drink_002",
+        "category": "drinks"
       },
       "drink_003": {
         "name": {
@@ -8437,7 +8469,8 @@
         "price": 3.0,
         "rate": 4,
         "image": "budweiser.webp",
-        "id": "drink_003"
+        "id": "drink_003",
+        "category": "drinks"
       },
       "drink_004": {
         "name": {
@@ -8450,7 +8483,8 @@
         "price": 2.8,
         "rate": 3,
         "image": "kozel.webp",
-        "id": "drink_004"
+        "id": "drink_004",
+        "category": "drinks"
       },
       "drink_005": {
         "name": {
@@ -8463,7 +8497,8 @@
         "price": 2.8,
         "rate": 3,
         "image": "stella_artois.webp",
-        "id": "drink_005"
+        "id": "drink_005",
+        "category": "drinks"
       },
       "drink_006": {
         "name": {
@@ -8476,7 +8511,8 @@
         "price": 10.0,
         "rate": 5,
         "image": "domain_de_noire_chinon.webp",
-        "id": "drink_006"
+        "id": "drink_006",
+        "category": "drinks"
       },
       "drink_007": {
         "name": {
@@ -8489,7 +8525,8 @@
         "price": 14.0,
         "rate": 5,
         "image": "mas_de_cadanet_rose.webp",
-        "id": "drink_007"
+        "id": "drink_007",
+        "category": "drinks"
       },
       "drink_008": {
         "name": {
@@ -8502,7 +8539,8 @@
         "price": 13.0,
         "rate": 5,
         "image": "petit_villebois_pinot_noir.webp",
-        "id": "drink_008"
+        "id": "drink_008",
+        "category": "drinks"
       },
       "drink_009": {
         "name": {
@@ -8515,7 +8553,8 @@
         "price": 12.0,
         "rate": 5,
         "image": "louis_roederer_champagne.webp",
-        "id": "drink_009"
+        "id": "drink_009",
+        "category": "drinks"
       }
     },
     "foods": {
@@ -8530,7 +8569,8 @@
         "price": 3.0,
         "rate": 4,
         "image": "chicken_wings.webp",
-        "id": "food_001"
+        "id": "food_001",
+        "category": "foods"
       },
       "food_002": {
         "name": {
@@ -8543,7 +8583,8 @@
         "price": 2.0,
         "rate": 3,
         "image": "club_sandwich.webp",
-        "id": "food_002"
+        "id": "food_002",
+        "category": "foods"
       },
       "food_003": {
         "name": {
@@ -8556,7 +8597,8 @@
         "price": 2.0,
         "rate": 4,
         "image": "hotdog.webp",
-        "id": "food_003"
+        "id": "food_003",
+        "category": "foods"
       },
       "food_004": {
         "name": {
@@ -8569,7 +8611,8 @@
         "price": 3.0,
         "rate": 5,
         "image": "mega_sandwich.webp",
-        "id": "food_004"
+        "id": "food_004",
+        "category": "foods"
       },
       "food_005": {
         "name": {
@@ -8582,7 +8625,8 @@
         "price": 10.0,
         "rate": 5,
         "image": "pizza.webp",
-        "id": "food_005"
+        "id": "food_005",
+        "category": "foods"
       },
       "food_006": {
         "name": {
@@ -8595,7 +8639,8 @@
         "price": 6.5,
         "rate": 4,
         "image": "salad.webp",
-        "id": "food_006"
+        "id": "food_006",
+        "category": "foods"
       },
       "food_007": {
         "name": {
@@ -8608,7 +8653,8 @@
         "price": 2.0,
         "rate": 5,
         "image": "toast.webp",
-        "id": "food_007"
+        "id": "food_007",
+        "category": "foods"
       }
     },
     "gifts": {
@@ -8623,7 +8669,8 @@
         "price": 2.0,
         "rate": 5,
         "image": "badge.webp",
-        "id": "gift_001"
+        "id": "gift_001",
+        "category": "gifts"
       },
       "gift_002": {
         "name": {
@@ -8636,7 +8683,8 @@
         "price": 15.0,
         "rate": 5,
         "image": "bag.webp",
-        "id": "gift_002"
+        "id": "gift_002",
+        "category": "gifts"
       },
       "gift_003": {
         "name": {
@@ -8649,7 +8697,8 @@
         "price": 8.5,
         "rate": 4,
         "image": "bonbon.webp",
-        "id": "gift_003"
+        "id": "gift_003",
+        "category": "gifts"
       },
       "gift_004": {
         "name": {
@@ -8662,7 +8711,8 @@
         "price": 7.0,
         "rate": 5,
         "image": "cookie_cutter.webp",
-        "id": "gift_004"
+        "id": "gift_004",
+        "category": "gifts"
       },
       "gift_005": {
         "name": {
@@ -8675,7 +8725,8 @@
         "price": 4.5,
         "rate": 5,
         "image": "food_box.webp",
-        "id": "gift_005"
+        "id": "gift_005",
+        "category": "gifts"
       },
       "gift_006": {
         "name": {
@@ -8688,7 +8739,8 @@
         "price": 4.0,
         "rate": 4,
         "image": "mousepad.webp",
-        "id": "gift_006"
+        "id": "gift_006",
+        "category": "gifts"
       },
       "gift_007": {
         "name": {
@@ -8701,7 +8753,8 @@
         "price": 3.8,
         "rate": 5,
         "image": "mug.webp",
-        "id": "gift_007"
+        "id": "gift_007",
+        "category": "gifts"
       },
       "gift_008": {
         "name": {
@@ -8714,7 +8767,8 @@
         "price": 7.0,
         "rate": 5,
         "image": "pendrive.webp",
-        "id": "gift_008"
+        "id": "gift_008",
+        "category": "gifts"
       },
       "gift_009": {
         "name": {
@@ -8727,7 +8781,8 @@
         "price": 7.0,
         "rate": 5,
         "image": "pillow.webp",
-        "id": "gift_009"
+        "id": "gift_009",
+        "category": "gifts"
       }
     }
   }

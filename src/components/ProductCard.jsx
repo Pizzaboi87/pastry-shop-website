@@ -1,23 +1,10 @@
 import { Icon } from "@iconify/react";
-import { getStoredImage } from "../utils/firebase";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { UserContext } from "../context";
 import { Theme_Button, Theme_Div } from "../styles";
 
 const ProductCard = ({ category, product }) => {
   const { userLanguage, currency } = useContext(UserContext);
-  const [productImage, setProductImage] = useState(null);
-
-  useEffect(() => {
-    const getImage = async () => {
-      const image = await getStoredImage(
-        `products/${category.toLowerCase()}/${product.image}`
-      );
-      setProductImage(image);
-    };
-
-    if (product) getImage();
-  }, [product]);
 
   const currencyCorr = (price) => {
     if (currency.name === "HUF") {
@@ -36,7 +23,7 @@ const ProductCard = ({ category, product }) => {
       >
         <div
           className="w-full h-full bg-contain bg-no-repeat bg-center hover:scale-[120%] transition duration-300 ease-in-out cursor-pointer"
-          style={{ backgroundImage: `url(${productImage})` }}
+          style={{ backgroundImage: `url(${product.image})` }}
         />
       </Theme_Div>
 

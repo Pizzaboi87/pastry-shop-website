@@ -259,8 +259,8 @@ export const getAllComments = async () => {
   });
 };
 
-export const getAllProducts = async (category) => {
-  const productsRef = ref(database, `products/${category}`);
+export const getAllProducts = async () => {
+  const productsRef = ref(database, "products/");
   return new Promise((resolve, reject) => {
     onValue(
       productsRef,
