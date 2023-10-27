@@ -459,6 +459,38 @@ const fr_text = {
       style: "bg-yellowlight col-span-1",
     },
   ],
+  shopCategories: [
+    {
+      icon: "emojione-v1:shortcake",
+      title: "Gâteaux",
+      select: "cakes",
+    },
+    {
+      icon: "noto:beverage-box",
+      title: "Breuvages",
+      select: "beverages",
+    },
+    {
+      icon: "noto:wrapped-gift",
+      title: "Cadeaux",
+      select: "gifts",
+    },
+    {
+      icon: "streamline-emojis:cocktail-glass",
+      title: "Boissons",
+      select: "drinks",
+    },
+    {
+      icon: "noto:sandwich",
+      title: "Nourriture",
+      select: "foods",
+    },
+    {
+      icon: "vscode-icons:file-type-coffeescript",
+      title: "Cafés",
+      select: "coffees",
+    },
+  ],
   homeButton: "COMMANDER MAINTENANT",
   blogTitle: "Notre Blog",
   reviewsTitle: "Nos Clients Ont Écrit",
@@ -789,6 +821,9 @@ const fr_text = {
   },
   shop: {
     noResult: "Aucun produit correspondant à la recherche.",
+    searchBox: "Recherche de produits...",
+    searchButton: "Recherche",
+    addToCart: "Ajouter au Panier",
   },
 };
 

@@ -573,6 +573,55 @@ export const settingsStyle = {
   hrLine: "my-8 border-dotted border-t-2",
 };
 
+export const shop = {
+  bannerContainer:
+    "xl:w-[85vw] w-full flex xl:flex-row flex-col-reverse items-center justify-evenly xl:px-16 rounded-xl self-center shadow-inner shadow-black",
+  formContainer:
+    "flex flex-col xl:w-auto w-full items-center justify-between min-h-[12rem] xl:mr-10",
+  form: "flex gap-4 xl:flex-row flex-col mt-6 xl:mt-0",
+  input: "rounded-xl p-2 pl-4 w-[20rem]",
+  button: "rounded-xl px-2 xl:w-auto w-[50%] self-center py-2",
+  categoryContainer:
+    "w-full flex items-center justify-center my-6 xl:my-0 mx-2 xl:mx-0 xl:gap-8 gap-2 flex-wrap",
+  categoryIcon:
+    "md:w-[7rem] w-[28vw] md:h-[7rem] h-[28vw] bg-white flex items-center justify-center rounded-full cursor-pointer relative container overflow-hidden",
+  categoryLayer: "layer w-full h-full absolute z-[0] rounded-full",
+  categoryDetails: "absolute z-1 flex-col flex items-center justify-center",
+  categoryPic: "text-[3rem]",
+  millContainer: "mill w-[15rem] h-[15rem] rounded-full bg-white",
+  millBackground:
+    "background w-full h-full bg-logoimage bg-cover bg-center absolute",
+  macaronBlue: "w-[5rem] h-[5rem] rounded-full -translate-y-6 translate-x-8",
+  macaronBrown:
+    "w-[5rem] h-[5rem] rounded-full -translate-y-[4rem] translate-x-[11rem]",
+  macaronGreen:
+    "w-[5rem] h-[5rem] rounded-full -translate-y-[1rem] translate-x-[11rem]",
+  macaronPurple:
+    "w-[5rem] h-[5rem] rounded-full -translate-y-[4rem] translate-x-[2rem]",
+  macaronYellow:
+    "w-[5rem] h-[5rem] rounded-full -translate-y-[16rem] -translate-x-[2rem]",
+  productsContainer:
+    "flex gap-8 flex-wrap shadow-inner shadow-black items-center justify-center xl:w-[85vw] w-full rounded-xl py-8 mt-16",
+  noResult: "tex-text text-[1.5rem] font-[500]",
+  cardContainer:
+    "md:w-[15rem] ms:w-[22rem] w-[20rem] xl:h-[30rem] h-[40rem] relative flex flex-col rounded-xl",
+  cardImageContainer:
+    "w-full md:h-[15rem] ms:h-[22rem] h-[20rem] rounded-t-xl overflow-hidden border-[0.5px]",
+  cardImage:
+    "w-full h-full bg-contain bg-no-repeat bg-center hover:scale-[120%] transition duration-300 ease-in-out cursor-pointer",
+  cardSpace: "w-full h-[0.4rem] bg-transparent",
+  cardInfoContainer:
+    "w-full min-h-[10rem] shadow-xl p-4 flex flex-col relative border-[0.5px]",
+  cardStar: "flex text-[#f70] self-center mt-2",
+  cardButton:
+    "w-full xl:h-[3rem] h-[5rem] bottom-0 rounded-b-xl shadow-xl flex items-center gap-1 justify-center xl:text-[1rem] md:[text-2rem] text-[1.5rem]",
+  productName:
+    "self-center text-center font-[600] my-2 xl:text-[1rem] text-[1.5rem]",
+  productComment:
+    "self-center text-center font-[400] xl:text-[1rem] text-[1.2rem]",
+  productPrice: "absolute self-end bottom-2 text-[1.5rem] font-[700]",
+};
+
 export const signInFormStyle = {
   wrapper: "flex flex-col w-full h-full items-center justify-center",
   title:

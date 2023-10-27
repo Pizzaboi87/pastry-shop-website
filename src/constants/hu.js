@@ -451,6 +451,38 @@ const hu_text = {
       style: "bg-yellowlight col-span-1",
     },
   ],
+  shopCategories: [
+    {
+      icon: "emojione-v1:shortcake",
+      title: "Sütik",
+      select: "cakes",
+    },
+    {
+      icon: "noto:beverage-box",
+      title: "Üdítők",
+      select: "beverages",
+    },
+    {
+      icon: "noto:wrapped-gift",
+      title: "Kincsek",
+      select: "gifts",
+    },
+    {
+      icon: "streamline-emojis:cocktail-glass",
+      title: "Italok",
+      select: "drinks",
+    },
+    {
+      icon: "noto:sandwich",
+      title: "Ételek",
+      select: "foods",
+    },
+    {
+      icon: "vscode-icons:file-type-coffeescript",
+      title: "Kávék",
+      select: "coffees",
+    },
+  ],
   homeButton: "RENDELÉS MOST",
   blogTitle: "Blogunk",
   reviewsTitle: "Vásárlóink írták",
@@ -778,6 +810,9 @@ const hu_text = {
   },
   shop: {
     noResult: "Nincs a keresésnek megfelelő termék.",
+    searchBox: "Termék keresése...",
+    searchButton: "Keresés",
+    addToCart: "Kosárba",
   },
 };
 

@@ -453,6 +453,38 @@ const es_text = {
       style: "bg-yellowlight col-span-1",
     },
   ],
+  shopCategories: [
+    {
+      icon: "emojione-v1:shortcake",
+      title: "Pasteles",
+      select: "cakes",
+    },
+    {
+      icon: "noto:beverage-box",
+      title: "Bebidas",
+      select: "beverages",
+    },
+    {
+      icon: "noto:wrapped-gift",
+      title: "Regalos",
+      select: "gifts",
+    },
+    {
+      icon: "streamline-emojis:cocktail-glass",
+      title: "Alcohol",
+      select: "drinks",
+    },
+    {
+      icon: "noto:sandwich",
+      title: "Alimentos",
+      select: "foods",
+    },
+    {
+      icon: "vscode-icons:file-type-coffeescript",
+      title: "Café",
+      select: "coffees",
+    },
+  ],
   homeButton: "PEDIR AHORA",
   blogTitle: "Nuestro Blog",
   reviewsTitle: "Nuestros Clientes Escribieron",
@@ -785,6 +817,9 @@ const es_text = {
   },
   shop: {
     noResult: "No hay ningún producto que coincida con la búsqueda.",
+    searchBox: "Buscar productos...",
+    searchButton: "Buscar",
+    addToCart: "Añadir al carrito",
   },
 };
 

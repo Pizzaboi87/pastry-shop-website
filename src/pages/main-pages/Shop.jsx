@@ -1,13 +1,14 @@
 import { UserContext } from "../../context";
 import { Banner, ProductCard, TransitionParent } from "../../components";
 import { useContext, useEffect, useState } from "react";
-import { Theme_Div, Theme_H1, titleStyle } from "../../styles";
 import { getAllProducts, getStoredImage } from "../../utils/firebase";
+import { Theme_Div, Theme_H1, shop, titleStyle } from "../../styles";
 
 const Shop = () => {
-  const { text } = useContext(UserContext);
+  const { text, userLanguage } = useContext(UserContext);
   const [categorySelector, setCategorySelector] = useState("gifts");
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [categoryProducts, setCategoryProducts] = useState([]);
 
   useEffect(() => {
@@ -39,6 +40,10 @@ const Shop = () => {
   }, []);
 
   useEffect(() => {
+    setCategories(text.shopCategories);
+  }, [userLanguage]);
+
+  useEffect(() => {
     const filteredProducts = products.flatMap((obj) => {
       return Object.values(obj).filter(
         (item) => item.category === categorySelector
@@ -47,24 +52,6 @@ const Shop = () => {
 
     setCategoryProducts(filteredProducts);
   }, [products, categorySelector]);
-
-  //Temporary declaration place for data
-  const categories = [
-    { icon: "emojione-v1:shortcake", title: "Cakes", select: "cakes" },
-    { icon: "noto:beverage-box", title: "Coolers", select: "beverages" },
-    { icon: "noto:wrapped-gift", title: "Gifts", select: "gifts" },
-    {
-      icon: "streamline-emojis:cocktail-glass",
-      title: "Drinks",
-      select: "drinks",
-    },
-    { icon: "noto:sandwich", title: "Foods", select: "foods" },
-    {
-      icon: "vscode-icons:file-type-coffeescript",
-      title: "Coffees",
-      select: "coffees",
-    },
-  ];
 
   return (
     <TransitionParent isFlex>
@@ -83,7 +70,7 @@ const Shop = () => {
       <Theme_Div
         $bgcolor="background"
         $bordercolor="transparent"
-        className="flex gap-8 flex-wrap shadow-inner shadow-black items-center justify-center xl:w-[85vw] w-full rounded-xl py-8 mt-16"
+        className={shop.productsContainer}
       >
         {categoryProducts.length ? (
           categoryProducts.map((product, index) => (
@@ -94,9 +81,7 @@ const Shop = () => {
             />
           ))
         ) : (
-          <h1 className="tex-text text-[1.5rem] font-[500]">
-            {text.shop.noResult}
-          </h1>
+          <h1 className={shop.noResult}>{text.shop.noResult}</h1>
         )}
       </Theme_Div>
     </TransitionParent>
