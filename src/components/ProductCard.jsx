@@ -62,7 +62,7 @@ const ProductCard = ({ product }) => {
         className={shop.cardButton}
       >
         <Icon icon="grommet-icons:cart" />
-        <p className="font-[600] py-1">{text.shop.addToCart}</p>
+        <p className={shop.cardButtonText}>{text.shop.addToCart}</p>
       </Theme_Button>
     </div>
   );

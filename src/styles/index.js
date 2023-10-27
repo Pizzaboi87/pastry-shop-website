@@ -615,6 +615,7 @@ export const shop = {
   cardStar: "flex text-[#f70] self-center mt-2",
   cardButton:
     "w-full xl:h-[3rem] h-[5rem] bottom-0 rounded-b-xl shadow-xl flex items-center gap-1 justify-center xl:text-[1rem] md:[text-2rem] text-[1.5rem]",
+  cardButtonText: "font-[600] py-1",
   productName:
     "self-center text-center font-[600] my-2 xl:text-[1rem] text-[1.5rem]",
   productComment:
