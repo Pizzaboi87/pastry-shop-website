@@ -787,6 +787,9 @@ const fr_text = {
     deleteComment: "Supprimer le commentaire.",
     viewComment: "Voir le commentaire.",
   },
+  shop: {
+    noResult: "Aucun produit correspondant à la recherche.",
+  },
 };
 
 export default fr_text;

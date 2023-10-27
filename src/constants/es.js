@@ -783,6 +783,9 @@ const es_text = {
     deleteComment: "Eliminar comentario.",
     viewComment: "Ver comentario.",
   },
+  shop: {
+    noResult: "No hay ningún producto que coincida con la búsqueda.",
+  },
 };
 
 export default es_text;

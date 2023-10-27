@@ -774,6 +774,9 @@ const en_text = {
     deleteComment: "Delete comment.",
     viewComment: "View comment.",
   },
+  shop: {
+    noResult: "There is no product matching the search.",
+  },
 };
 
 export default en_text;

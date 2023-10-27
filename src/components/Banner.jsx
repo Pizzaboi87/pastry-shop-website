@@ -1,8 +1,51 @@
+import { useContext, useEffect, useState } from "react";
 import { macBlue, macBrown, macGreen, macPurple, macYellow } from "../assets/";
 import { Theme_Button, Theme_Div } from "../styles";
 import Category from "./Category";
+import { UserContext } from "../context";
 
-const Banner = ({ categories, setCategorySelector }) => {
+const Banner = ({
+  categories,
+  products,
+  categorySelector,
+  setCategorySelector,
+  setCategoryProducts,
+}) => {
+  const { userLanguage } = useContext(UserContext);
+  const [searchTerm, setSearchTerm] = useState("");
+  const allowedChars =
+    "^[A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰűÇçÑñËëÈèÊêÂâÎîÔôÛûÀàÆæÅåØøÝýÞþß '-]+$";
+
+  const searchProducts = (searchTerm) => {
+    setCategoryProducts(
+      products.flatMap((obj) => {
+        return Object.values(obj).filter((item) =>
+          item.name[userLanguage].toLowerCase().includes(searchTerm)
+        );
+      })
+    );
+  };
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchTerm(e.target.value);
+    if (e.target.value == "") {
+      setCategoryProducts(
+        products.flatMap((obj) => {
+          return Object.values(obj).filter(
+            (item) => item.category === categorySelector
+          );
+        })
+      );
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!searchTerm.match(allowedChars)) setCategoryProducts("");
+    searchProducts(searchTerm);
+  };
+
   return (
     <Theme_Div
       $bgcolor="background"
@@ -10,11 +53,15 @@ const Banner = ({ categories, setCategorySelector }) => {
       className="xl:w-[85vw] w-full flex xl:flex-row flex-col-reverse items-center justify-evenly xl:px-16 rounded-xl self-center shadow-inner shadow-black"
     >
       <div className="flex flex-col xl:w-auto w-full items-center justify-between min-h-[12rem] xl:mr-10">
-        <form className="flex gap-4 xl:flex-row flex-col mt-6 xl:mt-0">
+        <form
+          className="flex gap-4 xl:flex-row flex-col mt-6 xl:mt-0"
+          onSubmit={handleSubmit}
+        >
           <input
             className="rounded-xl p-2 pl-4 w-[20rem]"
             type="text"
             placeholder="Search products"
+            onChange={handleChange}
           />
           <Theme_Button
             $bgcolor="logo"

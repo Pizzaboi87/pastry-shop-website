@@ -776,6 +776,9 @@ const hu_text = {
     deleteComment: "Komment törlése.",
     viewComment: "Komment megtekintése.",
   },
+  shop: {
+    noResult: "Nincs a keresésnek megfelelő termék.",
+  },
 };
 
 export default hu_text;

@@ -74,7 +74,10 @@ const Shop = () => {
 
       <Banner
         categories={categories}
+        products={products}
+        categorySelector={categorySelector}
         setCategorySelector={setCategorySelector}
+        setCategoryProducts={setCategoryProducts}
       />
 
       <Theme_Div
@@ -82,13 +85,19 @@ const Shop = () => {
         $bordercolor="transparent"
         className="flex gap-8 flex-wrap shadow-inner shadow-black items-center justify-center xl:w-[85vw] w-full rounded-xl py-8 mt-16"
       >
-        {categoryProducts.map((product, index) => (
-          <ProductCard
-            key={index}
-            category={categorySelector}
-            product={product}
-          />
-        ))}
+        {categoryProducts.length ? (
+          categoryProducts.map((product, index) => (
+            <ProductCard
+              key={index}
+              category={categorySelector}
+              product={product}
+            />
+          ))
+        ) : (
+          <h1 className="tex-text text-[1.5rem] font-[500]">
+            {text.shop.noResult}
+          </h1>
+        )}
       </Theme_Div>
     </TransitionParent>
   );
