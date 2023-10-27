@@ -1,10 +1,27 @@
 import { Icon } from "@iconify/react";
-import { UserContext } from "../context";
+import { CartContext, UserContext } from "../context";
 import { useContext } from "react";
 import { Theme_Button, Theme_Div, shop } from "../styles";
 
+const CartButton = ({ children, func, extraClass, normalButton }) => {
+  return (
+    <Theme_Button
+      $bgcolor="logo"
+      $textcolor="textlight"
+      $bordercolor="transparent"
+      $hoverbgcolor={normalButton ? null : "dark"}
+      $hovertextcolor={normalButton ? null : "textlight"}
+      className={`${shop.cardButton} ${extraClass}`}
+      onClick={func}
+    >
+      {children}
+    </Theme_Button>
+  );
+};
+
 const ProductCard = ({ product }) => {
   const { text, userLanguage, currency } = useContext(UserContext);
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
   const currencyCorr = (price) => {
     if (currency.name === "HUF") {
@@ -45,7 +62,7 @@ const ProductCard = ({ product }) => {
           )}
         </span>
         <h1 className={shop.productName}>{product.name[userLanguage]}</h1>
-        <h2 className={shop.proudctComment}>{product.comment}</h2>
+        <h2 className={shop.productComment}>{product.comment}</h2>
         <h3 className={shop.productPrice}>{`${currencyCorr(product.price)} ${
           currency.symbol
         }`}</h3>
@@ -53,17 +70,28 @@ const ProductCard = ({ product }) => {
 
       <div className={shop.cardSpace} />
 
-      <Theme_Button
-        $bgcolor="logo"
-        $textcolor="textlight"
-        $bordercolor="transparent"
-        $hoverbgcolor="dark"
-        $hovertextcolor="textlight"
-        className={shop.cardButton}
-      >
-        <Icon icon="grommet-icons:cart" />
-        <p className={shop.cardButtonText}>{text.shop.addToCart}</p>
-      </Theme_Button>
+      {cart.find((item) => item.product.id === product.id) ? (
+        <div className={shop.buttonContainer}>
+          <CartButton func={() => removeFromCart(product)}>
+            <Icon icon="carbon:shopping-cart-minus" className={shop.icon} />
+          </CartButton>
+
+          <CartButton normalButton extraClass="cursor-default">
+            <p className={shop.quantity}>
+              {cart.find((item) => item.product.id === product.id).quantity}
+            </p>
+          </CartButton>
+
+          <CartButton func={() => addToCart(product)}>
+            <Icon icon="carbon:shopping-cart-plus" className={shop.icon} />
+          </CartButton>
+        </div>
+      ) : (
+        <CartButton func={() => addToCart(product)}>
+          <Icon icon="carbon:shopping-cart" className={shop.icon} />
+          <p className={shop.cardButtonText}>{text.shop.addToCart}</p>
+        </CartButton>
+      )}
     </div>
   );
 };

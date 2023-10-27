@@ -1,6 +1,10 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Navbar, Footer, MainContent, Awning } from "./components";
-import { BlogContextProvider, UserContextProvider } from "./context";
+import {
+  BlogContextProvider,
+  CartContextProvider,
+  UserContextProvider,
+} from "./context";
 import { appStyle } from "./styles";
 
 const App = () => {
@@ -13,7 +17,9 @@ const App = () => {
           <Awning />
           <Navbar />
           <BlogContextProvider>
-            <MainContent />
+            <CartContextProvider>
+              <MainContent />
+            </CartContextProvider>
           </BlogContextProvider>
           <Footer />
         </UserContextProvider>

@@ -580,7 +580,10 @@ export const shop = {
     "flex flex-col xl:w-auto w-full items-center justify-between min-h-[12rem] xl:mr-10",
   form: "flex gap-4 xl:flex-row flex-col mt-6 xl:mt-0",
   input: "rounded-xl p-2 pl-4 w-[20rem]",
+  buttonContainer: "flex gap-4",
   button: "rounded-xl px-2 xl:w-auto w-[50%] self-center py-2",
+  icon: "text-[2rem]",
+  quantity: "text-[1.5rem] font-[600]",
   categoryContainer:
     "w-full flex items-center justify-center my-6 xl:my-0 mx-2 xl:mx-0 xl:gap-8 gap-2 flex-wrap",
   categoryIcon:
@@ -604,9 +607,9 @@ export const shop = {
     "flex gap-8 flex-wrap shadow-inner shadow-black items-center justify-center xl:w-[85vw] w-full rounded-xl py-8 mt-16",
   noResult: "tex-text text-[1.5rem] font-[500]",
   cardContainer:
-    "md:w-[15rem] ms:w-[22rem] w-[20rem] xl:h-[30rem] h-[40rem] relative flex flex-col rounded-xl",
+    "md:w-[16rem] ms:w-[22rem] w-[20rem] xl:h-[30rem] h-[40rem] relative flex flex-col rounded-xl",
   cardImageContainer:
-    "w-full md:h-[15rem] ms:h-[22rem] h-[20rem] rounded-t-xl overflow-hidden border-[0.5px]",
+    "w-full md:h-[16rem] ms:h-[22rem] h-[20rem] rounded-t-xl overflow-hidden border-[0.5px]",
   cardImage:
     "w-full h-full bg-contain bg-no-repeat bg-center hover:scale-[120%] transition duration-300 ease-in-out cursor-pointer",
   cardSpace: "w-full h-[0.4rem] bg-transparent",
@@ -614,8 +617,8 @@ export const shop = {
     "w-full min-h-[10rem] shadow-xl p-4 flex flex-col relative border-[0.5px]",
   cardStar: "flex text-[#f70] self-center mt-2",
   cardButton:
-    "w-full xl:h-[3rem] h-[5rem] bottom-0 rounded-b-xl shadow-xl flex items-center gap-1 justify-center xl:text-[1rem] md:[text-2rem] text-[1.5rem]",
-  cardButtonText: "font-[600] py-1",
+    "w-full xl:h-[3rem] h-[5rem] bottom-0 rounded-b-xl shadow-xl flex items-center gap-1 justify-center",
+  cardButtonText: "text-[1.3rem] font-[600] py-1",
   productName:
     "self-center text-center font-[600] my-2 xl:text-[1rem] text-[1.5rem]",
   productComment:
