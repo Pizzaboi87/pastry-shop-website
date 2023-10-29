@@ -143,7 +143,7 @@ export const blogCategoryCardStyle = {
 };
 
 export const blogCommentStyle = {
-  wrapper: "col-span-4 mb-16",
+  wrapper: "xl:col-span-4 col-span-6 mb-16",
   container: "w-full rounded-2xl shadow-xl p-6 mb-16",
   title: "text-text text-[1.3rem] font-[600] mb-16",
   commentWrapper: "flex flex-col my-8",
@@ -156,13 +156,13 @@ export const blogCommentStyle = {
 
 export const blogCommentFormStyle = {
   form: "flex flex-col mt-4",
-  span: "flex w-full justify-evenly items-end",
+  span: "flex xl:flex-row flex-col w-full xl:justify-evenly xl:items-end items-center",
   input:
-    "w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-3 rounded-xl outline-none outline-dotted",
+    "my-2 xl:my-0 w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-3 rounded-xl outline-none outline-dotted",
   textarea:
     "bg-white rounded-2xl shadow-xl p-6 w-full text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] outline-none outline-dotted mb-4",
   label:
-    "w-[30%] flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
+    "xl:w-[30%] w-full flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] pb-1",
   button:
     "px-16 py-2 rounded-xl shadow-xl border-none font-[500] block xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
