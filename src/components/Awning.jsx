@@ -1,10 +1,24 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Theme_Div, awningStyle, shadowStyle } from "../styles";
 
 const Awning = () => {
-  const n = Math.ceil(window.innerWidth / 160);
+  const [windowWidth, setWindowWidth] = useState(
+    Math.ceil(window.innerWidth / 160)
+  );
 
-  const awnings = [...Array(n)].map((_, i) => (
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(Math.ceil(window.innerWidth / 160));
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const awnings = [...Array(windowWidth)].map((_, i) => (
     <Fragment key={i}>
       <Theme_Div
         $bgcolor="light"
