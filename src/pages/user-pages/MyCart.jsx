@@ -1,5 +1,6 @@
 import { CartContext, UserContext } from "../../context";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { OrderCard, TransitionParent, UserPanel } from "../../components";
 import { emptyCart } from "../../assets";
 import {
@@ -11,8 +12,9 @@ import {
 } from "../../styles";
 
 const MyCart = () => {
-  const { text, userLanguage, currency } = useContext(UserContext);
+  const navigate = useNavigate();
   const { cart } = useContext(CartContext);
+  const { text, userLanguage, currency } = useContext(UserContext);
 
   const totalSum = (cart) => {
     let sum = 0;
@@ -51,20 +53,36 @@ const MyCart = () => {
             />
           ))}
           {cart.length ? (
-            <Theme_Button
-              $bgcolor="logo"
-              $textcolor="textlight"
-              $bordercolor="transparent"
-              $hoverbgcolor="dark"
-              $hovertextcolor="textlight"
-              className={myCartStyle.button}
-            >
-              {text.cart.pay}{" "}
-              {currencyCorr(totalSum(cart))
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}{" "}
-              {currency.symbol}
-            </Theme_Button>
+            <div className={myCartStyle.buttonContainer}>
+              <span className={myCartStyle.buttonSpan}>
+                <Theme_Button
+                  $bgcolor="logo"
+                  $textcolor="textlight"
+                  $bordercolor="transparent"
+                  $hoverbgcolor="dark"
+                  $hovertextcolor="textlight"
+                  onClick={() => navigate("/shop")}
+                  className={myCartStyle.button}
+                >
+                  {text.cart.shop}
+                </Theme_Button>
+                <Theme_Button
+                  $bgcolor="logo"
+                  $textcolor="textlight"
+                  $bordercolor="transparent"
+                  $hoverbgcolor="dark"
+                  $hovertextcolor="textlight"
+                  onClick={() => navigate("/checkout")}
+                  className={myCartStyle.button}
+                >
+                  {text.cart.pay}{" "}
+                  {currencyCorr(totalSum(cart))
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}{" "}
+                  {currency.symbol}
+                </Theme_Button>
+              </span>
+            </div>
           ) : (
             <div className={myCartStyle.emptyWrapper}>
               <img

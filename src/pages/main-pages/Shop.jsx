@@ -1,11 +1,23 @@
-import { UserContext } from "../../context";
+import { CartContext, UserContext } from "../../context";
 import { Banner, ProductCard, TransitionParent } from "../../components";
 import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { getAllProducts, getStoredImage } from "../../utils/firebase";
-import { Theme_Div, Theme_H1, shop, titleStyle } from "../../styles";
+import {
+  Theme_Button,
+  Theme_Div,
+  Theme_H1,
+  shop,
+  titleStyle,
+} from "../../styles";
+import { Icon } from "@iconify/react";
 
 const Shop = () => {
+  const navigate = useNavigate();
+
   const { text, userLanguage } = useContext(UserContext);
+  const { cart } = useContext(CartContext);
+
   const [categorySelector, setCategorySelector] = useState("gifts");
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -66,6 +78,21 @@ const Shop = () => {
         setCategorySelector={setCategorySelector}
         setCategoryProducts={setCategoryProducts}
       />
+
+      <Theme_Button
+        $bgcolor="logo"
+        $textcolor="textlight"
+        $bordercolor="transparent"
+        $hoverbgcolor="dark"
+        $hovertextcolor="textlight"
+        onClick={() => navigate("/mycart")}
+        className={`${cart.length ? "visible" : "invisible"} ${
+          shop.checkoutButton
+        }`}
+      >
+        <Icon icon="carbon:shopping-cart" className={shop.checkoutIcon} />
+        <p className={shop.checkoutText}>{text.shop.checkout}</p>
+      </Theme_Button>
 
       <Theme_Div
         $bgcolor="background"

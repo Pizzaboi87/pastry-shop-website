@@ -820,6 +820,7 @@ const es_text = {
     searchBox: "Buscar productos...",
     searchButton: "Buscar",
     addToCart: "Añadir al carrito",
+    checkout: "Pasar por la caja",
   },
   orderCard: {
     name: "Nombre:",
@@ -830,6 +831,7 @@ const es_text = {
   cart: {
     empty: "Tu carrito está vacío.",
     pay: "Pagar:",
+    shop: "Seguir comprando",
   },
 };
 

@@ -824,6 +824,7 @@ const fr_text = {
     searchBox: "Recherche de produits...",
     searchButton: "Recherche",
     addToCart: "Ajouter au Panier",
+    checkout: "Passer à la caisse",
   },
   orderCard: {
     name: "Nom:",
@@ -834,6 +835,7 @@ const fr_text = {
   cart: {
     empty: "Votre panier est vide.",
     pay: "Payer:",
+    shop: "Continuer vos achats",
   },
 };
 

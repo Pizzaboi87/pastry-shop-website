@@ -388,8 +388,9 @@ export const mainContentStyle = {
 
 export const myCartStyle = {
   container: "w-full min-h-[30rem] flex flex-col",
-  button:
-    "text-[2rem] font-[700] self-end py-2 px-3 rounded-xl shadow-xl xl:mr-[2.5%]",
+  buttonContainer: "w-full",
+  buttonSpan: "flex items-center justify-between xl:mx-[2.5%]",
+  button: "text-[1.5rem] font-[700] self-end py-2 px-3 rounded-xl shadow-xl",
   emptyWrapper: "w-full h-full flex flex-col items-center justify-center",
   emptyImage: "w-[20rem] h-[20rem]",
   emptyText: "text-[2rem] font-[500]",
@@ -625,8 +626,11 @@ export const shop = {
     "w-[5rem] h-[5rem] rounded-full -translate-y-[4rem] translate-x-[2rem]",
   macaronYellow:
     "w-[5rem] h-[5rem] rounded-full -translate-y-[16rem] -translate-x-[2rem]",
+  checkoutButton: "p-4 rounded-xl shadow-xl my-4 self-end flex items-center",
+  checkoutIcon: "mr-2 text-[2rem]",
+  checkoutText: "text-[1.2rem] font-[500]",
   productsContainer:
-    "flex gap-8 flex-wrap shadow-inner shadow-black items-center justify-center xl:w-[85vw] w-full rounded-xl py-8 mt-16",
+    "flex gap-8 flex-wrap shadow-inner shadow-black items-center justify-center xl:w-[85vw] w-full rounded-xl py-8",
   noResult: "tex-text text-[1.5rem] font-[500]",
   cardContainer:
     "md:w-[16rem] ms:w-[22rem] w-[20rem] xl:h-[30rem] h-[40rem] relative flex flex-col rounded-xl",

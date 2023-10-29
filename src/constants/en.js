@@ -811,6 +811,7 @@ const en_text = {
     searchBox: "Search products...",
     searchButton: "Search",
     addToCart: "Add to Cart",
+    checkout: "Proceed to Checkout",
   },
   oderCard: {
     name: "Name:",
@@ -821,6 +822,7 @@ const en_text = {
   cart: {
     empty: "Your cart is empty.",
     pay: "Pay:",
+    shop: "Continue shopping",
   },
 };
 
