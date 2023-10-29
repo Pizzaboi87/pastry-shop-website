@@ -814,6 +814,16 @@ const hu_text = {
     searchButton: "Keresés",
     addToCart: "Kosárba",
   },
+  orderCard: {
+    name: "Név:",
+    details: "Részletek:",
+    price: "Ár:",
+    quantity: "Mennyiség:",
+  },
+  cart: {
+    empty: "A kosarad üres.",
+    pay: "Fizetés:",
+  },
 };
 
 export default hu_text;

@@ -57,18 +57,22 @@ const MyCart = () => {
               $bordercolor="transparent"
               $hoverbgcolor="dark"
               $hovertextcolor="textlight"
-              className="text-[2rem] font-[700] self-end py-2 px-3 rounded-xl shadow-xl xl:mr-[2.5%]"
+              className={myCartStyle.button}
             >
-              Pay:{" "}
+              {text.cart.pay}{" "}
               {currencyCorr(totalSum(cart))
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}{" "}
               {currency.symbol}
             </Theme_Button>
           ) : (
-            <div className="w-full h-full flex flex-col items-center justify-center">
-              <img src={emptyCart} alt="cart" className="w-[20rem] h-[20rem]" />
-              <h1 className="text-[2rem] font-[500]">Your cart is empty.</h1>
+            <div className={myCartStyle.emptyWrapper}>
+              <img
+                src={emptyCart}
+                alt="cart"
+                className={myCartStyle.emptyImage}
+              />
+              <h1 className={myCartStyle.emptyText}>{text.cart.empty}</h1>
             </div>
           )}
         </Theme_Div>

@@ -388,6 +388,11 @@ export const mainContentStyle = {
 
 export const myCartStyle = {
   container: "w-full min-h-[30rem] flex flex-col",
+  button:
+    "text-[2rem] font-[700] self-end py-2 px-3 rounded-xl shadow-xl xl:mr-[2.5%]",
+  emptyWrapper: "w-full h-full flex flex-col items-center justify-center",
+  emptyImage: "w-[20rem] h-[20rem]",
+  emptyText: "text-[2rem] font-[500]",
 };
 
 export const navDesktopStyle = {
@@ -438,6 +443,20 @@ export const notFoundStyle = {
   container: "flex items-center justify-center",
   title: "error text-[#e0e0e0] text-[6.4rem] font-[400] mb-5 mr-2",
   image: "w-[15rem]",
+};
+
+export const orderCardStyle = {
+  wrapper:
+    "xl:w-[95%] w-full mx-auto rounded-xl justify-between grid grid-cols-6 mb-6 bg-white p-2",
+  image:
+    "md:col-span-1 xs:col-span-2 col-span-6 mx-auto rounded-xl w-[6rem] h-[6rem] object-cover xl:cursor-zoom-in xl:hover:scale-[200%] xl:hover:border xl:hover:border-1 transition-all duration-500 ease-in-out",
+  detailsWrapper:
+    "md:col-span-2 xs:col-span-4 col-span-6 pl-4 mb-2 md:mb-0 flex flex-col justify-start",
+  span: "flex gap-2",
+  details: "text-[1rem] font-[600]",
+  price:
+    "md:col-span-1 xs:col-start-5 xs:col-span-2 col-span-6 mb-2 md:mb-0 self-center justify-self-end md:pr-6 whitespace-nowrap text-[1.8rem] font-[600]",
+  buttonContainer: "md:col-span-2 col-span-6 flex items-center justify-center",
 };
 
 export const ourStoryStyle = {

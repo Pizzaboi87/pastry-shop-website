@@ -825,6 +825,16 @@ const fr_text = {
     searchButton: "Recherche",
     addToCart: "Ajouter au Panier",
   },
+  orderCard: {
+    name: "Nom:",
+    details: "Détails:",
+    price: "Prix:",
+    quantity: "Quantité:",
+  },
+  cart: {
+    empty: "Votre panier est vide.",
+    pay: "Payer:",
+  },
 };
 
 export default fr_text;

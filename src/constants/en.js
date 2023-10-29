@@ -812,6 +812,16 @@ const en_text = {
     searchButton: "Search",
     addToCart: "Add to Cart",
   },
+  oderCard: {
+    name: "Name:",
+    details: "Details:",
+    price: "Price:",
+    quantity: "Quantity:",
+  },
+  cart: {
+    empty: "Your cart is empty.",
+    pay: "Pay:",
+  },
 };
 
 export default en_text;

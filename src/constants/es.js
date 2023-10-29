@@ -821,6 +821,16 @@ const es_text = {
     searchButton: "Buscar",
     addToCart: "Añadir al carrito",
   },
+  orderCard: {
+    name: "Nombre:",
+    details: "Detalles:",
+    price: "Precio:",
+    quantity: "Cantidad:",
+  },
+  cart: {
+    empty: "Tu carrito está vacío.",
+    pay: "Pagar:",
+  },
 };
 
 export default es_text;
