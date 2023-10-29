@@ -241,21 +241,24 @@ export const blogPostPageStyle = {
 };
 
 export const blogProposalStyle = {
-  wrapper: "h-fit rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer",
-  image: "col-span-2 rounded-full w-[5rem] h-[5rem] object-cover border-2",
-  container: "col-span-4 flex flex-col items-center w-full",
+  wrapper:
+    "xl:h-fit h-[22rem] rounded-xl p-3 grid grid-cols-6 shadow-xl cursor-pointer mb-4 md:mb-0",
+  image:
+    "xl:col-span-2 col-span-6 mb-4 xl:mb-0 rounded-full xl:w-[5rem] xl:h-[5rem] object-cover border-2",
+  container: "xl:col-span-4 col-span-6 flex flex-col items-center w-full",
   title: "text-text text-[1rem] font-[600] self-start",
 };
 
 export const blogStickyStyle = {
   wrapper:
     "xl:sticky top-[20%] xl:col-span-2 col-span-6 w-full h-fit flex flex-col",
-  container: "flex xl:flex-col mb-6 gap-x-4 xl:gap-y-4 xl:mt-4",
+  container:
+    "flex md:flex-row flex-col xl:flex-col mb-6 gap-x-4 xl:gap-y-4 xl:mt-4",
 };
 
 export const blogStyle = {
   title: `${titleStyle} col-span-6`,
-  carouselContainer: "col-span-6 xl:mb-24 mb-8 -mx-12",
+  carouselContainer: "col-span-6 xl:mb-24 mb-8 md:-mx-12 -mx-4",
   postContainer: "xl:col-span-4 col-span-6",
 };
 
@@ -575,19 +578,19 @@ export const settingsStyle = {
 
 export const shop = {
   bannerContainer:
-    "xl:w-[85vw] w-full flex xl:flex-row flex-col-reverse items-center justify-evenly xl:px-16 rounded-xl self-center shadow-inner shadow-black",
+    "xl:w-[85vw] w-full flex xl:flex-row flex-col-reverse items-center justify-evenly xl:px-16 rounded-xl self-center shadow-inner shadow-black overflow-hidden py-8",
   formContainer:
     "flex flex-col xl:w-auto w-full items-center justify-between min-h-[12rem] xl:mr-10",
-  form: "flex gap-4 xl:flex-row flex-col mt-6 xl:mt-0",
-  input: "rounded-xl p-2 pl-4 w-[20rem]",
+  form: "flex gap-4 xl:flex-row flex-col mt-6 xl:mt-0 w-full xl:w-auto",
+  input: "rounded-xl p-2 pl-4 md:w-[20rem] w-[90%] mx-auto md:mt-0 mt-4",
   buttonContainer: "flex gap-2 w-full",
-  button: "rounded-xl px-2 xl:w-auto w-[50%] self-center py-2",
+  button: "rounded-xl px-2 xl:w-auto md:w-[5rem] w-[50%] self-center py-2",
   icon: "text-[2rem]",
   quantity: "text-[1.5rem] font-[600]",
   categoryContainer:
-    "w-full flex items-center justify-center my-6 xl:my-0 mx-2 xl:mx-0 xl:gap-8 gap-2 flex-wrap",
+    "md:w-full w-[95%] flex items-center justify-center md:my-6 my-0 mt-6 mb-2 xl:my-0 mx-2 xl:mx-0 xl:gap-8 gap-2 flex-wrap",
   categoryIcon:
-    "md:w-[7rem] w-[28vw] md:h-[7rem] h-[28vw] bg-white flex items-center justify-center rounded-full cursor-pointer relative container overflow-hidden",
+    "md:w-[7rem] w-[27vw] md:h-[7rem] h-[27vw] bg-white flex items-center justify-center rounded-full cursor-pointer relative container overflow-hidden",
   categoryLayer: "layer w-full h-full absolute z-[0] rounded-full",
   categoryDetails: "absolute z-1 flex-col flex items-center justify-center",
   categoryPic: "text-[3rem]",
@@ -687,7 +690,7 @@ export const tParentStyle = {
   isHome:
     "3xl:mt-8 -mt-[1rem] w-full flex flex-col items-center overflow-hidden",
   notIsHome: "3xl:w-[80%] xl:w-[90%] w-full glass shadow-xl rounded-xl",
-  isFlex: "flex flex-col items-center",
+  isFlex: "flex flex-col items-center overflow-x-hidden md:overflow-auto",
   notIsFlex: "grid grid-cols-6 gap-x-12",
   isRew: "pt-8 pb-12",
   notIsRew: "md:p-12 p-4",
