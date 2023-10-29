@@ -614,7 +614,7 @@ export const shop = {
   cardImageContainer:
     "w-full md:h-[16rem] ms:h-[22rem] h-[20rem] rounded-t-xl overflow-hidden border-[0.5px]",
   cardImage:
-    "w-full h-full bg-contain bg-no-repeat bg-center hover:scale-[120%] transition duration-300 ease-in-out cursor-pointer",
+    "w-full h-full bg-contain bg-no-repeat bg-center hover:scale-[120%] transition duration-300 ease-in-out cursor-zoom-in",
   cardSpace: "w-full h-[0.4rem] bg-transparent",
   cardInfoContainer:
     "w-full min-h-[10rem] shadow-xl p-4 flex flex-col relative border-[0.5px]",
@@ -690,7 +690,7 @@ export const tParentStyle = {
   isHome:
     "3xl:mt-8 -mt-[1rem] w-full flex flex-col items-center overflow-hidden",
   notIsHome: "3xl:w-[80%] xl:w-[90%] w-full glass shadow-xl rounded-xl",
-  isFlex: "flex flex-col items-center overflow-x-hidden md:overflow-auto",
+  isFlex: "flex flex-col items-center overflow-x-hidden",
   notIsFlex: "grid grid-cols-6 gap-x-12",
   isRew: "pt-8 pb-12",
   notIsRew: "md:p-12 p-4",

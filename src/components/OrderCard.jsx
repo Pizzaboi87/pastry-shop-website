@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import { useContext } from "react";
 import { CartButtons } from ".";
 import { UserContext } from "../context";
@@ -13,15 +14,27 @@ const OrderCard = ({ product, quantity, lang }) => {
     }
   };
 
+  const viewImage = () => {
+    Swal.fire({
+      imageUrl: product.image,
+      imageAlt: product.name[lang],
+      showConfirmButton: false,
+      showCloseButton: false,
+      background: "#fff",
+      padding: "1rem",
+    });
+  };
+
   return (
-    <div className="w-[85%] mx-auto rounded-xl justify-between grid grid-cols-6 mb-6 bg-white p-2">
+    <div className="xl:w-[95%] w-full mx-auto rounded-xl justify-between grid grid-cols-6 mb-6 bg-white p-2">
       <img
         src={product.image}
         alt={product.name[lang]}
-        className="rounded-xl w-[6rem] h-[6rem] object-cover"
+        onClick={viewImage}
+        className="md:col-span-1 xs:col-span-2 col-span-6 mx-auto rounded-xl w-[6rem] h-[6rem] object-cover xl:cursor-zoom-in xl:hover:scale-[200%] xl:hover:border xl:hover:border-1 transition-all duration-500 ease-in-out"
       />
 
-      <div className="col-span-2 flex flex-col justify-start">
+      <div className="md:col-span-2 xs:col-span-4 col-span-6 pl-4 mb-2 md:mb-0 flex flex-col justify-start">
         <span className="flex gap-2">
           <p className="text-[1rem] font-[600]">Name:</p>
           <p>{product.name[lang]}</p>
@@ -40,13 +53,13 @@ const OrderCard = ({ product, quantity, lang }) => {
         </span>
       </div>
 
-      <p className="col-span-2 self-center justify-self-end pr-24 text-[1.8rem] font-[600]">
+      <p className="md:col-span-1 xs:col-start-5 xs:col-span-2 col-span-6 mb-2 md:mb-0 self-center justify-self-end md:pr-6 whitespace-nowrap text-[1.8rem] font-[600]">
         {`${currencyCorr(product.price * quantity)
           .toString()
           .replace(/\B(?=(\d{3})+(?!\d))/g, ".")} ${currency.symbol}`}
       </p>
 
-      <div className="flex items-center justify-center">
+      <div className="md:col-span-2 col-span-6 flex items-center justify-center">
         <CartButtons product={product} />
       </div>
     </div>

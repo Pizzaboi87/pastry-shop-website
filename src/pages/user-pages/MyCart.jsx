@@ -1,7 +1,14 @@
 import { CartContext, UserContext } from "../../context";
 import { useContext } from "react";
 import { OrderCard, TransitionParent, UserPanel } from "../../components";
-import { Theme_Div, Theme_H1, myCartStyle, userPageStyle } from "../../styles";
+import { emptyCart } from "../../assets";
+import {
+  Theme_Button,
+  Theme_Div,
+  Theme_H1,
+  myCartStyle,
+  userPageStyle,
+} from "../../styles";
 
 const MyCart = () => {
   const { text, userLanguage, currency } = useContext(UserContext);
@@ -43,14 +50,26 @@ const MyCart = () => {
               lang={userLanguage}
             />
           ))}
-          {cart.length && (
-            <h1 className="text-[2rem] font-[700] self-end mr-[10%]">
-              Total:{" "}
+          {cart.length ? (
+            <Theme_Button
+              $bgcolor="logo"
+              $textcolor="textlight"
+              $bordercolor="transparent"
+              $hoverbgcolor="dark"
+              $hovertextcolor="textlight"
+              className="text-[2rem] font-[700] self-end py-2 px-3 rounded-xl shadow-xl xl:mr-[2.5%]"
+            >
+              Pay:{" "}
               {currencyCorr(totalSum(cart))
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}{" "}
               {currency.symbol}
-            </h1>
+            </Theme_Button>
+          ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center">
+              <img src={emptyCart} alt="cart" className="w-[20rem] h-[20rem]" />
+              <h1 className="text-[2rem] font-[500]">Your cart is empty.</h1>
+            </div>
           )}
         </Theme_Div>
       </UserPanel>

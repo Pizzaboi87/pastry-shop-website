@@ -4,6 +4,7 @@ import course2 from "./course-2.webp";
 import course3 from "./course-3.webp";
 import cream from "./cream.webp";
 import eclair from "./eclair.webp";
+import emptyCart from "./emptycart.gif";
 import error404 from "./error404.gif";
 import gift from "./gift.webp";
 import history from "./history.webp";
@@ -35,6 +36,7 @@ export {
   course3,
   cream,
   eclair,
+  emptyCart,
   error404,
   gift,
   history,

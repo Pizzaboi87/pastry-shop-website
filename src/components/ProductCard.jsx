@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import CartButtons, { CartButton } from "./CartButtons";
 import { Icon } from "@iconify/react";
 import { CartContext, UserContext } from "../context";
@@ -16,11 +17,23 @@ const ProductCard = ({ product }) => {
     }
   };
 
+  const viewImage = () => {
+    Swal.fire({
+      imageUrl: product.image,
+      imageAlt: product.name[userLanguage],
+      showConfirmButton: false,
+      showCloseButton: false,
+      background: "#fff",
+      padding: "1rem",
+    });
+  };
+
   return (
     <div className={shop.cardContainer}>
       <Theme_Div
         $bgcolor="transparent"
         $bordercolor="logo"
+        onClick={viewImage}
         className={shop.cardImageContainer}
       >
         <div
