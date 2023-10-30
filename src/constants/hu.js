@@ -825,6 +825,9 @@ const hu_text = {
     empty: "A kosarad üres.",
     pay: "Fizetés:",
     shop: "Vásárlás folytatása",
+    back: "Vissza",
+    details: "Szállítási adatok",
+    address: "Szállítási cím",
   },
 };
 

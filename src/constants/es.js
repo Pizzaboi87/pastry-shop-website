@@ -832,6 +832,9 @@ const es_text = {
     empty: "Tu carrito está vacío.",
     pay: "Pagar:",
     shop: "Seguir comprando",
+    back: "Atrás",
+    details: "Detalles de envio",
+    address: "Dirección de envío",
   },
 };
 

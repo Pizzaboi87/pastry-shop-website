@@ -836,6 +836,9 @@ const fr_text = {
     empty: "Votre panier est vide.",
     pay: "Payer:",
     shop: "Continuer vos achats",
+    back: "Dos",
+    details: "Détails de livraison",
+    address: "Adresse de livraison",
   },
 };
 

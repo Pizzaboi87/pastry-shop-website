@@ -34,6 +34,7 @@ import Postcard from "./Postcard";
 import ProductCard from "./ProductCard";
 import RecipeCard from "./RecipeCard";
 import ReviewCard from "./ReviewCard";
+import ShippingForm from "./ShippingForm";
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 import TeamCard from "./TeamCard";
@@ -83,6 +84,7 @@ export {
   ProductCard,
   RecipeCard,
   ReviewCard,
+  ShippingForm,
   SignInForm,
   SignUpForm,
   TeamCard,

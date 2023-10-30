@@ -823,6 +823,9 @@ const en_text = {
     empty: "Your cart is empty.",
     pay: "Pay:",
     shop: "Continue shopping",
+    back: "Back",
+    details: "Shipping details",
+    address: "Shipping Address",
   },
 };
 

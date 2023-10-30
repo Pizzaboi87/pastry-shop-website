@@ -31,6 +31,7 @@ import {
 } from "../pages/admin-pages";
 import {
   AllFavourites,
+  Checkout,
   Favourites,
   MyAccount,
   MyCart,
@@ -75,6 +76,7 @@ const MainContent = () => {
           <Route path="/mycart" element={<MyCart />} />
           <Route path="/myorders" element={<PreviousOrders />} />
           <Route path="/mysettings" element={<Settings />} />
+          <Route path="/checkout" element={<Checkout />} />
 
           <Route path="/home" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />

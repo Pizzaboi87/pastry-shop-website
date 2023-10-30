@@ -1,5 +1,5 @@
 import { CartContext, UserContext } from "../../context";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { OrderCard, TransitionParent, UserPanel } from "../../components";
 import { emptyCart } from "../../assets";
@@ -15,6 +15,18 @@ const MyCart = () => {
   const navigate = useNavigate();
   const { cart } = useContext(CartContext);
   const { text, userLanguage, currency } = useContext(UserContext);
+  const [finalSum, setFinalSum] = useState(0);
+  const [orderDetails, setOrderDetails] = useState({
+    fullName: "",
+    phone: "",
+    country: "",
+    city: "",
+    address: "",
+    zipCode: "",
+    amount: finalSum,
+    currency: currency,
+    products: cart,
+  });
 
   const totalSum = (cart) => {
     let sum = 0;
@@ -31,6 +43,19 @@ const MyCart = () => {
       return (price * currency.value).toFixed(1);
     }
   };
+
+  useEffect(() => {
+    setFinalSum(currencyCorr(totalSum(cart)));
+  }, [cart, currency]);
+
+  useEffect(() => {
+    setOrderDetails({
+      ...orderDetails,
+      amount: finalSum,
+      currency: currency,
+      products: cart,
+    });
+  }, [finalSum, currency, cart]);
 
   return (
     <TransitionParent isFlex={false}>
@@ -72,13 +97,11 @@ const MyCart = () => {
                   $bordercolor="transparent"
                   $hoverbgcolor="dark"
                   $hovertextcolor="textlight"
-                  onClick={() => navigate("/checkout")}
+                  onClick={() => navigate("/checkout", { state: orderDetails })}
                   className={myCartStyle.button}
                 >
                   {text.cart.pay}{" "}
-                  {currencyCorr(totalSum(cart))
-                    .toString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}{" "}
+                  {finalSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}{" "}
                   {currency.symbol}
                 </Theme_Button>
               </span>
