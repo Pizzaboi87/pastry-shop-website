@@ -829,6 +829,8 @@ const hu_text = {
     next: "Tovább",
     details: "Szállítási adatok",
     address: "Szállítási cím",
+    save: "Mentés alapértelmezett címként",
+    missingData: "Kérjük, töltse ki az összes mezőt a helyes adatokkal.",
   },
 };
 

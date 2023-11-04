@@ -827,6 +827,8 @@ const en_text = {
     next: "Next",
     details: "Shipping details",
     address: "Shipping Address",
+    save: "Save as default address",
+    missingData: "Please fill out all fields with correct data.",
   },
 };
 

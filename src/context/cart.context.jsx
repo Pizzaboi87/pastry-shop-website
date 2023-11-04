@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import { UserContext } from "./user.context";
 
 export const CartContext = createContext();
 
@@ -22,7 +23,53 @@ export const CartContextProvider = ({ children }) => {
     quantity: 2,
   };
 
+  const { currency } = useContext(UserContext);
+  const [finalSum, setFinalSum] = useState(0);
   const [cart, setCart] = useState([testObj]);
+  const [orderDetails, setOrderDetails] = useState({
+    fullName: "",
+    phone: "",
+    country: "",
+    city: "",
+    address: "",
+    zipCode: "",
+    amount: finalSum,
+    currency: currency,
+    products: cart,
+  });
+
+  useEffect(() => {
+    console.log(orderDetails);
+  }, [orderDetails]);
+
+  const totalSum = (cart) => {
+    let sum = 0;
+    cart.forEach((item) => {
+      sum += item.product.price * item.quantity;
+    });
+    return sum;
+  };
+
+  const currencyCorr = (price) => {
+    if (currency.name === "HUF") {
+      return Math.ceil((price * currency.value) / 100) * 100;
+    } else {
+      return (price * currency.value).toFixed(1);
+    }
+  };
+
+  useEffect(() => {
+    setFinalSum(currencyCorr(totalSum(cart)));
+  }, [cart, currency]);
+
+  useEffect(() => {
+    setOrderDetails({
+      ...orderDetails,
+      amount: finalSum,
+      currency: currency,
+      products: cart,
+    });
+  }, [finalSum, currency, cart]);
 
   const addToCart = (product) => {
     if (cart.find((item) => item.product.id === product.id)) {
@@ -60,7 +107,14 @@ export const CartContextProvider = ({ children }) => {
     }
   };
 
-  const value = { cart, setCart, addToCart, removeFromCart };
+  const value = {
+    cart,
+    setCart,
+    addToCart,
+    removeFromCart,
+    orderDetails,
+    setOrderDetails,
+  };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

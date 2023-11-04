@@ -840,6 +840,8 @@ const fr_text = {
     next: "Suivant",
     details: "Détails de livraison",
     address: "Adresse de livraison",
+    save: "Enregistrer comme adresse par défaut",
+    missingData: "Veuillez remplir tous les champs avec des données correctes.",
   },
 };
 

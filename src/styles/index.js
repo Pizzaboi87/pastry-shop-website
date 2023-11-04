@@ -387,12 +387,24 @@ export const mainContentStyle = {
 };
 
 export const myCartStyle = {
+  form: "md:w-[95%] xl:w-full w-full grid md:grid-cols-7 grid-cols-1 xl:px-16 xl:py-6 py-2 gap-y-2 md:mx-[2.5%] xl:mx-0",
+  phone: "xl:h-[2.3rem] h-[2rem]",
+  input:
+    "text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted",
+  email:
+    "disabled:bg-[#f0f0f0] cursor-not-allowed text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted",
+  label:
+    "flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
+  oddLabel:
+    "md:col-span-3 md:col-start-1 col-start-1 flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
+  evenLabel:
+    "md:col-span-3 md:col-start-5 col-start-1 flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
   container: "w-full min-h-[30rem] flex flex-col",
   buttonContainer: "w-full",
   buttonSpan:
-    "flex flex-col xl:flex-row items-center justify-center xl:justify-between gap-[1rem] xl:gap-0 xl:mx-[2.5%] mt-2 xl:mt-0",
+    "flex flex-col md:flex-row items-center justify-center md:justify-between gap-[1rem] md:gap-0 md:mx-[2.5%] mt-2 md:mt-0",
   button:
-    "flex items-center justify-center gap-2 text-[1.5rem] font-[700] xl:self-end self-center py-2 px-3 rounded-xl shadow-xl",
+    "flex items-center justify-center gap-2 text-[1.5rem] font-[700] md:self-end self-center py-2 px-3 rounded-xl shadow-xl",
   emptyWrapper: "w-full h-full flex flex-col items-center justify-center",
   emptyImage: "w-[20rem] h-[20rem]",
   emptyText: "text-[2rem] font-[500]",

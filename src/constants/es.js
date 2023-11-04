@@ -836,6 +836,8 @@ const es_text = {
     next: "Siguiente",
     details: "Detalles de envio",
     address: "Dirección de envío",
+    save: "Guardar como dirección predeterminada",
+    missingData: "Por favor complete todos los campos con los datos correctos.",
   },
 };
 
