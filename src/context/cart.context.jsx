@@ -36,6 +36,7 @@ export const CartContextProvider = ({ children }) => {
     amount: finalSum,
     currency: currency,
     products: cart,
+    paymentMethod: "credit",
   });
 
   useEffect(() => {

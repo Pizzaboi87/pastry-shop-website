@@ -399,7 +399,10 @@ export const myCartStyle = {
     "md:col-span-3 md:col-start-1 col-start-1 flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
   evenLabel:
     "md:col-span-3 md:col-start-5 col-start-1 flex flex-col text-text md:text-[1.2rem] text-[1rem] font-[500] xl:py-4 py-2",
+  checkboxLabel: "col-span-3 flex mb-6",
+  checkbox: "mr-4 w-[1rem]",
   container: "w-full min-h-[30rem] flex flex-col",
+  paymentContainer: "w-full flex flex-col h-auto",
   buttonContainer: "w-full",
   buttonSpan:
     "flex flex-col md:flex-row items-center justify-center md:justify-between gap-[1rem] md:gap-0 md:mx-[2.5%] mt-2 md:mt-0",

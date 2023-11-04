@@ -813,7 +813,7 @@ const hu_text = {
     searchBox: "Termék keresése...",
     searchButton: "Keresés",
     addToCart: "Kosárba",
-    checkout: "Tovább a fizesetéshez",
+    checkout: "Tovább a fizetéshez",
   },
   orderCard: {
     name: "Név:",

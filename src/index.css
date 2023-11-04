@@ -163,3 +163,12 @@ textarea:disabled {
   color: white;
   transition: 0.1s ease-in-out;
 }
+
+label input:checked ~ span {
+  background-color: #efa75c;
+  color: white;
+}
+
+label input:checked:hover ~ span {
+  background-color: #efa75c;
+}

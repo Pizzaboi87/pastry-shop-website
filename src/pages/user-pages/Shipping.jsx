@@ -17,11 +17,12 @@ import {
   userPhoneInputStyle,
 } from "../../styles";
 
-const Checkout = () => {
+const Shipping = () => {
   const navigate = useNavigate();
   const { orderDetails, setOrderDetails } = useContext(CartContext);
   const { userData, setUserData, currentUser, text } = useContext(UserContext);
   const { showErrorSwal, showSuccessSwal } = useSwalMessage();
+  const [isLoading, setIsLoading] = useState(false);
 
   const defaultForm = {
     fullName: userData.fullName ? userData.fullName : "",
@@ -73,12 +74,19 @@ const Checkout = () => {
 
   const saveAsDefaultFunction = async () => {
     try {
+      setIsLoading(true);
       await updateUserData(currentUser.uid, userAccountForm)
         .then(() => {
           showSuccessSwal(text.userAccountForm.swal.successMessage);
         })
         .then(() => {
           setUserData({ ...userData, ...userAccountForm });
+        })
+        .then(() => {
+          updateOrderDetails();
+        })
+        .then(() => {
+          setIsLoading(false);
         });
     } catch (error) {
       console.error("Error during the update of user's data: ", error);
@@ -86,8 +94,8 @@ const Checkout = () => {
     }
   };
 
-  const updateOrderDetails = () => {
-    setOrderDetails({
+  const updateOrderDetails = async () => {
+    await setOrderDetails({
       ...orderDetails,
       fullName: fullName,
       phone: phone,
@@ -96,6 +104,7 @@ const Checkout = () => {
       address: address,
       zipCode: zipCode,
     });
+    navigate("/payment");
   };
 
   const handleChange = (event) => {
@@ -125,14 +134,13 @@ const Checkout = () => {
       return;
     } else if (userAccountForm.saveAsDefault) {
       saveAsDefaultFunction();
-      updateOrderDetails();
     } else {
       updateOrderDetails();
     }
   };
 
   return (
-    <TransitionParent>
+    <TransitionParent isFlex={false}>
       <Theme_H1 $textcolor="title" className={userPageStyle.title}>
         {text.cart.details}
       </Theme_H1>
@@ -223,13 +231,13 @@ const Checkout = () => {
             />
           </label>
 
-          <label className="col-span-3 flex mb-6">
+          <label className={myCartStyle.checkboxLabel}>
             <input
               type="checkbox"
               value={saveAsDefault}
               name="saveAsDefault"
               onChange={handleChange}
-              className="mr-4 w-[1rem]"
+              className={myCartStyle.checkbox}
             />
             <p>{text.cart.save}</p>
           </label>
@@ -254,9 +262,11 @@ const Checkout = () => {
               $bordercolor="transparent"
               $hoverbgcolor="dark"
               $hovertextcolor="textlight"
-              //onClick={() => navigate("/payment")}
               onClick={handleSubmit}
-              className={myCartStyle.button}
+              disabled={isLoading}
+              className={`${myCartStyle.button} ${
+                isLoading ? "cursor-not-allowed" : "cursor-pointer"
+              }`}
             >
               {text.cart.next}
               <Icon icon="line-md:arrow-right-circle" />
@@ -268,4 +278,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default Shipping;

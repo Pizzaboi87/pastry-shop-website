@@ -31,12 +31,13 @@ import {
 } from "../pages/admin-pages";
 import {
   AllFavourites,
-  Checkout,
   Favourites,
   MyAccount,
   MyCart,
+  Payment,
   PreviousOrders,
   Settings,
+  Shipping,
 } from "../pages/user-pages";
 import { mainContentStyle } from "../styles";
 
@@ -76,7 +77,8 @@ const MainContent = () => {
           <Route path="/mycart" element={<MyCart />} />
           <Route path="/myorders" element={<PreviousOrders />} />
           <Route path="/mysettings" element={<Settings />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/shipping" element={<Shipping />} />
+          <Route path="/payment" element={<Payment />} />
 
           <Route path="/home" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />

@@ -27,7 +27,7 @@ const MyCart = () => {
         <Theme_Div
           $bgcolor="transparent"
           $bordercolor="transparent"
-          className={myCartStyle.container}
+          className={myCartStyle.paymentContainer}
         >
           {cart.map((item) => (
             <OrderCard
@@ -58,7 +58,7 @@ const MyCart = () => {
                   $bordercolor="transparent"
                   $hoverbgcolor="dark"
                   $hovertextcolor="textlight"
-                  onClick={() => navigate("/checkout")}
+                  onClick={() => navigate("/shipping")}
                   className={myCartStyle.button}
                 >
                   {text.cart.next}
