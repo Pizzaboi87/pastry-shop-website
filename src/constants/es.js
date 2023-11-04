@@ -833,6 +833,7 @@ const es_text = {
     pay: "Pagar:",
     shop: "Seguir comprando",
     back: "Atrás",
+    next: "Siguiente",
     details: "Detalles de envio",
     address: "Dirección de envío",
   },

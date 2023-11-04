@@ -10,6 +10,7 @@ import {
   myCartStyle,
   userPageStyle,
 } from "../../styles";
+import { Icon } from "@iconify/react";
 
 const MyCart = () => {
   const navigate = useNavigate();
@@ -89,6 +90,7 @@ const MyCart = () => {
                   onClick={() => navigate("/shop")}
                   className={myCartStyle.button}
                 >
+                  <Icon icon="line-md:arrow-left-circle" />
                   {text.cart.shop}
                 </Theme_Button>
                 <Theme_Button
@@ -100,9 +102,8 @@ const MyCart = () => {
                   onClick={() => navigate("/checkout", { state: orderDetails })}
                   className={myCartStyle.button}
                 >
-                  {text.cart.pay}{" "}
-                  {finalSum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}{" "}
-                  {currency.symbol}
+                  {text.cart.next}
+                  <Icon icon="line-md:arrow-right-circle" />
                 </Theme_Button>
               </span>
             </div>

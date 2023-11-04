@@ -826,6 +826,7 @@ const hu_text = {
     pay: "Fizetés:",
     shop: "Vásárlás folytatása",
     back: "Vissza",
+    next: "Tovább",
     details: "Szállítási adatok",
     address: "Szállítási cím",
   },

@@ -837,6 +837,7 @@ const fr_text = {
     pay: "Payer:",
     shop: "Continuer vos achats",
     back: "Dos",
+    next: "Suivant",
     details: "Détails de livraison",
     address: "Adresse de livraison",
   },

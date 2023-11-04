@@ -824,6 +824,7 @@ const en_text = {
     pay: "Pay:",
     shop: "Continue shopping",
     back: "Back",
+    next: "Next",
     details: "Shipping details",
     address: "Shipping Address",
   },

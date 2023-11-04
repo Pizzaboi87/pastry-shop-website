@@ -8,6 +8,7 @@ import {
 } from "../../styles";
 import { UserContext } from "../../context";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ const Checkout = () => {
               onClick={() => navigate("/mycart")}
               className={myCartStyle.button}
             >
+              <Icon icon="line-md:arrow-left-circle" />
               {text.cart.back}
             </Theme_Button>
             <Theme_Button
@@ -54,9 +56,8 @@ const Checkout = () => {
               onClick={() => navigate("/payment")}
               className={myCartStyle.button}
             >
-              {text.cart.pay}{" "}
-              {state.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}{" "}
-              {currency.symbol}
+              {text.cart.next}
+              <Icon icon="line-md:arrow-right-circle" />
             </Theme_Button>
           </span>
         </div>

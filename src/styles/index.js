@@ -389,8 +389,10 @@ export const mainContentStyle = {
 export const myCartStyle = {
   container: "w-full min-h-[30rem] flex flex-col",
   buttonContainer: "w-full",
-  buttonSpan: "flex items-center justify-between xl:mx-[2.5%]",
-  button: "text-[1.5rem] font-[700] self-end py-2 px-3 rounded-xl shadow-xl",
+  buttonSpan:
+    "flex flex-col xl:flex-row items-center justify-center xl:justify-between gap-[1rem] xl:gap-0 xl:mx-[2.5%] mt-2 xl:mt-0",
+  button:
+    "flex items-center justify-center gap-2 text-[1.5rem] font-[700] xl:self-end self-center py-2 px-3 rounded-xl shadow-xl",
   emptyWrapper: "w-full h-full flex flex-col items-center justify-center",
   emptyImage: "w-[20rem] h-[20rem]",
   emptyText: "text-[2rem] font-[500]",
