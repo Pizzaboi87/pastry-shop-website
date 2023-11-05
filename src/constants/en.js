@@ -826,7 +826,6 @@ const en_text = {
     tryAgain: "Please try again later.",
     success: "Payment was successful.",
     pay: "Pay:",
-    shop: "Continue shopping",
     back: "Back",
     next: "Next",
     details: "Shipping details",

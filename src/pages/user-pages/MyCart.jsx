@@ -54,7 +54,7 @@ const MyCart = () => {
                   className={myCartStyle.button}
                 >
                   <Icon icon="line-md:arrow-left-circle" />
-                  {text.cart.shop}
+                  {text.cart.back}
                 </Theme_Button>
                 <Theme_Button
                   $bgcolor="logo"

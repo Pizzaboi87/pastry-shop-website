@@ -5,7 +5,7 @@ import { TransitionParent, UserPanel } from "../../components";
 import { CartContext, UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { useState, useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { updateUserData } from "../../utils/firebase";
 import { useSwalMessage } from "../../utils/useSwalMessage";
 import { useValidation } from "../../utils/useValidation";
@@ -160,6 +160,10 @@ const Shipping = () => {
       updateOrderDetails();
     }
   };
+
+  if (!orderDetails.amount) {
+    return <Navigate to="/mycart" />;
+  }
 
   return (
     <TransitionParent isFlex={false}>

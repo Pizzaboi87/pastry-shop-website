@@ -828,7 +828,6 @@ const hu_text = {
     tryAgain: "Kérjük, próbáld újra később.",
     success: "A rendelésed sikeresen rögzítettük.",
     pay: "Fizetés:",
-    shop: "Vásárlás folytatása",
     back: "Vissza",
     next: "Tovább",
     details: "Szállítási adatok",

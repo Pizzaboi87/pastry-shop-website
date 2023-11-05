@@ -405,9 +405,9 @@ export const myCartStyle = {
   paymentContainer: "w-full flex flex-col h-auto",
   buttonContainer: "w-full",
   buttonSpan:
-    "flex flex-col md:flex-row items-center justify-center md:justify-between gap-[1rem] md:gap-0 md:mx-[2.5%] mt-2 md:mt-0",
+    "flex flex-col md:flex-row items-center justify-center md:justify-between gap-[1rem] md:gap-0 xl:mx-[2.5%] mt-2 md:mt-0",
   button:
-    "flex items-center justify-center gap-2 text-[1.5rem] font-[700] md:self-end self-center py-2 px-3 rounded-xl shadow-xl",
+    "w-full md:w-auto flex items-center justify-center gap-2 text-[1.5rem] font-[700] md:self-end self-center py-2 px-3 rounded-xl shadow-xl",
   emptyWrapper: "w-full h-full flex flex-col items-center justify-center",
   emptyImage: "w-[20rem] h-[20rem]",
   emptyText: "text-[2rem] font-[500]",
@@ -463,9 +463,11 @@ export const noPermissionStyle = {
 };
 
 export const notFoundStyle = {
-  container: "flex items-center justify-center",
-  title: "error text-[#e0e0e0] text-[6.4rem] font-[400] mb-5 mr-2",
-  image: "w-[15rem]",
+  main: "xl:text-[3rem] text-[1.5rem] text-center font-[600] mb-8",
+  container: "flex xl:flex-row flex-col items-center justify-center",
+  title:
+    "error text-[#e0e0e0] text-[4rem] xl:text-[6.4rem] font-[400] xl:mb-5 -mb-5 xl:mr-2",
+  image: "w-[10rem] xl:w-[15rem]",
 };
 
 export const orderCardStyle = {
@@ -501,9 +503,10 @@ export const paragraphsStyle = {
 };
 
 export const paymentFormStyle = {
-  container: "bg-white xl:mx-[2.5%] mb-4 rounded-xl p-4",
+  container:
+    "bg-white xl:mx-[2.5%] mb-4 rounded-xl p-4 flex flex-col items-center justify-center",
   title: "text-[1.4rem] font-[500] text-center",
-  buttonContainer: "flex justify-between mt-4",
+  buttonContainer: "flex flex-col md:flex-row justify-between mt-4",
   label: "flex items-center justify-center cursor-pointer p-3 w-[15rem]",
   span: "w-full h-full p-3 rounded-xl flex flex-col items-center justify-center",
   cardsContainer: "flex items-center justify-center gap-1",

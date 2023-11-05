@@ -48,6 +48,10 @@ import { stripePromise } from "../utils/stripe";
 const StripeElement = () => {
   const { orderDetails } = useContext(CartContext);
 
+  if (!orderDetails.amount) {
+    return <Navigate to="/mycart" />;
+  }
+
   const options = {
     mode: "payment",
     amount: Math.round(parseFloat(orderDetails.amount) * 100),
