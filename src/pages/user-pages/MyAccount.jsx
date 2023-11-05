@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import { UserContext } from "../../context";
 import { useContext } from "react";
 import { Theme_H1, userPageStyle } from "../../styles";
@@ -10,6 +11,10 @@ import {
 
 const MyAccount = () => {
   const { userData, setUserData, currentUser, text } = useContext(UserContext);
+
+  if (!currentUser) {
+    return <Navigate to="/auth" />;
+  }
 
   if (!userData) return <Loading />;
 

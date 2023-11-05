@@ -1,10 +1,15 @@
+import { TransitionParent, UserPanel } from "../../components";
+import { Navigate } from "react-router-dom";
 import { UserContext } from "../../context";
 import { useContext } from "react";
-import { TransitionParent, UserPanel } from "../../components";
 import { Theme_H1, userPageStyle, previousOrdersStyle } from "../../styles";
 
 const PreviousOrders = () => {
-  const { text } = useContext(UserContext);
+  const { text, currentUser } = useContext(UserContext);
+
+  if (!currentUser) {
+    return <Navigate to="/auth" />;
+  }
 
   return (
     <TransitionParent isFlex={false}>

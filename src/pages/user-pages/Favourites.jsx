@@ -1,6 +1,6 @@
 import { UserContext } from "../../context";
 import { UserPanel } from "../../components";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { useContext } from "react";
 import {
   Theme_Div,
@@ -10,7 +10,11 @@ import {
 } from "../../styles";
 
 const Favourites = () => {
-  const { text } = useContext(UserContext);
+  const { text, currentUser } = useContext(UserContext);
+
+  if (!currentUser) {
+    return <Navigate to="/auth" />;
+  }
 
   return (
     <Theme_Div

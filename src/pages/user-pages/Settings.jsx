@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import { UserContext } from "../../context";
 import { useContext } from "react";
 import { Theme_H1, Theme_Hr, userPageStyle, settingsStyle } from "../../styles";
@@ -10,7 +11,11 @@ import {
 } from "../../components";
 
 const Settings = () => {
-  const { text } = useContext(UserContext);
+  const { text, currentUser } = useContext(UserContext);
+
+  if (!currentUser) {
+    return <Navigate to="/auth" />;
+  }
 
   return (
     <TransitionParent isFlex={false}>
