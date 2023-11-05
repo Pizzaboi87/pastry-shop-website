@@ -830,6 +830,10 @@ const es_text = {
   },
   cart: {
     empty: "Tu carrito está vacío.",
+    selected: "Productos seleccionados:",
+    wait: "Por favor, espera...",
+    tryAgain: "Por favor, inténtalo de nuevo.",
+    success: "¡Tu pedido ha sido realizado!",
     pay: "Pagar:",
     shop: "Seguir comprando",
     back: "Atrás",
@@ -838,6 +842,23 @@ const es_text = {
     address: "Dirección de envío",
     save: "Guardar como dirección predeterminada",
     missingData: "Por favor complete todos los campos con los datos correctos.",
+  },
+  payment: {
+    mainTitle: "Configuración de pago",
+    title: "Elige un método de pago",
+    card: "Tarjeta de crédito",
+    cashDelivery: "Contra reembolso",
+    cardDelivery: "Tarjeta a la entrega",
+  },
+  placeholder: {
+    name: "Tu nombre",
+    userName: "Nombre de usuario",
+    email: "Tu email",
+    phone: "Tu número de teléfono",
+    country: "Tu país",
+    city: "Tu ciudad",
+    address: "Tu dirección",
+    zip: "Tu código postal",
   },
 };
 

@@ -411,6 +411,11 @@ export const myCartStyle = {
   emptyWrapper: "w-full h-full flex flex-col items-center justify-center",
   emptyImage: "w-[20rem] h-[20rem]",
   emptyText: "text-[2rem] font-[500]",
+  swalContainer: "flex flex-col gap-2 items-center justify-center",
+  swalMessage: "text-[2rem] font-[600]",
+  swalIcon: "text-[3rem] text-[#33d]",
+  subTitle: "text-[1.5rem] font-[600] text-center",
+  cartTitle: "text-[1.5rem] font-[600] text-center mb-4",
 };
 
 export const navDesktopStyle = {
@@ -493,6 +498,23 @@ export const paragraphsStyle = {
   paragraph: "my-2",
   wrapper:
     "md:text-justify 2xl:max-w-[40%] max-w-[90%] 2xl:text-[1.25rem] text-[1.5rem] mt-8 xl:mt-0  text-text leading-9",
+};
+
+export const paymentFormStyle = {
+  container: "bg-white xl:mx-[2.5%] mb-4 rounded-xl p-4",
+  title: "text-[1.4rem] font-[500] text-center",
+  buttonContainer: "flex justify-between mt-4",
+  label: "flex items-center justify-center cursor-pointer p-3 w-[15rem]",
+  span: "w-full h-full p-3 rounded-xl flex flex-col items-center justify-center",
+  cardsContainer: "flex items-center justify-center gap-1",
+  mastercard: "text-[1rem]",
+  visa: "text-[0.6rem]",
+  optionTitle: "text-[1rem] font-[500]",
+  inputHide: "appearance-none",
+  icon: "text-[1.5rem]",
+  stripeContainer:
+    "h-auto min-h-[10rem] flex items-center justify-center xl:mx-[2.5%] mb-4 rounded-xl",
+  stripeForm: "w-[30rem] h-full bg-white text-[1.5rem] my-6",
 };
 
 export const phoneInputStyle = {

@@ -30,6 +30,7 @@ import NavUserMobile from "./NavUserMobile";
 import NoPermission from "./NoPermission";
 import OrderCard from "./OrderCard";
 import Paragraphs from "./Paragraphs";
+import PaymentForm from "./PaymentForm";
 import Postcard from "./Postcard";
 import ProductCard from "./ProductCard";
 import RecipeCard from "./RecipeCard";
@@ -79,6 +80,7 @@ export {
   NoPermission,
   OrderCard,
   Paragraphs,
+  PaymentForm,
   Postcard,
   ProductCard,
   RecipeCard,

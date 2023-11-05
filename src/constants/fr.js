@@ -834,6 +834,10 @@ const fr_text = {
   },
   cart: {
     empty: "Votre panier est vide.",
+    selected: "Produits sélectionnés:",
+    wait: "Veuillez patienter...",
+    tryAgain: "Veuillez réessayer.",
+    success: "Votre commande a été passée avec succès!",
     pay: "Payer:",
     shop: "Continuer vos achats",
     back: "Dos",
@@ -842,6 +846,23 @@ const fr_text = {
     address: "Adresse de livraison",
     save: "Enregistrer comme adresse par défaut",
     missingData: "Veuillez remplir tous les champs avec des données correctes.",
+  },
+  payment: {
+    mainTitle: "Paramètres de paiement",
+    title: "Choisissez un mode de paiement",
+    card: "Carte de crédit",
+    cashDelivery: "Paiement à la livraison",
+    cardDelivery: "Carte à la livraison",
+  },
+  placeholder: {
+    name: "Votre nom",
+    userName: "Votre nom d'utilisateur",
+    email: "Votre adresse email",
+    phone: "Votre numéro de téléphone",
+    country: "Votre pays",
+    city: "Votre ville",
+    address: "Votre adresse",
+    zip: "Votre code postal",
   },
 };
 

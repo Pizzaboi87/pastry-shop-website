@@ -115,7 +115,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         {text.userAccountForm.fullName}
         <Theme_Input
           type="text"
-          placeholder="Your name"
+          placeholder={text.placeholder.name}
           name="fullName"
           value={fullName}
           $outlinecolor="logo"
@@ -128,7 +128,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         {text.userAccountForm.displayName}
         <Theme_Input
           type="text"
-          placeholder="Your username"
+          placeholder={text.placeholder.userName}
           name="displayName"
           value={displayName}
           $outlinecolor="logo"
@@ -142,7 +142,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         <Theme_Input
           type="text"
           disabled
-          placeholder="Your email address"
+          placeholder={text.placeholder.email}
           name="email"
           $outlinecolor="logo"
           value={email}
@@ -167,7 +167,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         {text.userAccountForm.country}
         <Theme_Input
           type="text"
-          placeholder="Your country"
+          placeholder={text.placeholder.country}
           name="country"
           value={country}
           $outlinecolor="logo"
@@ -180,7 +180,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         {text.userAccountForm.city}
         <Theme_Input
           type="text"
-          placeholder="Your city"
+          placeholder={text.placeholder.city}
           name="city"
           value={city}
           $outlinecolor="logo"
@@ -193,7 +193,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         {text.userAccountForm.address}
         <Theme_Input
           type="text"
-          placeholder="Your address"
+          placeholder={text.placeholder.address}
           name="address"
           value={address}
           $outlinecolor="logo"
@@ -206,7 +206,7 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
         {text.userAccountForm.zip}
         <Theme_Input
           type="text"
-          placeholder="Your ZIP code"
+          placeholder={text.placeholder.zip}
           name="zipCode"
           value={zipCode}
           $outlinecolor="logo"

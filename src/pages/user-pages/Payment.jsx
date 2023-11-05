@@ -1,42 +1,39 @@
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import { CartContext, UserContext } from "../../context";
-import { TransitionParent, UserPanel } from "../../components";
+import { PaymentForm, TransitionParent, UserPanel } from "../../components";
 import { Icon } from "@iconify/react";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSwalMessage } from "../../utils/useSwalMessage";
+import {
+  PaymentElement,
+  useElements,
+  useStripe,
+} from "@stripe/react-stripe-js";
 import {
   Theme_H1,
   Theme_Button,
   userPageStyle,
   myCartStyle,
   Theme_Div,
-  Theme_Span,
 } from "../../styles";
-import {
-  PaymentElement,
-  useElements,
-  useStripe,
-} from "@stripe/react-stripe-js";
-import { useSwalMessage } from "../../utils/useSwalMessage";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 
 const Payment = () => {
   const navigate = useNavigate();
   const stripe = useStripe();
   const elements = useElements();
-  const { showErrorSwal, showSuccessSwal } = useSwalMessage();
-
-  const { text, userData } = useContext(UserContext);
-  const { orderDetails, setOrderDetails } = useContext(CartContext);
-
   const [loading, setLoading] = useState(false);
+  const { text, userData } = useContext(UserContext);
+  const { orderDetails } = useContext(CartContext);
+  const { showErrorSwal, showSuccessSwal } = useSwalMessage();
 
   const MySwal = withReactContent(Swal);
   const SwalLoader = () => {
     return (
-      <div className="flex flex-col gap-2 items-center justify-center">
-        <h1 className="text-[2rem]">Please wait</h1>
-        <Icon icon="eos-icons:loading" className="text-[3rem] text-[#33d]" />
+      <div className={myCartStyle.swalContainer}>
+        <h1 className={myCartStyle.swalMessage}>{text.cart.wait}</h1>
+        <Icon icon="eos-icons:loading" className={myCartStyle.swalIcon} />
       </div>
     );
   };
@@ -53,15 +50,9 @@ const Payment = () => {
 
   const handleError = (error) => {
     setLoading(false);
+    console.log(error);
     MySwal.close();
-    showErrorSwal(error, "Please try again later.");
-  };
-
-  const handlePayment = (e) => {
-    setOrderDetails((orderDetails) => ({
-      ...orderDetails,
-      paymentMethod: e.target.value,
-    }));
+    showErrorSwal(text.cart.tryAgain);
   };
 
   const paymentHandler = async (e) => {
@@ -111,10 +102,9 @@ const Payment = () => {
       } else {
         setLoading(false);
         MySwal.close();
-        showSuccessSwal("Payment was successful.");
+        showSuccessSwal(text.cart.success);
       }
     } catch (error) {
-      console.error("Error:", error);
       setLoading(false);
       handleError(error);
     }
@@ -123,7 +113,7 @@ const Payment = () => {
   return (
     <TransitionParent isFlex={false}>
       <Theme_H1 $textcolor="title" className={userPageStyle.title}>
-        Payment details
+        {text.payment.mainTitle}
       </Theme_H1>
       <UserPanel>
         <Theme_Div
@@ -131,91 +121,9 @@ const Payment = () => {
           $bordercolor="transparent"
           className={myCartStyle.paymentContainer}
         >
-          <form className="bg-white xl:mx-[2.5%] mb-4 rounded-xl p-4">
-            <h1 className="text-[1.4rem] font-[500]">
-              Choose your Payment method
-            </h1>
-            <div className="flex justify-between mt-4">
-              <label className="flex items-center justify-center cursor-pointer p-3 w-[15rem]">
-                <input
-                  type="radio"
-                  name="payment"
-                  value="credit"
-                  checked={orderDetails.paymentMethod == "credit"}
-                  className="appearance-none"
-                  onChange={handlePayment}
-                />
-                <Theme_Span
-                  $bgcolor="light"
-                  $hoverbgcolor="glasslight"
-                  className="w-full h-full p-3 rounded-xl flex flex-col items-center justify-center"
-                >
-                  <span className="flex items-center justify-center gap-1">
-                    <Icon icon="logos:mastercard" className="text-[1rem]" />
-                    <p> / </p>
-                    <Icon icon="logos:visa" className="text-[0.6rem]" />
-                  </span>
-                  <p className="text-[1rem] font-[500]">Credit Card</p>
-                </Theme_Span>
-              </label>
-
-              <label className="flex items-center justify-center cursor-pointer p-3 w-[15rem]">
-                <input
-                  type="radio"
-                  name="payment"
-                  value="cashDelivery"
-                  checked={orderDetails.paymentMethod == "cashDelivery"}
-                  className="appearance-none"
-                  onChange={handlePayment}
-                />
-                <Theme_Span
-                  $bgcolor="light"
-                  $hoverbgcolor="glasslight"
-                  className="w-full h-full p-3 rounded-xl flex flex-col items-center justify-center"
-                >
-                  <Icon icon="mdi:cash-multiple" className="text-[1.5rem]" />
-                  <p className="text-[1rem] font-[500]">Cash on Delivery</p>
-                </Theme_Span>
-              </label>
-
-              <label className="flex items-center justify-center cursor-pointer p-3 w-[15rem]">
-                <input
-                  type="radio"
-                  name="payment"
-                  value="creditDelivery"
-                  checked={orderDetails.paymentMethod == "creditDelivery"}
-                  className="appearance-none"
-                  onChange={handlePayment}
-                />
-                <Theme_Span
-                  $bgcolor="light"
-                  $hoverbgcolor="glasslight"
-                  className="w-full h-full p-3 rounded-xl flex flex-col items-center justify-center"
-                >
-                  <Icon
-                    icon="fontisto:shopping-pos-machine"
-                    className="text-[1.5rem]"
-                  />
-                  <p className="text-[1rem] font-[500]">
-                    Credit Card on Delivery
-                  </p>
-                </Theme_Span>
-              </label>
-            </div>
-          </form>
-
-          {orderDetails.paymentMethod == "credit" && (
-            <div className="h-auto min-h-[10rem] flex items-center justify-center xl:mx-[2.5%] mb-4 rounded-xl">
-              <Theme_Div
-                $bgcolor="background"
-                $bordercolor="transparent"
-                id="payment-form"
-                className="w-[30rem] h-full bg-white text-[1.5rem] my-6"
-              >
-                <PaymentElement />
-              </Theme_Div>
-            </div>
-          )}
+          <PaymentForm>
+            <PaymentElement />
+          </PaymentForm>
 
           <div className={myCartStyle.buttonContainer}>
             <span className={myCartStyle.buttonSpan}>
@@ -227,9 +135,7 @@ const Payment = () => {
                 $hovertextcolor="textlight"
                 onClick={() => navigate("/shipping")}
                 disabled={loading}
-                className={`${myCartStyle.button} ${
-                  loading ? "cursor-not-allowed" : "cursor-pointer"
-                }`}
+                className={myCartStyle.button}
               >
                 <Icon icon="line-md:arrow-left-circle" />
                 {text.cart.back}
@@ -240,9 +146,7 @@ const Payment = () => {
                 $bordercolor="transparent"
                 $hoverbgcolor="dark"
                 $hovertextcolor="textlight"
-                className={`${myCartStyle.button} ${
-                  loading ? "cursor-progress" : "cursor-pointer"
-                }`}
+                className={myCartStyle.button}
                 onClick={paymentHandler}
                 disabled={loading}
               >

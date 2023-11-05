@@ -823,6 +823,10 @@ const hu_text = {
   },
   cart: {
     empty: "A kosarad üres.",
+    selected: "Kiválasztott termékek:",
+    wait: "Kérjük, várj...",
+    tryAgain: "Kérjük, próbáld újra később.",
+    success: "A rendelésed sikeresen rögzítettük.",
     pay: "Fizetés:",
     shop: "Vásárlás folytatása",
     back: "Vissza",
@@ -831,6 +835,23 @@ const hu_text = {
     address: "Szállítási cím",
     save: "Mentés alapértelmezett címként",
     missingData: "Kérjük, töltse ki az összes mezőt a helyes adatokkal.",
+  },
+  payment: {
+    mainTitle: "Fizetési beállítások",
+    title: "Válassz fizetési módot:",
+    card: "Bankkártya",
+    cashDelivery: "Készpénz szállításkor",
+    cardDelivery: "Kártya szállításkor",
+  },
+  placeholder: {
+    name: "Teljes név",
+    userName: "Felhasználónév",
+    email: "E-mail cím",
+    phone: "Telefonszám",
+    country: "Ország",
+    city: "Város",
+    address: "Cím",
+    zip: "Irányítószám",
   },
 };
 

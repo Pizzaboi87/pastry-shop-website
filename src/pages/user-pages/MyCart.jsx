@@ -1,4 +1,5 @@
 import { CartContext, UserContext } from "../../context";
+import { Icon } from "@iconify/react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { OrderCard, TransitionParent, UserPanel } from "../../components";
@@ -10,7 +11,6 @@ import {
   myCartStyle,
   userPageStyle,
 } from "../../styles";
-import { Icon } from "@iconify/react";
 
 const MyCart = () => {
   const navigate = useNavigate();
@@ -29,6 +29,10 @@ const MyCart = () => {
           $bordercolor="transparent"
           className={myCartStyle.paymentContainer}
         >
+          {cart.length ? (
+            <h1 className={myCartStyle.cartTitle}>{text.cart.selected}</h1>
+          ) : null}
+
           {cart.map((item) => (
             <OrderCard
               key={item.product.id}

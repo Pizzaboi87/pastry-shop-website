@@ -821,6 +821,10 @@ const en_text = {
   },
   cart: {
     empty: "Your cart is empty.",
+    selected: "Selected products:",
+    wait: "Please wait...",
+    tryAgain: "Please try again later.",
+    success: "Payment was successful.",
     pay: "Pay:",
     shop: "Continue shopping",
     back: "Back",
@@ -829,6 +833,23 @@ const en_text = {
     address: "Shipping Address",
     save: "Save as default address",
     missingData: "Please fill out all fields with correct data.",
+  },
+  payment: {
+    mainTitle: "Payment Settings",
+    title: "Choose your Payment method",
+    card: "Credit Card",
+    cashDelivery: "Cash on Delivery",
+    cardDelivery: "Card on Delivery",
+  },
+  placeholder: {
+    name: "Your name",
+    userName: "Your username",
+    email: "Your email address",
+    phone: "Your phone number",
+    country: "Your country",
+    city: "Your city",
+    address: "Your address",
+    zip: "Your ZIP code",
   },
 };
 

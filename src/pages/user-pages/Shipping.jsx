@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import PhoneInput from "react-phone-input-2";
 import { TransitionParent, UserPanel } from "../../components";
 import { CartContext, UserContext } from "../../context";
@@ -22,7 +24,27 @@ const Shipping = () => {
   const { orderDetails, setOrderDetails } = useContext(CartContext);
   const { userData, setUserData, currentUser, text } = useContext(UserContext);
   const { showErrorSwal, showSuccessSwal } = useSwalMessage();
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const MySwal = withReactContent(Swal);
+  const SwalLoader = () => {
+    return (
+      <div className={myCartStyle.swalContainer}>
+        <h1 className={myCartStyle.swalMessage}>{text.cart.wait}</h1>
+        <Icon icon="eos-icons:loading" className={myCartStyle.swalIcon} />
+      </div>
+    );
+  };
+
+  useEffect(() => {
+    if (loading) {
+      MySwal.fire({
+        html: <SwalLoader />,
+        allowOutsideClick: false,
+        showConfirmButton: false,
+      });
+    }
+  }, [loading]);
 
   const defaultForm = {
     fullName: userData.fullName ? userData.fullName : "",
@@ -74,7 +96,7 @@ const Shipping = () => {
 
   const saveAsDefaultFunction = async () => {
     try {
-      setIsLoading(true);
+      setLoading(true);
       await updateUserData(currentUser.uid, userAccountForm)
         .then(() => {
           showSuccessSwal(text.userAccountForm.swal.successMessage);
@@ -86,7 +108,7 @@ const Shipping = () => {
           updateOrderDetails();
         })
         .then(() => {
-          setIsLoading(false);
+          setLoading(false);
         });
     } catch (error) {
       console.error("Error during the update of user's data: ", error);
@@ -146,15 +168,13 @@ const Shipping = () => {
       </Theme_H1>
 
       <UserPanel>
-        <h1 className="text-[1.5rem] font-[600] text-center">
-          {text.cart.address}
-        </h1>
+        <h1 className={myCartStyle.subTitle}>{text.cart.address}</h1>
         <form onSubmit={handleSubmit} className={myCartStyle.form}>
           <label className={myCartStyle.oddLabel}>
             {text.userAccountForm.fullName}
             <Theme_Input
               type="text"
-              placeholder="Your name"
+              placeholder={text.placeholder.name}
               name="fullName"
               value={fullName}
               $outlinecolor="logo"
@@ -183,7 +203,7 @@ const Shipping = () => {
             {text.userAccountForm.country}
             <Theme_Input
               type="text"
-              placeholder="Your country"
+              placeholder={text.placeholder.country}
               name="country"
               value={country}
               $outlinecolor="logo"
@@ -196,7 +216,7 @@ const Shipping = () => {
             {text.userAccountForm.city}
             <Theme_Input
               type="text"
-              placeholder="Your city"
+              placeholder={text.placeholder.city}
               name="city"
               value={city}
               $outlinecolor="logo"
@@ -209,7 +229,7 @@ const Shipping = () => {
             {text.userAccountForm.address}
             <Theme_Input
               type="text"
-              placeholder="Your address"
+              placeholder={text.placeholder.address}
               name="address"
               value={address}
               $outlinecolor="logo"
@@ -222,7 +242,7 @@ const Shipping = () => {
             {text.userAccountForm.zip}
             <Theme_Input
               type="text"
-              placeholder="Your ZIP code"
+              placeholder={text.placeholder.zip}
               name="zipCode"
               value={zipCode}
               $outlinecolor="logo"
@@ -263,10 +283,8 @@ const Shipping = () => {
               $hoverbgcolor="dark"
               $hovertextcolor="textlight"
               onClick={handleSubmit}
-              disabled={isLoading}
-              className={`${myCartStyle.button} ${
-                isLoading ? "cursor-not-allowed" : "cursor-pointer"
-              }`}
+              disabled={loading}
+              className={myCartStyle.button}
             >
               {text.cart.next}
               <Icon icon="line-md:arrow-right-circle" />

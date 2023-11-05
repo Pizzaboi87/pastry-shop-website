@@ -18,7 +18,7 @@ const Shop = () => {
   const { text, userLanguage } = useContext(UserContext);
   const { cart } = useContext(CartContext);
 
-  const [categorySelector, setCategorySelector] = useState("gifts");
+  const [categorySelector, setCategorySelector] = useState("cakes");
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [categoryProducts, setCategoryProducts] = useState([]);
