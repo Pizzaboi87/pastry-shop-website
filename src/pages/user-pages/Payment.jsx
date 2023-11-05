@@ -1,7 +1,7 @@
 import { CartContext, UserContext } from "../../context";
 import { TransitionParent, UserPanel } from "../../components";
 import { Icon } from "@iconify/react";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Theme_H1,
@@ -11,17 +11,113 @@ import {
   Theme_Div,
   Theme_Span,
 } from "../../styles";
+import {
+  PaymentElement,
+  useElements,
+  useStripe,
+} from "@stripe/react-stripe-js";
+import { useSwalMessage } from "../../utils/useSwalMessage";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const Payment = () => {
   const navigate = useNavigate();
-  const { text } = useContext(UserContext);
+  const stripe = useStripe();
+  const elements = useElements();
+  const { showErrorSwal, showSuccessSwal } = useSwalMessage();
+
+  const { text, userData } = useContext(UserContext);
   const { orderDetails, setOrderDetails } = useContext(CartContext);
+
+  const [loading, setLoading] = useState(false);
+
+  const MySwal = withReactContent(Swal);
+  const SwalLoader = () => {
+    return (
+      <div className="flex flex-col gap-2 items-center justify-center">
+        <h1 className="text-[2rem]">Please wait</h1>
+        <Icon icon="eos-icons:loading" className="text-[3rem] text-[#33d]" />
+      </div>
+    );
+  };
+
+  useEffect(() => {
+    if (loading) {
+      MySwal.fire({
+        html: <SwalLoader />,
+        allowOutsideClick: false,
+        showConfirmButton: false,
+      });
+    }
+  }, [loading]);
+
+  const handleError = (error) => {
+    setLoading(false);
+    MySwal.close();
+    showErrorSwal(error, "Please try again later.");
+  };
 
   const handlePayment = (e) => {
     setOrderDetails((orderDetails) => ({
       ...orderDetails,
       paymentMethod: e.target.value,
     }));
+  };
+
+  const paymentHandler = async (e) => {
+    e.preventDefault();
+
+    if (!stripe || !elements) return;
+
+    setLoading(true);
+
+    const { error: submitError } = await elements.submit();
+    if (submitError) {
+      handleError(submitError);
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/create-payment-intent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          orderDetails: orderDetails,
+          email: userData.email,
+          amount: Math.round(parseFloat(orderDetails.amount) * 100),
+          currency: orderDetails.currency.name.toLowerCase(),
+          uid: userData.uid,
+        }),
+      });
+
+      if (!response.ok) {
+        handleError(response.statusText);
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response.json();
+      const client_secret = data.paymentIntent.client_secret;
+
+      const { error } = await stripe.confirmPayment({
+        elements,
+        clientSecret: client_secret,
+        redirect: "if_required",
+      });
+
+      if (error) {
+        handleError(error);
+      } else {
+        setLoading(false);
+        MySwal.close();
+        showSuccessSwal("Payment was successful.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setLoading(false);
+      handleError(error);
+    }
   };
 
   return (
@@ -109,8 +205,15 @@ const Payment = () => {
           </form>
 
           {orderDetails.paymentMethod == "credit" && (
-            <div className="h-[10rem] flex items-center justify-center bg-[#2ad] xl:mx-[2.5%] mb-4 rounded-xl">
-              <h1>Placeholder for stripe payment</h1>
+            <div className="h-auto min-h-[10rem] flex items-center justify-center xl:mx-[2.5%] mb-4 rounded-xl">
+              <Theme_Div
+                $bgcolor="background"
+                $bordercolor="transparent"
+                id="payment-form"
+                className="w-[30rem] h-full bg-white text-[1.5rem] my-6"
+              >
+                <PaymentElement />
+              </Theme_Div>
             </div>
           )}
 
@@ -123,7 +226,10 @@ const Payment = () => {
                 $hoverbgcolor="dark"
                 $hovertextcolor="textlight"
                 onClick={() => navigate("/shipping")}
-                className={myCartStyle.button}
+                disabled={loading}
+                className={`${myCartStyle.button} ${
+                  loading ? "cursor-not-allowed" : "cursor-pointer"
+                }`}
               >
                 <Icon icon="line-md:arrow-left-circle" />
                 {text.cart.back}
@@ -134,10 +240,18 @@ const Payment = () => {
                 $bordercolor="transparent"
                 $hoverbgcolor="dark"
                 $hovertextcolor="textlight"
-                className={myCartStyle.button}
+                className={`${myCartStyle.button} ${
+                  loading ? "cursor-progress" : "cursor-pointer"
+                }`}
+                onClick={paymentHandler}
+                disabled={loading}
               >
                 Pay
-                <Icon icon="mdi:cash-multiple" />
+                {loading ? (
+                  <Icon icon="eos-icons:loading" />
+                ) : (
+                  <Icon icon="mdi:cash-multiple" />
+                )}
               </Theme_Button>
             </span>
           </div>

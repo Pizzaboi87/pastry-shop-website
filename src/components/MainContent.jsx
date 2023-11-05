@@ -40,6 +40,27 @@ import {
   Shipping,
 } from "../pages/user-pages";
 import { mainContentStyle } from "../styles";
+import { useContext } from "react";
+import { CartContext } from "../context";
+import { Elements } from "@stripe/react-stripe-js";
+import { stripePromise } from "../utils/stripe";
+
+const StripeElement = () => {
+  const { orderDetails } = useContext(CartContext);
+
+  const options = {
+    mode: "payment",
+    amount: Math.round(parseFloat(orderDetails.amount) * 100),
+    currency: orderDetails.currency.name.toLowerCase(),
+    payment_method_types: ["card"],
+  };
+
+  return (
+    <Elements stripe={stripePromise} options={options}>
+      <Payment />
+    </Elements>
+  );
+};
 
 const MainContent = () => {
   const location = useLocation();
@@ -78,7 +99,7 @@ const MainContent = () => {
           <Route path="/myorders" element={<PreviousOrders />} />
           <Route path="/mysettings" element={<Settings />} />
           <Route path="/shipping" element={<Shipping />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/payment" element={<StripeElement />} />
 
           <Route path="/home" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
