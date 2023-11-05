@@ -41,14 +41,17 @@ import {
 } from "../pages/user-pages";
 import { mainContentStyle } from "../styles";
 import { useContext } from "react";
-import { CartContext } from "../context";
+import { CartContext, UserContext } from "../context";
 import { Elements } from "@stripe/react-stripe-js";
 import { stripePromise } from "../utils/stripe";
 
 const StripeElement = () => {
+  const { currentUser } = useContext(UserContext);
   const { orderDetails } = useContext(CartContext);
 
-  if (!orderDetails.amount) {
+  if (!currentUser) {
+    return <Navigate to="/auth" />;
+  } else if (!orderDetails.amount) {
     return <Navigate to="/mycart" />;
   }
 

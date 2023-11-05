@@ -1,7 +1,7 @@
 import { CartContext, UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { OrderCard, TransitionParent, UserPanel } from "../../components";
 import { emptyCart } from "../../assets";
 import {
@@ -14,8 +14,12 @@ import {
 
 const MyCart = () => {
   const navigate = useNavigate();
-  const { text, userLanguage } = useContext(UserContext);
+  const { text, userLanguage, currentUser } = useContext(UserContext);
   const { cart } = useContext(CartContext);
+
+  if (!currentUser) {
+    return <Navigate to="/auth" />;
+  }
 
   return (
     <TransitionParent isFlex={false}>
