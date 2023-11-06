@@ -1,3 +1,4 @@
+import PayPal from "./PayPal";
 import { Icon } from "@iconify/react";
 import { CartContext, UserContext } from "../context";
 import { useContext } from "react";
@@ -56,6 +57,25 @@ const PaymentForm = ({ children }) => {
             <input
               type="radio"
               name="payment"
+              value="payPal"
+              checked={orderDetails.paymentMethod == "payPal"}
+              className={paymentFormStyle.inputHide}
+              onChange={handlePayment}
+            />
+            <Theme_Span
+              $bgcolor="light"
+              $hoverbgcolor="glasslight"
+              className={paymentFormStyle.span}
+            >
+              <Icon icon="logos:paypal" className={paymentFormStyle.icon} />
+              <p className={paymentFormStyle.optionTitle}>PayPal</p>
+            </Theme_Span>
+          </label>
+
+          <label className={paymentFormStyle.label}>
+            <input
+              type="radio"
+              name="payment"
               value="cashDelivery"
               checked={orderDetails.paymentMethod == "cashDelivery"}
               className={paymentFormStyle.inputHide}
@@ -103,7 +123,7 @@ const PaymentForm = ({ children }) => {
       </form>
 
       {orderDetails.paymentMethod == "credit" && (
-        <div className={paymentFormStyle.stripeContainer}>
+        <div className={paymentFormStyle.paymentContainer}>
           <Theme_Div
             $bgcolor="background"
             $bordercolor="transparent"
@@ -114,6 +134,8 @@ const PaymentForm = ({ children }) => {
           </Theme_Div>
         </div>
       )}
+
+      {orderDetails.paymentMethod == "payPal" && <PayPal />}
     </>
   );
 };

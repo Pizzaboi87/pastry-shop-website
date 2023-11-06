@@ -507,15 +507,16 @@ export const paymentFormStyle = {
     "bg-white xl:mx-[2.5%] mb-4 rounded-xl p-4 flex flex-col items-center justify-center",
   title: "text-[1.4rem] font-[500] text-center",
   buttonContainer: "flex flex-col md:flex-row justify-between mt-4",
-  label: "flex items-center justify-center cursor-pointer p-3 w-[15rem]",
-  span: "w-full h-full p-3 rounded-xl flex flex-col items-center justify-center",
+  label:
+    "flex items-center justify-center cursor-pointer p-2 md:w-[13.5rem] w-[15rem]",
+  span: "w-full h-full p-3 rounded-xl flex flex-col items-center justify-center text-center",
   cardsContainer: "flex items-center justify-center gap-1",
   mastercard: "text-[1rem]",
   visa: "text-[0.6rem]",
   optionTitle: "text-[1rem] font-[500]",
   inputHide: "appearance-none",
   icon: "text-[1.5rem]",
-  stripeContainer:
+  paymentContainer:
     "h-auto min-h-[10rem] flex items-center justify-center xl:mx-[2.5%] mb-4 rounded-xl",
   stripeForm: "w-[30rem] h-full bg-white text-[1.5rem] my-6",
 };

@@ -31,6 +31,7 @@ import NoPermission from "./NoPermission";
 import OrderCard from "./OrderCard";
 import Paragraphs from "./Paragraphs";
 import PaymentForm from "./PaymentForm";
+import PayPal from "./PayPal";
 import Postcard from "./Postcard";
 import ProductCard from "./ProductCard";
 import RecipeCard from "./RecipeCard";
@@ -81,6 +82,7 @@ export {
   OrderCard,
   Paragraphs,
   PaymentForm,
+  PayPal,
   Postcard,
   ProductCard,
   RecipeCard,

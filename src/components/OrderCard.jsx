@@ -55,7 +55,7 @@ const OrderCard = ({ product, quantity, lang }) => {
       </div>
 
       <p className={orderCardStyle.price}>
-        {`${currencyCorr(product.price * quantity)
+        {`${(currencyCorr(product.price) * quantity)
           .toString()
           .replace(/\B(?=(\d{3})+(?!\d))/g, ".")} ${currency.symbol}`}
       </p>

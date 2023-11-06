@@ -45,22 +45,22 @@ export const CartContextProvider = ({ children }) => {
 
   const totalSum = (cart) => {
     let sum = 0;
+
     cart.forEach((item) => {
-      sum += item.product.price * item.quantity;
+      if (currency.name == "HUF") {
+        sum +=
+          Math.ceil((item.product.price * currency.value) / 100) *
+          100 *
+          item.quantity;
+      } else {
+        sum += (item.product.price * currency.value).toFixed(1) * item.quantity;
+      }
     });
     return sum;
   };
 
-  const currencyCorr = (price) => {
-    if (currency.name === "HUF") {
-      return Math.ceil((price * currency.value) / 100) * 100;
-    } else {
-      return (price * currency.value).toFixed(1);
-    }
-  };
-
   useEffect(() => {
-    setFinalSum(currencyCorr(totalSum(cart)));
+    setFinalSum(totalSum(cart));
   }, [cart, currency]);
 
   useEffect(() => {

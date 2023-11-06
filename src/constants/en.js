@@ -813,7 +813,7 @@ const en_text = {
     addToCart: "Add to Cart",
     checkout: "Proceed to Checkout",
   },
-  oderCard: {
+  orderCard: {
     name: "Name:",
     details: "Details:",
     price: "Price:",
