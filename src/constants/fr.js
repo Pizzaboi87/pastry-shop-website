@@ -849,9 +849,10 @@ const fr_text = {
   payment: {
     mainTitle: "Paramètres de paiement",
     title: "Choisissez un mode de paiement",
-    card: "Carte de crédit",
+    credit: "Carte de crédit",
     cashDelivery: "Paiement à la livraison",
-    cardDelivery: "Carte à la livraison",
+    creditDelivery: "Carte à la livraison",
+    payPal: "PayPal",
   },
   placeholder: {
     name: "Votre nom",

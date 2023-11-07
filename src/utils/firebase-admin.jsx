@@ -1,8 +1,8 @@
-import { getAllComments, getAllPost } from "./firebase";
+import { getData } from "./firebase";
 
 const updateData = async (setFirebaseData, userLanguage) => {
   try {
-    const data = await getAllPost(userLanguage);
+    const data = await getData(`blogPosts/${userLanguage}`);
     setFirebaseData(data);
   } catch (error) {
     console.error("An error happened during data fetching.", error);
@@ -11,7 +11,7 @@ const updateData = async (setFirebaseData, userLanguage) => {
 
 const updateComments = async (setFirebaseComments) => {
   try {
-    const data = await getAllComments();
+    const data = await getData("comments/");
     setFirebaseComments(data);
   } catch (error) {
     console.error("An error happened during data fetching.", error);

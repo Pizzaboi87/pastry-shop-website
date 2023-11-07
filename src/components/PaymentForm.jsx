@@ -1,13 +1,9 @@
+import PaymentSelectButton from "./PaymentSelectButton";
 import PayPal from "./PayPal";
-import { Icon } from "@iconify/react";
+import Stripe from "./Stripe";
 import { CartContext, UserContext } from "../context";
 import { useContext } from "react";
-import {
-  Theme_Div,
-  Theme_Span,
-  myCartStyle,
-  paymentFormStyle,
-} from "../styles";
+import { myCartStyle, paymentFormStyle } from "../styles";
 
 const PaymentForm = ({ children }) => {
   const { text } = useContext(UserContext);
@@ -20,120 +16,42 @@ const PaymentForm = ({ children }) => {
     }));
   };
 
+  const buttons = [
+    {
+      value: "credit",
+      icons: ["logos:mastercard", "logos:visaelectron"],
+    },
+    {
+      value: "payPal",
+      icons: ["logos:paypal"],
+    },
+    {
+      value: "cashDelivery",
+      icons: ["mdi:cash-multiple"],
+    },
+    {
+      value: "creditDelivery",
+      icons: ["fontisto:shopping-pos-machine"],
+    },
+  ];
+
+  const buttonList = buttons.map((button) => (
+    <PaymentSelectButton
+      key={button.value}
+      value={button.value}
+      icons={button.icons}
+      handlePayment={handlePayment}
+    />
+  ));
+
   return (
     <>
       <form className={paymentFormStyle.container}>
         <h1 className={myCartStyle.subTitle}>{text.payment.title}</h1>
-        <div className={paymentFormStyle.buttonContainer}>
-          <label className={paymentFormStyle.label}>
-            <input
-              type="radio"
-              name="payment"
-              value="credit"
-              checked={orderDetails.paymentMethod == "credit"}
-              className={paymentFormStyle.inputHide}
-              onChange={handlePayment}
-            />
-            <Theme_Span
-              $bgcolor="light"
-              $hoverbgcolor="glasslight"
-              className={paymentFormStyle.span}
-            >
-              <span className={paymentFormStyle.cardsContainer}>
-                <Icon
-                  icon="logos:mastercard"
-                  className={paymentFormStyle.mastercard}
-                />
-                <p> / </p>
-                <Icon icon="logos:visa" className={paymentFormStyle.visa} />
-              </span>
-              <p className={paymentFormStyle.optionTitle}>
-                {text.payment.card}
-              </p>
-            </Theme_Span>
-          </label>
-
-          <label className={paymentFormStyle.label}>
-            <input
-              type="radio"
-              name="payment"
-              value="payPal"
-              checked={orderDetails.paymentMethod == "payPal"}
-              className={paymentFormStyle.inputHide}
-              onChange={handlePayment}
-            />
-            <Theme_Span
-              $bgcolor="light"
-              $hoverbgcolor="glasslight"
-              className={paymentFormStyle.span}
-            >
-              <Icon icon="logos:paypal" className={paymentFormStyle.icon} />
-              <p className={paymentFormStyle.optionTitle}>PayPal</p>
-            </Theme_Span>
-          </label>
-
-          <label className={paymentFormStyle.label}>
-            <input
-              type="radio"
-              name="payment"
-              value="cashDelivery"
-              checked={orderDetails.paymentMethod == "cashDelivery"}
-              className={paymentFormStyle.inputHide}
-              onChange={handlePayment}
-            />
-            <Theme_Span
-              $bgcolor="light"
-              $hoverbgcolor="glasslight"
-              className={paymentFormStyle.span}
-            >
-              <Icon
-                icon="mdi:cash-multiple"
-                className={paymentFormStyle.icon}
-              />
-              <p className={paymentFormStyle.optionTitle}>
-                {text.payment.cashDelivery}
-              </p>
-            </Theme_Span>
-          </label>
-
-          <label className={paymentFormStyle.label}>
-            <input
-              type="radio"
-              name="payment"
-              value="creditDelivery"
-              checked={orderDetails.paymentMethod == "creditDelivery"}
-              className={paymentFormStyle.inputHide}
-              onChange={handlePayment}
-            />
-            <Theme_Span
-              $bgcolor="light"
-              $hoverbgcolor="glasslight"
-              className={paymentFormStyle.span}
-            >
-              <Icon
-                icon="fontisto:shopping-pos-machine"
-                className={paymentFormStyle.icon}
-              />
-              <p className={paymentFormStyle.optionTitle}>
-                {text.payment.cardDelivery}
-              </p>
-            </Theme_Span>
-          </label>
-        </div>
+        <div className={paymentFormStyle.buttonContainer}>{buttonList}</div>
       </form>
 
-      {orderDetails.paymentMethod == "credit" && (
-        <div className={paymentFormStyle.paymentContainer}>
-          <Theme_Div
-            $bgcolor="background"
-            $bordercolor="transparent"
-            id="payment-form"
-            className={paymentFormStyle.stripeForm}
-          >
-            {children}
-          </Theme_Div>
-        </div>
-      )}
+      {orderDetails.paymentMethod == "credit" && <Stripe>{children}</Stripe>}
 
       {orderDetails.paymentMethod == "payPal" && <PayPal />}
     </>

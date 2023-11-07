@@ -1,12 +1,8 @@
 import { UserContext } from "../../context";
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { getData, getUserData, updateUserData } from "../../utils/firebase";
 import { Theme_Icon, Theme_Span, allFavouritesStyle } from "../../styles";
-import {
-  getAllRecipes,
-  getUserData,
-  updateUserData,
-} from "../../utils/firebase";
 
 const AllFavourites = () => {
   const { userData, setUserData, userLanguage } = useContext(UserContext);
@@ -17,7 +13,7 @@ const AllFavourites = () => {
     const getFavourites = async () => {
       if (userData && userData.likedRecipes) {
         const { likedRecipes } = userData;
-        const allRecipes = await getAllRecipes(userLanguage);
+        const allRecipes = await getData(`recipes/${userLanguage}`);
         const recipesArray = Object.values(allRecipes);
         const likedRecipesArray = recipesArray
           .filter((recipe) => likedRecipes.includes(recipe.id))

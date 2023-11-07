@@ -2,7 +2,7 @@ import ReactPaginate from "react-paginate";
 import { UserContext } from "../../context";
 import { RecipeCard, TransitionParent } from "../../components";
 import { useEffect, useState, useContext } from "react";
-import { getAllRecipes } from "../../utils/firebase";
+import { getData } from "../../utils/firebase";
 import {
   Theme_H1,
   Theme_P,
@@ -21,7 +21,7 @@ const Recipes = () => {
 
   useEffect(() => {
     const getRecipes = async () => {
-      const allRecipes = await getAllRecipes(userLanguage);
+      const allRecipes = await getData(`recipes/${userLanguage}`);
       const recipesArray = Object.values(allRecipes);
       setRecipes(recipesArray);
     };

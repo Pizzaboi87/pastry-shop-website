@@ -39,10 +39,6 @@ export const CartContextProvider = ({ children }) => {
     paymentMethod: "credit",
   });
 
-  useEffect(() => {
-    console.log(orderDetails);
-  }, [orderDetails]);
-
   const totalSum = (cart) => {
     let sum = 0;
 

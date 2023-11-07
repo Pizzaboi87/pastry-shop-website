@@ -28,6 +28,8 @@ const Payment = () => {
   const { orderDetails } = useContext(CartContext);
   const { showErrorSwal, showSuccessSwal } = useSwalMessage();
 
+  console.log(orderDetails);
+
   const MySwal = withReactContent(Swal);
   const SwalLoader = () => {
     return (

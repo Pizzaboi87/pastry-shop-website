@@ -836,9 +836,10 @@ const en_text = {
   payment: {
     mainTitle: "Payment Settings",
     title: "Choose your Payment method",
-    card: "Credit Card",
+    credit: "Credit Card",
     cashDelivery: "Cash on Delivery",
-    cardDelivery: "Card on Delivery",
+    creditDelivery: "Card on Delivery",
+    payPal: "PayPal",
   },
   placeholder: {
     name: "Your name",

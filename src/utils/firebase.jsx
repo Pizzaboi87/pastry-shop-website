@@ -211,62 +211,14 @@ export const updateUserPassword = async (
   }
 };
 
-export const getAllRecipes = async (lang) => {
-  const recipesRef = ref(database, `recipes/${lang}`);
+export const getData = async (branch) => {
+  const dataRef = ref(database, branch);
   return new Promise((resolve, reject) => {
     onValue(
-      recipesRef,
+      dataRef,
       (snapshot) => {
-        const recipes = snapshot.val();
-        resolve(recipes);
-      },
-      (error) => {
-        reject(error);
-      }
-    );
-  });
-};
-
-export const getAllPost = async (lang) => {
-  const blogPostsRef = ref(database, `blogPosts/${lang}`);
-  return new Promise((resolve, reject) => {
-    onValue(
-      blogPostsRef,
-      (snapshot) => {
-        const blogPosts = snapshot.val();
-        resolve(blogPosts);
-      },
-      (error) => {
-        reject(error);
-      }
-    );
-  });
-};
-
-export const getAllComments = async () => {
-  const commentsRef = ref(database, "comments/");
-  return new Promise((resolve, reject) => {
-    onValue(
-      commentsRef,
-      (snapshot) => {
-        const comments = snapshot.val();
-        resolve(comments);
-      },
-      (error) => {
-        reject(error);
-      }
-    );
-  });
-};
-
-export const getAllProducts = async () => {
-  const productsRef = ref(database, "products/");
-  return new Promise((resolve, reject) => {
-    onValue(
-      productsRef,
-      (snapshot) => {
-        const products = snapshot.val();
-        resolve(products);
+        const data = snapshot.val();
+        resolve(data);
       },
       (error) => {
         reject(error);

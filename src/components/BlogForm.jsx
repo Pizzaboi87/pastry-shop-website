@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { blogFormStyle } from "../styles";
 import { uploadPost } from "../utils/firebase-admin";
 import { translate } from "../utils/translate";
-import { getAllPost, storeImage } from "../utils/firebase";
+import { getData, storeImage } from "../utils/firebase";
 import { normalizeSync } from "normalize-diacritics";
 import { useSwalMessage } from "../utils/useSwalMessage";
 import { useValidation } from "../utils/useValidation";
@@ -197,7 +197,7 @@ const BlogForm = ({ dbPost }) => {
 
     await uploadPromises;
 
-    const data = await getAllPost(userLanguage);
+    const data = await getData(`blogPosts/${userLanguage}`);
     setFirebaseData(data);
 
     navigate("/admin/blog/all");

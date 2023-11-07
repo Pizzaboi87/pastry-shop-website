@@ -2,7 +2,7 @@ import { CartContext, UserContext } from "../../context";
 import { Banner, ProductCard, TransitionParent } from "../../components";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAllProducts, getStoredImage } from "../../utils/firebase";
+import { getData, getStoredImage } from "../../utils/firebase";
 import {
   Theme_Button,
   Theme_Div,
@@ -25,7 +25,7 @@ const Shop = () => {
 
   useEffect(() => {
     const getProducts = async () => {
-      const productsObj = await getAllProducts();
+      const productsObj = await getData("products/");
       const productsArray = Object.values(productsObj);
 
       const updatedProducts = await Promise.all(

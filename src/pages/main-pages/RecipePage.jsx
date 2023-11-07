@@ -5,7 +5,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { slideIn } from "../../utils/motion";
 import { Theme_Icon, Theme_Motion_Div, recipePageStyle } from "../../styles";
 import {
-  getAllRecipes,
+  getData,
   getStoredImage,
   getUserData,
   updateUserData,
@@ -34,7 +34,7 @@ const RecipePage = () => {
 
   useEffect(() => {
     const getRecipe = async () => {
-      const allRecipes = await getAllRecipes(userLanguage);
+      const allRecipes = await getData(`recipes/${userLanguage}`);
 
       const recipesArray = Object.values(allRecipes);
       const selectedRecipe = recipesArray.filter(

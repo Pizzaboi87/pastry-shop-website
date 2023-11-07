@@ -511,8 +511,8 @@ export const paymentFormStyle = {
     "flex items-center justify-center cursor-pointer p-2 md:w-[13.5rem] w-[15rem]",
   span: "w-full h-full p-3 rounded-xl flex flex-col items-center justify-center text-center",
   cardsContainer: "flex items-center justify-center gap-1",
-  mastercard: "text-[1rem]",
-  visa: "text-[0.6rem]",
+  mastercard: "text-[1.5rem]",
+  visa: "text-[1.5rem] text-[#37e]",
   optionTitle: "text-[1rem] font-[500]",
   inputHide: "appearance-none",
   icon: "text-[1.5rem]",
@@ -669,7 +669,8 @@ export const shop = {
     "w-[5rem] h-[5rem] rounded-full -translate-y-[4rem] translate-x-[2rem]",
   macaronYellow:
     "w-[5rem] h-[5rem] rounded-full -translate-y-[16rem] -translate-x-[2rem]",
-  checkoutButton: "p-4 rounded-xl shadow-xl my-4 self-end flex items-center",
+  checkoutButton:
+    "w-full md:w-auto p-4 rounded-xl shadow-xl my-4 self-end flex items-center justify-center",
   checkoutIcon: "mr-2 text-[2rem]",
   checkoutText: "text-[1.2rem] font-[500]",
   productsContainer:

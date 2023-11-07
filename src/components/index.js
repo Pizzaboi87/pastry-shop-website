@@ -31,6 +31,7 @@ import NoPermission from "./NoPermission";
 import OrderCard from "./OrderCard";
 import Paragraphs from "./Paragraphs";
 import PaymentForm from "./PaymentForm";
+import PaymentSelectButton from "./PaymentSelectButton";
 import PayPal from "./PayPal";
 import Postcard from "./Postcard";
 import ProductCard from "./ProductCard";
@@ -38,6 +39,7 @@ import RecipeCard from "./RecipeCard";
 import ReviewCard from "./ReviewCard";
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
+import Stripe from "./Stripe";
 import TeamCard from "./TeamCard";
 import TextAndImage from "./TextAndImage";
 import TransitionParent from "./TransitionParent";
@@ -82,6 +84,7 @@ export {
   OrderCard,
   Paragraphs,
   PaymentForm,
+  PaymentSelectButton,
   PayPal,
   Postcard,
   ProductCard,
@@ -89,6 +92,7 @@ export {
   ReviewCard,
   SignInForm,
   SignUpForm,
+  Stripe,
   TeamCard,
   TextAndImage,
   TransitionParent,
