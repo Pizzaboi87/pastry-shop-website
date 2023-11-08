@@ -3,7 +3,6 @@ import { PaymentForm, TransitionParent, UserPanel } from "../../components";
 import { Icon } from "@iconify/react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-
 import {
   Theme_H1,
   Theme_Button,

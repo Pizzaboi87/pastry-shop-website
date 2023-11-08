@@ -842,6 +842,7 @@ const hu_text = {
     payPal: "PayPal",
     googlePay: "Google Pay",
     payOnDelivery: "Fizetés szállításkor",
+    payNow: "Fizetés most",
   },
   placeholder: {
     name: "Teljes név",

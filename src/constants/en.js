@@ -840,6 +840,7 @@ const en_text = {
     payPal: "PayPal",
     googlePay: "Google Pay",
     payOnDelivery: "Pay on Delivery",
+    payNow: "Pay Now",
   },
   placeholder: {
     name: "Your name",

@@ -853,6 +853,7 @@ const fr_text = {
     payPal: "PayPal",
     googlePay: "Google Pay",
     payOnDelivery: "Paiement à la livraison",
+    payNow: "Payer maintenant",
   },
   placeholder: {
     name: "Votre nom",

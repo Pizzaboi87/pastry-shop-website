@@ -1,10 +1,10 @@
 import PaymentSelectButton from "./PaymentSelectButton";
 import PayPal from "./PayPal";
 import Stripe from "./Stripe";
+import GooglePay from "./GooglePay";
 import { CartContext, UserContext } from "../context";
 import { useContext } from "react";
 import { Theme_Div, myCartStyle, paymentFormStyle } from "../styles";
-import GooglePay from "./GooglePay";
 
 const PaymentForm = () => {
   const { text } = useContext(UserContext);

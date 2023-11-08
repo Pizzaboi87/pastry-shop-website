@@ -1,55 +1,19 @@
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-import { Icon } from "@iconify/react";
 import { CartContext, UserContext } from "../context";
-import { useContext, useEffect, useState } from "react";
-import { useSwalMessage } from "../utils/useSwalMessage";
+import { useContext } from "react";
+import { usePayment } from "../utils/usePayment";
+import { Theme_Button, myCartStyle, paymentFormStyle } from "../styles";
 import {
   PaymentElement,
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
-import {
-  Theme_Button,
-  Theme_Div,
-  myCartStyle,
-  paymentFormStyle,
-} from "../styles";
 
 const Stripe = () => {
   const stripe = useStripe();
   const elements = useElements();
   const { text, userData } = useContext(UserContext);
   const { orderDetails } = useContext(CartContext);
-  const { showErrorSwal, showSuccessSwal } = useSwalMessage();
-  const [loading, setLoading] = useState(false);
-
-  const MySwal = withReactContent(Swal);
-  const SwalLoader = () => {
-    return (
-      <div className={myCartStyle.swalContainer}>
-        <h1 className={myCartStyle.swalMessage}>{text.cart.wait}</h1>
-        <Icon icon="eos-icons:loading" className={myCartStyle.swalIcon} />
-      </div>
-    );
-  };
-
-  useEffect(() => {
-    if (loading) {
-      MySwal.fire({
-        html: <SwalLoader />,
-        allowOutsideClick: false,
-        showConfirmButton: false,
-      });
-    }
-  }, [loading]);
-
-  const handleError = (error) => {
-    setLoading(false);
-    console.log(error);
-    MySwal.close();
-    showErrorSwal(text.cart.tryAgain);
-  };
+  const { loading, setLoading, handleError, handleSuccess } = usePayment();
 
   const paymentHandler = async (e) => {
     e.preventDefault();
@@ -96,9 +60,7 @@ const Stripe = () => {
       if (error) {
         handleError(error);
       } else {
-        setLoading(false);
-        MySwal.close();
-        showSuccessSwal(text.cart.success);
+        handleSuccess();
       }
     } catch (error) {
       setLoading(false);
@@ -119,7 +81,7 @@ const Stripe = () => {
         onClick={paymentHandler}
         disabled={loading}
       >
-        Pay
+        {text.payment.payNow}
       </Theme_Button>
     </>
   );
