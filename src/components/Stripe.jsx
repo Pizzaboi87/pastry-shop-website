@@ -63,7 +63,6 @@ const Stripe = () => {
         handleSuccess();
       }
     } catch (error) {
-      setLoading(false);
       handleError(error);
     }
   };

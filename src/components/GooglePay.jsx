@@ -2,9 +2,11 @@ import GooglePayButton from "@google-pay/button-react";
 import { CartContext } from "../context";
 import { useContext } from "react";
 import { byCountry } from "country-code-lookup";
+import { usePayment } from "../utils/usePayment";
 
 const GooglePay = () => {
   const { orderDetails } = useContext(CartContext);
+  const { handleSuccess } = usePayment();
 
   const paymentRequest = {
     apiVersion: 2,
@@ -41,6 +43,7 @@ const GooglePay = () => {
   };
 
   const onLoadPaymentData = (paymentRequest) => {
+    handleSuccess();
     console.log("load payment data", paymentRequest);
   };
 

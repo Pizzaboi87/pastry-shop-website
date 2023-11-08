@@ -2,10 +2,12 @@ import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { CartContext, UserContext } from "../context";
 import { useContext } from "react";
 import { byCountry } from "country-code-lookup";
+import { usePayment } from "../utils/usePayment";
 
 const PayPal = () => {
   const { orderDetails } = useContext(CartContext);
   const { userLanguage } = useContext(UserContext);
+  const { handleError, handleSuccess } = usePayment();
 
   const items = orderDetails.products.map((product) => {
     return {
@@ -61,10 +63,14 @@ const PayPal = () => {
   };
 
   const onApprove = (data, actions) => {
-    return actions.order.capture().then(function (details) {
-      // Tranzakció részleteinek feldolgozása
-      // Például: sikeres fizetés üzenet megjelenítése a felhasználónak
+    return actions.order.capture().then((details) => {
+      handleSuccess();
     });
+  };
+
+  const onError = (err) => {
+    console.error("PayPal error:", err);
+    handleError(err);
   };
 
   return (
@@ -77,6 +83,7 @@ const PayPal = () => {
       <PayPalButtons
         createOrder={createOrder}
         onApprove={onApprove}
+        onError={onError}
         className="w-full rounded-xl"
       />
     </PayPalScriptProvider>
