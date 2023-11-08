@@ -17,6 +17,7 @@ import Category from "./Category";
 import CourseCard from "./CourseCard";
 import CourseForm from "./CourseForm";
 import Footer from "./Footer";
+import GooglePay from "./GooglePay";
 import Image from "./Image";
 import ImageCarousel from "./ImageCarousel";
 import Loading from "./Loading";
@@ -70,6 +71,7 @@ export {
   CourseCard,
   CourseForm,
   Footer,
+  GooglePay,
   Image,
   ImageCarousel,
   Loading,

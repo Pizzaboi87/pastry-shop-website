@@ -839,9 +839,9 @@ const hu_text = {
     mainTitle: "Fizetési beállítások",
     title: "Válassz fizetési módot:",
     credit: "Bankkártya",
-    cashDelivery: "Készpénz szállításkor",
-    creditDelivery: "Kártya szállításkor",
     payPal: "PayPal",
+    googlePay: "Google Pay",
+    payOnDelivery: "Fizetés szállításkor",
   },
   placeholder: {
     name: "Teljes név",

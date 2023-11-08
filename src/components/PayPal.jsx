@@ -1,7 +1,6 @@
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
-import { paymentFormStyle } from "../styles";
-import { useContext } from "react";
 import { CartContext, UserContext } from "../context";
+import { useContext } from "react";
 import { byCountry } from "country-code-lookup";
 
 const PayPal = () => {
@@ -62,7 +61,6 @@ const PayPal = () => {
   };
 
   const onApprove = (data, actions) => {
-    // Tranzakció jóváhagyása, kifizetési folyamat lebonyolítása
     return actions.order.capture().then(function (details) {
       // Tranzakció részleteinek feldolgozása
       // Például: sikeres fizetés üzenet megjelenítése a felhasználónak
@@ -70,16 +68,18 @@ const PayPal = () => {
   };
 
   return (
-    <div className={paymentFormStyle.paymentContainer}>
-      <PayPalScriptProvider
-        options={{
-          "client-id": import.meta.env.VITE_PAYPAL_ID,
-          currency: orderDetails.currency.name,
-        }}
-      >
-        <PayPalButtons createOrder={createOrder} onApprove={onApprove} />
-      </PayPalScriptProvider>
-    </div>
+    <PayPalScriptProvider
+      options={{
+        "client-id": import.meta.env.VITE_PAYPAL_ID,
+        currency: orderDetails.currency.name,
+      }}
+    >
+      <PayPalButtons
+        createOrder={createOrder}
+        onApprove={onApprove}
+        className="w-full rounded-xl"
+      />
+    </PayPalScriptProvider>
   );
 };
 

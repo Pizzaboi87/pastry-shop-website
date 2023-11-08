@@ -846,9 +846,9 @@ const es_text = {
     mainTitle: "Configuración de pago",
     title: "Elige un método de pago",
     credit: "Tarjeta de crédito",
-    cashDelivery: "Contra reembolso",
-    creditDelivery: "Tarjeta a la entrega",
     payPal: "PayPal",
+    googlePay: "Google Pay",
+    payOnDelivery: "Pago a la entrega",
   },
   placeholder: {
     name: "Tu nombre",

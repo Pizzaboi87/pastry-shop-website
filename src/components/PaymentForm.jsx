@@ -3,9 +3,10 @@ import PayPal from "./PayPal";
 import Stripe from "./Stripe";
 import { CartContext, UserContext } from "../context";
 import { useContext } from "react";
-import { myCartStyle, paymentFormStyle } from "../styles";
+import { Theme_Div, myCartStyle, paymentFormStyle } from "../styles";
+import GooglePay from "./GooglePay";
 
-const PaymentForm = ({ children }) => {
+const PaymentForm = () => {
   const { text } = useContext(UserContext);
   const { orderDetails, setOrderDetails } = useContext(CartContext);
 
@@ -26,12 +27,12 @@ const PaymentForm = ({ children }) => {
       icons: ["logos:paypal"],
     },
     {
-      value: "cashDelivery",
-      icons: ["mdi:cash-multiple"],
+      value: "googlePay",
+      icons: ["logos:google-pay"],
     },
     {
-      value: "creditDelivery",
-      icons: ["fontisto:shopping-pos-machine"],
+      value: "payOnDelivery",
+      icons: ["mdi:cash-multiple", "fontisto:shopping-pos-machine"],
     },
   ];
 
@@ -51,9 +52,20 @@ const PaymentForm = ({ children }) => {
         <div className={paymentFormStyle.buttonContainer}>{buttonList}</div>
       </form>
 
-      {orderDetails.paymentMethod == "credit" && <Stripe>{children}</Stripe>}
+      <div className={paymentFormStyle.paymentContainer}>
+        <Theme_Div
+          $bgcolor="background"
+          $bordercolor="transparent"
+          id="payment-form"
+          className={paymentFormStyle.paymentForm}
+        >
+          {orderDetails.paymentMethod == "credit" && <Stripe />}
 
-      {orderDetails.paymentMethod == "payPal" && <PayPal />}
+          {orderDetails.paymentMethod == "payPal" && <PayPal />}
+
+          {orderDetails.paymentMethod == "googlePay" && <GooglePay />}
+        </Theme_Div>
+      </div>
     </>
   );
 };

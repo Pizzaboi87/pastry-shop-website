@@ -56,6 +56,7 @@ const OrderCard = ({ product, quantity, lang }) => {
 
       <p className={orderCardStyle.price}>
         {`${(currencyCorr(product.price) * quantity)
+          .toFixed(currency.name == "HUF" ? 0 : 1)
           .toString()
           .replace(/\B(?=(\d{3})+(?!\d))/g, ".")} ${currency.symbol}`}
       </p>

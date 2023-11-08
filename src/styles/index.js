@@ -518,7 +518,9 @@ export const paymentFormStyle = {
   icon: "text-[1.5rem]",
   paymentContainer:
     "h-auto min-h-[10rem] flex items-center justify-center xl:mx-[2.5%] mb-4 rounded-xl",
-  stripeForm: "w-[30rem] h-full bg-white text-[1.5rem] my-6",
+  paymentForm:
+    "mx-auto md:w-[50%] w-full h-full bg-white text-[1.5rem] my-6 py-6 flex flex-col items-end",
+  stripeInput: "mb-6 w-full",
 };
 
 export const phoneInputStyle = {

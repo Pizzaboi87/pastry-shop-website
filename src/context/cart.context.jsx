@@ -49,7 +49,10 @@ export const CartContextProvider = ({ children }) => {
           100 *
           item.quantity;
       } else {
-        sum += (item.product.price * currency.value).toFixed(1) * item.quantity;
+        sum += (
+          (item.product.price.toFixed(1) * currency.value).toFixed(1) *
+          item.quantity
+        ).toFixed(1);
       }
     });
     return sum;

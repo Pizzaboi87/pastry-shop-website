@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 import { Theme_Span, paymentFormStyle } from "../styles";
 import { CartContext, UserContext } from "../context";
 import { Icon } from "@iconify/react";
@@ -25,14 +25,10 @@ const PaymentSelectButton = ({ handlePayment, value, icons }) => {
         <span className={paymentFormStyle.cardsContainer}>
           {icons.map((item, index) => {
             return (
-              <>
-                <Icon
-                  key={index}
-                  icon={item}
-                  className={paymentFormStyle.icon}
-                />
+              <Fragment key={index}>
+                <Icon icon={item} className={paymentFormStyle.icon} />
                 {index < icons.length - 1 ? <p> / </p> : null}
-              </>
+              </Fragment>
             );
           })}
         </span>

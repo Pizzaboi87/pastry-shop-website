@@ -837,9 +837,9 @@ const en_text = {
     mainTitle: "Payment Settings",
     title: "Choose your Payment method",
     credit: "Credit Card",
-    cashDelivery: "Cash on Delivery",
-    creditDelivery: "Card on Delivery",
     payPal: "PayPal",
+    googlePay: "Google Pay",
+    payOnDelivery: "Pay on Delivery",
   },
   placeholder: {
     name: "Your name",
