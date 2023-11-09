@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getData, getUserData, updateUserData } from "../../utils/firebase";
 import { Theme_Icon, Theme_Span, allFavouritesStyle } from "../../styles";
+import { FavouriteCard } from "../../components";
 
 const AllFavourites = () => {
   const { userData, setUserData, userLanguage } = useContext(UserContext);
@@ -40,33 +41,9 @@ const AllFavourites = () => {
     await fetchActualData();
   };
 
-  return (
-    <>
-      {favourites.map((favourite) => (
-        <Theme_Span
-          key={favourite}
-          $bgcolor="light"
-          $hoverbgcolor="glasslight"
-          className={allFavouritesStyle.container}
-          onClick={(event) => {
-            event.stopPropagation();
-            navigate(favourite[1]);
-          }}
-        >
-          <Theme_Icon
-            icon="mdi:heart"
-            $iconcolor="logo"
-            className={allFavouritesStyle.icon}
-            onClick={(event) => {
-              event.stopPropagation();
-              deleteFavourite(favourite);
-            }}
-          />
-          <h1 className={allFavouritesStyle.title}>{favourite[0]}</h1>
-        </Theme_Span>
-      ))}
-    </>
-  );
+  return favourites.map((favourite) => (
+    <FavouriteCard favourite={favourite} deleteFavourite={deleteFavourite} />
+  ));
 };
 
 export default AllFavourites;

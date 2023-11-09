@@ -73,10 +73,12 @@ export const adminPanelStyle = {
 
 export const allFavouritesStyle = {
   container:
-    "flex items-center min-w-[75%] md:w-auto w-full md:h-[3rem] h-[3.5rem] rounded-xl shadow-xl p-2 cursor-pointer gap-x-4 hover:-translate-y-1 transition-all duration-500 border border-text",
+    "flex flex-col xs:flex-row items-center justify-between md:w-[85%] w-full xs:h-[8rem] h-[12rem] rounded-xl shadow-xl py-1 md:px-4 px-1 cursor-pointer hover:-translate-y-1 transition-all duration-500 border border-text",
+  span: "flex md:flex-row relative flex-col h-full w-full gap-x-2 xl:gap-x-12 items-center justify-center",
   title:
-    "text-text md:text-[1.2rem] md:w-auto w-[75%] text-[1rem] text-center font-[600]",
-  icon: "text-[2.2rem] cursor-pointer",
+    "text-text md:text-[1.2rem] xs:w-[85%] w-full mt-8 xs:mt-0 pl-0 xs:text-[1rem] text-[0.8rem] text-center font-[600] md:pr-6 md:pl-12 xs:pl-6",
+  icon: "absolute xl:top-1 xl:left-1 top-2 left-2 xl:text-[3rem] text-[2.2rem] cursor-pointer",
+  image: "justify-self-end xl:h-full xs:h-[60%] h-[40%] rounded-full",
 };
 
 export const appStyle = {
@@ -806,7 +808,7 @@ export const userAccountImageStyle = {
   inputWrapper:
     "changeimage w-full h-full bg-[#ffffffbb] rounded-full flex items-center justify-center",
   icon: "text-[3rem] cursor-pointer",
-  name: "text-text text-[1.4rem] font-[600]",
+  name: "text-text text-[1.4rem] font-[600] mb-4 md:mb-0",
   input: "hidden",
 };
 

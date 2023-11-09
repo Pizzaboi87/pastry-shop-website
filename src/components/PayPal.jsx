@@ -10,6 +10,19 @@ const PayPal = () => {
   const { userLanguage } = useContext(UserContext);
   const { setPaymentSuccess } = usePayment();
 
+  const languageSelector = (language) => {
+    switch (language) {
+      case "hun":
+        return "hu_HU";
+      case "esp":
+        return "es_ES";
+      case "fra":
+        return "fr_FR";
+      default:
+        return "en_US";
+    }
+  };
+
   const items = orderDetails.products.map((product) => {
     return {
       name: product.product.name[userLanguage],
@@ -78,6 +91,7 @@ const PayPal = () => {
     <PayPalScriptProvider
       options={{
         "client-id": import.meta.env.VITE_PAYPAL_ID,
+        locale: languageSelector(userLanguage),
         currency: orderDetails.currency.name,
       }}
     >

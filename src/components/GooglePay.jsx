@@ -1,5 +1,5 @@
 import GooglePayButton from "@google-pay/button-react";
-import { CartContext } from "../context";
+import { CartContext, UserContext } from "../context";
 import { useContext } from "react";
 import { byCountry } from "country-code-lookup";
 import { usePayment } from "../utils/usePayment";
@@ -7,6 +7,7 @@ import { paymentFormStyle } from "../styles";
 
 const GooglePay = () => {
   const { orderDetails } = useContext(CartContext);
+  const { userLanguage } = useContext(UserContext);
   const { setPaymentSuccess } = usePayment();
 
   const paymentRequest = {
@@ -60,6 +61,7 @@ const GooglePay = () => {
       existingPaymentMethodRequired="false"
       buttonColor="black"
       buttonSizeMode="fill"
+      buttonLocale={userLanguage.slice(0, 2).toLowerCase()}
       className={paymentFormStyle.googleButton}
     />
   );

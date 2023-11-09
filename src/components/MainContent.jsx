@@ -1,5 +1,10 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { CartContext, UserContext } from "../context";
+import { Elements } from "@stripe/react-stripe-js";
 import { AnimatePresence } from "framer-motion";
+import { useContext, useEffect, useState } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { mainContentStyle } from "../styles";
 import {
   Admin,
   Authentication,
@@ -39,21 +44,25 @@ import {
   Settings,
   Shipping,
 } from "../pages/user-pages";
-import { mainContentStyle } from "../styles";
-import { useContext } from "react";
-import { CartContext, UserContext } from "../context";
-import { Elements } from "@stripe/react-stripe-js";
-import { stripePromise } from "../utils/stripe";
 
 const StripeElement = () => {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, userLanguage } = useContext(UserContext);
   const { orderDetails } = useContext(CartContext);
+  const [stripePromise, setStripePromise] = useState(null);
 
   if (!currentUser) {
     return <Navigate to="/auth" />;
   } else if (!orderDetails.amount) {
     return <Navigate to="/mycart" />;
   }
+
+  useEffect(() => {
+    setStripePromise(
+      loadStripe(import.meta.env.VITE_STRIPE_KEY, {
+        locale: userLanguage.slice(0, 2).toLowerCase(),
+      })
+    );
+  }, [userLanguage]);
 
   const options = {
     mode: "payment",

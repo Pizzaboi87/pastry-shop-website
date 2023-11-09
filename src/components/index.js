@@ -16,6 +16,7 @@ import CartButtons from "./CartButtons";
 import Category from "./Category";
 import CourseCard from "./CourseCard";
 import CourseForm from "./CourseForm";
+import FavouriteCard from "./FavouriteCard";
 import Footer from "./Footer";
 import GooglePay from "./GooglePay";
 import Image from "./Image";
@@ -71,6 +72,7 @@ export {
   Category,
   CourseCard,
   CourseForm,
+  FavouriteCard,
   Footer,
   GooglePay,
   Image,
