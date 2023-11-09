@@ -1,7 +1,7 @@
 import { CartContext, UserContext } from "../context";
 import { useContext } from "react";
 import { usePayment } from "../utils/usePayment";
-import { Theme_Button, myCartStyle, paymentFormStyle } from "../styles";
+import { Theme_Button, paymentFormStyle } from "../styles";
 import {
   PaymentElement,
   useElements,
@@ -76,7 +76,7 @@ const Stripe = () => {
         $bordercolor="transparent"
         $hoverbgcolor="dark"
         $hovertextcolor="textlight"
-        className={myCartStyle.button}
+        className={paymentFormStyle.payButton}
         onClick={paymentHandler}
         disabled={loading}
       >

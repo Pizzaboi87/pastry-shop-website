@@ -854,6 +854,20 @@ const hu_text = {
     address: "Cím",
     zip: "Irányítószám",
   },
+  delivery: {
+    summary: "Rendelés összegzése:",
+    delivery: "Szállítás:",
+    name: "Név:",
+    address: "Cím:",
+    city: "Település:",
+    country: "Ország:",
+    phone: "Telefonszám:",
+    order: "Rendelés:",
+    product: "Termék:",
+    quantity: "Mennyiség:",
+    price: "Ár:",
+    total: "Total:",
+  },
 };
 
 export default hu_text;

@@ -852,6 +852,20 @@ const en_text = {
     address: "Your address",
     zip: "Your ZIP code",
   },
+  delivery: {
+    summary: "Summary",
+    delivery: "Delivery Address:",
+    name: "Name:",
+    address: "Address:",
+    city: "City:",
+    country: "Country:",
+    phone: "Phone:",
+    order: "Ordered items:",
+    product: "Product:",
+    quantity: "Quantity:",
+    price: "Price:",
+    total: "Total:",
+  },
 };
 
 export default en_text;

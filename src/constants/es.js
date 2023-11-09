@@ -861,6 +861,20 @@ const es_text = {
     address: "Tu dirección",
     zip: "Tu código postal",
   },
+  delivery: {
+    summary: "Resumen del pedido:",
+    delivery: "Entrega:",
+    name: "Nombre:",
+    address: "Dirección:",
+    city: "Ciudad:",
+    country: "País:",
+    phone: "Teléfono:",
+    order: "Pedido:",
+    product: "Producto:",
+    quantity: "Cantidad:",
+    price: "Precio:",
+    total: "Total:",
+  },
 };
 
 export default es_text;

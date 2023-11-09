@@ -323,6 +323,24 @@ export const coursePageStyle = {
   imageContainer: "w-full flex flex-col gap-4 self-center mb-8 md:mb-0",
 };
 
+export const deliveryStyle = {
+  wrapper: "w-full flex flex-col justify-end",
+  container: "w-full relative mb-4",
+  mainTitle:
+    "inline-block px-4 m-0 bg-white rounded-t-xl font-[600] text-[1.5rem]",
+  detailsContainer:
+    "flex md:flex-row flex-col bg-white rounded-xl rounded-tl-none shadow-xl p-4 gap-y-6 items-left md:items-start md:justify-evenly",
+  addressContainer: "flex flex-col gap-2 w-full md:w-[45%]",
+  orderContainer:
+    "flex flex-col w-full md:w-[45%] gap-2 items-left justify-start mb-8",
+  subTitle: "font-[600] text-[1.2rem] underline underline-offset-2",
+  span: "flex flex-col",
+  text: "font-[400] text-[1rem]",
+  textBold: "font-[600]",
+  border: "mt-1 border-2",
+  total: "font-[700] text-[1.2rem] absolute bottom-2 right-6",
+};
+
 export const favouritesStyle = {
   container:
     "3xl:w-[80%] xl:w-[90%] w-full glass shadow-xl rounded-xl grid grid-cols-6 gap-x-12 md:p-12 p-4",
@@ -519,8 +537,23 @@ export const paymentFormStyle = {
   paymentContainer:
     "h-auto min-h-[10rem] flex items-center justify-center xl:mx-[2.5%] mb-4 rounded-xl",
   paymentForm:
-    "mx-auto md:w-[50%] w-full h-full bg-white text-[1.5rem] my-6 py-6 flex flex-col items-end",
+    "mx-auto md:w-[%] w-full h-full bg-white text-[1.5rem] my-6 py-6 flex flex-col items-center",
   stripeInput: "mb-6 w-full",
+  googleButton: "w-full",
+  paypalButton: "w-full rounded-xl",
+  payButton:
+    "w-full md:w-auto flex items-center justify-center gap-2 text-[1.5rem] font-[700] self-end py-2 px-3 rounded-xl shadow-xl",
+};
+
+export const paymentFormVariable = (type) => {
+  switch (type) {
+    case "payOnDelivery": {
+      return "mx-auto md:w-[75%] w-full h-full bg-white text-[1.5rem] my-6 py-6 flex flex-col items-center";
+    }
+    default: {
+      return "mx-auto md:w-[50%] w-full h-full bg-white text-[1.5rem] my-6 py-6 flex flex-col items-center";
+    }
+  }
 };
 
 export const phoneInputStyle = {

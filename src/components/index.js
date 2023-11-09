@@ -33,6 +33,7 @@ import OrderCard from "./OrderCard";
 import Paragraphs from "./Paragraphs";
 import PaymentForm from "./PaymentForm";
 import PaymentSelectButton from "./PaymentSelectButton";
+import PayOnDelivery from "./PayOnDelivery";
 import PayPal from "./PayPal";
 import Postcard from "./Postcard";
 import ProductCard from "./ProductCard";
@@ -87,6 +88,7 @@ export {
   Paragraphs,
   PaymentForm,
   PaymentSelectButton,
+  PayOnDelivery,
   PayPal,
   Postcard,
   ProductCard,

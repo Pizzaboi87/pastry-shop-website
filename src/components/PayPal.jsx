@@ -3,6 +3,7 @@ import { CartContext, UserContext } from "../context";
 import { useContext } from "react";
 import { byCountry } from "country-code-lookup";
 import { usePayment } from "../utils/usePayment";
+import { paymentFormStyle } from "../styles";
 
 const PayPal = () => {
   const { orderDetails } = useContext(CartContext);
@@ -84,7 +85,7 @@ const PayPal = () => {
         createOrder={createOrder}
         onApprove={onApprove}
         onError={onError}
-        className="w-full rounded-xl"
+        className={paymentFormStyle.paypalButton}
       />
     </PayPalScriptProvider>
   );

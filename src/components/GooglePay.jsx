@@ -3,6 +3,7 @@ import { CartContext } from "../context";
 import { useContext } from "react";
 import { byCountry } from "country-code-lookup";
 import { usePayment } from "../utils/usePayment";
+import { paymentFormStyle } from "../styles";
 
 const GooglePay = () => {
   const { orderDetails } = useContext(CartContext);
@@ -61,7 +62,7 @@ const GooglePay = () => {
       existingPaymentMethodRequired="false"
       buttonColor="black"
       buttonSizeMode="fill"
-      className="w-full"
+      className={paymentFormStyle.googleButton}
     />
   );
 };

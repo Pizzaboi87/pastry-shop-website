@@ -1,10 +1,16 @@
 import PaymentSelectButton from "./PaymentSelectButton";
+import PayOnDelivery from "./PayOnDelivery";
 import PayPal from "./PayPal";
 import Stripe from "./Stripe";
 import GooglePay from "./GooglePay";
 import { CartContext, UserContext } from "../context";
 import { useContext } from "react";
-import { Theme_Div, myCartStyle, paymentFormStyle } from "../styles";
+import {
+  Theme_Div,
+  myCartStyle,
+  paymentFormStyle,
+  paymentFormVariable,
+} from "../styles";
 
 const PaymentForm = () => {
   const { text } = useContext(UserContext);
@@ -57,13 +63,15 @@ const PaymentForm = () => {
           $bgcolor="background"
           $bordercolor="transparent"
           id="payment-form"
-          className={paymentFormStyle.paymentForm}
+          className={paymentFormVariable(orderDetails.paymentMethod)}
         >
           {orderDetails.paymentMethod == "credit" && <Stripe />}
 
           {orderDetails.paymentMethod == "payPal" && <PayPal />}
 
           {orderDetails.paymentMethod == "googlePay" && <GooglePay />}
+
+          {orderDetails.paymentMethod == "payOnDelivery" && <PayOnDelivery />}
         </Theme_Div>
       </div>
     </>
