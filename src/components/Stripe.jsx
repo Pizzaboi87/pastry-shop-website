@@ -13,18 +13,20 @@ const Stripe = () => {
   const elements = useElements();
   const { text, userData } = useContext(UserContext);
   const { orderDetails } = useContext(CartContext);
-  const { loading, setLoading, handleError, handleSuccess } = usePayment();
+  const { paymentInProgress, setPaymentInProgress, setPaymentSuccess } =
+    usePayment();
 
   const paymentHandler = async (e) => {
     e.preventDefault();
 
     if (!stripe || !elements) return;
 
-    setLoading(true);
+    setPaymentInProgress(true);
 
     const { error: submitError } = await elements.submit();
     if (submitError) {
-      handleError(submitError);
+      console.log(submitError);
+      setPaymentSuccess(false);
       return;
     }
 
@@ -44,7 +46,7 @@ const Stripe = () => {
       });
 
       if (!response.ok) {
-        handleError(response.statusText);
+        setPaymentSuccess(false);
         throw new Error("Network response was not ok");
       }
 
@@ -58,12 +60,14 @@ const Stripe = () => {
       });
 
       if (error) {
-        handleError(error);
+        console.log(error);
+        setPaymentSuccess(false);
       } else {
-        handleSuccess();
+        setPaymentSuccess(true);
       }
     } catch (error) {
-      handleError(error);
+      console.log(error);
+      setPaymentSuccess(false);
     }
   };
 
@@ -78,7 +82,7 @@ const Stripe = () => {
         $hovertextcolor="textlight"
         className={paymentFormStyle.payButton}
         onClick={paymentHandler}
-        disabled={loading}
+        disabled={paymentInProgress}
       >
         {text.payment.payNow}
       </Theme_Button>

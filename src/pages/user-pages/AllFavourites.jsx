@@ -32,7 +32,6 @@ const AllFavourites = () => {
   };
 
   const deleteFavourite = async (favourite) => {
-    console.log(favourite);
     const updatedLikedRecipes = userData.likedRecipes.filter(
       (likedRecipe) => likedRecipe !== favourite[1]
     );

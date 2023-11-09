@@ -1,14 +1,19 @@
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { Icon } from "@iconify/react";
-import { UserContext } from "../context";
+import { CartContext, UserContext } from "../context";
 import { useContext, useState, useEffect } from "react";
 import { useSwalMessage } from "./useSwalMessage";
 import { myCartStyle } from "../styles";
+import { getUserData, updateUserData } from "./firebase";
 
 export const usePayment = () => {
-  const { text } = useContext(UserContext);
-  const [loading, setLoading] = useState(false);
+  const { text, userData } = useContext(UserContext);
+  const { orderDetails, clearCart } = useContext(CartContext);
+  const [actualUserData, setActualUserData] = useState({});
+  const [paymentInProgress, setPaymentInProgress] = useState(false);
+  const [uploadInProgress, setUploadInProgress] = useState(false);
+  const [paymentSuccess, setPaymentSuccess] = useState(null);
   const { showErrorSwal, showSuccessSwal } = useSwalMessage();
 
   const MySwal = withReactContent(Swal);
@@ -22,27 +27,85 @@ export const usePayment = () => {
   };
 
   useEffect(() => {
-    if (loading) {
+    if (paymentInProgress || uploadInProgress) {
       MySwal.fire({
         html: <SwalLoader />,
         allowOutsideClick: false,
         showConfirmButton: false,
       });
     }
-  }, [loading]);
+  }, [paymentInProgress]);
 
   const handleError = (error) => {
-    setLoading(false);
+    setPaymentInProgress(false);
     console.log(error);
     MySwal.close();
     showErrorSwal(text.cart.tryAgain);
   };
 
-  const handleSuccess = () => {
-    setLoading(false);
-    MySwal.close();
+  const handleSuccess = async () => {
+    await uploadOrder();
+    if (paymentInProgress) {
+      setPaymentInProgress(false);
+      MySwal.close();
+    }
     showSuccessSwal(text.cart.success);
+    clearCart();
   };
 
-  return { loading, setLoading, handleError, handleSuccess };
+  const fetchActualData = async () => {
+    const userDatafromDB = await getUserData(userData.uid);
+    setActualUserData(userDatafromDB);
+  };
+
+  useEffect(() => {
+    if (userData.uid) {
+      fetchActualData();
+    }
+  }, [uploadInProgress]);
+
+  const uploadOrder = async () => {
+    setUploadInProgress(true);
+    const updatedOrderDetails = {
+      ...orderDetails,
+      orderTime: new Date().toLocaleString(),
+    };
+    if (actualUserData.orders) {
+      try {
+        await updateUserData(userData.uid, {
+          orders: [...actualUserData.orders, updatedOrderDetails],
+        });
+        await fetchActualData();
+        setUploadInProgress(false);
+      } catch (error) {
+        setUploadInProgress(false);
+        handleError(error);
+      }
+    } else {
+      try {
+        await updateUserData(userData.uid, { orders: [updatedOrderDetails] });
+        await fetchActualData();
+        setUploadInProgress(false);
+      } catch (error) {
+        setUploadInProgress(false);
+        handleError(error);
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (paymentSuccess) {
+      handleSuccess();
+      setPaymentSuccess(null);
+    } else if (paymentSuccess === false) {
+      handleError();
+      setPaymentSuccess(null);
+    }
+  }, [paymentSuccess]);
+
+  return {
+    paymentInProgress,
+    setPaymentInProgress,
+    setPaymentSuccess,
+  };
 };

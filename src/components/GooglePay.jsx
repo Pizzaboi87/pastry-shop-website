@@ -7,7 +7,7 @@ import { paymentFormStyle } from "../styles";
 
 const GooglePay = () => {
   const { orderDetails } = useContext(CartContext);
-  const { handleSuccess } = usePayment();
+  const { setPaymentSuccess } = usePayment();
 
   const paymentRequest = {
     apiVersion: 2,
@@ -44,12 +44,10 @@ const GooglePay = () => {
   };
 
   const onLoadPaymentData = (paymentRequest) => {
-    handleSuccess();
-    console.log("load payment data", paymentRequest);
+    setPaymentSuccess(true);
   };
 
   const onPaymentAuthorized = (paymentData) => {
-    console.log("payment authorized", paymentData);
     return { transactionState: "SUCCESS" };
   };
 

@@ -6,12 +6,12 @@ import { Theme_Button, deliveryStyle, paymentFormStyle } from "../styles";
 const PayOnDelivery = () => {
   const { text, userLanguage } = useContext(UserContext);
   const { orderDetails } = useContext(CartContext);
-  const { setLoading, handleError, handleSuccess } = usePayment();
+  const { setPaymentInProgress, setPaymentSuccess } = usePayment();
 
-  const testFunction = () => {
-    setLoading(true);
+  const makeOrder = () => {
+    setPaymentInProgress(true);
     setTimeout(() => {
-      handleSuccess();
+      setPaymentSuccess(true);
     }, 3000);
   };
 
@@ -133,7 +133,7 @@ const PayOnDelivery = () => {
         $hoverbgcolor="dark"
         $hovertextcolor="textlight"
         className={paymentFormStyle.payButton}
-        onClick={testFunction}
+        onClick={makeOrder}
       >
         {text.payment.payNow}
       </Theme_Button>

@@ -8,7 +8,7 @@ import { paymentFormStyle } from "../styles";
 const PayPal = () => {
   const { orderDetails } = useContext(CartContext);
   const { userLanguage } = useContext(UserContext);
-  const { handleError, handleSuccess } = usePayment();
+  const { setPaymentSuccess } = usePayment();
 
   const items = orderDetails.products.map((product) => {
     return {
@@ -65,13 +65,13 @@ const PayPal = () => {
 
   const onApprove = (data, actions) => {
     return actions.order.capture().then((details) => {
-      handleSuccess();
+      setPaymentSuccess(true);
     });
   };
 
   const onError = (err) => {
     console.error("PayPal error:", err);
-    handleError(err);
+    setPaymentSuccess(false);
   };
 
   return (

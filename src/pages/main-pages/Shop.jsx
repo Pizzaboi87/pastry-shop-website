@@ -1,8 +1,14 @@
+import { Icon } from "@iconify/react";
 import { CartContext, UserContext } from "../../context";
-import { Banner, ProductCard, TransitionParent } from "../../components";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getData, getStoredImage } from "../../utils/firebase";
+import {
+  Banner,
+  Loading,
+  ProductCard,
+  TransitionParent,
+} from "../../components";
 import {
   Theme_Button,
   Theme_Div,
@@ -10,7 +16,6 @@ import {
   shop,
   titleStyle,
 } from "../../styles";
-import { Icon } from "@iconify/react";
 
 const Shop = () => {
   const navigate = useNavigate();
@@ -20,11 +25,13 @@ const Shop = () => {
 
   const [categorySelector, setCategorySelector] = useState("cakes");
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [categories, setCategories] = useState([]);
   const [categoryProducts, setCategoryProducts] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
+      setLoading(true);
       const productsObj = await getData("products/");
       const productsArray = Object.values(productsObj);
 
@@ -46,6 +53,7 @@ const Shop = () => {
       );
 
       setProducts(updatedProducts);
+      setLoading(false);
     };
 
     getProducts();
@@ -99,7 +107,9 @@ const Shop = () => {
         $bordercolor="transparent"
         className={shop.productsContainer}
       >
-        {categoryProducts.length ? (
+        {loading ? (
+          <Loading />
+        ) : categoryProducts.length ? (
           categoryProducts.map((product, index) => (
             <ProductCard
               key={index}

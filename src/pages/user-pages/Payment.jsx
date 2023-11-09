@@ -16,8 +16,6 @@ const Payment = () => {
   const { text } = useContext(UserContext);
   const { orderDetails } = useContext(CartContext);
 
-  console.log(orderDetails);
-
   return (
     <TransitionParent isFlex={false}>
       <Theme_H1 $textcolor="title" className={userPageStyle.title}>
