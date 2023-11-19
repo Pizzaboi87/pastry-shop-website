@@ -3,11 +3,18 @@ import { CartContext, UserContext } from "../context";
 import { usePayment } from "../utils/usePayment";
 import { useCurrency } from "../utils/useCurrency";
 import { Theme_Button, deliveryStyle, paymentFormStyle } from "../styles";
+import { useNavigate } from "react-router-dom";
 
 const PayOnDelivery = ({ oldOrder }) => {
   const { text, userLanguage } = useContext(UserContext);
-  const { orderDetails } = useContext(CartContext);
+  const { orderDetails, setCart } = useContext(CartContext);
   const { setPaymentInProgress, setPaymentSuccess } = usePayment();
+  const navigate = useNavigate();
+
+  const orderAgain = (order) => {
+    setCart(order.products);
+    navigate("/mycart");
+  };
 
   const makeOrder = () => {
     setPaymentInProgress(true);
@@ -114,9 +121,17 @@ const PayOnDelivery = ({ oldOrder }) => {
           </div>
           <span className={deliveryStyle.total}>
             {oldOrder && (
-              <button className="p-2 rounded-xl bg-orange-500">
-                Order Again
-              </button>
+              <Theme_Button
+                $bgcolor="logo"
+                $textcolor="textlight"
+                $bordercolor="transparent"
+                $hoverbgcolor="dark"
+                $hovertextcolor="textlight"
+                className={deliveryStyle.orderAgain}
+                onClick={() => orderAgain(oldOrder)}
+              >
+                {text.delivery.orderAgain}
+              </Theme_Button>
             )}
             <h1 className={!oldOrder ? deliveryStyle.onlyTotal : null}>{`${
               text.delivery.total

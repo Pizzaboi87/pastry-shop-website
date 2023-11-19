@@ -26,6 +26,14 @@ export const tableStyle = "text-text text-[1rem] font-[500] pl-2 md:py-2";
 export const titleStyle =
   "xl:text-[3rem] text-[2rem] text-center font-[600] mb-8";
 
+export const accordionStyle = {
+  container: "flex flex-col w-full xl:w-[75%] mx-auto mt-5",
+  accordion:
+    "cursor-pointer border border-1 shadow-xl bg-white px-1 rounded-t-xl",
+  strong: "mr-2 text-[1rem] font-[600]",
+  text: "text-[1rem] font-[400]",
+};
+
 export const adminLoginStyle = {
   form: "grid grid-cols-5 md:w-[40rem] w-full rounded-xl shadow-xl items-center p-4 gap-8",
   title:
@@ -343,6 +351,8 @@ export const deliveryStyle = {
   total:
     "col-span-2 font-[700] text-[1.2rem] flex items-center justify-between gap-2",
   onlyTotal: "absolute right-6 bottom-2",
+  orderAgain:
+    "py-2 px-2 rounded-xl shadow-xl border-none font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
 };
 
 export const favouritesStyle = {
@@ -607,7 +617,12 @@ export const postcardStyle = {
 };
 
 export const previousOrdersStyle = {
-  container: "w-full min-h-[30rem]",
+  container: "w-full min-h-[30rem] flex items-center justify-center",
+  button:
+    "py-2 px-2 rounded-xl shadow-xl border-none font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+  noOrderContainer:
+    "w-full h-full flex flex-col items-center justify-center gap-4",
+  message: "text-[1.4rem] font-600",
 };
 
 export const recipeCardStyle = {

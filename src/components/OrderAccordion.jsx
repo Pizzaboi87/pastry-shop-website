@@ -1,7 +1,11 @@
-import { useState } from "react";
 import PayOnDelivery from "./PayOnDelivery";
+import { UserContext } from "../context";
+import { useContext, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { accordionStyle } from "../styles";
 
 const OrderAccordion = ({ order }) => {
+  const { text } = useContext(UserContext);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleAccordion = () => {
@@ -9,30 +13,41 @@ const OrderAccordion = ({ order }) => {
   };
 
   return (
-    <div className="accordion-item flex flex-col w-full xl:w-[75%] mx-auto mt-4">
-      <div
+    <div className={accordionStyle.container}>
+      <motion.div
         onClick={handleAccordion}
-        className="cursor-pointer border border-1 shadow-xl bg-white px-1 rounded-t-xl"
+        className={accordionStyle.accordion}
       >
-        <h1>{order.orderTime}</h1>
-        <h1>
+        <h1 className={accordionStyle.text}>
+          {" "}
+          <strong className={accordionStyle.strong}>
+            {text.delivery.orderTime}
+          </strong>
+          {order.orderTime.slice(0, 19)}
+        </h1>
+        <h1 className={accordionStyle.text}>
+          <strong className={accordionStyle.strong}>
+            {text.delivery.orderAmount}
+          </strong>
           {order.amount}
           {order.currency.symbol}
         </h1>
-      </div>
-      <div
-        className={`${
-          isOpen ? "visible" : "hidden"
-        } ease-in-out transition-all duration-500`}
-      >
-        <h1
-          className={`${
-            isOpen ? "opacity-1" : "opacity-0"
-          } ease-in-out transition-all duration-500`}
-        >
-          <PayOnDelivery oldOrder={order} />
-        </h1>
-      </div>
+      </motion.div>
+      <AnimatePresence mode="wait">
+        {isOpen && (
+          <motion.div
+            key="content"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{
+              type: "spring",
+            }}
+          >
+            <PayOnDelivery oldOrder={order} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

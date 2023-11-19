@@ -874,6 +874,13 @@ const es_text = {
     quantity: "Cantidad:",
     price: "Precio:",
     total: "Total:",
+    orderAgain: "Ordenar de nuevo",
+    orderTime: "Fecha del pedido:",
+    orderAmount: "Cantidad del pedido:",
+  },
+  previous: {
+    noOrder: "No tienes ningún pedido anterior.",
+    goToShop: "Ir a la tienda",
   },
 };
 

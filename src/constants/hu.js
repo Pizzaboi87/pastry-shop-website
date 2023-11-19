@@ -867,6 +867,13 @@ const hu_text = {
     quantity: "Mennyiség:",
     price: "Ár:",
     total: "Total:",
+    orderAgain: "Újrarendelés",
+    orderTime: "Rendelés ideje:",
+    orderAmount: "Rendelés összege:",
+  },
+  previous: {
+    noOrder: "Még nincs korábbi rendelésed.",
+    goToShop: "Irány a bolt",
   },
 };
 

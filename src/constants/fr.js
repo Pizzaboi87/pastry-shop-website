@@ -878,6 +878,13 @@ const fr_text = {
     quantity: "Quantité:",
     price: "Prix:",
     total: "Total:",
+    orderAgain: "Commander à nouveau",
+    orderTime: "Date de la commande:",
+    orderAmount: "Montant de la commande:",
+  },
+  previous: {
+    noOrder: "Vous n'avez pas encore passé de commande.",
+    goToShop: "Aller à la boutique",
   },
 };
 
