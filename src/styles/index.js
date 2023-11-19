@@ -29,7 +29,7 @@ export const titleStyle =
 export const accordionStyle = {
   container: "flex flex-col w-full xl:w-[75%] mx-auto mt-5",
   accordion:
-    "cursor-pointer border border-1 shadow-xl bg-white px-1 rounded-t-xl",
+    "pl-4 cursor-pointer border border-1 shadow-xl bg-white px-1 rounded-t-xl",
   strong: "mr-2 text-[1rem] font-[600]",
   text: "text-[1rem] font-[400]",
 };
@@ -617,7 +617,7 @@ export const postcardStyle = {
 };
 
 export const previousOrdersStyle = {
-  container: "w-full min-h-[30rem] flex items-center justify-center",
+  container: "w-full min-h-[30rem] flex flex-col items-center justify-center",
   button:
     "py-2 px-2 rounded-xl shadow-xl border-none font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
   noOrderContainer:
