@@ -1,14 +1,11 @@
 import { UserContext } from "../../context";
 import { useContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { getData, getUserData, updateUserData } from "../../utils/firebase";
-import { Theme_Icon, Theme_Span, allFavouritesStyle } from "../../styles";
 import { FavouriteCard } from "../../components";
 
 const AllFavourites = () => {
   const { userData, setUserData, userLanguage } = useContext(UserContext);
   const [favourites, setFavourites] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const getFavourites = async () => {

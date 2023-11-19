@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { CartContext, UserContext } from "../context";
 import { usePayment } from "../utils/usePayment";
+import { useCurrency } from "../utils/useCurrency";
 import { Theme_Button, deliveryStyle, paymentFormStyle } from "../styles";
 
-const PayOnDelivery = () => {
+const PayOnDelivery = ({ oldOrder }) => {
   const { text, userLanguage } = useContext(UserContext);
   const { orderDetails } = useContext(CartContext);
   const { setPaymentInProgress, setPaymentSuccess } = usePayment();
@@ -16,6 +17,7 @@ const PayOnDelivery = () => {
   };
 
   const {
+    amount,
     fullName,
     address,
     city,
@@ -24,7 +26,7 @@ const PayOnDelivery = () => {
     phone,
     products,
     currency,
-  } = orderDetails;
+  } = oldOrder || orderDetails;
 
   const customer = [
     {
@@ -49,18 +51,12 @@ const PayOnDelivery = () => {
     },
   ];
 
-  const currencyCorr = (price) => {
-    if (currency.name === "HUF") {
-      return Math.ceil((price * currency.value) / 100) * 100;
-    } else {
-      return (price * currency.value).toFixed(1);
-    }
-  };
-
   return (
     <div className={deliveryStyle.wrapper}>
       <div className={deliveryStyle.container}>
-        <h1 className={deliveryStyle.mainTitle}>{text.delivery.summary}</h1>
+        {!oldOrder && (
+          <h1 className={deliveryStyle.mainTitle}>{text.delivery.summary}</h1>
+        )}
 
         <div className={deliveryStyle.detailsContainer}>
           <div className={deliveryStyle.addressContainer}>
@@ -84,6 +80,10 @@ const PayOnDelivery = () => {
             <h2 className={deliveryStyle.subTitle}>{text.delivery.order}</h2>
 
             {products.map((item) => {
+              const { fullPrice } = useCurrency(
+                item.product.price,
+                item.quantity
+              );
               return (
                 <span
                   className={deliveryStyle.span}
@@ -105,38 +105,40 @@ const PayOnDelivery = () => {
                     <strong className={deliveryStyle.textBold}>
                       {text.delivery.price}{" "}
                     </strong>
-                    {`${(currencyCorr(item.product.price) * item.quantity)
-                      .toFixed(currency.name == "HUF" ? 0 : 1)
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ".")} ${
-                      currency.symbol
-                    }`}
+                    {`${fullPrice} ${currency.symbol}`}
                   </p>
                   <hr className={deliveryStyle.border} />
                 </span>
               );
             })}
           </div>
+          <span className={deliveryStyle.total}>
+            {oldOrder && (
+              <button className="p-2 rounded-xl bg-orange-500">
+                Order Again
+              </button>
+            )}
+            <h1 className={!oldOrder ? deliveryStyle.onlyTotal : null}>{`${
+              text.delivery.total
+            } ${amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}${
+              currency.symbol
+            }`}</h1>
+          </span>
         </div>
-        <h1 className={deliveryStyle.total}>{`${
-          text.delivery.total
-        } ${orderDetails.amount
-          .toString()
-          .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}${
-          orderDetails.currency.symbol
-        }`}</h1>
       </div>
-      <Theme_Button
-        $bgcolor="logo"
-        $textcolor="textlight"
-        $bordercolor="transparent"
-        $hoverbgcolor="dark"
-        $hovertextcolor="textlight"
-        className={paymentFormStyle.payButton}
-        onClick={makeOrder}
-      >
-        {text.payment.payNow}
-      </Theme_Button>
+      {!oldOrder && (
+        <Theme_Button
+          $bgcolor="logo"
+          $textcolor="textlight"
+          $bordercolor="transparent"
+          $hoverbgcolor="dark"
+          $hovertextcolor="textlight"
+          className={paymentFormStyle.payButton}
+          onClick={makeOrder}
+        >
+          {text.payment.payNow}
+        </Theme_Button>
+      )}
     </div>
   );
 };

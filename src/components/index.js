@@ -30,6 +30,7 @@ import NavMobileMenu from "./NavMobileMenu";
 import NavUser from "./NavUser";
 import NavUserMobile from "./NavUserMobile";
 import NoPermission from "./NoPermission";
+import OrderAccordion from "./OrderAccordion";
 import OrderCard from "./OrderCard";
 import Paragraphs from "./Paragraphs";
 import PaymentForm from "./PaymentForm";
@@ -86,6 +87,7 @@ export {
   NavUser,
   NavUserMobile,
   NoPermission,
+  OrderAccordion,
   OrderCard,
   Paragraphs,
   PaymentForm,

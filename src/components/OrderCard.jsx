@@ -3,17 +3,11 @@ import { useContext } from "react";
 import { CartButtons } from ".";
 import { UserContext } from "../context";
 import { orderCardStyle } from "../styles";
+import { useCurrency } from "../utils/useCurrency";
 
 const OrderCard = ({ product, quantity, lang }) => {
   const { currency, text } = useContext(UserContext);
-
-  const currencyCorr = (price) => {
-    if (currency.name === "HUF") {
-      return Math.ceil((price * currency.value) / 100) * 100;
-    } else {
-      return (price * currency.value).toFixed(1);
-    }
-  };
+  const { pricePerItem, fullPrice } = useCurrency(product.price, quantity);
 
   const viewImage = () => {
     Swal.fire({
@@ -46,7 +40,7 @@ const OrderCard = ({ product, quantity, lang }) => {
         </span>
         <span className={orderCardStyle.span}>
           <p className={orderCardStyle.details}>{text.orderCard.price}</p>
-          <p>{`${currencyCorr(product.price)} ${currency.symbol}`}</p>
+          <p>{`${pricePerItem} ${currency.symbol}`}</p>
         </span>
         <span className={orderCardStyle.span}>
           <p className={orderCardStyle.details}>{text.orderCard.quantity}</p>
@@ -54,12 +48,9 @@ const OrderCard = ({ product, quantity, lang }) => {
         </span>
       </div>
 
-      <p className={orderCardStyle.price}>
-        {`${(currencyCorr(product.price) * quantity)
-          .toFixed(currency.name == "HUF" ? 0 : 1)
-          .toString()
-          .replace(/\B(?=(\d{3})+(?!\d))/g, ".")} ${currency.symbol}`}
-      </p>
+      <p
+        className={orderCardStyle.price}
+      >{`${fullPrice} ${currency.symbol}`}</p>
 
       <div className={orderCardStyle.buttonContainer}>
         <CartButtons product={product} />

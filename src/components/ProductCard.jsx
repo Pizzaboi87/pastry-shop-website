@@ -4,18 +4,12 @@ import { Icon } from "@iconify/react";
 import { CartContext, UserContext } from "../context";
 import { useContext } from "react";
 import { Theme_Div, shop } from "../styles";
+import { useCurrency } from "../utils/useCurrency";
 
 const ProductCard = ({ product }) => {
   const { text, userLanguage, currency } = useContext(UserContext);
+  const { pricePerItem } = useCurrency(product.price, 1);
   const { cart } = useContext(CartContext);
-
-  const currencyCorr = (price) => {
-    if (currency.name === "HUF") {
-      return Math.ceil((price * currency.value) / 100) * 100;
-    } else {
-      return (price * currency.value).toFixed(1);
-    }
-  };
 
   const viewImage = () => {
     Swal.fire({
@@ -61,9 +55,9 @@ const ProductCard = ({ product }) => {
         </span>
         <h1 className={shop.productName}>{product.name[userLanguage]}</h1>
         <h2 className={shop.productComment}>{product.comment}</h2>
-        <h3 className={shop.productPrice}>{`${currencyCorr(product.price)} ${
-          currency.symbol
-        }`}</h3>
+        <h3
+          className={shop.productPrice}
+        >{`${pricePerItem} ${currency.symbol}`}</h3>
       </Theme_Div>
 
       <div className={shop.cardSpace} />

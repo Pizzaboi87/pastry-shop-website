@@ -329,18 +329,20 @@ export const deliveryStyle = {
   wrapper: "w-full flex flex-col justify-end",
   container: "w-full relative mb-4",
   mainTitle:
-    "inline-block px-4 m-0 bg-white rounded-t-xl font-[600] text-[1.5rem]",
+    "xl:inline-block px-4 m-0 bg-white rounded-t-xl font-[600] text-[1.5rem]",
   detailsContainer:
-    "flex md:flex-row flex-col bg-white rounded-xl rounded-tl-none shadow-xl p-4 gap-y-6 items-left md:items-start md:justify-evenly",
-  addressContainer: "flex flex-col gap-2 w-full md:w-[45%]",
+    "grid grid-cols-2 w-full xl:px-6 bg-white rounded-xl rounded-t-none shadow-xl p-4 gap-y-6 items-left md:items-start md:justify-evenly",
+  addressContainer: "col-span-2 xl:col-span-1 flex flex-col gap-2",
   orderContainer:
-    "flex flex-col w-full md:w-[45%] gap-2 items-left justify-start mb-8",
+    "col-span-2 xl:col-span-1 flex flex-col gap-2 items-left justify-start",
   subTitle: "font-[600] text-[1.2rem] underline underline-offset-2",
   span: "flex flex-col",
   text: "font-[400] text-[1rem]",
   textBold: "font-[600]",
   border: "mt-1 border-2",
-  total: "font-[700] text-[1.2rem] absolute bottom-2 right-6",
+  total:
+    "col-span-2 font-[700] text-[1.2rem] flex items-center justify-between gap-2",
+  onlyTotal: "absolute right-6 bottom-2",
 };
 
 export const favouritesStyle = {
@@ -605,7 +607,7 @@ export const postcardStyle = {
 };
 
 export const previousOrdersStyle = {
-  container: "w-full h-[30rem] bg-purple",
+  container: "w-full min-h-[30rem]",
 };
 
 export const recipeCardStyle = {
