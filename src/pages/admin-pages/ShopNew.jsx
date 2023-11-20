@@ -1,6 +1,7 @@
 import { UserContext } from "../../context";
 import { useContext } from "react";
 import { adminPageStyle } from "../../styles";
+import { ProductForm } from "../../components";
 
 const ShopNew = () => {
   const { text } = useContext(UserContext);
@@ -8,6 +9,7 @@ const ShopNew = () => {
   return (
     <div className={adminPageStyle.wrapper}>
       <h1 className={adminPageStyle.title}>{text.shopNewTitle}</h1>
+      <ProductForm />
     </div>
   );
 };

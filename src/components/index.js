@@ -39,6 +39,7 @@ import PayOnDelivery from "./PayOnDelivery";
 import PayPal from "./PayPal";
 import Postcard from "./Postcard";
 import ProductCard from "./ProductCard";
+import ProductForm from "./ProductForm";
 import RecipeCard from "./RecipeCard";
 import ReviewCard from "./ReviewCard";
 import SignInForm from "./SignInForm";
@@ -96,6 +97,7 @@ export {
   PayPal,
   Postcard,
   ProductCard,
+  ProductForm,
   RecipeCard,
   ReviewCard,
   SignInForm,

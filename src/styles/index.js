@@ -625,6 +625,23 @@ export const previousOrdersStyle = {
   message: "text-[1.4rem] font-600",
 };
 
+export const productFormStyle = {
+  form: "w-full grid grid-cols-4 md:gap-x-16 gap-y-8",
+  container: "md:col-span-2 col-span-4 flex flex-col gap-y-4 justify-between",
+  label:
+    "flex flex-col text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[500] gap-y-2",
+  input:
+    "text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted outline-purple",
+  select:
+    "h-[2.2rem] text-text xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem] font-[400] py-1 px-4 rounded-xl outline-none outline-dotted outline-purple",
+  button:
+    "md:col-start-4 md:col-auto col-span-4 py-2 bg-purple hover:bg-yellowdark hover:text-text rounded-xl shadow-xl border-none text-white font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+  dbPost: "cursor-not-allowed",
+  notDbPost: "cursor-normal",
+  loading: "cursor-progress",
+  pointer: "cursor-pointer",
+};
+
 export const recipeCardStyle = {
   wrapper:
     "w-full sm:w-[20rem] xs:h-[35rem] md:h-[31rem] mx-auto mb-4 text-justify p-4 rounded-xl shadow-xl flex flex-col items-center justify-between",

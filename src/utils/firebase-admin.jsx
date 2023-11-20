@@ -212,3 +212,37 @@ export const uploadPost = async (
     showErrorSwal(text.blogForm.swal.errorMessage);
   }
 };
+
+export const uploadProduct = async (
+  text,
+  currentUser,
+  productForm,
+  setIsLoading,
+  showErrorSwal,
+  showSuccessSwal
+) => {
+  setIsLoading(true);
+  try {
+    const idToken = await currentUser.getIdToken();
+
+    const response = await fetch("/api/store-product", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${idToken}`,
+      },
+      body: JSON.stringify(productForm),
+    });
+
+    if (response.ok) {
+      setIsLoading(false);
+      showSuccessSwal(text.blogForm.swal.successMessage);
+    } else {
+      setIsLoading(false);
+      showErrorSwal(text.blogForm.swal.errorMessage);
+    }
+  } catch (error) {
+    console.log(error);
+    setIsLoading(false);
+    showErrorSwal(text.blogForm.swal.errorMessage);
+  }
+};

@@ -10,6 +10,7 @@ export const useValidation = (validationRules) => {
     email: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/,
     normal: /^[\p{L}\-.()\//0-9\s]+$/u,
     withNumber: /^[\p{L}0-9-.()\//\s]+$/u,
+    number: /^\d+(\.\d+)?$/u,
     comment:
       /(?:[\u{1F000}-\u{1FFFF}]|\p{Emoji_Presentation}|\p{Emoji}\ufe0f|[\p{L}0-9,.\-;:?!()%"@$/€\n\s])/u,
   };
@@ -19,7 +20,7 @@ export const useValidation = (validationRules) => {
       const rule = validationRules[fieldName];
       const value = rule.value;
 
-      const regex = rules[rule.validationRule];
+      const regex = rules[rule.regex];
 
       if (regex && !regex.test(value)) {
         showErrorSwal(rule.errorMessage);

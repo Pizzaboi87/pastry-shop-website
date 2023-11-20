@@ -873,6 +873,58 @@ const en_text = {
     noOrder: "You don't have any order yet.",
     goToShop: "Go to Shop",
   },
+  productForm: {
+    categoryLabel: "Product category",
+    engNameLabel: "English name",
+    espNameLabel: "Spanish name",
+    fraNameLabel: "French name",
+    hunNameLabel: "Hungarian name",
+    codeLabel: "Product Code",
+    commentLabel: "Product details",
+    priceLabel: "Product price (€)",
+    ratingLabel: "Product rating",
+    imageLabel: "Product image",
+    button: "Save",
+    savingButton: "Saving...",
+    errorCode: "Please provide a valid product code.",
+    errorEngName: "Please provide a valid English product name.",
+    errorEspName: "Please provide a valid Spanish product name.",
+    errorFraName: "Please provide a valid French product name.",
+    errorHunName: "Please provide a valid Hungarian product name.",
+    errorComment: "Please provide a valid product detail.",
+    category: [
+      {
+        id: "bev",
+        branch: "beverages",
+        name: "Beverages",
+      },
+      {
+        id: "cake",
+        branch: "cakes",
+        name: "Cakes",
+      },
+      {
+        id: "coffee",
+        branch: "coffees",
+        name: "Coffees",
+      },
+      {
+        id: "drink",
+        branch: "drinks",
+        name: "Drinks",
+      },
+      {
+        id: "food",
+        branch: "foods",
+        name: "Foods",
+      },
+      {
+        id: "gift",
+        branch: "gifts",
+        name: "Gifts",
+      },
+    ],
+  },
 };
 
 export default en_text;

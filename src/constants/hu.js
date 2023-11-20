@@ -875,6 +875,59 @@ const hu_text = {
     noOrder: "Még nincs korábbi rendelésed.",
     goToShop: "Irány a bolt",
   },
+  productForm: {
+    categoryLabel: "Termékkategória",
+    engNameLabel: "Angol név",
+    espNameLabel: "Spanyol név",
+    fraNameLabel: "Francia név",
+    hunNameLabel: "Magyar név",
+    codeLabel: "Termékkód",
+    commentLabel: "Termék részletek",
+    priceLabel: "Termék ára (€)",
+    ratingLabel: "Termék értékelés",
+    imageLabel: "Termék kép",
+    button: "Mentés",
+    savingButton: "Mentés...",
+    errorCode: "Kérjük, adjon meg egy érvényes termékkódot.",
+    errorEngName: "Kérjük, adjon meg egy érvényes angol terméknevet.",
+    errorEspName: "Kérjük, adjon meg egy érvényes spanyol terméknevet.",
+    errorFraName: "Kérjük, adjon meg egy érvényes francia terméknevet.",
+    errorHunName: "Kérjük, adjon meg egy érvényes magyar terméknevet.",
+    errorComment: "Kérjük, adjon meg érvényes termékrészletet.",
+
+    category: [
+      {
+        id: "bev",
+        branch: "beverages",
+        name: "Üdítők",
+      },
+      {
+        id: "cake",
+        branch: "cakes",
+        name: "Sütik",
+      },
+      {
+        id: "coffee",
+        branch: "coffees",
+        name: "Kávék",
+      },
+      {
+        id: "drink",
+        branch: "drinks",
+        name: "Italok",
+      },
+      {
+        id: "food",
+        branch: "foods",
+        name: "Ételek",
+      },
+      {
+        id: "gift",
+        branch: "gifts",
+        name: "Kincsek",
+      },
+    ],
+  },
 };
 
 export default hu_text;

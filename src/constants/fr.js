@@ -598,7 +598,7 @@ const fr_text = {
     post: "Texte Complet de l'Article",
     tags: "Mots-Clés (séparés par des virgules)",
     button: "Enregistrer",
-    savingButton: "Enregistrement en cours...",
+    savingButton: "Enregistrer...",
     translateButton: "Traduire l'Article",
     imageDisable:
       "Tant que le titre n'est pas valide, le téléchargement de l'image est désactivé.",
@@ -727,7 +727,7 @@ const fr_text = {
     address: "Adresse",
     zip: "Code Postal",
     button: "Enregistrer",
-    savingButton: "Enregistrement en cours...",
+    savingButton: "Enregistrer...",
     swal: {
       successMessage: "Le compte a été mis à jour.",
       errorNotUpdated: "Désolé, nous n'avons pas pu mettre à jour les données!",
@@ -885,6 +885,58 @@ const fr_text = {
   previous: {
     noOrder: "Vous n'avez pas encore passé de commande.",
     goToShop: "Aller à la boutique",
+  },
+  productForm: {
+    categoryLabel: "Catégorie de produit",
+    engNameLabel: "Nom anglais",
+    espNameLabel: "Nom espagnol",
+    fraNameLabel: "Nom français",
+    hunNameLabel: "Nom hongrois",
+    codeLabel: "Code produit",
+    commentLabel: "Détails du produit",
+    priceLabel: "Prix du produit (€)",
+    ratingLabel: "Évaluation du produit",
+    imageLabel: "Image du produit",
+    button: "Enregistrer",
+    savingButton: "Enregistrer...",
+    errorCode: "Veuillez fournir un code de produit valide.",
+    errorEngName: "Veuillez fournir un nom anglais valide pour le produit.",
+    errorEspName: "Veuillez fournir un nom espagnol valide pour le produit.",
+    errorFraName: "Veuillez fournir un nom français valide pour le produit.",
+    errorHunName: "Veuillez fournir un nom hongrois valide pour le produit.",
+    errorComment: "Veuillez fournir un détail de produit valide.",
+    category: [
+      {
+        id: "bev",
+        branch: "beverages",
+        name: "Breuvages",
+      },
+      {
+        id: "cake",
+        branch: "cakes",
+        name: "Gâteaux",
+      },
+      {
+        id: "coffee",
+        branch: "coffees",
+        name: "Cafés",
+      },
+      {
+        id: "drink",
+        branch: "drinks",
+        name: "Boissons",
+      },
+      {
+        id: "food",
+        branch: "foods",
+        name: "Nourriture",
+      },
+      {
+        id: "gift",
+        branch: "gifts",
+        name: "Cadeaux",
+      },
+    ],
   },
 };
 
