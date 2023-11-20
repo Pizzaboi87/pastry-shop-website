@@ -502,6 +502,7 @@ const en_text = {
   blogCommentsSearch: "Search by name or title...",
   blogNewTitle: "Add New Article",
   blogPostEditTitle: "Edit Article",
+  shopItemEditTitle: "Edit Shop Item",
   shopAllTitle: "All Shop Items Admin Page",
   shopNewTitle: "Add New Shop Item Admin Page",
   shopOrdersTitle: "Shop Orders Admin Page",
@@ -563,6 +564,14 @@ const en_text = {
       successText: "The post has been deleted.",
       error: "Something went wrong!",
       errorMsg: "The post has not been deleted.",
+    },
+  },
+  productAll: {
+    swal: {
+      question: "Do you want to delete the product?",
+      successText: "The product has been deleted.",
+      error: "Something went wrong!",
+      errorMsg: "The product has not been deleted.",
     },
   },
   blogCommentForm: {
@@ -892,6 +901,8 @@ const en_text = {
     errorFraName: "Please provide a valid French product name.",
     errorHunName: "Please provide a valid Hungarian product name.",
     errorComment: "Please provide a valid product detail.",
+    errorMessage: "The product has not been saved.",
+    successMessage: "The product has been uploaded.",
     category: [
       {
         id: "bev",

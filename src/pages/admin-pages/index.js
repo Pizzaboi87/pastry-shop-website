@@ -5,6 +5,7 @@ import BlogNew from "./BlogNew";
 import BlogPostEdit from "./BlogPostEdit";
 import DeletedUser from "./DeletedUser";
 import ShopAll from "./ShopAll";
+import ShopItemEditPage from "./ShopItemEditPage";
 import ShopNew from "./ShopNew";
 import ShopOrders from "./ShopOrders";
 import UserDetailsPage from "./UserDetailsPage";
@@ -18,6 +19,7 @@ export {
   BlogPostEdit,
   DeletedUser,
   ShopAll,
+  ShopItemEditPage,
   ShopNew,
   ShopOrders,
   UserDetailsPage,

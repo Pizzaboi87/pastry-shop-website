@@ -1,7 +1,7 @@
+import { ProductForm } from "../../components";
 import { UserContext } from "../../context";
 import { useContext } from "react";
 import { adminPageStyle } from "../../styles";
-import { ProductForm } from "../../components";
 
 const ShopNew = () => {
   const { text } = useContext(UserContext);

@@ -1,4 +1,4 @@
-import { UserContext } from "../context";
+import { ProductContext, UserContext } from "../context";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { storeImage } from "../utils/firebase";
@@ -7,40 +7,42 @@ import { useValidation } from "../utils/useValidation";
 import { uploadProduct } from "../utils/firebase-admin";
 import { productFormStyle } from "../styles";
 
-const ProductForm = ({ dbPost }) => {
+const ProductForm = ({ dbProduct }) => {
   const { text, currentUser } = useContext(UserContext);
+  const { setFirebaseProducts, loading, setLoading } =
+    useContext(ProductContext);
   const { showErrorSwal, showSuccessSwal } = useSwalMessage();
-
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
 
   let uploadFile = {};
   let fileExtension = "";
   let newFileName = "";
 
   const defaultForm = {
-    image: "",
-    code: "",
+    image: dbProduct ? dbProduct.image : "",
+    id: dbProduct ? dbProduct.id : "",
     name: {
-      eng: "",
-      esp: "",
-      fra: "",
-      hun: "",
+      eng: dbProduct ? dbProduct.name.eng : "",
+      esp: dbProduct ? dbProduct.name.esp : "",
+      fra: dbProduct ? dbProduct.name.fra : "",
+      hun: dbProduct ? dbProduct.name.hun : "",
     },
-    category: text.productForm.category[0].branch,
-    comment: "",
-    price: 0.0,
-    rating: 5,
+    category: dbProduct
+      ? dbProduct.category
+      : text.productForm.category[0].branch,
+    comment: dbProduct ? dbProduct.comment : "",
+    price: dbProduct ? dbProduct.price : 0.0,
+    rating: dbProduct ? dbProduct.rating : 5,
     imageFile: {},
   };
 
   const [productForm, setProductForm] = useState(defaultForm);
-  const { code, name, category, comment, price, rating, imageFile, image } =
+  const { id, name, category, comment, price, rating, imageFile, image } =
     productForm;
 
   const validationRules = {
-    code: {
-      value: code,
+    id: {
+      value: id,
       regex: "password",
       errorMessage: text.productForm.errorCode,
     },
@@ -78,7 +80,7 @@ const ProductForm = ({ dbPost }) => {
 
     if (files) {
       fileExtension = files[0].name.split(".").pop();
-      newFileName = `${code}.${fileExtension}`;
+      newFileName = `${id}.${fileExtension}`;
       uploadFile = new File([files[0]], newFileName);
 
       const allowedExtensions = ["jpg", "jpeg", "png", "webp", "bmp", "svg"];
@@ -126,9 +128,10 @@ const ProductForm = ({ dbPost }) => {
       text,
       currentUser,
       productForm,
-      setIsLoading,
+      setLoading,
       showErrorSwal,
-      showSuccessSwal
+      showSuccessSwal,
+      setFirebaseProducts
     );
 
     navigate("/admin/shop/products");
@@ -142,8 +145,8 @@ const ProductForm = ({ dbPost }) => {
           <input
             type="text"
             required
-            name="code"
-            value={code}
+            name="id"
+            value={id}
             onChange={handleChange}
             className={productFormStyle.input}
           />
@@ -260,7 +263,7 @@ const ProductForm = ({ dbPost }) => {
         <label className={productFormStyle.label}>
           {text.productForm.imageLabel}
           <input
-            required={dbPost ? false : true}
+            required={dbProduct ? false : true}
             type="file"
             name="image"
             accept="image/*"
@@ -272,12 +275,12 @@ const ProductForm = ({ dbPost }) => {
 
       <button
         type="submit"
-        disabled={isLoading ? true : false}
+        disabled={loading ? true : false}
         className={`${productFormStyle.button} ${
-          isLoading ? productFormStyle.loading : productFormStyle.pointer
+          loading ? productFormStyle.loading : productFormStyle.pointer
         } `}
       >
-        {isLoading ? text.productForm.savingButton : text.productForm.button}
+        {loading ? text.productForm.savingButton : text.productForm.button}
       </button>
     </form>
   );

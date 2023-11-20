@@ -509,6 +509,7 @@ const fr_text = {
   blogCommentsSearch: "Recherche par nom ou titre...",
   blogNewTitle: "Ajouter un Nouvel Article",
   blogPostEditTitle: "Modifier l'Article",
+  shopItemEditTitle: "Modifier l'Article de la Boutique",
   shopAllTitle: "Tous les Articles de la Boutique Page d'Administration",
   shopNewTitle:
     "Ajouter un Nouvel Article de la Boutique Page d'Administration",
@@ -572,6 +573,14 @@ const fr_text = {
       successText: "L'article a été supprimé avec succès!",
       error: "Quelque chose s'est mal passé!",
       errorMsg: "L'article n'a pas été supprimé.",
+    },
+  },
+  productAll: {
+    swal: {
+      question: "Voulez-vous supprimer le produit?",
+      successText: "Le produit a été supprimé avec succès!",
+      error: "Quelque chose s'est mal passé!",
+      errorMsg: "Le produit n'a pas été supprimé.",
     },
   },
   blogCommentForm: {
@@ -905,6 +914,8 @@ const fr_text = {
     errorFraName: "Veuillez fournir un nom français valide pour le produit.",
     errorHunName: "Veuillez fournir un nom hongrois valide pour le produit.",
     errorComment: "Veuillez fournir un détail de produit valide.",
+    errorMessage: "Le produit n'a pas été enregistré.",
+    successMessage: "Le produit a été enregistré.",
     category: [
       {
         id: "bev",

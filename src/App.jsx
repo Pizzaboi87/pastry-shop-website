@@ -3,6 +3,7 @@ import { Navbar, Footer, MainContent, Awning } from "./components";
 import {
   BlogContextProvider,
   CartContextProvider,
+  ProductContextProvider,
   UserContextProvider,
 } from "./context";
 import { appStyle } from "./styles";
@@ -17,9 +18,11 @@ const App = () => {
           <Awning />
           <Navbar />
           <BlogContextProvider>
-            <CartContextProvider>
-              <MainContent />
-            </CartContextProvider>
+            <ProductContextProvider>
+              <CartContextProvider>
+                <MainContent />
+              </CartContextProvider>
+            </ProductContextProvider>
           </BlogContextProvider>
           <Footer />
         </UserContextProvider>

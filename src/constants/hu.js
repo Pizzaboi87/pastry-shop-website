@@ -501,6 +501,7 @@ const hu_text = {
   blogCommentsSearch: "Keresés név vagy cím alapján...",
   blogNewTitle: "Új Cikk Hozzáadása",
   blogPostEditTitle: "Cikk Szerkesztése",
+  shopItemEditTitle: "Termék Szerkesztése",
   shopAllTitle: "Minden Termék",
   shopNewTitle: "Új Termék Hozzáadása",
   shopOrdersTitle: "Rendelések",
@@ -563,6 +564,14 @@ const hu_text = {
       successText: "A bejegyzés törölve lett.",
       error: "Valami hiba történt!",
       errorMsg: "A bejegyzés nem lett törölve.",
+    },
+  },
+  productAll: {
+    swal: {
+      question: "Szeretnéd törölni a terméket?",
+      successText: "A termék törölve lett.",
+      error: "Valami hiba történt!",
+      errorMsg: "A termék nem lett törölve.",
     },
   },
   blogCommentForm: {
@@ -894,7 +903,8 @@ const hu_text = {
     errorFraName: "Kérjük, adjon meg egy érvényes francia terméknevet.",
     errorHunName: "Kérjük, adjon meg egy érvényes magyar terméknevet.",
     errorComment: "Kérjük, adjon meg érvényes termékrészletet.",
-
+    errorMessage: "Sajnáljuk, nem sikerült menteni a terméket!",
+    successMessage: "A termék sikeresen feltöltésre került.",
     category: [
       {
         id: "bev",

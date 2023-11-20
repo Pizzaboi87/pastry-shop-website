@@ -5,7 +5,7 @@ const storeProductHandler = async (req, res) => {
   const productsRef = database.ref(`products/${product.category}/`);
 
   try {
-    await productsRef.child(product.code).set(product);
+    await productsRef.child(product.id).set(product);
 
     res.status(200).json({ message: "Success" });
   } catch (error) {

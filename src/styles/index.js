@@ -767,6 +767,24 @@ export const shop = {
   productPrice: "absolute self-end bottom-2 text-[1.5rem] font-[700]",
 };
 
+export const shopAllStyle = {
+  container: "flex w-full h-full flex-wrap gap-y-8 gap-x-4 justify-evenly",
+  productContainer:
+    "card relative bg-primary overflow-hidden 3xl:w-[14rem] xl:w-[11rem] w-[18rem] 3xl:h-[17rem] xl:h-[14rem] h-[21rem] flex flex-col items-center cursor-pointer rounded-xl shadow-xl",
+  buttonContainer: "flex justify-evenly gap-3 w-full mb-6 flex-wrap",
+  button:
+    "py-1 px-2 bg-purple hover:bg-yellowdark hover:text-text rounded-xl shadow-xl border-none text-white font-[500] xl:text-[1.2rem] lg:text-[1rem] md:text-[1.4rem] text-[1rem]",
+  image: "absolute w-full 3xl:h-[13rem] xl:h-[11rem] h-[18rem] object-cover",
+  filter: "filter absolute w-full h-full bg-purpleglass",
+  content:
+    "w-full 3xl:h-[12rem] h-full flex items-center justify-center gap-x-4",
+  icon: "text-white text-[3rem] hover:text-yellowdark cursor-pointer",
+  titleContainer: "absolute bottom-0 w-full 3xl:h-[4rem] h-[3rem]",
+  bg: "bg-yellowdark",
+  flex: "flex items-center justify-center",
+  title: "text-text xl:text-[1rem] text-[1.2rem] font-[500] text-center",
+};
+
 export const signInFormStyle = {
   wrapper: "flex flex-col w-full h-full items-center justify-center",
   title:

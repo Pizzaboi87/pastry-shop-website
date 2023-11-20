@@ -18,6 +18,15 @@ const updateComments = async (setFirebaseComments) => {
   }
 };
 
+const updateProducts = async (setFirebaseProducts) => {
+  try {
+    const data = await getData("products/");
+    setFirebaseProducts(data);
+  } catch (error) {
+    console.error("An error happened during data fetching.", error);
+  }
+};
+
 export const deleteComment = async (
   id,
   text,
@@ -104,6 +113,53 @@ export const deleteBlogPost = async (
         setIsLoading(false);
         showErrorSwal(text.blogAll.swal.errorMsg);
         console.error("Error deleting post:", error);
+      }
+    } else if (result.isDenied) {
+      return;
+    }
+  });
+};
+
+export const deleteProduct = async (
+  id,
+  category,
+  image,
+  setFirebaseProducts,
+  setIsLoading,
+  currentUser,
+  text,
+  showErrorSwal,
+  showSuccessSwal,
+  showQuestionSwal
+) => {
+  await showQuestionSwal(text.productAll.swal.question).then(async (result) => {
+    if (result.isConfirmed) {
+      setIsLoading(true);
+      try {
+        const idToken = await currentUser.getIdToken();
+
+        const response = await fetch("/api/delete-product", {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${idToken}`,
+            "product-id": id,
+            "product-category": category,
+            "product-image": image,
+          },
+        });
+
+        if (response.ok) {
+          await updateProducts(setFirebaseProducts);
+          setIsLoading(false);
+          showSuccessSwal(text.productAll.swal.successText);
+        } else {
+          setIsLoading(false);
+          showErrorSwal(text.productAll.swal.errorMsg);
+        }
+      } catch (error) {
+        setIsLoading(false);
+        showErrorSwal(text.productAll.swal.errorMsg);
+        console.error("Error deleting product:", error);
       }
     } else if (result.isDenied) {
       return;
@@ -219,7 +275,8 @@ export const uploadProduct = async (
   productForm,
   setIsLoading,
   showErrorSwal,
-  showSuccessSwal
+  showSuccessSwal,
+  setFirebaseProducts
 ) => {
   setIsLoading(true);
   try {
@@ -235,14 +292,15 @@ export const uploadProduct = async (
 
     if (response.ok) {
       setIsLoading(false);
-      showSuccessSwal(text.blogForm.swal.successMessage);
+      await updateProducts(setFirebaseProducts);
+      showSuccessSwal(text.productForm.successMessage);
     } else {
       setIsLoading(false);
-      showErrorSwal(text.blogForm.swal.errorMessage);
+      showErrorSwal(text.productForm.errorMessage);
     }
   } catch (error) {
     console.log(error);
     setIsLoading(false);
-    showErrorSwal(text.blogForm.swal.errorMessage);
+    showErrorSwal(text.productForm.errorMessage);
   }
 };

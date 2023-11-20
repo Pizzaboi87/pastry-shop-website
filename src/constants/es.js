@@ -503,6 +503,7 @@ const es_text = {
   blogCommentsSearch: "Buscar por nombre o título...",
   blogNewTitle: "Agregar Nuevo Artículo",
   blogPostEditTitle: "Editar Artículo",
+  shopItemEditTitle: "Editar Artículo de la Tienda",
   shopAllTitle: "Todos los Artículos de la Tienda - Panel de Administración",
   shopNewTitle: "Agregar Nuevo Artículo a la Tienda - Panel de Administración",
   shopOrdersTitle: "Pedidos de la Tienda - Panel de Administración",
@@ -565,6 +566,14 @@ const es_text = {
       successText: "El artículo ha sido eliminado.",
       error: "¡Algo salió mal!",
       errorMsg: "El artículo no ha sido eliminado.",
+    },
+  },
+  productAll: {
+    swal: {
+      question: "¿Deseas eliminar el producto?",
+      successText: "El producto ha sido eliminado.",
+      error: "¡Algo salió mal!",
+      errorMsg: "El producto no ha sido eliminado.",
     },
   },
   blogCommentForm: {
@@ -901,6 +910,8 @@ const es_text = {
     errorFraName: "Por favor, ingresa un nombre de producto válido en francés.",
     errorHunName: "Por favor, ingresa un nombre de producto válido en húngaro.",
     errorComment: "Por favor, ingresa detalles de producto válidos.",
+    errorMessage: "El producto no ha sido guardado.",
+    successMessage: "El producto ha sido guardado.",
     category: [
       {
         id: "bev",

@@ -29,6 +29,7 @@ import {
   BlogPostEdit,
   DeletedUser,
   ShopAll,
+  ShopItemEditPage,
   ShopNew,
   ShopOrders,
   UserDetailsPage,
@@ -101,6 +102,7 @@ const MainContent = () => {
               element={<BlogCommentPage />}
             />
             <Route path="shop/products" element={<ShopAll />} />
+            <Route path="shop/products/:id" element={<ShopItemEditPage />} />
             <Route path="shop/new-product" element={<ShopNew />} />
             <Route path="shop/orders" element={<ShopOrders />} />
           </Route>
