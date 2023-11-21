@@ -1,44 +1,40 @@
-import { BlogContext, ProductContext, UserContext } from "../../context";
-import { BlogForm, Loading, ProductForm } from "../../components";
+import { ProductContext, UserContext } from "../../context";
+import { Loading, ProductForm } from "../../components";
 import { Icon } from "@iconify/react";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { deleteBlogPost, deleteProduct } from "../../utils/firebase-admin";
+import { deleteProduct } from "../../utils/firebase-admin";
 import { useSwalMessage } from "../../utils/useSwalMessage";
 import { adminPageStyle } from "../../styles";
 
 const ShopItemEditPage = () => {
-  const { allBlogPost, setFirebaseData } = useContext(BlogContext);
-  const { text, currentUser, userLanguage } = useContext(UserContext);
-  const { allProducts } = useContext(ProductContext);
-  const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
-  const [isLoading, setIsLoading] = useState(false);
-  const [result, setResult] = useState(false);
+  const navigate = useNavigate();
   const { id } = useParams();
+  const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
+  const { text, currentUser } = useContext(UserContext);
+  const { allProducts, setFirebaseProducts, loading, setLoading } =
+    useContext(ProductContext);
 
   const product = allProducts.filter((product) => product.id === id)[0];
-  const navigate = useNavigate();
 
-  const confirmDelete = async (postid) => {
+  const confirmDelete = async (id, category, image) => {
     await deleteProduct(
-      postid,
-      setFirebaseData,
-      setIsLoading,
-      setResult,
+      id,
+      category,
+      image,
+      setFirebaseProducts,
+      setLoading,
       currentUser,
       text,
-      userLanguage,
       showErrorSwal,
       showSuccessSwal,
       showQuestionSwal
     );
+
+    navigate("/admin/shop/products");
   };
 
-  useEffect(() => {
-    if (result) navigate("/admin/blog/all");
-  }, [product, result]);
-
-  if (isLoading) return <Loading />;
+  if (loading) return <Loading />;
 
   return (
     <div className={adminPageStyle.wrapperRelative}>
@@ -47,7 +43,9 @@ const ShopItemEditPage = () => {
       <Icon
         icon="bi:trash3-fill"
         className={adminPageStyle.icon}
-        onClick={() => confirmDelete(product.id)}
+        onClick={() =>
+          confirmDelete(product.id, product.category, product.image)
+        }
       />
 
       <ProductForm dbProduct={product} />

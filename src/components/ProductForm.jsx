@@ -1,3 +1,4 @@
+import Loading from "./Loading";
 import { ProductContext, UserContext } from "../context";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
@@ -104,10 +105,19 @@ const ProductForm = ({ dbProduct }) => {
           [name]: value,
         },
       });
-    } else if (name == "price") {
+    } else if (name === "price") {
+      let newValue;
+
+      if (value === "" || isNaN(parseFloat(value)) || parseFloat(value) === 0) {
+        newValue =
+          parseFloat(value) === 0 && value.indexOf(",") !== 0 ? 0 : value;
+      } else {
+        newValue = parseFloat(value);
+      }
+
       setProductForm({
         ...productForm,
-        [name]: parseFloat(value),
+        [name]: newValue,
       });
     } else if (name == "name") {
       setProductForm({
@@ -123,7 +133,8 @@ const ProductForm = ({ dbProduct }) => {
     event.preventDefault();
     if (!isValid()) return;
 
-    await storeImage(imageFile, `products/${category}/${image}`);
+    if (imageFile && imageFile.name !== undefined && imageFile.name !== "")
+      await storeImage(imageFile, `products/${category}/${image}`);
     await uploadProduct(
       text,
       currentUser,
@@ -136,6 +147,8 @@ const ProductForm = ({ dbProduct }) => {
 
     navigate("/admin/shop/products");
   };
+
+  if (loading) return <Loading />;
 
   return (
     <form onSubmit={handleSubmit} className={productFormStyle.form}>
