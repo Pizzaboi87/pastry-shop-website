@@ -8,7 +8,7 @@ import { useCurrency } from "../utils/useCurrency";
 
 const ProductCard = ({ product }) => {
   const { text, userLanguage, currency } = useContext(UserContext);
-  const { pricePerItem } = useCurrency(product.price, 1);
+  const { pricePerItem } = useCurrency(currency, product.price, 1);
   const { cart } = useContext(CartContext);
 
   const viewImage = () => {

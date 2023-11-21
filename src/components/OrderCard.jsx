@@ -7,7 +7,11 @@ import { useCurrency } from "../utils/useCurrency";
 
 const OrderCard = ({ product, quantity, lang }) => {
   const { currency, text } = useContext(UserContext);
-  const { pricePerItem, fullPrice } = useCurrency(product.price, quantity);
+  const { pricePerItem, fullPrice } = useCurrency(
+    currency,
+    product.price,
+    quantity
+  );
 
   const viewImage = () => {
     Swal.fire({

@@ -1,8 +1,6 @@
-import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../context";
+import { useEffect, useState } from "react";
 
-export const useCurrency = (value, quantity) => {
-  const { currency } = useContext(UserContext);
+export const useCurrency = (currency, value, quantity) => {
   const [pricePerItem, setPricePerItem] = useState(0);
   const [fullPrice, setFullPrice] = useState(0);
 

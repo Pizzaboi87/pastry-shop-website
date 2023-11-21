@@ -86,6 +86,7 @@ const PayOnDelivery = ({ oldOrder }) => {
 
             {products.map((item) => {
               const { fullPrice } = useCurrency(
+                currency,
                 item.product.price,
                 item.quantity
               );

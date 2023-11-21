@@ -56,8 +56,8 @@ const NavMobileMenu = ({ openMenu, setOpenMenu }) => {
                 $bgcolor="transparent"
                 $textcolor="text"
                 $bordercolor="transparent"
-                $hoverbgcolor="logo"
-                $hovertextcolor="text"
+                $hoverbgcolor="transparent"
+                $hovertextcolor="logo"
                 onClick={() => {
                   setOpenMenu(!openMenu);
                   setIsReg(false);
