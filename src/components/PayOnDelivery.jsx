@@ -70,16 +70,14 @@ const PayOnDelivery = ({ oldOrder }) => {
             <h2 className={deliveryStyle.subTitle}>{text.delivery.delivery}</h2>
 
             <span className={deliveryStyle.span}>
-              {customer.map((item) => {
-                return (
-                  <p className={deliveryStyle.text} key={item.title}>
-                    <strong className={deliveryStyle.textBold}>
-                      {item.title}{" "}
-                    </strong>
-                    {item.value}
-                  </p>
-                );
-              })}
+              {customer.map((item) => (
+                <p className={deliveryStyle.text} key={item.title}>
+                  <strong className={deliveryStyle.textBold}>
+                    {item.title}{" "}
+                  </strong>
+                  {item.value}
+                </p>
+              ))}
             </span>
           </div>
 

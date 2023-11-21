@@ -12,9 +12,7 @@ import {
 const MyAccount = () => {
   const { userData, setUserData, currentUser, text } = useContext(UserContext);
 
-  if (!currentUser) {
-    return <Navigate to="/auth" />;
-  }
+  if (!currentUser) return <Navigate to="/auth" />;
 
   if (!userData) return <Loading />;
 

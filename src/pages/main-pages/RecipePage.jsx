@@ -19,7 +19,8 @@ import {
 } from "react-share";
 
 const RecipePage = () => {
-  const { text, userData, setUserData, userLanguage } = useContext(UserContext);
+  const { text, userData, setUserData, userLanguage, currentUser } =
+    useContext(UserContext);
   const { recipeID } = useParams();
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -79,12 +80,19 @@ const RecipePage = () => {
   const handleLike = async () => {
     const newLiked = !liked;
     setLiked(newLiked);
+    let updatedLikedRecipes;
 
-    const updatedLikedRecipes = newLiked
-      ? [...userData.likedRecipes, recipe.id]
-      : userData.likedRecipes.filter(
-          (likedRecipe) => likedRecipe !== recipe.title
+    if (userData.likedRecipes) {
+      if (newLiked) {
+        updatedLikedRecipes = [...userData.likedRecipes, recipe.id];
+      } else {
+        updatedLikedRecipes = userData.likedRecipes.filter(
+          (likedRecipe) => likedRecipe !== recipe.id
         );
+      }
+    } else {
+      updatedLikedRecipes = [recipe.id];
+    }
 
     await updateUserData(userData.uid, { likedRecipes: updatedLikedRecipes });
     await fetchActualData();
@@ -122,12 +130,14 @@ const RecipePage = () => {
           className={recipePageStyle.icon}
           onClick={() => navigate(-1)}
         />
-        <Theme_Icon
-          icon={liked ? "mdi:heart" : "mdi:heart-outline"}
-          $iconcolor="logo"
-          className={recipePageStyle.likeIcon}
-          onClick={handleLike}
-        />
+        {currentUser && (
+          <Theme_Icon
+            icon={liked ? "mdi:heart" : "mdi:heart-outline"}
+            $iconcolor="logo"
+            className={recipePageStyle.likeIcon}
+            onClick={handleLike}
+          />
+        )}
       </div>
       <h1 className={recipePageStyle.title}>{recipe.title}</h1>
       <div className={recipePageStyle.ingredientsWrapper}>

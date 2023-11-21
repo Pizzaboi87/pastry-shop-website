@@ -26,11 +26,8 @@ const Shipping = () => {
   const { showErrorSwal, showSuccessSwal } = useSwalMessage();
   const [loading, setLoading] = useState(false);
 
-  if (!currentUser) {
-    return <Navigate to="/auth" />;
-  } else if (!orderDetails.amount) {
-    return <Navigate to="/mycart" />;
-  }
+  if (!currentUser) return <Navigate to="/auth" />;
+  else if (orderDetails.products.length == 0) return <Navigate to="/mycart" />;
 
   const MySwal = withReactContent(Swal);
   const SwalLoader = () => {

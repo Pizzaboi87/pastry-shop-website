@@ -1,5 +1,5 @@
 import { UserContext } from "../context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { signOutUser } from "../utils/firebase";
 import {
@@ -13,6 +13,7 @@ import {
 
 const NavUserMobile = ({ openPersonalMenu, setOpenPersonalMenu }) => {
   const { text } = useContext(UserContext);
+  const navigate = useNavigate();
 
   return (
     <Theme_Div

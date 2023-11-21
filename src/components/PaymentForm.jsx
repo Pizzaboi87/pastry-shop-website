@@ -3,14 +3,43 @@ import PayOnDelivery from "./PayOnDelivery";
 import PayPal from "./PayPal";
 import Stripe from "./Stripe";
 import GooglePay from "./GooglePay";
+import { Elements } from "@stripe/react-stripe-js";
 import { CartContext, UserContext } from "../context";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import { loadStripe } from "@stripe/stripe-js";
 import {
   Theme_Div,
   myCartStyle,
   paymentFormStyle,
   paymentFormVariable,
 } from "../styles";
+
+const StripeElement = ({ children }) => {
+  const { userLanguage } = useContext(UserContext);
+  const { orderDetails } = useContext(CartContext);
+  const [stripePromise, setStripePromise] = useState(null);
+
+  useEffect(() => {
+    setStripePromise(
+      loadStripe(import.meta.env.VITE_STRIPE_KEY, {
+        locale: userLanguage.slice(0, 2).toLowerCase(),
+      })
+    );
+  }, [userLanguage]);
+
+  const options = {
+    mode: "payment",
+    amount: Math.round(parseFloat(orderDetails.amount) * 100) || 100,
+    currency: orderDetails.currency.name.toLowerCase() || "eur",
+    payment_method_types: ["card"],
+  };
+
+  return (
+    <Elements stripe={stripePromise} options={options}>
+      {children}
+    </Elements>
+  );
+};
 
 const PaymentForm = () => {
   const { text } = useContext(UserContext);
@@ -65,12 +94,13 @@ const PaymentForm = () => {
           id="payment-form"
           className={paymentFormVariable(orderDetails.paymentMethod)}
         >
-          {orderDetails.paymentMethod == "credit" && <Stripe />}
-
+          {orderDetails.paymentMethod == "credit" && (
+            <StripeElement>
+              <Stripe />
+            </StripeElement>
+          )}
           {orderDetails.paymentMethod == "payPal" && <PayPal />}
-
           {orderDetails.paymentMethod == "googlePay" && <GooglePay />}
-
           {orderDetails.paymentMethod == "payOnDelivery" && <PayOnDelivery />}
         </Theme_Div>
       </div>

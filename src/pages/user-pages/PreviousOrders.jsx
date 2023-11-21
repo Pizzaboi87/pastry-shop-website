@@ -19,9 +19,7 @@ const PreviousOrders = () => {
   const [orders, setOrders] = useState([]);
   const navigate = useNavigate();
 
-  if (!currentUser) {
-    return <Navigate to="/auth" />;
-  }
+  if (!currentUser) return <Navigate to="/auth" />;
 
   useEffect(() => {
     if (userData.orders) setOrders(userData.orders);

@@ -13,9 +13,7 @@ import {
 const Settings = () => {
   const { text, currentUser } = useContext(UserContext);
 
-  if (!currentUser) {
-    return <Navigate to="/auth" />;
-  }
+  if (!currentUser) return <Navigate to="/auth" />;
 
   return (
     <TransitionParent isFlex={false}>

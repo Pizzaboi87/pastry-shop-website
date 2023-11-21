@@ -7,7 +7,7 @@ export const CartContextProvider = ({ children }) => {
   const { currency } = useContext(UserContext);
   const [finalSum, setFinalSum] = useState(0);
   const [cart, setCart] = useState([]);
-  const [orderDetails, setOrderDetails] = useState({
+  const defaultOrderDetails = {
     fullName: "",
     phone: "",
     country: "",
@@ -19,6 +19,10 @@ export const CartContextProvider = ({ children }) => {
     products: cart,
     paymentMethod: "credit",
     orderTime: "",
+  };
+
+  const [orderDetails, setOrderDetails] = useState({
+    ...defaultOrderDetails,
   });
 
   const totalSum = (cart) => {
@@ -43,16 +47,19 @@ export const CartContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    setFinalSum(totalSum(cart));
+    if (cart.length === 0) setFinalSum(0);
+    else setFinalSum(totalSum(cart));
   }, [cart, currency]);
 
   useEffect(() => {
-    setOrderDetails({
-      ...orderDetails,
-      amount: finalSum,
-      currency: currency,
-      products: cart,
-    });
+    if (cart.length === 0) setOrderDetails({ ...defaultOrderDetails });
+    else
+      setOrderDetails((prevOrderDetails) => ({
+        ...prevOrderDetails,
+        amount: finalSum,
+        currency: currency,
+        products: cart,
+      }));
   }, [finalSum, currency, cart]);
 
   const addToCart = (product) => {
@@ -92,7 +99,9 @@ export const CartContextProvider = ({ children }) => {
   };
 
   const clearCart = () => {
+    setFinalSum(0);
     setCart([]);
+    setOrderDetails(defaultOrderDetails);
   };
 
   const value = {

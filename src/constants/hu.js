@@ -514,6 +514,7 @@ const hu_text = {
   loading: "betöltés...",
   adminSignOut: "Admin Kijelentkezés",
   deletedUser: "A felhasználó már nincs regisztrálva az oldalon.",
+  noFavourite: "Még nincsenek kedvenc receptjeid.",
   pagination: {
     previous: "<előző",
     next: "következő>",

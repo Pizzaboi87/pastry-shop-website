@@ -7,10 +7,14 @@ export const useSwalMessage = () => {
 
   const showErrorSwal = useCallback(
     (error) => {
-      Swal.fire({
-        icon: "error",
-        title: text.swal.errorTitle,
-        text: error,
+      return new Promise((resolve) => {
+        Swal.fire({
+          icon: "error",
+          title: text.swal.errorTitle,
+          text: error,
+        }).then((result) => {
+          resolve(result);
+        });
       });
     },
     [text.swal.errorTitle]
@@ -18,10 +22,14 @@ export const useSwalMessage = () => {
 
   const showSuccessSwal = useCallback(
     (message) => {
-      Swal.fire({
-        icon: "success",
-        title: text.swal.successTitle,
-        text: message,
+      return new Promise((resolve) => {
+        Swal.fire({
+          icon: "success",
+          title: text.swal.successTitle,
+          text: message,
+        }).then((result) => {
+          resolve(result);
+        });
       });
     },
     [text.swal.successTitle]

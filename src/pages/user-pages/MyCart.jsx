@@ -17,9 +17,7 @@ const MyCart = () => {
   const { text, userLanguage, currentUser } = useContext(UserContext);
   const { cart } = useContext(CartContext);
 
-  if (!currentUser) {
-    return <Navigate to="/auth" />;
-  }
+  if (!currentUser) return <Navigate to="/auth" />;
 
   return (
     <TransitionParent isFlex={false}>

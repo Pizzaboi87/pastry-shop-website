@@ -2,10 +2,14 @@ import { UserContext } from "../../context";
 import { useContext, useState, useEffect } from "react";
 import { getData, getUserData, updateUserData } from "../../utils/firebase";
 import { FavouriteCard } from "../../components";
+import { allFavouritesStyle } from "../../styles";
 
 const AllFavourites = () => {
-  const { userData, setUserData, userLanguage } = useContext(UserContext);
+  const { text, userData, setUserData, userLanguage, currentUser } =
+    useContext(UserContext);
   const [favourites, setFavourites] = useState([]);
+
+  if (!currentUser) return <Navigate to="/auth" />;
 
   useEffect(() => {
     const getFavourites = async () => {
@@ -37,6 +41,13 @@ const AllFavourites = () => {
     await updateUserData(userData.uid, { likedRecipes: updatedLikedRecipes });
     await fetchActualData();
   };
+
+  if (favourites.length == 0)
+    return (
+      <div className={allFavouritesStyle.noFavContainer}>
+        <h1 className={allFavouritesStyle.noFavourite}>{text.noFavourite}</h1>
+      </div>
+    );
 
   return favourites.map((favourite) => (
     <FavouriteCard favourite={favourite} deleteFavourite={deleteFavourite} />

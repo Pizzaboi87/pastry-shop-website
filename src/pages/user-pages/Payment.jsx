@@ -2,7 +2,7 @@ import { CartContext, UserContext } from "../../context";
 import { PaymentForm, TransitionParent, UserPanel } from "../../components";
 import { Icon } from "@iconify/react";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import {
   Theme_H1,
   Theme_Button,
@@ -13,8 +13,11 @@ import {
 
 const Payment = () => {
   const navigate = useNavigate();
-  const { text } = useContext(UserContext);
+  const { text, currentUser } = useContext(UserContext);
   const { orderDetails } = useContext(CartContext);
+
+  if (!currentUser) return <Navigate to="/auth" />;
+  else if (orderDetails.products.length == 0) return <Navigate to="/mycart" />;
 
   return (
     <TransitionParent isFlex={false}>

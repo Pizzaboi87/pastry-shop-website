@@ -12,9 +12,7 @@ import {
 const Favourites = () => {
   const { text, currentUser } = useContext(UserContext);
 
-  if (!currentUser) {
-    return <Navigate to="/auth" />;
-  }
+  if (!currentUser) return <Navigate to="/auth" />;
 
   return (
     <Theme_Div

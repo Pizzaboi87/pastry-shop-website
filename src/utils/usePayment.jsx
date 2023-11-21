@@ -6,6 +6,7 @@ import { useContext, useState, useEffect } from "react";
 import { useSwalMessage } from "./useSwalMessage";
 import { myCartStyle } from "../styles";
 import { getUserData, updateUserData } from "./firebase";
+import { v4 as uuid } from "uuid";
 
 export const usePayment = () => {
   const { text, userData } = useContext(UserContext);
@@ -36,6 +37,11 @@ export const usePayment = () => {
     }
   }, [paymentInProgress]);
 
+  const handleConfirm = async () => {
+    const result = await showSuccessSwal(text.cart.success);
+    if (result && result.isConfirmed) clearCart();
+  };
+
   const handleError = (error) => {
     setPaymentInProgress(false);
     console.log(error);
@@ -49,8 +55,7 @@ export const usePayment = () => {
       setPaymentInProgress(false);
       MySwal.close();
     }
-    showSuccessSwal(text.cart.success);
-    clearCart();
+    handleConfirm();
   };
 
   const fetchActualData = async () => {
@@ -69,13 +74,13 @@ export const usePayment = () => {
     const updatedOrderDetails = {
       ...orderDetails,
       orderTime: new Date().toLocaleString(),
+      orderID: uuid(),
     };
     if (actualUserData.orders) {
       try {
         await updateUserData(userData.uid, {
           orders: [...actualUserData.orders, updatedOrderDetails],
         });
-        await fetchActualData();
         setUploadInProgress(false);
       } catch (error) {
         setUploadInProgress(false);
@@ -100,7 +105,7 @@ export const usePayment = () => {
     } else if (paymentSuccess === false) {
       handleError();
       setPaymentSuccess(null);
-    }
+    } else return;
   }, [paymentSuccess]);
 
   return {

@@ -87,6 +87,8 @@ export const allFavouritesStyle = {
     "text-text md:text-[1.2rem] xs:w-[85%] w-full mt-8 xs:mt-0 pl-0 xs:text-[1rem] text-[0.8rem] text-center font-[600] md:pr-6 md:pl-12 xs:pl-6",
   icon: "absolute xl:top-1 xl:left-1 top-2 left-2 xl:text-[3rem] text-[2.2rem] cursor-pointer",
   image: "justify-self-end xl:h-full xs:h-[60%] h-[40%] rounded-full",
+  noFavourite: "text-text text-[1.5rem] font-[500] text-center",
+  noFavContainer: "w-full h-[30rem] flex items-center justify-center",
 };
 
 export const appStyle = {
@@ -746,7 +748,7 @@ export const shop = {
   checkoutText: "text-[1.2rem] font-[500]",
   productsContainer:
     "flex gap-8 flex-wrap shadow-inner shadow-black items-center justify-center xl:w-[85vw] w-full rounded-xl py-8",
-  noResult: "tex-text text-[1.5rem] font-[500]",
+  noResult: "text-text text-[1.5rem] font-[500] text-center",
   cardContainer:
     "md:w-[16rem] ms:w-[22rem] w-[20rem] xl:h-[30rem] h-[40rem] relative flex flex-col rounded-xl",
   cardImageContainer:
