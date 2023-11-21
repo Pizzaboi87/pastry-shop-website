@@ -26,6 +26,7 @@ const Shop = () => {
   const [categorySelector, setCategorySelector] = useState("cakes");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [tooShortTerm, setTooShortTerm] = useState(false);
   const [categories, setCategories] = useState([]);
   const [categoryProducts, setCategoryProducts] = useState([]);
 
@@ -85,6 +86,7 @@ const Shop = () => {
         categorySelector={categorySelector}
         setCategorySelector={setCategorySelector}
         setCategoryProducts={setCategoryProducts}
+        setTooShortTerm={setTooShortTerm}
       />
 
       <Theme_Button
@@ -109,6 +111,8 @@ const Shop = () => {
       >
         {loading ? (
           <Loading />
+        ) : tooShortTerm ? (
+          <h1 className={shop.noResult}>{text.shop.tooShortTerm}</h1>
         ) : categoryProducts.length ? (
           categoryProducts.map((product, index) => (
             <ProductCard

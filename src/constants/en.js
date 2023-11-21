@@ -817,6 +817,7 @@ const en_text = {
   },
   shop: {
     noResult: "There is no product matching the search.",
+    tooShortTerm: "Please enter at least 3 characters.",
     searchBox: "Search products...",
     searchButton: "Search",
     addToCart: "Add to Cart",

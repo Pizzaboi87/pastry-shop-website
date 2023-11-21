@@ -830,6 +830,7 @@ const fr_text = {
   },
   shop: {
     noResult: "Aucun produit correspondant à la recherche.",
+    tooShortTerm: "Veuillez entrer au moins 3 caractères.",
     searchBox: "Recherche de produits...",
     searchButton: "Recherche",
     addToCart: "Ajouter au Panier",

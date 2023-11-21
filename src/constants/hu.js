@@ -819,6 +819,7 @@ const hu_text = {
   },
   shop: {
     noResult: "Nincs a keresésnek megfelelő termék.",
+    tooShortTerm: "Kérjük, adj meg egy hosszabb keresési kifejezést.",
     searchBox: "Termék keresése...",
     searchButton: "Keresés",
     addToCart: "Kosárba",

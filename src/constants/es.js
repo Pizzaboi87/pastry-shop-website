@@ -826,6 +826,7 @@ const es_text = {
   },
   shop: {
     noResult: "No hay ningún producto que coincida con la búsqueda.",
+    tooShortTerm: "Por favor, ingresa al menos 3 caracteres.",
     searchBox: "Buscar productos...",
     searchButton: "Buscar",
     addToCart: "Añadir al carrito",

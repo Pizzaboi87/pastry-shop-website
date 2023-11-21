@@ -10,6 +10,7 @@ const Banner = ({
   categorySelector,
   setCategorySelector,
   setCategoryProducts,
+  setTooShortTerm,
 }) => {
   const { text, userLanguage } = useContext(UserContext);
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,6 +18,7 @@ const Banner = ({
     "^[A-Za-zÁáÉéÍíÓóÖöŐőÚúÜüŰűÇçÑñËëÈèÊêÂâÎîÔôÛûÀàÆæÅåØøÝýÞþß '-]+$";
 
   const searchProducts = (searchTerm) => {
+    setTooShortTerm(false);
     setCategoryProducts(
       products.flatMap((obj) => {
         return Object.values(obj).filter((item) =>
@@ -26,24 +28,39 @@ const Banner = ({
     );
   };
 
+  const defaultResult = () => {
+    setTooShortTerm(false);
+    setCategoryProducts(
+      products.flatMap((obj) => {
+        return Object.values(obj).filter(
+          (item) => item.category === categorySelector
+        );
+      })
+    );
+  };
+
+  const emptyResult = () => {
+    setTooShortTerm(false);
+    setCategoryProducts([]);
+  };
+
   const handleChange = (e) => {
     e.preventDefault();
-    setSearchTerm(e.target.value);
     if (e.target.value == "") {
-      setCategoryProducts(
-        products.flatMap((obj) => {
-          return Object.values(obj).filter(
-            (item) => item.category === categorySelector
-          );
-        })
-      );
+      defaultResult();
     }
+    setSearchTerm(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!searchTerm.match(allowedChars)) setCategoryProducts("");
-    searchProducts(searchTerm);
+    if (searchTerm === "") {
+      setTooShortTerm(false);
+      return;
+    }
+    if (!searchTerm.match(allowedChars)) emptyResult();
+    else if (searchTerm.length < 3) setTooShortTerm(true);
+    else searchProducts(searchTerm.toLowerCase());
   };
 
   return (
