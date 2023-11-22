@@ -432,6 +432,33 @@ const fr_text = {
     bodyStart: "Cher/Chère ",
     bodyEnd: ",\n\nMeilleures salutations,\nL'équipe de Le Ciel Sucré",
   },
+  ordersHeaders: [
+    {
+      title: "Image",
+      id: "image",
+      style: "bg-yellowlight col-span-1",
+    },
+    {
+      title: "Nom",
+      id: "name",
+      style: "bg-yellowdark col-span-2",
+    },
+    {
+      title: "Email",
+      id: "email",
+      style: "bg-yellowlight col-span-3",
+    },
+    {
+      title: "Téléphone",
+      id: "phone",
+      style: "bg-yellowdark col-span-2",
+    },
+    {
+      title: "Actions",
+      id: "actions",
+      style: "bg-yellowlight col-span-1",
+    },
+  ],
   commentsHeaders: [
     {
       title: "Image",
@@ -509,15 +536,18 @@ const fr_text = {
   blogCommentsSearch: "Recherche par nom ou titre...",
   blogNewTitle: "Ajouter un Nouvel Article",
   blogPostEditTitle: "Modifier l'Article",
-  shopItemEditTitle: "Modifier l'Article de la Boutique",
-  shopAllTitle: "Tous les Articles de la Boutique Page d'Administration",
-  shopNewTitle:
-    "Ajouter un Nouvel Article de la Boutique Page d'Administration",
-  shopOrdersTitle: "Commandes de la Boutique Page d'Administration",
+  shopItemEditTitle: "Modifier le Produit",
+  shopAllTitle: "Tous les Produits",
+  shopNewTitle: "Ajouter un Produit",
+  shopOrdersTitle: "Commandes de la Boutique",
   noPermissionTitle: "Vous n'avez pas la permission de voir cette page.",
   recipeCardTitle: "Ingrédients:",
   recipeCardEmail: "Nouvelle recette du Ciel Sucré",
+  website: "https://ciel-sucre.vercel.app",
   recipeFooter: "En savoir plus sur notre site Web:",
+  emailFooter: "Le Ciel Sucré Team",
+  recipient: "Cher/Chère ",
+  emailOrderSubject: "Votre commande chez Ciel Sucré",
   blogPostCardButton: "Lire l'article",
   courseCardButton: "En savoir plus",
   loading: "chargement...",
@@ -828,6 +858,8 @@ const fr_text = {
     hided: "Le commentaire est maintenant masqué.",
     deleteComment: "Supprimer le commentaire.",
     viewComment: "Voir le commentaire.",
+    showOrders: "Voir les commandes.",
+    orderDetails: "Voir les détails de la commande.",
   },
   shop: {
     noResult: "Aucun produit correspondant à la recherche.",

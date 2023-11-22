@@ -1,7 +1,7 @@
 import PayOnDelivery from "./PayOnDelivery";
 import { UserContext } from "../context";
 import { useContext, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { accordionStyle } from "../styles";
 
 const OrderAccordion = ({ order }) => {
@@ -33,21 +33,16 @@ const OrderAccordion = ({ order }) => {
           {order.currency.symbol}
         </h1>
       </motion.div>
-      <AnimatePresence mode="wait">
-        {isOpen && (
-          <motion.div
-            key="content"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{
-              type: "spring",
-            }}
-          >
-            <PayOnDelivery oldOrder={order} />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <motion.div
+          key="content"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+        >
+          <PayOnDelivery oldOrder={order} />
+        </motion.div>
+      )}
     </div>
   );
 };

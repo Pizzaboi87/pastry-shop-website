@@ -424,6 +424,33 @@ const hu_text = {
     bodyStart: "Kedves ",
     bodyEnd: ",\n\nÜdvözlettel,\nA Le Ciel Sucré csapata",
   },
+  ordersHeaders: [
+    {
+      title: "Fotó",
+      id: "image",
+      style: "bg-yellowlight col-span-1",
+    },
+    {
+      title: "Név",
+      id: "name",
+      style: "bg-yellowdark col-span-2",
+    },
+    {
+      title: "Email",
+      id: "email",
+      style: "bg-yellowlight col-span-3",
+    },
+    {
+      title: "Telefon",
+      id: "phone",
+      style: "bg-yellowdark col-span-2",
+    },
+    {
+      title: "Művelet",
+      id: "actions",
+      style: "bg-yellowlight col-span-1",
+    },
+  ],
   commentsHeaders: [
     {
       title: "Fotó",
@@ -504,11 +531,15 @@ const hu_text = {
   shopItemEditTitle: "Termék Szerkesztése",
   shopAllTitle: "Minden Termék",
   shopNewTitle: "Új Termék Hozzáadása",
-  shopOrdersTitle: "Rendelések",
+  shopOrdersTitle: "Összes megrendelés",
   noPermissionTitle: "Nincs jogosultságod ehhez az oldalhoz.",
   recipeCardTitle: "Hozzávalók:",
   recipeEmail: "Új recept a Ciel Sucré-tól",
+  website: "https://ciel-sucre.vercel.app",
   recipeFooter: "Bővebben honlapunkon:",
+  emailFooter: "Le Ciel Sucré Team",
+  recipient: "Kedves",
+  emailOrderSubject: "Rendelésed a Ciel Sucré-tól",
   blogPostCardButton: "Cikk Olvasása",
   courseCardButton: "Részletek",
   loading: "betöltés...",
@@ -817,6 +848,8 @@ const hu_text = {
     hided: "A komment most el van rejtve.",
     deleteComment: "Komment törlése.",
     viewComment: "Komment megtekintése.",
+    showOrders: "Rendelések megtekintése.",
+    orderDetails: "Rendelés részletei.",
   },
   shop: {
     noResult: "Nincs a keresésnek megfelelő termék.",

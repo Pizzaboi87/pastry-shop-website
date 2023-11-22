@@ -91,6 +91,39 @@ export const allFavouritesStyle = {
   noFavContainer: "w-full h-[30rem] flex items-center justify-center",
 };
 
+export const allOrderStyle = {
+  container:
+    "md:bg-purpleglasslight col-span-9 grid grid-cols-9 mt-2 rounded-xl items-center",
+  header:
+    "min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 hidden md:flex gap-x-4 items-center",
+  sortIcon: "text-[1.8rem] hover:text-logopink cursor-pointer",
+  imageContainer: `${tableStyle} md:col-span-1 col-span-9`,
+  image:
+    "md:w-12 w-16 md:h-12 h-16 mx-auto rounded-full object-cover cursor-pointer",
+  textContainer: `${tableStyle} md:col-span-2 col-span-9 md:text-left text-center overflow-hidden`,
+  name: `${tableStyle} cursor-pointer hover:text-logopink inline`,
+  emailContainer: `${tableStyle} md:col-span-3 col-span-9 md:text-left text-center overflow-hidden`,
+  hoverText: "hover:text-logopink cursor-pointer",
+  normalText: "cursor-normal",
+  iconContainer:
+    "flex gap-4 justify-center items-center py-2 md:col-span-1 col-span-9",
+  icon: "text-text outline-none md:text-[1.5rem] text-[2rem]",
+  hrLine: "h-[0.1rem] md:hidden col-span-9 bg-black mb-4 mt-2",
+  orderContainer:
+    "md:bg-purpleglasslight col-span-9 grid grid-cols-9 mt-2 rounded-xl items-center",
+  detailContainer: `${tableStyle} md:col-span-2 col-span-9 md:text-left text-center overflow-hidden`,
+  smallDetailContainer: `${tableStyle} md:col-span-1 col-span-9 md:text-left text-center overflow-hidden`,
+  bigDetailContainer: `${tableStyle} md:col-span-3 col-span-9 text-center overflow-hidden`,
+
+  input: `${adminLoginStyle.input} border-2 w-[20rem] h-[3rem] mb-4`,
+  list: "grid grid-cols-9 w-full md:px-8 px-4 items-center",
+  mobileHide: `${tableStyle} hidden md:block col-span-2`,
+  deleteIcon: "delete text-text outline-none text-[2rem]",
+  published: "published text-green",
+  notPublished: "hided text-red",
+  publishIcon: "outline-none text-[2.5rem] mt-[0.1rem] cursor-pointer",
+};
+
 export const appStyle = {
   container:
     "md:pt-56 pt-36 w-full flex flex-col items-center bg-main lg:bg-background bg-mobBackground",

@@ -1,29 +1,25 @@
-import { BlogContext, UserContext } from "../../context";
+import { UserContext } from "../../context";
 import { Tooltip } from "react-tooltip";
 import { Icon } from "@iconify/react";
 import { Loading } from "../../components";
-import { Fragment, useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { getAllUser, deleteComment } from "../../utils/firebase-admin";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { getAllUser } from "../../utils/firebase-admin";
 import { useSwalMessage } from "../../utils/useSwalMessage";
 import { useQuery } from "react-query";
-import { adminPageStyle, blogCommentsStyle, tooltipStyle } from "../../styles";
-import {
-  changeCommentStatus,
-  getStoredImage,
-  getUserImage,
-} from "../../utils/firebase";
+import { motion } from "framer-motion";
+import { adminPageStyle, allOrderStyle, tooltipStyle } from "../../styles";
+import { getStoredImage, getUserImage } from "../../utils/firebase";
 
 const ShopOrders = () => {
-  const { allComments, setAllComments, setFirebaseComments } =
-    useContext(BlogContext);
-  const { text, currentUser } = useContext(UserContext);
+  const { text, currentUser, userLanguage } = useContext(UserContext);
   const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
-  const [commentsWithUsers, setCommentsWithUsers] = useState([]);
-  const [filteredComments, setFilteredComments] = useState([]);
+  const [filteredUsers, setFilteredUsers] = useState([]);
   const [isDescending, setIsDescending] = useState(true);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [openAccordionUserIds, setOpenAccordionUserIds] = useState([]);
   const [updatedUsers, setUpdatedUsers] = useState([]);
+  const [userFilter, setUserFilter] = useState("");
+  const [orderFilter, setOrderFilter] = useState("");
   const navigate = useNavigate();
 
   const allUserQuery = async () => {
@@ -49,39 +45,30 @@ const ShopOrders = () => {
         })
       );
       setUpdatedUsers(usersWithPhoto);
+      setFilteredUsers(usersWithPhoto);
     };
 
     if (users) updateUsersWithPhoto();
   }, [users]);
 
-  console.log(updatedUsers);
-  /*useEffect(() => {
-    const fetchCommentUsers = async () => {
-      const defaultImg = await getStoredImage("blog/profile.jpg");
+  const sendMail = (userName, email) => {
+    const subject = `${text.emailOrderSubject}}`;
+    const body = `${text.recipient} ${userName}${
+      userLanguage == "hun" ? "!" : ","
+    } \n\n${text.emailFooter}\n\u{1F517} ${text.website}`;
 
-      const updatedComments = await Promise.all(
-        allComments.map(async (comment) => {
-          const user = users.users.find((user) => user.email === comment.email);
-          if (user) {
-            return {
-              ...comment,
-              imgsrc: await getUserImage(user.uid),
-              userID: user.id,
-            };
-          } else {
-            return { ...comment, imgsrc: defaultImg };
-          }
-        })
-      );
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
 
-      setCommentsWithUsers(updatedComments);
-      setFilteredComments(updatedComments);
-    };
-    if (users) fetchCommentUsers();
-  }, [allComments, users]);
+    window.open(mailtoLink);
+  };
 
-  if (!commentsWithUsers.length) return <Loading />;
-
+  const toDetailsPage = (id) => {
+    if (id) navigate(`/admin/users/${id}`);
+    else navigate(`/admin/users/deleted-user`);
+  };
+  /*
   const changePublish = (comment) => {
     changeCommentStatus(comment.id, !comment.isPublished).then(() => {
       const newComments = allComments.map((com) =>
@@ -90,22 +77,7 @@ const ShopOrders = () => {
       setAllComments(newComments);
     });
   };
-
-  const confirmDelete = async (id) => {
-    await deleteComment(
-      id,
-      text,
-      currentUser,
-      navigate,
-      setFirebaseComments,
-      setIsDeleting,
-      showErrorSwal,
-      showSuccessSwal,
-      showQuestionSwal
-    );
-  };
-
-  if (isDeleting) return <Loading />;*/
+*/
 
   /*const sortValues = (id) => {
     let sortedComments;
@@ -133,126 +105,222 @@ const ShopOrders = () => {
     setIsDescending(!isDescending);
   };*/
 
-  /*const handleChange = (e) => {
-    const { value } = e.target;
-    if (!value) setFilteredComments(commentsWithUsers);
-    const filteredComments = commentsWithUsers.filter((comment) =>
-      comment.title.toLowerCase().includes(value.toLowerCase()) ||
-      comment.author.toLowerCase().includes(value.toLowerCase())
-        ? comment
-        : null
-    );
-    setFilteredComments(filteredComments);
-  };*/
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "user") {
+      setUserFilter(value);
+    } else {
+      setOrderFilter(value);
+    }
+  };
+
+  useEffect(() => {
+    const filteringResult = updatedUsers
+      .map((user) => {
+        const filteredOrders = user.orders.filter(
+          (order) =>
+            order.orderID.toLowerCase().includes(orderFilter.toLowerCase()) ||
+            order.orderTime.toLowerCase().includes(orderFilter.toLowerCase()) ||
+            order.paymentMethod
+              .toLowerCase()
+              .includes(orderFilter.toLowerCase()) ||
+            order.amount
+              .toString()
+              .toLowerCase()
+              .includes(orderFilter.toLowerCase())
+        );
+
+        return {
+          ...user,
+          orders: filteredOrders,
+        };
+      })
+      .filter(
+        (user) =>
+          (user.fullName.toLowerCase().includes(userFilter.toLowerCase()) ||
+            user.email.toLowerCase().includes(userFilter.toLowerCase()) ||
+            user.phone.toLowerCase().includes(userFilter.toLowerCase())) &&
+          user.orders.length > 0
+      );
+
+    setFilteredUsers(filteringResult);
+  }, [userFilter, orderFilter]);
+
+  const handleAccordionById = (userId) => {
+    setOpenAccordionUserIds((prevOpenIds) => {
+      if (prevOpenIds.includes(userId)) {
+        return prevOpenIds.filter((id) => id !== userId);
+      } else {
+        return [...prevOpenIds, userId];
+      }
+    });
+  };
+
+  if (updatedUsers.length === 0 || isLoading) return <Loading />;
 
   return (
     <div className={adminPageStyle.wrapper}>
-      <h1 className={adminPageStyle.title}>{text.blogCommentsTitle}</h1>
+      <h1 className={adminPageStyle.title}>{text.shopOrdersTitle}</h1>
 
-      {/*<form>
+      <form onSubmit={() => {}} className="flex xl:flex-row flex-col gap-4">
         <input
-          className={blogCommentsStyle.input}
+          className={allOrderStyle.input}
           type="text"
-          placeholder={text.blogCommentsSearch}
+          placeholder="keresés felhasználó adataira"
+          name="user"
+          value={userFilter}
           onChange={handleChange}
         />
-  </form>*/}
 
-      <ul className={blogCommentsStyle.list}>
-        {text.commentsHeaders.map((header) => (
+        <input
+          className={allOrderStyle.input}
+          type="text"
+          placeholder="keresés rendelés adataira"
+          name="order"
+          value={orderFilter}
+          onChange={handleChange}
+        />
+      </form>
+
+      <ul className={allOrderStyle.list}>
+        {text.ordersHeaders.map((header) => (
           <li
             key={header.id}
-            className={`${header.style} ${blogCommentsStyle.header}`}
+            className={`${header.style} ${allOrderStyle.header}`}
           >
             {header.title}
 
             {header.id === "name" ||
-            header.id === "title" ||
-            header.id === "date" ? (
+            header.id === "email" ||
+            header.id === "phone" ? (
               <Icon
                 icon="solar:round-sort-vertical-broken"
-                className={blogCommentsStyle.sortIcon}
+                className={allOrderStyle.sortIcon}
                 onClick={() => sortValues(header.id)}
               />
             ) : null}
           </li>
         ))}
 
-        {updatedUsers.map((user) => {
-          const toDetailsPage = () => {
-            if (user.id) navigate(`/admin/users/${user.id}`);
-            else navigate(`/admin/users/deleted-user`);
-          };
+        {filteredUsers.map((user) => {
+          const { id, imgsrc, fullName, email, phone, orders } = user;
 
           return (
-            <Fragment key={user.id}>
-              <li className={blogCommentsStyle.imageContainer}>
+            <ul className={allOrderStyle.container} key={id}>
+              <li className={allOrderStyle.imageContainer}>
                 <img
-                  src={user.imgsrc}
+                  src={imgsrc}
                   alt="profile"
-                  className={blogCommentsStyle.image}
-                  onClick={toDetailsPage}
+                  className={allOrderStyle.image}
+                  onClick={() => toDetailsPage(id)}
                 />
               </li>
-              <li className={blogCommentsStyle.textContainer}>
-                <p className={blogCommentsStyle.author} onClick={toDetailsPage}>
-                  {user.email}
+              <li className={allOrderStyle.textContainer}>
+                <p
+                  className={allOrderStyle.name}
+                  onClick={() => toDetailsPage(id)}
+                >
+                  {fullName}
                 </p>
               </li>
-              {/*<li className={blogCommentsStyle.mobileHide}>
-                {new Date(comment.date)
-                  .toLocaleString("hu-HU", { timeZone: "Europe/Athens" })
-                  .slice(0, -3)}
-                </li>*/}
-
-              <li className={blogCommentsStyle.iconContainer}>
-                <Icon
-                  icon="bi:trash3-fill"
-                  className={`${blogCommentsStyle.deleteIcon} ${blogCommentsStyle.hoverText}`}
-                  //onClick={() => confirmDelete(user.id)}
-                />
-                <Link
-                  to={`/admin/blog/comments/${user.id}`}
-                  className={`${blogCommentsStyle.editIcon} ${blogCommentsStyle.hoverText}`}
+              <li className={allOrderStyle.emailContainer}>
+                <p
+                  className={allOrderStyle.hoverText}
+                  onClick={() => sendMail(fullName, email)}
                 >
-                  <Icon icon="raphael:edit" />
-                </Link>
-                {/*<Icon
-                  icon={comment.isPublished ? "mdi:publish" : "mdi:publish-off"}
-                  className={`${
-                    comment.isPublished
-                      ? blogCommentsStyle.published
-                      : blogCommentsStyle.notPublished
-                  } ${blogCommentsStyle.publishIcon}`}
-                  onClick={() => changePublish(comment)}
-                />*/}
+                  {email}
+                </p>
               </li>
-              <hr className={blogCommentsStyle.hrLine} />
-            </Fragment>
+              <li className={allOrderStyle.textContainer}>
+                <p className={allOrderStyle.normalText}>{phone}</p>
+              </li>
+              <li className={allOrderStyle.iconContainer}>
+                <Icon
+                  icon="material-symbols:expand-circle-down-outline"
+                  className={`expand ${allOrderStyle.icon} ${allOrderStyle.hoverText}`}
+                  onClick={() => handleAccordionById(id)}
+                />
+              </li>
+              <hr className={allOrderStyle.hrLine} />
+              {orders.map((order) => {
+                const {
+                  orderID,
+                  orderTime,
+                  amount,
+                  currency,
+                  paymentMethod,
+                  status,
+                } = order;
+
+                if (openAccordionUserIds.includes(id))
+                  return (
+                    <motion.ul
+                      className={allOrderStyle.orderContainer}
+                      key={orderTime}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                    >
+                      <li className={allOrderStyle.bigDetailContainer}>
+                        <p className={allOrderStyle.normalText}>{orderID}</p>
+                      </li>
+                      <li className={allOrderStyle.detailContainer}>
+                        <p className={allOrderStyle.normalText}>
+                          {orderTime.slice(0, 19)}
+                        </p>
+                      </li>
+                      <li className={allOrderStyle.smallDetailContainer}>
+                        <p className={allOrderStyle.normalText}>
+                          {amount}
+                          {currency.symbol}
+                        </p>
+                      </li>
+                      <li className={allOrderStyle.detailContainer}>
+                        <p className={allOrderStyle.normalText}>
+                          {paymentMethod}
+                        </p>
+                      </li>
+                      <li className={allOrderStyle.iconContainer}>
+                        <Icon
+                          icon="raphael:edit"
+                          className={`details ${allOrderStyle.icon} ${allOrderStyle.hoverText}`}
+                        />
+                        <Icon
+                          icon="mdi:truck-delivery"
+                          className={`${allOrderStyle.icon} ${allOrderStyle.hoverText}`}
+                        />
+                      </li>
+                    </motion.ul>
+                  );
+              })}
+            </ul>
           );
         })}
       </ul>
+      {/*
+      MÉG NINCS KÉSZ
       <Tooltip
-        anchorSelect=".published"
+        anchorSelect=".delivered"
         content={text.tooltip.published}
         style={tooltipStyle}
         place="top"
       />
       <Tooltip
-        anchorSelect=".hided"
+        anchorSelect=".new"
         content={text.tooltip.hided}
         style={tooltipStyle}
         place="top"
-      />
+      />*/}
       <Tooltip
-        anchorSelect=".delete"
-        content={text.tooltip.deleteComment}
+        anchorSelect=".details"
+        content={text.tooltip.orderDetails}
         style={tooltipStyle}
         place="top"
       />
       <Tooltip
-        anchorSelect=".edit"
-        content={text.tooltip.viewComment}
+        anchorSelect=".expand"
+        content={text.tooltip.showOrders}
         style={tooltipStyle}
         place="top"
       />

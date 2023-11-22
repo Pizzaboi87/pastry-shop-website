@@ -425,7 +425,33 @@ const es_text = {
     bodyStart: "Estimado/a ",
     bodyEnd: ",\n\nSaludos cordiales,\nEquipo de Le Ciel Sucré",
   },
-
+  ordersHeaders: [
+    {
+      title: "Imagen",
+      id: "image",
+      style: "bg-yellowlight col-span-1",
+    },
+    {
+      title: "Nombre",
+      id: "name",
+      style: "bg-yellowdark col-span-2",
+    },
+    {
+      title: "Email",
+      id: "email",
+      style: "bg-yellowlight col-span-3",
+    },
+    {
+      title: "Teléfono",
+      id: "phone",
+      style: "bg-yellowdark col-span-2",
+    },
+    {
+      title: "Acciones",
+      id: "actions",
+      style: "bg-yellowlight col-span-1",
+    },
+  ],
   commentsHeaders: [
     {
       title: "Imagen",
@@ -503,14 +529,18 @@ const es_text = {
   blogCommentsSearch: "Buscar por nombre o título...",
   blogNewTitle: "Agregar Nuevo Artículo",
   blogPostEditTitle: "Editar Artículo",
-  shopItemEditTitle: "Editar Artículo de la Tienda",
-  shopAllTitle: "Todos los Artículos de la Tienda - Panel de Administración",
-  shopNewTitle: "Agregar Nuevo Artículo a la Tienda - Panel de Administración",
-  shopOrdersTitle: "Pedidos de la Tienda - Panel de Administración",
+  shopItemEditTitle: "Editar Producto",
+  shopAllTitle: "Todos Los Productos",
+  shopNewTitle: "Agregar Nuevo Producto",
+  shopOrdersTitle: "Pedidos de la Tienda",
   noPermissionTitle: "No tienes permiso para ver esta página.",
   recipeCardTitle: "Ingredientes:",
   recipeEmail: "Nueva receta del Ciel Sucré",
+  website: "https://ciel-sucre.vercel.app",
   recipeFooter: "Encuentre más en nuestro sitio web:",
+  emailFooter: "Le Ciel Sucré Team",
+  recipient: "Querido/a",
+  emailOrderSubject: "Tu pedido de Ciel Sucré",
   blogPostCardButton: "Leer artículo",
   courseCardButton: "Más detalles",
   loading: "cargando...",
@@ -824,6 +854,8 @@ const es_text = {
     hided: "El comentario está oculto ahora.",
     deleteComment: "Eliminar comentario.",
     viewComment: "Ver comentario.",
+    showOrders: "Ver pedidos.",
+    orderDetails: "Ver detalles del pedido.",
   },
   shop: {
     noResult: "No hay ningún producto que coincida con la búsqueda.",

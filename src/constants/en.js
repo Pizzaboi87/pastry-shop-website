@@ -425,6 +425,33 @@ const en_text = {
     bodyStart: "Dear ",
     bodyEnd: ",\n\nBest regards,\nLe Ciel Sucré Team",
   },
+  ordersHeaders: [
+    {
+      title: "Image",
+      id: "image",
+      style: "bg-yellowlight col-span-1",
+    },
+    {
+      title: "Name",
+      id: "name",
+      style: "bg-yellowdark col-span-2",
+    },
+    {
+      title: "Email",
+      id: "email",
+      style: "bg-yellowlight col-span-3",
+    },
+    {
+      title: "Phone",
+      id: "phone",
+      style: "bg-yellowdark col-span-2",
+    },
+    {
+      title: "Actions",
+      id: "actions",
+      style: "bg-yellowlight col-span-1",
+    },
+  ],
   commentsHeaders: [
     {
       title: "Image",
@@ -503,13 +530,17 @@ const en_text = {
   blogNewTitle: "Add New Article",
   blogPostEditTitle: "Edit Article",
   shopItemEditTitle: "Edit Shop Item",
-  shopAllTitle: "All Shop Items Admin Page",
-  shopNewTitle: "Add New Shop Item Admin Page",
-  shopOrdersTitle: "Shop Orders Admin Page",
+  shopAllTitle: "All Shop Items",
+  shopNewTitle: "Add New Shop Item",
+  shopOrdersTitle: "All Orders from Shop",
   noPermissionTitle: "You do not have permission to view this page.",
   recipeCardTitle: "Ingredients:",
   recipeCardEmail: "New recipe from Ciel Sucré",
+  website: "https://ciel-sucre.vercel.app",
   recipeFooter: "Find more on our website:",
+  emailFooter: "Le Ciel Sucré Team",
+  recipient: "Dear",
+  emailOrderSubject: "Your order from Ciel Sucré",
   blogPostCardButton: "Read article",
   courseCardButton: "Learn More",
   loading: "loading...",
@@ -815,6 +846,8 @@ const en_text = {
     hided: "Comment is hided now.",
     deleteComment: "Delete comment.",
     viewComment: "View comment.",
+    showOrders: "Show orders.",
+    orderDetails: "Order details.",
   },
   shop: {
     noResult: "There is no product matching the search.",
