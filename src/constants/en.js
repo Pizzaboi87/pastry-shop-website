@@ -433,7 +433,7 @@ const en_text = {
     },
     {
       title: "Name",
-      id: "name",
+      id: "fullName",
       style: "bg-yellowdark col-span-2",
     },
     {
@@ -695,6 +695,10 @@ const en_text = {
       errorPassword: "Password format is not correct.",
       errorWrongCredentials: "UserName or password is not correct.",
     },
+  },
+  allOrder: {
+    placeholderUser: "Search by customer details...",
+    placeholderOrder: "Search by order details...",
   },
   signInForm: {
     title: "Sign In",

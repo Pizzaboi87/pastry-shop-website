@@ -433,7 +433,7 @@ const es_text = {
     },
     {
       title: "Nombre",
-      id: "name",
+      id: "fullName",
       style: "bg-yellowdark col-span-2",
     },
     {
@@ -700,6 +700,10 @@ const es_text = {
       errorWrongCredentials:
         "El Nombre de Usuario o la contraseña no son correctos.",
     },
+  },
+  allOrder: {
+    placeholderUser: "Buscar por detalles del cliente...",
+    placeholderOrder: "Buscar por detalles del pedido...",
   },
   signInForm: {
     title: "Usario Abonado",

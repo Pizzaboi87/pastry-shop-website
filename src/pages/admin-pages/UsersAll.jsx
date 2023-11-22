@@ -121,7 +121,7 @@ const UsersAll = () => {
             key={header.id}
             className={`${header.style} ${usersAllStyle.headerContainer}`}
           >
-            {header.title} 
+            {header.title}
 
             {header.id === "date" ||
             header.id === "email" ||
@@ -136,7 +136,10 @@ const UsersAll = () => {
         ))}
 
         {allUser.map((user, index) => (
-          <Fragment key={`${index}-${user.email}`}>
+          <div
+            className={usersAllStyle.userContainer}
+            key={`${index}-${user.email}`}
+          >
             <li className={usersAllStyle.imageContainer}>
               <img
                 src={user.imgsrc}
@@ -178,7 +181,7 @@ const UsersAll = () => {
               </Link>
             </li>
             <hr className={usersAllStyle.hrLine} />
-          </Fragment>
+          </div>
         ))}
       </ul>
       <Tooltip

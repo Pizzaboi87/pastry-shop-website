@@ -432,7 +432,7 @@ const hu_text = {
     },
     {
       title: "Név",
-      id: "name",
+      id: "fullName",
       style: "bg-yellowdark col-span-2",
     },
     {
@@ -695,6 +695,10 @@ const hu_text = {
       errorPassword: "A jelszó formátuma nem megfelelő.",
       errorWrongCredentials: "A Felhasználónév vagy a jelszó helytelen.",
     },
+  },
+  allOrder: {
+    placeholderUser: "Keresés ügyfél alapján...",
+    placeholderOrder: "Keresés rendelés alapján...",
   },
   signInForm: {
     title: "Bejelentkezés",

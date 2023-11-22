@@ -378,7 +378,7 @@ const fr_text = {
         { title: "Tous les produits", url: "/admin/shop/products" },
         {
           title: "Nouveau produit",
-          url: "/admin/shop/new-products",
+          url: "/admin/shop/new-product",
         },
         { title: "Commandes", url: "/admin/shop/orders" },
       ],
@@ -440,7 +440,7 @@ const fr_text = {
     },
     {
       title: "Nom",
-      id: "name",
+      id: "fullName",
       style: "bg-yellowdark col-span-2",
     },
     {
@@ -706,6 +706,10 @@ const fr_text = {
       errorPassword: "Le format du mot de passe n'est pas correct.",
       errorWrongCredentials: "Nom d'utilisateur ou mot de passe incorrect.",
     },
+  },
+  allOrder: {
+    placeholderUser: "Recherche par détails client...",
+    placeholderOrder: "Recherche par détails de commande...",
   },
   signInForm: {
     title: "Se Connecter",

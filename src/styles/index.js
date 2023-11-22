@@ -94,6 +94,7 @@ export const allFavouritesStyle = {
 export const allOrderStyle = {
   container:
     "md:bg-purpleglasslight col-span-9 grid grid-cols-9 mt-2 rounded-xl items-center",
+  form: "flex xl:flex-row flex-col gap-4",
   header:
     "min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 hidden md:flex gap-x-4 items-center",
   sortIcon: "text-[1.8rem] hover:text-logopink cursor-pointer",
@@ -109,14 +110,12 @@ export const allOrderStyle = {
     "flex gap-4 justify-center items-center py-2 md:col-span-1 col-span-9",
   icon: "text-text outline-none md:text-[1.5rem] text-[2rem]",
   hrLine: "h-[0.1rem] md:hidden col-span-9 bg-black mb-4 mt-2",
-  orderContainer:
-    "md:bg-purpleglasslight col-span-9 grid grid-cols-9 mt-2 rounded-xl items-center",
   detailContainer: `${tableStyle} md:col-span-2 col-span-9 md:text-left text-center overflow-hidden`,
   smallDetailContainer: `${tableStyle} md:col-span-1 col-span-9 md:text-left text-center overflow-hidden`,
   bigDetailContainer: `${tableStyle} md:col-span-3 col-span-9 text-center overflow-hidden`,
-
   input: `${adminLoginStyle.input} border-2 w-[20rem] h-[3rem] mb-4`,
   list: "grid grid-cols-9 w-full md:px-8 px-4 items-center",
+
   mobileHide: `${tableStyle} hidden md:block col-span-2`,
   deleteIcon: "delete text-text outline-none text-[2rem]",
   published: "published text-green",
@@ -965,6 +964,8 @@ export const userPhoneInputStyle = {
 
 export const usersAllStyle = {
   container: "grid grid-cols-10 w-full items-center",
+  userContainer:
+    "md:bg-purpleglasslight col-span-10 grid grid-cols-10 mt-2 rounded-xl items-center",
   headerContainer:
     "hidden md:min-h-[2rem] text-text text-[1.1rem] font-[600] pl-2 md:flex items-center gap-x-4",
   sortIcon: "text-[1.8rem] hover:text-logopink cursor-pointer",
