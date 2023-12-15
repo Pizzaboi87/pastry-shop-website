@@ -11,9 +11,10 @@ import {
   userPageStyle,
   userPhoneInputStyle,
 } from "../styles";
+import { countries } from "../constants";
 
 const UserAccountForm = ({ userData, setUserData, currentUser }) => {
-  const { text } = useContext(UserContext);
+  const { text, userLanguage } = useContext(UserContext);
   const { showErrorSwal, showSuccessSwal } = useSwalMessage();
 
   const defaultForm = {
@@ -21,10 +22,10 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
     displayName: userData.displayName ? userData.displayName : "",
     email: userData.email ? userData.email : "",
     phone: userData.phone ? userData.phone : "",
-    country: userData.country ? userData.country : "",
     city: userData.city ? userData.city : "",
     address: userData.address ? userData.address : "",
     zipCode: userData.zipCode ? userData.zipCode : "",
+    country: userData.country ? userData.country : {},
   };
 
   const [userAccountForm, setUserAccountForm] = useState(defaultForm);
@@ -55,11 +56,6 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       name: "withNumber",
       errorMessage: text.userAccountForm.swal.errorDisplayName,
     },
-    country: {
-      value: country,
-      name: "normal",
-      errorMessage: text.userAccountForm.swal.errorCountry,
-    },
     city: {
       value: city,
       name: "normal",
@@ -81,6 +77,12 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    if (name === "country") {
+      const selectedCountry = countries.find(
+        (country) => country[userLanguage] === value
+      );
+      setUserAccountForm({ ...userAccountForm, country: selectedCountry });
+    }
     setUserAccountForm({ ...userAccountForm, [name]: value });
   };
 
@@ -165,15 +167,24 @@ const UserAccountForm = ({ userData, setUserData, currentUser }) => {
       </label>
       <label className={userPageStyle.oddLabel}>
         {text.userAccountForm.country}
-        <Theme_Input
-          type="text"
-          placeholder={text.placeholder.country}
+        <select
+          required
+          value={country[userLanguage]}
           name="country"
-          value={country}
-          $outlinecolor="logo"
           onChange={handleChange}
           className={userPageStyle.input}
-        />
+        >
+          <option value="" disabled hidden>
+            {text.placeholder.country}
+          </option>
+          {countries
+            .sort((a, b) => a[userLanguage].localeCompare(b[userLanguage]))
+            .map((country) => (
+              <option key={country.eng} value={country[userLanguage]}>
+                {country[userLanguage]}
+              </option>
+            ))}
+        </select>
       </label>
 
       <label className={userPageStyle.evenLabel}>

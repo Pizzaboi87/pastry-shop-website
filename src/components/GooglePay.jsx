@@ -38,7 +38,7 @@ const GooglePay = () => {
       totalPriceLabel: "Total",
       totalPrice: orderDetails.amount.toString(),
       currencyCode: orderDetails.currency.name,
-      countryCode: byCountry(orderDetails.country).iso2,
+      countryCode: byCountry(orderDetails.country["eng"]).iso2,
     },
     shippingAddressRequired: true,
     callbackIntents: ["PAYMENT_AUTHORIZATION"],

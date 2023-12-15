@@ -2,7 +2,6 @@ import { UserContext } from "../../context";
 import { Tooltip } from "react-tooltip";
 import { useContext, useEffect, useState } from "react";
 import { getAllUser } from "../../utils/firebase-admin";
-import { useQuery } from "react-query";
 import { getStoredImage, getUserImage } from "../../utils/firebase";
 import { adminPageStyle, allOrderStyle, tooltipStyle } from "../../styles";
 import {
@@ -14,37 +13,39 @@ import {
 
 const ShopOrders = () => {
   const { text, currentUser } = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(false);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [updatedUsers, setUpdatedUsers] = useState([]);
 
-  const allUserQuery = async () => {
-    const users = await getAllUser(currentUser);
-    return users;
-  };
-
-  const { data: users, isLoading } = useQuery("usersForOrders", allUserQuery);
-
   useEffect(() => {
-    const updateUsersWithPhoto = async () => {
+    const getAllUsers = async () => {
+      setIsLoading(true);
+      const usersData = await getAllUser(currentUser);
+
       const defaultImg = await getStoredImage("blog/profile.jpg");
 
-      const usersWithOrders = users.users.filter(
-        (user) => user.orders && user.orders.length != 0
-      );
+      if (usersData && usersData.users) {
+        const usersWithOrders = usersData.users.filter(
+          (user) => user.orders && user.orders.length !== 0
+        );
 
-      const usersWithPhoto = await Promise.all(
-        usersWithOrders.map(async (user) => {
-          let imgsrc;
-          if (user.photoExtension) imgsrc = await getUserImage(user.uid);
-          return { ...user, imgsrc: imgsrc || defaultImg };
-        })
-      );
-      setUpdatedUsers(usersWithPhoto);
-      setFilteredUsers(usersWithPhoto);
+        const usersWithPhoto = await Promise.all(
+          usersWithOrders.map(async (user) => {
+            let imgsrc;
+            if (user.photoExtension) imgsrc = await getUserImage(user.uid);
+            return { ...user, imgsrc: imgsrc || defaultImg };
+          })
+        );
+
+        setUpdatedUsers(usersWithPhoto);
+        setFilteredUsers(usersWithPhoto);
+      }
+
+      setIsLoading(false);
     };
 
-    if (users) updateUsersWithPhoto();
-  }, [users]);
+    getAllUsers();
+  }, [currentUser]);
 
   if (updatedUsers.length === 0 || isLoading) return <Loading />;
 

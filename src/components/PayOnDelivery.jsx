@@ -98,7 +98,7 @@ const PayOnDelivery = ({ oldOrder, isAdminPage }) => {
                 },
                 {
                   title: text.delivery.country,
-                  value: country,
+                  value: country[userLanguage],
                 },
                 {
                   title: text.delivery.phone,

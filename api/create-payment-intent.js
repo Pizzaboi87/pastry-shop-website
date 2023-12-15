@@ -25,7 +25,7 @@ export default async function handler(req, res) {
           phone: orderDetails.phone,
           address: {
             city: orderDetails.city,
-            country: orderDetails.country,
+            country: orderDetails.country.eng,
             line1: orderDetails.address,
             postal_code: orderDetails.zipCode,
           },
@@ -50,7 +50,7 @@ export default async function handler(req, res) {
       shipping: {
         address: {
           city: orderDetails.city,
-          country: orderDetails.country,
+          country: orderDetails.country.eng,
           line1: orderDetails.address,
           postal_code: orderDetails.zipCode,
         },

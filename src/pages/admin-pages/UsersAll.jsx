@@ -2,18 +2,13 @@ import { UserContext } from "../../context";
 import { Icon } from "@iconify/react";
 import { Loading } from "../../components";
 import { Tooltip } from "react-tooltip";
-import { Fragment, useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { deleteUser, getAllUser } from "../../utils/firebase-admin";
 import { getStoredImage, getUserImage } from "../../utils/firebase";
 import { useSwalMessage } from "../../utils/useSwalMessage";
 import { useQuery } from "react-query";
-import {
-  adminPageStyle,
-  tableStyle,
-  tooltipStyle,
-  usersAllStyle,
-} from "../../styles";
+import { adminPageStyle, tooltipStyle, usersAllStyle } from "../../styles";
 
 const UsersAll = () => {
   const [allUser, setAllUser] = useState([]);

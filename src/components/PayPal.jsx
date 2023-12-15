@@ -65,7 +65,7 @@ const PayPal = () => {
               admin_area_2: orderDetails.city,
               admin_area_1: "",
               postal_code: orderDetails.zipCode,
-              country_code: byCountry(orderDetails.country).iso2,
+              country_code: byCountry(orderDetails.country["eng"]).iso2,
             },
           },
         },

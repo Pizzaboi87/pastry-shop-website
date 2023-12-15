@@ -18,11 +18,13 @@ import {
   Theme_PhoneInput,
   userPhoneInputStyle,
 } from "../../styles";
+import { countries } from "../../constants";
 
 const Shipping = () => {
   const navigate = useNavigate();
   const { orderDetails, setOrderDetails } = useContext(CartContext);
-  const { userData, setUserData, currentUser, text } = useContext(UserContext);
+  const { userData, setUserData, currentUser, text, userLanguage } =
+    useContext(UserContext);
   const { showErrorSwal, showSuccessSwal } = useSwalMessage();
   const [loading, setLoading] = useState(false);
 
@@ -52,7 +54,7 @@ const Shipping = () => {
   const defaultForm = {
     fullName: userData.fullName ? userData.fullName : "",
     phone: userData.phone ? userData.phone : "",
-    country: userData.country ? userData.country : "",
+    country: userData.country ? userData.country : {},
     city: userData.city ? userData.city : "",
     address: userData.address ? userData.address : "",
     zipCode: userData.zipCode ? userData.zipCode : "",
@@ -72,11 +74,6 @@ const Shipping = () => {
       value: fullName,
       name: "name",
       errorMessage: text.userAccountForm.swal.errorName,
-    },
-    country: {
-      value: country,
-      name: "normal",
-      errorMessage: text.userAccountForm.swal.errorCountry,
     },
     city: {
       value: city,
@@ -134,7 +131,12 @@ const Shipping = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    if (name === "saveAsDefault") {
+    if (name === "country") {
+      const selectedCountry = countries.find(
+        (country) => country[userLanguage] === value
+      );
+      setUserAccountForm({ ...userAccountForm, country: selectedCountry });
+    } else if (name === "saveAsDefault") {
       setUserAccountForm({ ...userAccountForm, [name]: !saveAsDefault });
     } else setUserAccountForm({ ...userAccountForm, [name]: value });
   };
@@ -204,15 +206,24 @@ const Shipping = () => {
 
           <label className={myCartStyle.oddLabel}>
             {text.userAccountForm.country}
-            <Theme_Input
-              type="text"
-              placeholder={text.placeholder.country}
+            <select
+              required
+              value={country[userLanguage]}
               name="country"
-              value={country}
-              $outlinecolor="logo"
               onChange={handleChange}
               className={myCartStyle.input}
-            />
+            >
+              <option value="" disabled hidden>
+                {text.placeholder.country}
+              </option>
+              {countries
+                .sort((a, b) => a[userLanguage].localeCompare(b[userLanguage]))
+                .map((country) => (
+                  <option key={country.eng} value={country[userLanguage]}>
+                    {country[userLanguage]}
+                  </option>
+                ))}
+            </select>
           </label>
 
           <label className={myCartStyle.evenLabel}>

@@ -10,7 +10,12 @@ export const CartContextProvider = ({ children }) => {
   const defaultOrderDetails = {
     fullName: "",
     phone: "",
-    country: "",
+    country: {
+      hun: "",
+      eng: "",
+      esp: "",
+      fra: "",
+    },
     city: "",
     address: "",
     zipCode: "",
