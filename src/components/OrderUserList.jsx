@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { allOrderStyle } from "../styles";
 
 const OrderUserList = ({ user }) => {
-  const { userLanguage } = useContext(UserContext);
+  const { text, userLanguage } = useContext(UserContext);
   const { id, imgsrc, fullName, email, phone, orders } = user;
   const [openAccordionUserIds, setOpenAccordionUserIds] = useState([]);
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ const OrderUserList = ({ user }) => {
   };
 
   const sendMail = (userName, email) => {
-    const subject = `${text.emailOrderSubject}}`;
+    const subject = `${text.emailOrderSubject}`;
     const body = `${text.recipient} ${userName}${
       userLanguage == "hun" ? "!" : ","
     } \n\n${text.emailFooter}\n\u{1F517} ${text.website}`;
@@ -54,13 +54,11 @@ const OrderUserList = ({ user }) => {
           {fullName}
         </p>
       </li>
-      <li className={allOrderStyle.emailContainer}>
-        <p
-          className={allOrderStyle.hoverText}
-          onClick={() => sendMail(fullName, email)}
-        >
-          {email}
-        </p>
+      <li
+        className={allOrderStyle.emailContainer}
+        onClick={() => sendMail(fullName, email)}
+      >
+        <p className={allOrderStyle.hoverText}>{email}</p>
       </li>
       <li className={allOrderStyle.textContainer}>
         <p className={allOrderStyle.normalText}>{`+${phone}`}</p>
@@ -68,6 +66,7 @@ const OrderUserList = ({ user }) => {
       <li className={allOrderStyle.iconContainer}>
         <Icon
           icon="material-symbols:expand-circle-down-outline"
+          vFlip={openAccordionUserIds.includes(id) ? true : false}
           className={`expand ${allOrderStyle.icon} ${allOrderStyle.hoverText}`}
           onClick={() => handleAccordionById(id)}
         />
@@ -76,7 +75,7 @@ const OrderUserList = ({ user }) => {
       {orders.map(
         (order) =>
           openAccordionUserIds.includes(id) && (
-            <OrderList key={order.orderID} order={order} />
+            <OrderList key={order.orderID} user={user} order={order} />
           )
       )}
     </ul>

@@ -539,6 +539,7 @@ const fr_text = {
   shopItemEditTitle: "Modifier le Produit",
   shopAllTitle: "Tous les Produits",
   shopNewTitle: "Ajouter un Produit",
+  orderPageTitle: "Détails de la Commande",
   shopOrdersTitle: "Commandes de la Boutique",
   noPermissionTitle: "Vous n'avez pas la permission de voir cette page.",
   recipeCardTitle: "Ingrédients:",
@@ -710,6 +711,10 @@ const fr_text = {
   allOrder: {
     placeholderUser: "Recherche par détails client...",
     placeholderOrder: "Recherche par détails de commande...",
+    swal: {
+      successText: "La commande a été supprimée.",
+      errorText: "La commande n'a pas été supprimée.",
+    },
   },
   signInForm: {
     title: "Se Connecter",
@@ -864,6 +869,8 @@ const fr_text = {
     viewComment: "Voir le commentaire.",
     showOrders: "Voir les commandes.",
     orderDetails: "Voir les détails de la commande.",
+    delivered: "Commande livrée",
+    new: "Nouvelle commande",
   },
   shop: {
     noResult: "Aucun produit correspondant à la recherche.",
@@ -928,6 +935,9 @@ const fr_text = {
     orderAgain: "Commander à nouveau",
     orderTime: "Date de la commande:",
     orderAmount: "Montant de la commande:",
+    orderId: "ID de commande:",
+    orderTime: "Date de la commande:",
+    paymentMethod: "Méthode de paiement:",
   },
   previous: {
     noOrder: "Vous n'avez pas encore passé de commande.",

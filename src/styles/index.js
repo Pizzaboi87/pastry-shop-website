@@ -67,6 +67,10 @@ export const adminPageStyle = {
   icon: "text-text text-[3rem] hover:text-yellowdark cursor-pointer self-start md:mb-0 mb-4 md:absolute top-[1rem] left-[1rem]",
   deleteIcon:
     "delete outline-none text-text text-[3rem] hover:text-logopink cursor-pointer md:absolute self-start top-[1rem] left-[1rem]",
+  endIcon:
+    "delete outline-none text-[3.5rem] hover:text-logopink cursor-pointer md:absolute self-start top-[1rem] right-[3rem]",
+  newOrder: "text-red",
+  sentOrder: "text-green",
 };
 
 export const adminPanelStyle = {
@@ -109,6 +113,7 @@ export const allOrderStyle = {
   iconContainer:
     "flex gap-4 justify-center items-center py-2 md:col-span-1 col-span-9",
   icon: "text-text outline-none md:text-[1.5rem] text-[2rem]",
+  orderIcon: "outline-none md:text-[1.5rem] text-[2rem]",
   hrLine: "h-[0.1rem] md:hidden col-span-9 bg-black mb-4 mt-2",
   detailContainer: `${tableStyle} md:col-span-2 col-span-9 md:text-left text-center overflow-hidden`,
   smallDetailContainer: `${tableStyle} md:col-span-1 col-span-9 md:text-left text-center overflow-hidden`,
@@ -377,11 +382,12 @@ export const deliveryStyle = {
   addressContainer: "col-span-2 xl:col-span-1 flex flex-col gap-2",
   orderContainer:
     "col-span-2 xl:col-span-1 flex flex-col gap-2 items-left justify-start",
+  adminContainer: "col-span-2 xl:col-span-1 flex flex-col gap-2 mb-4",
   subTitle: "font-[600] text-[1.2rem] underline underline-offset-2",
   span: "flex flex-col",
   text: "font-[400] text-[1rem]",
   textBold: "font-[600]",
-  border: "mt-1 border-2",
+  border: "mt-1 border-2 mr-6",
   total:
     "col-span-2 font-[700] text-[1.2rem] flex items-center justify-between gap-2",
   onlyTotal: "absolute right-6 bottom-2",

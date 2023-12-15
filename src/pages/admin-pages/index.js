@@ -7,6 +7,7 @@ import DeletedUser from "./DeletedUser";
 import ShopAll from "./ShopAll";
 import ShopItemEditPage from "./ShopItemEditPage";
 import ShopNew from "./ShopNew";
+import ShopOrderPage from "./ShopOrderPage";
 import ShopOrders from "./ShopOrders";
 import UserDetailsPage from "./UserDetailsPage";
 import UsersAll from "./UsersAll";
@@ -21,6 +22,7 @@ export {
   ShopAll,
   ShopItemEditPage,
   ShopNew,
+  ShopOrderPage,
   ShopOrders,
   UserDetailsPage,
   UsersAll,

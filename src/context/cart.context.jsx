@@ -19,6 +19,7 @@ export const CartContextProvider = ({ children }) => {
     products: cart,
     paymentMethod: "credit",
     orderTime: "",
+    isDelivered: false,
   };
 
   const [orderDetails, setOrderDetails] = useState({

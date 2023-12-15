@@ -235,6 +235,42 @@ export const getAllUser = async (currentUser) => {
   }
 };
 
+export const changeDeliveryStatus = async (
+  userID,
+  orderID,
+  deliveryStatus,
+  currentUser,
+  text,
+  showErrorSwal,
+  showSuccessSwal
+) => {
+  try {
+    const idToken = await currentUser.getIdToken();
+
+    const response = await fetch("/api/change-delivery-status", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${idToken}`,
+        "user-id": userID,
+        "order-id": orderID,
+        "delivery-status": deliveryStatus,
+      },
+    });
+
+    if (response.ok) {
+      showSuccessSwal(text.allOrder.swal.successText);
+      return "success";
+    } else {
+      showErrorSwal(text.allOrder.swal.errorText);
+      return "error";
+    }
+  } catch (error) {
+    console.log(error);
+    showErrorSwal(text.allOrder.swal.errorText);
+    return "error";
+  }
+};
+
 export const uploadPost = async (
   text,
   currentUser,

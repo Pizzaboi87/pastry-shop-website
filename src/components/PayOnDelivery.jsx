@@ -5,7 +5,21 @@ import { useCurrency } from "../utils/useCurrency";
 import { Theme_Button, deliveryStyle, paymentFormStyle } from "../styles";
 import { useNavigate } from "react-router-dom";
 
-const PayOnDelivery = ({ oldOrder }) => {
+const DetailSpan = ({ data }) => {
+  return (
+    <span className={deliveryStyle.span}>
+      {data.map((item) => (
+        <p className={deliveryStyle.text} key={item.title}>
+          <strong className={deliveryStyle.textBold}>{item.title} </strong>
+          {item.value}
+        </p>
+      ))}
+      <hr className={deliveryStyle.border} />
+    </span>
+  );
+};
+
+const PayOnDelivery = ({ oldOrder, isAdminPage }) => {
   const { text, userLanguage } = useContext(UserContext);
   const { orderDetails, setCart } = useContext(CartContext);
   const { setPaymentInProgress, setPaymentSuccess } = usePayment();
@@ -35,29 +49,6 @@ const PayOnDelivery = ({ oldOrder }) => {
     currency,
   } = oldOrder || orderDetails;
 
-  const customer = [
-    {
-      title: text.delivery.name,
-      value: fullName,
-    },
-    {
-      title: text.delivery.address,
-      value: address,
-    },
-    {
-      title: text.delivery.city,
-      value: zipCode + " " + city,
-    },
-    {
-      title: text.delivery.country,
-      value: country,
-    },
-    {
-      title: text.delivery.phone,
-      value: "+" + phone,
-    },
-  ];
-
   return (
     <div className={deliveryStyle.wrapper}>
       <div className={deliveryStyle.container}>
@@ -67,18 +58,54 @@ const PayOnDelivery = ({ oldOrder }) => {
 
         <div className={deliveryStyle.detailsContainer}>
           <div className={deliveryStyle.addressContainer}>
+            {oldOrder && isAdminPage && (
+              <div className={deliveryStyle.adminContainer}>
+                <h2 className={deliveryStyle.subTitle}>
+                  {text.orderPageTitle}
+                </h2>
+                <DetailSpan
+                  data={[
+                    {
+                      title: text.delivery.orderId,
+                      value: oldOrder.orderID,
+                    },
+                    {
+                      title: text.delivery.orderTime,
+                      value: oldOrder.orderTime.slice(0, 19),
+                    },
+                    {
+                      title: text.delivery.paymentMethod,
+                      value: oldOrder.paymentMethod,
+                    },
+                  ]}
+                />
+              </div>
+            )}
             <h2 className={deliveryStyle.subTitle}>{text.delivery.delivery}</h2>
-
-            <span className={deliveryStyle.span}>
-              {customer.map((item) => (
-                <p className={deliveryStyle.text} key={item.title}>
-                  <strong className={deliveryStyle.textBold}>
-                    {item.title}{" "}
-                  </strong>
-                  {item.value}
-                </p>
-              ))}
-            </span>
+            <DetailSpan
+              data={[
+                {
+                  title: text.delivery.name,
+                  value: fullName,
+                },
+                {
+                  title: text.delivery.address,
+                  value: address,
+                },
+                {
+                  title: text.delivery.city,
+                  value: zipCode + " " + city,
+                },
+                {
+                  title: text.delivery.country,
+                  value: country,
+                },
+                {
+                  title: text.delivery.phone,
+                  value: "+" + phone,
+                },
+              ]}
+            />
           </div>
 
           <div className={deliveryStyle.orderContainer}>
@@ -90,36 +117,30 @@ const PayOnDelivery = ({ oldOrder }) => {
                 item.product.price,
                 item.quantity
               );
+
               return (
-                <span
-                  className={deliveryStyle.span}
+                <DetailSpan
                   key={item.product.name[userLanguage]}
-                >
-                  <p className={deliveryStyle.text}>
-                    <strong className={deliveryStyle.textBold}>
-                      {text.delivery.product}{" "}
-                    </strong>
-                    {item.product.name[userLanguage]}
-                  </p>
-                  <p className={deliveryStyle.text}>
-                    <strong className={deliveryStyle.textBold}>
-                      {text.delivery.quantity}{" "}
-                    </strong>
-                    {item.quantity}
-                  </p>
-                  <p className={deliveryStyle.text}>
-                    <strong className={deliveryStyle.textBold}>
-                      {text.delivery.price}{" "}
-                    </strong>
-                    {`${fullPrice} ${currency.symbol}`}
-                  </p>
-                  <hr className={deliveryStyle.border} />
-                </span>
+                  data={[
+                    {
+                      title: text.delivery.product,
+                      value: item.product.name[userLanguage],
+                    },
+                    {
+                      title: text.delivery.quantity,
+                      value: item.quantity,
+                    },
+                    {
+                      title: text.delivery.price,
+                      value: `${fullPrice} ${currency.symbol}`,
+                    },
+                  ]}
+                />
               );
             })}
           </div>
           <span className={deliveryStyle.total}>
-            {oldOrder && (
+            {oldOrder && !isAdminPage && (
               <Theme_Button
                 $bgcolor="logo"
                 $textcolor="textlight"

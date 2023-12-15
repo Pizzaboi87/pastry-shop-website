@@ -532,6 +532,7 @@ const es_text = {
   shopItemEditTitle: "Editar Producto",
   shopAllTitle: "Todos Los Productos",
   shopNewTitle: "Agregar Nuevo Producto",
+  orderPageTitle: "Detalles del Pedido",
   shopOrdersTitle: "Pedidos de la Tienda",
   noPermissionTitle: "No tienes permiso para ver esta página.",
   recipeCardTitle: "Ingredientes:",
@@ -704,6 +705,10 @@ const es_text = {
   allOrder: {
     placeholderUser: "Buscar por detalles del cliente...",
     placeholderOrder: "Buscar por detalles del pedido...",
+    swal: {
+      successText: "El estado ha sido cambiado.",
+      errorText: "El estado no ha sido cambiado.",
+    },
   },
   signInForm: {
     title: "Usario Abonado",
@@ -860,6 +865,8 @@ const es_text = {
     viewComment: "Ver comentario.",
     showOrders: "Ver pedidos.",
     orderDetails: "Ver detalles del pedido.",
+    delivered: "Orden entregada",
+    new: "Orden nueva",
   },
   shop: {
     noResult: "No hay ningún producto que coincida con la búsqueda.",
@@ -924,6 +931,9 @@ const es_text = {
     orderAgain: "Ordenar de nuevo",
     orderTime: "Fecha del pedido:",
     orderAmount: "Cantidad del pedido:",
+    orderId: "ID de pedido:",
+    orderTime: "Fecha del pedido:",
+    paymentMethod: "Método de pago:",
   },
   previous: {
     noOrder: "No tienes ningún pedido anterior.",

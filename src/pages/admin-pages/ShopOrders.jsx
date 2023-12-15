@@ -2,7 +2,6 @@ import { UserContext } from "../../context";
 import { Tooltip } from "react-tooltip";
 import { useContext, useEffect, useState } from "react";
 import { getAllUser } from "../../utils/firebase-admin";
-import { useSwalMessage } from "../../utils/useSwalMessage";
 import { useQuery } from "react-query";
 import { getStoredImage, getUserImage } from "../../utils/firebase";
 import { adminPageStyle, allOrderStyle, tooltipStyle } from "../../styles";
@@ -15,7 +14,6 @@ import {
 
 const ShopOrders = () => {
   const { text, currentUser } = useContext(UserContext);
-  const { showErrorSwal, showSuccessSwal, showQuestionSwal } = useSwalMessage();
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [updatedUsers, setUpdatedUsers] = useState([]);
 
@@ -48,17 +46,6 @@ const ShopOrders = () => {
     if (users) updateUsersWithPhoto();
   }, [users]);
 
-  /*
-  const changePublish = (comment) => {
-    changeCommentStatus(comment.id, !comment.isPublished).then(() => {
-      const newComments = allComments.map((com) =>
-        com.id === comment.id ? { ...com, isPublished: !com.isPublished } : com
-      );
-      setAllComments(newComments);
-    });
-  };
-*/
-
   if (updatedUsers.length === 0 || isLoading) return <Loading />;
 
   return (
@@ -84,20 +71,6 @@ const ShopOrders = () => {
           <OrderUserList key={user.id} user={user} />
         ))}
       </ul>
-      {/*
-      MÉG NINCS KÉSZ
-      <Tooltip
-        anchorSelect=".delivered"
-        content={text.tooltip.published}
-        style={tooltipStyle}
-        place="top"
-      />
-      <Tooltip
-        anchorSelect=".new"
-        content={text.tooltip.hided}
-        style={tooltipStyle}
-        place="top"
-      />*/}
       <Tooltip
         anchorSelect=".details"
         content={text.tooltip.orderDetails}

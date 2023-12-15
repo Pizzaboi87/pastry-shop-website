@@ -101,7 +101,9 @@ const PaymentForm = () => {
           )}
           {orderDetails.paymentMethod == "payPal" && <PayPal />}
           {orderDetails.paymentMethod == "googlePay" && <GooglePay />}
-          {orderDetails.paymentMethod == "payOnDelivery" && <PayOnDelivery />}
+          {orderDetails.paymentMethod == "payOnDelivery" && (
+            <PayOnDelivery isAdminPage={false} />
+          )}
         </Theme_Div>
       </div>
     </>

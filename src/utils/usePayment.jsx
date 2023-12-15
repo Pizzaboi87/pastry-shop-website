@@ -75,6 +75,7 @@ export const usePayment = () => {
       ...orderDetails,
       orderTime: new Date().toLocaleString(),
       orderID: uuid(),
+      isDelivered: false,
     };
     if (actualUserData.orders) {
       try {

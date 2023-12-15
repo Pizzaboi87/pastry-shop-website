@@ -29,6 +29,7 @@ import {
   ShopAll,
   ShopItemEditPage,
   ShopNew,
+  ShopOrderPage,
   ShopOrders,
   UserDetailsPage,
   UsersAll,
@@ -70,6 +71,7 @@ const MainContent = () => {
             <Route path="shop/products/:id" element={<ShopItemEditPage />} />
             <Route path="shop/new-product" element={<ShopNew />} />
             <Route path="shop/orders" element={<ShopOrders />} />
+            <Route path="shop/orders/:orderID" element={<ShopOrderPage />} />
           </Route>
 
           <Route path="myfavourites" element={<Favourites />}>

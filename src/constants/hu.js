@@ -531,6 +531,7 @@ const hu_text = {
   shopItemEditTitle: "Termék Szerkesztése",
   shopAllTitle: "Minden Termék",
   shopNewTitle: "Új Termék Hozzáadása",
+  orderPageTitle: "Rendelési Adatok",
   shopOrdersTitle: "Összes megrendelés",
   noPermissionTitle: "Nincs jogosultságod ehhez az oldalhoz.",
   recipeCardTitle: "Hozzávalók:",
@@ -699,6 +700,10 @@ const hu_text = {
   allOrder: {
     placeholderUser: "Keresés ügyfél alapján...",
     placeholderOrder: "Keresés rendelés alapján...",
+    swal: {
+      successText: "A rendelés státusza sikeresen megváltozott.",
+      errorText: "A rendelés státuszának módosítása nem sikerült.",
+    },
   },
   signInForm: {
     title: "Bejelentkezés",
@@ -854,6 +859,8 @@ const hu_text = {
     viewComment: "Komment megtekintése.",
     showOrders: "Rendelések megtekintése.",
     orderDetails: "Rendelés részletei.",
+    delivered: "Kiszállított megrendelés",
+    new: "Új megrendelés",
   },
   shop: {
     noResult: "Nincs a keresésnek megfelelő termék.",
@@ -918,6 +925,9 @@ const hu_text = {
     orderAgain: "Újrarendelés",
     orderTime: "Rendelés ideje:",
     orderAmount: "Rendelés összege:",
+    orderId: "Rendelés ID:",
+    orderTime: "Rendelés ideje:",
+    paymentMethod: "Fizetési mód:",
   },
   previous: {
     noOrder: "Még nincs korábbi rendelésed.",

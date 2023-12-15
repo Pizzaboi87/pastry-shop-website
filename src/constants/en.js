@@ -532,6 +532,7 @@ const en_text = {
   shopItemEditTitle: "Edit Shop Item",
   shopAllTitle: "All Shop Items",
   shopNewTitle: "Add New Shop Item",
+  orderPageTitle: "Order Details",
   shopOrdersTitle: "All Orders from Shop",
   noPermissionTitle: "You do not have permission to view this page.",
   recipeCardTitle: "Ingredients:",
@@ -699,6 +700,10 @@ const en_text = {
   allOrder: {
     placeholderUser: "Search by customer details...",
     placeholderOrder: "Search by order details...",
+    swal: {
+      successText: "The status has been changed.",
+      errorText: "The status has not been changed.",
+    },
   },
   signInForm: {
     title: "Sign In",
@@ -852,6 +857,8 @@ const en_text = {
     viewComment: "View comment.",
     showOrders: "Show orders.",
     orderDetails: "Order details.",
+    delivered: "Delivered order",
+    new: "New order.",
   },
   shop: {
     noResult: "There is no product matching the search.",
@@ -916,6 +923,9 @@ const en_text = {
     orderAgain: "Order Again",
     orderTime: "Order Time:",
     orderAmount: "Order Amount:",
+    orderId: "Order ID:",
+    orderTime: "Order Time:",
+    paymentMethod: "Payment Method:",
   },
   previous: {
     noOrder: "You don't have any order yet.",
