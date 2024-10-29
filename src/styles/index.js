@@ -785,7 +785,7 @@ export const shop = {
   checkoutIcon: "mr-2 text-[2rem]",
   checkoutText: "text-[1.2rem] font-[500]",
   productsContainer:
-    "flex gap-8 flex-wrap shadow-inner shadow-black items-center justify-center xl:w-[85vw] w-full rounded-xl py-8",
+    "flex gap-8 flex-wrap shadow-inner shadow-black items-center justify-center xl:max-w-[80vw] w-full rounded-xl py-8",
   noResult: "text-text text-[1.5rem] font-[500] text-center",
   cardContainer:
     "md:w-[16rem] ms:w-[22rem] w-[20rem] xl:h-[30rem] h-[40rem] relative flex flex-col rounded-xl",
