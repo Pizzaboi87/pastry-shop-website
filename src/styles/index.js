@@ -923,7 +923,7 @@ export const userPageStyle = {
   form: "w-full grid md:grid-cols-7 xl:px-16 xl:py-6 py-2 gap-y-2",
   phone: "xl:h-[2.3rem] h-[2rem]",
   input:
-    "text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted",
+    "w-full text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted",
   email:
     "disabled:bg-[#f0f0f0] cursor-not-allowed text-text md:text-[1.2rem] text-[1rem] font-[400] py-1 px-4 mt-2 rounded-xl outline-2 outline-offset-2 outline-dotted",
   label:
